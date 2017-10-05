@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/categories/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/categories/" hreflang="pt"/>
+    
+      <loc>http://geraldo.me/en/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/publication_types/" hreflang="pt"/>
+    
+      <loc>http://geraldo.me/en/publication_types/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/tags/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/tags/" hreflang="pt"/>
+    
+      <loc>http://geraldo.me/en/tags/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/" hreflang="pt"/>
+    
+      <loc>http://geraldo.me/en/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+</urlset>

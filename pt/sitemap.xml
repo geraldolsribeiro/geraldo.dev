@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/</loc>
+      <lastmod>2017-01-01T00:00:00-02:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/academic/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/talk/example-talk/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/publication/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/talk/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/project/deep-learning/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/project/example-external-project/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/getting-started/</loc>
+      <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/widgets/</loc>
+      <lastmod>2016-04-19T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/managing-content/</loc>
+      <lastmod>2016-04-18T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/writing-markdown-latex/</loc>
+      <lastmod>2016-04-17T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/publication/person-re-identification/</loc>
+      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/migrate-from-jekyll/</loc>
+      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/publication/clothing-search/</loc>
+      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/publication_types/1/</loc>
+      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/publication_types/2/</loc>
+      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/categories/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/categories/" hreflang="en"/>
+    
+      <loc>http://geraldo.me/categories/</loc>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/deep-learning/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/demo/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/hugo/</loc>
+      <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/jekyll/</loc>
+      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/project/</loc>
+      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/publication_types/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/publication_types/" hreflang="en"/>
+    
+      <loc>http://geraldo.me/publication_types/</loc>
+      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/tags/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/tags/" hreflang="en"/>
+    
+      <loc>http://geraldo.me/tags/</loc>
+      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <xhtml:link rel="alternate" href="http://geraldo.me/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="http://geraldo.me/en/" hreflang="en"/>
+    
+      <loc>http://geraldo.me/</loc>
+      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+</urlset>

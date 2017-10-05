@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	
 	<sitemap>
-	   	<loc>http://geraldo.me/pt/sitemap.xml</loc>
-		
-	   	<lastmod>2017-09-20T00:00:00-03:00</lastmod>
+	   	<loc>http://geraldo.me/en/sitemap.xml</loc>
 		
 	</sitemap>
 	
 	<sitemap>
-	   	<loc>http://geraldo.me/en/sitemap.xml</loc>
+	   	<loc>http://geraldo.me/pt/sitemap.xml</loc>
+		
+	   	<lastmod>2017-10-05T16:50:46-03:00</lastmod>
 		
 	</sitemap>
 	

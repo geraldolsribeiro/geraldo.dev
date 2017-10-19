@@ -41,24 +41,6 @@
     
     <url>
     
-      <loc>http://geraldo.me/project/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/project/example-external-project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://geraldo.me/publication/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</loc>
       <lastmod>2009-11-15T00:00:00+00:00</lastmod>
     </url>
@@ -118,36 +100,6 @@
       <xhtml:link rel="alternate" href="http://geraldo.me/en/categories/" hreflang="en"/>
     
       <loc>http://geraldo.me/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     

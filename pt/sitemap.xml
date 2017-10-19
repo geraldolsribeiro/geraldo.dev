@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>http://geraldo.me/post/deploy-site-with-git/</loc>
+      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://geraldo.me/post/</loc>
       <lastmod>2017-01-01T00:00:00-02:00</lastmod>
     </url>
@@ -43,6 +52,42 @@
     
       <loc>http://geraldo.me/post/getting-started/</loc>
       <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/widgets/</loc>
+      <lastmod>2016-04-19T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/managing-content/</loc>
+      <lastmod>2016-04-18T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/writing-markdown-latex/</loc>
+      <lastmod>2016-04-17T00:00:00-03:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/post/migrate-from-jekyll/</loc>
+      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
     </url>
     
   
@@ -117,8 +162,28 @@
     
     <url>
     
+      <loc>http://geraldo.me/tags/git/</loc>
+      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://geraldo.me/tags/hugo/</loc>
       <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/jekyll/</loc>
+      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -132,6 +197,16 @@
     
       <loc>http://geraldo.me/publication_types/</loc>
       <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/site-est%C3%A1tico/</loc>
+      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
       <priority>0</priority>
     </url>
     

@@ -14,15 +14,6 @@
     
     <url>
     
-      <loc>http://geraldo.me/post/deploy-site-with-git/</loc>
-      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://geraldo.me/post/</loc>
       <lastmod>2017-01-01T00:00:00-02:00</lastmod>
     </url>
@@ -181,16 +172,6 @@
     
     <url>
     
-      <loc>http://geraldo.me/tags/git/</loc>
-      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://geraldo.me/tags/hostname/</loc>
       <lastmod>2017-10-22T11:21:50-02:00</lastmod>
       <priority>0</priority>
@@ -236,16 +217,6 @@
     
       <loc>http://geraldo.me/publication_types/</loc>
       <lastmod>2009-11-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/tags/site-est%C3%A1tico/</loc>
-      <lastmod>2017-10-05T16:50:46-03:00</lastmod>
       <priority>0</priority>
     </url>
     

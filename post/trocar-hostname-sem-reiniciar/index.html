@@ -293,6 +293,25 @@ o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/
 <p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
 
+<p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
+se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
+comando faça o seguinte:</p>
+
+<pre><code class="language-bash">sed -i &quot;s/antigo-nome/novo-nome/g&quot; /etc/hosts
+</code></pre>
+
+<p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
+Uma explicação muito breve sobre o comando acima:</p>
+
+<ul>
+<li><code>-i</code>: modo de edição <code>inline</code> (abre, edita e fecha o arquivo)</li>
+<li><code>s</code>: comando de substituição no formato <code>/de/para/</code></li>
+<li><code>g</code>: substitui todas as ocorrências de <code>antigo-nome</code> por <code>novo-nome</code></li>
+</ul>
+
+
+
+
     </div>
   </div>
 

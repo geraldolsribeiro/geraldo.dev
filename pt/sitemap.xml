@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>http://geraldo.me/post/trocar-hostname-sem-reiniciar/</loc>
+      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>http://geraldo.me/post/deploy-site-with-git/</loc>
       <lastmod>2017-10-05T16:50:46-03:00</lastmod>
     </url>
@@ -32,15 +41,6 @@
     
     <url>
     
-      <loc>http://geraldo.me/talk/example-talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://geraldo.me/publication/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
     </url>
@@ -52,24 +52,6 @@
     
       <loc>http://geraldo.me/talk/</loc>
       <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/project/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/project/example-external-project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -113,26 +95,8 @@
     
     <url>
     
-      <loc>http://geraldo.me/publication/person-re-identification/</loc>
-      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>http://geraldo.me/post/migrate-from-jekyll/</loc>
       <lastmod>2014-03-10T00:00:00-03:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/publication/clothing-search/</loc>
-      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
     </url>
     
   
@@ -186,17 +150,7 @@
     <url>
     
       <loc>http://geraldo.me/publication_types/1/</loc>
-      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/publication_types/2/</loc>
-      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+      <lastmod>2009-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -217,18 +171,8 @@
     
     <url>
     
-      <loc>http://geraldo.me/tags/deep-learning/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>http://geraldo.me/tags/demo/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>http://geraldo.me/tags/debian/</loc>
+      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -239,6 +183,16 @@
     
       <loc>http://geraldo.me/tags/git/</loc>
       <lastmod>2017-10-05T16:50:46-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/hostname/</loc>
+      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -267,8 +221,8 @@
     
     <url>
     
-      <loc>http://geraldo.me/project/</loc>
-      <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+      <loc>http://geraldo.me/tags/linux/</loc>
+      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -281,7 +235,7 @@
       <xhtml:link rel="alternate" href="http://geraldo.me/en/publication_types/" hreflang="en"/>
     
       <loc>http://geraldo.me/publication_types/</loc>
-      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+      <lastmod>2009-11-15T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
@@ -292,6 +246,16 @@
     
       <loc>http://geraldo.me/tags/site-est%C3%A1tico/</loc>
       <lastmod>2017-10-05T16:50:46-03:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>http://geraldo.me/tags/sysadmin/</loc>
+      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
       <priority>0</priority>
     </url>
     

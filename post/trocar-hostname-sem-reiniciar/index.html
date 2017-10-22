@@ -267,30 +267,30 @@ derivadas do <a href="https://www.debian.org" target="_blank">Debian</a>, tais c
 (segundo o <a href="https://distrowatch.com/search.php?basedon=Debian" target="_blank">distrowatch</a>).</p>
 
 <p>O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot
-é o <code>/etc/hostname</code>, então basta trocar seu conteúdo que no <em>próximo boot</em>
+é o <code>/etc/hostname</code>, então basta trocar seu conteúdo que no <strong>próximo boot</strong>
 a máquina terá outro nome.</p>
 
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
-palavra, é enviar através do comando <code>echo</code> o novo
-<em>hostname</em> para o arquivo <code>/etc/hostname</code>:</p>
+palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
 
-<pre><code>echo &quot;novo-nome&quot; &gt; /etc/hostname
+<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /etc/hostname
 </code></pre>
 
-<p>Para o próximo boot está tudo OK!</p>
+<p><strong>Para o próximo boot está tudo OK!</strong></p>
 
 <p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
 mostra o nome antigo. Mas a máquina já está rodando e não posso parar os
-serviços agora para fazer
-o reboot, então precisamos alterar o <em>kernel</em>. Felizmente existe um modo muito
-simple de se fazer isso. O <em>kernel</em> expõe muitas de suas configurações
-através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
-um comando semelhante para alterar o arquivo <code>/proc/sys/kernel/hostname</code></p>
+serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em> em execução.</p>
 
-<pre><code>echo &quot;novo-nome&quot; &gt; /proc/sys/kernel/hostname
+<p>Sem pânico! Felizmente existe um modo muito
+simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
+através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
+o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
+
+<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /proc/sys/kernel/hostname
 </code></pre>
 
-<p>Agora se lançarmos o comando <code>hostname</code> veremos o novo nome e sem que seja
+<p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
 
     </div>

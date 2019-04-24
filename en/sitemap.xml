@@ -5,10 +5,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="http://geraldo.me/en/categories/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="http://geraldo.me/categories/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/en/categories/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/categories/" hreflang="pt"/>
     
-      <loc>http://geraldo.me/en/categories/</loc>
+      <loc>https://geraldo.dev/en/categories/</loc>
       <priority>0</priority>
     </url>
     
@@ -17,10 +17,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="http://geraldo.me/en/publication_types/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="http://geraldo.me/publication_types/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/en/publication_types/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/publication_types/" hreflang="pt"/>
     
-      <loc>http://geraldo.me/en/publication_types/</loc>
+      <loc>https://geraldo.dev/en/publication_types/</loc>
       <priority>0</priority>
     </url>
     
@@ -29,10 +29,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="http://geraldo.me/en/tags/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="http://geraldo.me/tags/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/en/tags/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/tags/" hreflang="pt"/>
     
-      <loc>http://geraldo.me/en/tags/</loc>
+      <loc>https://geraldo.dev/en/tags/</loc>
       <priority>0</priority>
     </url>
     
@@ -41,10 +41,10 @@
     
     <url>
     
-      <xhtml:link rel="alternate" href="http://geraldo.me/en/" hreflang="en"/>
-      <xhtml:link rel="alternate" href="http://geraldo.me/" hreflang="pt"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/en/" hreflang="en"/>
+      <xhtml:link rel="alternate" href="https://geraldo.dev/" hreflang="pt"/>
     
-      <loc>http://geraldo.me/en/</loc>
+      <loc>https://geraldo.dev/en/</loc>
       <priority>0</priority>
     </url>
     

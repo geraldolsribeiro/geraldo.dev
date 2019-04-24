@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on geraldo.me</title>
+    <link>https://geraldo.dev/tags/</link>
+    <description>Recent content in Tags on geraldo.me</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Content tagged as &#39;Academic&#39;</title>
+      <link>https://geraldo.dev/tags/academic/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/academic/</guid>
+      <description>Here is a list of all the content that has been tagged as academic.</description>
+    </item>
+    
+    <item>
+      <title>Debian</title>
+      <link>https://geraldo.dev/tags/debian/</link>
+      <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hostname</title>
+      <link>https://geraldo.dev/tags/hostname/</link>
+      <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/tags/hostname/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://geraldo.dev/tags/hugo/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jekyll</title>
+      <link>https://geraldo.dev/tags/jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/jekyll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://geraldo.dev/tags/linux/</link>
+      <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sysadmin</title>
+      <link>https://geraldo.dev/tags/sysadmin/</link>
+      <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/tags/sysadmin/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

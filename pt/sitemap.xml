@@ -1,260 +1,254 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/trocar-hostname-sem-reiniciar/</loc>
-      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/about/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/</loc>
-      <lastmod>2017-01-01T00:00:00-02:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/publications_selected/</loc>
+    <lastmod>2016-04-20T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/academic/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/publications/</loc>
+    <lastmod>2016-04-20T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/talks/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/talk/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/posts/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/getting-started/</loc>
-      <lastmod>2017-09-03T00:00:00-03:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/projects/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/widgets/</loc>
-      <lastmod>2016-04-19T00:00:00-03:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/teaching/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/managing-content/</loc>
-      <lastmod>2016-04-18T00:00:00-03:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/tags/</loc>
+    <lastmod>2017-09-20T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/writing-markdown-latex/</loc>
-      <lastmod>2016-04-17T00:00:00-03:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/home/contact/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/post/migrate-from-jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/trocar-hostname-sem-reiniciar/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</loc>
-      <lastmod>2009-11-15T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/</loc>
+    <lastmod>2017-01-01T00:00:00-02:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</loc>
-      <lastmod>2007-10-23T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/tags/academic/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/2005_qualificacao_espacial_de_um_propulsor_de_5n/</loc>
-      <lastmod>2005-09-13T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/talk/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</loc>
-      <lastmod>2003-10-03T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/getting-started/</loc>
+    <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication/2002_note_on_rotating_cup_atomizer_theory/</loc>
-      <lastmod>2002-11-20T00:00:00+00:00</lastmod>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/widgets/</loc>
+    <lastmod>2016-04-19T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/publication_types/1/</loc>
-      <lastmod>2009-11-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/managing-content/</loc>
+    <lastmod>2016-04-18T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="https://geraldo.dev/categories/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="https://geraldo.dev/en/categories/" hreflang="en"/>
-    
-      <loc>https://geraldo.dev/categories/</loc>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/writing-markdown-latex/</loc>
+    <lastmod>2016-04-17T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/debian/</loc>
-      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/post/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00-03:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/hostname/</loc>
-      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publications/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</loc>
+    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/hugo/</loc>
-      <lastmod>2017-09-03T00:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</loc>
+    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/jekyll/</loc>
-      <lastmod>2014-03-10T00:00:00-03:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publications/2005_qualificacao_espacial_de_um_propulsor_de_5n/</loc>
+    <lastmod>2005-09-13T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/linux/</loc>
-      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</loc>
+    <lastmod>2003-10-03T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="https://geraldo.dev/publication_types/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="https://geraldo.dev/en/publication_types/" hreflang="en"/>
-    
-      <loc>https://geraldo.dev/publication_types/</loc>
-      <lastmod>2009-11-15T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publications/2002_note_on_rotating_cup_atomizer_theory/</loc>
+    <lastmod>2002-11-20T00:00:00+00:00</lastmod>
+  </url>
   
-    
-    
-    <url>
-    
-      <loc>https://geraldo.dev/tags/sysadmin/</loc>
-      <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/publication_types/1/</loc>
+    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
   
-    
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="https://geraldo.dev/tags/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="https://geraldo.dev/en/tags/" hreflang="en"/>
-    
-      <loc>https://geraldo.dev/tags/</loc>
-      <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/projects/cafe-pre-pago/</loc>
+  </url>
   
-    
-    
-    <url>
-    
-      <xhtml:link rel="alternate" href="https://geraldo.dev/" hreflang="pt"/>
-      <xhtml:link rel="alternate" href="https://geraldo.dev/en/" hreflang="en"/>
-    
-      <loc>https://geraldo.dev/</loc>
-      <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-      <priority>0</priority>
-    </url>
-    
+  <url>
+    <loc>https://geraldo.dev/categories/</loc>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://geraldo.dev/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://geraldo.dev/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/debian/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/home/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/hostname/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/hugo/</loc>
+    <lastmod>2017-09-03T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/linux/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/projects/pousada-santa-cecilia/</loc>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/projects/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/publication_types/</loc>
+    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://geraldo.dev/en/publication_types/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://geraldo.dev/publication_types/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/publications/</loc>
+    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/sysadmin/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://geraldo.dev/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://geraldo.dev/tags/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/projects/dferias/</loc>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://geraldo.dev/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt"
+                href="https://geraldo.dev/"
+                />
+  </url>
   
 </urlset>

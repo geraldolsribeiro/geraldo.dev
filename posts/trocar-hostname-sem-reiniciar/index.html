@@ -6,8 +6,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Trocar o nome da máquina sem reiniciar | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/post/trocar-hostname-sem-reiniciar/">
+<title>Como trocar o nome do servidor sem reiniciar | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
@@ -21,9 +21,9 @@
 o nome da máquina. Seja porque digitou o nome errado durante a
 instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
 sendo utilizado por outra máquina.
-" /><meta property="og:url" content="https://geraldo.dev/post/trocar-hostname-sem-reiniciar/" />
+" /><meta property="og:url" content="https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Trocar o nome da máquina sem reiniciar" />
+    <meta property="og:title" content="Como trocar o nome do servidor sem reiniciar" />
 
 
     <meta property="og:tags" content="sysadmin" />
@@ -48,8 +48,8 @@ sendo utilizado por outra máquina.
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.56e5e32fdc46dd2578b77605e0fe014d2feec4037e146a169f228a1786974029.css"
-      integrity="sha256-VuXjL9xG3SV4t3YF4P4BTS/uxAN&#43;FGoWnyKKF4aXQCk="
+      href="https://geraldo.dev/style.main.min.f64f63d8a044544096f25f0883533eb70d59deb3d767596a2156d5a6e4ffc179.css"
+      integrity="sha256-9k9j2KBEVECW8l8Ig1M&#43;tw1Z3rPXZ1lqIVbVpuT/wXk="
       media="screen">
 
 
@@ -69,6 +69,8 @@ sendo utilizado por outra máquina.
             
 <li><a href="/">Home</a></li>
 
+<li><a href="/posts">Posts</a></li>
+
 <li><a href="/publications">Publicações</a></li>
 
 <li><a href="/projects">Projetos</a></li>
@@ -82,6 +84,8 @@ sendo utilizado por outra máquina.
   
 <li><a href="/">Home</a></li>
 
+<li><a href="/posts">Posts</a></li>
+
 <li><a href="/publications">Publicações</a></li>
 
 <li><a href="/projects">Projetos</a></li>
@@ -94,7 +98,18 @@ sendo utilizado por outra máquina.
     
 
     
-    <p>Como um <strong>Administrador de Sistemas</strong>, as vezes, você precisa alterar
+    <main>
+      <div class="page container">
+
+        
+        <div class="project-header">
+          <img src="/img/headers/sysadmin.jpg" class="responsive-img">
+        </div>
+        
+
+        <h1>Como trocar o nome do servidor sem reiniciar</h1>
+
+        <p>Como um <strong>Administrador de Sistemas</strong>, as vezes, você precisa alterar
 o nome da máquina. Seja porque digitou o nome errado durante a
 instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
 sendo utilizado por outra máquina.</p>
@@ -110,10 +125,7 @@ a máquina terá outro nome.</p>
 
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
 palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
-
-<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /etc/hostname
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname</code></pre></div>
 <p><strong>Para o próximo boot está tudo OK!</strong></p>
 
 <p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
@@ -124,20 +136,14 @@ serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em>
 simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
 através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
 o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
-
-<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /proc/sys/kernel/hostname
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname</code></pre></div>
 <p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
 
 <p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
 se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
 comando faça o seguinte:</p>
-
-<pre><code class="language-bash">sed -i &quot;s/antigo-nome/novo-nome/g&quot; /etc/hosts
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts</code></pre></div>
 <p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
 Uma explicação muito breve sobre o comando acima:</p>
 
@@ -148,8 +154,9 @@ Uma explicação muito breve sobre o comando acima:</p>
 </ul>
 
 
+      </div>
 
-
+    </main>
 
 
     

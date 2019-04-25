@@ -48,13 +48,8 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/post/trocar-hostname-sem-reiniciar/</loc>
+    <loc>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</loc>
     <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/</loc>
-    <lastmod>2017-01-01T00:00:00-02:00</lastmod>
   </url>
   
   <url>
@@ -65,31 +60,6 @@
   <url>
     <loc>https://geraldo.dev/talk/</loc>
     <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/getting-started/</loc>
-    <lastmod>2017-09-03T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/widgets/</loc>
-    <lastmod>2016-04-19T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/managing-content/</loc>
-    <lastmod>2016-04-18T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/writing-markdown-latex/</loc>
-    <lastmod>2016-04-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/post/migrate-from-jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -151,19 +121,13 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/hugo/</loc>
-    <lastmod>2017-09-03T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/jekyll/</loc>
-    <lastmod>2014-03-10T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/linux/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
     <lastmod>2017-10-22T11:21:50-02:00</lastmod>
     <priority>0</priority>
   </url>

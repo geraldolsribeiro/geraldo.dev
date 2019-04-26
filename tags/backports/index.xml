@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/backports/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +15,7 @@
     <item>
       <title>Como instalar o flameshot no Debian stable</title>
       <link>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.

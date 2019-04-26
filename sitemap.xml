@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</loc>
     <lastmod>2017-10-24T14:00:58-02:00</lastmod>
   </url>
@@ -100,6 +105,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/backports/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -113,10 +119,6 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</loc>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
     <lastmod>2017-10-24T14:00:58-02:00</lastmod>
     <priority>0</priority>
@@ -124,6 +126,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/flameshot/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -147,7 +150,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -174,6 +177,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/screenshots/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

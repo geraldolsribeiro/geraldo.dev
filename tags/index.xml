@@ -22,11 +22,29 @@
     </item>
     
     <item>
+      <title>Backports</title>
+      <link>https://geraldo.dev/tags/backports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/backports/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Debian</title>
       <link>https://geraldo.dev/tags/debian/</link>
       <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>
       
       <guid>https://geraldo.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Flameshot</title>
+      <link>https://geraldo.dev/tags/flameshot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/flameshot/</guid>
       <description></description>
     </item>
     
@@ -45,6 +63,15 @@
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
       <guid>https://geraldo.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Screenshots</title>
+      <link>https://geraldo.dev/tags/screenshots/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/screenshots/</guid>
       <description></description>
     </item>
     

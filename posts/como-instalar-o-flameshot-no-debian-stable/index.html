@@ -6,22 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Tags | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/">
+<title>Como instalar o flameshot no Debian stable | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="01/01/0001">
 
 
 
     <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
 
     <meta property="og:description" content="Um site sobre tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/" />
+    <meta property="og:url" content="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Tags" />
+    <meta property="og:title" content="Como instalar o flameshot no Debian stable" />
 
+
+    <meta property="og:tags" content="backports" />
+
+    <meta property="og:tags" content="flameshot" />
+
+    <meta property="og:tags" content="screenshots" />
 
 
 
@@ -85,110 +92,80 @@
     
 
     
-  <div class="container">
-    <h1>Tags</h1>
-    
+    <main>
+      <div class="page container">
 
-    
-
-
-      
-      <h2>backports</h2>
-
-      <ul>
         
-          <li hugo-nav="/posts/como-instalar-o-flameshot-no-debian-stable/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">Como instalar o flameshot no Debian stable</a>
-          </li>
+
+        <h1>Como instalar o flameshot no Debian stable</h1>
+
+        <p>O <code>flameshot</code> é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.</p>
+
+<p><img src="https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif" alt="Demonstração de uso do flameshot" /></p>
+
+<p>O <code>flameshot</code> já está disponível no <code>Debian 10</code>, mas enquanto aguardamos
+a versão nova do Debian ser lançada é preciso utilizar a versão do
+<code>stretch-backports</code>.</p>
+
+<p><p>Primeiramente vamos acrescentar o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main&#34;</span> &gt;&gt; /etc/apt/sources.list.d/backports.list</code></pre></div>
+<p>Atualizar a lista de pacotes disponíveis:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update</code></pre></div>
+<p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -t stretch-backports flameshot</code></pre></div>
+<h2 id="referências">Referências</h2></p>
+
+<ul>
+<li><a href="https://github.com/lupoDharkael/flameshot" target="_blank">Github do projeto flameshot</a></li>
+</ul>
+
+
         
-      </ul>
 
-      
-      <h2>debian</h2>
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-instalar-o-tema-papirus-no-debian/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">Como instalar o tema de ícones Papirus no Debian</a>
-          </li>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f&amp;text=Como%20instalar%20o%20flameshot%20no%20Debian%20stable"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
 
-      
-      <h2>flameshot</h2>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f&amp;title=Como%20instalar%20o%20flameshot%20no%20Debian%20stable"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-instalar-o-flameshot-no-debian-stable/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">Como instalar o flameshot no Debian stable</a>
-          </li>
-        
-      </ul>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Como%20instalar%20o%20flameshot%20no%20Debian%20stable&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
 
-      
-      <h2>hostname</h2>
+  </ul>
+  <span>Compartilhe!</span>
+</div>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
 
-      
-      <h2>linux</h2>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
 
-      
-      <h2>screenshots</h2>
+      </div>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-instalar-o-flameshot-no-debian-stable/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">Como instalar o flameshot no Debian stable</a>
-          </li>
-        
-      </ul>
-
-      
-      <h2>sysadmin</h2>
-
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
-
-      
-      <h2>ícones</h2>
-
-      <ul>
-        
-          <li hugo-nav="/posts/como-instalar-o-tema-papirus-no-debian/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">Como instalar o tema de ícones Papirus no Debian</a>
-          </li>
-        
-      </ul>
-
-      
-
-    
-
-  </div>
+    </main>
 
 
     

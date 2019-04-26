@@ -99,6 +99,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/backports/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/projects/cafe-pre-pago/</loc>
   </url>
   
@@ -108,12 +113,17 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/flameshot/</loc>
+    <loc>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</loc>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
     <lastmod>2017-10-24T14:00:58-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/flameshot/</loc>
     <priority>0</priority>
   </url>
   
@@ -159,6 +169,11 @@
   <url>
     <loc>https://geraldo.dev/publications/</loc>
     <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/screenshots/</loc>
     <priority>0</priority>
   </url>
   

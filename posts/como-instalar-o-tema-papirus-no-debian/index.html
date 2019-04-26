@@ -6,22 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Debian | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/debian/">
+<title>Como instalar o tema de ícones Papirus no Debian | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="24/10/2017">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+    <meta property="og:image" content="https://geraldo.dev//img/headers/papirus.png" />
 
     <meta property="og:description" content="Um site sobre tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/debian/" />
+    <meta property="og:url" content="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Debian" />
+    <meta property="og:title" content="Como instalar o tema de ícones Papirus no Debian" />
 
+
+    <meta property="og:tags" content="debian" />
+
+    <meta property="og:tags" content="ícones" />
 
 
 
@@ -85,77 +90,91 @@
     
 
     
-  <div class="container">
-    <h1>Tags</h1>
-    
+    <main>
+      <div class="page container">
 
-    
-
-
-      
-      <h2>debian</h2>
-
-      <ul>
         
-          <li hugo-nav="/posts/como-instalar-o-tema-papirus-no-debian/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">Como instalar o tema de ícones Papirus no Debian</a>
-          </li>
+        <div class="project-header center-align">
+          <img src="/img/headers/papirus.png" class="responsive-img">
+        </div>
         
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
+
+        <h1>Como instalar o tema de ícones Papirus no Debian</h1>
+
+        <p>O pacote <code>papirus-icon-theme</code> está no <code>Debian Sid</code>. Para instalar na versão <code>stable</code> basta
+criar um arquivo <code>papirus-icon-theme.list</code> contendo o endereço do repositório:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&#34;</span> <span style="color:#ae81ff">\ </span>
+  &gt; /etc/apt/sources.list.d/papirus-icon-theme.list</code></pre></div>
+<p>Adicionar a chave</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F</code></pre></div>
+<p>Instalar</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update
+apt-get install papirus-icon-theme</code></pre></div>
+<p>Pronto, agora é só selecionar o tema <code>papirus</code> na configuração do seu ambiente.</p>
+
+<h2 id="selecionando-o-tema-no-xfce">Selecionando o tema no XFCE</h2>
+
+<p>Em <strong>Configurações</strong> escolha <strong>Aparência</strong> e depois <strong>Ícones</strong>.</p>
+
+<p><img src="/img/papirus-02.png" alt="img" /></p>
+
+<p><img src="/img/papirus-03.png" alt="img" /></p>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/" target="_blank">Github do projeto</a></li>
+<li><a href="https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/" target="_blank">https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/</a></li>
+<li><a href="https://github.com/nizarmah/tintedarc" target="_blank">https://github.com/nizarmah/tintedarc</a></li>
+</ul>
+
+
         
-      </ul>
 
-      
-      <h2>hostname</h2>
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-tema-papirus-no-debian%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-tema-papirus-no-debian%2f&amp;text=Como%20instalar%20o%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
 
-      
-      <h2>linux</h2>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-tema-papirus-no-debian%2f&amp;title=Como%20instalar%20o%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Como%20instalar%20o%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-tema-papirus-no-debian%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
 
-      
-      <h2>sysadmin</h2>
+  </ul>
+  <span>Compartilhe!</span>
+</div>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-trocar-hostname-sem-reiniciar/">
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-          </li>
-        
-      </ul>
 
-      
-      <h2>ícones</h2>
 
-      <ul>
-        
-          <li hugo-nav="/posts/como-instalar-o-tema-papirus-no-debian/">
-            <a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">Como instalar o tema de ícones Papirus no Debian</a>
-          </li>
-        
-      </ul>
 
-      
+      </div>
 
-    
-
-  </div>
+    </main>
 
 
     

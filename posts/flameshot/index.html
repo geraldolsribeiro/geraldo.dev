@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title> | geraldo.dev</title>
+<title>Como instalar o flameshot no Debian | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/flameshot/">
 <meta name="generator" content="Hugo 0.54.0" />
 
@@ -21,7 +21,7 @@
     <meta property="og:description" content="Um site sobre tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
     <meta property="og:url" content="https://geraldo.dev/posts/flameshot/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="Como instalar o flameshot no Debian" />
 
 
 
@@ -36,8 +36,8 @@
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.8ebc0fa8a842b5159cb3efd53bc5061b4ac54cacc20055008164ff8972d38e5f.css"
-      integrity="sha256-jrwPqKhCtRWcs&#43;/VO8UGG0rFTKzCAFUAgWT/iXLTjl8="
+      href="https://geraldo.dev/style.main.min.123964b6a0347f979ca3cc0d4043111510f74b4351fc1fab14d108d381c802fb.css"
+      integrity="sha256-EjlktqA0f5eco8wNQEMRFRD3S0NR/B&#43;rFNEI04HIAvs="
       media="screen">
 
 
@@ -91,12 +91,21 @@
 
         
 
-        <h1></h1>
+        <h1>Como instalar o flameshot no Debian</h1>
 
-        <p>root@erebo:/etc/apt# cat sources.list.d/backports.list
-deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main</p>
+        <p>O <code>flameshot</code> já está no <code>Debian 10</code>, mas enquanto ele ainda não foi lançado é preciso utilizar a versão do <code>stretch-backports</code>.</p>
 
-<p>apt install -t stretch-backports flameshot</p>
+<p><p>Primeiramente vamos acrescentar o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main&#34;</span> &gt;&gt; /etc/apt/sources.list.d/backports.list</code></pre></div>
+<p>Atualizar a lista de pacotes disponíveis:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update</code></pre></div>
+<p>Usar a opção <code>-t stretch-backports</code> para indicar que a instalação utilize o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -t stretch-backports flameshot</code></pre></div>
+<h2 id="referências">Referências</h2></p>
+
+<ul>
+<li><a href="https://github.com/lupoDharkael/flameshot" target="_blank">Github do projeto flameshot</a></li>
+</ul>
 
 
         
@@ -114,7 +123,7 @@ deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f&amp;text="
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f&amp;text=Como%20instalar%20o%20flameshot%20no%20Debian"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -122,7 +131,7 @@ deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f&amp;title="
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f&amp;title=Como%20instalar%20o%20flameshot%20no%20Debian"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -130,7 +139,7 @@ deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org
 
     <li>
       <a class="email"
-         href="mailto:?subject=&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f">
+         href="mailto:?subject=Como%20instalar%20o%20flameshot%20no%20Debian&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fflameshot%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>
@@ -256,16 +265,14 @@ deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org
       <ul>
         
         
-          
           <li>
               <a class="btn-floating waves-effect waves-light green darken-4"
-                title="Chame pelo whatsapp"
+                title="Chame pelo whatsapp!"
                 target="_blank"
-                href="">
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
               <span class="mdi mdi-24px mdi-whatsapp"></span>
             </a>
           </li>
-          
         
       </ul>
     </div>

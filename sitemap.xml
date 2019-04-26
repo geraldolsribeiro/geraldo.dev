@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/instalando-tema-de-icones-papirus/</loc>
+    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</loc>
     <lastmod>2017-10-22T11:21:50-02:00</lastmod>
   </url>
@@ -104,7 +109,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,7 +133,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   

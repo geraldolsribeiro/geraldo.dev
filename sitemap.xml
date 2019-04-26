@@ -53,7 +53,7 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</loc>
+    <loc>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</loc>
     <lastmod>2017-10-22T11:21:50-02:00</lastmod>
   </url>
   
@@ -177,6 +177,12 @@
   <url>
     <loc>https://geraldo.dev/</loc>
     <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/%C3%ADcones/</loc>
+    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
     <priority>0</priority>
   </url>
   

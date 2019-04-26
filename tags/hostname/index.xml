@@ -14,10 +14,10 @@
     
     <item>
       <title>Como trocar o nome do servidor sem reiniciar</title>
-      <link>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</link>
+      <link>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</link>
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
-      <guid>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</guid>
+      <guid>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</guid>
       <description>Como um Administrador de Sistemas, as vezes, você precisa alterar o nome da máquina. Seja porque digitou o nome errado durante a instalação, ou se a política de nomes da empresa mudou ou se o nome já estava sendo utilizado por outra máquina.
 Nota: O procedimento que veremos a seguir vale para as distribuições Linux derivadas do Debian, tais como Mint, Ubuntu, e outras 130 (segundo o distrowatch).
 O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é o /etc/hostname, então basta trocar seu conteúdo que no próximo boot a máquina terá outro nome.</description>

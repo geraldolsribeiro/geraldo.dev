@@ -13,22 +13,24 @@
     
     
     <item>
-      <title>Instalando tema de ícones Papirus</title>
+      <title>Instalando tema de ícones Papirus no Debian</title>
       <link>https://geraldo.dev/posts/instalando-tema-de-icones-papirus/</link>
       <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/instalando-tema-de-icones-papirus/</guid>
-      <description>https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/  echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
-Ideias: https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/
-https://github.com/nizarmah/tintedarc</description>
+      <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
+echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
+apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
+Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
     </item>
     
     <item>
       <title>Como trocar o nome do servidor sem reiniciar</title>
-      <link>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</link>
+      <link>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</link>
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
-      <guid>https://geraldo.dev/posts/trocar-hostname-sem-reiniciar/</guid>
+      <guid>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</guid>
       <description>Como um Administrador de Sistemas, as vezes, você precisa alterar o nome da máquina. Seja porque digitou o nome errado durante a instalação, ou se a política de nomes da empresa mudou ou se o nome já estava sendo utilizado por outra máquina.
 Nota: O procedimento que veremos a seguir vale para as distribuições Linux derivadas do Debian, tais como Mint, Ubuntu, e outras 130 (segundo o distrowatch).
 O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é o /etc/hostname, então basta trocar seu conteúdo que no próximo boot a máquina terá outro nome.</description>

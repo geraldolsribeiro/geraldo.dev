@@ -6,33 +6,39 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Instalando tema de ícones Papirus no Debian | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/instalando-tema-de-icones-papirus/">
+<title>Como trocar o nome do servidor sem reiniciar | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="24/10/2017">
+    <meta property="article:published_time" content="22/10/2017">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev//img/headers/papirus.png" />
-
-    <meta property="og:description" content="Um site sobre tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/posts/instalando-tema-de-icones-papirus/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/sysadmin.jpg" />
+<meta property="og:description" content="Como um Administrador de Sistemas, as vezes, você precisa alterar
+o nome da máquina. Seja porque digitou o nome errado durante a
+instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
+sendo utilizado por outra máquina." /><meta property="og:url" content="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Instalando tema de ícones Papirus no Debian" />
+    <meta property="og:title" content="Como trocar o nome do servidor sem reiniciar" />
 
+
+    <meta property="og:tags" content="sysadmin" />
+
+    <meta property="og:tags" content="linux" />
 
     <meta property="og:tags" content="debian" />
 
-    <meta property="og:tags" content="ícones" />
+    <meta property="og:tags" content="hostname" />
 
 
 
-
-    <meta name="description" content="Um site sobre tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Como um Administrador de Sistemas, as vezes, você precisa alterar
+o nome da máquina. Seja porque digitou o nome errado durante a
+instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
+sendo utilizado por outra máquina.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -95,37 +101,54 @@
 
         
         <div class="project-header center-align">
-          <img src="/img/headers/papirus.png" class="responsive-img">
+          <img src="img/headers/sysadmin.jpg" class="responsive-img">
         </div>
         
 
-        <h1>Instalando tema de ícones Papirus no Debian</h1>
+        <h1>Como trocar o nome do servidor sem reiniciar</h1>
 
-        <p>O pacote <code>papirus-icon-theme</code> está no <code>Debian Sid</code>. Para instalar na versão <code>stable</code> basta
-criar um arquivo <code>papirus-icon-theme.list</code> contendo o endereço do repositório:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&#34;</span> <span style="color:#ae81ff">\ </span>
-  &gt; /etc/apt/sources.list.d/papirus-icon-theme.list</code></pre></div>
-<p>Adicionar a chave</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F</code></pre></div>
-<p>Instalar</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update
-apt-get install papirus-icon-theme</code></pre></div>
-<p>Pronto, agora é só selecionar o tema <code>papirus</code> na configuração do seu ambiente.</p>
+        <p>Como um <strong>Administrador de Sistemas</strong>, as vezes, você precisa alterar
+o nome da máquina. Seja porque digitou o nome errado durante a
+instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
+sendo utilizado por outra máquina.</p>
 
-<h2 id="selecionando-o-tema-no-xfce">Selecionando o tema no XFCE</h2>
+<p><strong>Nota:</strong> O procedimento que veremos a seguir vale para as distribuições Linux
+derivadas do <a href="https://www.debian.org" target="_blank">Debian</a>, tais como
+<a href="https://linuxmint.com" target="_blank">Mint</a>, <a href="https://www.ubuntu.com" target="_blank">Ubuntu</a>, e outras 130
+(segundo o <a href="https://distrowatch.com/search.php?basedon=Debian" target="_blank">distrowatch</a>).</p>
 
-<p>Em <strong>Configurações</strong> escolha <strong>Aparência</strong> e depois <strong>Ícones</strong>.</p>
+<p>O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot
+é o <code>/etc/hostname</code>, então basta trocar seu conteúdo que no <strong>próximo boot</strong>
+a máquina terá outro nome.</p>
 
-<p><img src="/img/papirus-02.png" alt="img" /></p>
+<p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
+palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname</code></pre></div>
+<p><strong>Para o próximo boot está tudo OK!</strong></p>
 
-<p><img src="/img/papirus-03.png" alt="img" /></p>
+<p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
+mostra o nome antigo. Mas a máquina já está rodando e não posso parar os
+serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em> em execução.</p>
 
-<h2 id="referências">Referências</h2>
+<p>Sem pânico! Felizmente existe um modo muito
+simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
+através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
+o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname</code></pre></div>
+<p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
+preciso reiniciar a máquina.</p>
+
+<p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
+se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
+comando faça o seguinte:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts</code></pre></div>
+<p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
+Uma explicação muito breve sobre o comando acima:</p>
 
 <ul>
-<li><a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/" target="_blank">Github do projeto</a></li>
-<li><a href="https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/" target="_blank">https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/</a></li>
-<li><a href="https://github.com/nizarmah/tintedarc" target="_blank">https://github.com/nizarmah/tintedarc</a></li>
+<li><code>-i</code>: modo de edição <code>inline</code> (abre, edita e fecha o arquivo)</li>
+<li><code>s</code>: comando de substituição no formato <code>/de/para/</code></li>
+<li><code>g</code>: substitui todas as ocorrências de <code>antigo-nome</code> por <code>novo-nome</code></li>
 </ul>
 
 
@@ -135,7 +158,7 @@ apt-get install papirus-icon-theme</code></pre></div>
   <ul class="share">
     <li>
       <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2finstalando-tema-de-icones-papirus%2f"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-trocar-hostname-sem-reiniciar%2f"
         aria-label="share on Facebook"
         target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-facebook"></span>
@@ -144,7 +167,7 @@ apt-get install papirus-icon-theme</code></pre></div>
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2finstalando-tema-de-icones-papirus%2f&amp;text=Instalando%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-trocar-hostname-sem-reiniciar%2f&amp;text=Como%20trocar%20o%20nome%20do%20servidor%20sem%20reiniciar"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -152,7 +175,7 @@ apt-get install papirus-icon-theme</code></pre></div>
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2finstalando-tema-de-icones-papirus%2f&amp;title=Instalando%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-trocar-hostname-sem-reiniciar%2f&amp;title=Como%20trocar%20o%20nome%20do%20servidor%20sem%20reiniciar"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -160,7 +183,7 @@ apt-get install papirus-icon-theme</code></pre></div>
 
     <li>
       <a class="email"
-         href="mailto:?subject=Instalando%20tema%20de%20%c3%adcones%20Papirus%20no%20Debian&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2finstalando-tema-de-icones-papirus%2f">
+         href="mailto:?subject=Como%20trocar%20o%20nome%20do%20servidor%20sem%20reiniciar&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-trocar-hostname-sem-reiniciar%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>

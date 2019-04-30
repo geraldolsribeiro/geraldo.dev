@@ -212,9 +212,14 @@ linhas e 3 colunas.</p>
 </code></pre></div>
 <h3 id="carregar-e-transpor-os-dados-do-arquivo-csv">Carregar e transpor os dados do arquivo CSV</h3>
 
-<p>As matrizes do Armadillo são armazenada no formato <code>column-major</code>; isto significa que no disco cada coluna é localizada numa região contígua de memória.
-Veja <a href="https://www.mlpack.org/doc/mlpack-3.1.0/doxygen/matrices.html" target="_blank">detalhes</a> na documentação do <code>mlpack</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  Load( <span style="color:#e6db74">&#34;foo.csv&#34;</span>, data, THROW_EXCEPTION, TRANSPOSE_INPUT ); <span style="color:#75715e">// 400 rows x 3 cols -&gt; 3 rows x 400 cols
+<p>As matrizes do Armadillo (pacote de álgebra linear do mlpack) são armazenada no
+formato <code>column-major</code>; isto significa que no disco cada coluna é localizada
+numa região contígua de memória. Veja
+<a href="https://www.mlpack.org/doc/mlpack-3.1.0/doxygen/matrices.html" target="_blank">detalhes</a> na
+documentação do <code>mlpack</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> THROW_EXCEPTION <span style="color:#f92672">=</span> true; <span style="color:#75715e">// lança uma exceção std::runtime_error se não conseguir carregar. default false
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> TRANSPOSE_INPUT <span style="color:#f92672">=</span> true; <span style="color:#75715e">// transpôe a matriz depois de carregar. default true
+</span><span style="color:#75715e"></span>  Load( <span style="color:#e6db74">&#34;foo.csv&#34;</span>, data, THROW_EXCEPTION, TRANSPOSE_INPUT ); <span style="color:#75715e">// 400 rows x 3 cols -&gt; 3 rows x 400 cols
 </span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Linhas:  &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_rows <span style="color:#f92672">&lt;&lt;</span> endl;                <span style="color:#75715e">// 3
 </span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Colunas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_cols <span style="color:#f92672">&lt;&lt;</span> endl;                <span style="color:#75715e">// 400
 </span></code></pre></div>

@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.92eddc2f4c82385b32502db5adde261f7773227bd628c1c1b16f6f96f789dae1.css"
-      integrity="sha256-ku3cL0yCOFsyUC21rd4mH3dzInvWKMHBsW9vlveJ2uE="
+      href="https://geraldo.dev/style.main.min.f4313d7dac559f45cf609c2f8a3e4ff19beb1182fc1a1325d9ab5227e6b0ae80.css"
+      integrity="sha256-9DE9faxVn0XPYJwvij5P8ZvrEYL8GhMl2atSJ&#43;awroA="
       media="screen">
 
 
@@ -115,9 +115,12 @@ if (!doNotTrack) {
 
         <h1>Feed Forward Neural Network no debian com mlpack</h1>
 
-        <p>Este artigo mostra como criar uma rede neural simples no <a href="https://www.debian.org/releases/stable/" target="_blank">Debian stable</a> utilizando a biblioteca mlpack.</p>
+        <p>Este artigo mostra como criar uma rede neural simples no
+<a href="https://www.debian.org/releases/stable/" target="_blank">Debian stable</a> utilizando a
+<a href="http://www.mlpack.org" target="_blank">mlpack</a>. A <code>mlpack</code> é uma biblioteca popular e de alta
+performance para aprendizado de máquina em C++.</p>
 
-<h2 id="versões-do-mlpack">Versões do mlpack</h2>
+<h2 id="versões-do-mlpack-disponíveis-do-debian">Versões do mlpack disponíveis do Debian</h2>
 
 <p>As versões disponíveis no momento da escrita deste artigo são:</p>
 
@@ -162,16 +165,20 @@ if (!doNotTrack) {
 
 <p>Neste artigo usaremos a versão <code>3.0.4</code> presente no <code>testing</code>.</p>
 
-<h2 id="utilizando-as-versões-testing-junto-com-a-stable">Utilizando as versões testing junto com a stable</h2>
+<h2 id="utilizando-pacotes-testing-junto-com-stable">Utilizando pacotes testing junto com stable</h2>
 
-<p>Eu prefiro utilizar somente os pacotes <code>stable</code> nos servidores por serem versões muito bem testadas.
-Normalmente as últimas versões não vão estar no disponíveis no repositório <code>stable</code>, mas
-sim nos repositórios <code>testing</code> e <code>unstable</code>.</p>
+<p>Eu prefiro utilizar somente os pacotes <code>stable</code> nos servidores por serem
+versões muito bem testadas. Normalmente as últimas versões não estão
+disponíveis no repositório <code>stable</code>, mas sim nos repositórios <code>testing</code>
+e <code>unstable</code>. O repositório <code>testing</code> contém próximo candidato a se tornar
+<code>stable</code> de cada pacote. O repositório <code>unstable</code> contém a última versão
+disponível de cada pacote.</p>
 
-<ul>
-<li>o repositório <code>testing</code> contém próximo candidato a se tornar <code>stable</code> de cada pacote.</li>
-<li>o repositório <code>unstable</code> contém a última versão disponível de cada pacote.</li>
-</ul>
+<p>Misturar repositórios diferente pode ser algo tranquilo de manter se feito com cuidado.
+É só indicar <strong>precisamente</strong> qual pacote deve ser pego de cada repositório.
+O Debian tem um mecanismo bem fácil de usar para realizar esta tarefa.
+No meu caso eu tenho uma regra geral: <strong>pegar sempre do stable</strong> e algumas
+poucas exceções para pacotes específicos.</p>
 
 <p>Para mesclar diferentes repositórios basta <em>pinar</em> os pacotes para indicar quais versões serão usadas.</p>
 
@@ -185,7 +192,11 @@ Pin-Priority: 1002
 Package: *armadillo*
 Pin: release a=testing
 Pin-Priority: 1002</code></pre></div>
-<p>Então é só proceder a instalação normal:</p>
+<p>O arquivo <code>/etc/apt/preferences.d/mlpack</code> poderia ter qualquer nome, mas é conveniente usar descritivo.</p>
+
+<p>E para desfazer a pinagem basta remover o arquivo.</p>
+
+<p>Então é só proceder a instalação normal com o <code>apt</code> como de costume:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install libmlpack-dev</code></pre></div>
 <h2 id="dados-de-treinamento">Dados de treinamento</h2>
 
@@ -195,13 +206,15 @@ Pin-Priority: 1002</code></pre></div>
 
 <p><img src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento" /></p>
 
-<p>O primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na animação abaixo.</p>
+<p>Para facilitar a visualização, o primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na
+animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</p>
 
 <p><img src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento" /></p>
 
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
 aleatório para não favorecer ou influenciar o treinamento. São ao todo 400
-linhas e 3 colunas.</p>
+linhas e 3 colunas. As duas primeiras colunas são as entradas e a terceira
+o grupo a qual pertencem.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csv" data-lang="csv">-1.336471627143056118e+00,3.770125142464317847e+00,0.000000000000000000e+00
 1.804415958408375431e+00,2.999013679368799146e+00,1.000000000000000000e+00
 1.401588838630331679e+00,3.746404773569839364e+00,0.000000000000000000e+00
@@ -226,28 +239,31 @@ linhas e 3 colunas.</p>
 </code></pre></div>
 <h3 id="carregar-e-transpor-os-dados-do-arquivo-csv">Carregar e transpor os dados do arquivo CSV</h3>
 
-<p>As matrizes do Armadillo (pacote de álgebra linear do mlpack) são armazenada no
+<p>As matrizes do <a href="http://arma.sourceforge.net/" target="_blank">Armadillo</a> (pacote de álgebra linear do mlpack) são armazenada no
 formato <code>column-major</code>; isto significa que no disco cada coluna é localizada
 numa região contígua de memória. Veja
 <a href="https://www.mlpack.org/doc/mlpack-3.1.0/doxygen/matrices.html" target="_blank">detalhes</a> na
 documentação do <code>mlpack</code>.</p>
+
+<p>Então além de carregar é preciso transpor a matriz de dados.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// lança uma exceção std::runtime_error se não conseguir carregar. default false
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> THROW_EXCEPTION <span style="color:#f92672">=</span> true;
   <span style="color:#75715e">// transpôe a matriz depois de carregar. default true
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> TRANSPOSE_INPUT <span style="color:#f92672">=</span> true;
-  Load( <span style="color:#e6db74">&#34;foo.csv&#34;</span>, data, THROW_EXCEPTION, TRANSPOSE_INPUT ); <span style="color:#75715e">// 400 rows x 3 cols -&gt; 3 rows x 400 cols
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Linhas:  &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_rows <span style="color:#f92672">&lt;&lt;</span> endl;                <span style="color:#75715e">// 3
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Colunas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_cols <span style="color:#f92672">&lt;&lt;</span> endl;                <span style="color:#75715e">// 400
+  Load( <span style="color:#e6db74">&#34;foo.csv&#34;</span>, data, THROW_EXCEPTION, TRANSPOSE_INPUT );
+  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Linhas:  &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_rows <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 3
+</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Colunas: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> data.n_cols <span style="color:#f92672">&lt;&lt;</span> endl; <span style="color:#75715e">// 400
 </span></code></pre></div>
+<p>A matriz de dados foi carregada e precisa ser dividida entre dados de treinamento e dados de teste.</p>
+
 <p><img src="/img/mlpack-data.svg#center" alt="Dados depois de carregados" /></p>
 
-<p>Agora precisamos dividir os dados entre treinamento e teste. É muito importante
-que o modelo nunca veja os dados de teste para que se tenha uma boa
-generalização.</p>
+<p>É muito importante que o modelo nunca veja os dados de teste para que se tenha
+uma boa generalização.</p>
 
 <h3 id="constantes-para-os-índices">Constantes para os índices</h3>
 
-<p>Para facilitar a leitura e evitar <em>números mágicos</em> no código defini algumas constantes convenientes:</p>
+<p>Para facilitar a leitura do fonte e evitar <em>números mágicos</em> no código defini algumas constantes convenientes:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> VAR1_ROW  <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> VAR2_ROW  <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> LABEL_ROW <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
@@ -255,7 +271,9 @@ generalização.</p>
   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> LAST_COL  <span style="color:#f92672">=</span> data.n_cols <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
   <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> TEST_SIZE <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
 </code></pre></div>
-<h3 id="recorta-os-dados-de-entrada-para-treinamento">Recorta os dados de entrada para treinamento</h3>
+<p>Note que neste caso serão usadas 10 amostras para teste.</p>
+
+<h3 id="dados-de-entrada-para-treinamento">Dados de entrada para treinamento</h3>
 
 <p>Usando a função <code>submat</code> vamos recortar uma porção dos dados para formar os dados de entrada para treinamento.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">auto</span> firtsRow  <span style="color:#f92672">=</span> VAR1_ROW;
@@ -264,14 +282,14 @@ generalização.</p>
   <span style="color:#66d9ef">auto</span> lastCol   <span style="color:#f92672">=</span> LAST_COL <span style="color:#f92672">-</span> TEST_SIZE;
   mat  traindata <span style="color:#f92672">=</span> data.submat( firtsRow, firtsCol, lastRow, lastCol );
 </code></pre></div>
-<h3 id="recorta-os-dados-de-saída-para-treinamento">Recorta os dados de saída para treinamento</h3>
+<h3 id="dados-de-saída-para-treinamento">Dados de saída para treinamento</h3>
 
 <p>Usando a função <code>submat</code> vamos recortar uma porção dos dados para formar os dados de saída para treinamento.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  firtsRow        <span style="color:#f92672">=</span> LABEL_ROW;
   lastRow         <span style="color:#f92672">=</span> LABEL_ROW;
   mat trainlabels <span style="color:#f92672">=</span> data.submat( firtsRow, firtsCol, lastRow, lastCol );
 </code></pre></div>
-<h3 id="recorta-os-dados-de-entrada-para-teste">Recorta os dados de entrada para teste</h3>
+<h3 id="dados-de-entrada-para-teste">Dados de entrada para teste</h3>
 
 <p>Usando a função <code>submat</code> vamos recortar uma porção dos dados para formar os dados de entrada para teste.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  firtsRow     <span style="color:#f92672">=</span> VAR1_ROW;
@@ -280,7 +298,7 @@ generalização.</p>
   lastCol      <span style="color:#f92672">=</span> LAST_COL;
   mat testdata <span style="color:#f92672">=</span> data.submat( firtsRow, firtsCol, lastRow, lastCol );
 </code></pre></div>
-<h3 id="recorta-os-dados-de-saída-para-teste">Recorta os dados de saída para teste</h3>
+<h3 id="dados-de-saída-para-teste">Dados de saída para teste</h3>
 
 <p>Usando a função <code>submat</code> vamos recortar uma porção dos dados para formar os dados de saída para teste.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  firtsRow       <span style="color:#f92672">=</span> LABEL_ROW;
@@ -323,8 +341,22 @@ Dados de saída para teste:
 <p>A partir da inicialização aleatória dos pesos da conexões inicia-se o treinamento.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">++</span>i ) {
     model.Train( traindata, trainlabels );
+    <span style="color:#75715e">// Acompanha o erro do modelo
+</span><span style="color:#75715e"></span>    mat assignments;
+    model.Predict( testdata, assignments );
+    <span style="color:#75715e">// Diferença entre o obtido e o esperado
+</span><span style="color:#75715e"></span>    mat diff <span style="color:#f92672">=</span> assignments <span style="color:#f92672">-</span> testlabels;
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Erro: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> diff <span style="color:#f92672">*</span> diff.t();
   }
 </code></pre></div>
+<p>Saída:</p>
+
+<pre><code>Erro:    0.0292
+Erro:    0.0058
+Erro:    0.0038
+Erro:    0.0024
+</code></pre>
+
 <h3 id="testando-o-modelo-ajustado">Testando o modelo ajustado</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  mat assignments;
   model.Predict( testdata, assignments );

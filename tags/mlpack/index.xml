@@ -18,9 +18,9 @@
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/feed-forward-neural-network-no-debian-com-mlpack/</guid>
-      <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a biblioteca mlpack.
-Versões do mlpack As versões disponíveis no momento da escrita deste artigo são:
-   Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.1.1-1 amd64 arm64 armel armhf i386 mips mips64el mipsel ppc64el s390x   buster (testing) 3.</description>
+      <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
+Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
+   Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>
     </item>
     
   </channel>

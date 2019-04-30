@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Screenshots on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/screenshots/</link>
-    <description>Recent content in Screenshots on geraldo.dev</description>
+    <title>Screenshot on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/screenshot/</link>
+    <description>Recent content in Screenshot on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Fri, 26 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/screenshots/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/screenshot/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

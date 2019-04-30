@@ -109,6 +109,12 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/annotation/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/apt/</loc>
     <lastmod>2019-04-29T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -199,7 +205,7 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/screenshots/</loc>
+    <loc>https://geraldo.dev/tags/screenshot/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

@@ -332,11 +332,14 @@ Dados de saída para teste:
   cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Classificação correta:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;&lt;</span> testlabels <span style="color:#f92672">&lt;&lt;</span> endl;
 </code></pre></div>
 <p>Saída:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Previsões:
+
+<pre><code>Previsões:
    0.0074   0.9985   0.9918   0.0097   0.0057   0.9853   0.9998   0.0107   1.0000   1.0000
 
 Classificação correta:
-   0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000</code></pre></div>
+   0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000
+</code></pre>
+
 <h3 id="salvando-modelo-para-continuar-depois">Salvando modelo para continuar depois</h3>
 
 <p>O modelo pode ser salvo a qualquer momento e recarregado para continuar o treinamento.
@@ -357,15 +360,18 @@ Um arquivo <code>XML</code> serializado pelo <code>boost</code> é salvo.</p>
   cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Classificação correta:</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;&lt;</span> testlabels <span style="color:#f92672">&lt;&lt;</span> endl;
 </code></pre></div>
 <p>Saída:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Previsões:
+
+<pre><code>Previsões:
    0.0045   0.9996   0.9893   0.0010   0.0049   0.9942   1.0000   0.0076   1.0000   1.0000
 
 Classificação correta:
-   0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000</code></pre></div>
-<h3 id="salvando-o-modelo-atualizado">Salvando o modelo atualizado</h3>
+   0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000
+</code></pre>
+
+<p><h3 id="salvando-o-modelo-atualizado">Salvando o modelo atualizado</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  Save( <span style="color:#e6db74">&#34;model2.xml&#34;</span>, <span style="color:#e6db74">&#34;model&#34;</span>, model, false );
 </code></pre></div>
-<h2 id="código-fonte-completo">Código fonte completo</h2>
+<h2 id="código-fonte-completo">Código fonte completo</h2></p>
 
 <p>O código fonte completo pode ser encontrado no
 <a href="https://github.com/geraldolsribeiro/mlpack-tutorials/tree/master/ffn" target="_blank">github</a>.</p>

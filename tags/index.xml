@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>Apt</title>
+      <link>https://geraldo.dev/tags/apt/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/apt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Backports</title>
       <link>https://geraldo.dev/tags/backports/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
@@ -33,9 +42,18 @@
     <item>
       <title>Debian</title>
       <link>https://geraldo.dev/tags/debian/</link>
-      <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ffn</title>
+      <link>https://geraldo.dev/tags/ffn/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/ffn/</guid>
       <description></description>
     </item>
     
@@ -63,6 +81,15 @@
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
       <guid>https://geraldo.dev/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mlpack</title>
+      <link>https://geraldo.dev/tags/mlpack/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/mlpack/</guid>
       <description></description>
     </item>
     

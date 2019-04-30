@@ -192,7 +192,7 @@ Pin-Priority: 1002
 Package: *armadillo*
 Pin: release a=testing
 Pin-Priority: 1002</code></pre></div>
-<p>O arquivo <code>/etc/apt/preferences.d/mlpack</code> poderia ter qualquer nome, mas é conveniente usar descritivo.</p>
+<p>O arquivo <code>/etc/apt/preferences.d/mlpack</code> poderia ter qualquer nome, mas é conveniente usar algo descritivo.</p>
 
 <p>E para desfazer a pinagem basta remover o arquivo.</p>
 
@@ -213,8 +213,8 @@ animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</
 
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
 aleatório para não favorecer ou influenciar o treinamento. São ao todo 400
-linhas e 3 colunas. As duas primeiras colunas são as entradas e a terceira
-o grupo a qual pertencem.</p>
+linhas e 3 colunas. As duas primeiras colunas são as <strong>entradas</strong> e a terceira
+é o <strong>grupo</strong> a qual pertencem.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csv" data-lang="csv">-1.336471627143056118e+00,3.770125142464317847e+00,0.000000000000000000e+00
 1.804415958408375431e+00,2.999013679368799146e+00,1.000000000000000000e+00
 1.401588838630331679e+00,3.746404773569839364e+00,0.000000000000000000e+00
@@ -224,12 +224,15 @@ o grupo a qual pertencem.</p>
 <h2 id="implementação">Implementação</h2>
 
 <h3 id="carregando-as-dependências">Carregando as dependências</h3>
+
+<p>Incluindo os cabeçalhos específicos para rede neural artificial (ANN).</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;mlpack/core.hpp&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;mlpack/methods/ann/ffn.hpp&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;mlpack/methods/ann/layer/layer.hpp&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;mlpack/methods/ann/loss_functions/mean_squared_error.hpp&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> mlpack;
+</span></code></pre></div>
+<p>Para deixar o código bem mais legível alguns namespaces serão usados por padrão.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> mlpack;
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> mlpack<span style="color:#f92672">::</span>ann;
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> mlpack<span style="color:#f92672">::</span>optimization;
 <span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> arma;
@@ -244,6 +247,9 @@ formato <code>column-major</code>; isto significa que no disco cada coluna é lo
 numa região contígua de memória. Veja
 <a href="https://www.mlpack.org/doc/mlpack-3.1.0/doxygen/matrices.html" target="_blank">detalhes</a> na
 documentação do <code>mlpack</code>.</p>
+
+<p>Esta é uma conveniência bem interessante, pois para escrever os arquivos os
+registros são entrados por linha e para processamento são tratados em colunas.</p>
 
 <p>Então além de carregar é preciso transpor a matriz de dados.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// lança uma exceção std::runtime_error se não conseguir carregar. default false
@@ -349,7 +355,7 @@ Dados de saída para teste:
     cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Erro: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> diff <span style="color:#f92672">*</span> diff.t();
   }
 </code></pre></div>
-<p>Saída:</p>
+<p>Note o erro sendo reduzido a cada treinamento.</p>
 
 <pre><code>Erro:    0.0292
 Erro:    0.0058

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C&#43;&#43; on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/c&#43;&#43;/</link>
+    <description>Recent content in C&#43;&#43; on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Feed Forward Neural Network no debian com mlpack</title>
+      <link>https://geraldo.dev/posts/feed-forward-neural-network-no-debian-com-mlpack/</link>
+      <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/feed-forward-neural-network-no-debian-com-mlpack/</guid>
+      <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
+Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
+   Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>
+    </item>
+    
+  </channel>
+</rss>

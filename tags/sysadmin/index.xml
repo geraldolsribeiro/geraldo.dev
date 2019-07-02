@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 22 Oct 2017 11:21:50 -0200</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/sysadmin/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
+      <link>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
+      <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
+      <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
+No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
+# Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+    </item>
     
     <item>
       <title>Como trocar o nome do servidor sem reiniciar</title>

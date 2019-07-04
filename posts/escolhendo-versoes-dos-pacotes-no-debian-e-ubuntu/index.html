@@ -126,10 +126,20 @@ if (!doNotTrack) {
 <p>Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão <code>stable</code> por padrão.</p>
 
 <p>No arquivo <code>/etc/apt/preferences</code> (que deve estar vazio inicialmente) acrescente as seguintes linhas:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Todos os pacotes vem do stable por padrão</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Arquivo: /etc/apt/preferences</span>
+
+<span style="color:#75715e"># Todos os pacotes vem do stable por padrão</span>
 Package: *
 Pin: release a<span style="color:#f92672">=</span>stable
-Pin-Priority: <span style="color:#ae81ff">1001</span></code></pre></div>
+Pin-Priority: <span style="color:#ae81ff">1001</span>
+
+Package: *
+Pin: release a<span style="color:#f92672">=</span>testing
+Pin-Priority: <span style="color:#ae81ff">650</span>
+
+Package: *
+Pin: release a<span style="color:#f92672">=</span>unstable
+Pin-Priority: <span style="color:#ae81ff">600</span></code></pre></div>
 <p>O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o <code>stable</code>.</p>
 
 <p>Agora que já definimos uma REGRA GERAL podemos começar a definir as exceções à regra.</p>
@@ -164,9 +174,47 @@ apt-get upgrade
 apt-get dist-upgrade</code></pre></div>
 <p>Note que alguns pacotes podem sofrer downgrade nesta atualização.</p>
 
-<p><p>Só para conferir que a versão escolhida foi realmente instalada:</p>
+<p>Só para conferir que a versão escolhida foi realmente instalada:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ dpkg -l | grep hugo
-ii  hugo 0.55.6+really0.54.0-1 amd64 Fast and flexible Static Site Generator written in Go</code></pre></div></p>
+ii  hugo 0.55.6+really0.54.0-1 amd64 Fast and flexible Static Site Generator written in Go</code></pre></div>
+<h2 id="entendendo-os-valores-das-prioridades">Entendendo os valores das prioridades</h2>
+
+<h3 id="p-1000">P &gt; 1000</h3>
+
+<p>Instala mesmo que precise baixar a versão de algum pacote já instalado.
+Somente prioridades acima de 1000 permitem downgrade.</p>
+
+<h3 id="990-p-1000">990 &lt; P &lt;= 1000</h3>
+
+<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).
+Não permite downgrade de pacote instalado.</p>
+
+<h3 id="500-p-990">500 &lt; P &lt;= 990</h3>
+
+<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).</p>
+
+<h3 id="100-p-500">100 &lt; P &lt;= 500</h3>
+
+<p>Utilizado como predefinição para os arquivos NotAutomatic e ButAutomaticUpgrades</p>
+
+<p>Instala a menos que exista uma versão disponível em outra distribuição ou se a versão instalada for mais recente.</p>
+
+<blockquote>
+<p>causes a version to be installed unless there is a version available
+belonging to some other distribution or the installed version is more recent</p>
+</blockquote>
+
+<h3 id="0-p-100">0 &lt; P &lt;= 100</h3>
+
+<p>Instala somente se não possuir versão instalada do pacote.</p>
+
+<h3 id="p-1">P == 1</h3>
+
+<p>Valor padrão para NotAutomatic</p>
+
+<h3 id="p-0">P &lt; 0</h3>
+
+<p>Nunca instala o pacote mesmo que o pacote seja recomendado.</p>
 
 
         

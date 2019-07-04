@@ -146,6 +146,8 @@ Pin-Priority: <span style="color:#ae81ff">600</span></code></pre></div>
 
 <h2 id="parte-2-exceções-à-regra-geral">Parte 2 - Exceções à regra geral</h2>
 
+<h3 id="por-target">Por target</h3>
+
 <p>Para exemplo vamos escolher o pacote <code>hugo</code> para este post.
 Você pode usar este mesmo procedimento para qualquer pacote.</p>
 
@@ -166,6 +168,24 @@ Pin: release a<span style="color:#f92672">=</span>testing
 Pin-Priority: <span style="color:#ae81ff">1002</span></code></pre></div>
 <p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p>
 
+<h3 id="por-origem">Por origem</h3>
+
+<p>Ao instalar o pacote <code>nodejs</code> a versão <code>4.8</code> será instalada pois é a mais recente que está no repositório padrão.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install nodejs
+...
+Obter:1 http://ftp.br.debian.org/debian stretch/main amd64 nodejs amd64 <span style="color:#ae81ff">4</span>.8.2~dfsg-1 <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span>.440 kB<span style="color:#f92672">]</span>
+...</code></pre></div>
+<p>Para pegar a versão mais rescente do <code>nodejs</code> diretamente do <code>deb.nodesource.com</code> em vez do repositório padrão do Debian use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/apt/preferences.d/nodejs</span>
+Package: *
+Pin: origin deb.nodesource.com
+Pin-Priority: <span style="color:#ae81ff">1001</span></code></pre></div>
+<p>Então basta executar o comando de instalação novamente para que o pacote seja atualizado para a versão <code>12</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
+apt install nodejs
+...
+Obter:1 https://deb.nodesource.com/node_12.x stretch/main amd64 nodejs amd64 <span style="color:#ae81ff">12</span>.6.0-1nodesource1 <span style="color:#f92672">[</span><span style="color:#ae81ff">16</span>,9 MB<span style="color:#f92672">]</span>
+...</code></pre></div>
 <h2 id="parte-3-upgrade-downgrade">Parte 3 - Upgrade/Downgrade</h2>
 
 <p>Agora que todas as nossas regras já estão definida basta atualizar que os pacotes vão para a versões escolhidas.</p>

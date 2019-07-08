@@ -159,14 +159,16 @@ Você pode usar este mesmo procedimento para qualquer pacote.</p>
 <li>unstable 0.55.6</li>
 </ul>
 
-<p>Crie um arquivo dentro do diretório <code>/etc/apt/preferences.d/</code> com o nome do
+<p><style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&ldquo;Font Awesome 5 Free&rdquo;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&rsquo;\f071&rsquo;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&rsquo;\f05a&rsquo;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&rsquo;\f06a&rsquo;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&rsquo;\f058&rsquo;}.notice.tip{background:#e6f9e6}</style><div class="notice tip" >
+<p class="first notice-title">Dica</p><p>Crie um arquivo dentro do diretório <code>/etc/apt/preferences.d/</code> com o nome do
 pacote que você quer especificar a versão. Pode ser qualquer nome aqui, mas
-usando o nome do pacote fica mais fácil de manter o sistema.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/apt/preferences.d/hugo</span>
+usando o nome do pacote fica mais fácil de manter o sistema.</p></div></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/apt/preferences.d/hugo</span>
 Package: hugo
 Pin: release a<span style="color:#f92672">=</span>testing
 Pin-Priority: <span style="color:#ae81ff">1002</span></code></pre></div>
-<p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p>
+<p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p></p>
 
 <h3 id="por-origem">Por origem</h3>
 

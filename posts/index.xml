@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 10:33:17 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jul 2019 11:33:38 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java 12 no Debian Buster</title>
+      <link>https://geraldo.dev/posts/java-12-no-debian-buster/</link>
+      <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
+      <description> Adicionar repositório.
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+    </item>
     
     <item>
       <title>Nemo como Gerenciador De Arquivos Padrão</title>
@@ -20,7 +30,7 @@
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
       <description> Trocando o Nautilus pelo Nemo no GNOME xdg-mime default nemo.desktop inode/directory \  application/x-gnome-saved-search # desabilita o nautilus gsettings set org.gnome.desktop.background show-desktop-icons false # habilita o nome gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
 Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
-Testando xdg-open $HOME Referências  How to Install and Make Nemo the Default File Manager in Ubuntu  </description>
+Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon.desktop.default-applications.terminal \  exec xfce4-terminal Referências  How to Install and Make Nemo the Default File Manager in Ubuntu  </description>
     </item>
     
     <item>

@@ -6,22 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Posts | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/">
+<title>Java 12 no Debian Buster | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/post/java-12-no-debian-buster/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="23/07/2019">
 
 
 
     <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
 
     <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/posts/" />
+    <meta property="og:url" content="https://geraldo.dev/post/java-12-no-debian-buster/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Posts" />
+    <meta property="og:title" content="Java 12 no Debian Buster" />
 
+
+    <meta property="og:tags" content="java" />
+
+    <meta property="og:tags" content="debian" />
 
 
 
@@ -99,113 +104,23 @@ if (!doNotTrack) {
     
 
     
-    <main>
-      <div class="page container">
+    
 
-        <h1>Tutoriais e Dicas</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt;EOF &gt; /etc/apt/sources.list.d/java-12-debian.list
+</span><span style="color:#e6db74">deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main
+</span><span style="color:#e6db74">deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main
+</span><span style="color:#e6db74">EOF</span>
 
-        <ul class="collection">
-          
-          <li class="collection-item">
-            <span class="post-date">07/2019</span>
-            <a href="https://geraldo.dev/posts/java-12-no-debian-buster/">Java 12 no Debian Buster</a>
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A
+apt-get update
+apt-get install oracle-java12-installer
+apt-get install oracle-java12-set-default</code></pre></div>
+<h2 id="referências">Referências</h2>
 
-            
-            <span class="badge hide-on-med-and-down">java</span>
-            
-            <span class="badge hide-on-med-and-down">debian</span>
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">07/2019</span>
-            <a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/">Nemo como Gerenciador De Arquivos Padrão</a>
+<ul>
+<li><a href="https://tecadmin.net/install-java-non-tls-on-debian/" target="_blank">How to Install Java 12 on Debian 10/9/8 via PPA</a></li>
+</ul>
 
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">07/2019</span>
-            <a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/">Escolhendo versões dos pacotes no Debian/Ubuntu</a>
-
-            
-            <span class="badge hide-on-med-and-down">sysadmin</span>
-            
-            <span class="badge hide-on-med-and-down">linux</span>
-            
-            <span class="badge hide-on-med-and-down">debian</span>
-            
-            <span class="badge hide-on-med-and-down">ubuntu</span>
-            
-            <span class="badge hide-on-med-and-down">hugo</span>
-            
-            <span class="badge hide-on-med-and-down">apt</span>
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">04/2019</span>
-            <a href="https://geraldo.dev/posts/feed-forward-neural-network-no-debian-com-mlpack/">Feed Forward Neural Network no debian com mlpack</a>
-
-            
-            <span class="badge hide-on-med-and-down">ffn</span>
-            
-            <span class="badge hide-on-med-and-down">mlpack</span>
-            
-            <span class="badge hide-on-med-and-down">debian</span>
-            
-            <span class="badge hide-on-med-and-down">apt</span>
-            
-            <span class="badge hide-on-med-and-down">c&#43;&#43;</span>
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">04/2019</span>
-            <a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">Como instalar o flameshot no Debian stretch</a>
-
-            
-            <span class="badge hide-on-med-and-down">backports</span>
-            
-            <span class="badge hide-on-med-and-down">flameshot</span>
-            
-            <span class="badge hide-on-med-and-down">screenshot</span>
-            
-            <span class="badge hide-on-med-and-down">annotation</span>
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">10/2017</span>
-            <a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">Como instalar o tema de ícones Papirus no Debian</a>
-
-            
-            <span class="badge hide-on-med-and-down">debian</span>
-            
-            <span class="badge hide-on-med-and-down">ícones</span>
-            
-          </li>
-          
-          <li class="collection-item">
-            <span class="post-date">10/2017</span>
-            <a href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">Como trocar o nome do servidor sem reiniciar</a>
-
-            
-            <span class="badge hide-on-med-and-down">sysadmin</span>
-            
-            <span class="badge hide-on-med-and-down">linux</span>
-            
-            <span class="badge hide-on-med-and-down">debian</span>
-            
-            <span class="badge hide-on-med-and-down">hostname</span>
-            
-          </li>
-          
-        </ul>
-
-      </div>
-
-    </main>
 
 
     

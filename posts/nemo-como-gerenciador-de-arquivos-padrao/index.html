@@ -6,25 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>A data treatment tool for a satellite thruster test facility | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/">
+<title>Nemo como Gerenciador De Arquivos Padrão | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="03/10/2003">
+    <meta property="article:published_time" content="23/07/2019">
 
 
 
     <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
-<meta property="og:description" content="This work introduces and discusses CATPA (Computer Aided Thruster Performance Analysis), a user friendly data treatment software specially developed for INPE’s Satellite Thruster Test Facility. This facility is a ground-based structure that can emulate the space environment for testing and qualifying satellite thrusters and satellite propulsive loops. A structure like this requires the prompt availability of data treatment tools which must be extensible to encapsulate the particular needs of the customers&hellip;" /><meta property="og:url" content="https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="A data treatment tool for a satellite thruster test facility" />
+    <meta property="og:title" content="Nemo como Gerenciador De Arquivos Padrão" />
 
 
 
 
-<meta name="description" content="This work introduces and discusses CATPA (Computer Aided Thruster Performance Analysis), a user friendly data treatment software specially developed for INPE’s Satellite Thruster Test Facility. This facility is a ground-based structure that can emulate the space environment for testing and qualifying satellite thrusters and satellite propulsive loops. A structure like this requires the prompt availability of data treatment tools which must be extensible to encapsulate the particular needs of the customers&hellip;">
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -100,52 +104,103 @@ if (!doNotTrack) {
       <div class="page container">
 
         
-        <div class="publication-header">
-          <img src="/img/headers/paper_iac_2003.jpg" class="responsive-img">
-        </div>
+
+        <h1>Nemo como Gerenciador De Arquivos Padrão</h1>
+
+        <h2 id="trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default nemo.desktop inode/directory <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  application/x-gnome-saved-search
+<span style="color:#75715e"># desabilita o nautilus</span>
+gsettings set org.gnome.desktop.background show-desktop-icons false
+<span style="color:#75715e"># habilita o nome</span>
+gsettings set org.nemo.desktop             show-desktop-icons true</code></pre></div>
+<h2 id="trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</h2>
+
+<p>Em <strong>Configurações</strong> acesse <strong>Aplicativos preferidos</strong></p>
+
+<p><img src="/img/post-nemo-xfce-01.png" alt="img" /></p>
+
+<p>Abra a aba <strong>Utilitários</strong> e altere para <strong>nemo</strong> em <strong>Gerenciador de Arquivos</strong></p>
+
+<p><img src="/img/post-nemo-xfce-02.png" alt="img" /></p>
+
+<h2 id="testando">Testando</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-open $HOME</code></pre></div>
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="https://itsfoss.com/install-nemo-file-manager-ubuntu/" target="_blank">How to Install and Make Nemo the Default File Manager in Ubuntu</a></li>
+</ul>
+
+
         
 
-        <section>
-          <h1>A data treatment tool for a satellite thruster test facility</h1>
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fnemo-como-gerenciador-de-arquivos-padrao%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
 
-          <p class="publication-abstract">
-            This work introduces and discusses CATPA (Computer Aided Thruster Performance Analysis), a user friendly data treatment software specially developed for INPE’s Satellite Thruster Test Facility. This facility is a ground-based structure that can emulate the space environment for testing and qualifying satellite thrusters and satellite propulsive loops. A structure like this requires the prompt availability of data treatment tools which must be extensible to encapsulate the particular needs of the customers. The original data treatment package supplied by the test bench development team needed a strong work to customize the available features. However several constraints were imposed for us, like: a) support for low amount of data; b) large time slices were required for processing the acquired data; c) poor final output quality; d) specific hardware requirements; e) non portability; f) specific language used for coding the scripts; etc. The CATPA came up to override these constraints and to make the data treatment easier and much more powerful. It uses modern concepts like design patterns and standard template library, making the reuse of code and the rapid application development easier to be reached.
-          </p>
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fnemo-como-gerenciador-de-arquivos-padrao%2f&amp;text=Nemo%20como%20Gerenciador%20De%20Arquivos%20Padr%c3%a3o"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
 
-          
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fnemo-como-gerenciador-de-arquivos-padrao%2f&amp;title=Nemo%20como%20Gerenciador%20De%20Arquivos%20Padr%c3%a3o"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
 
-          <p class="publication-author" itemprop="author" itemtype="http://schema.org/Person">
-            
-            Geraldo Ribeiro, Demétrio Bastos Netto
-            
-          </p>
-        </section>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Nemo%20como%20Gerenciador%20De%20Arquivos%20Padr%c3%a3o&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fnemo-como-gerenciador-de-arquivos-padrao%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
 
-        <section>
-          <p>A seguir um excelente vídeo onde o <strong>Aguinaldo Serra Jr</strong> mostra o <strong>BTSA</strong> (Banco de
-Testes com Simulação de Altitude) onde o CATPA foi desenvolvido
-no começo da década e é utilizado até hoje.</p>
-
-<div class="responsive-video-wrapper-169">
-<iframe width="853" height="480" src="https://www.youtube.com/embed/tLw3cc1Esbc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </ul>
+  <span>Compartilhe!</span>
 </div>
 
-        </section>
 
-        <section>
-          
-            <h2>Download da publicação</h2>
-            <ul class="collection">
-            
-            <li class="collection-item"><a href="https://arc.aiaa.org/doi/10.2514/6.IAC-03-U.P.09"><i class="material-icons">cloud_download</i> https://arc.aiaa.org/doi/10.2514/6.IAC-03-U.P.09</a></li>
-            
-            <li class="collection-item"><a href="http://mtc-m16.sid.inpe.br/col/sid.inpe.br/marciana/2004/01.28.15.42/doc/data.pdf"><i class="material-icons">cloud_download</i> http://mtc-m16.sid.inpe.br/col/sid.inpe.br/marciana/2004/01.28.15.42/doc/data.pdf</a></li>
-            
-            <li class="collection-item"><a href="https://geraldo.dev/papers/IAC-03-U.P.09.pdf%20%28abstract%20only%29"><i class="material-icons">cloud_download</i> https://geraldo.dev/papers/IAC-03-U.P.09.pdf (abstract only)</a></li>
-            
-            </ul>
-          
-        </section>
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt-br";
+};
+</script>
 
       </div>
 

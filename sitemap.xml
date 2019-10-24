@@ -48,22 +48,47 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/debian/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/java/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/java-12-no-debian-buster/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/apt/</loc>
     <lastmod>2019-07-02T00:00:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
     <lastmod>2019-07-02T00:00:00-03:00</lastmod>
   </url>
   
@@ -78,17 +103,7 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/sysadmin/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2019-07-02T00:00:00-03:00</lastmod>
   </url>
   

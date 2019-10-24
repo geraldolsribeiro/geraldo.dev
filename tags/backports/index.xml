@@ -13,16 +13,16 @@
     
     
     <item>
-      <title>Como instalar o flameshot no Debian stable</title>
+      <title>Como instalar o flameshot no Debian stretch</title>
       <link>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
-O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
-Primeiramente vamos acrescentar o repositório backports:
-echo &amp;#34;deb http://deb.debian.org/debian stretch-backports main&amp;#34; \  &amp;gt;&amp;gt; /etc/apt/sources.list.d/backports.list Atualizar a lista de pacotes disponíveis:
-apt update Instalar usando a opção -t stretch-backports para indicar que deve ser utilizado o repositório backports:</description>
+Dica
+Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt intall flameshot.
+ O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
+Primeiramente vamos acrescentar o repositório backports:</description>
     </item>
     
   </channel>

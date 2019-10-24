@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Debian on geraldo.dev</title>
+    <title>debian on geraldo.dev</title>
     <link>https://geraldo.dev/tags/debian/</link>
-    <description>Recent content in Debian on geraldo.dev</description>
+    <description>Recent content in debian on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 11:33:38 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Java 12 no Debian Buster</title>
-      <link>https://geraldo.dev/posts/java-12-no-debian-buster/</link>
-      <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description> Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
-    </item>
     
     <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
@@ -30,7 +20,7 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+# Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>

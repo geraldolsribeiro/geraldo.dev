@@ -7,31 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 11:33:38 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Java 12 no Debian Buster</title>
-      <link>https://geraldo.dev/posts/java-12-no-debian-buster/</link>
-      <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description> Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
-    </item>
-    
-    <item>
-      <title>Nemo como Gerenciador De Arquivos Padrão</title>
-      <link>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</link>
-      <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description> Trocando o Nautilus pelo Nemo no GNOME xdg-mime default nemo.desktop inode/directory \  application/x-gnome-saved-search # desabilita o nautilus gsettings set org.gnome.desktop.background show-desktop-icons false # habilita o nome gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
-Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
-Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon.desktop.default-applications.terminal \  exec xfce4-terminal Referências  How to Install and Make Nemo the Default File Manager in Ubuntu  </description>
-    </item>
     
     <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
@@ -41,7 +20,7 @@ Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+# Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>
@@ -56,15 +35,16 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
     </item>
     
     <item>
-      <title>Como instalar o flameshot no Debian stretch</title>
+      <title>Como instalar o flameshot no Debian stable</title>
       <link>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
-.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
-Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt intall flameshot.
- O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
+O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
+Primeiramente vamos acrescentar o repositório backports:
+echo &amp;#34;deb http://deb.debian.org/debian stretch-backports main&amp;#34; \  &amp;gt;&amp;gt; /etc/apt/sources.list.d/backports.list Atualizar a lista de pacotes disponíveis:
+apt update Instalar usando a opção -t stretch-backports para indicar que deve ser utilizado o repositório backports:</description>
     </item>
     
     <item>

@@ -63,7 +63,7 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
 Dica
-Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt intall flameshot.
+Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
  O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
 Primeiramente vamos acrescentar o repositório backports:</description>
     </item>

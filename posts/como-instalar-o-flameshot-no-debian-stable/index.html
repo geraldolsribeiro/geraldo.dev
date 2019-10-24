@@ -30,6 +30,8 @@
 
     <meta property="og:tags" content="annotation" />
 
+    <meta property="og:tags" content="debian" />
+
 
 
 <meta name="description" content="Screenshots com anotação usando o flameshot">
@@ -129,6 +131,9 @@ if (!doNotTrack) {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/annotation/">annotation</a>
                 </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/debian/">debian</a>
+                </div>
 
 
         <h1>Como instalar o flameshot no Debian stretch</h1>
@@ -138,15 +143,15 @@ if (!doNotTrack) {
 <p><img src="https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif" alt="Demonstração de uso do flameshot" /></p>
 
 <p><style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&ldquo;Font Awesome 5 Free&rdquo;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&rsquo;\f071&rsquo;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&rsquo;\f05a&rsquo;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&rsquo;\f06a&rsquo;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&rsquo;\f058&rsquo;}.notice.tip{background:#e6f9e6}</style><div class="notice tip" >
-<p class="first notice-title">Dica</p><p><strong>Atualização:</strong> Agora que o <strong>Debian 10</strong> foi lançado não é mais necessário recorrer ao <strong>backports</strong>, então basta usar <code>apt intall flameshot</code>.</p></div></p>
+<p class="first notice-title">Dica</p><p><strong>Atualização:</strong> Agora que o <strong>Debian 10</strong> foi lançado não é mais necessário recorrer ao <strong>backports</strong>, então basta usar <code>apt install flameshot</code>.</p></div></p>
 
 <p>O <code>flameshot</code> já está disponível no <code>Debian 10</code>, mas enquanto aguardamos
 a versão nova do Debian ser lançada é preciso utilizar a versão do
 <code>stretch-backports</code>.</p>
 
 <p><p>Primeiramente vamos acrescentar o repositório backports:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main&#34;</span> <span style="color:#ae81ff">\ </span>
-     &gt;&gt; /etc/apt/sources.list.d/backports.list</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main&#34;</span> <span style="color:#ae81ff"><br />
+</span><span style="color:#ae81ff"></span>     &gt;&gt; /etc/apt/sources.list.d/backports.list</code></pre></div>
 <p>Atualizar a lista de pacotes disponíveis:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update</code></pre></div>
 <p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>

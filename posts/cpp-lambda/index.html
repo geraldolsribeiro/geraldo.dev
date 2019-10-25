@@ -6,22 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>c&#43;&#43; | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/c&#43;&#43;/">
+<title>C&#43;&#43; Lambda | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/cpp-lambda/">
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="07/07/2019">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/cpp.jpg" />
 
     <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/c&#43;&#43;/" />
+    <meta property="og:url" content="https://geraldo.dev/posts/cpp-lambda/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="c&#43;&#43;" />
+    <meta property="og:title" content="C&#43;&#43; Lambda" />
 
+
+    <meta property="og:tags" content="c&#43;&#43;" />
+
+    <meta property="og:tags" content="lambda" />
 
 
 
@@ -99,60 +104,139 @@ if (!doNotTrack) {
     
 
     
-  <div class="container">
-    <h1>Tag c&#43;&#43;</h1>
+    <main>
+      <div class="page container">
 
-    <ul class="collection">
-      
-        <li class="collection-item">
-          <span class="post-date">07/2019</span>
-          <a href="/posts/cpp-lambda/">C&#43;&#43; Lambda</a>
-          
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/c&#43;&#43;">c&#43;&#43;</a>
-              </span>
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/lambda">lambda</a>
-              </span>
-            
+        
+        <div class="project-header center-align">
+          <img src="img/headers/cpp.jpg" class="responsive-img">
+        </div>
+        
 
-
-        </li>
-      
-        <li class="collection-item">
-          <span class="post-date">04/2019</span>
-          <a href="/posts/feed-forward-neural-network-no-debian-com-mlpack/">Feed Forward Neural Network no debian com mlpack</a>
-          
+        
+        
+        
             
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/ffn">ffn</a>
-              </span>
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/mlpack">mlpack</a>
-              </span>
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/debian">debian</a>
-              </span>
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/apt">apt</a>
-              </span>
-            
-              <span class="badge hide-on-med-and-down">
-              <a href="tags/c&#43;&#43;">c&#43;&#43;</a>
-              </span>
-            
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">c&#43;&#43;</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/lambda/">lambda</a>
+                </div>
 
 
-        </li>
-      
-    </ul>
+        <h1>C&#43;&#43; Lambda</h1>
 
-  </div>
+        <h2 id="funções-de-primeira-classe">Funções de primeira classe</h2>
+
+<p>Em programação funcional funções são <strong>cidadães de primeira classe</strong>, o que
+significa que elas se comportam com dados e suportam quaisquer operações que
+a linguagem permita.</p>
+
+<p>Algumas características das funções de primeira classe são:</p>
+
+<ul>
+<li>atribuir uma função a uma variável</li>
+<li>passar uma função como parâmetro para outra função</li>
+<li>retornar a função como valor de outra função</li>
+<li>armazenar a função em uma estrutura de dados</li>
+</ul>
+
+<h2 id="lambdas">Lambdas</h2>
+
+<p>Lambdas são funções anônimas (sem um nome) definidas <em>in-place</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//  1   2                           3                               4
+</span><span style="color:#75715e"></span>   [ ] ( ) { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Hello from C++ Lambda!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; } ( );
+</code></pre></div>
+<p>Vamos ver o que cada grupo significa:</p>
+
+<ul>
+<li>1 <code>[]</code> <code>lambda introducer</code> ou <code>lambda closure</code></li>
+<li>2 <code>()</code> lista de parâmetros (você pode omitir estes parêntes se a função não receber parâmetros).</li>
+<li>3 <code>{}</code> corpo da função lambda</li>
+<li>4 <code>()</code> executa a função</li>
+</ul>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus" target="_blank">Functional Programming in C++</a></li>
+<li><a href="https://medium.com/@angelorubin/javascript-first-class-function-fun%C3%A7%C3%B5es-de-primeira-classe-7ebf63d2c83a" target="_blank">Programação Funcional em Javascript — First-Class Function (Funções de Primeira Classe)</a></li>
+</ul>
+
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-lambda%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-lambda%2f&amp;text=C%2b%2b%20Lambda"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-lambda%2f&amp;title=C%2b%2b%20Lambda"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=C%2b%2b%20Lambda&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-lambda%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt-br";
+};
+</script>
+
+      </div>
+
+    </main>
 
 
     

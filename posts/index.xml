@@ -34,6 +34,17 @@ Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon
     </item>
     
     <item>
+      <title>C&#43;&#43; Lambda</title>
+      <link>https://geraldo.dev/posts/cpp-lambda/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-lambda/</guid>
+      <description>Funções de primeira classe Em programação funcional funções são cidadães de primeira classe, o que significa que elas se comportam com dados e suportam quaisquer operações que a linguagem permita.
+Algumas características das funções de primeira classe são:
+ atribuir uma função a uma variável passar uma função como parâmetro para outra função retornar a função como valor de outra função armazenar a função em uma estrutura de dados  Lambdas Lambdas são funções anônimas (sem um nome) definidas in-place.</description>
+    </item>
+    
+    <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
       <link>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>

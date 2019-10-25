@@ -83,6 +83,21 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2019-07-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/cpp-lambda/</loc>
+    <lastmod>2019-07-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/lambda/</loc>
+    <lastmod>2019-07-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/apt/</loc>
     <lastmod>2019-07-02T00:00:00-03:00</lastmod>
   </url>
@@ -110,11 +125,6 @@
   <url>
     <loc>https://geraldo.dev/tags/ubuntu/</loc>
     <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>

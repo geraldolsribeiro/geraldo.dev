@@ -48,17 +48,42 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+    <loc>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gif/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gnuplot/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/debian/</loc>
     <lastmod>2019-07-23T11:33:38-03:00</lastmod>
   </url>
   
@@ -69,11 +94,6 @@
   
   <url>
     <loc>https://geraldo.dev/posts/java-12-no-debian-buster/</loc>
-    <lastmod>2019-07-23T11:33:38-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2019-07-23T11:33:38-03:00</lastmod>
   </url>
   
@@ -248,10 +268,6 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</loc>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/projects/cafe-pre-pago/</loc>
   </url>
   
@@ -260,19 +276,7 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</loc>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/projects/dferias/</loc>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gif/</loc>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gnuplot/</loc>
   </url>
   
   <url>

@@ -7,6 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/anima%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +15,7 @@
     <item>
       <title>Criando um gif animado com o gnuplot</title>
       <link>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.

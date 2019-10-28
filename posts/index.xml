@@ -105,5 +105,16 @@ Nota: O procedimento que veremos a seguir vale para as distribuições Linux der
 O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é o /etc/hostname, então basta trocar seu conteúdo que no próximo boot a máquina terá outro nome.</description>
     </item>
     
+    <item>
+      <title>Criando um gif animado com o gnuplot</title>
+      <link>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
+      <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
+O segredo está no em configurar a saída para gif animate no comando set term.
+# Uma animação simples de um sen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 # quantidade de frames a serem gerados dt=2*pi/n set xrange [0:4*pi] i=0 # contador load &amp;#34;animate.</description>
+    </item>
+    
   </channel>
 </rss>

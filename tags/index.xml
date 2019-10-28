@@ -174,5 +174,32 @@
       <description>Here is a list of all the content that has been tagged as academic.</description>
     </item>
     
+    <item>
+      <title>animação</title>
+      <link>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gif</title>
+      <link>https://geraldo.dev/tags/gif/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/gif/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gnuplot</title>
+      <link>https://geraldo.dev/tags/gnuplot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/gnuplot/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

@@ -16,7 +16,7 @@
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+    <meta property="og:image" content="https://geraldo.dev//img/headers/filemanager.jpg" />
 
     <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
     <meta property="og:url" content="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/" />
@@ -71,9 +71,9 @@ if (!doNotTrack) {
             
 <li><a href="/">Home</a></li>
 
-<li><a href="/posts">Tutoriais</a></li>
+<li><a href="/posts">Posts</a></li>
 
-<li><a href="/publications">Publicações</a></li>
+<li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
 
@@ -86,9 +86,9 @@ if (!doNotTrack) {
   
 <li><a href="/">Home</a></li>
 
-<li><a href="/posts">Tutoriais</a></li>
+<li><a href="/posts">Posts</a></li>
 
-<li><a href="/publications">Publicações</a></li>
+<li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
 
@@ -104,6 +104,10 @@ if (!doNotTrack) {
       <div class="page container">
 
         
+        <div class="project-header center-align">
+          <img src="/img/headers/filemanager.jpg" class="responsive-img">
+        </div>
+        
 
         
         
@@ -113,12 +117,13 @@ if (!doNotTrack) {
         <h1>Nemo como Gerenciador De Arquivos Padrão</h1>
 
         <h2 id="trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default nemo.desktop inode/directory <span style="color:#ae81ff">\
-</span><span style="color:#ae81ff"></span>  application/x-gnome-saved-search
-<span style="color:#75715e"># desabilita o nautilus</span>
-gsettings set org.gnome.desktop.background show-desktop-icons false
-<span style="color:#75715e"># habilita o nome</span>
-gsettings set org.nemo.desktop             show-desktop-icons true</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nemo.desktop inode/directory <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  application/x-gnome-saved-search</code></pre></div>
+<p>Desabilitando o Nautilus</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.gnome.desktop.background show-desktop-icons false</code></pre></div>
+<p>Habilitando o Nemo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.nemo.desktop show-desktop-icons true</code></pre></div>
 <h2 id="trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</h2>
 
 <p>Em <strong>Configurações</strong> acesse <strong>Aplicativos preferidos</strong></p>

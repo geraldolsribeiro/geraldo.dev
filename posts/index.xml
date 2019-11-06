@@ -93,6 +93,15 @@ Primeiramente vamos acrescentar o repositório backports:</description>
     </item>
     
     <item>
+      <title>Bloqueando a Sessão com Light Locker</title>
+      <link>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</link>
+      <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
+      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
+    </item>
+    
+    <item>
       <title>Como instalar o tema de ícones Papirus no Debian</title>
       <link>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</link>
       <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>

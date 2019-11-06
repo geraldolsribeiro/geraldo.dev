@@ -98,7 +98,32 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/file-manager/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gnome/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nautilus/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nemo/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/xfce/</loc>
     <lastmod>2019-07-23T10:33:17-03:00</lastmod>
   </url>
   
@@ -185,6 +210,21 @@
   <url>
     <loc>https://geraldo.dev/tags/screenshot/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</loc>
+    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/locker/</loc>
+    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/screensaver/</loc>
+    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
   </url>
   
   <url>

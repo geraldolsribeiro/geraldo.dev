@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim args on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/vim-args/</link>
+    <description>Recent content in vim args on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/vim-args/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Vim args, argdo</title>
+      <link>https://geraldo.dev/posts/vim-argdo/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-argdo/</guid>
+      <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
+Carregamento de arquivos por condição Carregar todos os arquivos md.
+:args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
+:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -227,11 +227,10 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-argdo/</guid>
-      <description>Carregar arquivos Carregar todos os arquivos md.
-:args `find . -name &#39;*&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
-:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.
-Operar nos arquivos carregados Vai executar o comando em cada arquivo aberto!
-:argdo %s/Apple/Orange/gc  TAG: vim TAG: ninja</description>
+      <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
+Carregamento de arquivos por condição Carregar todos os arquivos md.
+:args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
+:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
     </item>
     
     <item>

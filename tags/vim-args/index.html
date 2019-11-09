@@ -6,29 +6,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Vim args, argdo | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/vim-argdo/">
+<title>vim args | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/tags/vim-args/">
 <meta name="generator" content="Hugo 0.57.2" />
 
 
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="19/11/2018">
+    <meta property="og:type" content="website" />
 
 
 
-    <meta property="og:image" content="https://geraldo.dev//img/headers/vim.png" />
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
 
     <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/posts/vim-argdo/" />
+    <meta property="og:url" content="https://geraldo.dev/tags/vim-args/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Vim args, argdo" />
+    <meta property="og:title" content="vim args" />
 
-
-    <meta property="og:tags" content="vim" />
-
-    <meta property="og:tags" content="vim args" />
-
-    <meta property="og:tags" content="vim argdo" />
 
 
 
@@ -106,125 +99,35 @@ if (!doNotTrack) {
     
 
     
-    <main>
-      <div class="page container">
+  <div class="container">
+    <h1>Artigos marcados com vim args</h1>
 
-        
-        <div class="project-header center-align">
-          <img src="/img/headers/vim.png" class="responsive-img">
-        </div>
-        
-
-        
-        
-        
+    <ul class="collection">
+      
+        <li class="collection-item">
+          <span class="post-date">11/2018</span>
+          <a href="/posts/vim-argdo/">Vim args, argdo</a>
+          
             
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/vim/">vim</a>
-                </div>
-              
-              
+              <span class="badge hide-on-med-and-down">
+              <a href="tags/vim">vim</a>
+              </span>
+            
+              <span class="badge hide-on-med-and-down">
+              <a href="tags/vim-args">vim args</a>
+              </span>
+            
+              <span class="badge hide-on-med-and-down">
+              <a href="tags/vim-argdo">vim argdo</a>
+              </span>
+            
 
 
-        <h1>Vim args, argdo</h1>
+        </li>
+      
+    </ul>
 
-        <p>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de
-arquivos para realizar uma refatoração ou realizar modificações em lote.</p>
-
-<h2 id="carregamento-de-arquivos-por-condição">Carregamento de arquivos por condição</h2>
-
-<p>Carregar todos os arquivos <code>md</code>.</p>
-
-<pre><code>:args `find . -name '*.md'`
-</code></pre>
-
-<p>Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra <code>Apple</code>.</p>
-
-<pre><code>:args `git grep -l Apple`
-</code></pre>
-
-<p>o <code>-l</code> do <code>git-grep</code> faz listar somente os arquivos sem o texto que faz match.</p>
-
-<h2 id="operar-nos-arquivos-carregados">Operar nos arquivos carregados</h2>
-
-<p>Vai executar o <code>comando</code> em cada arquivo aberto!</p>
-
-<pre><code>:argdo %s/Apple/Orange/gc
-</code></pre>
-
-
-        
-
-<div class="share-box center-align" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-argdo%2f"
-        aria-label="share on Facebook"
-        target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-facebook"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-argdo%2f&amp;text=Vim%20args%2c%20argdo"
-         target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-twitter"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-argdo%2f&amp;title=Vim%20args%2c%20argdo"
-         target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-linkedin"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="email"
-         href="mailto:?subject=Vim%20args%2c%20argdo&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-argdo%2f">
-        <span class="mdi mdi-48px mdi-email"></span>
-      </a>
-    </li>
-
-  </ul>
-  <span>Compartilhe!</span>
-</div>
-
-
-
-
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        <script>
-var disqus_config = function () {
-  this.language = "pt-br";
-};
-</script>
-
-      </div>
-
-    </main>
+  </div>
 
 
     

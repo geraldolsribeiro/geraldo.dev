@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vim argdo on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/vim-argdo/</link>
-    <description>Recent content in vim argdo on geraldo.dev</description>
+    <title>Args on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/args/</link>
+    <description>Recent content in Args on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Mon, 19 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/vim-argdo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/args/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

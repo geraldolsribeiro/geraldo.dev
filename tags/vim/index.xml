@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vim on geraldo.dev</title>
+    <title>vim on geraldo.dev</title>
     <link>https://geraldo.dev/tags/vim/</link>
-    <description>Recent content in Vim on geraldo.dev</description>
+    <description>Recent content in vim on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
@@ -107,27 +107,6 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
     </item>
     
     <item>
-      <title>VIM single instance</title>
-      <link>https://geraldo.dev/posts/vim-single-instance/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
-      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
-    </item>
-    
-    <item>
-      <title>Vim Spell Checking</title>
-      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
-Switching on spell-checking We can switch on spell checking with this command:
-:setlocal spell  We can also specify the language:
-:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
-    </item>
-    
-    <item>
       <title>Vim args, argdo</title>
       <link>https://geraldo.dev/posts/vim-argdo/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
@@ -173,7 +152,8 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-slow/</guid>
-      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
+      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html
+:set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256  </description>
     </item>
     
     <item>
@@ -195,6 +175,36 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     </item>
     
     <item>
+      <title>VIM single instance</title>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
+      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
+    </item>
+    
+    <item>
+      <title>Vim Spell Checking</title>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
+Switching on spell-checking We can switch on spell checking with this command:
+:setlocal spell  We can also specify the language:
+:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
+    </item>
+    
+    <item>
+      <title>vim-livro-noob-gratis.md</title>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
+      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
+    </item>
+    
+    <item>
       <title>Vim: Auto completar especial</title>
       <link>https://geraldo.dev/posts/vim-special-auto-complete/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
@@ -212,15 +222,6 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       
       <guid>https://geraldo.dev/posts/vim-webvim/</guid>
       <description>TODO: Estudar webvim https://github.com/vim-dist/webvim</description>
-    </item>
-    
-    <item>
-      <title>vim-livro-noob-gratis.md</title>
-      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
-      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
     </item>
     
   </channel>

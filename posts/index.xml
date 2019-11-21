@@ -84,8 +84,8 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <description> Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
 gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
 gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
-Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
-Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon.desktop.default-applications.terminal \  exec xfce4-terminal Referências  How to Install and Make Nemo the Default File Manager in Ubuntu  </description>
+ Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
+ Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.cinnamon.desktop.default-applications.terminal \  exec xfce4-terminal Referências  How to Install and Make Nemo the Default File Manager in Ubuntu  </description>
     </item>
     
     <item>
@@ -150,7 +150,7 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
-Dica
+ Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
  O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
 Primeiramente vamos acrescentar o repositório backports:</description>

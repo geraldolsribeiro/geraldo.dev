@@ -227,12 +227,16 @@ Pin-Priority: 1002</code></pre></div>
 
 <p>Olhando nosso conjunto de dados de cima podemos ver claramente duas curvas, uma para cada conjunto.</p>
 
-<p><img src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento" /></p>
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento">
+  </div></p>
 
 <p>Para facilitar a visualização, o primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na
 animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</p>
 
-<p><img src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento" /></p>
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento">
+  </div></p>
 
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
 aleatório para não favorecer ou influenciar o treinamento. São ao todo 400
@@ -285,7 +289,9 @@ registros são entrados por linha e para processamento são tratados em colunas.
 </span></code></pre></div>
 <p>A matriz de dados foi carregada e precisa ser dividida entre dados de treinamento e dados de teste.</p>
 
-<p><img src="/img/mlpack-data.svg#center" alt="Dados depois de carregados" /></p>
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/mlpack-data.svg#center" alt="Dados depois de carregados">
+  </div></p>
 
 <p>É muito importante que o modelo nunca veja os dados de teste para que se tenha
 uma boa generalização.</p>
@@ -351,8 +357,11 @@ Dados de saída para teste:
 
 <h3 id="construindo-a-rede-neural">Construindo a rede neural</h3>
 
-<p><img src="/img/mlpack-ffn.svg#center" alt="img" /></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// Feed Forward Network
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/mlpack-ffn.svg#center" alt="img">
+  </div></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// Feed Forward Network
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// FFN&lt;tipo-de-saída-das-camadas, regra-de-inicialização&gt; model;
 </span><span style="color:#75715e"></span>  FFN<span style="color:#f92672">&lt;</span>MeanSquaredError<span style="color:#f92672">&lt;&gt;</span>, RandomInitialization<span style="color:#f92672">&gt;</span> model;
   <span style="color:#75715e">// Adiciona camada com 2 entradas e 8 saídas
@@ -365,7 +374,7 @@ Dados de saída para teste:
 </span><span style="color:#75715e"></span>  model.Add<span style="color:#f92672">&lt;</span>Linear<span style="color:#f92672">&lt;&gt;&gt;</span>( <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">1</span> );
   model.Add<span style="color:#f92672">&lt;</span>SigmoidLayer<span style="color:#f92672">&lt;&gt;&gt;</span>();
 </code></pre></div>
-<h3 id="treinamento">Treinamento</h3>
+<h3 id="treinamento">Treinamento</h3></p>
 
 <p>A partir da inicialização aleatória dos pesos da conexões inicia-se o treinamento.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; <span style="color:#f92672">++</span>i ) {

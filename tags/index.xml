@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 17 Nov 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,18 @@
     <item>
       <title>debian</title>
       <link>https://geraldo.dev/tags/debian/</link>
-      <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>touchpad</title>
+      <link>https://geraldo.dev/tags/touchpad/</link>
+      <pubDate>Sat, 23 Nov 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/touchpad/</guid>
       <description></description>
     </item>
     

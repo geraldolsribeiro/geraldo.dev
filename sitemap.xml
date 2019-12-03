@@ -48,32 +48,47 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/debian/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/swap/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/</loc>
+    <lastmod>2019-11-23T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/touchpad/</loc>
+    <lastmod>2019-11-23T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/firewall/</loc>
     <lastmod>2019-11-17T00:00:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/firewall/</loc>
-    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2019-11-17T00:00:00-03:00</lastmod>
   </url>
   

@@ -18,7 +18,8 @@
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/preact/</guid>
-      <description> Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Referências  Preact https://preactjs.com/guide/getting-started https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/ https://github.com/developit/preact-without-babel https://blog.moove-it.com/getting-started-preact-progressive-web-apps/ https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/ http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome https://project-awesome.org/ooade/awesome-preact  </description>
+      <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
     </item>
     
     <item>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Mon, 02 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>javascript</title>
+      <link>https://geraldo.dev/tags/javascript/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/javascript/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>debian</title>
@@ -117,15 +126,6 @@
       <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/console/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>javascript</title>
-      <link>https://geraldo.dev/tags/javascript/</link>
-      <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/javascript/</guid>
       <description></description>
     </item>
     

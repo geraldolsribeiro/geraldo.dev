@@ -48,27 +48,37 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/javascript/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/js-set/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/posts/swap/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
@@ -149,11 +159,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/console/</loc>
-    <lastmod>2019-11-06T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/javascript/</loc>
     <lastmod>2019-11-06T00:00:00-03:00</lastmod>
   </url>
   
@@ -567,10 +572,6 @@
   
   <url>
     <loc>https://geraldo.dev/projects/dferias/</loc>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/js-set/</loc>
   </url>
   
   <url>

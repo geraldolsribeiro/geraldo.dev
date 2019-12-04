@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>javascript set</title>
+      <link>https://geraldo.dev/posts/js-set/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/js-set/</guid>
+      <description>https://alligator.io/js/sets-introduction/
+let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(`Hey ${animal}!`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿!  animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log(animal); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
+    </item>
     
     <item>
       <title>Javascript - console.dir</title>

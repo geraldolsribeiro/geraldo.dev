@@ -185,9 +185,10 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
- .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
+ Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
- O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
+ O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
+Primeiramente vamos acrescentar o repositório backports:</description>
     </item>
     
     <item>
@@ -276,27 +277,6 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
     </item>
     
     <item>
-      <title>VIM single instance</title>
-      <link>https://geraldo.dev/posts/vim-single-instance/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
-      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
-    </item>
-    
-    <item>
-      <title>Vim Spell Checking</title>
-      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
-Switching on spell-checking We can switch on spell checking with this command:
-:setlocal spell  We can also specify the language:
-:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
-    </item>
-    
-    <item>
       <title>Vim args, argdo</title>
       <link>https://geraldo.dev/posts/vim-argdo/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
@@ -342,7 +322,8 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-slow/</guid>
-      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
+      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html
+:set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256  </description>
     </item>
     
     <item>
@@ -364,6 +345,36 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     </item>
     
     <item>
+      <title>VIM single instance</title>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
+      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
+    </item>
+    
+    <item>
+      <title>Vim Spell Checking</title>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
+Switching on spell-checking We can switch on spell checking with this command:
+:setlocal spell  We can also specify the language:
+:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
+    </item>
+    
+    <item>
+      <title>vim-livro-noob-gratis.md</title>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
+      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
+    </item>
+    
+    <item>
       <title>Vim: Auto completar especial</title>
       <link>https://geraldo.dev/posts/vim-special-auto-complete/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
@@ -381,15 +392,6 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       
       <guid>https://geraldo.dev/posts/vim-webvim/</guid>
       <description>TODO: Estudar webvim https://github.com/vim-dist/webvim</description>
-    </item>
-    
-    <item>
-      <title>vim-livro-noob-gratis.md</title>
-      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
-      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
     </item>
     
     <item>
@@ -454,6 +456,16 @@ O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
  About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
+    </item>
+    
+    <item>
+      <title>js-set</title>
+      <link>https://geraldo.dev/posts/js-set/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/js-set/</guid>
+      <description>https://alligator.io/js/sets-introduction/
+let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(`Hey ${animal}!`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿!  animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log(animal); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
     </item>
     
   </channel>

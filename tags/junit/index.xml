@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>junit on geraldo.dev</title>
+    <title>Junit on geraldo.dev</title>
     <link>https://geraldo.dev/tags/junit/</link>
-    <description>Recent content in junit on geraldo.dev</description>
+    <description>Recent content in Junit on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>

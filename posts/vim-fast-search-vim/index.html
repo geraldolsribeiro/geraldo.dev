@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Fast Search in Vim | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-fast-search-vim/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -122,10 +122,64 @@ if (!doNotTrack) {
 
         <h1>Fast Search in Vim</h1>
 
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Projects can be searched for specific text within Vim:</p>
+
+<pre><code>:grep sometext
+</code></pre>
+
+<p>Can we <code>grep</code> faster?</p>
+
+<h2 id="override-to-use-the-silver-searcher">Override to use The Silver Searcher</h2>
+
+<p><code>grep</code> is a built-in command of Vim.
+By default, it will use the system&rsquo;s <code>grep</code> command.
+We can overwrite it to use
+<a href="https://github.com/ggreer/the_silver_searcher" target="_blank">The Silver Searcher</a>&rsquo;s
+<code>ag</code> command by putting this in
+<a href="https://github.com/statusok/statusok/blob/master/dotfiles/editor/vimrc" target="_blank">our <code>~/.vimrc</code></a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; The Silver Searcher</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">executable</span>(<span style="color:#e6db74">&#39;ag&#39;</span>)<span style="color:#75715e">
+</span><span style="color:#75715e">  &#34; Use ag over grep</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#a6e22e">set</span> <span style="color:#a6e22e">grepprg</span>=<span style="color:#a6e22e">ag</span>\ --<span style="color:#a6e22e">nogroup</span>\ --<span style="color:#a6e22e">nocolor</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  &#34; Use ag in CtrlP for listing files. Lightning fast and respects .gitignore</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ctrlp_user_command</span> = <span style="color:#e6db74">&#39;ag %s -l --nocolor -g &#34;&#34;&#39;</span><span style="color:#75715e">
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">  &#34; ag is fast enough that CtrlP doesn&#39;t need to cache</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">g</span>:<span style="color:#a6e22e">ctrlp_use_caching</span> = <span style="color:#ae81ff">0</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">endif</span></code></pre></div>
+<h2 id="search-for-the-word-under-the-cursor">Search for the word under the cursor</h2>
+
+<p>This searches for the text under the cursor
+and shows the results in a &ldquo;quickfix&rdquo; window:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; bind K to grep word under cursor</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">nnoremap</span> <span style="color:#a6e22e">K</span> :<span style="color:#a6e22e">grep</span>!<span style="color:#75715e"> &#34;\b&lt;C-R&gt;&lt;C-W&gt;\b&#34;&lt;CR&gt;:cw&lt;CR&gt;</span></code></pre></div>
+<p>It looks like this when <code>K</code> is typed with the cursor over <code>SubscriptionMailer</code>:</p>
+
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="images/quickfix-under-cursor.webp" alt="&#39;&#39;">
+  </div></p>
+
+<p>Cursor over each search result, hit <code>Enter</code>, and the file will be opened.</p>
+
+<h2 id="using-ag-arguments">Using <code>ag</code> arguments</h2>
+
+<p>This defines a new command <code>Ag</code> to search for the provided text
+and open a &ldquo;quickfix&rdquo; window:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#75715e">&#34; bind \ (backward slash) to grep shortcut</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">command</span> -<span style="color:#a6e22e">nargs</span>=+ -<span style="color:#a6e22e">complete</span>=<span style="color:#a6e22e">file</span> -<span style="color:#a6e22e">bar</span> <span style="color:#a6e22e">Ag</span> <span style="color:#a6e22e">silent</span>! <span style="color:#a6e22e">grep</span>! &lt;<span style="color:#a6e22e">args</span>&gt;|<span style="color:#a6e22e">cwindow</span>|<span style="color:#a6e22e">redraw</span>!</code></pre></div>
+<p>Map it to any character, such as <code>\</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">nnoremap</span> \ :<span style="color:#a6e22e">Ag</span>&lt;<span style="color:#a6e22e">SPACE</span>&gt;</code></pre></div>
+<p>When <code>\</code> is pressed, Vim waits for input:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">Ag</span></code></pre></div>
+<p>Standard <code>ag</code> arguments may be passed in at this point:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim">:<span style="color:#a6e22e">Ag</span> -<span style="color:#a6e22e">i</span> <span style="color:#a6e22e">Stripe</span> <span style="color:#a6e22e">app</span>/<span style="color:#a6e22e">models</span></code></pre></div>
+<p>Hitting <code>Enter</code> results in:</p>
+
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="images/quickfix-custom-command.webp" alt="&#39;&#39;">
+  </div></p>
+
 
         
 
@@ -340,7 +394,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

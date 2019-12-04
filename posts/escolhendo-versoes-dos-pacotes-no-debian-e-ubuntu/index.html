@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Escolhendo versões dos pacotes no Debian/Ubuntu | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -60,8 +60,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -145,20 +145,122 @@ if (!doNotTrack) {
 
         <h1>Escolhendo versões dos pacotes no Debian/Ubuntu</h1>
 
-        <!-- raw HTML omitted -->
-<p><!-- raw HTML omitted --># Todos os pacotes vem do stable por padrão<!-- raw HTML omitted -->
+        <h2 id="parte-1-regra-geral">Parte 1 - Regra geral</h2>
+
+<p>Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão <code>stable</code> por padrão.</p>
+
+<p>No arquivo <code>/etc/apt/preferences</code> (que deve estar vazio inicialmente) acrescente as seguintes linhas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Arquivo: /etc/apt/preferences</span>
+
+<span style="color:#75715e"># Todos os pacotes vem do stable por padrão</span>
 Package: *
-Pin: release a<!-- raw HTML omitted -->=<!-- raw HTML omitted -->stable
-Pin-Priority: <!-- raw HTML omitted -->1001<!-- raw HTML omitted --></p>
-<p>Package: *
-Pin: release a<!-- raw HTML omitted -->=<!-- raw HTML omitted -->testing
-Pin-Priority: <!-- raw HTML omitted -->650<!-- raw HTML omitted --></p>
-<p>Package: *
-Pin: release a<!-- raw HTML omitted -->=<!-- raw HTML omitted -->unstable
-Pin-Priority: <!-- raw HTML omitted -->600<!-- raw HTML omitted -->
-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o <!-- raw HTML omitted -->stable<!-- raw HTML omitted -->.<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+Pin: release a<span style="color:#f92672">=</span>stable
+Pin-Priority: <span style="color:#ae81ff">1001</span>
+
+Package: *
+Pin: release a<span style="color:#f92672">=</span>testing
+Pin-Priority: <span style="color:#ae81ff">650</span>
+
+Package: *
+Pin: release a<span style="color:#f92672">=</span>unstable
+Pin-Priority: <span style="color:#ae81ff">600</span></code></pre></div>
+<p>O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o <code>stable</code>.</p>
+
+<p>Agora que já definimos uma REGRA GERAL podemos começar a definir as exceções à regra.</p>
+
+<h2 id="parte-2-exceções-à-regra-geral">Parte 2 - Exceções à regra geral</h2>
+
+<h3 id="por-target">Por target</h3>
+
+<p>Para exemplo vamos escolher o pacote <code>hugo</code> para este post.
+Você pode usar este mesmo procedimento para qualquer pacote.</p>
+
+<p>Se você acessar <a href="https://packages.debian.org/search?keywords=hugo" target="_blank">https://packages.debian.org/search?keywords=hugo</a> encontrará as seguintes versões:</p>
+
+<ul>
+<li>stable 0.18.1</li>
+<li>testing 0.55.6</li>
+<li>unstable 0.55.6</li>
+</ul>
+
+<p><style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&ldquo;Font Awesome 5 Free&rdquo;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&rsquo;\f071&rsquo;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&rsquo;\f05a&rsquo;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&rsquo;\f06a&rsquo;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&rsquo;\f058&rsquo;}.notice.tip{background:#e6f9e6}</style><div class="notice tip" >
+<p class="first notice-title">Dica</p><p>Crie um arquivo dentro do diretório <code>/etc/apt/preferences.d/</code> com o nome do
+pacote que você quer especificar a versão. Pode ser qualquer nome aqui, mas
+usando o nome do pacote fica mais fácil de manter o sistema.</p></div></p>
+
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/apt/preferences.d/hugo</span>
+Package: hugo
+Pin: release a<span style="color:#f92672">=</span>testing
+Pin-Priority: <span style="color:#ae81ff">1002</span></code></pre></div>
+<p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p></p>
+
+<h3 id="por-origem">Por origem</h3>
+
+<p>Ao instalar o pacote <code>nodejs</code> a versão <code>4.8</code> será instalada pois é a mais recente que está no repositório padrão.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install nodejs
+...
+Obter:1 http://ftp.br.debian.org/debian stretch/main amd64 nodejs amd64 <span style="color:#ae81ff">4</span>.8.2~dfsg-1 <span style="color:#f92672">[</span><span style="color:#ae81ff">3</span>.440 kB<span style="color:#f92672">]</span>
+...</code></pre></div>
+<p>Para pegar a versão mais rescente do <code>nodejs</code> diretamente do <code>deb.nodesource.com</code> em vez do repositório padrão do Debian use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># /etc/apt/preferences.d/nodejs</span>
+Package: *
+Pin: origin deb.nodesource.com
+Pin-Priority: <span style="color:#ae81ff">1001</span></code></pre></div>
+<p>Então basta executar o comando de instalação novamente para que o pacote seja atualizado para a versão <code>12</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
+apt install nodejs
+...
+Obter:1 https://deb.nodesource.com/node_12.x stretch/main amd64 nodejs amd64 <span style="color:#ae81ff">12</span>.6.0-1nodesource1 <span style="color:#f92672">[</span><span style="color:#ae81ff">16</span>,9 MB<span style="color:#f92672">]</span>
+...</code></pre></div>
+<h2 id="parte-3-upgrade-downgrade">Parte 3 - Upgrade/Downgrade</h2>
+
+<p>Agora que todas as nossas regras já estão definida basta atualizar que os pacotes vão para a versões escolhidas.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update
+apt-get upgrade
+apt-get dist-upgrade</code></pre></div>
+<p>Note que alguns pacotes podem sofrer downgrade nesta atualização.</p>
+
+<p>Só para conferir que a versão escolhida foi realmente instalada:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">$ dpkg -l | grep hugo
+ii  hugo 0.55.6+really0.54.0-1 amd64 Fast and flexible Static Site Generator written in Go</code></pre></div>
+<h2 id="entendendo-os-valores-das-prioridades">Entendendo os valores das prioridades</h2>
+
+<h3 id="p-1000">P &gt; 1000</h3>
+
+<p>Instala mesmo que precise baixar a versão de algum pacote já instalado.
+Somente prioridades acima de 1000 permitem downgrade.</p>
+
+<h3 id="990-p-1000">990 &lt; P &lt;= 1000</h3>
+
+<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).
+Não permite downgrade de pacote instalado.</p>
+
+<h3 id="500-p-990">500 &lt; P &lt;= 990</h3>
+
+<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).</p>
+
+<h3 id="100-p-500">100 &lt; P &lt;= 500</h3>
+
+<p>Utilizado como predefinição para os arquivos NotAutomatic e ButAutomaticUpgrades</p>
+
+<p>Instala a menos que exista uma versão disponível em outra distribuição ou se a versão instalada for mais recente.</p>
+
+<blockquote>
+<p>causes a version to be installed unless there is a version available
+belonging to some other distribution or the installed version is more recent</p>
+</blockquote>
+
+<h3 id="0-p-100">0 &lt; P &lt;= 100</h3>
+
+<p>Instala somente se não possuir versão instalada do pacote.</p>
+
+<h3 id="p-1">P == 1</h3>
+
+<p>Valor padrão para NotAutomatic</p>
+
+<h3 id="p-0">P &lt; 0</h3>
+
+<p>Nunca instala o pacote mesmo que o pacote seja recomendado.</p>
 
 
         
@@ -374,7 +476,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

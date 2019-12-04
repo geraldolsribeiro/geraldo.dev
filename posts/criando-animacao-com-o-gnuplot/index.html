@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Criando um gif animado com o gnuplot | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -56,8 +56,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -132,9 +132,38 @@ if (!doNotTrack) {
 
         <h1>Criando um gif animado com o gnuplot</h1>
 
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>A partir da versão 4.6 do <a href="http://www.gnuplot.info/" target="_blank">gnuplot</a> está bem mais fácil criar uma animação.
+Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.</p>
+
+<p>O segredo está no em configurar a saída para <code>gif animate</code> no comando <code>set term</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gnuplot" data-lang="gnuplot"><span style="color:#75715e"># Uma animação simples de um sen(x+t)</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">reset</span>
+<span style="color:#66d9ef">set</span> term gif animate
+<span style="color:#66d9ef">set</span> output <span style="color:#e6db74">&#34;animacao_do_seno.gif&#34;</span>
+n<span style="color:#f92672">=</span><span style="color:#ae81ff">24</span>    <span style="color:#75715e"># quantidade de frames a serem gerados</span>
+dt<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">/</span>n
+<span style="color:#66d9ef">set</span> xrange [<span style="color:#ae81ff">0</span><span style="color:#f92672">:</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>pi]
+i<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span> <span style="color:#75715e"># contador</span>
+<span style="color:#66d9ef">load</span> <span style="color:#e6db74">&#34;animate.gnuplot&#34;</span>
+<span style="color:#66d9ef">set</span> output</code></pre></div>
+<p>O arquivo <code>animate.gnuplot</code> contem os comandos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gnuplot" data-lang="gnuplot"><span style="color:#66d9ef">plot</span> <span style="color:#a6e22e">sin</span>(x<span style="color:#f92672">+</span>i<span style="color:#f92672">*</span>dt) w l lt <span style="color:#ae81ff">1</span> lw <span style="color:#ae81ff">1.5</span> title <span style="color:#a6e22e">sprintf</span>(<span style="color:#e6db74">&#34;t=%i&#34;</span><span style="color:#f92672">,</span>i)
+i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">if</span> (i <span style="color:#f92672">&lt;</span> n) <span style="color:#66d9ef">reread</span></code></pre></div>
+<p>Note que este arquivo irá se recarregar mais 23 vezes através do <code>reread</code> para plotar cada um dos 24 frames da animação.</p>
+
+<p>Ao executar o script obteremos a seguinte animação:</p>
+
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/animacao-do-seno.gif" alt="img" width="640" height="480">
+  </div></p>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="http://gnuplot-surprising.blogspot.com/2011/09/creating-gif-animation-using-gnuplot.html" target="_blank">Creating gif animation using gnuplot</a></li>
+</ul>
+
 
         
 
@@ -349,7 +378,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

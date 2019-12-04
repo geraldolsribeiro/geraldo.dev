@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vim on geraldo.dev</title>
+    <title>Vim on geraldo.dev</title>
     <link>https://geraldo.dev/tags/vim/</link>
-    <description>Recent content in vim on geraldo.dev</description>
+    <description>Recent content in Vim on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</guid>
-      <description>:bufdo execute &amp;quot;normal @a&amp;quot; | write Referências  Run a macro in all buffers in vim  </description>
+      <description> :bufdo execute &amp;quot;normal @a&amp;quot; | write  Referências  Run a macro in all buffers in vim  </description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       
       <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
-&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;N número de repetições c caractere ou palavra
+&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt; N número de repetições c caractere ou palavra
 &amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
     </item>
     
@@ -38,7 +38,7 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-compilar-vim-8/</guid>
-      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make </description>
+      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make  </description>
     </item>
     
     <item>
@@ -48,8 +48,8 @@
       
       <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
-:grep sometext Can we grep faster?
-Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
+:grep sometext  Can we grep faster?
+Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
 &amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
@@ -69,7 +69,7 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-formatar-xml/</guid>
-      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format - </description>
+      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format -  </description>
     </item>
     
     <item>
@@ -78,10 +78,10 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-plugins/</guid>
-      <description>Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
+      <description> Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
-Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;Rodar o VundleInstall
+Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39; Rodar o VundleInstall
 Atalhos Acrescentar no .vimrc
 map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
     </item>
@@ -103,7 +103,28 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-substituicao-de-texto-avancada/</guid>
-      <description>Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update  O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update Referências  Search and replace in multiple buffers  </description>
+      <description> Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update   O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update  Referências  Search and replace in multiple buffers  </description>
+    </item>
+    
+    <item>
+      <title>VIM single instance</title>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
+      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
+    </item>
+    
+    <item>
+      <title>Vim Spell Checking</title>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
+Switching on spell-checking We can switch on spell checking with this command:
+:setlocal spell  We can also specify the language:
+:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
     </item>
     
     <item>
@@ -114,8 +135,8 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <guid>https://geraldo.dev/posts/vim-argdo/</guid>
       <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
 Carregamento de arquivos por condição Carregar todos os arquivos md.
-:args `find . -name &#39;*.md&#39;` Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
-:args `git grep -l Apple` o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
+:args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
+:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
     </item>
     
     <item>
@@ -133,7 +154,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-with-python/</guid>
-      <description>apt install vim-nox ou apt install vim-gtk </description>
+      <description>apt install vim-nox ou apt install vim-gtk</description>
     </item>
     
     <item>
@@ -161,46 +182,16 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-abolish/</guid>
-      <description>  https://github.com/tpope/vim-abolish
-  crm - MixedCase
-  crc - camelCase
-  crs - snake_case
-  cru - UPPER_CASE
-  cr- - dash-case
-  cr. - dot.case
-  cr&amp;lt;space&amp;gt; - space case
-  crt - Title Case
+      <description> https://github.com/tpope/vim-abolish
+ crm - MixedCase
+ crc - camelCase
+ crs - snake_case
+ cru - UPPER_CASE
+ cr- - dash-case
+ cr. - dot.case
+ cr&amp;lt;space&amp;gt; - space case
+ crt - Title Case
   </description>
-    </item>
-    
-    <item>
-      <title>VIM single instance</title>
-      <link>https://geraldo.dev/posts/vim-single-instance/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
-      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
-    </item>
-    
-    <item>
-      <title>Vim Spell Checking</title>
-      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&#39;s spell-checking to help us avoid embarrassing mistakes.
-Switching on spell-checking We can switch on spell checking with this command:
-:setlocal spell We can also specify the language:
-:setlocal spell spelllang=en_us What does it look like Here&#39;s a screenshot of what I see as I edit this blog post:</description>
-    </item>
-    
-    <item>
-      <title>vim-livro-noob-gratis.md</title>
-      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
-      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
     </item>
     
     <item>
@@ -221,6 +212,15 @@ Switching on spell-checking We can switch on spell checking with this command:
       
       <guid>https://geraldo.dev/posts/vim-webvim/</guid>
       <description>TODO: Estudar webvim https://github.com/vim-dist/webvim</description>
+    </item>
+    
+    <item>
+      <title>vim-livro-noob-gratis.md</title>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
+      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
     </item>
     
   </channel>

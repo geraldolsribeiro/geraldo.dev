@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hoje eu aprendi que... on geraldo.dev</title>
@@ -54,7 +54,7 @@ gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referên
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
       <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -73,7 +73,7 @@ Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;funç�
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</guid>
-      <description>:bufdo execute &amp;quot;normal @a&amp;quot; | write Referências  Run a macro in all buffers in vim  </description>
+      <description> :bufdo execute &amp;quot;normal @a&amp;quot; | write  Referências  Run a macro in all buffers in vim  </description>
     </item>
     
     <item>
@@ -85,9 +85,8 @@ Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;funç�
       <description>Considere o seguinte página:
 &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
  Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:
-console.log( btn ) &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; Ao enviar a variável btn para a função console.</description>
+var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );  Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
+Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
     </item>
     
     <item>
@@ -98,8 +97,7 @@ console.log( btn ) &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;butt
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
-#Umaanimaçãosimplesdeumsen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 #quantidadedeframesaseremgerados dt=2*pi/n set xrange [0:4*pi] i=0 #contador load &amp;#34;animate.gnuplot&amp;#34; set output O arquivo animate.gnuplot contem os comandos:
-plot sin(x+i*dt) w l lt 1 lw 1.</description>
+# Uma animação simples de um sen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 # quantidade de frames a serem gerados dt=2*pi/n set xrange [0:4*pi] i=0 # contador load &amp;#34;animate.</description>
     </item>
     
     <item>
@@ -108,8 +106,8 @@ plot sin(x+i*dt) w l lt 1 lw 1.</description>
       <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description>Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+      <description> Adicionar repositório.
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -118,7 +116,7 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description>Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
+      <description> Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
 gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
 gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
  Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
@@ -166,7 +164,7 @@ O locais padrão para os arquivos de script são:
       <pubDate>Wed, 15 May 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</guid>
-      <description>Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
+      <description> Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
     </item>
     
     <item>
@@ -187,10 +185,9 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
- Dica
+ .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
- O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.
-Primeiramente vamos acrescentar o repositório backports:</description>
+ O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
     </item>
     
     <item>
@@ -200,7 +197,7 @@ Primeiramente vamos acrescentar o repositório backports:</description>
       
       <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
-&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;N número de repetições c caractere ou palavra
+&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt; N número de repetições c caractere ou palavra
 &amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
     </item>
     
@@ -210,7 +207,7 @@ Primeiramente vamos acrescentar o repositório backports:</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-compilar-vim-8/</guid>
-      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make </description>
+      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make  </description>
     </item>
     
     <item>
@@ -220,8 +217,8 @@ Primeiramente vamos acrescentar o repositório backports:</description>
       
       <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
-:grep sometext Can we grep faster?
-Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
+:grep sometext  Can we grep faster?
+Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
 &amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
@@ -241,7 +238,7 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-formatar-xml/</guid>
-      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format - </description>
+      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format -  </description>
     </item>
     
     <item>
@@ -250,10 +247,10 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-plugins/</guid>
-      <description>Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
+      <description> Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
-Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;Rodar o VundleInstall
+Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39; Rodar o VundleInstall
 Atalhos Acrescentar no .vimrc
 map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
     </item>
@@ -275,7 +272,28 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-substituicao-de-texto-avancada/</guid>
-      <description>Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update  O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update Referências  Search and replace in multiple buffers  </description>
+      <description> Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update   O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update  Referências  Search and replace in multiple buffers  </description>
+    </item>
+    
+    <item>
+      <title>VIM single instance</title>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
+      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
+    </item>
+    
+    <item>
+      <title>Vim Spell Checking</title>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
+Switching on spell-checking We can switch on spell checking with this command:
+:setlocal spell  We can also specify the language:
+:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
     </item>
     
     <item>
@@ -286,8 +304,8 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <guid>https://geraldo.dev/posts/vim-argdo/</guid>
       <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
 Carregamento de arquivos por condição Carregar todos os arquivos md.
-:args `find . -name &#39;*.md&#39;` Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
-:args `git grep -l Apple` o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
+:args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
+:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
     </item>
     
     <item>
@@ -305,7 +323,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-with-python/</guid>
-      <description>apt install vim-nox ou apt install vim-gtk </description>
+      <description>apt install vim-nox ou apt install vim-gtk</description>
     </item>
     
     <item>
@@ -333,46 +351,16 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-abolish/</guid>
-      <description>  https://github.com/tpope/vim-abolish
-  crm - MixedCase
-  crc - camelCase
-  crs - snake_case
-  cru - UPPER_CASE
-  cr- - dash-case
-  cr. - dot.case
-  cr&amp;lt;space&amp;gt; - space case
-  crt - Title Case
+      <description> https://github.com/tpope/vim-abolish
+ crm - MixedCase
+ crc - camelCase
+ crs - snake_case
+ cru - UPPER_CASE
+ cr- - dash-case
+ cr. - dot.case
+ cr&amp;lt;space&amp;gt; - space case
+ crt - Title Case
   </description>
-    </item>
-    
-    <item>
-      <title>VIM single instance</title>
-      <link>https://geraldo.dev/posts/vim-single-instance/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
-      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
-    </item>
-    
-    <item>
-      <title>Vim Spell Checking</title>
-      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&#39;s spell-checking to help us avoid embarrassing mistakes.
-Switching on spell-checking We can switch on spell checking with this command:
-:setlocal spell We can also specify the language:
-:setlocal spell spelllang=en_us What does it look like Here&#39;s a screenshot of what I see as I edit this blog post:</description>
-    </item>
-    
-    <item>
-      <title>vim-livro-noob-gratis.md</title>
-      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
-      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
     </item>
     
     <item>
@@ -396,6 +384,15 @@ Switching on spell-checking We can switch on spell checking with this command:
     </item>
     
     <item>
+      <title>vim-livro-noob-gratis.md</title>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
+      <description>https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html</description>
+    </item>
+    
+    <item>
       <title>Diferenças entre mtime ctime atime</title>
       <link>https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/</link>
       <pubDate>Fri, 17 Nov 2017 10:14:46 -0200</pubDate>
@@ -413,7 +410,7 @@ De maneira muito breve:
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
     </item>
     
     <item>
@@ -456,7 +453,7 @@ O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é
       
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
- About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&#39;t need and customize the parameters of the widgets you wish to keep.</description>
+ About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>
     
   </channel>

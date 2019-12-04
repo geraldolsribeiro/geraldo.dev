@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gnuplot on geraldo.dev</title>
+    <title>Gnuplot on geraldo.dev</title>
     <link>https://geraldo.dev/tags/gnuplot/</link>
-    <description>Recent content in gnuplot on geraldo.dev</description>
+    <description>Recent content in Gnuplot on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
@@ -20,8 +20,7 @@
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
-#Umaanimaçãosimplesdeumsen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 #quantidadedeframesaseremgerados dt=2*pi/n set xrange [0:4*pi] i=0 #contador load &amp;#34;animate.gnuplot&amp;#34; set output O arquivo animate.gnuplot contem os comandos:
-plot sin(x+i*dt) w l lt 1 lw 1.</description>
+# Uma animação simples de um sen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 # quantidade de frames a serem gerados dt=2*pi/n set xrange [0:4*pi] i=0 # contador load &amp;#34;animate.</description>
     </item>
     
   </channel>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eventos on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/eventos/</link>
+    <description>Recent content in Eventos on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/eventos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Eventos em javascript</title>
+      <link>https://geraldo.dev/posts/js-eventos/</link>
+      <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/js-eventos/</guid>
+      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline &amp;lt;h1 onclick=&amp;#34;this.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -48,6 +48,16 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/js-eventos/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/js-set/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/swap/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
@@ -385,6 +395,12 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/eventos/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/exce%C3%A7%C3%A3o/</loc>
     <lastmod>2019-11-12T00:00:00-03:00</lastmod>
     <priority>0</priority>
@@ -446,7 +462,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -475,7 +491,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/javascript/</loc>
-    <lastmod>2019-11-06T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
   

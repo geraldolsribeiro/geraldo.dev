@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Gerenciamento de memória swap | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/swap/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -123,13 +123,121 @@ if (!doNotTrack) {
 
         <h1>Gerenciamento de memória swap</h1>
 
-        <!-- raw HTML omitted -->
-<p>$ free -h
-total        used        free      shared  buff/cache   available
+        <h2 id="configuração-atual">Configuração atual</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">swapon --show</code></pre></div>
+<p>A saída do comando acima, se tiver swap configurado, será parecido com:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">NAME      TYPE      SIZE USED PRIO
+/dev/sda5 partition <span style="color:#ae81ff">2</span>,9G   1G   -2</code></pre></div>
+<p>Neste caso uma partição foi utilizada para swap.</p>
+
+<p>Outro modo de verificar o swap é:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">free -h</code></pre></div>
+<p>Na ausência o valor é informado como zero.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Mem:          996Mi       262Mi        79Mi        40Mi       654Mi       514Mi
+Swap:            0B          0B          0B</code></pre></div>
+<h2 id="verificar-se-existe-espaço-disponível-para-criação">Verificar se existe espaço disponível para criação</h2>
+
+<p>Antes de criar o swap é necessário garantir que existe espaço em disco.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ df -ah</code></pre></div>
+<p>Saída</p>
+
+<pre><code>Filesystem      Size  Used Avail Use% Mounted on
+sysfs              0     0     0    - /sys
+proc               0     0     0    - /proc
+udev            488M     0  488M   0% /dev
+devpts             0     0     0    - /dev/pts
+tmpfs           100M   13M   88M  13% /run
+/dev/vda1        25G   11G   14G  45% /
+securityfs         0     0     0    - /sys/kernel/security
+tmpfs           499M   12K  499M   1% /dev/shm
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           499M     0  499M   0% /sys/fs/cgroup
+</code></pre>
+
+<h2 id="criação-do-arquivo-de-swap">Criação do arquivo de swap</h2>
+
+<p>Como a memória do sistema é de 1GB vamos criar um arquivo de swap com 2GB no raiz.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">fallocate -l 2G /swapfile</code></pre></div>
+<p>O acesso deve ser somente do root:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">chown root.root /swapfile
+chmod <span style="color:#ae81ff">600</span> /swapfile
+ls -lh /swapfile</code></pre></div>
+<p>Saída</p>
+
+<pre><code>-rw------- 1 root root 2.0G Aug 10 09:45 /swapfile
+</code></pre>
+
+<p>Com as permissões corretas podemos continuar marcando o espaço como swap:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkswap /swapfile</code></pre></div>
+<pre><code>Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
+no label, UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+</code></pre>
+
+<h2 id="ativando-o-swap">Ativando o swap</h2>
+
+<p>Depois de marcado podemos disponibilizar o swap para o sistema.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">swapon /swapfile</code></pre></div>
+<pre><code>NAME      TYPE SIZE USED PRIO
+/swapfile file   2G   0B   -1
+</code></pre>
+
+<p>Vamos verificar como os comando que já vimos anteriormente:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ swapon --show
+NAME      TYPE SIZE USED PRIO
+/swapfile file   2G   0B   -1
+
+$ free -h
+              total        used        free      shared  buff/cache   available
 Mem:          996Mi       263Mi        74Mi        40Mi       658Mi       513Mi
-Swap:         2.0Gi          0B       2.0Gi
-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Tornando o swap permanente<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
+Swap:         <span style="color:#ae81ff">2</span>.0Gi          0B       <span style="color:#ae81ff">2</span>.0Gi</code></pre></div>
+<h2 id="tornando-o-swap-permanente">Tornando o swap permanente</h2>
+
+<p>Primeiramente faremos um backup do arquivo fstab</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/fstab /etc/fstab.bak</code></pre></div>
+<p>Agora vamos acrescentar uma linha no final do fstab</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;/swapfile none swap sw 0 0&#39;</span> | tee -a /etc/fstab</code></pre></div>
+<h2 id="ajustes-finos">Ajustes finos</h2>
+
+<h3 id="swappiness">Swappiness</h3>
+
+<p>Este parâmetro, que varia de 0 a 100, ajusta a frequência de acesso ao swap</p>
+
+<ul>
+<li>próximos a 0: o sistema só acessa o swap se absolutamente necessário (mais rápido)</li>
+<li>próximos a 100: prioriza colocar os dados no swap para liberar RAM</li>
+<li>desktop: 60</li>
+<li>server: 10</li>
+</ul>
+
+<p>Para verificar a configuração atual use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /proc/sys/vm/swappiness</code></pre></div>
+<p>Para definir o valor 10 use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl vm.swappiness<span style="color:#f92672">=</span><span style="color:#ae81ff">10</span></code></pre></div>
+<p>Para deixar permanente a configuração:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /etc/sysctl.conf /etc/sysctl.conf.bak
+echo <span style="color:#e6db74">&#39;vm.swappiness=10&#39;</span> | tee -a /etc/sysctl.conf</code></pre></div>
+<h3 id="cache-pressure">Cache pressure</h3>
+
+<p>Usado para realizar cache de informações de <code>inode</code> e <code>dentry</code> possibilitando reduzir o custo de acessar esta informações frequentemente.</p>
+
+<p>Para verificar o valor atual use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat /proc/sys/vm/vfs_cache_pressure</code></pre></div>
+<p>Saída</p>
+
+<pre><code>100
+</code></pre>
+
+<p><p>Da maneira como está agora o sistema removerá as informações sobre <code>inode</code> muito rapidamente.
+Vamos adotar uma configuração mais conservativa utilizando o valor 50.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl vm.vfs_cache_pressure<span style="color:#f92672">=</span><span style="color:#ae81ff">50</span></code></pre></div>
+<p>Para deixar permanente a configuração</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#39;vm.vfs_cache_pressure=50&#39;</span> | tee -a /etc/sysctl.conf</code></pre></div>
+<h2 id="referências">Referências</h2></p>
+
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04" target="_blank">How To Add Swap Space on Ubuntu 16.04</a></li>
+</ul>
+
 
         
 

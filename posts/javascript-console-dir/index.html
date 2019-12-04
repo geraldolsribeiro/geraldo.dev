@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Javascript - console.dir | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/javascript-console-dir/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -123,25 +123,193 @@ if (!doNotTrack) {
 
         <h1>Javascript - console.dir</h1>
 
-        <!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->// Clicar no botão ou executar <code>btn.click()</code>
-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Ao clicar no botão uma janela é exibida:<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<p><!-- raw HTML omitted -->sum<!-- raw HTML omitted -->(<!-- raw HTML omitted -->1<!-- raw HTML omitted -->,<!-- raw HTML omitted -->2<!-- raw HTML omitted -->)
-<!-- raw HTML omitted -->// function sum called with arguments: 1, 2
-<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->monitorEvents(object[, events])<!-- raw HTML omitted --> monitora eventos<!-- raw HTML omitted --></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+        <p>Considere o seguinte página:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;&lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clickMe&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Clique aqui&#34;</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+<p>Que quando aberta no navegador tem a seguinte aparência:</p>
+
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/javascript-console-dir-00.webp" alt="img" width="231" height="67">
+  </div></p>
+
+<p>Para obter o elemento do botão poderiamos fazer o seguinte:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">btn</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>( <span style="color:#e6db74">&#39;clickMe&#39;</span> );
+</code></pre></div>
+<p>Agora que temos o objeto botão armazenado em uma variável chamada <code>btn</code> podemos obter mais informações.</p>
+
+<p>Ao enviar a variável <code>btn</code> para a função <code>console.log</code> veremos a seguinte representação:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">btn</span> )
+<span style="color:#f92672">&lt;</span><span style="color:#a6e22e">input</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clickMe&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> <span style="color:#a6e22e">value</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Clique aqui&#34;</span><span style="color:#f92672">&gt;</span>
+</code></pre></div>
+<p>Ao enviar a variável <code>btn</code> para a função <code>console.dir</code> teremos acesso a todas as propriedades internas do objeto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>( <span style="color:#a6e22e">btn</span> )
+</code></pre></div>
+
+
+
+
+
+  
+  
+  <div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/javascript-console-dir-01.webp" alt="img" width="294" height="613">
+  </div>
+
+
+
+
+<p>A lista de propriedades é muito longa, abaixo vemos um trecho com as funções que tratam eventos (cliques, drag, change, &hellip;)</p>
+
+<p><div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/javascript-console-dir-02.webp" alt="img" width="199" height="593">
+  </div></p>
+
+<h2 id="adicionado-um-evento-de-clique">Adicionado um evento de clique</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// Definindo uma função de tratamento
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">meuClique</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>() { <span style="color:#a6e22e">alert</span>(<span style="color:#e6db74">&#39;Fui clicado&#39;</span>); }
+<span style="color:#75715e">// Vinculando a função ao evento de clique do botão
+</span><span style="color:#75715e">// Não usar `on`. Em vez de `onclick` use `click` 
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">btn</span>.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;click&#34;</span>, <span style="color:#a6e22e">meuClique</span>);
+
+<span style="color:#75715e">// Clicar no botão ou executar `btn.click()`
+</span></code></pre></div>
+<p>Ao clicar no botão uma janela é exibida:</p>
+
+
+
+
+
+
+  
+  
+  <div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/javascript-console-dir-03.webp" alt="img" width="455" height="147">
+  </div>
+
+
+
+
+<p>Ao usar novamente o comando <code>console.dir( btn )</code> esperava ver no <code>onclick</code>
+alguma informação sobre a função de tratamento, mas estava <code>null</code>.</p>
+
+<p>Usando a função <code>getEventListeners</code> consegui localizar a função <code>meuClique</code></p>
+
+
+
+
+
+
+  
+  
+  <div class="center-align">
+    <img class="responsive-img z-depth-3" src="/img/javascript-console-dir-04.webp" alt="img" width="311" height="381">
+  </div>
+
+
+
+
+<p><code>$_</code> retorna o valor da última expressão avaliada</p>
+
+<p><code>$0</code>, <code>$1</code>,<code>$2</code>, <code>$3</code> e <code>$4</code> referenciam os últimos 5 elementos inspecionados</p>
+
+<p><code>$(selector, [startNode])</code> referencia o primeiro elemento no DOM especificado pelo seletor CSS.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">$(</span><span style="color:#e6db74">&#39;input&#39;</span><span style="color:#66d9ef">)</span>
+&lt;input id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;clickMe&#34;</span> type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;button&#34;</span> value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Clique aqui&#34;</span>&gt;</code></pre></div>
+<p><code>$$(selector, [startNode])</code> retorna um array de objetos</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">images</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$$</span>(<span style="color:#e6db74">&#39;img&#39;</span>);
+<span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">each</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">images</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">images</span>[<span style="color:#a6e22e">each</span>].<span style="color:#a6e22e">src</span>);
+}
+</code></pre></div>
+<p><code>$x(path, [startNode])</code> retorna um array de elementos que batem com uma expressão XPath</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">$x</span>(<span style="color:#e6db74">&#34;//p&#34;</span>)
+</code></pre></div>
+<p><code>copy</code> copia um objeto para a área de transferência</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">copy</span>(<span style="color:#a6e22e">$0</span>);
+</code></pre></div>
+<p><code>monitor(function)</code> monitor a execução de uma função</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>;
+}
+<span style="color:#a6e22e">monitor</span>(<span style="color:#a6e22e">sum</span>);
+
+<span style="color:#a6e22e">sum</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>)
+<span style="color:#75715e">// function sum called with arguments: 1, 2
+</span></code></pre></div>
+<p><code>monitorEvents(object[, events])</code> monitora eventos</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">monitorEvents</span>(window, <span style="color:#e6db74">&#34;resize&#34;</span>);
+<span style="color:#75715e">// resize Event {isTrusted: true, type: &#34;resize&#34;, target: Window, currentTarget: Window, eventPhase: 2, …}
+</span><span style="color:#75715e">// resize Event {isTrusted: true, type: &#34;resize&#34;, target: Window, currentTarget: Window, eventPhase: 2, …}
+</span></code></pre></div>
+<p><code>unmonitorEvents(object[, events])</code></p>
+
+<h2 id="mais-opções-do-console">Mais opções do console</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">label</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;Adolescent Irradiated Espionage Tortoises&#39;</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">group</span>(<span style="color:#a6e22e">label</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;Leo&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;Mike&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;Don&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">info</span>(<span style="color:#e6db74">&#39;Raph&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">groupEnd</span>(<span style="color:#a6e22e">label</span>);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">count</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">count</span>(<span style="color:#e6db74">&#39;coffee&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">count</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">count</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">countReset</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">countReset</span>(<span style="color:#e6db74">&#39;coffee&#39;</span>);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">table</span>([
+  {
+    <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;René&#39;</span>,
+    <span style="color:#a6e22e">last</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Magritte&#39;</span>,
+  },
+  {
+    <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Chaim&#39;</span>,
+    <span style="color:#a6e22e">last</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Soutine&#39;</span>,
+    <span style="color:#a6e22e">birthday</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;18930113&#39;</span>,
+  },
+  {
+    <span style="color:#a6e22e">first</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Henri&#39;</span>,
+    <span style="color:#a6e22e">last</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Matisse&#39;</span>,
+  }
+]);
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">time</span>();
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100000</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">**</span> <span style="color:#ae81ff">2</span>;
+}
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">timeEnd</span>();
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">first</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#a6e22e">second</span>(); };
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">second</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#a6e22e">third</span>(); };
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">third</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#a6e22e">fourth</span>(); };
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fourth</span> <span style="color:#f92672">=</span> () =&gt; { <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">trace</span>(); };
+<span style="color:#a6e22e">first</span>();
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;%c Oh my heavens! &#39;</span>, <span style="color:#e6db74">&#39;background: #222; color: #bada55&#39;</span>);
+</code></pre></div>
+
+
+
+
+
+  <div class="center-align">
+    <img class="responsive-img z-depth-3" src="https://developers.google.com/web/updates/images/2015-05-20-get-and-debug-event-listeners/get-debug-event-listeners.gif" alt="img">
+  </div>
+
+
+
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/console/dir" target="_blank">MDN Console.dir()</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/api" target="_blank">Console API Reference</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/utilities" target="_blank">Console Utilities API Reference</a></li>
+<li><a href="https://www.w3schools.com/jsref/met_element_addeventlistener.asp" target="_blank">HTML DOM addEventListener() Method</a></li>
+<li><a href="https://stackoverflow.com/questions/7505623/colors-in-javascript-console" target="_blank">Colors in JavaScript console</a></li>
+<li><a href="https://developers.google.com/web/updates/2015/05/get-and-debug-event-listeners" target="_blank">Get and debug event listeners</a></li>
+</ul>
 
 
         

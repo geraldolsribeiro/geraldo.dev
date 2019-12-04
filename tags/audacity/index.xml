@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>audacity on geraldo.dev</title>
@@ -18,7 +18,7 @@
       <pubDate>Wed, 15 May 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</guid>
-      <description>Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
+      <description> Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
     </item>
     
   </channel>

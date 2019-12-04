@@ -6,33 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Vim: executar macro em todos os buffers | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/">
+<title>javascript set | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/js-set/">
 <meta name="generator" content="Hugo 0.57.2" />
 
 
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="07/11/2019">
+    <meta property="article:published_time" content="03/12/2019">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
-
-    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/javascript.webp" />
+<meta property="og:description" content="Conjuntos em javascript." /><meta property="og:url" content="https://geraldo.dev/posts/js-set/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Vim: executar macro em todos os buffers" />
+    <meta property="og:title" content="javascript set" />
 
 
-    <meta property="og:tags" content="vim" />
-
-    <meta property="og:tags" content="macro" />
-
+    <meta property="og:tags" content="javascript" />
 
 
 
-    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Conjuntos em javascript.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -108,29 +102,63 @@ if (!doNotTrack) {
       <div class="page container">
 
         
+        <div class="project-header center-align z-depth-3">
+          <img src="img/headers/javascript.webp" class="responsive-img">
+        </div>
+        
 
         
         
         
             
               <div class="chip">
-                  <a href="https://geraldo.dev/tags/vim/">vim</a>
-                </div>
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/macro/">macro</a>
+                  <a href="https://geraldo.dev/tags/javascript/">javascript</a>
                 </div>
 
 
-        <h1>Vim: executar macro em todos os buffers</h1>
+        <h1>javascript set</h1>
 
-        <pre><code>:bufdo execute &quot;normal @a&quot; | write
-</code></pre>
+        <p><p><a href="https://alligator.io/js/sets-introduction/" target="_blank"><a href="https://alligator.io/js/sets-introduction/" target="_blank">https://alligator.io/js/sets-introduction/</a></a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">animals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();</p>
 
-<h2 id="referências">Referências</h2>
+<p><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐼&#39;</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐢&#39;</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐿&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐼&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>)); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>)); <span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74"><code>Hey &lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color:#a6e22e&quot;&gt;animal&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;!</code></span>);
+});</p>
 
-<ul>
-<li><a href="https://stackoverflow.com/questions/3024321/run-a-macro-in-all-buffers-in-vim" target="_blank">Run a macro in all buffers in vim</a></li>
-</ul>
+<p><span style="color:#75715e">// Hey 🐼!
+</span><span style="color:#75715e">// Hey 🐢!
+</span><span style="color:#75715e">// Hey 🐿!
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">clear</span>();
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 0
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myAnimals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐢&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>]);</p>
+
+<p><span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>([<span style="color:#e6db74">&#39;🐨&#39;</span>, <span style="color:#e6db74">&#39;🐑&#39;</span>]);
+<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Rud&#39;</span>, <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;🐢&#39;</span> });
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animal</span>);
+});</p>
+
+<p><span style="color:#75715e">// 🐷
+</span><span style="color:#75715e">// 🐢
+</span><span style="color:#75715e">// [&#34;🐨&#34;, &#34;🐑&#34;]
+</span><span style="color:#75715e">// Object { name: &#34;Rud&#34;, type: &#34;🐢&#34; }
+</span></code></pre></div></p>
+
 
         
 
@@ -138,7 +166,7 @@ if (!doNotTrack) {
   <ul class="share">
     <li>
       <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-executar-macro-em-todos-os-buffers%2f"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fjs-set%2f"
         aria-label="share on Facebook"
         target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-facebook"></span>
@@ -147,7 +175,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-executar-macro-em-todos-os-buffers%2f&amp;text=Vim%3a%20executar%20macro%20em%20todos%20os%20buffers"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fjs-set%2f&amp;text=javascript%20set"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -155,7 +183,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-executar-macro-em-todos-os-buffers%2f&amp;title=Vim%3a%20executar%20macro%20em%20todos%20os%20buffers"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fjs-set%2f&amp;title=javascript%20set"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -163,7 +191,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="email"
-         href="mailto:?subject=Vim%3a%20executar%20macro%20em%20todos%20os%20buffers&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fvim-executar-macro-em-todos-os-buffers%2f">
+         href="mailto:?subject=javascript%20set&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fjs-set%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Desabilitar função color com botão do meio | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/">
-<meta name="generator" content="Hugo 0.61.0-DEV" />
+<meta name="generator" content="Hugo 0.57.2" />
 
 
     <meta property="og:type" content="article" />
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
-      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
+      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
+      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
       media="screen" async>
 
 
@@ -118,7 +118,21 @@ if (!doNotTrack) {
 
         <h1>Desabilitar função color com botão do meio</h1>
 
-        <!-- raw HTML omitted -->
+        <p>Frequentemente tenho colado texto no editor enquanto tentava apens clicar para
+posicionar o cursor. Isto ocorre no notebook em que o touchpad não tem
+separação tátil entre os botões. É muito fácil clicar um pouco mais para
+a direita e acertar o botão errado.</p>
+
+<p><p>Para desabilitar a função use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false</code></pre></div>
+<p>Para habilitar a função use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true</code></pre></div>
+<h2 id="referências">Referências</h2></p>
+
+<ul>
+<li>[How do I disable middle mouse button click paste?](<a href="https://askubuntu.com/questions/4507/how-do-i-disable-middle-mouse-button-click-paste" target="_blank">https://askubuntu.com/questions/4507/how-do-i-disable-middle-mouse-button-click-paste</a></li>
+</ul>
+
 
         
 

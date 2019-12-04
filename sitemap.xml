@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -48,22 +48,37 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/javascript/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/js-set/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/posts/swap/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
@@ -79,11 +94,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/swap/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
@@ -149,11 +159,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/console/</loc>
-    <lastmod>2019-11-06T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/javascript/</loc>
     <lastmod>2019-11-06T00:00:00-03:00</lastmod>
   </url>
   

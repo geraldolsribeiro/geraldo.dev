@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>debian on geraldo.dev</title>
@@ -32,7 +32,7 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
       <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -41,8 +41,8 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description>Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+      <description> Adicionar repositório.
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -99,7 +99,7 @@ Primeiramente vamos acrescentar o repositório backports:</description>
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
     </item>
     
     <item>

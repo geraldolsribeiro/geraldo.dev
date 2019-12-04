@@ -13,17 +13,7 @@
     
     
     <item>
-      <title>Preact - Petit React</title>
-      <link>https://geraldo.dev/posts/preact/</link>
-      <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/preact/</guid>
-      <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
-    </item>
-    
-    <item>
-      <title>SWAP</title>
+      <title>Gerenciamento de memória swap</title>
       <link>https://geraldo.dev/posts/swap/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
@@ -33,6 +23,16 @@ NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partiçã
 Outro modo de verificar o swap é:
 free -h Na ausência o valor é informado como zero.
 Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+    </item>
+    
+    <item>
+      <title>Preact - Petit React</title>
+      <link>https://geraldo.dev/posts/preact/</link>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/preact/</guid>
+      <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
     </item>
     
     <item>

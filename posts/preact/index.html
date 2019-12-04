@@ -132,23 +132,23 @@ if (!doNotTrack) {
 
 <h2 id="preact-sem-babel-ou-jsx">Preact sem babel ou JSX</h2>
 
-<p><p>index.html</p>
+<p>index.html</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">title</span>&gt;Preact sem Babel or JSX&lt;/<span style="color:#f92672">title</span>&gt;
   &lt;/<span style="color:#f92672">head</span>&gt;
   &lt;<span style="color:#f92672">body</span>&gt;
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;<a href="https://unpkg.com/preact&amp;#34" target="_blank">https://unpkg.com/preact&amp;#34</a>;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/preact&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
 &lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
 <p>index.js</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
 
-<p><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;</p>
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;
 
-<p><span style="color:#75715e">/** Example classful component */</span>
+<span style="color:#75715e">/** Example classful component */</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
   <span style="color:#a6e22e">componentDidMount</span>() {
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Hello!&#39;</span> });
@@ -161,17 +161,19 @@ if (!doNotTrack) {
       )
     );
   }
-}</p>
+}
 
-<p><span style="color:#75715e">/** Components can just be pure functions */</span>
+
+<span style="color:#75715e">/** Components can just be pure functions */</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Header</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;header&#39;</span>, <span style="color:#66d9ef">null</span>,
     <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h1&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;App&#39;</span>),
     <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h2&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span>)
   );
-};</p>
+};
 
-<p><span style="color:#75715e">/** Instead of JSX, use: h(type, props, &hellip;children) */</span>
+
+<span style="color:#75715e">/** Instead of JSX, use: h(type, props, ...children) */</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
   <span style="color:#a6e22e">render</span>() {
     <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">item</span>) =&gt; (
@@ -183,11 +185,16 @@ if (!doNotTrack) {
       )
     );
   }
-}</p>
+}
 
-<p><span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
+
+<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
 </code></pre></div>
-<h2 id="referências">Referências</h2></p>
+<p>Exemplo de preact com mitt</p>
+
+<p><a href="https://codepen.io/developit/pen/rjMEwW?editors=0010" target="_blank">https://codepen.io/developit/pen/rjMEwW?editors=0010</a></p>
+
+<h2 id="referências">Referências</h2>
 
 <ul>
 <li><a href="https://medium.com/reactbrasil/preact-b128e4bf7625" target="_blank">Preact</a></li>

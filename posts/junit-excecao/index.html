@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Testando exceções com junit | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/junit-excecao/">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -138,16 +138,16 @@ Cada um dos métodos apresenta prós e contras.</p>
 
 <h2 id="usando-bloco-try-catch">Usando bloco try/catch</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
-<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example1() {
-    <span style="color:#66d9ef">try</span> {
-        find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
-        fail();
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example1</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+        find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">);</span>
+        fail<span style="color:#f92672">();</span>
         <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (NotFoundException <span style="color:#a6e22e">e</span>) {
-        assertThat(e.<span style="color:#a6e22e">getMessage</span>(), containsString(<span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span>));
-    }
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>NotFoundException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        assertThat<span style="color:#f92672">(</span>e<span style="color:#f92672">.</span><span style="color:#a6e22e">getMessage</span><span style="color:#f92672">(),</span> containsString<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
     <span style="color:#75715e">// ... Outras exceções podem ser tratadas aqui.
-</span><span style="color:#75715e"></span>}</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
 <ul>
 <li>Vantagens:
 
@@ -164,10 +164,10 @@ Cada um dos métodos apresenta prós e contras.</p>
 </ul>
 
 <h2 id="test-expected-exception-class">@Test (expected = Exception.class)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example2() <span style="color:#66d9ef">throws</span> <span style="color:#a6e22e">NotFoundException</span> {
-    find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example2</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> NotFoundException <span style="color:#f92672">{</span>
+    find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">);</span>
     <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>}</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
 <ul>
 <li>Vantagens:
 
@@ -184,12 +184,12 @@ Cada um dos métodos apresenta prós e contras.</p>
 
 <h2 id="expectedexception-rule">ExpectedException Rule</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
-<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example3() <span style="color:#66d9ef">throws</span> <span style="color:#a6e22e">NotFoundException</span> {
-    exception.<span style="color:#a6e22e">expect</span>(NotFoundException.<span style="color:#a6e22e">class</span>);
-    exception.<span style="color:#a6e22e">expectMessage</span>(containsString(<span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span>));
-    find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example3</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> NotFoundException <span style="color:#f92672">{</span>
+    exception<span style="color:#f92672">.</span><span style="color:#a6e22e">expect</span><span style="color:#f92672">(</span>NotFoundException<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+    exception<span style="color:#f92672">.</span><span style="color:#a6e22e">expectMessage</span><span style="color:#f92672">(</span>containsString<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span><span style="color:#f92672">));</span>
+    find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">);</span>
     <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>}</code></pre></div>
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
 <ul>
 <li>Vantagens:
 
@@ -423,7 +423,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

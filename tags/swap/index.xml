@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Swap on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/swap/</link>
+    <description>Recent content in Swap on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 02 Dec 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/swap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gerenciamento de memória swap</title>
+      <link>https://geraldo.dev/posts/swap/</link>
+      <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/swap/</guid>
+      <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
+NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
+Outro modo de verificar o swap é:
+free -h Na ausência o valor é informado como zero.
+Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+    </item>
+    
+  </channel>
+</rss>

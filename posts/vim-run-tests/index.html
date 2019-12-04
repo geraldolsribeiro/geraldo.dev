@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Run Tests in Vim | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-run-tests/">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.61.0-DEV" />
 
 
     <meta property="og:type" content="article" />
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.3897a6dc2988f90d7d694fe2203ba6423df50b48cf9a94bf7295c65a4483a9eb.css"
-      integrity="sha256-OJem3CmI&#43;Q19aU/iIDumQj31C0jPmpS/cpXGWkSDqes="
+      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
+      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
       media="screen" async>
 
 
@@ -106,7 +106,7 @@ if (!doNotTrack) {
       <div class="page container">
 
         
-        <div class="project-header center-align">
+        <div class="project-header center-align z-depth-3">
           <img src="/img/headers/draft.webp" class="responsive-img">
         </div>
         
@@ -122,84 +122,32 @@ if (!doNotTrack) {
 
         <h1>Run Tests in Vim</h1>
 
-        <p>Test driven development thrives on a tight feedback loop
-but switching from the editor to the shell
-to manually run specs is inefficient.</p>
+        <!-- raw HTML omitted -->
+<pre><code>response &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; deliver_mail
 
-<p>Tools such as <code>autotest</code> and <code>guard</code> run specs whenever a file gets saved.
-Although an improvement over a manual workflow,
-those approaches often run the suite when not needed
-and run too many or too few specs.</p>
-
-<p>Enter <a href="https://github.com/thoughtbot/vim-rspec" target="_blank">vim-rspec</a>,
-a lightweight Vim plugin that runs specs directly from within Vim
-with the press of a key.</p>
-
-<p>It exposes methods such as <code>RunNearestSpec()</code>,
-<code>RunCurrentSpecFile()</code>, and
-<code>RunLastSpec()</code>,
-which can be bound to a key mapping of your choice.
-In <a href="https://github.com/thoughtbot/dotfiles/blob/master/vimrc" target="_blank">thoughtbot/dotfiles</a>,
-we bind those methods to <code>&lt;Leader&gt;s</code>, <code>&lt;Leader&gt;t</code>, and <code>&lt;Leader&gt;l</code>.</p>
-
-<p>Cursor over any line within an RSpec spec like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">describe <span style="color:#66d9ef">RecipientInterceptor</span> <span style="color:#66d9ef">do</span>
-  it <span style="color:#e6db74">&#39;overrides to/cc/bcc fields&#39;</span> <span style="color:#66d9ef">do</span>
-    <span style="color:#66d9ef">Mail</span><span style="color:#f92672">.</span>register_interceptor <span style="color:#66d9ef">RecipientInterceptor</span><span style="color:#f92672">.</span>new(recipient_string)
-
-    response <span style="color:#f92672">=</span> deliver_mail
-
-    expect(response<span style="color:#f92672">.</span>to)<span style="color:#f92672">.</span>to eq <span style="color:#f92672">[</span>recipient_string<span style="color:#f92672">]</span>
-    expect(response<span style="color:#f92672">.</span>cc)<span style="color:#f92672">.</span>to eq <span style="color:#f92672">[]</span>
-    expect(response<span style="color:#f92672">.</span>bcc)<span style="color:#f92672">.</span>to eq <span style="color:#f92672">[]</span>
-  <span style="color:#66d9ef">end</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<p>Type <code>&lt;Leader&gt;s</code>:</p>
-
-<pre><code>rspec spec/recipient_interceptor_spec.rb:4
-.
-
-Finished in 0.03059 seconds
-1 example, 0 failures
+expect(response&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;to)&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;to eq &lt;span style=&quot;color:#f92672&quot;&gt;[&lt;/span&gt;recipient_string&lt;span style=&quot;color:#f92672&quot;&gt;]&lt;/span&gt;
+expect(response&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;cc)&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;to eq &lt;span style=&quot;color:#f92672&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;]&lt;/span&gt;
+expect(response&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;bcc)&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;to eq &lt;span style=&quot;color:#f92672&quot;&gt;[&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;]&lt;/span&gt;
 </code></pre>
-
-<p>The screen is overtaken by a shell that runs only the focused spec.
-Developers using tmux with vim-rspec and tslime
+<p><!-- raw HTML omitted -->end<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->end<!-- raw HTML omitted -->
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Type <!-- raw HTML omitted -->&lt;Leader&gt;s<!-- raw HTML omitted -->:<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Developers using tmux with vim-rspec and tslime
 sometimes send the output to a nearby shell
-so the code and spec output display on the screen at the same time.</p>
-
-<p>Feeling good that this new spec passes,
-run the whole file&rsquo;s specs with <code>&lt;Leader&gt;t</code>
-to make sure the class&rsquo;s entire functionality is still intact:</p>
-
-<pre><code>rspec spec/recipient_interceptor_spec.rb
-......
-
-Finished in 0.17752 seconds
+so the code and spec output display on the screen at the same time.<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>Finished in 0.17752 seconds
 6 examples, 0 failures
-</code></pre>
-
-<p>Red, green, refactor.
-From within the application&rsquo;s or library&rsquo;s code:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">delivering_email</span>(message)
-  add_custom_headers message
-  add_subject_prefix message
-  message<span style="color:#f92672">.</span>to <span style="color:#f92672">=</span> @recipients
-  message<span style="color:#f92672">.</span>cc <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
-  message<span style="color:#f92672">.</span>bcc <span style="color:#f92672">=</span> <span style="color:#f92672">[]</span>
-<span style="color:#66d9ef">end</span></code></pre></div>
-<p>Run <code>&lt;Leader&gt;l</code> without having to switch back to the spec:</p>
-
-<pre><code>rspec spec/recipient_interceptor_spec.rb
-......
-
-Finished in 0.17752 seconds
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->Red, green, refactor.
+From within the application's or library's code:<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<p>Finished in 0.17752 seconds
 6 examples, 0 failures
-</code></pre>
-
-<p>These tight feedback loops make Test-Driven Development easier
+<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->These tight feedback loops make Test-Driven Development easier
 by eliminating the switching cost between editor to the shell
-when running specs.</p>
+when running specs.<!-- raw HTML omitted --></p>
 
 
         

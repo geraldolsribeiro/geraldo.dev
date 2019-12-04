@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Diferenças entre mtime ctime atime | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.61.0-DEV" />
 
 
     <meta property="og:type" content="article" />
@@ -58,8 +58,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.3897a6dc2988f90d7d694fe2203ba6423df50b48cf9a94bf7295c65a4483a9eb.css"
-      integrity="sha256-OJem3CmI&#43;Q19aU/iIDumQj31C0jPmpS/cpXGWkSDqes="
+      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
+      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
       media="screen" async>
 
 
@@ -133,49 +133,7 @@ if (!doNotTrack) {
 
         <h1>Diferenças entre mtime ctime atime</h1>
 
-        <p>Adaptado de um post do <a href="https://www.quora.com/What-is-the-difference-between-mtime-atime-and-ctime" target="_blank">Quora</a>.</p>
-
-<p>O comando <code>find</code> pode parecer um pouco complicado se alguns conceitos não forem
-entendidos antes de sua utilização. Quando procuramos por arquivos com
-<strong>critérios de tempo</strong> é fundamental saber a diferença entre <code>mtime</code>, <code>atime</code>
-e <code>ctime</code>.</p>
-
-<p>De maneira muito breve:</p>
-
-<ul>
-<li><code>mtime</code> é o momento de modificação do conteúdo</li>
-<li><code>atime</code> é o momento que o arquivo foi acessado (lido)</li>
-<li><code>ctime</code> é o momento que o arquivo teve algum atributo modificado</li>
-</ul>
-
-<h2 id="mtime"><code>mtime</code></h2>
-
-<p><code>mtime</code> (<em>modification time</em>) indica o momento que o conteúdo do arquivo mudou. Mas atenção, <strong>somente alteração do conteúdo</strong> vai mudar o <code>mtime</code>. Mudanças nos atributos ou nos metadados não alteram o <code>mtime</code>, somente o <code>ctime</code>.</p>
-
-<h2 id="atime"><code>atime</code></h2>
-
-<p>atime
-atime (access time) is the timestamp that indicates the time that a file has been accessed. The file may have been opened by you, or may have been accessed by some other program or a remote machine. Anytime a file has been accessed, its access time changes.</p>
-
-<p>ctime
-ctime (change time) is the timestamp of a file that indicates the time that it was changed. Now, the modification can be in terms of its content or in terms of its attributes. Whenever anything about a file changes (except its access time), its ctime changes.</p>
-
-<p>Let me demonstrate it by the following example.
-On a Unix-like system, lets create a file and check its atime, mtime and ctime.
-We can see, all the timestamps are same.</p>
-
-<p>Now, let us print its contents.
-Since the text file was blank, it didn&rsquo;t print anything. But looking at its stats, we see the access time has changed, while the others remain unchanged.</p>
-
-<p>Now, let us write something into the file.
-Notice how all of its timestamps have changed! Since the file had to be accessed to modify it, the atime has changed. And since the contents of the file changed, its mtime and ctime both changed.</p>
-
-<p>Now, instead of contents, what happens if we change its attributes? Say, file permissions?
-We added the &lsquo;execute&rsquo; permission to the file and see how its atime and ctime changes! As is obvious, to make any changes to the file, you have to access it. Hence the changes to atime. Also, since only the attributes were changed and not the contents, the ctime changed while mtime remained as it is.</p>
-
-<p>In general, this is how the timestamps behave:
-                                     mtime &lt;= ctime &lt;= atime</p>
-
+        <!-- raw HTML omitted -->
 
         
 

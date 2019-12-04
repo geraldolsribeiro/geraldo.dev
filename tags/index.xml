@@ -1,25 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Marcadores on geraldo.dev</title>
+    <title>Tags on geraldo.dev</title>
     <link>https://geraldo.dev/tags/</link>
-    <description>Recent content in Marcadores on geraldo.dev</description>
+    <description>Recent content in Tags on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 02 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>javascript</title>
-      <link>https://geraldo.dev/tags/javascript/</link>
-      <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/javascript/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>debian</title>
@@ -126,6 +117,15 @@
       <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://geraldo.dev/tags/javascript/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/javascript/</guid>
       <description></description>
     </item>
     

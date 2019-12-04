@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Testando exceções com junit | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/junit-excecao/">
-<meta name="generator" content="Hugo 0.57.2" />
+<meta name="generator" content="Hugo 0.61.0-DEV" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.dec3d202015e70d2c1860771f37f3d578701cbb7522914a30f7bdcc69c7e703e.css"
-      integrity="sha256-3sPSAgFecNLBhgdx8389V4cBy7dSKRSjD3vcxpx&#43;cD4="
+      href="https://geraldo.dev/style.main.min.5442940de7c9f63b77249a433d4e1d5261f718d6f79b9ccf70c6a00c234da7a8.css"
+      integrity="sha256-VEKUDefJ9jt3JJpDPU4dUmH3GNb3m5zPcMagDCNNp6g="
       media="screen" async>
 
 
@@ -133,82 +133,7 @@ if (!doNotTrack) {
 
         <h1>Testando exceções com junit</h1>
 
-        <p>Este artigo apresenta uma visão suscinta sobre testes de exceção com JUnit usando o idioma <code>try/fail/catch</code>, o parâmetro <code>expected</code> da anotação <code>@Test</code> e a anotação <code>@Rule</code>.
-Cada um dos métodos apresenta prós e contras.</p>
-
-<h2 id="usando-bloco-try-catch">Usando bloco try/catch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
-<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example1() {
-    <span style="color:#66d9ef">try</span> {
-        find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
-        fail();
-        <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>    } <span style="color:#66d9ef">catch</span> (NotFoundException <span style="color:#a6e22e">e</span>) {
-        assertThat(e.<span style="color:#a6e22e">getMessage</span>(), containsString(<span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span>));
-    }
-    <span style="color:#75715e">// ... Outras exceções podem ser tratadas aqui.
-</span><span style="color:#75715e"></span>}</code></pre></div>
-<ul>
-<li>Vantagens:
-
-<ul>
-<li>Ter acesso à exceção para realizar outros procedimentos</li>
-<li>Poder realizar outros <em>asserts</em> na mesma função</li>
-<li>Funciona bem de os testes forem criado antes</li>
-</ul></li>
-<li>Desvantagens:
-
-<ul>
-<li>Um erro comum é esquecer de incluir <code>fail()</code> como barreira causando um falso positivo</li>
-</ul></li>
-</ul>
-
-<h2 id="test-expected-exception-class">@Test (expected = Exception.class)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example2() <span style="color:#66d9ef">throws</span> <span style="color:#a6e22e">NotFoundException</span> {
-    find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
-    <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>}</code></pre></div>
-<ul>
-<li>Vantagens:
-
-<ul>
-<li>Sintaxe muito mais concisa</li>
-<li>Favorece a escrita de teste focados em um único ponto</li>
-</ul></li>
-<li>Desvantagens:
-
-<ul>
-<li>Não é possível realizar outros testes após o <code>find</code></li>
-</ul></li>
-</ul>
-
-<h2 id="expectedexception-rule">ExpectedException Rule</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
-<span style="color:#66d9ef">public</span> <span style="color:#a6e22e">void</span> example3() <span style="color:#66d9ef">throws</span> <span style="color:#a6e22e">NotFoundException</span> {
-    exception.<span style="color:#a6e22e">expect</span>(NotFoundException.<span style="color:#a6e22e">class</span>);
-    exception.<span style="color:#a6e22e">expectMessage</span>(containsString(<span style="color:#e6db74">&#34;algo que indique que a exceção certa ocorreu&#34;</span>));
-    find(<span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span>);
-    <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
-</span><span style="color:#75715e"></span>}</code></pre></div>
-<ul>
-<li>Vantagens:
-
-<ul>
-<li>Mais de uma expetativa sobre a mesma exceção podem ser testadas após o teste</li>
-</ul></li>
-<li>Desvantagens:
-
-<ul>
-<li>Não é possível realizar outros testes após o <code>find</code></li>
-</ul></li>
-</ul>
-
-<h2 id="referências">Referências</h2>
-
-<ul>
-<li><a href="http://baddotrobot.com/blog/2012/03/27/expecting-exception-with-junit-rule/" target="_blank">Expecting Exceptions JUnit Rule</a></li>
-</ul>
-
+        <!-- raw HTML omitted -->
 
         
 

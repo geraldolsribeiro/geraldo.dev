@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 03 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git - Limpando o repositório</title>
+      <link>https://geraldo.dev/posts/git-limpeza/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-limpeza/</guid>
+      <description> Referências  Git Tip: Deleting Old Local Branches  </description>
+    </item>
     
     <item>
       <title>Eventos em javascript</title>

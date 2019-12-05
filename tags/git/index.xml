@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/git/</link>
+    <description>Recent content in Git on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git - Limpando o repositório</title>
+      <link>https://geraldo.dev/posts/git-limpeza/</link>
+      <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-limpeza/</guid>
+      <description> Referências  Git Tip: Deleting Old Local Branches  </description>
+    </item>
+    
+  </channel>
+</rss>

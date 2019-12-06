@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/eclipse-emf-xml/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/git-limpeza/</loc>
     <lastmod>2019-12-05T00:00:00-03:00</lastmod>
   </url>
@@ -400,6 +405,18 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/eclipse/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/emf/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/eventos/</loc>
     <lastmod>2019-12-03T00:00:00-03:00</lastmod>
     <priority>0</priority>
@@ -638,6 +655,12 @@
   <url>
     <loc>https://geraldo.dev/tags/xfce/</loc>
     <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/xml/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
   

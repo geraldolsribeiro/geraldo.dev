@@ -134,15 +134,15 @@ if (!doNotTrack) {
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>)); <span style="color:#75715e">// false
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74"><code>Hey &lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color:#a6e22e&quot;&gt;animal&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;!</code></span>);
-});</p>
-
-<p><span style="color:#75715e">// Hey 🐼!
-</span><span style="color:#75715e">// Hey 🐢!
-</span><span style="color:#75715e">// Hey 🐿!
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">clear</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 0
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#960050;background-color:#1e0010">&lt;/span&gt;<span style="color:#e6db74"><code>Hey &lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color:#a6e22e&quot;&gt;animal&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;!\</code>);
+</span><span style="color:#e6db74">});
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">// Hey 🐼!
+</span><span style="color:#e6db74">// Hey 🐢!
+</span><span style="color:#e6db74">// Hey 🐿!
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">animals.clear();
+</span><span style="color:#e6db74">console.log(animals.size); // 0
 </span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myAnimals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐢&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>]);</p>
 
 <p><span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>([<span style="color:#e6db74">&#39;🐨&#39;</span>, <span style="color:#e6db74">&#39;🐑&#39;</span>]);
@@ -150,7 +150,7 @@ if (!doNotTrack) {
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animal</span>);
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">animal</span> );
 });</p>
 
 <p><span style="color:#75715e">// 🐷

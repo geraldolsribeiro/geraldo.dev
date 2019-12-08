@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/git-dicas/</loc>
+    <lastmod>2019-12-08T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/eclipse-emf-xml/</loc>
     <lastmod>2019-12-05T00:00:00-03:00</lastmod>
   </url>
@@ -472,7 +477,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-08T00:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -490,7 +495,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-08T00:00:00-03:00</lastmod>
   </url>
   
   <url>

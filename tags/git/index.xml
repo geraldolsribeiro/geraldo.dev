@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git - dicas</title>
+      <link>https://geraldo.dev/posts/git-dicas/</link>
+      <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-dicas/</guid>
+      <description> Listar somente aos arquivos modificados entre dois branches git diff --name-only branch-1 branch-2 Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
+    </item>
     
     <item>
       <title>Git - Limpando o repositório</title>

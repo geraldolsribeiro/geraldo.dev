@@ -6,28 +6,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Git | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/git/">
+<title>git - dicas | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/git-dicas/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="08/12/2019">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
-
-    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/git/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/git.webp" />
+<meta property="og:description" content="Dicas do git" /><meta property="og:url" content="https://geraldo.dev/posts/git-dicas/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Git" />
+    <meta property="og:title" content="git - dicas" />
+
+
+    <meta property="og:tags" content="git" />
 
 
 
-
-
-    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Dicas do git">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -99,48 +98,125 @@ if (!doNotTrack) {
     
 
     
-  <div class="container">
-    <h1>Artigos marcados com Git</h1>
+    <main>
+      <div class="page container">
 
-    <ul class="collection">
         
-          
-<li class="collection-item">
-  <div class="row">
-    <div class="col s12"><a href="https://geraldo.dev/posts/git-dicas/">git - dicas</a></div>
-    <div class="col s12 m1"><span class="post-date">12/2019</span></div>
-    <div class="col s12 m10 xxx-clearfix">
-            
-              <span class="chip">
-              <a href="tags/git">git</a>
-              </span>
-            
+        <div class="project-header center-align z-depth-3">
+          <img src="img/headers/git.webp" class="responsive-img">
+        </div>
+        
 
+        
+        
+        
+            
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/git/">git</a>
+                </div>
+
+
+        <h1>git - dicas</h1>
+
+        <h2 id="listar-somente-aos-arquivos-modificados-entre-dois-branches">Listar somente aos arquivos modificados entre dois branches</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-only branch-1 branch-2</code></pre></div>
+<h2 id="listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span></code></pre></div>
+<ul>
+<li>filtra somente as linhas que começam com <code>M</code> de modificado.</li>
+</ul>
+
+<h2 id="listar-somente-os-arquivos-adicionados-entre-dois-branches">Listar somente os arquivos adicionados entre dois branches</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^A\s\+//p&#34;</span></code></pre></div>
+<ul>
+<li>filtra somente as linhas que começam com <code>A</code> de adicionado</li>
+</ul>
+
+<h2 id="listar-somente-os-arquivos-removidos-entre-dois-branches">Listar somente os arquivos removidos entre dois branches</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^D\s\+//p&#34;</span></code></pre></div>
+<ul>
+<li>filtra somente as linhas que começam com <code>D</code> de deletados</li>
+</ul>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="http://sushihangover.github.io/git-getting-a-list-of-files-changed-between-branches/" target="_blank">Git - Getting a list of files changed between branches</a></li>
+</ul>
+
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-dicas%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-dicas%2f&amp;text=git%20-%20dicas"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-dicas%2f&amp;title=git%20-%20dicas"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=git%20-%20dicas&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-dicas%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
 </div>
-  </div>
-</li>
 
-        
-          
-<li class="collection-item">
-  <div class="row">
-    <div class="col s12"><a href="https://geraldo.dev/posts/git-limpeza/">Git - Limpando o repositório</a></div>
-    <div class="col s12 m1"><span class="post-date">12/2019</span></div>
-    <div class="col s12 m10 xxx-clearfix">
-            
-              <span class="chip">
-              <a href="tags/git">git</a>
-              </span>
-            
 
-</div>
-  </div>
-</li>
 
-        
-    </ul>
 
-  </div>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt-br";
+};
+</script>
+
+      </div>
+
+    </main>
 
 
     

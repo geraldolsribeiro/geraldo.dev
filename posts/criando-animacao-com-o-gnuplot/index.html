@@ -16,7 +16,7 @@
 
 
 
-    <meta property="og:image" content="https://geraldo.dev//img/headers/plot.webp" />
+    <meta property="og:image" content="https://geraldo.dev//img/headers/plot.jpg" />
 
     <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
     <meta property="og:url" content="https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/" />
@@ -110,8 +110,11 @@ if (!doNotTrack) {
       <div class="page container">
 
         
-        <div class="project-header center-align z-depth-3">
-          <img src="/img/headers/plot.webp" class="responsive-img">
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="/img/headers/plot.webp" type="image/webp">
+            <img src="/img/headers/plot.jpg" class="responsive-img z-depth-3">
+          </picture>
         </div>
         
 
@@ -155,7 +158,9 @@ i<span style="color:#f92672">=</span>i<span style="color:#f92672">+</span><span 
 <p>Ao executar o script obteremos a seguinte animação:</p>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="/img/animacao-do-seno.gif" alt="img" width="640" height="480">
+    <picture>
+      <img class="responsive-img z-depth-3" src="/img/animacao-do-seno.gif" alt="img" width="640" height="480">
+    </picture>
   </div></p>
 
 <h2 id="referências">Referências</h2>

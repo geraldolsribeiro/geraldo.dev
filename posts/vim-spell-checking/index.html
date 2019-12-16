@@ -106,8 +106,11 @@ if (!doNotTrack) {
       <div class="page container">
 
         
-        <div class="project-header center-align z-depth-3">
-          <img src="/img/headers/draft.webp" class="responsive-img">
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="/img/headers/draft.webp" type="image/webp">
+            <img src="/img/headers/draft.webp" class="responsive-img z-depth-3">
+          </picture>
         </div>
         
 
@@ -144,7 +147,9 @@ we can use Vim&rsquo;s spell-checking to help us avoid embarrassing mistakes.</p
 <p>Here&rsquo;s a screenshot of what I see as I edit this blog post:</p>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="images/vim-spell-check.webp" alt="&#39;&#39;">
+    <picture>
+      <img class="responsive-img z-depth-3" src="images/vim-spell-check.webp" alt="&#39;&#39;">
+    </picture>
   </div></p>
 
 <p>The highlighted words are considered misspellings.</p>

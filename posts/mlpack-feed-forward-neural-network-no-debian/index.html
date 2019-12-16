@@ -110,8 +110,11 @@ if (!doNotTrack) {
       <div class="page container">
 
         
-        <div class="project-header center-align z-depth-3">
-          <img src="/img/headers/ffn.webp" class="responsive-img">
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="/img/headers/ffn.webp" type="image/webp">
+            <img src="/img/headers/ffn.webp" class="responsive-img z-depth-3">
+          </picture>
         </div>
         
 
@@ -228,14 +231,18 @@ Pin-Priority: 1002</code></pre></div>
 <p>Olhando nosso conjunto de dados de cima podemos ver claramente duas curvas, uma para cada conjunto.</p>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento">
+    <picture>
+      <img class="responsive-img z-depth-3" src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento">
+    </picture>
   </div></p>
 
 <p>Para facilitar a visualização, o primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na
 animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</p>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento">
+    <picture>
+      <img class="responsive-img z-depth-3" src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento">
+    </picture>
   </div></p>
 
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
@@ -290,7 +297,9 @@ registros são entrados por linha e para processamento são tratados em colunas.
 <p>A matriz de dados foi carregada e precisa ser dividida entre dados de treinamento e dados de teste.</p>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="/img/mlpack-data.svg#center" alt="Dados depois de carregados">
+    <picture>
+      <img class="responsive-img z-depth-3" src="/img/mlpack-data.svg#center" alt="Dados depois de carregados">
+    </picture>
   </div></p>
 
 <p>É muito importante que o modelo nunca veja os dados de teste para que se tenha
@@ -358,7 +367,9 @@ Dados de saída para teste:
 <h3 id="construindo-a-rede-neural">Construindo a rede neural</h3>
 
 <p><div class="center-align">
-    <img class="responsive-img z-depth-3" src="/img/mlpack-ffn.svg#center" alt="img">
+    <picture>
+      <img class="responsive-img z-depth-3" src="/img/mlpack-ffn.svg#center" alt="img">
+    </picture>
   </div></p>
 
 <p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// Feed Forward Network

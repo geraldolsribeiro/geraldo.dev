@@ -18,7 +18,9 @@
       <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-dicas/</guid>
-      <description> Listar somente aos arquivos modificados entre dois branches git diff --name-only branch-1 branch-2 Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
+      <description> Diferença entre dois branches &amp;ndash; somente nomes de arquivos git diff --name-only branch-1 branch-2 Status:
+ M arquivos modificados A arquivos adicionados D arquivos removidos  Filtrando por estes códigos de status temos as próximas dicas.
+Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
     </item>
     
     <item>

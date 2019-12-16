@@ -121,8 +121,18 @@ if (!doNotTrack) {
 
         <h1>git - dicas</h1>
 
-        <h2 id="listar-somente-aos-arquivos-modificados-entre-dois-branches">Listar somente aos arquivos modificados entre dois branches</h2>
+        <h2 id="diferença-entre-dois-branches-somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-only branch-1 branch-2</code></pre></div>
+<p>Status:</p>
+
+<ul>
+<li><code>M</code> arquivos modificados</li>
+<li><code>A</code> arquivos adicionados</li>
+<li><code>D</code> arquivos removidos</li>
+</ul>
+
+<p>Filtrando por estes códigos de status temos as próximas dicas.</p>
+
 <h2 id="listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span></code></pre></div>
 <ul>

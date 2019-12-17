@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Armadillo on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/armadillo/</link>
+    <description>Recent content in Armadillo on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/armadillo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Álgebra linear com Armadillo</title>
+      <link>https://geraldo.dev/posts/armadillo/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/armadillo/</guid>
+      <description>Instalação no Debian apt install libarmadillo-dev Instalação no MacOS brew install armadillo Exemplos de uso #include &amp;lt;armadillo&amp;gt;#include &amp;lt;iostream&amp;gt; using namespace std; using namespace arma; int main() { // inicia o gerador de números aleatórios  arma_rng::set_seed_random(); // Cria uma matriz com dados aleatório com dimensão 2x3  auto A = randu( 2, 3 ); cout &amp;lt;&amp;lt; A &amp;lt;&amp;lt; endl; // 0.7038 0.6819 0.9555  // 0.3804 0.9666 0.9270  // Transposta  cout &amp;lt;&amp;lt; A.</description>
+    </item>
+    
+  </channel>
+</rss>

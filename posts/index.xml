@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Álgebra linear com Armadillo</title>
+      <link>https://geraldo.dev/posts/armadillo/</link>
+      <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/armadillo/</guid>
+      <description>Instalação no Debian apt install libarmadillo-dev Instalação no MacOS brew install armadillo Exemplos de uso #include &amp;lt;armadillo&amp;gt;#include &amp;lt;iostream&amp;gt; using namespace std; using namespace arma; int main() { // inicia o gerador de números aleatórios  arma_rng::set_seed_random(); // Cria uma matriz com dados aleatório com dimensão 2x3  auto A = randu( 2, 3 ); cout &amp;lt;&amp;lt; A &amp;lt;&amp;lt; endl; // 0.7038 0.6819 0.9555  // 0.3804 0.9666 0.9270  // Transposta  cout &amp;lt;&amp;lt; A.</description>
+    </item>
     
     <item>
       <title>git - dicas</title>

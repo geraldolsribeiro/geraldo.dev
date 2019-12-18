@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Firewall on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/firewall/</link>
+    <link>/tags/firewall/</link>
     <description>Recent content in Firewall on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sun, 17 Nov 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/firewall/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Configurando um firewall no Debian</title>
-      <link>https://geraldo.dev/posts/firewall/</link>
+      <link>/posts/firewall/</link>
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/firewall/</guid>
+      <guid>/posts/firewall/</guid>
       <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
 ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>

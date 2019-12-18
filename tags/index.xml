@@ -2,499 +2,499 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Content tagged as &#39;Academic&#39;</title>
-      <link>https://geraldo.dev/tags/academic/</link>
+      <link>/tags/academic/</link>
       <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/academic/</guid>
+      <guid>/tags/academic/</guid>
       <description>Here is a list of all the content that has been tagged as academic.</description>
     </item>
     
     <item>
       <title>Animação</title>
-      <link>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</link>
+      <link>/tags/anima%C3%A7%C3%A3o/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</guid>
+      <guid>/tags/anima%C3%A7%C3%A3o/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Annotation</title>
-      <link>https://geraldo.dev/tags/annotation/</link>
+      <link>/tags/annotation/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/annotation/</guid>
+      <guid>/tags/annotation/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Apt</title>
-      <link>https://geraldo.dev/tags/apt/</link>
+      <link>/tags/apt/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/apt/</guid>
+      <guid>/tags/apt/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Argdo</title>
-      <link>https://geraldo.dev/tags/argdo/</link>
+      <link>/tags/argdo/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/argdo/</guid>
+      <guid>/tags/argdo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Args</title>
-      <link>https://geraldo.dev/tags/args/</link>
+      <link>/tags/args/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/args/</guid>
+      <guid>/tags/args/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Armadillo</title>
-      <link>https://geraldo.dev/tags/armadillo/</link>
+      <link>/tags/armadillo/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/armadillo/</guid>
+      <guid>/tags/armadillo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Atime</title>
-      <link>https://geraldo.dev/tags/atime/</link>
+      <link>/tags/atime/</link>
       <pubDate>Fri, 17 Nov 2017 10:14:46 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/atime/</guid>
+      <guid>/tags/atime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Audacity</title>
-      <link>https://geraldo.dev/tags/audacity/</link>
+      <link>/tags/audacity/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/audacity/</guid>
+      <guid>/tags/audacity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Backports</title>
-      <link>https://geraldo.dev/tags/backports/</link>
+      <link>/tags/backports/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/backports/</guid>
+      <guid>/tags/backports/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://geraldo.dev/tags/c&#43;&#43;/</link>
+      <link>/tags/c&#43;&#43;/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/c&#43;&#43;/</guid>
+      <guid>/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Console</title>
-      <link>https://geraldo.dev/tags/console/</link>
+      <link>/tags/console/</link>
       <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/console/</guid>
+      <guid>/tags/console/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ctime</title>
-      <link>https://geraldo.dev/tags/ctime/</link>
+      <link>/tags/ctime/</link>
       <pubDate>Fri, 17 Nov 2017 10:14:46 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/ctime/</guid>
+      <guid>/tags/ctime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Debian</title>
-      <link>https://geraldo.dev/tags/debian/</link>
+      <link>/tags/debian/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/debian/</guid>
+      <guid>/tags/debian/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eclipse</title>
-      <link>https://geraldo.dev/tags/eclipse/</link>
+      <link>/tags/eclipse/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/eclipse/</guid>
+      <guid>/tags/eclipse/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Emf</title>
-      <link>https://geraldo.dev/tags/emf/</link>
+      <link>/tags/emf/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/emf/</guid>
+      <guid>/tags/emf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Eventos</title>
-      <link>https://geraldo.dev/tags/eventos/</link>
+      <link>/tags/eventos/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/eventos/</guid>
+      <guid>/tags/eventos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Exceção</title>
-      <link>https://geraldo.dev/tags/exce%C3%A7%C3%A3o/</link>
+      <link>/tags/exce%C3%A7%C3%A3o/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/exce%C3%A7%C3%A3o/</guid>
+      <guid>/tags/exce%C3%A7%C3%A3o/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ffn</title>
-      <link>https://geraldo.dev/tags/ffn/</link>
+      <link>/tags/ffn/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/ffn/</guid>
+      <guid>/tags/ffn/</guid>
       <description></description>
     </item>
     
     <item>
       <title>File Manager</title>
-      <link>https://geraldo.dev/tags/file-manager/</link>
+      <link>/tags/file-manager/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/file-manager/</guid>
+      <guid>/tags/file-manager/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Find</title>
-      <link>https://geraldo.dev/tags/find/</link>
+      <link>/tags/find/</link>
       <pubDate>Fri, 17 Nov 2017 10:14:46 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/find/</guid>
+      <guid>/tags/find/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Firewall</title>
-      <link>https://geraldo.dev/tags/firewall/</link>
+      <link>/tags/firewall/</link>
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/firewall/</guid>
+      <guid>/tags/firewall/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Flameshot</title>
-      <link>https://geraldo.dev/tags/flameshot/</link>
+      <link>/tags/flameshot/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/flameshot/</guid>
+      <guid>/tags/flameshot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gerenciador De Arquivos</title>
-      <link>https://geraldo.dev/tags/gerenciador-de-arquivos/</link>
+      <link>/tags/gerenciador-de-arquivos/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/gerenciador-de-arquivos/</guid>
+      <guid>/tags/gerenciador-de-arquivos/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gif</title>
-      <link>https://geraldo.dev/tags/gif/</link>
+      <link>/tags/gif/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/gif/</guid>
+      <guid>/tags/gif/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Git</title>
-      <link>https://geraldo.dev/tags/git/</link>
+      <link>/tags/git/</link>
       <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/git/</guid>
+      <guid>/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gnome</title>
-      <link>https://geraldo.dev/tags/gnome/</link>
+      <link>/tags/gnome/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/gnome/</guid>
+      <guid>/tags/gnome/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gnuplot</title>
-      <link>https://geraldo.dev/tags/gnuplot/</link>
+      <link>/tags/gnuplot/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/gnuplot/</guid>
+      <guid>/tags/gnuplot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hostname</title>
-      <link>https://geraldo.dev/tags/hostname/</link>
+      <link>/tags/hostname/</link>
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/hostname/</guid>
+      <guid>/tags/hostname/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://geraldo.dev/tags/hugo/</link>
+      <link>/tags/hugo/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/hugo/</guid>
+      <guid>/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://geraldo.dev/tags/java/</link>
+      <link>/tags/java/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/java/</guid>
+      <guid>/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>https://geraldo.dev/tags/javascript/</link>
+      <link>/tags/javascript/</link>
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/javascript/</guid>
+      <guid>/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Junit</title>
-      <link>https://geraldo.dev/tags/junit/</link>
+      <link>/tags/junit/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/junit/</guid>
+      <guid>/tags/junit/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lambda</title>
-      <link>https://geraldo.dev/tags/lambda/</link>
+      <link>/tags/lambda/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/lambda/</guid>
+      <guid>/tags/lambda/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://geraldo.dev/tags/linux/</link>
+      <link>/tags/linux/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/linux/</guid>
+      <guid>/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Locker</title>
-      <link>https://geraldo.dev/tags/locker/</link>
+      <link>/tags/locker/</link>
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/locker/</guid>
+      <guid>/tags/locker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Macro</title>
-      <link>https://geraldo.dev/tags/macro/</link>
+      <link>/tags/macro/</link>
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/macro/</guid>
+      <guid>/tags/macro/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mlpack</title>
-      <link>https://geraldo.dev/tags/mlpack/</link>
+      <link>/tags/mlpack/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/mlpack/</guid>
+      <guid>/tags/mlpack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Mtime</title>
-      <link>https://geraldo.dev/tags/mtime/</link>
+      <link>/tags/mtime/</link>
       <pubDate>Fri, 17 Nov 2017 10:14:46 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/mtime/</guid>
+      <guid>/tags/mtime/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nautilus</title>
-      <link>https://geraldo.dev/tags/nautilus/</link>
+      <link>/tags/nautilus/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/nautilus/</guid>
+      <guid>/tags/nautilus/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Nemo</title>
-      <link>https://geraldo.dev/tags/nemo/</link>
+      <link>/tags/nemo/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/nemo/</guid>
+      <guid>/tags/nemo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Preact</title>
-      <link>https://geraldo.dev/tags/preact/</link>
+      <link>/tags/preact/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/preact/</guid>
+      <guid>/tags/preact/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Screensaver</title>
-      <link>https://geraldo.dev/tags/screensaver/</link>
+      <link>/tags/screensaver/</link>
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/screensaver/</guid>
+      <guid>/tags/screensaver/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Screenshot</title>
-      <link>https://geraldo.dev/tags/screenshot/</link>
+      <link>/tags/screenshot/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/tags/screenshot/</guid>
+      <guid>/tags/screenshot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Swap</title>
-      <link>https://geraldo.dev/tags/swap/</link>
+      <link>/tags/swap/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/swap/</guid>
+      <guid>/tags/swap/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Sysadmin</title>
-      <link>https://geraldo.dev/tags/sysadmin/</link>
+      <link>/tags/sysadmin/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/sysadmin/</guid>
+      <guid>/tags/sysadmin/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Touchpad</title>
-      <link>https://geraldo.dev/tags/touchpad/</link>
+      <link>/tags/touchpad/</link>
       <pubDate>Sat, 23 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/touchpad/</guid>
+      <guid>/tags/touchpad/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Try Catch</title>
-      <link>https://geraldo.dev/tags/try-catch/</link>
+      <link>/tags/try-catch/</link>
       <pubDate>Tue, 12 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/try-catch/</guid>
+      <guid>/tags/try-catch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ubuntu</title>
-      <link>https://geraldo.dev/tags/ubuntu/</link>
+      <link>/tags/ubuntu/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/ubuntu/</guid>
+      <guid>/tags/ubuntu/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Vim</title>
-      <link>https://geraldo.dev/tags/vim/</link>
+      <link>/tags/vim/</link>
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/vim/</guid>
+      <guid>/tags/vim/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xfce</title>
-      <link>https://geraldo.dev/tags/xfce/</link>
+      <link>/tags/xfce/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/xfce/</guid>
+      <guid>/tags/xfce/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Xml</title>
-      <link>https://geraldo.dev/tags/xml/</link>
+      <link>/tags/xml/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/xml/</guid>
+      <guid>/tags/xml/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Álgebra Linear</title>
-      <link>https://geraldo.dev/tags/%C3%A1lgebra-linear/</link>
+      <link>/tags/%C3%A1lgebra-linear/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/%C3%A1lgebra-linear/</guid>
+      <guid>/tags/%C3%A1lgebra-linear/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Ícones</title>
-      <link>https://geraldo.dev/tags/%C3%ADcones/</link>
+      <link>/tags/%C3%ADcones/</link>
       <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>
       
-      <guid>https://geraldo.dev/tags/%C3%ADcones/</guid>
+      <guid>/tags/%C3%ADcones/</guid>
       <description></description>
     </item>
     

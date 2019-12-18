@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Debian on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/debian/</link>
+    <link>/tags/debian/</link>
     <description>Recent content in Debian on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Mon, 02 Dec 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/debian/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gerenciamento de memória swap</title>
-      <link>https://geraldo.dev/posts/swap/</link>
+      <link>/posts/swap/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/swap/</guid>
+      <guid>/posts/swap/</guid>
       <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
 NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
 Outro modo de verificar o swap é:
@@ -27,30 +27,30 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
     
     <item>
       <title>Configurando um firewall no Debian</title>
-      <link>https://geraldo.dev/posts/firewall/</link>
+      <link>/posts/firewall/</link>
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/firewall/</guid>
+      <guid>/posts/firewall/</guid>
       <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
 ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
       <title>Java 12 no Debian Buster</title>
-      <link>https://geraldo.dev/posts/java-12-no-debian-buster/</link>
+      <link>/posts/java-12-no-debian-buster/</link>
       <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
+      <guid>/posts/java-12-no-debian-buster/</guid>
       <description> Adicionar repositório.
 cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
-      <link>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
+      <link>/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
+      <guid>/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
 # Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
@@ -58,10 +58,10 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
     
     <item>
       <title>Gerenciador de arquivos</title>
-      <link>https://geraldo.dev/posts/gerenciador-de-arquivos/</link>
+      <link>/posts/gerenciador-de-arquivos/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
+      <guid>/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
 Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
@@ -71,10 +71,10 @@ O locais padrão para os arquivos de script são:
     
     <item>
       <title>Feed Forward Neural Network no debian com mlpack</title>
-      <link>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</link>
+      <link>/posts/mlpack-feed-forward-neural-network-no-debian/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
+      <guid>/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
       <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
 Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
    Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>
@@ -82,10 +82,10 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
     
     <item>
       <title>Como instalar o flameshot no Debian stretch</title>
-      <link>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</link>
+      <link>/posts/como-instalar-o-flameshot-no-debian-stable/</link>
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
+      <guid>/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
    .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
@@ -94,19 +94,19 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
     
     <item>
       <title>Bloqueando a Sessão com Light Locker</title>
-      <link>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</link>
+      <link>/posts/bloqueando-a-sessao-com-light-locker/</link>
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
-      <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
+      <guid>/posts/bloqueando-a-sessao-com-light-locker/</guid>
       <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
     </item>
     
     <item>
       <title>Como instalar o tema de ícones Papirus no Debian</title>
-      <link>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</link>
+      <link>/posts/como-instalar-o-tema-papirus-no-debian/</link>
       <pubDate>Tue, 24 Oct 2017 14:00:58 -0200</pubDate>
       
-      <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
+      <guid>/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
 echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
@@ -116,10 +116,10 @@ Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícon
     
     <item>
       <title>Como trocar o nome do servidor sem reiniciar</title>
-      <link>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</link>
+      <link>/posts/como-trocar-hostname-sem-reiniciar/</link>
       <pubDate>Sun, 22 Oct 2017 11:21:50 -0200</pubDate>
       
-      <guid>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</guid>
+      <guid>/posts/como-trocar-hostname-sem-reiniciar/</guid>
       <description>Como um Administrador de Sistemas, as vezes, você precisa alterar o nome da máquina. Seja porque digitou o nome errado durante a instalação, ou se a política de nomes da empresa mudou ou se o nome já estava sendo utilizado por outra máquina.
 Nota: O procedimento que veremos a seguir vale para as distribuições Linux derivadas do Debian, tais como Mint, Ubuntu, e outras 130 (segundo o distrowatch).
 O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é o /etc/hostname, então basta trocar seu conteúdo que no próximo boot a máquina terá outro nome.</description>

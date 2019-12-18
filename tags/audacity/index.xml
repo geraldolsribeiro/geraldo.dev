@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Audacity on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/audacity/</link>
+    <link>/tags/audacity/</link>
     <description>Recent content in Audacity on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Wed, 15 May 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/audacity/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/audacity/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Como limpar o audio com audacity</title>
-      <link>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</link>
+      <link>/posts/como-limpar-o-audio-com-o-audacity/</link>
       <pubDate>Wed, 15 May 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</guid>
+      <guid>/posts/como-limpar-o-audio-com-o-audacity/</guid>
       <description> Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
     </item>
     

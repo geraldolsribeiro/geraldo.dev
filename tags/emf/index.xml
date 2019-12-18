@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Emf on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/emf/</link>
+    <link>/tags/emf/</link>
     <description>Recent content in Emf on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/emf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/emf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Eclipse Modeling Framework - Lendo e escrevendo XML</title>
-      <link>https://geraldo.dev/posts/eclipse-emf-xml/</link>
+      <link>/posts/eclipse-emf-xml/</link>
       <pubDate>Thu, 05 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/eclipse-emf-xml/</guid>
+      <guid>/posts/eclipse-emf-xml/</guid>
       <description>EMF é uma API Java que permite definir modelos, criar, salvar e carregar suas instâncias em vários formatos (EMF, UML, XSD).
 A principal diferença para o Java é que os modelos podem ser definidos tanto estaticamente quanto dinamicamente em tempo de execução.
 EMF suporta múltiplos formatos para o modelo e para input e output das intâncias do modelo.

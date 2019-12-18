@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on geraldo.dev</title>
-    <link>https://geraldo.dev/projects/</link>
+    <link>/projects/</link>
     <description>Recent content in Projects on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     
-	<atom:link href="https://geraldo.dev/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Café pré pago</title>
-      <link>https://geraldo.dev/projects/cafe-pre-pago/</link>
+      <link>/projects/cafe-pre-pago/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/projects/cafe-pre-pago/</guid>
+      <guid>/projects/cafe-pre-pago/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pousada Santa Cecília</title>
-      <link>https://geraldo.dev/projects/pousada-santa-cecilia/</link>
+      <link>/projects/pousada-santa-cecilia/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/projects/pousada-santa-cecilia/</guid>
+      <guid>/projects/pousada-santa-cecilia/</guid>
       <description></description>
     </item>
     
     <item>
       <title>dFerias.com</title>
-      <link>https://geraldo.dev/projects/dferias/</link>
+      <link>/projects/dferias/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/projects/dferias/</guid>
+      <guid>/projects/dferias/</guid>
       <description></description>
     </item>
     

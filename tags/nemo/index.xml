@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Nemo on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/nemo/</link>
+    <link>/tags/nemo/</link>
     <description>Recent content in Nemo on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 23 Jul 2019 10:33:17 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/nemo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/nemo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Nemo como Gerenciador De Arquivos Padrão</title>
-      <link>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</link>
+      <link>/posts/nemo-como-gerenciador-de-arquivos-padrao/</link>
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
+      <guid>/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
       <description>Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
 gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
 gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>C&#43;&#43; on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/c&#43;&#43;/</link>
+    <link>/tags/c&#43;&#43;/</link>
     <description>Recent content in C&#43;&#43; on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 17 Dec 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/c++/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Álgebra linear com Armadillo</title>
-      <link>https://geraldo.dev/posts/armadillo/</link>
+      <link>/posts/armadillo/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/armadillo/</guid>
+      <guid>/posts/armadillo/</guid>
       <description>Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
 Provê suporte para:
  vetores (tensores de primeira ordem) matrizes (tensores de segunda ordem) cubos (tensores de terceira ordem) matrizes densas e esparsas números inteiros, de ponto flutuante e complexos decomposição (via LAPACK) multi-thread (Intel MKL ou OpenBLAS) avaliador de expressão baseado em meta-programação paralelização (via OpenMP)  Principais usos:</description>
@@ -25,10 +25,10 @@ Provê suporte para:
     
     <item>
       <title>C&#43;&#43; Lambda</title>
-      <link>https://geraldo.dev/posts/cpp-lambda/</link>
+      <link>/posts/cpp-lambda/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/cpp-lambda/</guid>
+      <guid>/posts/cpp-lambda/</guid>
       <description>Funções de primeira classe Em programação funcional funções são cidadães de primeira classe, o que significa que elas se comportam com dados e suportam quaisquer operações que a linguagem permita.
 Algumas características das funções de primeira classe são:
  atribuir uma função a uma variável passar uma função como parâmetro para outra função retornar a função como valor de outra função armazenar a função em uma estrutura de dados  Lambdas Lambdas são funções anônimas (sem um nome) definidas in-place.</description>
@@ -36,10 +36,10 @@ Algumas características das funções de primeira classe são:
     
     <item>
       <title>Feed Forward Neural Network no debian com mlpack</title>
-      <link>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</link>
+      <link>/posts/mlpack-feed-forward-neural-network-no-debian/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
+      <guid>/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
       <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
 Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
    Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>

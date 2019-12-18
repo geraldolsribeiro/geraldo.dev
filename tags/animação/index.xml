@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Animação on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</link>
+    <link>/tags/anima%C3%A7%C3%A3o/</link>
     <description>Recent content in Animação on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Mon, 28 Oct 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/anima%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/anima%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Criando um gif animado com o gnuplot</title>
-      <link>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</link>
+      <link>/posts/criando-animacao-com-o-gnuplot/</link>
       <pubDate>Mon, 28 Oct 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
+      <guid>/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
 # Uma animação simples de um sen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 # quantidade de frames a serem gerados dt=2*pi/n set xrange [0:4*pi] i=0 # contador load &amp;#34;animate.</description>

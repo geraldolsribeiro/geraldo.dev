@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vim on geraldo.dev</title>
-    <link>/tags/vim/</link>
+    <link>https://geraldo.dev/tags/vim/</link>
     <description>Recent content in Vim on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Thu, 07 Nov 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Vim: executar macro em todos os buffers</title>
-      <link>/posts/vim-executar-macro-em-todos-os-buffers/</link>
+      <link>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</link>
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/vim-executar-macro-em-todos-os-buffers/</guid>
+      <guid>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</guid>
       <description> :bufdo execute &amp;quot;normal @a&amp;quot; | write  Referências  Run a macro in all buffers in vim  </description>
     </item>
     
     <item>
       <title>Como repetir texto no vim</title>
-      <link>/posts/vim-inserir-caracteres-repetidos/</link>
+      <link>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-inserir-caracteres-repetidos/</guid>
+      <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
 &amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt; N número de repetições c caractere ou palavra
 &amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
@@ -34,19 +34,19 @@
     
     <item>
       <title>Compilar Vim 8</title>
-      <link>/posts/vim-compilar-vim-8/</link>
+      <link>https://geraldo.dev/posts/vim-compilar-vim-8/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-compilar-vim-8/</guid>
+      <guid>https://geraldo.dev/posts/vim-compilar-vim-8/</guid>
       <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make  </description>
     </item>
     
     <item>
       <title>Fast Search in Vim</title>
-      <link>/posts/vim-fast-search-vim/</link>
+      <link>https://geraldo.dev/posts/vim-fast-search-vim/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-fast-search-vim/</guid>
+      <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
 :grep sometext  Can we grep faster?
 Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
@@ -55,29 +55,29 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
     
     <item>
       <title>Formatar JSON no Vim</title>
-      <link>/posts/vim-formatar-json/</link>
+      <link>https://geraldo.dev/posts/vim-formatar-json/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-formatar-json/</guid>
+      <guid>https://geraldo.dev/posts/vim-formatar-json/</guid>
       <description>Crie um comando com:
 nmap =j :%!python -m json.</description>
     </item>
     
     <item>
       <title>Formatar XML no vim</title>
-      <link>/posts/vim-formatar-xml/</link>
+      <link>https://geraldo.dev/posts/vim-formatar-xml/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-formatar-xml/</guid>
+      <guid>https://geraldo.dev/posts/vim-formatar-xml/</guid>
       <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format -  </description>
     </item>
     
     <item>
       <title>Plugins para o vim</title>
-      <link>/posts/vim-plugins/</link>
+      <link>https://geraldo.dev/posts/vim-plugins/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-plugins/</guid>
+      <guid>https://geraldo.dev/posts/vim-plugins/</guid>
       <description> Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
@@ -88,10 +88,10 @@ map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&a
     
     <item>
       <title>Run Tests in Vim</title>
-      <link>/posts/vim-run-tests/</link>
+      <link>https://geraldo.dev/posts/vim-run-tests/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-run-tests/</guid>
+      <guid>https://geraldo.dev/posts/vim-run-tests/</guid>
       <description>Test driven development thrives on a tight feedback loop but switching from the editor to the shell to manually run specs is inefficient.
 Tools such as autotest and guard run specs whenever a file gets saved. Although an improvement over a manual workflow, those approaches often run the suite when not needed and run too many or too few specs.
 Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within Vim with the press of a key.</description>
@@ -99,28 +99,28 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
     
     <item>
       <title>Substituição de texto avançada no Vim</title>
-      <link>/posts/vim-substituicao-de-texto-avancada/</link>
+      <link>https://geraldo.dev/posts/vim-substituicao-de-texto-avancada/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-substituicao-de-texto-avancada/</guid>
+      <guid>https://geraldo.dev/posts/vim-substituicao-de-texto-avancada/</guid>
       <description> Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update   O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update  Referências  Search and replace in multiple buffers  </description>
     </item>
     
     <item>
       <title>VIM single instance</title>
-      <link>/posts/vim-single-instance/</link>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-single-instance/</guid>
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
       <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
     </item>
     
     <item>
       <title>Vim Spell Checking</title>
-      <link>/posts/vim-spell-checking/</link>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-spell-checking/</guid>
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
       <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
 Switching on spell-checking We can switch on spell checking with this command:
 :setlocal spell  We can also specify the language:
@@ -129,10 +129,10 @@ Switching on spell-checking We can switch on spell checking with this command:
     
     <item>
       <title>Vim args, argdo</title>
-      <link>/posts/vim-argdo/</link>
+      <link>https://geraldo.dev/posts/vim-argdo/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-argdo/</guid>
+      <guid>https://geraldo.dev/posts/vim-argdo/</guid>
       <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
 Carregamento de arquivos por condição Carregar todos os arquivos md.
 :args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
@@ -141,47 +141,47 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     
     <item>
       <title>Vim awesome</title>
-      <link>/posts/vim-awesome/</link>
+      <link>https://geraldo.dev/posts/vim-awesome/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-awesome/</guid>
+      <guid>https://geraldo.dev/posts/vim-awesome/</guid>
       <description> http://vimawesome.com/ http://vimawesome.com/plugin/fugitive-vim http://vimawesome.com/plugin/vim-snipmate-mine  </description>
     </item>
     
     <item>
       <title>Vim com python habilitado</title>
-      <link>/posts/vim-with-python/</link>
+      <link>https://geraldo.dev/posts/vim-with-python/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-with-python/</guid>
+      <guid>https://geraldo.dev/posts/vim-with-python/</guid>
       <description>apt install vim-nox ou apt install vim-gtk</description>
     </item>
     
     <item>
       <title>Vim com rails</title>
-      <link>/posts/vim-rails/</link>
+      <link>https://geraldo.dev/posts/vim-rails/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-rails/</guid>
+      <guid>https://geraldo.dev/posts/vim-rails/</guid>
       <description>https://github.com/tpope/vim-rails
  gf considers context and knows about partials, fixtures, and much more. There are two commands, :A (alternate) and :R (related) for easy jumping between files, including favorites like model to schema, template to helper, and controller to functional test. Commands like :Emodel, :Eview, :Econtroller  are provided to :edit files by type, along with S, V, and T variants for :split, :vsplit, and :tabedit. Throw a bang on the end (:Emodel foo!</description>
     </item>
     
     <item>
       <title>Vim lento</title>
-      <link>/posts/vim-slow/</link>
+      <link>https://geraldo.dev/posts/vim-slow/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-slow/</guid>
+      <guid>https://geraldo.dev/posts/vim-slow/</guid>
       <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
     </item>
     
     <item>
       <title>Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case</title>
-      <link>/posts/vim-abolish/</link>
+      <link>https://geraldo.dev/posts/vim-abolish/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-abolish/</guid>
+      <guid>https://geraldo.dev/posts/vim-abolish/</guid>
       <description> https://github.com/tpope/vim-abolish
  crm - MixedCase
  crc - camelCase
@@ -196,10 +196,10 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     
     <item>
       <title>Vim: Auto completar especial</title>
-      <link>/posts/vim-special-auto-complete/</link>
+      <link>https://geraldo.dev/posts/vim-special-auto-complete/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-special-auto-complete/</guid>
+      <guid>https://geraldo.dev/posts/vim-special-auto-complete/</guid>
       <description>Do pacote UltiSnip:
 ~/.vim/bundle/vim-snippets/UltiSnips/
  date -&amp;gt; 2018-10-27 time -&amp;gt; 15:10 datetime -&amp;gt; 2018-10-27 15:47 uuid -&amp;gt; e348aa09-1875-4eaa-b016-edd12ad7091d lorem -&amp;gt; lorem ipsum bbox -&amp;gt; caixa com texto centrado com a largura de comentário box -&amp;gt; cria uma caixa do tamenho do texto  </description>
@@ -207,19 +207,19 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     
     <item>
       <title>Webvim</title>
-      <link>/posts/vim-webvim/</link>
+      <link>https://geraldo.dev/posts/vim-webvim/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-webvim/</guid>
+      <guid>https://geraldo.dev/posts/vim-webvim/</guid>
       <description>TODO: Estudar webvim https://github.com/vim-dist/webvim</description>
     </item>
     
     <item>
       <title>vim-livro-noob-gratis.md</title>
-      <link>/posts/vim-livro-noob-gratis/</link>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>/posts/vim-livro-noob-gratis/</guid>
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
       <description>  Um livro guia/referência para quem deseja aprender a utilizar o editor de textos Vim
  Confira em https://leanpub.com/vimparanoobs
 Referência  https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html  </description>

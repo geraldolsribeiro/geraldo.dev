@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ubuntu on geraldo.dev</title>
-    <link>/tags/ubuntu/</link>
+    <link>https://geraldo.dev/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
-      <link>/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
+      <link>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
+      <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
 # Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
@@ -25,10 +25,10 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
     
     <item>
       <title>Gerenciador de arquivos</title>
-      <link>/posts/gerenciador-de-arquivos/</link>
+      <link>https://geraldo.dev/posts/gerenciador-de-arquivos/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/gerenciador-de-arquivos/</guid>
+      <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
 Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.

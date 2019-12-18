@@ -2,69 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Artigos on geraldo.dev</title>
-    <link>/publications/</link>
+    <link>https://geraldo.dev/publications/</link>
     <description>Recent content in Artigos on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sun, 15 Nov 2009 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/publications/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/publications/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>A computational framework for project scheduling, analysis and optimization</title>
-      <link>/publications/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</link>
+      <link>https://geraldo.dev/publications/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</link>
       <pubDate>Sun, 15 Nov 2009 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</guid>
+      <guid>https://geraldo.dev/publications/2009_a_computational_framework_for_project_scheduling_analysis_and_optimization/</guid>
       <description>INTRODUCTION Nowadays, more than ever, companies want to deliver products and services better, faster, and cheaper. At the same time, in the high-technology environment of the twenty-first century, nearly all organizations have found themselves building increasingly complex products and services.
 In this context, a single company usually does not develop all the components that compose a product or service. More commonly, some components are built in-house and some are acquired; then all the components are integrated into the final product or service.</description>
     </item>
     
     <item>
       <title>Ensaios de qualificação de um subsistema de propulsão monopropelente com empuxo de 5N, operando com catalisador brasileiro</title>
-      <link>/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</link>
+      <link>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</link>
       <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</guid>
+      <guid>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Qualificação Espacial de um Propulsor de 5N e de um Catalisador Nacional para Propulsão de Satélites</title>
-      <link>/publications/2005_qualificacao_espacial_de_um_propulsor_de_5n/</link>
+      <link>https://geraldo.dev/publications/2005_qualificacao_espacial_de_um_propulsor_de_5n/</link>
       <pubDate>Tue, 13 Sep 2005 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2005_qualificacao_espacial_de_um_propulsor_de_5n/</guid>
+      <guid>https://geraldo.dev/publications/2005_qualificacao_espacial_de_um_propulsor_de_5n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A data treatment tool for a satellite thruster test facility</title>
-      <link>/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</link>
+      <link>https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</link>
       <pubDate>Fri, 03 Oct 2003 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</guid>
+      <guid>https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</guid>
       <description>A seguir um excelente vídeo onde o Aguinaldo Serra Jr mostra o BTSA (Banco de Testes com Simulação de Altitude) onde o CATPA foi desenvolvido no começo da década e é utilizado até hoje.
   </description>
     </item>
     
     <item>
       <title>Flame holding performance of axial swirler</title>
-      <link>/publications/1999_flame_holding_performance_of_axial_swirler/</link>
+      <link>https://geraldo.dev/publications/1999_flame_holding_performance_of_axial_swirler/</link>
       <pubDate>Wed, 20 Nov 2002 00:00:00 +0000</pubDate>
       
-      <guid>/publications/1999_flame_holding_performance_of_axial_swirler/</guid>
+      <guid>https://geraldo.dev/publications/1999_flame_holding_performance_of_axial_swirler/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Note on rotating cup atomizer theory</title>
-      <link>/publications/2002_note_on_rotating_cup_atomizer_theory/</link>
+      <link>https://geraldo.dev/publications/2002_note_on_rotating_cup_atomizer_theory/</link>
       <pubDate>Wed, 20 Nov 2002 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2002_note_on_rotating_cup_atomizer_theory/</guid>
+      <guid>https://geraldo.dev/publications/2002_note_on_rotating_cup_atomizer_theory/</guid>
       <description></description>
     </item>
     

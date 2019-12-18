@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Armadillo on geraldo.dev</title>
-    <link>/tags/armadillo/</link>
+    <link>https://geraldo.dev/tags/armadillo/</link>
     <description>Recent content in Armadillo on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 17 Dec 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/tags/armadillo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/armadillo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Álgebra linear com Armadillo</title>
-      <link>/posts/armadillo/</link>
+      <link>https://geraldo.dev/posts/armadillo/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/armadillo/</guid>
+      <guid>https://geraldo.dev/posts/armadillo/</guid>
       <description>\[ \int_a^b X \]
 Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
 Provê suporte para:

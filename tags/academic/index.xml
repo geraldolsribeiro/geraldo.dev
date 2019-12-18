@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Content tagged as &#39;Academic&#39; on geraldo.dev</title>
-    <link>/tags/academic/</link>
+    <link>https://geraldo.dev/tags/academic/</link>
     <description>Recent content in Content tagged as &#39;Academic&#39; on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/academic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Customizing the homepage with widgets</title>
-      <link>/posts/widgets/</link>
+      <link>https://geraldo.dev/posts/widgets/</link>
       <pubDate>Tue, 19 Apr 2016 00:00:00 -0300</pubDate>
       
-      <guid>/posts/widgets/</guid>
+      <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
  About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>

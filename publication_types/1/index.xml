@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1 on geraldo.dev</title>
-    <link>/publication_types/1/</link>
+    <link>https://geraldo.dev/publication_types/1/</link>
     <description>Recent content in 1 on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 23 Oct 2007 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/publication_types/1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ensaios de qualificação de um subsistema de propulsão monopropelente com empuxo de 5N, operando com catalisador brasileiro</title>
-      <link>/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</link>
+      <link>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</link>
       <pubDate>Tue, 23 Oct 2007 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</guid>
+      <guid>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A data treatment tool for a satellite thruster test facility</title>
-      <link>/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</link>
+      <link>https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</link>
       <pubDate>Fri, 03 Oct 2003 00:00:00 +0000</pubDate>
       
-      <guid>/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</guid>
+      <guid>https://geraldo.dev/publications/2003_a_data_treatment_tool_for_a_satellite_thruster_test_facility/</guid>
       <description>A seguir um excelente vídeo onde o Aguinaldo Serra Jr mostra o BTSA (Banco de Testes com Simulação de Altitude) onde o CATPA foi desenvolvido no começo da década e é utilizado até hoje.
   </description>
     </item>

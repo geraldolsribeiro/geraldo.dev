@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gerenciador De Arquivos on geraldo.dev</title>
-    <link>/tags/gerenciador-de-arquivos/</link>
+    <link>https://geraldo.dev/tags/gerenciador-de-arquivos/</link>
     <description>Recent content in Gerenciador De Arquivos on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/tags/gerenciador-de-arquivos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/gerenciador-de-arquivos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Gerenciador de arquivos</title>
-      <link>/posts/gerenciador-de-arquivos/</link>
+      <link>https://geraldo.dev/posts/gerenciador-de-arquivos/</link>
       <pubDate>Tue, 02 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/gerenciador-de-arquivos/</guid>
+      <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
 Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.

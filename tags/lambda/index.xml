@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lambda on geraldo.dev</title>
-    <link>/tags/lambda/</link>
+    <link>https://geraldo.dev/tags/lambda/</link>
     <description>Recent content in Lambda on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sun, 07 Jul 2019 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/lambda/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>C&#43;&#43; Lambda</title>
-      <link>/posts/cpp-lambda/</link>
+      <link>https://geraldo.dev/posts/cpp-lambda/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 -0300</pubDate>
       
-      <guid>/posts/cpp-lambda/</guid>
+      <guid>https://geraldo.dev/posts/cpp-lambda/</guid>
       <description>Funções de primeira classe Em programação funcional funções são cidadães de primeira classe, o que significa que elas se comportam com dados e suportam quaisquer operações que a linguagem permita.
 Algumas características das funções de primeira classe são:
  atribuir uma função a uma variável passar uma função como parâmetro para outra função retornar a função como valor de outra função armazenar a função em uma estrutura de dados  Lambdas Lambdas são funções anônimas (sem um nome) definidas in-place.</description>

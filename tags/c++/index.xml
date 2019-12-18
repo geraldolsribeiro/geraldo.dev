@@ -18,7 +18,8 @@
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>/posts/armadillo/</guid>
-      <description>Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
+      <description>\[ \int_a^b X \]
+Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
 Provê suporte para:
  vetores (tensores de primeira ordem) matrizes (tensores de segunda ordem) cubos (tensores de terceira ordem) matrizes densas e esparsas números inteiros, de ponto flutuante e complexos decomposição (via LAPACK) multi-thread (Intel MKL ou OpenBLAS) avaliador de expressão baseado em meta-programação paralelização (via OpenMP)  Principais usos:</description>
     </item>

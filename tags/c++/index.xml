@@ -7,22 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 17 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jul 2019 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/c++/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Álgebra linear com Armadillo</title>
-      <link>https://geraldo.dev/posts/armadillo/</link>
-      <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/armadillo/</guid>
-      <description>\[ A_{m,n} = \begin{pmatrix} a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\ a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} \end{pmatrix} \]
-Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
-Provê suporte para:
- vetores (tensores de primeira ordem) matrizes (tensores de segunda ordem) cubos (tensores de terceira ordem) matrizes densas e esparsas números inteiros, de ponto flutuante e complexos decomposição (via LAPACK) multi-thread (Intel MKL ou OpenBLAS) avaliador de expressão baseado em meta-programação paralelização (via OpenMP)  Principais usos:</description>
-    </item>
     
     <item>
       <title>C&#43;&#43; Lambda</title>

@@ -59,6 +59,14 @@ if (!doNotTrack) {
 
 
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
 </head>
 
 <body>
@@ -132,30 +140,35 @@ if (!doNotTrack) {
         <h1>Álgebra linear com Armadillo</h1>
 
         
-        <aside>
-          <header>
-            <h3>Sumário</h3>
-          </header>
-          
+<aside>
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  
 <ul class="section table-of-contents">
-<li><a href="#instalação-no-debian">Instalação no Debian</a></li>
-<li><a href="#instalação-no-macos">Instalação no MacOS</a></li>
-<li><a href="#exemplos-de-uso">Exemplos de uso</a></li>
-<li><a href="#referências">Referências</a></li>
+<li><a href="https://geraldo.dev/posts/armadillo/#instalação-no-debian">Instalação no Debian</a></li>
+<li><a href="https://geraldo.dev/posts/armadillo/#instalação-no-macos">Instalação no MacOS</a></li>
+<li><a href="https://geraldo.dev/posts/armadillo/#exemplos-de-uso">Exemplos de uso</a></li>
+<li><a href="https://geraldo.dev/posts/armadillo/#referências">Referências</a></li>
 </ul>
-        </aside>
-        
+</aside>
 
-        <p>$$
-A<em>{m,n} =
+
+
+
+        <div>
+$$
+A_{m,n} =
 \begin{pmatrix}
-a</em>{1,1} &amp; a<em>{1,2} &amp; \cdots &amp; a</em>{1,n} <br />
-a<em>{2,1} &amp; a</em>{2,2} &amp; \cdots &amp; a<em>{2,n} <br />
-\vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  <br />
-a</em>{m,1} &amp; a<em>{m,2} &amp; \cdots &amp; a</em>{m,n}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
 \end{pmatrix}
 $$
-<strong>Armadillo</strong> é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do <strong>Matlab</strong>.</p>
+</div>
+
+<p><strong>Armadillo</strong> é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do <strong>Matlab</strong>.</p>
 
 <p>Provê suporte para:</p>
 
@@ -532,13 +545,6 @@ var disqus_config = function () {
     </div>
   </div>
 </footer>
-
-
-<script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
-
-
 
     
 

@@ -63,6 +63,8 @@ if (!doNotTrack) {
 
 
 
+
+
 </head>
 
 <body>
@@ -144,39 +146,41 @@ if (!doNotTrack) {
         <h1>Feed Forward Neural Network no debian com mlpack</h1>
 
         
-        <aside>
-          <header>
-            <h3>Sumário</h3>
-          </header>
-          
+<aside>
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  
 <ul class="section table-of-contents">
-<li><a href="#versões-do-mlpack-disponíveis-do-debian">Versões do mlpack disponíveis do Debian</a></li>
-<li><a href="#utilizando-pacotes-testing-junto-com-stable">Utilizando pacotes testing junto com stable</a></li>
-<li><a href="#dados-de-treinamento">Dados de treinamento</a></li>
-<li><a href="#implementação">Implementação</a>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#versões-do-mlpack-disponíveis-do-debian">Versões do mlpack disponíveis do Debian</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#utilizando-pacotes-testing-junto-com-stable">Utilizando pacotes testing junto com stable</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#dados-de-treinamento">Dados de treinamento</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#implementação">Implementação</a>
 <ul class="section table-of-contents">
-<li><a href="#carregando-as-dependências">Carregando as dependências</a></li>
-<li><a href="#carregar-e-transpor-os-dados-do-arquivo-csv">Carregar e transpor os dados do arquivo CSV</a></li>
-<li><a href="#constantes-para-os-índices">Constantes para os índices</a></li>
-<li><a href="#dados-de-entrada-para-treinamento">Dados de entrada para treinamento</a></li>
-<li><a href="#dados-de-saída-para-treinamento">Dados de saída para treinamento</a></li>
-<li><a href="#dados-de-entrada-para-teste">Dados de entrada para teste</a></li>
-<li><a href="#dados-de-saída-para-teste">Dados de saída para teste</a></li>
-<li><a href="#visualizando-os-dados-de-teste">Visualizando os dados de teste</a></li>
-<li><a href="#construindo-a-rede-neural">Construindo a rede neural</a></li>
-<li><a href="#treinamento">Treinamento</a></li>
-<li><a href="#testando-o-modelo-ajustado">Testando o modelo ajustado</a></li>
-<li><a href="#salvando-modelo-para-continuar-depois">Salvando modelo para continuar depois</a></li>
-<li><a href="#carregando-o-modelo-salvo-na-sessão-anterior">Carregando o modelo salvo na sessão anterior</a></li>
-<li><a href="#nova-sessão-de-treinamento-para-refinar">Nova sessão de treinamento para refinar</a></li>
-<li><a href="#novos-testes">Novos testes</a></li>
-<li><a href="#salvando-o-modelo-atualizado">Salvando o modelo atualizado</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#carregando-as-dependências">Carregando as dependências</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#carregar-e-transpor-os-dados-do-arquivo-csv">Carregar e transpor os dados do arquivo CSV</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#constantes-para-os-índices">Constantes para os índices</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#dados-de-entrada-para-treinamento">Dados de entrada para treinamento</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#dados-de-saída-para-treinamento">Dados de saída para treinamento</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#dados-de-entrada-para-teste">Dados de entrada para teste</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#dados-de-saída-para-teste">Dados de saída para teste</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#visualizando-os-dados-de-teste">Visualizando os dados de teste</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#construindo-a-rede-neural">Construindo a rede neural</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#treinamento">Treinamento</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#testando-o-modelo-ajustado">Testando o modelo ajustado</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#salvando-modelo-para-continuar-depois">Salvando modelo para continuar depois</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#carregando-o-modelo-salvo-na-sessão-anterior">Carregando o modelo salvo na sessão anterior</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#nova-sessão-de-treinamento-para-refinar">Nova sessão de treinamento para refinar</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#novos-testes">Novos testes</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#salvando-o-modelo-atualizado">Salvando o modelo atualizado</a></li>
 </ul></li>
-<li><a href="#código-fonte-completo">Código fonte completo</a></li>
-<li><a href="#referências">Referências</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#código-fonte-completo">Código fonte completo</a></li>
+<li><a href="https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/#referências">Referências</a></li>
 </ul>
-        </aside>
-        
+</aside>
+
+
+
 
         <p>Este artigo mostra como criar uma rede neural simples no
 <a href="https://www.debian.org/releases/stable/" target="_blank">Debian stable</a> utilizando a
@@ -708,8 +712,6 @@ var disqus_config = function () {
     </div>
   </div>
 </footer>
-
-
 
     
 

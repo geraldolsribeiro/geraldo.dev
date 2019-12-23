@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/m4/</loc>
+    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/armadillo/</loc>
     <lastmod>2019-12-17T00:00:00-03:00</lastmod>
   </url>
@@ -506,7 +511,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -560,6 +565,12 @@
   <url>
     <loc>https://geraldo.dev/tags/locker/</loc>
     <lastmod>2017-10-25T09:42:40-02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/m4/</loc>
+    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
   

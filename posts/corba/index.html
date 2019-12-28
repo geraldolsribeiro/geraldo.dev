@@ -49,8 +49,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.8bf008be2ffff5ae1781c4ba8ae62628ef26690c2395a70a5b8e931ca81c0202.css"
-      integrity="sha256-i/AIvi//9a4XgcS6iuYmKO8maQwjlacKW46THKgcAgI="
+      href="https://geraldo.dev/style.main.min.c0a35745415478e03f2086a4f028ae4798e223fce39dc5c0f538cfdf05450f38.css"
+      integrity="sha256-wKNXRUFUeOA/IIak8CiuR5jiI/zjncXA9TjP3wVFDzg="
       media="screen" async>
 
 
@@ -254,53 +254,53 @@ if (!doNotTrack) {
 <li><code>inout</code> - do cliente para o servidor e de volta para o cliente</li>
 </ul>
 <h3 id="excees">Exceções</h3>
-<pre><code class="language-idl" data-lang="idl">Interface Bank {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Interface Bank {
   exception Reject {
     string reason;
   };
   exception TooMany {};
   Account newAccount( in string name ) raises (Reject, TooMany);
 };
-</code></pre><h3 id="operaes-oneway">Operações oneway</h3>
-<pre><code class="language-idl" data-lang="idl">Interface Account {
+</code></pre></div><h3 id="operaes-oneway">Operações oneway</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Interface Account {
   oneway void notice( in string notice );
 };
-</code></pre><ul>
+</code></pre></div><ul>
 <li>não bloqueantes</li>
 <li>não aceitam parâmetros <code>out</code> ou <code>inout</code></li>
 <li>não lançam exceções (não aceitam <code>raise</code>)</li>
 </ul>
 <h3 id="estruturas">Estruturas</h3>
-<pre><code class="language-idl" data-lang="idl">struct PersonalDetails {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">struct PersonalDetails {
   string name;
   short age;
 };
 <p>interface Bank {
 PersonalDetails getPerDet(in string name);
 };
-</code></pre><h3 id="arrays">Arrays</h3></p>
+</code></pre></div><h3 id="arrays">Arrays</h3></p>
 <ul>
 <li>podem ser multidimensionais</li>
 <li>precisam ter tamanho fixo (<em>conhecido em tempo de definição</em>)</li>
 </ul>
-<pre><code class="language-idl" data-lang="idl">Account bankAccounts[100];
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Account bankAccounts[100];
 short matrix[10][20]; // 2D array
-</code></pre><h3 id="constantes">Constantes</h3>
-<pre><code class="language-idl" data-lang="idl">Interface Bank {
+</code></pre></div><h3 id="constantes">Constantes</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Interface Bank {
   const long MaxAccounts = 10000;
 };
-</code></pre><p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
+</code></pre></div><p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
 <h3 id="typedef">Typedef</h3>
-<pre><code class="language-idl" data-lang="idl">typedef short size;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">typedef short size;
 size i;
 <p>typedef Account Accounts[100]; // acho que está invertido aqui
 Accounts bankAccounts;
-</code></pre><h3 id="mdulos">Módulos</h3></p>
-<pre><code class="language-idl" data-lang="idl">Module Finance {
+</code></pre></div><h3 id="mdulos">Módulos</h3></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Module Finance {
   interface Bank { ... };
   interface Account { ... };
 };
-</code></pre><ul>
+</code></pre></div><ul>
 <li>são usados para agrupar interfaces em unidades lógicas</li>
 <li>utilize nomes completos (p.e. <code>Finance::Account *a;</code>)</li>
 </ul>
@@ -336,23 +336,23 @@ Accounts bankAccounts;
 <li>são mapeadas para classes</li>
 <li>uma IDL mapeada para uma classe C++ não pode ser instanciada</li>
 </ul>
-<pre><code class="language-idl" data-lang="idl">Interface Account { ... }
-</code></pre><p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Interface Account { ... }
+</code></pre></div><p>será mapeado para:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object { ... }
 </code></pre></div><h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
-<pre><code class="language-idl" data-lang="idl">Interface Bank {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Interface Bank {
   struct Details { ... };
 };
-</code></pre><p>será mapeado para:</p>
+</code></pre></div><p>será mapeado para:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bank</span> {
   <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
     <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Details</span> { ... };
 };
-</code></pre></div><pre><code class="language-idl" data-lang="idl">Module M {
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text">Module M {
   Interface A { ... };
   Interface B { ... };
 };
-</code></pre><p>será mapeado para:</p>
+</code></pre></div><p>será mapeado para:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> M {
   <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> { ... };
   <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> { ... };

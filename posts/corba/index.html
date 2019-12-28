@@ -156,6 +156,11 @@ if (!doNotTrack) {
         <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-tipos">Mapeamento de tipos</a></li>
       </ul>
     </li>
+    <li><a href="https://geraldo.dev/posts/corba/#repositrio-de-interfaces">Repositório de interfaces</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#repositrio-de-implementao">Repositório de implementação</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#dynamic-invocation-interface">Dynamic Invocation Interface</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#interoperabilidade">Interoperabilidade</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#referncias">Referências</a></li>
   </ul>
 
@@ -391,8 +396,75 @@ Accounts bankAccounts;
 <td>double</td>
 <td>CORBA::Double</td>
 </tr>
+<tr>
+<td>char</td>
+<td>CORBA::Char</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>CORBA::Boolean</td>
+</tr>
+<tr>
+<td>octet</td>
+<td>CORBA::Octet</td>
+</tr>
+<tr>
+<td>any</td>
+<td>CORBA::Any</td>
+</tr>
 </tbody>
 </table>
+<h2 id="repositrio-de-interfaces">Repositório de interfaces</h2>
+<ul>
+<li>provê armazenamento para informações da IDL</li>
+<li>um programa pode referenciar objetos cuja interface será conhecida em tempo de execução</li>
+<li>estas informações podem ser usadas pelo ORB para realizar requisições</li>
+<li>pode armazenar outras informações sobre interfaces:
+<ul>
+<li>debugging</li>
+<li>info</li>
+<li>browser routines</li>
+</ul>
+</li>
+</ul>
+<h2 id="repositrio-de-implementao">Repositório de implementação</h2>
+<ul>
+<li>informações que o ORB utiliza para localizar e ativar implementações de um servidor de objetos</li>
+<li>armazena informações de ativação:
+<ul>
+<li>máquina onde um servidor pode ser iniciado a partir de uma requisição do cliente</li>
+</ul>
+</li>
+</ul>
+<h2 id="dynamic-invocation-interface">Dynamic Invocation Interface</h2>
+<ul>
+<li>Em vez de chamar um stub específico de uma operação, é possível especificar um objeto, operação e parâmetros para através de uma chamada ou sequência de chamadas</li>
+<li>o cliente precisa fornecer os tipos dos parâmetros passados</li>
+</ul>
+<h2 id="interoperabilidade">Interoperabilidade</h2>
+<ul>
+<li>suporta rede de objetos distribuídos em múltiplos ORBs (heterogêneos)</li>
+<li><em>InterORBability</em></li>
+<li><code>GIOP</code>: sintaxe padrão de transferência e conjunto de formato de mensagens</li>
+<li><code>IIOP</code>: mapeamento <code>TCP/IP</code> para <code>GIOP</code></li>
+</ul>
+<h2 id="coss---common-object-service-specification">COSS - Common Object Service Specification</h2>
+<ul>
+<li>naming</li>
+<li>events</li>
+<li>life cycle</li>
+<li>time</li>
+<li>transactions</li>
+<li>concurrency</li>
+<li>persistence</li>
+<li>query</li>
+<li>security</li>
+<li>licensing</li>
+<li>relationships</li>
+<li>properties</li>
+<li>externalization</li>
+<li>collection</li>
+</ul>
 <h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>

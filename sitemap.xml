@@ -48,6 +48,16 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/corba/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/plantuml/</loc>
+    <lastmod>2019-12-24T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/m4/</loc>
     <lastmod>2019-12-23T00:00:00-03:00</lastmod>
   </url>
@@ -414,6 +424,12 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/corba/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/ctime/</loc>
     <lastmod>2017-11-17T10:14:46-02:00</lastmod>
     <priority>0</priority>
@@ -511,7 +527,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -601,6 +617,12 @@
   <url>
     <loc>https://geraldo.dev/tags/nemo/</loc>
     <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/plantuml/</loc>
+    <lastmod>2019-12-24T00:00:00-03:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>C&#43;&#43; Lambda | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-lambda/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -139,54 +139,47 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/cpp-lambda/#funções-de-primeira-classe">Funções de primeira classe</a></li>
-<li><a href="https://geraldo.dev/posts/cpp-lambda/#lambdas">Lambdas</a></li>
-<li><a href="https://geraldo.dev/posts/cpp-lambda/#referências">Referências</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#funes-de-primeira-classe">Funções de primeira classe</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#lambdas">Lambdas</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#referncias">Referências</a></li>
+  </ul>
+
 </aside>
 
 
 
 
-        <h2 id="funções-de-primeira-classe">Funções de primeira classe</h2>
-
+        <div class="main-content">
+        <h2 id="funes-de-primeira-classe">Funções de primeira classe</h2>
 <p>Em programação funcional funções são <strong>cidadães de primeira classe</strong>, o que
 significa que elas se comportam com dados e suportam quaisquer operações que
 a linguagem permita.</p>
-
 <p>Algumas características das funções de primeira classe são:</p>
-
 <ul>
 <li>atribuir uma função a uma variável</li>
 <li>passar uma função como parâmetro para outra função</li>
 <li>retornar a função como valor de outra função</li>
 <li>armazenar a função em uma estrutura de dados</li>
 </ul>
-
 <h2 id="lambdas">Lambdas</h2>
-
 <p>Lambdas são funções anônimas (sem um nome) definidas <em>in-place</em>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//  1   2                           3                               4
-</span><span style="color:#75715e"></span>   [ ] ( ) { std<span style="color:#f92672">::</span>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Hello from C++ Lambda!&#34;</span> <span style="color:#f92672">&lt;&lt;</span> std<span style="color:#f92672">::</span>endl; } ( );
-</code></pre></div>
-<p>Vamos ver o que cada grupo significa:</p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#75715e">//  1   2                           3                               4
+</span><span style="color:#75715e"></span>   [ ] ( ) { std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Hello from C++ Lambda!</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>endl; } ( );
+</code></pre></div><p>Vamos ver o que cada grupo significa:</p>
 <ul>
 <li>1 <code>[]</code> <code>lambda introducer</code> ou <code>lambda closure</code></li>
 <li>2 <code>()</code> lista de parâmetros (você pode omitir estes parêntes se a função não receber parâmetros).</li>
 <li>3 <code>{}</code> corpo da função lambda</li>
 <li>4 <code>()</code> executa a função</li>
 </ul>
-
-<h2 id="referências">Referências</h2>
-
+<h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus" target="_blank">Functional Programming in C++</a></li>
-<li><a href="https://medium.com/@angelorubin/javascript-first-class-function-fun%C3%A7%C3%B5es-de-primeira-classe-7ebf63d2c83a" target="_blank">Programação Funcional em Javascript — First-Class Function (Funções de Primeira Classe)</a></li>
+<li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus">Functional Programming in C++</a></li>
+<li><a href="https://medium.com/@angelorubin/javascript-first-class-function-fun%C3%A7%C3%B5es-de-primeira-classe-7ebf63d2c83a">Programação Funcional em Javascript — First-Class Function (Funções de Primeira Classe)</a></li>
 </ul>
 
+        </div>
 
         
 
@@ -401,7 +394,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

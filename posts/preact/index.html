@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Preact - Petit React | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/preact/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -130,19 +130,19 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/preact/#ciclo-de-vida">Ciclo de vida</a></li>
-<li><a href="https://geraldo.dev/posts/preact/#preact-sem-babel-ou-jsx">Preact sem babel ou JSX</a></li>
-<li><a href="https://geraldo.dev/posts/preact/#referências">Referências</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/preact/#ciclo-de-vida">Ciclo de vida</a></li>
+    <li><a href="https://geraldo.dev/posts/preact/#preact-sem-babel-ou-jsx">Preact sem babel ou JSX</a></li>
+    <li><a href="https://geraldo.dev/posts/preact/#referncias">Referências</a></li>
+  </ul>
+
 </aside>
 
 
 
 
+        <div class="main-content">
         <h2 id="ciclo-de-vida">Ciclo de vida</h2>
-
 <ul>
 <li><code>componentWillMount</code>: Antes que o componente seja montado no DOM</li>
 <li><code>componentDidMount</code>: Depois que o componente é montado no DOM</li>
@@ -152,11 +152,9 @@ if (!doNotTrack) {
 <li><code>componentWillUpdate</code>: Antes <code>render()</code></li>
 <li><code>componentDidUpdate</code>: Depois <code>render()</code></li>
 </ul>
-
 <h2 id="preact-sem-babel-ou-jsx">Preact sem babel ou JSX</h2>
-
 <p>index.html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
 &lt;<span style="color:#f92672">html</span>&gt;
   &lt;<span style="color:#f92672">head</span>&gt;
     &lt;<span style="color:#f92672">title</span>&gt;Preact sem Babel or JSX&lt;/<span style="color:#f92672">title</span>&gt;
@@ -165,71 +163,60 @@ if (!doNotTrack) {
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/preact&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
     &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
   &lt;/<span style="color:#f92672">body</span>&gt;
-&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
-<p>index.js</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
-
-<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;
-
-<span style="color:#75715e">/** Example classful component */</span>
+&lt;/<span style="color:#f92672">html</span>&gt;
+</code></pre></div><p>index.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
+<p><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;</p>
+<p><span style="color:#75715e">/** Example classful component */</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
-  <span style="color:#a6e22e">componentDidMount</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Hello!&#39;</span> });
-  }
-  <span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">state</span>) {
-    <span style="color:#66d9ef">return</span> (
-      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;div&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;app&#39;</span>},
-        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Header</span>, { <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">message</span> }),
-        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Main</span>)
-      )
-    );
-  }
+<span style="color:#a6e22e">componentDidMount</span>() {
+<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span><span style="color:#e6db74">'Hello!'</span> });
 }
-
-
-<span style="color:#75715e">/** Components can just be pure functions */</span>
+<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">state</span>) {
+<span style="color:#66d9ef">return</span> (
+<span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'div'</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">'app'</span>},
+<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Header</span>, { <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">message</span> }),
+<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Main</span>)
+)
+);
+}
+}</p>
+<p><span style="color:#75715e">/** Components can just be pure functions */</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Header</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;header&#39;</span>, <span style="color:#66d9ef">null</span>,
-    <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h1&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;App&#39;</span>),
-    <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h2&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span>)
-  );
-};
-
-
-<span style="color:#75715e">/** Instead of JSX, use: h(type, props, ...children) */</span>
+<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'header'</span>, <span style="color:#66d9ef">null</span>,
+<span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'h1'</span>, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">'App'</span>),
+<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'h2'</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span>)
+);
+};</p>
+<p><span style="color:#75715e">/** Instead of JSX, use: h(type, props, &hellip;children) */</span>
 <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
-  <span style="color:#a6e22e">render</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">item</span>) =&gt; (
-      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;li&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#a6e22e">item</span>}, <span style="color:#e6db74">&#39;Item &#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>)
-    ));
-    <span style="color:#66d9ef">return</span> (
-      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;main&#39;</span>, <span style="color:#66d9ef">null</span>,
-        <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">items</span>)
-      )
-    );
-  }
+<span style="color:#a6e22e">render</span>() {
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">item</span>) =&gt; (
+<span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'li'</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#a6e22e">item</span>}, <span style="color:#e6db74">'Item '</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>)
+));
+<span style="color:#66d9ef">return</span> (
+<span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'main'</span>, <span style="color:#66d9ef">null</span>,
+<span style="color:#a6e22e">h</span>(<span style="color:#e6db74">'ul'</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">items</span>)
+)
+);
 }
-
-
-<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
-</code></pre></div>
-<p>Exemplo de preact com mitt</p>
-
-<p><a href="https://codepen.io/developit/pen/rjMEwW?editors=0010" target="_blank">https://codepen.io/developit/pen/rjMEwW?editors=0010</a></p>
-
-<h2 id="referências">Referências</h2>
-
+}</p>
+<p><span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
+</code></pre></div><p>Exemplo de preact com mitt</p></p>
+<p><a href="https://codepen.io/developit/pen/rjMEwW?editors=0010">https://codepen.io/developit/pen/rjMEwW?editors=0010</a></p>
+<h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://medium.com/reactbrasil/preact-b128e4bf7625" target="_blank">Preact</a></li>
-<li><a href="https://preactjs.com/guide/getting-started" target="_blank">https://preactjs.com/guide/getting-started</a></li>
-<li><a href="https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/" target="_blank">https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/</a></li>
-<li><a href="https://github.com/developit/preact-without-babel" target="_blank">https://github.com/developit/preact-without-babel</a></li>
-<li><a href="https://blog.moove-it.com/getting-started-preact-progressive-web-apps/" target="_blank">https://blog.moove-it.com/getting-started-preact-progressive-web-apps/</a></li>
-<li><a href="https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/" target="_blank">https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/</a></li>
-<li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome" target="_blank">http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome</a></li>
-<li><a href="https://project-awesome.org/ooade/awesome-preact" target="_blank">https://project-awesome.org/ooade/awesome-preact</a></li>
+<li><a href="https://medium.com/reactbrasil/preact-b128e4bf7625">Preact</a></li>
+<li><a href="https://preactjs.com/guide/getting-started">https://preactjs.com/guide/getting-started</a></li>
+<li><a href="https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/">https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/</a></li>
+<li><a href="https://github.com/developit/preact-without-babel">https://github.com/developit/preact-without-babel</a></li>
+<li><a href="https://blog.moove-it.com/getting-started-preact-progressive-web-apps/">https://blog.moove-it.com/getting-started-preact-progressive-web-apps/</a></li>
+<li><a href="https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/">https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/</a></li>
+<li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome">http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome</a></li>
+<li><a href="https://project-awesome.org/ooade/awesome-preact">https://project-awesome.org/ooade/awesome-preact</a></li>
 </ul>
 
+        </div>
 
         
 
@@ -444,7 +431,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

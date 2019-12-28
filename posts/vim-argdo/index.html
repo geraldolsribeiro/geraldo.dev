@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Vim args, argdo | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-argdo/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -144,40 +144,30 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/vim-argdo/#carregamento-de-arquivos-por-condição">Carregamento de arquivos por condição</a></li>
-<li><a href="https://geraldo.dev/posts/vim-argdo/#operar-nos-arquivos-carregados">Operar nos arquivos carregados</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/vim-argdo/#carregamento-de-arquivos-por-condio">Carregamento de arquivos por condição</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-argdo/#operar-nos-arquivos-carregados">Operar nos arquivos carregados</a></li>
+  </ul>
+
 </aside>
 
 
 
 
+        <div class="main-content">
         <p>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de
 arquivos para realizar uma refatoração ou realizar modificações em lote.</p>
-
-<h2 id="carregamento-de-arquivos-por-condição">Carregamento de arquivos por condição</h2>
-
+<h2 id="carregamento-de-arquivos-por-condio">Carregamento de arquivos por condição</h2>
 <p>Carregar todos os arquivos <code>md</code>.</p>
-
 <pre><code>:args `find . -name '*.md'`
-</code></pre>
-
-<p>Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra <code>Apple</code>.</p>
-
+</code></pre><p>Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra <code>Apple</code>.</p>
 <pre><code>:args `git grep -l Apple`
-</code></pre>
-
-<p>o <code>-l</code> do <code>git-grep</code> faz listar somente os arquivos sem o texto que faz match.</p>
-
+</code></pre><p>o <code>-l</code> do <code>git-grep</code> faz listar somente os arquivos sem o texto que faz match.</p>
 <h2 id="operar-nos-arquivos-carregados">Operar nos arquivos carregados</h2>
-
 <p>Vai executar o <code>comando</code> em cada arquivo aberto!</p>
-
 <pre><code>:argdo %s/Apple/Orange/gc
 </code></pre>
-
+        </div>
 
         
 
@@ -392,7 +382,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

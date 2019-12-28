@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Como instalar o flameshot no Debian stretch | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -150,44 +150,41 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/#referências">Referências</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/#referncias">Referências</a></li>
+  </ul>
+
 </aside>
 
 
 
 
+        <div class="main-content">
         <p>O <code>flameshot</code> é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.</p>
-
-<p><div class="center-align">
+  <div class="center-align">
     <picture>
       <img class="responsive-img z-depth-3" src="https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif" alt="Demonstração de uso do flameshot">
     </picture>
-  </div></p>
-
-<p><style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&ldquo;Font Awesome 5 Free&rdquo;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&rsquo;\f071&rsquo;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&rsquo;\f05a&rsquo;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&rsquo;\f06a&rsquo;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&rsquo;\f058&rsquo;}.notice.tip{background:#e6f9e6}</style><div class="notice tip" >
-<p class="first notice-title">Dica</p><p><strong>Atualização:</strong> Agora que o <strong>Debian 10</strong> foi lançado não é mais necessário recorrer ao <strong>backports</strong>, então basta usar <code>apt install flameshot</code>.</p></div></p>
-
+  </div>
+<style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:"Font Awesome 5 Free",FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:'\f071'}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:'\f05a'}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:'\f06a'}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:'\f058'}.notice.tip{background:#e6f9e6}</style><div class="notice tip" >
+<p class="first notice-title">Dica</p><p><strong>Atualização:</strong> Agora que o <strong>Debian 10</strong> foi lançado não é mais necessário recorrer ao <strong>backports</strong>, então basta usar <code>apt install flameshot</code>.</p></div>
 <p>O <code>flameshot</code> já está disponível no <code>Debian 10</code>, mas enquanto aguardamos
 a versão nova do Debian ser lançada é preciso utilizar a versão do
 <code>stretch-backports</code>.</p>
-
-<p><p>Primeiramente vamos acrescentar o repositório backports:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb <a href="http://deb.debian.org/debian" target="_blank">http://deb.debian.org/debian</a> stretch-backports main&#34;</span> <span style="color:#ae81ff"><br />
-</span><span style="color:#ae81ff"></span>     &gt;&gt; /etc/apt/sources.list.d/backports.list</code></pre></div>
-<p>Atualizar a lista de pacotes disponíveis:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update</code></pre></div>
-<p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -t stretch-backports flameshot</code></pre></div>
-<h2 id="referências">Referências</h2></p>
-
+<p>Primeiramente vamos acrescentar o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb http://deb.debian.org/debian stretch-backports main&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>     &gt;&gt; /etc/apt/sources.list.d/backports.list
+</code></pre></div><p>Atualizar a lista de pacotes disponíveis:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">apt update
+</code></pre></div><p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">apt install -t stretch-backports flameshot
+</code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://github.com/lupoDharkael/flameshot" target="_blank">Github do projeto flameshot</a></li>
-<li><a href="https://askubuntu.com/questions/3578/tool-to-add-shapes-annotations-and-text-using-templates-to-images/3584" target="_blank">Tool to add shapes, annotations and text using templates to images</a></li>
+<li><a href="https://github.com/lupoDharkael/flameshot">Github do projeto flameshot</a></li>
+<li><a href="https://askubuntu.com/questions/3578/tool-to-add-shapes-annotations-and-text-using-templates-to-images/3584">Tool to add shapes, annotations and text using templates to images</a></li>
 </ul>
 
+        </div>
 
         
 
@@ -402,7 +399,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

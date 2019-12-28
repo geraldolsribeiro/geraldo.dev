@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>M4 on geraldo.dev</title>
+    <title>m4 on geraldo.dev</title>
     <link>https://geraldo.dev/tags/m4/</link>
-    <description>Recent content in M4 on geraldo.dev</description>
+    <description>Recent content in m4 on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
@@ -20,8 +20,8 @@
       <guid>https://geraldo.dev/posts/m4/</guid>
       <description>m4 é uma linguagem de macro desenvolvida pelo Dennis M. Ritchie
 Definindo uma macro O delimitador padrão é o backtick (`) junto com o single quote (&#39;).
-define(`yoo&amp;#39;,`Hello World!&amp;#39;) I say this: yoo yoo yoo Executando m4 nome_do_arquivo.m4 temos:
-I say this: Hello World! Hello World! Hello World!  Definição com várias linhas define(`header&amp;#39;, ` &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;/&amp;gt; &amp;lt;title&amp;gt;Meu título&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;#39;) Passando parâmetros define(`my_value&amp;#39;,`$1_file&amp;#39;) my_value(`test&amp;#39;) Use $1, $2, &amp;hellip; para passar parâmetros:</description>
+define(`yoo&#39;,`Hello World!&#39;) I say this: yoo yoo yoo Executando m4 nome_do_arquivo.m4 temos:
+I say this: Hello World! Hello World! Hello World! Definição com várias linhas define(`header&#39;, ` &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;/&amp;gt; &amp;lt;title&amp;gt;Meu título&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &#39;) Passando parâmetros define(`my_value&#39;,`$1_file&#39;) my_value(`test&#39;) Use $1, $2, &amp;hellip; para passar parâmetros:</description>
     </item>
     
   </channel>

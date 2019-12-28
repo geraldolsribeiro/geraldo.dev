@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Como trocar o nome do servidor sem reiniciar | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -157,50 +157,45 @@ if (!doNotTrack) {
 
 
 
+        <div class="main-content">
         <p>Como um <strong>Administrador de Sistemas</strong>, as vezes, você precisa alterar
 o nome da máquina. Seja porque digitou o nome errado durante a
 instalação, ou se a política de nomes da empresa mudou ou se o nome já estava
 sendo utilizado por outra máquina.</p>
-
 <p><strong>Nota:</strong> O procedimento que veremos a seguir vale para as distribuições Linux
-derivadas do <a href="https://www.debian.org" target="_blank">Debian</a>, tais como
-<a href="https://linuxmint.com" target="_blank">Mint</a>, <a href="https://www.ubuntu.com" target="_blank">Ubuntu</a>, e outras 130
-(segundo o <a href="https://distrowatch.com/search.php?basedon=Debian" target="_blank">distrowatch</a>).</p>
-
+derivadas do <a href="https://www.debian.org">Debian</a>, tais como
+<a href="https://linuxmint.com">Mint</a>, <a href="https://www.ubuntu.com">Ubuntu</a>, e outras 130
+(segundo o <a href="https://distrowatch.com/search.php?basedon=Debian">distrowatch</a>).</p>
 <p>O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot
 é o <code>/etc/hostname</code>, então basta trocar seu conteúdo que no <strong>próximo boot</strong>
 a máquina terá outro nome.</p>
-
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
 palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname</code></pre></div>
-<p><strong>Para o próximo boot está tudo OK!</strong></p>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname
+</code></pre></div><p><strong>Para o próximo boot está tudo OK!</strong></p>
 <p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
 mostra o nome antigo. Mas a máquina já está rodando e não posso parar os
 serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em> em execução.</p>
-
 <p>Sem pânico! Felizmente existe um modo muito
 simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
 através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
 o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname</code></pre></div>
-<p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname
+</code></pre></div><p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
-
 <p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
 se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
 comando faça o seguinte:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts</code></pre></div>
-<p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts
+</code></pre></div><p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
 Uma explicação muito breve sobre o comando acima:</p>
-
 <ul>
 <li><code>-i</code>: modo de edição <code>inline</code> (abre, edita e fecha o arquivo)</li>
 <li><code>s</code>: comando de substituição no formato <code>/de/para/</code></li>
 <li><code>g</code>: substitui todas as ocorrências de <code>antigo-nome</code> por <code>novo-nome</code></li>
 </ul>
 
+        </div>
 
         
 
@@ -415,7 +410,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

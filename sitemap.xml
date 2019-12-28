@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -53,8 +53,38 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/corba/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/plantuml/</loc>
+    <lastmod>2019-12-24T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/plantuml/</loc>
     <lastmod>2019-12-24T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/m4/</loc>
+    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -63,8 +93,28 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/armadillo/</loc>
+    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/%C3%A1lgebra-linear/</loc>
+    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/armadillo/</loc>
     <lastmod>2019-12-17T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/git/</loc>
+    <lastmod>2019-12-08T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -73,7 +123,17 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/eclipse/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/eclipse-emf-xml/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/emf/</loc>
     <lastmod>2019-12-05T00:00:00-03:00</lastmod>
   </url>
   
@@ -83,7 +143,22 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/xml/</loc>
+    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/eventos/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/js-eventos/</loc>
+    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/javascript/</loc>
     <lastmod>2019-12-03T00:00:00-03:00</lastmod>
   </url>
   
@@ -93,7 +168,17 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/debian/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/swap/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/preact/</loc>
     <lastmod>2019-12-02T00:00:00-03:00</lastmod>
   </url>
   
@@ -103,7 +188,17 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/swap/</loc>
+    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/</loc>
+    <lastmod>2019-11-23T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/touchpad/</loc>
     <lastmod>2019-11-23T00:00:00-03:00</lastmod>
   </url>
   
@@ -113,8 +208,43 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/firewall/</loc>
+    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/exce%C3%A7%C3%A3o/</loc>
+    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/java/</loc>
+    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/junit/</loc>
+    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/junit-excecao/</loc>
     <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/try-catch/</loc>
+    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/macro/</loc>
+    <lastmod>2019-11-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/vim/</loc>
+    <lastmod>2019-11-07T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -123,12 +253,32 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/console/</loc>
+    <lastmod>2019-11-06T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/javascript-console-dir/</loc>
     <lastmod>2019-11-06T00:00:00-03:00</lastmod>
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gif/</loc>
+    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gnuplot/</loc>
     <lastmod>2019-10-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -138,13 +288,48 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/file-manager/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gnome/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nautilus/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nemo/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</loc>
+    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/xfce/</loc>
     <lastmod>2019-07-23T10:33:17-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-lambda/</loc>
     <lastmod>2019-07-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/lambda/</loc>
+    <lastmod>2019-07-07T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/apt/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -158,6 +343,36 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/gerenciador-de-arquivos/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/hugo/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/linux/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/sysadmin/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/ubuntu/</loc>
+    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/audacity/</loc>
+    <lastmod>2019-05-15T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</loc>
     <lastmod>2019-05-15T00:00:00-03:00</lastmod>
   </url>
@@ -168,8 +383,48 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/ffn/</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/mlpack/</loc>
+    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/annotation/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/backports/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</loc>
     <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/flameshot/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/screenshot/</loc>
+    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/argdo/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/args/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -213,16 +468,6 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/vim-single-instance/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/vim-spell-checking/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/posts/vim-argdo/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
@@ -253,6 +498,21 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/vim-single-instance/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/vim-spell-checking/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/vim-livro-noob-gratis/</loc>
+    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/vim-special-auto-complete/</loc>
     <lastmod>2018-11-19T00:00:00+00:00</lastmod>
   </url>
@@ -263,8 +523,13 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/vim-livro-noob-gratis/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
+    <loc>https://geraldo.dev/tags/atime/</loc>
+    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/ctime/</loc>
+    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
   </url>
   
   <url>
@@ -273,7 +538,27 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/find/</loc>
+    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/mtime/</loc>
+    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</loc>
+    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/locker/</loc>
+    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/screensaver/</loc>
     <lastmod>2017-10-25T09:42:40-02:00</lastmod>
   </url>
   
@@ -288,8 +573,23 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/%C3%ADcones/</loc>
+    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/como-trocar-hostname-sem-reiniciar/</loc>
     <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/hostname/</loc>
+    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/home/</loc>
+    <lastmod>2017-09-20T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -313,7 +613,22 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/publications/</loc>
+    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/publication_types/1/</loc>
+    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/publications/2007_ensaios_de_qualificacao_de_um_subsistema_de_propulsao_5n/</loc>
+    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/publication_types/</loc>
     <lastmod>2007-10-23T00:00:00+00:00</lastmod>
   </url>
   
@@ -338,379 +653,11 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/publication_types/1/</loc>
-    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/anima%C3%A7%C3%A3o/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/annotation/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/apt/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/argdo/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/args/</loc>
-    <lastmod>2018-11-19T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/armadillo/</loc>
-    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/publications/</loc>
-    <lastmod>2009-11-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/atime/</loc>
-    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/audacity/</loc>
-    <lastmod>2019-05-15T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/backports/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/projects/cafe-pre-pago/</loc>
   </url>
   
   <url>
     <loc>https://geraldo.dev/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/console/</loc>
-    <lastmod>2019-11-06T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/corba/</loc>
-    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/ctime/</loc>
-    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/eclipse/</loc>
-    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/emf/</loc>
-    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/eventos/</loc>
-    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/exce%C3%A7%C3%A3o/</loc>
-    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/ffn/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/file-manager/</loc>
-    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/find/</loc>
-    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/firewall/</loc>
-    <lastmod>2019-11-17T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/flameshot/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gerenciador-de-arquivos/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gif/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2019-12-08T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gnome/</loc>
-    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/gnuplot/</loc>
-    <lastmod>2019-10-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/posts/</loc>
-    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/home/</loc>
-    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/hostname/</loc>
-    <lastmod>2017-10-22T11:21:50-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/hugo/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/java/</loc>
-    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/javascript/</loc>
-    <lastmod>2019-12-03T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/junit/</loc>
-    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/lambda/</loc>
-    <lastmod>2019-07-07T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/linux/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/locker/</loc>
-    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/m4/</loc>
-    <lastmod>2019-12-23T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/macro/</loc>
-    <lastmod>2019-11-07T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/mlpack/</loc>
-    <lastmod>2019-04-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/mtime/</loc>
-    <lastmod>2017-11-17T10:14:46-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/nautilus/</loc>
-    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/nemo/</loc>
-    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/plantuml/</loc>
-    <lastmod>2019-12-24T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/projects/pousada-santa-cecilia/</loc>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/preact/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/projects/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/publication_types/</loc>
-    <lastmod>2007-10-23T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/screensaver/</loc>
-    <lastmod>2017-10-25T09:42:40-02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/screenshot/</loc>
-    <lastmod>2019-04-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/swap/</loc>
-    <lastmod>2019-12-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/sysadmin/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2017-01-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/touchpad/</loc>
-    <lastmod>2019-11-23T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/try-catch/</loc>
-    <lastmod>2019-11-12T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/ubuntu/</loc>
-    <lastmod>2019-07-02T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/vim/</loc>
-    <lastmod>2019-11-07T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/xfce/</loc>
-    <lastmod>2019-07-23T10:33:17-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/xml/</loc>
-    <lastmod>2019-12-05T00:00:00-03:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -718,21 +665,11 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+    <loc>https://geraldo.dev/projects/pousada-santa-cecilia/</loc>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/%C3%A1lgebra-linear/</loc>
-    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/%C3%ADcones/</loc>
-    <lastmod>2017-10-24T14:00:58-02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://geraldo.dev/projects/</loc>
   </url>
   
 </urlset>

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>javascript set | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/js-set/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -136,23 +136,23 @@ if (!doNotTrack) {
 
 
 
-        <p><p><a href="https://alligator.io/js/sets-introduction/" target="_blank"><a href="https://alligator.io/js/sets-introduction/" target="_blank">https://alligator.io/js/sets-introduction/</a></a></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">animals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();</p>
-
-<p><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>);
-<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐼&#39;</span>);
-<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐢&#39;</span>);
-<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐿&#39;</span>);
+        <div class="main-content">
+        <p><a href="https://alligator.io/js/sets-introduction/">https://alligator.io/js/sets-introduction/</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">animals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>();
+<p><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">'🐷'</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">'🐼'</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">'🐢'</span>);
+<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">'🐿'</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#39;🐼&#39;</span>);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">'🐼'</span>);
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
 </span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>)); <span style="color:#75715e">// true
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>);
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#39;🐷&#39;</span>)); <span style="color:#75715e">// false
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">'🐷'</span>)); <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">animals</span>.<span style="color:#66d9ef">delete</span>(<span style="color:#e6db74">'🐷'</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">'🐷'</span>)); <span style="color:#75715e">// false
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">animals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#960050;background-color:#1e0010">&lt;/span&gt;<span style="color:#e6db74"><code>Hey &lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color:#a6e22e&quot;&gt;animal&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;!\</code>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#960050;background-color:#1e0010">&lt;/span&gt;<span style="color:#e6db74"><code>&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;Hey &lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;${&lt;/span&gt;&lt;span style=&quot;color:#a6e22e&quot;&gt;animal&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;}&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;!&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;\</code></span><span style="color:#e6db74">);
 </span><span style="color:#e6db74">});
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">// Hey 🐼!
@@ -161,22 +161,21 @@ if (!doNotTrack) {
 </span><span style="color:#e6db74">
 </span><span style="color:#e6db74">animals.clear();
 </span><span style="color:#e6db74">console.log(animals.size); // 0
-</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myAnimals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐢&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>, <span style="color:#e6db74">&#39;🐷&#39;</span>]);</p>
-
-<p><span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>([<span style="color:#e6db74">&#39;🐨&#39;</span>, <span style="color:#e6db74">&#39;🐑&#39;</span>]);
-<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;Rud&#39;</span>, <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;🐢&#39;</span> });
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">myAnimals</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Set</span>([<span style="color:#e6db74">'🐷'</span>, <span style="color:#e6db74">'🐢'</span>, <span style="color:#e6db74">'🐷'</span>, <span style="color:#e6db74">'🐷'</span>]);</p>
+<p><span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>([<span style="color:#e6db74">'🐨'</span>, <span style="color:#e6db74">'🐑'</span>]);
+<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">add</span>({ <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">'Rud'</span>, <span style="color:#a6e22e">type</span><span style="color:#f92672">:</span> <span style="color:#e6db74">'🐢'</span> });
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">size</span>); <span style="color:#75715e">// 4
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">myAnimals</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">animal</span> =&gt; {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">animal</span> );
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>( <span style="color:#a6e22e">animal</span> );
 });</p>
-
 <p><span style="color:#75715e">// 🐷
-</span><span style="color:#75715e">// 🐢
-</span><span style="color:#75715e">// [&#34;🐨&#34;, &#34;🐑&#34;]
-</span><span style="color:#75715e">// Object { name: &#34;Rud&#34;, type: &#34;🐢&#34; }
+</span><span style="color:#75715e"></span><span style="color:#75715e">// 🐢
+</span><span style="color:#75715e"></span><span style="color:#75715e">// [&quot;🐨&quot;, &quot;🐑&quot;]
+</span><span style="color:#75715e"></span><span style="color:#75715e">// Object { name: &quot;Rud&quot;, type: &quot;🐢&quot; }
 </span></code></pre></div></p>
 
+        </div>
 
         
 
@@ -391,7 +390,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

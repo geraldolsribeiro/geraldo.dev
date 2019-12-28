@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>git - dicas | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/git-dicas/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -130,55 +130,50 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/git-dicas/#diferença-entre-dois-branches-somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</a></li>
-<li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</a></li>
-<li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-adicionados-entre-dois-branches">Listar somente os arquivos adicionados entre dois branches</a></li>
-<li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-removidos-entre-dois-branches">Listar somente os arquivos removidos entre dois branches</a></li>
-<li><a href="https://geraldo.dev/posts/git-dicas/#referências">Referências</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/git-dicas/#diferena-entre-dois-branches----somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</a></li>
+    <li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</a></li>
+    <li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-adicionados-entre-dois-branches">Listar somente os arquivos adicionados entre dois branches</a></li>
+    <li><a href="https://geraldo.dev/posts/git-dicas/#listar-somente-os-arquivos-removidos-entre-dois-branches">Listar somente os arquivos removidos entre dois branches</a></li>
+    <li><a href="https://geraldo.dev/posts/git-dicas/#referncias">Referências</a></li>
+  </ul>
+
 </aside>
 
 
 
 
-        <h2 id="diferença-entre-dois-branches-somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-only branch-1 branch-2</code></pre></div>
-<p>Status:</p>
-
+        <div class="main-content">
+        <h2 id="diferena-entre-dois-branches----somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-only branch-1 branch-2
+</code></pre></div><p>Status:</p>
 <ul>
 <li><code>M</code> arquivos modificados</li>
 <li><code>A</code> arquivos adicionados</li>
 <li><code>D</code> arquivos removidos</li>
 </ul>
-
 <p>Filtrando por estes códigos de status temos as próximas dicas.</p>
-
 <h2 id="listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span></code></pre></div>
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>M</code> de modificado.</li>
 </ul>
-
 <h2 id="listar-somente-os-arquivos-adicionados-entre-dois-branches">Listar somente os arquivos adicionados entre dois branches</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^A\s\+//p&#34;</span></code></pre></div>
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^A\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>A</code> de adicionado</li>
 </ul>
-
 <h2 id="listar-somente-os-arquivos-removidos-entre-dois-branches">Listar somente os arquivos removidos entre dois branches</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^D\s\+//p&#34;</span></code></pre></div>
-<ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^D\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>D</code> de deletados</li>
 </ul>
-
-<h2 id="referências">Referências</h2>
-
+<h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="http://sushihangover.github.io/git-getting-a-list-of-files-changed-between-branches/" target="_blank">Git - Getting a list of files changed between branches</a></li>
+<li><a href="http://sushihangover.github.io/git-getting-a-list-of-files-changed-between-branches/">Git - Getting a list of files changed between branches</a></li>
 </ul>
 
+        </div>
 
         
 
@@ -393,7 +388,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>CORBA | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/corba/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -130,102 +130,93 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/corba/#introdução">Introdução</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#orb-object-request-broker">ORB - Object Request Broker</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#clientes">Clientes</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#servidores">Servidores</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#idl">IDL</a>
-<ul class="section table-of-contents">
-<li><a href="https://geraldo.dev/posts/corba/#idl-features">IDL Features</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#tipos-básicos">Tipos básicos</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#direções-dos-parâmetros">Direções dos parâmetros</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#exceções">Exceções</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#operações-oneway">Operações oneway</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#estruturas">Estruturas</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#arrays">Arrays</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#constantes">Constantes</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#typedef">Typedef</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#módulos">Módulos</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#preprocessador">Preprocessador</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-para-linguagem">Mapeamento para linguagem</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-identificadores">Mapeamento de identificadores</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-interface">Mapeamento de interface</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-escopo">Mapeamento de escopo</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-do-módulo-padrão-do-corba">Mapeamento do módulo padrão do CORBA</a></li>
-<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-tipos">Mapeamento de tipos</a></li>
-</ul></li>
-<li><a href="https://geraldo.dev/posts/corba/#referências">Referências</a></li>
-</ul>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/corba/#introduo">Introdução</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#orb---object-request-broker">ORB - Object Request Broker</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#clientes">Clientes</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#servidores">Servidores</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#idl">IDL</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/corba/#idl-features">IDL Features</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#tipos-bsicos">Tipos básicos</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#direes-dos-parmetros">Direções dos parâmetros</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#excees">Exceções</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#operaes-oneway">Operações oneway</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#estruturas">Estruturas</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#arrays">Arrays</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#constantes">Constantes</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#typedef">Typedef</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mdulos">Módulos</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#preprocessador">Preprocessador</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-para-linguagem">Mapeamento para linguagem</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-identificadores">Mapeamento de identificadores</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-interface">Mapeamento de interface</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-escopo">Mapeamento de escopo</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-do-mdulo-padro-do-corba">Mapeamento do módulo padrão do CORBA</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-tipos">Mapeamento de tipos</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/corba/#referncias">Referências</a></li>
+  </ul>
+
 </aside>
 
 
 
 
-        <h2 id="introdução">Introdução</h2>
-
+        <div class="main-content">
+        <h2 id="introduo">Introdução</h2>
 <ul>
 <li>clientes e servidores estão em diferentes máquinas</li>
 <li>programas clientes enviam mensagens para servidores remotos como se este estivesse locais (<em>location transparency</em>)</li>
 </ul>
-
-<h2 id="orb-object-request-broker">ORB - Object Request Broker</h2>
-
+<h2 id="orb---object-request-broker">ORB - Object Request Broker</h2>
 <ul>
 <li>é o núcleo da <em>Object Management Architecture</em></li>
 <li>integra:
-
 <ul>
 <li>diferentes linguagens</li>
 <li>diferentes arquiteturas</li>
 <li>diferentes sistemas operacionais</li>
-</ul></li>
+</ul>
+</li>
 <li>é responsável por:
-
 <ul>
 <li>encontrar uma implementação para uma requisição</li>
 <li>preparar implementações para receber requisições</li>
 <li>comunicar dados das requisições</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="clientes">Clientes</h2>
-
 <ul>
 <li>possuem referências para objetos e invocam operações nestes objetos</li>
 <li>conhecem apenas a interface dos objetos do servidor</li>
 <li>não conhecem a implementação dos objetos nem os adaptadores utilizados por estas implementações</li>
 <li>invocam interfaces definidas por uma IDL</li>
 <li>invocam as implementações através de:
-
 <ul>
 <li>proxies (<em>IDL generated stubs</em>)</li>
 <li>DII (<em>Dynamic Invocation Interface</em>)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h2 id="servidores">Servidores</h2>
-
 <ul>
 <li>se registram no ORB</li>
 <li>se disponibilizam para aceitar requisições</li>
 <li>implementam uma IDL</li>
 </ul>
-
 <h2 id="idl">IDL</h2>
-
 <ul>
 <li>provê interfaces independente de linguagem e sistema operacional</li>
 <li>é puramente declarativa (não provê detalhes de implementação)</li>
 <li>é fortemente tipada</li>
 <li>especificações podem ser escritas e invocadas em qualquer linguagem</li>
 </ul>
-
 <h3 id="idl-features">IDL Features</h3>
-
 <ul>
-<li>Modules</li>
+<li>modules</li>
 <li>interfaces</li>
 <li>operations</li>
 <li>attributes</li>
@@ -238,9 +229,7 @@ if (!doNotTrack) {
 <li>consts</li>
 <li>exceptions</li>
 </ul>
-
-<h3 id="tipos-básicos">Tipos básicos</h3>
-
+<h3 id="tipos-bsicos">Tipos básicos</h3>
 <ul>
 <li>float</li>
 <li>double</li>
@@ -253,74 +242,64 @@ if (!doNotTrack) {
 <li>octet</li>
 <li>any</li>
 </ul>
-
-<h3 id="direções-dos-parâmetros">Direções dos parâmetros</h3>
-
+<h3 id="direes-dos-parmetros">Direções dos parâmetros</h3>
 <ul>
-<li>in - do cliente para o servidor</li>
-<li>out - do servidor para o cliente</li>
-<li>inout - do cliente para o servidor e de volta para o cliente</li>
+<li><code>in</code> - do cliente para o servidor</li>
+<li><code>out</code> - do servidor para o cliente</li>
+<li><code>inout</code> - do cliente para o servidor e de volta para o cliente</li>
 </ul>
-
-<h3 id="exceções">Exceções</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Interface Bank {
+<h3 id="excees">Exceções</h3>
+<pre><code class="language-idl" data-lang="idl">Interface Bank {
   exception Reject {
     string reason;
   };
   exception TooMany {};
   Account newAccount( in string name ) raises (Reject, TooMany);
-};</code></pre></div>
-<h3 id="operações-oneway">Operações oneway</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Interface Account {
+};
+</code></pre><h3 id="operaes-oneway">Operações oneway</h3>
+<pre><code class="language-idl" data-lang="idl">Interface Account {
   oneway void notice( in string notice );
-};</code></pre></div>
-<ul>
+};
+</code></pre><ul>
 <li>não bloqueantes</li>
 <li>não aceitam parâmetros <code>out</code> ou <code>inout</code></li>
 <li>não lançam exceções (não aceitam <code>raise</code>)</li>
 </ul>
-
 <h3 id="estruturas">Estruturas</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">struct PersonalDetails {
+<pre><code class="language-idl" data-lang="idl">struct PersonalDetails {
   string name;
   short age;
 };
-
-interface Bank {
-  PersonalDetails getPerDet(in string name);
-};</code></pre></div>
-<h3 id="arrays">Arrays</h3>
-
+<p>interface Bank {
+PersonalDetails getPerDet(in string name);
+};
+</code></pre><h3 id="arrays">Arrays</h3></p>
 <ul>
 <li>podem ser multidimensionais</li>
 <li>precisam ter tamanho fixo (<em>conhecido em tempo de definição</em>)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Account bankAccounts[100];
-short matrix[10][20]; // 2D array</code></pre></div>
-<h3 id="constantes">Constantes</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Interface Bank {
+<pre><code class="language-idl" data-lang="idl">Account bankAccounts[100];
+short matrix[10][20]; // 2D array
+</code></pre><h3 id="constantes">Constantes</h3>
+<pre><code class="language-idl" data-lang="idl">Interface Bank {
   const long MaxAccounts = 10000;
-};</code></pre></div>
-<p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
-
+};
+</code></pre><p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
 <h3 id="typedef">Typedef</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">typedef short size;
+<pre><code class="language-idl" data-lang="idl">typedef short size;
 size i;
-
-typedef Account Accounts[100]; // acho que está invertido aqui
-Accounts bankAccounts;</code></pre></div>
-<h3 id="módulos">Módulos</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Module Finance {
+<p>typedef Account Accounts[100]; // acho que está invertido aqui
+Accounts bankAccounts;
+</code></pre><h3 id="mdulos">Módulos</h3></p>
+<pre><code class="language-idl" data-lang="idl">Module Finance {
   interface Bank { ... };
   interface Account { ... };
-};</code></pre></div>
-<ul>
+};
+</code></pre><ul>
 <li>são usados para agrupar interfaces em unidades lógicas</li>
 <li>utilize nomes completos (p.e. <code>Finance::Account *a;</code>)</li>
 </ul>
-
 <h3 id="preprocessador">Preprocessador</h3>
-
 <ul>
 <li>baseado no preprocessador do C++</li>
 <li>substituição de macro</li>
@@ -332,9 +311,7 @@ Accounts bankAccounts;</code></pre></div>
 <li><code>#ifdef</code></li>
 <li><code>#defined</code></li>
 </ul>
-
 <h3 id="mapeamento-para-linguagem">Mapeamento para linguagem</h3>
-
 <ul>
 <li>linguagens <em>OO</em> e <em>non-OO</em> acessam de modos diferentes</li>
 <li>tipos específicos da linguagem</li>
@@ -344,55 +321,44 @@ Accounts bankAccounts;</code></pre></div>
 <li>adaptadores de objeto</li>
 <li>interface direta ao ORB</li>
 </ul>
-
 <h3 id="mapeamento-de-identificadores">Mapeamento de identificadores</h3>
-
 <ul>
 <li>usa o mesmo nome</li>
 <li>se for uma palavra reservada do C++ receberá um <code>_</code> como prefixo (p.e. <code>_new</code>)</li>
 </ul>
-
 <h3 id="mapeamento-de-interface">Mapeamento de interface</h3>
-
 <ul>
 <li>são mapeadas para classes</li>
 <li>uma IDL mapeada para uma classe C++ não pode ser instanciada</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Interface Account { ... }</code></pre></div>
-<p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">::</span>Object { ... }
-</code></pre></div>
-<h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Interface Bank {
+<pre><code class="language-idl" data-lang="idl">Interface Account { ... }
+</code></pre><p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object { ... }
+</code></pre></div><h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
+<pre><code class="language-idl" data-lang="idl">Interface Bank {
   struct Details { ... };
-};</code></pre></div>
-<p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Bank</span> {
-  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#66d9ef">struct</span> Details { ... };
 };
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-idl" data-lang="idl">Module M {
+</code></pre><p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bank</span> {
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Details</span> { ... };
+};
+</code></pre></div><pre><code class="language-idl" data-lang="idl">Module M {
   Interface A { ... };
   Interface B { ... };
-};</code></pre></div>
-<p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> M {
-  <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">A</span> { ... };
-  <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">B</span> { ... };
 };
-</code></pre></div>
-<p>Acessíveis via <code>M::A</code> e <code>M::B</code>.</p>
-
-<h3 id="mapeamento-do-módulo-padrão-do-corba">Mapeamento do módulo padrão do CORBA</h3>
-
+</code></pre><p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> M {
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> { ... };
+  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> { ... };
+};
+</code></pre></div><p>Acessíveis via <code>M::A</code> e <code>M::B</code>.</p>
+<h3 id="mapeamento-do-mdulo-padro-do-corba">Mapeamento do módulo padrão do CORBA</h3>
 <p>Será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> CORBA { ... }
-</code></pre></div>
-<p>Utilize os membros como:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">CORBA<span style="color:#f92672">::</span>ORB_init( ... );
-</code></pre></div>
-<h3 id="mapeamento-de-tipos">Mapeamento de tipos</h3>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> CORBA { ... }
+</code></pre></div><p>Utilize os membros como:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++">CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( ... );
+</code></pre></div><h3 id="mapeamento-de-tipos">Mapeamento de tipos</h3>
 <table>
 <thead>
 <tr>
@@ -400,46 +366,39 @@ Accounts bankAccounts;</code></pre></div>
 <th>C++</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>short</td>
 <td>CORBA::Short</td>
 </tr>
-
 <tr>
 <td>long</td>
 <td>CORBA::Long</td>
 </tr>
-
 <tr>
 <td>unsigned short</td>
 <td>CORBA::UShort</td>
 </tr>
-
 <tr>
 <td>unsigned long</td>
 <td>CORBA::ULong</td>
 </tr>
-
 <tr>
 <td>float</td>
 <td>CORBA::Float</td>
 </tr>
-
 <tr>
 <td>double</td>
 <td>CORBA::Double</td>
 </tr>
 </tbody>
 </table>
-
-<h2 id="referências">Referências</h2>
-
+<h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf" target="_blank">Introduction to Distributed Computing using CORBA</a></li>
+<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>
 </ul>
 
+        </div>
 
         
 
@@ -654,7 +613,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

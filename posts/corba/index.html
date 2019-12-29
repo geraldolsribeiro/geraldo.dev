@@ -170,6 +170,9 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="https://geraldo.dev/posts/corba/#servercc">Server.cc</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#cserviceah">CServiceA.h</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#cserviceacc">CServiceA.cc</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#makefile">Makefile</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#referncias">Referências</a></li>
   </ul>
 
@@ -752,6 +755,258 @@ OMNI_USING_NAMESPACE(omni)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Server.cc
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<p><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672"><em></span><span style="color:#f92672"></em></span>argv )
+{
+<span style="color:#66d9ef">try</span> {
+</code></pre></td></tr></table></p>
+</div>
+</div><ol>
+<li>Iniciar o ORB</li>
+<li>Obter a referência para o POA raiz para registra-se</li>
+<li>Vincular com o serviço de nomes</li>
+<li>Iniciar o servidor de objetos</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// (1) Iniciar o ORB
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var orb <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( argc, argv );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var       obj  <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RootPOA</span><span style="color:#e6db74">&#34;</span> );
+    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA_var _poa <span style="color:#f92672">=</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj.in() );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// As operações definidas na interface são invocadas pelo objeto de referência.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Um instância de CRequestSocketStream_i é iniciada
+</span><span style="color:#75715e"></span>    CServiceA_i <span style="color:#f92672">*</span>myRequestServiceA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CServiceA_i();
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// o servidor e objetos é ativado no RootPOA
+</span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ObjectId_var myRequestServiceA_oid <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate_object( myRequestServiceA );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// Obtêm o objeto de referência do servidor e registra no servidor de nome
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var SA_obj <span style="color:#f92672">=</span> myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_this();
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// Obtêm uma referência para o objeto e imprime seu IOR como string
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>String_var sior( orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>object_to_string( SA_obj.in() ) );
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sior <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">// (3) Vincular com o serviço de nomes
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// o serviço é definido pela diretiva InitRef e pelo identificador
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &#34;OmniNameService&#34; no arquivo omniORB.cfg
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj1 <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OmniNameService</span><span style="color:#e6db74">&#34;</span> );
+    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj1.in() ) );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext_var nc <span style="color:#f92672">=</span> CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj1.in() );
+    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( nc.in() ) );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Name name;
+    name.length( <span style="color:#ae81ff">1</span> );
+    name[<span style="color:#ae81ff">0</span>].id <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string_dup( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DataServiceName1</span><span style="color:#e6db74">&#34;</span> );
+    nc<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>rebind( name, SA_obj.in() );
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">    <span style="color:#75715e">//========================================================================
+</span><span style="color:#75715e"></span>    myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_remove_ref();
+    <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POAManager_var pmgr <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>the_POAManager();
+    pmgr<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate();
+    <span style="color:#75715e">// (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
+</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>run();
+    <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Se o ORB deixar o loop de tratamento de eventos
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Atualmente está configurado para nunca dar timeout
+</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>destroy();
+    <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>    free( name[<span style="color:#ae81ff">0</span>].id ); <span style="color:#75715e">// str_dup realiza um malloc internamente
+</span><span style="color:#75715e"></span>  }
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SystemException <span style="color:#f92672">&amp;</span> ) {
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught CORBA::SystemException.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+  }
+  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Exception <span style="color:#f92672">&amp;</span> ) {
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught CORBA::Exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+  }
+  <span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">:</span><span style="color:#f92672">:</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught omniORB::fatalException:</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  file: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.file() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  line: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.line() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  mesg: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+  }
+  <span style="color:#66d9ef">catch</span>( ... ) {
+    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught unknown exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+  }
+<p><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></td></tr></table></p>
+</div>
+</div><h2 id="cserviceah">CServiceA.h</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CServiceA.h
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CServiceA_i</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> POA_Data<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ServiceA, <span style="color:#66d9ef">public</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RefCountServantBase {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  CServiceA_i();
+  <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>CServiceA_i();
+  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineA( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>retNum );
+  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineB( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num1, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2 );
+};
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="cserviceacc">CServiceA.cc</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
@@ -771,150 +1026,65 @@ OMNI_USING_NAMESPACE(omni)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Server.cc
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CServiceA.cc
 </span><span style="color:#75715e"></span>
-<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA.h&#34;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<p><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672"><em></span><span style="color:#f92672"></em></span>argv )
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> Data;
+<p><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CServiceA_i() { }</p>
+<p>CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span><span style="color:#f92672">~</span>CServiceA_i( <span style="color:#66d9ef">void</span> ) { }</p>
+<p>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CallServiceRoutineA( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>retNum )
 {
-<span style="color:#75715e">// (1) Iniciar o ORB
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (2) Obter a referência para o POA raiz para registra-se
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (3) Vincular com o serviço de nomes
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (4) Iniciar o servidor de objetos
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">try</span> {
-<span style="color:#75715e">// (1) Iniciar o ORB
-</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var orb <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( argc, argv );</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
-</code></pre>
-<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var       obj  <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">RootPOA</span><span style="color:#e6db74">&quot;</span> );
-PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA_var _poa <span style="color:#f92672">=</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj.in() );</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// As operações definidas na interface são invocadas pelo objeto de referência.
-</code></pre>
-<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// Um instância de CRequestSocketStream_i é iniciada
-</span><span style="color:#75715e"></span>    CServiceA_i <span style="color:#f92672">*</span>myRequestServiceA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CServiceA_i();</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// o servidor e objetos é ativado no RootPOA
-</code></pre>
-<p></span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ObjectId_var myRequestServiceA_oid <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate_object( myRequestServiceA );</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Obtêm o objeto de referência do servidor e registra no servidor de nome
-</code></pre>
-<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var SA_obj <span style="color:#f92672">=</span> myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_this();</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Obtêm uma referência para o objeto e imprime seu IOR como string
-</code></pre>
-<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>String_var sior( orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>object_to_string( SA_obj.in() ) );
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">'</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sior <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">'</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// (3) Vincular com o serviço de nomes
-</code></pre>
-<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// o serviço é definido pela diretiva InitRef e pelo identificador
-</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &quot;OmniNameService&quot; no arquivo omniORB.cfg
-</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj1 <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">OmniNameService</span><span style="color:#e6db74">&quot;</span> );
-assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj1.in() ) );</p>
-<pre><code>CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;NamingContext_var nc &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;NamingContext&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;_narrow( obj1.in() );
-assert( &lt;span style=&quot;color:#f92672&quot;&gt;!&lt;/span&gt;CORBA&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;is_nil( nc.in() ) );
-
-CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;Name name;
-name.length( &lt;span style=&quot;color:#ae81ff&quot;&gt;1&lt;/span&gt; );
-name[&lt;span style=&quot;color:#ae81ff&quot;&gt;0&lt;/span&gt;].id &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CORBA&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;string_dup( &lt;span style=&quot;color:#e6db74&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;DataServiceName1&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;&lt;/span&gt; );
-nc&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;rebind( name, SA_obj.in() );
-
-&lt;span style=&quot;color:#75715e&quot;&gt;//========================================================================
-</code></pre>
-<p></span><span style="color:#75715e"></span>
-myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_remove_ref();</p>
-<pre><code>PortableServer&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;POAManager_var pmgr &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; _poa&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;the_POAManager();
-pmgr&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;activate();
-
-&lt;span style=&quot;color:#75715e&quot;&gt;// (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
-</code></pre>
-<p></span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>run();</p>
-<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Se o ORB deixar o loop de tratamento de eventos
-</code></pre>
-<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// Atualmente está configurado para nunca dar timeout
-</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>destroy();</p>
-<pre><code>free( name[&lt;span style=&quot;color:#ae81ff&quot;&gt;0&lt;/span&gt;].id ); &lt;span style=&quot;color:#75715e&quot;&gt;// str_dup realiza um malloc internamente
-</code></pre>
-<p></span><span style="color:#75715e"></span>  }</p>
-<p><span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SystemException <span style="color:#f92672">&amp;</span> ) {
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught CORBA::SystemException.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-}
-<span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Exception <span style="color:#f92672">&amp;</span> ) {
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught CORBA::Exception.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-}
-<span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">:</span><span style="color:#f92672">:</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught omniORB::fatalException:</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  file: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.file() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  line: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.line() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  mesg: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-}
-<span style="color:#66d9ef">catch</span>( &hellip; ) {
-cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught unknown exception.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+num2   <span style="color:#f92672">=</span> num2 <span style="color:#f92672">+</span> num1;
+retNum <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+<span style="color:#66d9ef">return</span> true;
 }</p>
-<p><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+<p>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CallServiceRoutineB( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num1, CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2 )
+{
+num1<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+num2<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
+<span style="color:#66d9ef">return</span> true;
 }
+</code></pre></td></tr></table></p>
+</div>
+</div><h2 id="makefile">Makefile</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile">LDFLAGS<span style="color:#f92672">+=</span>-lomniORB4 -lomnithread -lomniDynamic4
+CXXFLAGS<span style="color:#f92672">+=</span>-Wall
+<p><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> server</p>
+<p><span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> DataSK.o CServiceA.o Server.o
+<span style="color:#66d9ef">$(</span>CXX<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CXXFLAGS<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span></p>
+<p><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+rm -f *.o
+rm -f server
 </code></pre></td></tr></table></p>
 </div>
 </div><h2 id="referncias">Referências</h2>

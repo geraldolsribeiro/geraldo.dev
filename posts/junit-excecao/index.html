@@ -54,9 +54,10 @@ if (!doNotTrack) {
 <link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
 
 
+
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.a7054066c6d9d62cec3a4584e6ac91e9af3272c0e0f0bd1799475d08cf1c7317.css"
-      integrity="sha256-pwVAZsbZ1izsOkWE5qyR6a8ycsDg8L0XmUddCM8ccxc="
+      href="https://geraldo.dev/style.main.min.f4475a2d6f30485803dc07f3b786e1261eadaaf2b0acceb3aa531e0d2f166cc9.css"
+      integrity="sha256-9EdaLW8wSFgD3Afzt4bhJh6tqvKwrM6zqlMeDS8WbMk="
       media="screen" async>
 
 
@@ -161,7 +162,22 @@ if (!doNotTrack) {
         <p>Este artigo apresenta uma visão suscinta sobre testes de exceção com JUnit usando o idioma <code>try/fail/catch</code>, o parâmetro <code>expected</code> da anotação <code>@Test</code> e a anotação <code>@Rule</code>.
 Cada um dos métodos apresenta prós e contras.</p>
 <h2 id="usando-bloco-trycatch">Usando bloco try/catch</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Test</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example1</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
     <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
         find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
@@ -172,7 +188,9 @@ Cada um dos métodos apresenta prós e contras.</p>
     <span style="color:#f92672">}</span>
     <span style="color:#75715e">// ... Outras exceções podem ser tratadas aqui.
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Vantagens:
 <ul>
 <li>Ter acesso à exceção para realizar outros procedimentos</li>
@@ -187,11 +205,21 @@ Cada um dos métodos apresenta prós e contras.</p>
 </li>
 </ul>
 <h2 id="test-expected--exceptionclass">@Test (expected = Exception.class)</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example2</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> NotFoundException <span style="color:#f92672">{</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example2</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> NotFoundException <span style="color:#f92672">{</span>
     find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
     <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Vantagens:
 <ul>
 <li>Sintaxe muito mais concisa</li>
@@ -205,7 +233,19 @@ Cada um dos métodos apresenta prós e contras.</p>
 </li>
 </ul>
 <h2 id="expectedexception-rule">ExpectedException Rule</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
 <span style="color:#a6e22e">@Test</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">example3</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> NotFoundException <span style="color:#f92672">{</span>
     exception<span style="color:#f92672">.</span><span style="color:#a6e22e">expect</span><span style="color:#f92672">(</span>NotFoundException<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
@@ -213,7 +253,9 @@ Cada um dos métodos apresenta prós e contras.</p>
     find<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;função que deveria lançar uma exceção&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
     <span style="color:#75715e">// Ponto que nunca deveria ser alcançado quando o teste passar
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>Vantagens:
 <ul>
 <li>Mais de uma expetativa sobre a mesma exceção podem ser testadas após o teste</li>
@@ -297,7 +339,7 @@ Cada um dos métodos apresenta prós e contras.</p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         <script>
 var disqus_config = function () {
-  this.language = "pt-br";
+  this.language = "pt";
 };
 </script>
 
@@ -330,6 +372,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://geraldo.dev">
               <span class="mdi mdi-24px mdi-web"></span>
               https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
             </a>
           </li>
         
@@ -400,6 +449,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
               <span class="mdi mdi-24px mdi-stack-overflow"></span>
               Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
             </a>
           </li>
         

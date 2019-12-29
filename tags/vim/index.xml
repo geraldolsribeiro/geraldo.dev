@@ -28,8 +28,8 @@
       
       <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
-&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;N número de repetições c caractere ou palavra
-&amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
+1  &amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;  N número de repetições c caractere ou palavra
+1 2 3 4 5  &amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y   </description>
     </item>
     
     <item>
@@ -50,7 +50,7 @@
       <description>Projects can be searched for specific text within Vim:
 :grep sometext Can we grep faster?
 Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
-&amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
+1 2 3 4 5 6 7 8 9 10 11  &amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
     <item>
@@ -60,7 +60,7 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       
       <guid>https://geraldo.dev/posts/vim-formatar-json/</guid>
       <description>Crie um comando com:
-nmap =j :%!python -m json.</description>
+1  nmap =j :%!python -m json.tool&amp;lt;CR&amp;gt;  </description>
     </item>
     
     <item>
@@ -78,12 +78,12 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-plugins/</guid>
-      <description>Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
+      <description>Instalação do vundle 1  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim   Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
-Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;Rodar o VundleInstall
+1 2  Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;  Rodar o VundleInstall
 Atalhos Acrescentar no .vimrc
-map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
+1 2  map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;  </description>
     </item>
     
     <item>
@@ -133,7 +133,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-with-python/</guid>
-      <description>apt install vim-nox ou apt install vim-gtk </description>
+      <description>1 2 3  apt install vim-nox ou apt install vim-gtk   </description>
     </item>
     
     <item>
@@ -152,7 +152,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-slow/</guid>
-      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
+      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  1 2  :set cursorline!:set lazyredraw  1 2  set synmaxcol=128syntax sync minlines=256  </description>
     </item>
     
     <item>

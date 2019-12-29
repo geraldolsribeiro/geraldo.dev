@@ -18,7 +18,7 @@
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/js-eventos/</guid>
-      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline &amp;lt;h1 onclick=&amp;#34;this.</description>
+      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline 1 2 3  &amp;lt;h1 onclick=&amp;#34;this.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       
       <guid>https://geraldo.dev/posts/js-set/</guid>
       <description>https://alligator.io/js/sets-introduction/
-let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log( animal ); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.</description>
     </item>
     
     <item>
@@ -38,10 +38,9 @@ let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+1 2 3 4 5 6  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   Que quando aberta no navegador tem a seguinte aparência:
    Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
+1  var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );   Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.</description>
     </item>
     
   </channel>

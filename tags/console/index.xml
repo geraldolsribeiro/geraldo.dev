@@ -19,10 +19,9 @@
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+1 2 3 4 5 6  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   Que quando aberta no navegador tem a seguinte aparência:
    Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
+1  var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );   Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.</description>
     </item>
     
   </channel>

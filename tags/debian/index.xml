@@ -18,11 +18,11 @@
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/swap/</guid>
-      <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
-NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
+      <description>Configuração atual 1  swapon --show   A saída do comando acima, se tiver swap configurado, será parecido com:
+1 2  NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2   Neste caso uma partição foi utilizada para swap.
 Outro modo de verificar o swap é:
-free -h Na ausência o valor é informado como zero.
-Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+1  free -h   Na ausência o valor é informado como zero.
+1 2  Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B   Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
     </item>
     
     <item>
@@ -31,8 +31,8 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
-      <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+      <description>Instalação 1  apt install ufw   Status 1  ufw status verbose   Depois de configurado alguns serviços a saída do comando pode ser similar a:
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações 1 2  ufw app list ufw app info OpenSSH   Liberando algumas aplicações 1 2 3  ufw allow OpenSSH ufw allow http ufw allow https   Habilitando o firewall 1  ufw enable   Liberando uma porta específica 1  ufw allow 8080/tcp   Liberando um range de portas 1 2  ufw allow 7100:7200/tcp ufw allow 7100:7200/udp   Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -42,7 +42,7 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
       <description>Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+1 2 3 4  cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF   1 2 3  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer   Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  # Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600   O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>
@@ -64,9 +64,8 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
-O locais padrão para os arquivos de script são:
- /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
+Instalando o nemo 1  apt install nemo   Nemo como gerenciador padrão 1  xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search   Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+O locais padrão para os arquivos de script são:</description>
     </item>
     
     <item>
@@ -98,7 +97,7 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description>Instalação 1 2  apt purge xscreensaver xscreensaver-data apt install light-locker   Travando pelo terminal 1  light-locker-command -l   Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
     </item>
     
     <item>
@@ -108,10 +107,9 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       
       <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
-echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
-apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
-Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
+1 2  echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list   Adicionar a chave
+1  apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F   Instalar
+1 2  apt-get update apt-get install papirus-icon-theme   Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.</description>
     </item>
     
     <item>

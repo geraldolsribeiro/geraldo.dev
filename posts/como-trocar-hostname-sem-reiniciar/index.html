@@ -60,9 +60,10 @@ if (!doNotTrack) {
 <link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
 
 
+
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.a7054066c6d9d62cec3a4584e6ac91e9af3272c0e0f0bd1799475d08cf1c7317.css"
-      integrity="sha256-pwVAZsbZ1izsOkWE5qyR6a8ycsDg8L0XmUddCM8ccxc="
+      href="https://geraldo.dev/style.main.min.f4475a2d6f30485803dc07f3b786e1261eadaaf2b0acceb3aa531e0d2f166cc9.css"
+      integrity="sha256-9EdaLW8wSFgD3Afzt4bhJh6tqvKwrM6zqlMeDS8WbMk="
       media="screen" async>
 
 
@@ -171,8 +172,15 @@ derivadas do <a href="https://www.debian.org">Debian</a>, tais como
 a máquina terá outro nome.</p>
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
 palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname
-</code></pre></div><p><strong>Para o próximo boot está tudo OK!</strong></p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Para o próximo boot está tudo OK!</strong></p>
 <p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
 mostra o nome antigo. Mas a máquina já está rodando e não posso parar os
 serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em> em execução.</p>
@@ -180,14 +188,28 @@ serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em>
 simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
 através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
 o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname
-</code></pre></div><p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname
+</code></pre></td></tr></table>
+</div>
+</div><p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
 <p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
 se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
 comando faça o seguinte:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts
-</code></pre></div><p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts
+</code></pre></td></tr></table>
+</div>
+</div><p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
 Uma explicação muito breve sobre o comando acima:</p>
 <ul>
 <li><code>-i</code>: modo de edição <code>inline</code> (abre, edita e fecha o arquivo)</li>
@@ -262,7 +284,7 @@ Uma explicação muito breve sobre o comando acima:</p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         <script>
 var disqus_config = function () {
-  this.language = "pt-br";
+  this.language = "pt";
 };
 </script>
 
@@ -295,6 +317,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://geraldo.dev">
               <span class="mdi mdi-24px mdi-web"></span>
               https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
             </a>
           </li>
         
@@ -365,6 +394,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
               <span class="mdi mdi-24px mdi-stack-overflow"></span>
               Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
             </a>
           </li>
         

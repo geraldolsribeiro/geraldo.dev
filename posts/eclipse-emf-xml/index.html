@@ -52,9 +52,10 @@ if (!doNotTrack) {
 <link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
 
 
+
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.a7054066c6d9d62cec3a4584e6ac91e9af3272c0e0f0bd1799475d08cf1c7317.css"
-      integrity="sha256-pwVAZsbZ1izsOkWE5qyR6a8ycsDg8L0XmUddCM8ccxc="
+      href="https://geraldo.dev/style.main.min.f4475a2d6f30485803dc07f3b786e1261eadaaf2b0acceb3aa531e0d2f166cc9.css"
+      integrity="sha256-9EdaLW8wSFgD3Afzt4bhJh6tqvKwrM6zqlMeDS8WbMk="
       media="screen" async>
 
 
@@ -186,43 +187,90 @@ URI de namespace que pode ser conhecida através do XSD.</p>
 <li>sem namespace</li>
 </ul>
 <h3 id="elemento-raiz-do-xml-no-namespace-com-prefixo-xmlnsns">Elemento raiz do XML no namespace com prefixo (<code>xmlns:ns=”…”&gt;</code>)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns:ns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns:ns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;myRootElement</span><span style="color:#f92672">&gt;</span>
-</code></pre></div><p>Use a API <code>Resource.save(...)</code></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Use a API <code>Resource.save(...)</code></p>
 <h3 id="elemento-raiz-do-xml-no-namespace-padro-elm-xmlns">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/myRootElement&gt;</span>
-</code></pre></div><p>Veja esta <a href="http://www.eclipse.org/forums/index.php?t=tree&amp;th=129347&amp;S=4a71b44b5931c4dbe7bac446b6ee10c6">dica</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Veja esta <a href="http://www.eclipse.org/forums/index.php?t=tree&amp;th=129347&amp;S=4a71b44b5931c4dbe7bac446b6ee10c6">dica</a></p>
 <h3 id="nenhuma-informao-sobre-namespace-no-the-xml-elm">Nenhuma informação sobre namespace no the XML (<code>&lt;elm&gt;</code>)</h3>
 <p>Este é o pior caso pois o XML de entrada não se descreve suficientemente e você
 precisa conhecer ou chutar o <code>EPackage</code> correto para realizar o parser.</p>
 <p>Certamente seria melhor se você tivesse informação do namespace. Mas algumas
 vezes você não terá como influenciar a entrada a ser lida com o EMF.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/myRootElement&gt;</span>
-</code></pre></div><p>Se o elemento raiz do XML não possuir prefixo nem namespace então o EMF não
+</code></pre></td></tr></table>
+</div>
+</div><p>Se o elemento raiz do XML não possuir prefixo nem namespace então o EMF não
 será capaz de realizar o match com o <code>EPackage</code> e consequentemente não será
 capaz de carregar apropriadamente a menos que você registre um <code>EPackage</code> alvo
 com o <code>ResourceSet</code> global com uma URI nula.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>EPackage ePackage<span style="color:#f92672">:</span> eCorePackages<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>EPackage ePackage<span style="color:#f92672">:</span> eCorePackages<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 	resourceSet<span style="color:#f92672">.</span><span style="color:#a6e22e">getPackageRegistry</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> ePackage<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 	<span style="color:#75715e">// alternatively could call EPackage.Registry.INSTANCE.put(..)
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
-</code></pre></div><p>De acordo com a <a href="https://www.eclipse.org/forums/index.php/mv/msg/128831/#msg_397577">dica do
+</code></pre></td></tr></table>
+</div>
+</div><p>De acordo com a <a href="https://www.eclipse.org/forums/index.php/mv/msg/128831/#msg_397577">dica do
 forum</a> você
 não pode injetar a declaração faltante do XMLNS no XML, mas pode especificar
 <code>null</code> para o namespace e o pacote específico para mapear usando o pacote de
 registro do <code>ResourceSet</code>.</p>
 <h2 id="notas-gerais-sobre-salvar-e-carregar-xml-pelo-emf">Notas gerais sobre salvar e carregar XML pelo EMF</h2>
 <p>Quando carregar do XML ou salvar para o XML você precisa passar algumas das seguintes opções para os métodos <code>save</code> ou <code>load</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> options <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> options <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 options<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>XMLResource<span style="color:#f92672">.</span><span style="color:#a6e22e">OPTION_EXTENDED_META_DATA</span><span style="color:#f92672">,</span> Boolean<span style="color:#f92672">.</span><span style="color:#a6e22e">TRUE</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 <span style="color:#75715e">// options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 </span><span style="color:#75715e"></span>options<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>XMLResource<span style="color:#f92672">.</span><span style="color:#a6e22e">OPTION_ENCODING</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li><code>OPTION_EXTENDED_META_DATA</code> - cria elementos aninhados em vez de atributos. Não estou certo se isto influencia no carregamento</li>
 <li><code>OPTION_RECORD_UNKNOWN_FEATURE</code> - quando um elemento desconhecido for encontrado no carregamento não será lançada uma exceção de <code>unknown feature</code> e o campo será apenas pulado</li>
 <li><code>OPTION_ENCODING</code> – é o encoding para geração do XML, onde o padrão é ASCII. Não estou certo se isto influencia no carregamento</li>
@@ -301,7 +349,7 @@ options<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         <script>
 var disqus_config = function () {
-  this.language = "pt-br";
+  this.language = "pt";
 };
 </script>
 
@@ -334,6 +382,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://geraldo.dev">
               <span class="mdi mdi-24px mdi-web"></span>
               https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
             </a>
           </li>
         
@@ -404,6 +459,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
               <span class="mdi mdi-24px mdi-stack-overflow"></span>
               Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
             </a>
           </li>
         

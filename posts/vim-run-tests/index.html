@@ -52,9 +52,10 @@ if (!doNotTrack) {
 <link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
 
 
+
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.a7054066c6d9d62cec3a4584e6ac91e9af3272c0e0f0bd1799475d08cf1c7317.css"
-      integrity="sha256-pwVAZsbZ1izsOkWE5qyR6a8ycsDg8L0XmUddCM8ccxc="
+      href="https://geraldo.dev/style.main.min.f4475a2d6f30485803dc07f3b786e1261eadaaf2b0acceb3aa531e0d2f166cc9.css"
+      integrity="sha256-9EdaLW8wSFgD3Afzt4bhJh6tqvKwrM6zqlMeDS8WbMk="
       media="screen" async>
 
 
@@ -158,7 +159,22 @@ which can be bound to a key mapping of your choice.
 In <a href="https://github.com/thoughtbot/dotfiles/blob/master/vimrc">thoughtbot/dotfiles</a>,
 we bind those methods to <code>&lt;Leader&gt;s</code>, <code>&lt;Leader&gt;t</code>, and <code>&lt;Leader&gt;l</code>.</p>
 <p>Cursor over any line within an RSpec spec like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby">describe <span style="color:#66d9ef">RecipientInterceptor</span> <span style="color:#66d9ef">do</span>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">describe <span style="color:#66d9ef">RecipientInterceptor</span> <span style="color:#66d9ef">do</span>
   it <span style="color:#e6db74">&#39;overrides to/cc/bcc fields&#39;</span> <span style="color:#66d9ef">do</span>
     <span style="color:#66d9ef">Mail</span><span style="color:#f92672">.</span>register_interceptor <span style="color:#66d9ef">RecipientInterceptor</span><span style="color:#f92672">.</span>new(recipient_string)
 <pre><code>response &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; deliver_mail
@@ -169,14 +185,15 @@ expect(response&lt;span style=&quot;color:#f92672&quot;&gt;.&lt;/span&gt;bcc)&lt
 </code></pre>
 <p><span style="color:#66d9ef">end</span>
 <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Type <code>&lt;Leader&gt;s</code>:</p></p>
+</code></pre></td></tr></table></p>
+</div>
+</div><p>Type <code>&lt;Leader&gt;s</code>:</p>
 <pre><code>rspec spec/recipient_interceptor_spec.rb:4
 .
-
-Finished in 0.03059 seconds
+<p>Finished in 0.03059 seconds
 1 example, 0 failures
 </code></pre><p>The screen is overtaken by a shell that runs only the focused spec.
-<p>Developers using tmux with vim-rspec and tslime
+Developers using tmux with vim-rspec and tslime
 sometimes send the output to a nearby shell
 so the code and spec output display on the screen at the same time.</p></p>
 <p>Feeling good that this new spec passes,
@@ -188,14 +205,27 @@ to make sure the class's entire functionality is still intact:</p>
 6 examples, 0 failures
 </code></pre><p>Red, green, refactor.
 From within the application's or library's code:</p></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">delivering_email</span>(message)
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e"></span><span style="color:#f92672"></span><span style="color:#a6e22e">delivering_email</span>(message)
   add_custom_headers message
   add_subject_prefix message
   message<span style="color:#f92672">.</span>to <span style="color:#f92672">=</span> @recipients
   message<span style="color:#f92672">.</span>cc <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
   message<span style="color:#f92672">.</span>bcc <span style="color:#f92672">=</span> <span style="color:#f92672">[</span><span style="color:#f92672">]</span>
 <span style="color:#66d9ef">end</span>
-</code></pre></div><p>Run <code>&lt;Leader&gt;l</code> without having to switch back to the spec:</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>Run <code>&lt;Leader&gt;l</code> without having to switch back to the spec:</p>
 <pre><code>rspec spec/recipient_interceptor_spec.rb
 ......
 <p>Finished in 0.17752 seconds
@@ -271,7 +301,7 @@ when running specs.</p></p>
 <a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
         <script>
 var disqus_config = function () {
-  this.language = "pt-br";
+  this.language = "pt";
 };
 </script>
 
@@ -304,6 +334,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://geraldo.dev">
               <span class="mdi mdi-24px mdi-web"></span>
               https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
             </a>
           </li>
         
@@ -374,6 +411,13 @@ var disqus_config = function () {
             <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
               <span class="mdi mdi-24px mdi-stack-overflow"></span>
               Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
             </a>
           </li>
         

@@ -18,7 +18,7 @@
       <pubDate>Fri, 27 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/corba/</guid>
-      <description>Introdução  clientes e servidores estão em diferentes máquinas programas clientes enviam mensagens para servidores remotos como se este estivesse locais (location transparency)  ORB - Object Request Broker  é o núcleo da Object Management Architecture integra:  diferentes linguagens diferentes arquiteturas diferentes sistemas operacionais   é responsável por:  encontrar uma implementação para uma requisição preparar implementações para receber requisições comunicar dados das requisições    Clientes  possuem referências para objetos e invocam operações nestes objetos conhecem apenas a interface dos objetos do servidor não conhecem a implementação dos objetos nem os adaptadores utilizados por estas implementações invocam interfaces definidas por uma IDL invocam as implementações através de:  proxies (IDL generated stubs) DII (Dynamic Invocation Interface)    Servidores  se registram no ORB se disponibilizam para aceitar requisições implementam uma IDL  IDL  provê interfaces independente de linguagem e sistema operacional é puramente declarativa (não provê detalhes de implementação) é fortemente tipada especificações podem ser escritas e invocadas em qualquer linguagem  IDL Features  modules interfaces operations attributes inheritance basic types arrays sequences struct, enum, union typedef consts exceptions  Tipos básicos  float double long short unsigned long unsigned short char boolean octet any  Direções dos parâmetros  in - do cliente para o servidor out - do servidor para o cliente inout - do cliente para o servidor e de volta para o cliente  Exceções Interface Bank { exception Reject { string reason; }; exception TooMany {}; Account newAccount( in string name ) raises (Reject, TooMany); }; Operações oneway Interface Account { oneway void notice( in string notice ); };  não bloqueantes não aceitam parâmetros out ou inout não lançam exceções (não aceitam raise)  Estruturas struct PersonalDetails { string name; short age; }; interface Bank { PersonalDetails getPerDet(in string name); }; Arrays  podem ser multidimensionais precisam ter tamanho fixo (conhecido em tempo de definição)  Account bankAccounts[100]; short matrix[10][20]; // 2D array Constantes Interface Bank { const long MaxAccounts = 10000; }; Contantes dos tipos long, float e string podem ser declarada.</description>
+      <description>Introdução  clientes e servidores estão em diferentes máquinas programas clientes enviam mensagens para servidores remotos como se este estivesse locais (location transparency)  ORB - Object Request Broker  é o núcleo da Object Management Architecture integra:  diferentes linguagens diferentes arquiteturas diferentes sistemas operacionais   é responsável por:  encontrar uma implementação para uma requisição preparar implementações para receber requisições comunicar dados das requisições    Clientes  possuem referências para objetos e invocam operações nestes objetos conhecem apenas a interface dos objetos do servidor não conhecem a implementação dos objetos nem os adaptadores utilizados por estas implementações invocam interfaces definidas por uma IDL invocam as implementações através de:  proxies (IDL generated stubs) DII (Dynamic Invocation Interface)    Servidores  se registram no ORB se disponibilizam para aceitar requisições implementam uma IDL  IDL  provê interfaces independente de linguagem e sistema operacional é puramente declarativa (não provê detalhes de implementação) é fortemente tipada especificações podem ser escritas e invocadas em qualquer linguagem  IDL Features  modules interfaces operations attributes inheritance basic types arrays sequences struct, enum, union typedef consts exceptions  Tipos básicos  float double long short unsigned long unsigned short char boolean octet any  Direções dos parâmetros  in - do cliente para o servidor out - do servidor para o cliente inout - do cliente para o servidor e de volta para o cliente  Exceções 1 2 3 4 5 6 7  Interface Bank { exception Reject { string reason; }; exception TooMany {}; Account newAccount( in string name ) raises (Reject, TooMany); };   Operações oneway 1 2 3  Interface Account { oneway void notice( in string notice ); };    não bloqueantes não aceitam parâmetros out ou inout não lançam exceções (não aceitam raise)  Estruturas 1 2 3 4 5 6 7 8  struct PersonalDetails { string name; short age; }; interface Bank { PersonalDetails getPerDet(in string name); };   Arrays  podem ser multidimensionais precisam ter tamanho fixo (conhecido em tempo de definição)  1 2  Account bankAccounts[100]; short matrix[10][20]; // 2D array   Constantes 1 2 3  Interface Bank { const long MaxAccounts = 10000; };   Contantes dos tipos long, float e string podem ser declarada.</description>
     </item>
     
     <item>
@@ -61,9 +61,9 @@ Provê suporte para:
       <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-dicas/</guid>
-      <description>Diferença entre dois branches &amp;ndash; somente nomes de arquivos git diff --name-only branch-1 branch-2 Status:
+      <description>Diferença entre dois branches &amp;ndash; somente nomes de arquivos 1  git diff --name-only branch-1 branch-2   Status:
  M arquivos modificados A arquivos adicionados D arquivos removidos  Filtrando por estes códigos de status temos as próximas dicas.
-Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
+Listar somente os arquivos modificados entre dois branches 1  git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;    filtra somente as linhas que começam com M de modificado.</description>
     </item>
     
     <item>
@@ -93,7 +93,7 @@ EMF é uma API do tipo reflection e pode ser facilmente utilizada para gerar edi
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/js-eventos/</guid>
-      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline &amp;lt;h1 onclick=&amp;#34;this.</description>
+      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline 1 2 3  &amp;lt;h1 onclick=&amp;#34;this.</description>
     </item>
     
     <item>
@@ -103,7 +103,7 @@ EMF é uma API do tipo reflection e pode ser facilmente utilizada para gerar edi
       
       <guid>https://geraldo.dev/posts/js-set/</guid>
       <description>https://alligator.io/js/sets-introduction/
-let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log( animal ); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24  let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0   1 2 3 4 5 6 7 8 9 10 11 12 13 14 15  let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.</description>
     </item>
     
     <item>
@@ -112,11 +112,11 @@ let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/swap/</guid>
-      <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
-NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
+      <description>Configuração atual 1  swapon --show   A saída do comando acima, se tiver swap configurado, será parecido com:
+1 2  NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2   Neste caso uma partição foi utilizada para swap.
 Outro modo de verificar o swap é:
-free -h Na ausência o valor é informado como zero.
-Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+1  free -h   Na ausência o valor é informado como zero.
+1 2  Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B   Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
     </item>
     
     <item>
@@ -126,7 +126,7 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       
       <guid>https://geraldo.dev/posts/preact/</guid>
       <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
+1 2 3 4 5 6 7 8 9 10  &amp;lt;!</description>
     </item>
     
     <item>
@@ -137,8 +137,8 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       <guid>https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/</guid>
       <description>Frequentemente tenho colado texto no editor enquanto tentava apens clicar para posicionar o cursor. Isto ocorre no notebook em que o touchpad não tem separação tátil entre os botões. É muito fácil clicar um pouco mais para a direita e acertar o botão errado.
 Para desabilitar a função use:
-gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false Para habilitar a função use:
-gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referências  [How do I disable middle mouse button click paste?</description>
+1  gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false   Para habilitar a função use:
+1  gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true   Referências  [How do I disable middle mouse button click paste?</description>
     </item>
     
     <item>
@@ -147,8 +147,8 @@ gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referên
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
-      <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+      <description>Instalação 1  apt install ufw   Status 1  ufw status verbose   Depois de configurado alguns serviços a saída do comando pode ser similar a:
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações 1 2  ufw app list ufw app info OpenSSH   Liberando algumas aplicações 1 2 3  ufw allow OpenSSH ufw allow http ufw allow https   Habilitando o firewall 1  ufw enable   Liberando uma porta específica 1  ufw allow 8080/tcp   Liberando um range de portas 1 2  ufw allow 7100:7200/tcp ufw allow 7100:7200/udp   Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -158,7 +158,7 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       
       <guid>https://geraldo.dev/posts/junit-excecao/</guid>
       <description>Este artigo apresenta uma visão suscinta sobre testes de exceção com JUnit usando o idioma try/fail/catch, o parâmetro expected da anotação @Test e a anotação @Rule. Cada um dos métodos apresenta prós e contras.
-Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;função que deveria lançar uma exceção&amp;#34;); fail(); // Ponto que nunca deveria ser alcançado quando o teste passar  } catch (NotFoundException e) { assertThat(e.getMessage(), containsString(&amp;#34;algo que indique que a exceção certa ocorreu&amp;#34;)); } // .</description>
+Usando bloco try/catch 1 2 3 4 5 6 7 8 9 10 11  @Test public void example1() { try { find(&amp;#34;função que deveria lançar uma exceção&amp;#34;); fail(); // Ponto que nunca deveria ser alcançado quando o teste passar  } catch (NotFoundException e) { assertThat(e.</description>
     </item>
     
     <item>
@@ -177,10 +177,9 @@ Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;funç�
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+1 2 3 4 5 6  &amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;   Que quando aberta no navegador tem a seguinte aparência:
    Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
+1  var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );   Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.</description>
     </item>
     
     <item>
@@ -191,8 +190,7 @@ Ao enviar a variável btn para a função console.log veremos a seguinte represe
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
-#Umaanimaçãosimplesdeumsen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 #quantidadedeframesaseremgerados dt=2*pi/n set xrange [0:4*pi] i=0 #contador load &amp;#34;animate.gnuplot&amp;#34; set output O arquivo animate.gnuplot contem os comandos:
-plot sin(x+i*dt) w l lt 1 lw 1.</description>
+1 2 3 4 5 6 7 8 9 10  #Umaanimaçãosimplesdeumsen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 #quantidadedeframesaseremgerados dt=2*pi/n set xrange [0:4*pi] i=0 #contador load &amp;#34;animate.gnuplot&amp;#34; set output   O arquivo animate.</description>
     </item>
     
     <item>
@@ -202,7 +200,7 @@ plot sin(x+i*dt) w l lt 1 lw 1.</description>
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
       <description>Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+1 2 3 4  cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOF   1 2 3  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer   Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -211,11 +209,10 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description>Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
-gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
-gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
-   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
-   Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.</description>
+      <description>Trocando o Nautilus pelo Nemo no GNOME 1 2 3  xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search   Desabilitando o Nautilus
+1  gsettings set org.gnome.desktop.background show-desktop-icons false   Habilitando o Nemo
+1  gsettings set org.nemo.desktop show-desktop-icons true   Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
+   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos</description>
     </item>
     
     <item>
@@ -237,7 +234,7 @@ Algumas características das funções de primeira classe são:
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13 14  # Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600   O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>
@@ -248,9 +245,8 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
-O locais padrão para os arquivos de script são:
- /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
+Instalando o nemo 1  apt install nemo   Nemo como gerenciador padrão 1  xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search   Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+O locais padrão para os arquivos de script são:</description>
     </item>
     
     <item>
@@ -292,8 +288,8 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       
       <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
-&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;N número de repetições c caractere ou palavra
-&amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
+1  &amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;  N número de repetições c caractere ou palavra
+1 2 3 4 5  &amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y   </description>
     </item>
     
     <item>
@@ -314,7 +310,7 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       <description>Projects can be searched for specific text within Vim:
 :grep sometext Can we grep faster?
 Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
-&amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
+1 2 3 4 5 6 7 8 9 10 11  &amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
     <item>
@@ -324,7 +320,7 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       
       <guid>https://geraldo.dev/posts/vim-formatar-json/</guid>
       <description>Crie um comando com:
-nmap =j :%!python -m json.</description>
+1  nmap =j :%!python -m json.tool&amp;lt;CR&amp;gt;  </description>
     </item>
     
     <item>
@@ -342,12 +338,12 @@ nmap =j :%!python -m json.</description>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-plugins/</guid>
-      <description>Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
+      <description>Instalação do vundle 1  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim   Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
-Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;Rodar o VundleInstall
+1 2  Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;  Rodar o VundleInstall
 Atalhos Acrescentar no .vimrc
-map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
+1 2  map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;  </description>
     </item>
     
     <item>
@@ -397,7 +393,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-with-python/</guid>
-      <description>apt install vim-nox ou apt install vim-gtk </description>
+      <description>1 2 3  apt install vim-nox ou apt install vim-gtk   </description>
     </item>
     
     <item>
@@ -416,7 +412,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-slow/</guid>
-      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
+      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  1 2  :set cursorline!:set lazyredraw  1 2  set synmaxcol=128syntax sync minlines=256  </description>
     </item>
     
     <item>
@@ -507,7 +503,7 @@ De maneira muito breve:
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description>Instalação 1 2  apt purge xscreensaver xscreensaver-data apt install light-locker   Travando pelo terminal 1  light-locker-command -l   Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
     </item>
     
     <item>
@@ -526,10 +522,9 @@ De maneira muito breve:
       
       <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
-echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
-apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
-Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
+1 2  echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list   Adicionar a chave
+1  apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F   Instalar
+1 2  apt-get update apt-get install papirus-icon-theme   Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.</description>
     </item>
     
     <item>

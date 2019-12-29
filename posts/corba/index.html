@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.f4475a2d6f30485803dc07f3b786e1261eadaaf2b0acceb3aa531e0d2f166cc9.css"
-      integrity="sha256-9EdaLW8wSFgD3Afzt4bhJh6tqvKwrM6zqlMeDS8WbMk="
+      href="https://geraldo.dev/style.main.min.4ba1b392c3bb3c0aa7b5fc9e836fc058a93a41bd4044c87c9e4aebea44552cee.css"
+      integrity="sha256-S6GzksO7PAqntfyeg2/AWKk6Qb1ARMh8nkrr6kRVLO4="
       media="screen" async>
 
 
@@ -162,6 +162,14 @@ if (!doNotTrack) {
     <li><a href="https://geraldo.dev/posts/corba/#dynamic-invocation-interface">Dynamic Invocation Interface</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#interoperabilidade">Interoperabilidade</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#instalao-no-debian">Instalação no Debian</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#exemplo">Exemplo</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/corba/#criando-a-idl">Criando a IDL</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#gerando-arquivos-a-partir-da-idl">Gerando arquivos a partir da IDL</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/corba/#servercc">Server.cc</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#referncias">Referências</a></li>
   </ul>
 
@@ -607,9 +615,312 @@ Accounts bankAccounts;
 <li>externalization</li>
 <li>collection</li>
 </ul>
-<h2 id="referncias">Referências</h2>
+<h2 id="instalao-no-debian">Instalação no Debian</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install libomniorb4-dev omniidl
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="exemplo">Exemplo</h2>
+<h3 id="criando-a-idl">Criando a IDL</h3>
+<p>Arquivo de interface <code>Data.idl</code>:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#</span><span style="color:#75715e">ifndef __DATADIST_IDL__</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define __DATADIST_IDL__</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>module Data
+{
+  interface ServiceA {
+    boolean <span style="color:#a6e22e">CallServiceRoutineA</span> (
+        in    <span style="color:#66d9ef">long</span> num1,
+        inout <span style="color:#66d9ef">long</span> num2,
+        out   <span style="color:#66d9ef">long</span> retNum );
+    boolean <span style="color:#a6e22e">CallServiceRoutineB</span> (
+        inout <span style="color:#66d9ef">long</span> num1,
+        inout <span style="color:#66d9ef">long</span> num2);
+  };
+};
+<span style="color:#75715e">#</span><span style="color:#75715e">endif</span><span style="color:#75715e">
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="gerando-arquivos-a-partir-da-idl">Gerando arquivos a partir da IDL</h3>
+<p>Ao executar o seguinte comando:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniidl -bcxx Data.idl
+</code></pre></td></tr></table>
+</div>
+</div><p>o arquivos abaixo são criados:</p>
+<ul>
+<li><code>Data.hh</code> - cabeçalho que será usado pelo cliente e pelo servidor</li>
+<li><code>DataSK.cc</code> - deve ser compilado e lincado com o programa que proverá a infraestrutura de comunicação</li>
+</ul>
+<h4 id="datahh">Data.hh</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// This file is generated by omniidl (C++ backend)- omniORB_4_2. Do not edit.
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">ifndef __Data_hh__</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define __Data_hh__</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">ifndef __CORBA_H_EXTERNAL_GUARD__</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/CORBA.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">endif</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>...
+<span style="color:#75715e">#</span><span style="color:#75715e">endif  </span><span style="color:#75715e">// __Data_hh__
+</span></code></pre></td></tr></table>
+</div>
+</div><h4 id="dataskcc">DataSK.cc</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// This file is generated by omniidl (C++ backend)- omniORB_4_2. Do not edit.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/IOP_S.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/IOP_C.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/callDescriptor.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/callHandle.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/objTracker.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+OMNI_USING_NAMESPACE(omni)
+...
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="servercc">Server.cc</h2>
+<p>Código do servidor:</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">81
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">82
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">83
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">84
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Server.cc
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
+<p><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672"><em></span><span style="color:#f92672"></em></span>argv )
+{
+<span style="color:#75715e">// (1) Iniciar o ORB
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (2) Obter a referência para o POA raiz para registra-se
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (3) Vincular com o serviço de nomes
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// (4) Iniciar o servidor de objetos
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">try</span> {
+<span style="color:#75715e">// (1) Iniciar o ORB
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var orb <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( argc, argv );</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+</code></pre>
+<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var       obj  <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">RootPOA</span><span style="color:#e6db74">&quot;</span> );
+PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA_var _poa <span style="color:#f92672">=</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj.in() );</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// As operações definidas na interface são invocadas pelo objeto de referência.
+</code></pre>
+<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// Um instância de CRequestSocketStream_i é iniciada
+</span><span style="color:#75715e"></span>    CServiceA_i <span style="color:#f92672">*</span>myRequestServiceA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CServiceA_i();</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// o servidor e objetos é ativado no RootPOA
+</code></pre>
+<p></span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ObjectId_var myRequestServiceA_oid <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate_object( myRequestServiceA );</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Obtêm o objeto de referência do servidor e registra no servidor de nome
+</code></pre>
+<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var SA_obj <span style="color:#f92672">=</span> myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_this();</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Obtêm uma referência para o objeto e imprime seu IOR como string
+</code></pre>
+<p></span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>String_var sior( orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>object_to_string( SA_obj.in() ) );
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">'</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sior <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">'</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// (3) Vincular com o serviço de nomes
+</code></pre>
+<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// o serviço é definido pela diretiva InitRef e pelo identificador
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &quot;OmniNameService&quot; no arquivo omniORB.cfg
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj1 <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">OmniNameService</span><span style="color:#e6db74">&quot;</span> );
+assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj1.in() ) );</p>
+<pre><code>CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;NamingContext_var nc &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;NamingContext&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;_narrow( obj1.in() );
+assert( &lt;span style=&quot;color:#f92672&quot;&gt;!&lt;/span&gt;CORBA&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;is_nil( nc.in() ) );
+
+CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;Name name;
+name.length( &lt;span style=&quot;color:#ae81ff&quot;&gt;1&lt;/span&gt; );
+name[&lt;span style=&quot;color:#ae81ff&quot;&gt;0&lt;/span&gt;].id &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CORBA&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;string_dup( &lt;span style=&quot;color:#e6db74&quot;&gt;&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;DataServiceName1&lt;/span&gt;&lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;&lt;/span&gt; );
+nc&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;rebind( name, SA_obj.in() );
+
+&lt;span style=&quot;color:#75715e&quot;&gt;//========================================================================
+</code></pre>
+<p></span><span style="color:#75715e"></span>
+myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_remove_ref();</p>
+<pre><code>PortableServer&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;:&lt;/span&gt;POAManager_var pmgr &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; _poa&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;the_POAManager();
+pmgr&lt;span style=&quot;color:#f92672&quot;&gt;-&lt;/span&gt;&lt;span style=&quot;color:#f92672&quot;&gt;&amp;gt;&lt;/span&gt;activate();
+
+&lt;span style=&quot;color:#75715e&quot;&gt;// (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
+</code></pre>
+<p></span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>run();</p>
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Se o ORB deixar o loop de tratamento de eventos
+</code></pre>
+<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// Atualmente está configurado para nunca dar timeout
+</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>destroy();</p>
+<pre><code>free( name[&lt;span style=&quot;color:#ae81ff&quot;&gt;0&lt;/span&gt;].id ); &lt;span style=&quot;color:#75715e&quot;&gt;// str_dup realiza um malloc internamente
+</code></pre>
+<p></span><span style="color:#75715e"></span>  }</p>
+<p><span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SystemException <span style="color:#f92672">&amp;</span> ) {
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught CORBA::SystemException.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+}
+<span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Exception <span style="color:#f92672">&amp;</span> ) {
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught CORBA::Exception.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+}
+<span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">:</span><span style="color:#f92672">:</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught omniORB::fatalException:</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  file: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.file() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  line: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.line() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">  mesg: </span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+}
+<span style="color:#66d9ef">catch</span>( &hellip; ) {
+cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&quot;</span><span style="color:#e6db74">Caught unknown exception.</span><span style="color:#e6db74">&quot;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+}</p>
+<p><span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></td></tr></table></p>
+</div>
+</div><h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>
+<li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></li>
 </ul>
 
         </div>

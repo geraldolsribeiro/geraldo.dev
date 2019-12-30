@@ -19,7 +19,7 @@
       
       <guid>https://geraldo.dev/posts/preact/</guid>
       <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
-1 2 3 4 5 6 7 8 9 10  &amp;lt;!</description>
+1&amp;lt;!DOCTYPE html&amp;gt; 2&amp;lt;html&amp;gt; 3 &amp;lt;head&amp;gt; 4 &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; 5 &amp;lt;/head&amp;gt; 6 &amp;lt;body&amp;gt; 7 &amp;lt;script src=&amp;#34;https://unpkg.</description>
     </item>
     
   </channel>

@@ -18,10 +18,11 @@
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description>Trocando o Nautilus pelo Nemo no GNOME 1 2 3  xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search   Desabilitando o Nautilus
-1  gsettings set org.gnome.desktop.background show-desktop-icons false   Habilitando o Nemo
-1  gsettings set org.nemo.desktop show-desktop-icons true   Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
-   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos</description>
+      <description>Trocando o Nautilus pelo Nemo no GNOME 1xdg-mime default \ 2 nemo.desktop inode/directory \ 3 application/x-gnome-saved-search Desabilitando o Nautilus
+1gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
+1gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
+   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
+   Testando 1xdg-open $HOME Usar o xfce4-terminal no nemo 1gsettings set org.</description>
     </item>
     
   </channel>

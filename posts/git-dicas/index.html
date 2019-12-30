@@ -146,15 +146,8 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <h2 id="diferena-entre-dois-branches----somente-nomes-de-arquivos">Diferença entre dois branches &ndash; somente nomes de arquivos</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-only branch-1 branch-2
-</code></pre></td></tr></table>
-</div>
-</div><p>Status:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git diff --name-only branch-1 branch-2
+</code></pre></div><p>Status:</p>
 <ul>
 <li><code>M</code> arquivos modificados</li>
 <li><code>A</code> arquivos adicionados</li>
@@ -162,39 +155,18 @@ if (!doNotTrack) {
 </ul>
 <p>Filtrando por estes códigos de status temos as próximas dicas.</p>
 <h2 id="listar-somente-os-arquivos-modificados-entre-dois-branches">Listar somente os arquivos modificados entre dois branches</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^M\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>M</code> de modificado.</li>
 </ul>
 <h2 id="listar-somente-os-arquivos-adicionados-entre-dois-branches">Listar somente os arquivos adicionados entre dois branches</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^A\s\+//p&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^A\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>A</code> de adicionado</li>
 </ul>
 <h2 id="listar-somente-os-arquivos-removidos-entre-dois-branches">Listar somente os arquivos removidos entre dois branches</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^D\s\+//p&#34;</span>
-</code></pre></td></tr></table>
-</div>
-</div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git diff --name-status branch-1 branch-2 | sed -n <span style="color:#e6db74">&#34;s/^D\s\+//p&#34;</span>
+</code></pre></div><ul>
 <li>filtra somente as linhas que começam com <code>D</code> de deletados</li>
 </ul>
 <h2 id="referncias">Referências</h2>

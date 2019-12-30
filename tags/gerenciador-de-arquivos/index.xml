@@ -20,8 +20,9 @@
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo 1  apt install nemo   Nemo como gerenciador padrão 1  xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search   Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
-O locais padrão para os arquivos de script são:</description>
+Instalando o nemo 1apt install nemo Nemo como gerenciador padrão 1xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+O locais padrão para os arquivos de script são:
+ /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
     </item>
     
   </channel>

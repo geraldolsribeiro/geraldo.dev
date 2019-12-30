@@ -56,8 +56,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.cb73245edaa63bc42efa68b72009e43574508993562bb1be18c9144f9b665d02.css"
-      integrity="sha256-y3MkXtqmO8Qu&#43;mi3IAnkNXRQiZNWK7G&#43;GMkUT5tmXQI="
+      href="https://geraldo.dev/style.main.min.c144f5282ea9a4fbf5c5c778a57b223ac4c19fa36b7fd53b19a5cdbc482d2861.css"
+      integrity="sha256-wUT1KC6ppPv1xcd4pXsiOsTBn6Nrf9U7GaXNvEgtKGE="
       media="screen" async>
 
 
@@ -449,6 +449,7 @@ window.MathJax = {
 </code></pre></div><p>será mapeado para:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object { ... }
 </code></pre></div><h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
+<h4 id="interface-para-classe">Interface para classe</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Bank {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  struct Details { ... };
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>};
@@ -457,7 +458,8 @@ window.MathJax = {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Details</span> { ... };
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Module M {
+</code></pre></div><h4 id="module-para-namespace">Module para namespace</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Module M {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  Interface A { ... };
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  Interface B { ... };
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
@@ -495,7 +497,7 @@ window.MathJax = {
 <tr>
 <td>long long</td>
 <td>CORBA::LongLong</td>
-<td>64 bit: -2^63 \ldots +2^63 - 1</td>
+<td>64 bit: $-2^{63} \ldots +2^63 - 1$</td>
 </tr>
 <tr>
 <td>unsigned short</td>
@@ -622,7 +624,7 @@ window.MathJax = {
 <p>Incluir no arquivo <code>/etc/omniORB.cfg</code> a seguinte linha:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>InitRef = OmniNameService=corbaname::localhost
 </code></pre></div><div class="row">
-  <div class="col s12 m6 offset-m3">
+  <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card blue lighten-5">
       <div class="card-content blue-text">
         <span class="card-title blue-text darken-4">Nota</span>
@@ -656,10 +658,11 @@ window.MathJax = {
 </code></pre></div><p>Veja exemplo em <a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">Connecting 3 ORBs</a>.</p>
 <h2 id="exemplo">Exemplo</h2>
   <div class="center-align">
-    <picture>
+    <figure>
       <source srcset="/img/corba-01.webp" width="663" height="493" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/corba-01.png" alt="Componentes do exemplo" width="663" height="493">
-    </picture>
+      <figcaption>Componentes do exemplo</figcaption>
+    </figure>
   </div>
 <h3 id="criando-a-idl">Criando a IDL</h3>
 <p>Arquivo de interface <code>Data.idl</code>:</p>
@@ -692,7 +695,7 @@ window.MathJax = {
 <li><code>Data/__init__.py</code></li>
 </ul>
 <div class="row">
-  <div class="col s12 m6 offset-m3">
+  <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card red darken-1">
       <div class="card-content white-text">
         <span class="card-title white-text darken-4">FIXME: Este trecho será revisado</span>
@@ -780,7 +783,7 @@ window.MathJax = {
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>String_var sior( orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>object_to_string( SA_obj.in() ) );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sior <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
 </code></pre></div><div class="row">
-  <div class="col s12 m6 offset-m3">
+  <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card blue lighten-5">
       <div class="card-content blue-text">
         <span class="card-title blue-text darken-4">Nota</span>
@@ -911,10 +914,11 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>}
 </code></pre></div><h2 id="cliente-corba">Cliente CORBA</h2>
   <div class="center-align">
-    <picture>
+    <figure>
       <source srcset="/img/corba-client.webp" width="1509" height="1113" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/corba-client.png" alt="Cliente CORBA" width="1509" height="1113">
-    </picture>
+      <figcaption>Cliente CORBA</figcaption>
+    </figure>
   </div>
 <h3 id="clientcc">Client.cc</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// Client.cc

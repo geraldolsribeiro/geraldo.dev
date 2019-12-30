@@ -58,8 +58,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.cb73245edaa63bc42efa68b72009e43574508993562bb1be18c9144f9b665d02.css"
-      integrity="sha256-y3MkXtqmO8Qu&#43;mi3IAnkNXRQiZNWK7G&#43;GMkUT5tmXQI="
+      href="https://geraldo.dev/style.main.min.c144f5282ea9a4fbf5c5c778a57b223ac4c19fa36b7fd53b19a5cdbc482d2861.css"
+      integrity="sha256-wUT1KC6ppPv1xcd4pXsiOsTBn6Nrf9U7GaXNvEgtKGE="
       media="screen" async>
 
 
@@ -256,16 +256,18 @@ o seguinte conteúdo:</p>
 <p>Vamos utilizar dois grupos de dados, cada um com duas variáveis (x e y).</p>
 <p>Olhando nosso conjunto de dados de cima podemos ver claramente duas curvas, uma para cada conjunto.</p>
   <div class="center-align">
-    <picture>
+    <figure>
       <img class="responsive-img z-depth-3" src="/img/mlpack-foo-1.gif#center" alt="Grupo de dados de treinamento">
-    </picture>
+      <figcaption>Grupo de dados de treinamento</figcaption>
+    </figure>
   </div>
 <p>Para facilitar a visualização, o primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na
 animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</p>
   <div class="center-align">
-    <picture>
+    <figure>
       <img class="responsive-img z-depth-3" src="/img/mlpack-foo-2.gif#center" alt="Grupo de dados de treinamento">
-    </picture>
+      <figcaption>Grupo de dados de treinamento</figcaption>
+    </figure>
   </div>
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
 aleatório para não favorecer ou influenciar o treinamento. São ao todo 400
@@ -310,9 +312,10 @@ registros são entrados por linha e para processamento são tratados em colunas.
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Colunas: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> data.n_cols <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl; <span style="color:#75715e">// 400
 </span></code></pre></div><p>A matriz de dados foi carregada e precisa ser dividida entre dados de treinamento e dados de teste.</p>
   <div class="center-align">
-    <picture>
+    <figure>
       <img class="responsive-img z-depth-3" src="/img/mlpack-data.svg#center" alt="Dados depois de carregados">
-    </picture>
+      <figcaption>Dados depois de carregados</figcaption>
+    </figure>
   </div>
 <p>É muito importante que o modelo nunca veja os dados de teste para que se tenha
 uma boa generalização.</p>
@@ -361,9 +364,10 @@ e estão distribuídos em todo o espaço de amostra.</p>
 0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000
 </code></pre><h3 id="construindo-a-rede-neural">Construindo a rede neural</h3></p>
   <div class="center-align">
-    <picture>
+    <figure>
       <img class="responsive-img z-depth-3" src="/img/mlpack-ffn.svg#center" alt="img">
-    </picture>
+      <figcaption>img</figcaption>
+    </figure>
   </div>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>  <span style="color:#75715e">// Feed Forward Network
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>  <span style="color:#75715e">// FFN&lt;tipo-de-saída-das-camadas, regra-de-inicialização&gt; model;

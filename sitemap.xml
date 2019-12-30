@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/corba/</loc>
     <lastmod>2019-12-27T00:00:00-03:00</lastmod>
   </url>
@@ -64,6 +69,16 @@
   
   <url>
     <loc>https://geraldo.dev/posts/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/idl/</loc>
+    <lastmod>2019-12-27T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/python/</loc>
     <lastmod>2019-12-27T00:00:00-03:00</lastmod>
   </url>
   
@@ -94,11 +109,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/armadillo/</loc>
-    <lastmod>2019-12-17T00:00:00-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
     <lastmod>2019-12-17T00:00:00-03:00</lastmod>
   </url>
   

@@ -24,6 +24,12 @@
 
     <meta property="og:tags" content="corba" />
 
+    <meta property="og:tags" content="IDL" />
+
+    <meta property="og:tags" content="C&#43;&#43;" />
+
+    <meta property="og:tags" content="Python" />
+
 
 
 <meta name="description" content="Computação distribuída com CORBA">
@@ -54,6 +60,24 @@ if (!doNotTrack) {
       integrity="sha256-y3MkXtqmO8Qu&#43;mi3IAnkNXRQiZNWK7G&#43;GMkUT5tmXQI="
       media="screen" async>
 
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: false,
+    packages: {'[+]': ['noerrors']}
+  },
+  loader: {
+    load: ['[tex]/noerrors']
+  }
+};
+  </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
 
 
 
@@ -122,6 +146,15 @@ if (!doNotTrack) {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/corba/">corba</a>
                 </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/idl/">IDL</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/python/">Python</a>
+                </div>
 
 
         <h1>CORBA</h1>
@@ -132,7 +165,14 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/corba/#introduo">Introdução</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#introduo">Introdução</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/corba/#o-que--corba">O que é CORBA?</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#o-que--a-omg">O que é a OMG?</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#corba-vs-soapxml-rpc">CORBA vs SOAP/XML-RPC</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#corba--pesado">CORBA é pesado?</a></li>
+      </ul>
+    </li>
     <li><a href="https://geraldo.dev/posts/corba/#orb---object-request-broker">ORB - Object Request Broker</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#clientes">Clientes</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#servidores">Servidores</a></li>
@@ -205,9 +245,42 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <h2 id="introduo">Introdução</h2>
+<h3 id="o-que--corba">O que é CORBA?</h3>
 <ul>
+<li>é o acrônimo para <strong>Common Object Request Broker Architecture</strong></li>
+<li>é um framework para construção de sistemas distribuídos orientados a objetos</li>
+<li>é multiplataforma</li>
+<li>é independente de linguagem</li>
+<li>é um padrão aberto e extensível definido pela <em>Object Management Group</em></li>
 <li>clientes e servidores estão em diferentes máquinas</li>
 <li>programas clientes enviam mensagens para servidores remotos como se este estivesse locais (<em>location transparency</em>)</li>
+</ul>
+<h3 id="o-que--a-omg">O que é a OMG?</h3>
+<ul>
+<li><a href="http://www.omg.org">www.omg.org</a></li>
+<li>fundada em 1989</li>
+<li>somente provê especificações</li>
+<li>não provê implementações</li>
+<li>todas as especificações são free</li>
+</ul>
+<h3 id="corba-vs-soapxml-rpc">CORBA vs SOAP/XML-RPC</h3>
+<ul>
+<li><code>SOAP</code> e <code>XML-RPC</code> são protocolos wire</li>
+<li><code>CORBA</code> inclui:
+<ul>
+<li>um protocolo wire</li>
+<li><code>GIOP</code></li>
+<li>object model</li>
+<li><code>IDL</code></li>
+<li>mapeamento de linguagem</li>
+<li>serviços</li>
+<li>códigos de cliente e servidor portáveis  entre implementações CORBA</li>
+</ul>
+</li>
+</ul>
+<h3 id="corba--pesado">CORBA é pesado?</h3>
+<ul>
+<li>uma arquitetura mínima requer algumas dezenas de kB (segundo <a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a>)</li>
 </ul>
 <h2 id="orb---object-request-broker">ORB - Object Request Broker</h2>
 <ul>
@@ -405,48 +478,89 @@ if (!doNotTrack) {
 <tr>
 <th>IDL</th>
 <th>C++</th>
+<th>Tamanho e faixa</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>short</td>
 <td>CORBA::Short</td>
+<td>16 bit: $-2^{15} \ldots +2^{15} - 1$</td>
 </tr>
 <tr>
 <td>long</td>
 <td>CORBA::Long</td>
+<td>32 bit: $-2^{31} \ldots +2^{31} - 1$</td>
+</tr>
+<tr>
+<td>long long</td>
+<td>CORBA::LongLong</td>
+<td>64 bit: -2^63 \ldots +2^63 - 1</td>
 </tr>
 <tr>
 <td>unsigned short</td>
 <td>CORBA::UShort</td>
+<td>16 bit: $0 \ldots 2^{16} - 1$</td>
 </tr>
 <tr>
 <td>unsigned long</td>
 <td>CORBA::ULong</td>
+<td>32 bit: $0 \ldots 2^{32} - 1$</td>
+</tr>
+<tr>
+<td>unsigned long long</td>
+<td>CORBA::ULongLong</td>
+<td>64 bit: $0 \ldots 2^{64}$</td>
 </tr>
 <tr>
 <td>float</td>
 <td>CORBA::Float</td>
+<td>32 bit IEEE single precision floating point number</td>
 </tr>
 <tr>
 <td>double</td>
 <td>CORBA::Double</td>
+<td>64 bit IEEE double precision floating point number</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>CORBA::LongDouble</td>
+<td>&ndash;</td>
 </tr>
 <tr>
 <td>char</td>
 <td>CORBA::Char</td>
+<td>8 bit</td>
+</tr>
+<tr>
+<td>wchar</td>
+<td>CORBA::WChar</td>
+<td>&ndash; (Wide Char)</td>
+</tr>
+<tr>
+<td>string</td>
+<td>CORBA::char *</td>
+<td>&ndash;</td>
+</tr>
+<tr>
+<td>wstring</td>
+<td>CORBA::WChar *</td>
+<td>&ndash;</td>
 </tr>
 <tr>
 <td>boolean</td>
 <td>CORBA::Boolean</td>
+<td>true/false</td>
 </tr>
 <tr>
 <td>octet</td>
 <td>CORBA::Octet</td>
+<td>(unsigned char)  8 bit raw. Sem conversão</td>
 </tr>
 <tr>
 <td>any</td>
 <td>CORBA::Any</td>
+<td>Arbitrary</td>
 </tr>
 </tbody>
 </table>
@@ -541,7 +655,12 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>nsd -ORBIIOPAddr inet:localhost:2809
 </code></pre></div><p>Veja exemplo em <a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">Connecting 3 ORBs</a>.</p>
 <h2 id="exemplo">Exemplo</h2>
-<p><img src="/img/corba-01.png" alt="Componentes do exemplo"></p>
+  <div class="center-align">
+    <picture>
+      <source srcset="/img/corba-01.webp" width="663" height="493" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/corba-01.png" alt="Componentes do exemplo" width="663" height="493">
+    </picture>
+  </div>
 <h3 id="criando-a-idl">Criando a IDL</h3>
 <p>Arquivo de interface <code>Data.idl</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">#</span><span style="color:#75715e">ifndef __DATADIST_IDL__</span><span style="color:#75715e">
@@ -791,7 +910,12 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>  <span style="color:#66d9ef">return</span> true;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>}
 </code></pre></div><h2 id="cliente-corba">Cliente CORBA</h2>
-<p><img src="/img/corba-client.png" alt="Corba client"></p>
+  <div class="center-align">
+    <picture>
+      <source srcset="/img/corba-client.webp" width="1509" height="1113" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/corba-client.png" alt="Cliente CORBA" width="1509" height="1113">
+    </picture>
+  </div>
 <h3 id="clientcc">Client.cc</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// Client.cc
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CRequestServiceA.hh&#34;</span><span style="color:#75715e">
@@ -990,7 +1114,6 @@ vida do serviço</li>
 <h2 id="todo">Todo</h2>
 <ul>
 <li><a href="https://www.grisby.org/presentations/py10tut.pdf">https://www.grisby.org/presentations/py10tut.pdf</a></li>
-<li><a href="https://www.grisby.org/presentations/accu2003.pdf">https://www.grisby.org/presentations/accu2003.pdf</a></li>
 <li><a href="https://www.grisby.org/presentations/CORBAControls2002.pdf">https://www.grisby.org/presentations/CORBAControls2002.pdf</a></li>
 <li><a href="https://xennis.org/wiki/CORBA">https://xennis.org/wiki/CORBA</a> &lt;- tutorial que parece muito interessante</li>
 <li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">http://www.mario-konrad.ch/blog/programming/connect_orbs.html</a></li>
@@ -1002,6 +1125,7 @@ vida do serviço</li>
 <li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></li>
 <li><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf">O Adaptador de Objetos e Interoperabilidade CORBA</a></li>
 <li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">CORBA Tutorial: Connecting 3 ORBs</a></li>
+<li><a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a></li>
 <li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniidl.html">The omniORB IDL Compiler</a></li>
 <li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniNames.html">The omniNames CORBA Naming Service</a></li>
 <li>(local) <a href="file:///usr/share/doc/omniorb-doc/omnithread.html">The OMNI Thread Abstraction</a></li>

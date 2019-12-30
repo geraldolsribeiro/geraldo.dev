@@ -187,28 +187,28 @@ URI de namespace que pode ser conhecida através do XSD.</p>
 <li>sem namespace</li>
 </ul>
 <h3 id="elemento-raiz-do-xml-no-namespace-com-prefixo-xmlnsns">Elemento raiz do XML no namespace com prefixo (<code>xmlns:ns=”…”&gt;</code>)</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns:ns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns:ns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;myRootElement</span><span style="color:#f92672">&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p>Use a API <code>Resource.save(...)</code></p>
 <h3 id="elemento-raiz-do-xml-no-namespace-padro-elm-xmlns">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://example.com/myXml&#34;</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/myRootElement&gt;</span>
 </code></pre></td></tr></table>
@@ -219,14 +219,14 @@ URI de namespace que pode ser conhecida através do XSD.</p>
 precisa conhecer ou chutar o <code>EPackage</code> correto para realizar o parser.</p>
 <p>Certamente seria melhor se você tivesse informação do namespace. Mas algumas
 vezes você não terá como influenciar a entrada a ser lida com o EMF.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;myRootElement</span> <span style="color:#a6e22e">someAttribute=</span><span style="color:#e6db74">&#34;value&#34;</span><span style="color:#f92672">&gt;</span>
    <span style="color:#f92672">&lt;myAnotherElement</span> <span style="color:#a6e22e">anotherAttribute=</span><span style="color:#e6db74">&#34;value 2&#34;</span><span style="color:#f92672">/&gt;</span>
 <span style="color:#f92672">&lt;/myRootElement&gt;</span>
 </code></pre></td></tr></table>
@@ -235,15 +235,15 @@ vezes você não terá como influenciar a entrada a ser lida com o EMF.</p>
 será capaz de realizar o match com o <code>EPackage</code> e consequentemente não será
 capaz de carregar apropriadamente a menos que você registre um <code>EPackage</code> alvo
 com o <code>ResourceSet</code> global com uma URI nula.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>EPackage ePackage<span style="color:#f92672">:</span> eCorePackages<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>EPackage ePackage<span style="color:#f92672">:</span> eCorePackages<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
 	resourceSet<span style="color:#f92672">.</span><span style="color:#a6e22e">getPackageRegistry</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> ePackage<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 	<span style="color:#75715e">// alternatively could call EPackage.Registry.INSTANCE.put(..)
 </span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
@@ -256,15 +256,15 @@ não pode injetar a declaração faltante do XMLNS no XML, mas pode especificar
 registro do <code>ResourceSet</code>.</p>
 <h2 id="notas-gerais-sobre-salvar-e-carregar-xml-pelo-emf">Notas gerais sobre salvar e carregar XML pelo EMF</h2>
 <p>Quando carregar do XML ou salvar para o XML você precisa passar algumas das seguintes opções para os métodos <code>save</code> ou <code>load</code>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> options <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java">Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> options <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 options<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>XMLResource<span style="color:#f92672">.</span><span style="color:#a6e22e">OPTION_EXTENDED_META_DATA</span><span style="color:#f92672">,</span> Boolean<span style="color:#f92672">.</span><span style="color:#a6e22e">TRUE</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
 <span style="color:#75715e">// options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
 </span><span style="color:#75715e"></span>options<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>XMLResource<span style="color:#f92672">.</span><span style="color:#a6e22e">OPTION_ENCODING</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;UTF-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>

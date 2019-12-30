@@ -172,12 +172,12 @@ derivadas do <a href="https://www.debian.org">Debian</a>, tais como
 a máquina terá outro nome.</p>
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
 palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /etc/hostname
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Para o próximo boot está tudo OK!</strong></p>
@@ -188,12 +188,12 @@ serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em>
 simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
 através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
 o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;novo-nome&#34;</span> &gt; /proc/sys/kernel/hostname
 </code></pre></td></tr></table>
 </div>
 </div><p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
@@ -201,12 +201,12 @@ preciso reiniciar a máquina.</p>
 <p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
 se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
 comando faça o seguinte:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sed -i <span style="color:#e6db74">&#34;s/antigo-nome/novo-nome/g&#34;</span> /etc/hosts
 </code></pre></td></tr></table>
 </div>
 </div><p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.

@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 27 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,19 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Grafana: Reset da senha do admin</title>
+      <link>https://geraldo.dev/posts/grafana-reset-senha-do-admin/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/grafana-reset-senha-do-admin/</guid>
+      <description>Iniciar os containers
+1cd /opt/docker/docker-compose-influxdb-grafana 2docker-compose up -d Localizar o id do container do &amp;lsquo;/run.sh&amp;rsquo;
+1docker ps -a 2CONTAINER ID IMAGE COMMAND CREATED ... 3265059f8820a grafana/grafana:latest &amp;#34;/run.sh&amp;#34; 6 seconds ago ... 4637c3d25845f chronograf:latest &amp;#34;/entrypoint.sh chro…&amp;#34; 6 seconds ago ... 521b3a8d77cae influxdb:latest &amp;#34;/entrypoint.sh infl…&amp;#34; 7 seconds ago ... Abrir um shell no container do run.sh (265059f8820a)
+1docker exec -ti 265059f8820a bash Trocar a senha usando o grafana-cli
+1 2bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha 3INFO[01-03|16:34:42] Connecting to DB logger=sqlstore dbtype=sqlite3 4INFO[01-03|16:34:42] Starting DB migration logger=migrator 5 6Admin password changed successfully ✔ Referências  [https://community.</description>
     </item>
     
     <item>

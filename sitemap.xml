@@ -48,6 +48,31 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/docker/</loc>
+    <lastmod>2020-01-03T13:45:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-01-03T13:45:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/grafana/</loc>
+    <lastmod>2020-01-03T13:45:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/grafana-reset-senha-do-admin/</loc>
+    <lastmod>2020-01-03T13:45:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-01-03T13:45:44-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
     <lastmod>2020-01-03T09:07:17-03:00</lastmod>
   </url>
@@ -63,11 +88,6 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-01-03T11:46:54-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/idl/</loc>
     <lastmod>2020-01-03T09:07:17-03:00</lastmod>
   </url>
@@ -75,11 +95,6 @@
   <url>
     <loc>https://geraldo.dev/tags/python/</loc>
     <lastmod>2020-01-03T09:07:17-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-01-03T11:46:54-03:00</lastmod>
   </url>
   
   <url>

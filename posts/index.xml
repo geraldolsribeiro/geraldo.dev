@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Algoritmos</title>
+      <link>https://geraldo.dev/posts/algoritmos/</link>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/algoritmos/</guid>
+      <description>Estruturas lineares de dados  Arrays Linked List - Single and Doubly Stack Queues  Algoritmos básicos  Sorting - Merge Sort, Insertion Sort, Quick Sort, Number of inversions Matrix Multiplication (just know the algo if not implement it) Prime Sieving Modular Math including multiplication and division Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation Fibonacci number with matrix multiplication Probability distribution and expected value Stats - Mean, Median, Variance, Bayes theorem  Técnicas populares  Divide and Conquer - Binary Search, Maximum Subarray Greedy Algorithms - Activity Selection, Huffman encoding Dynamic Programming - Matrix Chain Multiplication, Knapsack, Linear Programming - Variable Maximisation, Linear time sorting String Algorithms - Manacher, LCS, Edit Distance  Estruturas não lineares de dados  Trees - Binary Tree, General Tree, Lowest Common Ancestor Binary Search Tree - Inorder Traversal, Level order traversal, finding kth largest element, diameter, depth, number of nodes, etc.</description>
+    </item>
+    
+    <item>
       <title>Grafana: Reset da senha do admin</title>
       <link>https://geraldo.dev/posts/grafana-reset-senha-do-admin/</link>
       <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>

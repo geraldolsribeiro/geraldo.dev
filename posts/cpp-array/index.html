@@ -6,29 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Algoritmos | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/algoritmos/">
+<title>C&#43;&#43;: array | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/cpp-array/">
 <meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="03/01/2020">
+    <meta property="article:published_time" content="04/01/2020">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/headers/algorithms.jpg" />
-<meta property="og:description" content="Como misturar de forma saudável diferentes distribuições do Debian.
-Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo." /><meta property="og:url" content="https://geraldo.dev/posts/algoritmos/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/cpp.jpg" />
+<meta property="og:description" content="Exemplos de uso de std::array" /><meta property="og:url" content="https://geraldo.dev/posts/cpp-array/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Algoritmos" />
+    <meta property="og:title" content="C&#43;&#43;: array" />
 
 
-    <meta property="og:tags" content="algorithms" />
+    <meta property="og:tags" content="cpp" />
+
+    <meta property="og:tags" content="array" />
 
 
 
-<meta name="description" content="Como misturar de forma saudável diferentes distribuições do Debian.
-Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.">
+<meta name="description" content="Exemplos de uso de std::array">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -111,15 +111,15 @@ if (!doNotTrack) {
         
         <div class="project-header center-align">
           <picture>
-            <source srcset="img/headers/algorithms.webp" type="image/webp">
-            <img src="img/headers/algorithms.jpg" class="responsive-img z-depth-3">
+            <source srcset="img/headers/cpp.webp" type="image/webp">
+            <img src="img/headers/cpp.jpg" class="responsive-img z-depth-3">
           </picture>
         </div>
         
 
         <div class="row">
           <div class="col s12 m6 center-align grey-text">
-            Publicado em: 03/Jan/2020
+            Publicado em: 04/Jan/2020
           </div>
           
           <div class="col s12 m6 center-align grey-text">
@@ -133,11 +133,14 @@ if (!doNotTrack) {
         
             
               <div class="chip">
-                  <a href="https://geraldo.dev/tags/algorithms/">algorithms</a>
+                  <a href="https://geraldo.dev/tags/cpp/">cpp</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/array/">array</a>
                 </div>
 
 
-        <h1>Algoritmos</h1>
+        <h1>C&#43;&#43;: array</h1>
 
         
 <aside class="table-of-contents">
@@ -145,16 +148,9 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#estruturas-lineares-de-dados">Estruturas lineares de dados</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#algoritmos-bsicos">Algoritmos básicos</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#tcnicas-populares">Técnicas populares</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#estruturas-no-lineares-de-dados">Estruturas não lineares de dados</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#grafos">Grafos</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#rvores-avanadas-e-grafos">Árvores avançadas e grafos</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#algoritmos-avanados-para-string">Algoritmos avançados para String</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#matemtica-avanada">Matemática avançada</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#tpicos-gerais-avanados">Tópicos gerais avançados</a></li>
-    <li><a href="https://geraldo.dev/posts/algoritmos/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-array/#caractersticas">Características</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-array/#array-vs-vector">Array vs Vector</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-array/#exemplos">Exemplos</a></li>
   </ul>
 
 </aside>
@@ -163,81 +159,49 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="estruturas-lineares-de-dados">Estruturas lineares de dados</h2>
+        <h2 id="caractersticas">Características</h2>
 <ul>
-<li><a href="https://geraldo.dev/posts/cpp-array/">Arrays</a></li>
-<li>Linked List - Single and Doubly</li>
-<li>Stack</li>
-<li>Queues</li>
+<li>é um wrapper para o array do C</li>
+<li>array oferece uma sintaxe mais amigável comparada com a array do C</li>
+<li>pode ser passado e retornado por valor</li>
+<li>pode ser passado e retornado por referência</li>
+<li>uso mais conveniente de <code>size</code></li>
+<li>uso mais conveniente de iteradores STL</li>
+<li>possui exatamente a mesma performace da array do C</li>
 </ul>
-<h2 id="algoritmos-bsicos">Algoritmos básicos</h2>
+<h2 id="array-vs-vector">Array vs Vector</h2>
 <ul>
-<li>Sorting - Merge Sort, Insertion Sort, Quick Sort, Number of inversions</li>
-<li>Matrix Multiplication (just know the algo if not implement it)</li>
-<li>Prime Sieving</li>
-<li>Modular Math including multiplication and division</li>
-<li>Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation</li>
-<li>Fibonacci number with matrix multiplication</li>
-<li>Probability distribution and expected value</li>
-<li>Stats - Mean, Median, Variance, Bayes theorem</li>
+<li><code>array</code> é estático e possui tamanho definido em tempo de compilação</li>
+<li><code>vector</code> é dinâmico e é alocado no <code>heap</code></li>
 </ul>
-<h2 id="tcnicas-populares">Técnicas populares</h2>
-<ul>
-<li>Divide and Conquer - Binary Search, Maximum Subarray</li>
-<li>Greedy Algorithms - Activity Selection, Huffman encoding</li>
-<li>Dynamic Programming - Matrix Chain Multiplication, Knapsack,</li>
-<li>Linear Programming - Variable Maximisation, Linear time sorting</li>
-<li>String Algorithms - Manacher, LCS, Edit Distance</li>
-</ul>
-<h2 id="estruturas-no-lineares-de-dados">Estruturas não lineares de dados</h2>
-<ul>
-<li>Trees - Binary Tree, General Tree, Lowest Common Ancestor</li>
-<li>Binary Search Tree - Inorder Traversal, Level order traversal, finding kth largest element, diameter, depth, number of nodes, etc.</li>
-<li>Heaps - Array Implementation, Heapify, Heap Sort</li>
-<li>Union Find</li>
-<li>Hash Table - Linear Probing, Open addressing, Collision avoidance</li>
-</ul>
-<h2 id="grafos">Grafos</h2>
-<ul>
-<li>Adjacency List, Adjacency Matrix, Weighted Edge Graphs</li>
-<li>Basic Traversal algos - Breadth First Search, Depth First Search, etc</li>
-<li>Shortest Path Finding Algorithm - Dijkstra, Floyd Warshal, Bellman Ford</li>
-<li>Minimum Spanning Tree - Kruskal's Algo, Prim's Algo</li>
-</ul>
-<h2 id="rvores-avanadas-e-grafos">Árvores avançadas e grafos</h2>
-<ul>
-<li>Balanced Trees - AVL, Red-Black</li>
-<li>Heavy Light Decomposition, B+ Trees, Quad Tree</li>
-<li>Advance Graph - Min Cut, Max Flow</li>
-<li>Maximum Matching - Hall's Marriage</li>
-<li>Hamiltonian Cycle</li>
-<li>Edge Graphs / Line Graphs</li>
-<li>Strongly Connected Components</li>
-<li>Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos</li>
-</ul>
-<h2 id="algoritmos-avanados-para-string">Algoritmos avançados para String</h2>
-<ul>
-<li>Knuth Morris Pratt Algorithm</li>
-<li>Rabin Karp Algorithm</li>
-<li>Tries and Compressed Tries</li>
-<li>Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm</li>
-</ul>
-<h2 id="matemtica-avanada">Matemática avançada</h2>
-<ul>
-<li>Fast Fourier Transformation</li>
-<li>Primality Testing</li>
-<li>Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull</li>
-</ul>
-<h2 id="tpicos-gerais-avanados">Tópicos gerais avançados</h2>
-<ul>
-<li>Iterating through all combination / permutation</li>
-<li>Bit manipulation</li>
-</ul>
-<h2 id="referncias">Referências</h2>
-<ul>
-<li><a href="https://www.quora.com/What-algorithms-should-I-know-to-become-a-good-programmer/answer/Ashish-Kedia?ch=3&amp;share=ae955848&amp;srid=zRrj">What algorithms should I know to become a good programmer?</a></li>
-<li><a href="https://github.com/AnthonyCalandra/modern-cpp-features/blob/master/README.md">C++20/17/14/11</a></li>
-</ul>
+<h2 id="exemplos">Exemplos</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>  <span style="color:#66d9ef">auto</span> print <span style="color:#f92672">=</span> []( <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>arr ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{ </span><span style="color:#e6db74">&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>x : arr ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> x <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  };
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  array<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">3</span><span style="color:#f92672">&gt;</span> a    <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#66d9ef">int</span>           c[<span style="color:#ae81ff">3</span>] <span style="color:#f92672">=</span> {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>}; <span style="color:#75715e">// old C style
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  sort( a.begin(), a.end() ); <span style="color:#75715e">// a == { 1, 2, 3 }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#75715e"></span>  print( a );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  sort( begin( c ), end( c ) );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  print( c );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>x : a ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    x <span style="color:#f92672">*</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// a == { 2, 4, 6 }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#75715e"></span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  print( a );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>  <span style="color:#66d9ef">for</span>( <span style="color:#66d9ef">auto</span> <span style="color:#f92672">&amp;</span>x : c ) {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    x <span style="color:#f92672">*</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// c == { 2, 4, 6 }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#75715e"></span>  }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  print( c );
+</code></pre></div>
         </div>
 
         
@@ -246,7 +210,7 @@ if (!doNotTrack) {
   <ul class="share">
     <li>
       <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2falgoritmos%2f"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-array%2f"
         aria-label="share on Facebook"
         target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-facebook"></span>
@@ -255,7 +219,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2falgoritmos%2f&amp;text=Algoritmos"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-array%2f&amp;text=C%2b%2b%3a%20array"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -263,7 +227,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2falgoritmos%2f&amp;title=Algoritmos"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-array%2f&amp;title=C%2b%2b%3a%20array"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -271,7 +235,7 @@ if (!doNotTrack) {
 
     <li>
       <a class="email"
-         href="mailto:?subject=Algoritmos&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2falgoritmos%2f">
+         href="mailto:?subject=C%2b%2b%3a%20array&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-array%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>

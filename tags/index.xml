@@ -13,11 +13,11 @@
     
     
     <item>
-      <title>array</title>
-      <link>https://geraldo.dev/tags/array/</link>
+      <title>Algoritmos</title>
+      <link>https://geraldo.dev/tags/algoritmos/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/array/</guid>
+      <guid>https://geraldo.dev/tags/algoritmos/</guid>
       <description></description>
     </item>
     
@@ -31,11 +31,11 @@
     </item>
     
     <item>
-      <title>algorithms</title>
-      <link>https://geraldo.dev/tags/algorithms/</link>
-      <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>
+      <title>std::array</title>
+      <link>https://geraldo.dev/tags/stdarray/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/tags/algorithms/</guid>
+      <guid>https://geraldo.dev/tags/stdarray/</guid>
       <description></description>
     </item>
     

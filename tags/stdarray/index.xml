@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>array on geraldo.dev</title>
-    <link>https://geraldo.dev/tags/array/</link>
-    <description>Recent content in array on geraldo.dev</description>
+    <title>std::array on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/stdarray/</link>
+    <description>Recent content in std::array on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
     <lastBuildDate>Sat, 04 Jan 2020 00:00:00 -0300</lastBuildDate>
     
-	<atom:link href="https://geraldo.dev/tags/array/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://geraldo.dev/tags/stdarray/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

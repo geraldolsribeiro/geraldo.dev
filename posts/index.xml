@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Docker - exportar imagem</title>
+      <link>https://geraldo.dev/posts/docker-exportar-imagem/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/docker-exportar-imagem/</guid>
+      <description>1docker export nome-da-imagem &amp;gt; arquivo.tar 1docker export --output=&amp;#34;arquivo.tar&amp;#34; nome-da-image Nota Exte comando não salva o conteúdo dos volumes.
+    Referências  docker export  </description>
+    </item>
+    
+    <item>
       <title>C&#43;&#43;: array</title>
       <link>https://geraldo.dev/posts/cpp-array/</link>
       <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 03 Jan 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Docker - exportar imagem</title>
+      <link>https://geraldo.dev/posts/docker-exportar-imagem/</link>
+      <pubDate>Mon, 06 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/docker-exportar-imagem/</guid>
+      <description>1docker export nome-da-imagem &amp;gt; arquivo.tar 1docker export --output=&amp;#34;arquivo.tar&amp;#34; nome-da-image Nota Exte comando não salva o conteúdo dos volumes.
+    Referências  docker export  </description>
+    </item>
     
     <item>
       <title>Grafana: Reset da senha do admin</title>

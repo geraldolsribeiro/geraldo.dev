@@ -25,5 +25,15 @@
 Ao enviar a variável btn para a função console.</description>
     </item>
     
+    <item>
+      <title>XPath no Chrome</title>
+      <link>https://geraldo.dev/posts/fixme/chrome-xpath-no-chrome/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fixme/chrome-xpath-no-chrome/</guid>
+      <description>Use no console $x(//expressão). Nenhuma extensão ou plugins são necessários.
+$x(&amp;quot;//img&amp;quot;) Referências  Xpath cheatsheet Is there a way to get the xpath in google chrome?  </description>
+    </item>
+    
   </channel>
 </rss>

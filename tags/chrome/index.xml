@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>chrome on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/chrome/</link>
+    <description>Recent content in chrome on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 10 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>XPath no Chrome</title>
+      <link>https://geraldo.dev/posts/fixme/chrome-xpath-no-chrome/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fixme/chrome-xpath-no-chrome/</guid>
+      <description>Use no console $x(//expressão). Nenhuma extensão ou plugins são necessários.
+$x(&amp;quot;//img&amp;quot;) Referências  Xpath cheatsheet Is there a way to get the xpath in google chrome?  </description>
+    </item>
+    
+  </channel>
+</rss>

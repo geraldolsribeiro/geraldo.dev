@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Tmux Only for Long Running Processes | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="10/09/2018">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Tmux Only for Long Running Processes" />
+
+
+
+
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
+      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      media="screen" async>
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 10/Sep/2018
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 08/Jan/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+
+
+        <h1>Tmux Only for Long Running Processes</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#set-up-tmux-for-a-rails-project">Set up tmux for a Rails project</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#perform-ad-hoc-tasks">Perform ad-hoc tasks</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#doing-most-of-the-work-from-inside-vim">Doing most of the work from inside Vim</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#suspending-the-vim-process-when-necessary">Suspending the Vim process when necessary</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#re-attach-to-the-tmux-session-quickly">Re-attach to the tmux session quickly</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/#get-things-done">Get things done</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <p>This post describes a minimal tmux workflow, used only for long-running
+processes. It is intended to reduce the cognitive load imposed by
+<a href="http://2ndscale.com/rtomayko/2008/administrative-debris">administrative debris</a>
+of open tabs, panes, or windows.</p>
+<h2 id="set-up-tmux-for-a-rails-project">Set up tmux for a Rails project</h2>
+<p>From within a full-screen shell (to hide window chrome, status bars,
+notifications, the system clock, and other distractions), create a tmux session
+for a Rails project:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cd project-name
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>tat
+</code></pre></div><p><code>tat</code> (short for &ldquo;tmux attach&rdquo;) is a command from
+<a href="https://github.com/thoughtbot/dotfiles/blob/master/bin/tat">thoughtbot/dotfiles</a>
+that names the tmux session after the project's directory name. That naming
+convention will help us re-attach to the session later using the same <code>tat</code>
+command.</p>
+<p>At this point, <code>tat</code> is the same thing as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmux new -s <span style="color:#e6db74">`</span>basename $PWD<span style="color:#e6db74">`</span>
+</code></pre></div><p>Run the Rails app's <a href="https://robots.thoughtbot.com/foreman-as-process-manager-pow-as-dns-server-and-http">web and background processes with
+Foreman</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>foreman start
+</code></pre></div><p>The process manager is a long-running process. It is therefore a great candidate
+for tmux. Run it inside tmux, then forget it.</p>
+<p>After only running one command inside tmux, detach immediately:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;tmux-prefix&gt; d
+</code></pre></div><p><code>Ctrl+b</code> is the default <a href="tmux-faq">tmux prefix</a>. Many people change it to be <code>Ctrl+a</code> to
+match the API provided by GNU Screen, another popular terminal multiplexer.</p>
+<h2 id="perform-ad-hoc-tasks">Perform ad-hoc tasks</h2>
+<p>Back in a full-screen shell, we perform ad-hoc tasks such as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>vim .
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git status
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>git add --patch
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>git commit --verbose
+</code></pre></div><p>Those commands are targeted, &ldquo;right now&rdquo; actions. They are executed in a split
+second and focus us immediately on the task at hand.</p>
+<h2 id="doing-most-of-the-work-from-inside-vim">Doing most of the work from inside Vim</h2>
+<p>A majority of our work is done from within a text editor,
+such as <a href="fast-search-with-vim">searching with Vim</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#ae81ff">\ </span>string-i-am-searching-for
+</code></pre></div><p>Or, <a href="run-specs-with-vim">running specs with Vim</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;Leader&gt; s
+</code></pre></div><p>In thoughtbot/dotfiles, <code>&lt;Leader&gt;</code> is <code>&lt;Space&gt;</code>.</p>
+<h2 id="suspending-the-vim-process-when-necessary">Suspending the Vim process when necessary</h2>
+<p>To return control from Vim to the command line, suspend the process:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Ctrl+z
+</code></pre></div><p>Run this command to see suspended processes for this shell session:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>jobs
+</code></pre></div><p>It will output something like:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>  + suspended  vim spec/models/user_spec.rb
+</code></pre></div><p>This is when we might do some Git work:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>git fetch origin
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>git rebase -i origin/master
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>git push --force origin &lt;branch-name&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>git log origin/master..&lt;branch-name&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>git diff --stat origin/master
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>git checkout master
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>git merge &lt;branch-name&gt; --ff-only
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>git push
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>git push origin --delete &lt;branch-name&gt;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>git branch --delete &lt;branch-name&gt;
+</code></pre></div><p>When we're ready to edit in Vim again, we foreground the process:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>fg
+</code></pre></div><h2 id="re-attach-to-the-tmux-session-quickly">Re-attach to the tmux session quickly</h2>
+<p>When we need to restart the process manager or start a new long-running
+process, we re-attach to the tmux session:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tat
+</code></pre></div><p>At this point, <code>tat</code> is the same thing as:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmux attach -t <span style="color:#e6db74">`</span>basename $PWD<span style="color:#e6db74">`</span>
+</code></pre></div><p>Compared to other tmux workflows, this workflow involves more attaching and
+detaching from tmux sessions. That is why the <code>tat</code> shortcut is valuable.</p>
+<p>Back inside tmux, we can kill the Foreman process:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Ctrl+c
+</code></pre></div><p>Or, we might want to open a long-running Rails console in order to maintain a
+history of queries:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;tmux-prefix&gt; c
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>rails console
+</code></pre></div><p>After poking around in the database, we might detach from tmux again:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;tmux-prefix&gt; d
+</code></pre></div><h2 id="get-things-done">Get things done</h2>
+<p>At that point, we might take a break, go home, or move on to another project.</p>
+<p>The next time we sit (or <a href="http://en.wikipedia.org/wiki/Standing_desk">stand</a>!)
+at our desks, we start fresh by creating a branch, opening Vim, or doing
+whatever ad-hoc task is necessary in a clean slate, distraction-free
+environment.</p>
+<p>Meanwhile, tmux handles one responsibility for us: quietly managing long-running
+processes.</p>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-only-for-long-running-processes%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-only-for-long-running-processes%2f&amp;text=Tmux%20Only%20for%20Long%20Running%20Processes"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-only-for-long-running-processes%2f&amp;title=Tmux%20Only%20for%20Long%20Running%20Processes"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Tmux%20Only%20for%20Long%20Running%20Processes&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-only-for-long-running-processes%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+    
+</body>
+</html>

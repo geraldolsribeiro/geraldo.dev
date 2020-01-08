@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Apache `mod_rewrite` | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/fixme/apache-modrewrite/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="06/09/2018">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/fixme/apache-modrewrite/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Apache `mod_rewrite`" />
+
+
+
+
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
+      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      media="screen" async>
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 06/Sep/2018
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 08/Jan/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+
+
+        <h1>Apache `mod_rewrite`</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <p>No final do artigo <a href="https://picoledelimao.github.io/blog/2015/10/13/building-a-restful-web-service-in-c-plus-plus/">Building a RESTful Web Service in C++</a> há uma seção sobre <code>mod_rewrite</code> bem prática, a qual transcrevo (em tradução livre) aqui.</p>
+<p>Após criar os executáveis para os quatro métodos (GET, POST, PUT e DELETE) o &ldquo;inconveniente&rdquo; foi ter que colocar a extensão &ldquo;.fcgi&rdquo; para poder acessar as páginas. Uma solução mais elegante seria acessar <code>GET /comics/10</code> em vez de <code>GET /comics/comic.fcgi?id=10</code>. Além de reduzir o tamanho da URL o usuário não precisa saber que estamos usando um script FCGI. A reescrita de URL pode ser realizada com o módulo <code>rewrite</code> do Apache.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sudo a2enmod rewrite
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>sudo service apache2 restart
+</code></pre></div><p>Na pasta “comics” localizada em “/var/www/html” crie um novo arquivo <code>.htaccess</code> com o seguinte conteúdo:</p>
+<pre><code>RewriteEngine on
+RewriteRule comic/([0-9]+)$ comic/get.fcgi?id=$1
+</code></pre><p>Agora note uqe a URL <code>http://localhost/comics/comic/10</code> tem o mesmo efeito de <code>http://localhost/comics/comic/get.fcgi?id=10</code>. A razão é simples: nós criamos uma regra de mapeamento que quando acessamos <code>comics/comic/&lt;número&gt;</code> é chamado internamente a URL &ldquo;correta&rdquo; definida em <code>RewriteRule</code>. O parâmetro <code>$1</code> é o <code>Regex ID</code> (1 = é o primeiro) a ser copiado.</p>
+<p>Completando os mapeamento para os demais verbos do REST:</p>
+<pre><code>RewriteEngine on
+RewriteRule comic/([0-9]+)$ comic/get.fcgi?id=$1
+RewriteRule comic/put comic/put.fcgi
+RewriteRule comic/delete comic/delete.fcgi
+RewriteRule comic/post comic/post.fcgi
+</code></pre>
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2fapache-modrewrite%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2fapache-modrewrite%2f&amp;text=Apache%20%60mod_rewrite%60"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2fapache-modrewrite%2f&amp;title=Apache%20%60mod_rewrite%60"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Apache%20%60mod_rewrite%60&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2fapache-modrewrite%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+    
+</body>
+</html>

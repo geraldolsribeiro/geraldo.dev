@@ -202,6 +202,24 @@
     </item>
     
     <item>
+      <title>format</title>
+      <link>https://geraldo.dev/tags/format/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/format/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitattributes</title>
+      <link>https://geraldo.dev/tags/gitattributes/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/gitattributes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>firewall</title>
       <link>https://geraldo.dev/tags/firewall/</link>
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
@@ -472,6 +490,69 @@
     </item>
     
     <item>
+      <title>JSON Server</title>
+      <link>https://geraldo.dev/tags/json-server/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/json-server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JSONPlaceholder</title>
+      <link>https://geraldo.dev/tags/jsonplaceholder/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/jsonplaceholder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>LowEB</title>
+      <link>https://geraldo.dev/tags/loweb/</link>
+      <pubDate>Thu, 20 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/loweb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>emoji</title>
+      <link>https://geraldo.dev/tags/emoji/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/emoji/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gitflow</title>
+      <link>https://geraldo.dev/tags/gitflow/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/gitflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTML5</title>
+      <link>https://geraldo.dev/tags/html5/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/html5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>submodule</title>
+      <link>https://geraldo.dev/tags/submodule/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/submodule/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>argdo</title>
       <link>https://geraldo.dev/tags/argdo/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
@@ -486,6 +567,51 @@
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/tags/args/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>chrome</title>
+      <link>https://geraldo.dev/tags/chrome/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/chrome/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xpath</title>
+      <link>https://geraldo.dev/tags/xpath/</link>
+      <pubDate>Mon, 10 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xpath/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>action</title>
+      <link>https://geraldo.dev/tags/action/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/action/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thunar</title>
+      <link>https://geraldo.dev/tags/thunar/</link>
+      <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/thunar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cabeçalhos públicos</title>
+      <link>https://geraldo.dev/tags/cabe%C3%A7alhos-p%C3%BAblicos/</link>
+      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/tags/cabe%C3%A7alhos-p%C3%BAblicos/</guid>
       <description></description>
     </item>
     

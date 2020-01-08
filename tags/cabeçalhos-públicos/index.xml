@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cabeçalhos públicos on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/cabe%C3%A7alhos-p%C3%BAblicos/</link>
+    <description>Recent content in cabeçalhos públicos on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Wed, 13 Jun 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/cabe%C3%A7alhos-p%C3%BAblicos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Cabeçalhos públicos</title>
+      <link>https://geraldo.dev/posts/fixme/cpp-cabecalhos-publicos/</link>
+      <pubDate>Wed, 13 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fixme/cpp-cabecalhos-publicos/</guid>
+      <description> Toda biblioteca deve idealmente ter exatamente um único arquivo de cabeçalho. Internamente devem ser criados quantos cabeçalhos sejam necessários.  Referências  http://lucumr.pocoo.org/2013/8/18/beautiful-native-libraries/  </description>
+    </item>
+    
+  </channel>
+</rss>

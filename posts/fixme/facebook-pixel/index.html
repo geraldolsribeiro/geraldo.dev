@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Pixel do Facebook | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/fixme/facebook-pixel/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="23/09/2018">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/fixme/facebook-pixel/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Pixel do Facebook" />
+
+
+
+
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
+      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      media="screen" async>
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 23/Sep/2018
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 08/Jan/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+
+
+        <h1>Pixel do Facebook</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#quem-pode-usar-o-pixel-do-facebook">Quem pode usar o pixel do facebook?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#termos">Termos</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#impresso-de-anncio">Impressão de anúncio</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#converso">Conversão</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#eventos">Eventos</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#atribuio">Atribuição</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#o-que-o-pixel-pode-fazer">O que o pixel pode fazer?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#como-o-pixel-funciona">Como o pixel funciona?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#como-criar-um-pixel">Como criar um pixel</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#definindo-a-estratgia">Definindo a estratégia</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#identifique-sua-meta">Identifique sua meta</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#encontrar-pblicos-receptivos">Encontrar públicos receptivos</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#mensurar-para-converses">Mensurar para conversões</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#quais-eventos-posso-rastrear">Quais eventos posso rastrear?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#implementar-eventos-do-pixel">Implementar eventos do pixel</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#como-mensurar-as-converses">Como mensurar as conversões?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/facebook-pixel/#referncias">Referências</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <p><a href="https://www.facebook.com/events_manager/pixel/events?act=238684709479749&amp;selected_data_sources=PIXEL&amp;selected_screen_section=DATA_SOURCES&amp;pixel_id=1849762371810344&amp;selected_pixel_aspect_type=URL">https://www.facebook.com/events_manager/pixel/events?act=238684709479749&amp;selected_data_sources=PIXEL&amp;selected_screen_section=DATA_SOURCES&amp;pixel_id=1849762371810344&amp;selected_pixel_aspect_type=URL</a></p>
+<p>Segundo o blueprint, o pixel do Facebook usa as ações que as pessoas executam
+em seu site para ajudar a mensurar a eficiência dos anúncios e veiculá-los de
+forma mais eficaz.</p>
+<p>O pixel do Facebook é um recurso que permite monitorar conversões em um site
+e criar públicos para as campanhas de anúncios no Facebook. Com ele, você
+consegue saber quantas vendas, visualizações de conteúdo ou quantos leads a sua
+empresa conquistou com os anúncios do Facebook.</p>
+<p>Basicamente, o pixel do Facebook é um código que deve ser instalado em todas as
+páginas do seu site. A partir de então, ele vai começar a registrar as compras,
+visualizações, cadastros e enviar esses dados para o seu gerenciador de
+anúncios.</p>
+<h2 id="quem-pode-usar-o-pixel-do-facebook">Quem pode usar o pixel do facebook?</h2>
+<p>Esse recurso é destinado para pessoas que possuem site, blog ou páginas de
+captura.</p>
+<p>Não é possível instalar o pixel na sua página do Facebook, por exemplo. Isso
+porque, ele é uma forma de medir resultados fora do Facebook.</p>
+<h2 id="termos">Termos</h2>
+<h3 id="impresso-de-anncio">Impressão de anúncio</h3>
+<p>Sempre que alguém vê seu anúncio, ocorre o que chamamos de impressão do anúncio</p>
+<h3 id="converso">Conversão</h3>
+<p>Uma conversão acontece quando uma pessoa realiza uma ação que você está
+tentando impulsionar em seu site, seja a venda de um produto ou a visualização
+de um site.</p>
+<h3 id="eventos">Eventos</h3>
+<p>Um evento é tudo o que acontece em seu site, plataforma de comércio eletrônico
+ou sistema de gerenciamento de conteúdo. O pixel mensura eventos, como visitas
+à página, compras e registros.</p>
+<h3 id="atribuio">Atribuição</h3>
+<p>Quando alguém vê ou clica em seu anúncio e, em seguida, realiza uma ação que
+você planejou, você pode atribuir essas conversões às impressões de anúncio
+correspondentes.</p>
+<p>Existe um intervalo de tempo limitado, chamado de janela de atribuição, durante
+o qual podemos dizer com segurança que um anúncio gerou uma ação.</p>
+<h2 id="o-que-o-pixel-pode-fazer">O que o pixel pode fazer?</h2>
+<p>Você pode criar um pixel e conectá-lo ao seu site para:</p>
+<ul>
+<li>Garantir que os anúncios serão mostrados às pessoas certas, nos dispositivos
+certos e no momento certo: saber como as pessoas usam seu site pode indicar
+o que elas podem vir a fazer em seguida. Isso ajuda o Facebook a veicular
+anúncios às pessoas mais propensas a realizar a ação que você deseja.</li>
+<li>Criar públicos eficazes para os anúncios: com os Públicos Personalizados,
+é possível exibir anúncios às pessoas com base na interação prévia delas com
+seu site. Usando os Públicos Semelhantes, é possível direcionar os anúncios
+para novas pessoas com base na semelhança delas com visitantes e clientes já
+estabelecidos.</li>
+<li>Mensurar conversões em todos os dispositivos: veja como os clientes alternam
+entre dispositivos enquanto se envolvem com seu conteúdo, e determine em quais
+dispositivos eles estão mais propensos a converter.</li>
+<li>Desbloquear outras ferramentas de publicidade do Facebook: as campanhas de
+conversão na web, os Públicos Personalizados do site, a veiculação de anúncio
+dinâmico e as métricas, como o custo por cadastro ou o custo por conversão,
+estão disponíveis somente para anunciantes que instalaram o pixel nos
+respectivos sites.</li>
+<li>Avaliar melhor seu retorno sobre os gastos com anúncios atribuindo com
+precisão os comportamentos online a seus anúncios do Facebook, Instagram,
+Messenger e Audience Network.</li>
+</ul>
+<p>O pixel ativa ajustes poderosos, úteis e econômicos à veiculação de anúncio,
+como apenas exibir campanhas de reconhecimento da marca às pessoas que nunca
+visitaram seu site, ou oferecer códigos de desconto de curta duração a quem
+abandonou o carrinho de compras online.</p>
+<h2 id="como-o-pixel-funciona">Como o pixel funciona?</h2>
+<p>O pixel é um pequeno trecho de código que registra as ações que ocorrem em seu
+site. Ele tem duas partes:</p>
+<p>O código base do pixel deve ser instalado em <strong>todas as páginas</strong> de seu site
+para gerar uma linha de base para a mensuração de eventos específicos.</p>
+<p>O código do evento, instalado apenas nas páginas específicas do site em que
+você deseja mensurar eventos ou ações que sejam importantes para suas metas
+comerciais. Por exemplo, você adicionaria o código de evento Adicionar ao
+carrinho na página onde os clientes adicionariam os itens ao carrinho de
+compras.</p>
+<p>Você especifica quais são as páginas visitadas e as ações que devem disparar
+o pixel. Ele vem com um conjunto de eventos padrão pré-programados, mas também
+é possível criar suas próprias personalizações com base em suas metas
+comerciais.</p>
+<p>O uso do pixel pode orientar suas estratégias de geração de cadastros,
+direcionamento de anúncio, remarketing, mensuração de conversão e de
+otimização. O pixel também ajuda a acompanhar as ações do cliente em vários
+dispositivos</p>
+<p>Todos os dados são enviados e recebidos usando um método que protege
+a privacidade chamado de codificação de dados, que torna as informações de seu
+site anônimas antes de fazer a correspondência com os dados anônimos do
+Facebook, e depois as exclui com segurança.</p>
+<h2 id="como-criar-um-pixel">Como criar um pixel</h2>
+<ol>
+<li>Acesse a <a href="https://www.facebook.com/ads/manager/">Conta de anúncios</a> depois no seu nome.</li>
+<li>FIXME</li>
+</ol>
+<h2 id="definindo-a-estratgia">Definindo a estratégia</h2>
+<p>Um pixel pode ajudar a identificar como as pessoas, como um todo, alternam
+entre dispositivos em seu site, que áreas elas visitam e o que fazem lá.</p>
+<p>Use essas informações para veicular anúncios para as pessoas com base no
+comportamento delas, nas compras, nos valores de itens que elas compraram ou
+colocaram na lista de desejos, quais páginas visitaram e muito mais.</p>
+<p>Isso pode ajudar a direcionar a veiculação de anúncio com base na proximidade
+da realização de uma compra, e ajuda você a identificar novos públicos com base
+em semelhanças com clientes e consumidores de alto valor.</p>
+<h2 id="identifique-sua-meta">Identifique sua meta</h2>
+<h3 id="encontrar-pblicos-receptivos">Encontrar públicos receptivos</h3>
+<p>Use os dados do pixel como fonte para gerar Públicos Personalizados e Públicos
+Semelhantes.</p>
+<p>Os Públicos Personalizados do site usam os dados do pixel para gerar públicos
+para os quais você pode direcionar a veiculação de anúncio. Os Públicos
+Personalizados de um site são atualizados de maneira dinâmica, então, se você
+desejar veicular anúncios para pessoas que não fizeram visitas nos últimos 30
+dias, a lista será diferente a cada semana. Você pode direcionar anúncios
+somente para quem visitou determinada página do site ou realizou uma ação
+específica.</p>
+<p>Se você usar um Público Personalizado do site para originar um Público
+Semelhante, o Facebook veiculará anúncios para quem for muito semelhante ao
+público original gerado pelo pixel. Portanto, um Público Personalizado criado
+em torno de um gasto mínimo por transação poderia originar um Público
+Semelhante de pessoas que nunca visitaram ou compraram em seu site, mas que são
+propensas a se tornar clientes de alto valor.</p>
+<h3 id="mensurar-para-converses">Mensurar para conversões</h3>
+<p>Há vários dados úteis que só podem ser acessados após a implementação de
+eventos do pixel no site. Essa informação ajuda a planejar e executar melhor as
+campanhas otimizadas para conversão. Você deverá instalar um pixel se desejar:</p>
+<ul>
+<li>Ativar relatórios de todos os dispositivos. Os relatórios de todos os
+dispositivos permitem ver em quais dispositivos as pessoas viram os anúncios
+antes de converter em seu site. Por exemplo, se alguém visse um anúncio pelo
+celular, mas decidisse comprar mais tarde em um computador, essa conversão
+apareceria em um relatório de todos os dispositivos.</li>
+<li>Atribuir conversões e eventos a anúncios específicos. Para acessar os dados
+de atribuição, escolha o objetivo Conversão e selecione o evento do pixel
+mais relevante no nível do conjunto de anúncios ao criar o anúncio.</li>
+<li>Acessar retornos exatos sobre os gastos com anúncios, por meta comercial.
+Mensurar a eficácia dos anúncios do Facebook é fácil, porque todas as
+campanhas têm um objetivo do anúncio concreto. Associar um pixel ao seu site
+pode revelar o ROI de cada anúncio e cada campanha que você veicular,
+chegando até o custo por cadastro, por registro, por item adicionado ao
+carrinho, por visita ao estabelecimento e muito mais.</li>
+</ul>
+<h2 id="quais-eventos-posso-rastrear">Quais eventos posso rastrear?</h2>
+<ol>
+<li>Visualizar conteúdo</li>
+<li>Pesquisar</li>
+<li>Adicionar ao carrinho</li>
+<li>Adicionar à lista de desejos</li>
+<li>Iniciar finalização da compra</li>
+<li>Adicionar detalhes de pagamento</li>
+<li>Fazer uma compra</li>
+<li>Fornecer informação de contato</li>
+<li>Concluir um registro</li>
+</ol>
+<h2 id="implementar-eventos-do-pixel">Implementar eventos do pixel</h2>
+<p>Para atribuir um evento do pixel a um anúncio do Facebook, escolha Conversão ou
+Tráfego como objetivo da campanha. No nível do conjunto de anúncios, será
+possível selecionar que evento do pixel associar aos anúncios.</p>
+<p>Conectar métricas de anúncios e veiculação a eventos do pixel pode contribuir
+para otimizar seus gastos e automatizar a seleção de públicos, e pode ajudar
+a atribuir ações a seus anúncios do Facebook, dando a você dados mais precisos
+de retorno sobre os gastos com anúncios.</p>
+<p>CURSO: ONDE PAREI
+<a href="https://www.facebookblueprint.com/uploads/resource_courses/targets/353670/original/index.html#/id/co-200">https://www.facebookblueprint.com/uploads/resource_courses/targets/353670/original/index.html#/id/co-200</a></p>
+<h2 id="como-mensurar-as-converses">Como mensurar as conversões?</h2>
+<p>Quando o seu pixel está ativo, ele começa a medir o que acontece no seu site.
+Mas, para você começar a medir conversões, existem duas formas:</p>
+<p><strong>Baseadas em eventos:</strong> as conversões personalizadas baseadas em eventos permitem
+que você defina um conjunto de eventos padrão como conversões com base em
+parâmetros que você insere no pixel.</p>
+<p>Colocando os eventos em seu site, blog ou página de conversão, você pode criar
+públicos personalizados com base no tráfego nestas páginas. Assim, o Facebook
+vai criar segmentações com o perfil parecido com as pessoas que entraram em sua
+página de destino.</p>
+<p>Por isso, ao instalar o pixel na página de obrigado utilizando o evento de
+conversão, é como se nós mostrássemos para o Facebook que todo usuário que
+chegar na página de “obrigado” ele deve marcar essa pessoa como uma conversão,
+nesse caso um lead.</p>
+<p>Baseadas em conversões personalizadas: as conversões personalizadas baseadas em
+URLs permitem que você defina um conjunto de eventos padrão como conversões com
+base em palavras-chaves da URL. É uma maneira mais simples para medir as suas
+conversões. Como, por exemplo, compras ou cadastros.</p>
+<p>Se você não conseguir adicionar eventos padrões em seu site, você pode usar as
+conversões personalizadas baseadas em URLs para equivaler ao evento padrão.</p>
+<p>Por exemplo: você pode sinalizar para o Facebook que toda vez que o usuário
+chegar na página <a href="http://www.seusite.com.br/produto/confirmacaodepedido,">www.seusite.com.br/produto/confirmacaodepedido,</a> o sistema deve
+registrar essa ação como uma “compra” em seu site. O pixel do Facebook é uma
+ferramenta indispensável para quem busca mais controle e otimização em suas
+campanhas no Facebook.</p>
+<h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://www.facebookblueprint.com/uploads/resource_courses/targets/353670/original/index.html#/id/co-100">Facebook Blueprint: Curso sobre pixel</a></li>
+<li><a href="https://www.facebook.com/business/help/mobile-zero/780705975381000?helpref=page_content#">Facebook Business: O que são conversões personalizadas?</a></li>
+</ul>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ffacebook-pixel%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ffacebook-pixel%2f&amp;text=Pixel%20do%20Facebook"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ffacebook-pixel%2f&amp;title=Pixel%20do%20Facebook"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Pixel%20do%20Facebook&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ffacebook-pixel%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+    
+</body>
+</html>

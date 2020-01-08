@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>format on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/format/</link>
+    <description>Recent content in format on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Thu, 21 Nov 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/format/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Formatando automaticamente antes do commit</title>
+      <link>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</link>
+      <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</guid>
+      <description>Escrever um arquivo .gitattributes contendo:
+1*.java filter=clang-format-java Acrescentar os operações clean e smudge
+1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo. O uso da opção -assume-filename=test.</description>
+    </item>
+    
+  </channel>
+</rss>

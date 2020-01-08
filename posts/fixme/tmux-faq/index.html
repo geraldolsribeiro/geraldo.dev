@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Tmux FAQ | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/fixme/tmux-faq/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="10/09/2018">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/fixme/tmux-faq/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Tmux FAQ" />
+
+
+
+
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
+      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      media="screen" async>
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 10/Sep/2018
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 08/Jan/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+
+
+        <h1>Tmux FAQ</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#instalao">Instalação</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#instalao-do-tmuxinator">Instalação do tmuxinator</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#atalhos">Atalhos</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#ajuda">Ajuda</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#modo-comando-vim">Modo comando (vim)</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#arquivo-de-configurao">Arquivo de configuração</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#recarregar-configuraes">Recarregar configurações</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#sesso">Sessão</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#listar-sesses-ativas">Listar sessões ativas</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#entrar-em-uma-sesso">Entrar em uma sessão</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#criar-uma-sesso-com-nome">Criar uma sessão com nome</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#acessar-outra-sesso">Acessar outra sessão</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#renomear-uma-sesso">Renomear uma sessão</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#janelas">Janelas</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#criao">Criação</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#navegao">Navegação</a></li>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#renomear-a-janela">Renomear a janela</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#painel">Painel</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#converter-painel-em-janela">Converter painel em janela</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#suporte-a-mouse">Suporte a mouse</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-do-i-get-started">How do I get started</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#can-i-make-the-environment-look-good">Can I make the environment look good?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#whats-a-prefix">What's a prefix?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-can-i-scroll-up-to-see-my-backtraces">How can I scroll up to see my backtraces?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-can-i-copy-text">How can I copy text?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-can-i-make-tmux-act-more-like-vim">How can I make tmux act more like Vim?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-do-i-name-sessions">How do I name sessions?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-do-i-split-and-move-between-windows">How do I split and move between windows?</a></li>
+    <li><a href="https://geraldo.dev/posts/fixme/tmux-faq/#how-do-i-reload-tmuxconf">How do I reload ~/.tmux.conf?</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <h2 id="instalao">Instalação</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install tmux
+</code></pre></div><pre><code>brew install tmux
+<p></code></pre><h2 id="instalao-do-tmuxinator">Instalação do tmuxinator</h2></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install tmuxinator
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ou
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>gem install tmuxinator
+</code></pre></div><p>Verifique se está tudo certo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmuxinator doctor
+</code></pre></div><p>Lembre-se é necessário configurar a variável <code>EDITOR</code> no <code>bashrc</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmuxinator new nome_do_projeto   <span style="color:#75715e"># cria e abre para edição</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>tmuxinator open nome_do_projeto  <span style="color:#75715e"># abre para edição</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>tmuxinator nome_do_projeto       <span style="color:#75715e"># executa</span>
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>export EDITOR<span style="color:#f92672">=</span>vim
+</code></pre></div><h2 id="atalhos">Atalhos</h2>
+<p>O atalho <em>base</em> do <code>tmux</code> é <code>ctrl+b</code>, então vai ser sempre <code>ctrl+b</code> seguido de alguma teclas!</p>
+<h2 id="ajuda">Ajuda</h2>
+<ul>
+<li><code>ctrl+b ?</code></li>
+</ul>
+<h2 id="modo-comando-vim">Modo comando (vim)</h2>
+<ul>
+<li><code>ctrl+b :</code></li>
+</ul>
+<h2 id="arquivo-de-configurao">Arquivo de configuração</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>touch ~/.tmux.conf
+</code></pre></div><h3 id="recarregar-configuraes">Recarregar configurações</h3>
+<pre><code class="language-tmux" data-lang="tmux"># Recarrega o tmux.conf
+bind r source-file ~/.tmux.conf \; display “Recarregado!”
+</code></pre><h2 id="sesso">Sessão</h2>
+<p>Quando você executa <code>tmux</code> você cria uma sessão, isso quer dizer que se deixar
+algum comando executando e fechar seu terminal este comando continuará
+executando, claro que é possível acessar novamente a sessão criada.</p>
+<h3 id="listar-sesses-ativas">Listar sessões ativas</h3>
+<p>Primeiro vamos olhar as sessões criadas, execute <code>tmux ls</code>, este comando te
+mostrará as sessões criadas, este é um exemplo:</p>
+<pre><code>0: 1 windows (created Wed Oct  3 10:18:45 2018) [169x43] (attached)
+|  \
+ \  `-&gt; janelas abertas
+  `---&gt; nome da sessão
+</code></pre><h3 id="entrar-em-uma-sesso">Entrar em uma sessão</h3>
+<p>O digitar <code>tmux</code> simplesmente uma nova sessão será criada. Para acessar uma sessão use:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmux attach -t nome_da_sessao
+</code></pre></div><h3 id="criar-uma-sesso-com-nome">Criar uma sessão com nome</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>tmux new -s airbrake
+</code></pre></div><h3 id="acessar-outra-sesso">Acessar outra sessão</h3>
+<p>Estando dentro de uma sessão use <code>ctrl+b s</code> para ir para outra sessão,
+selecione da lista com <code>j</code> e <code>k</code> e pressione <code>enter</code>.</p>
+<h3 id="renomear-uma-sesso">Renomear uma sessão</h3>
+<p>Estando dentro da sessão use <code>ctrl+b $</code> e digite o novo nome</p>
+<h2 id="janelas">Janelas</h2>
+<h3 id="criao">Criação</h3>
+<p>São janelas de terminal dentro da mesma sessão. Elas são criadas com <code>ctrl+b c</code>.</p>
+<h3 id="navegao">Navegação</h3>
+<p>Use <code>ctrl+b n</code> ou <code>ctrl+b p</code> para acessar as janels próxima e anterior respectivamente.
+Um atalho mais interessante é <code>ctrl+b 0..9</code> onde é possível acessar diretamente uma janela pelo seu número.</p>
+<h3 id="renomear-a-janela">Renomear a janela</h3>
+<p>Use <code>ctrl+b ,</code> para renomear uma janela para indicar melhor o que está sendo executado.</p>
+<h2 id="painel">Painel</h2>
+<p>São divisões horizontais ou verticais das janelas.</p>
+<ul>
+<li><code>ctrl+b %</code> divide verticalmente</li>
+<li><code>ctrl+b &quot;</code> divide horizontalmente</li>
+</ul>
+<h3 id="converter-painel-em-janela">Converter painel em janela</h3>
+<ul>
+<li><code>ctrl+b !</code> converte em janela</li>
+<li><code>ctrl+b z</code> dá zoom para ocupar a janela toda. Repita para restaurar</li>
+</ul>
+<h2 id="suporte-a-mouse">Suporte a mouse</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>set -g mouse on
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"># to enable mouse scroll, see https://github.com/tmux/tmux/issues/145#issuecomment-150736967</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>bind -n WheelUpPane <span style="color:#66d9ef">if</span>-shell -F -t <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;#{mouse_any_flag}&#34;</span> <span style="color:#e6db74">&#34;send-keys -M&#34;</span> <span style="color:#e6db74">&#34;if -Ft= &#39;#{pane_in_mode}&#39; &#39;send-keys -M&#39; &#39;copy-mode -e&#39;&#34;</span>
+</code></pre></div><h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://medium.com/@renatosuero/conhecendo-o-tmux-parte-1-a8edd8669bd8">Conhecendo o Tmux — Parte 1</a></li>
+<li><a href="https://medium.com/@renatosuero/conhecendo-o-tmux-parte-2-14986421294a">Conhecendo o Tmux — Parte 2</a></li>
+<li><a href="https://medium.com/@renatosuero/conhecendo-o-tmux-parte-3-52cde47fb233">Conhecendo o Tmux — Parte 3</a></li>
+<li><a href="https://medium.com/@ndrluis/agilizando-o-desenvolvimento-com-tmuxinator-6a49bf80f296#.eey6o7aek">Agilizando o desenvolvimento com tmuxinator</a></li>
+<li><a href="https://collectiveidea.com/blog/archives/2017/03/27/using-tmuxinator-to-automate-your-environment">Using Tmuxinator to automate your environment</a></li>
+<li><a href="https://superuser.com/questions/210125/scroll-shell-output-with-mouse-in-tmux">Scroll shell output with mouse in tmux</a></li>
+</ul>
+<p>Getting started with tmux, these are the questions I've had.</p>
+<h2 id="how-do-i-get-started">How do I get started</h2>
+<p>Install tmux, read the documentation, and fire it up:</p>
+<pre><code>brew install tmux
+man tmux
+tmux -u
+</code></pre><h2 id="can-i-make-the-environment-look-good">Can I make the environment look good?</h2>
+<p>Yes. See these lines in <code>tmux.conf</code> of <a href="https://github.com/statusok/statusok/blob/master/dotfiles/shell/tmux.conf">statusok/dotfiles</a>.</p>
+<pre><code># improve colors
+set -g default-terminal &quot;screen-256color&quot;
+<h1 id="soften-status-bar-color-from-harsh-green-to-light-gray">soften status bar color from harsh green to light gray</h1>
+<p>set -g status-bg &lsquo;#666666&rsquo;
+set -g status-fg &lsquo;#aaaaaa&rsquo;</p>
+<h1 id="remove-administrative-debris-session-name-hostname-time-in-status-bar">remove administrative debris (session name, hostname, time) in status bar</h1>
+<p>set -g status-left '&rsquo;
+set -g status-right '&rsquo;
+</code></pre><h2 id="whats-a-prefix">What's a prefix?</h2></p>
+<p>The &ldquo;prefix&rdquo; namespaces tmux commands.
+By default it is <code>Ctrl+b</code>.
+In our <code>tmux.conf</code> in <code>thoughtbot/dotfiles</code>, we bound it to <code>Ctrl+a</code>:</p>
+<pre><code># act like GNU screen
+unbind C-b
+set -g prefix C-a
+</code></pre><h2 id="how-can-i-scroll-up-to-see-my-backtraces">How can I scroll up to see my backtraces?</h2>
+<p>Enter &ldquo;copy mode&rdquo;:</p>
+<pre><code>prefix+[
+</code></pre><p>Use Vim bindings to page up and down:</p>
+<pre><code>Ctrl+b
+Ctrl+f
+</code></pre><h2 id="how-can-i-copy-text">How can I copy text?</h2>
+<p>Add this to your <code>tmux.conf</code>:</p>
+<pre><code># enable copy-paste http://goo.gl/DN82E
+set -g default-command &quot;reattach-to-user-namespace -l zsh&quot;
+</code></pre><h2 id="how-can-i-make-tmux-act-more-like-vim">How can I make tmux act more like Vim?</h2>
+<p>Add this to your <code>tmux.conf</code>
+to use Vim's home-row keys for movement between windows and panes:</p>
+<pre><code># act like vim
+setw -g mode-keys vi
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+bind-key -r C-h select-window -t :-
+bind-key -r C-l select-window -t :+
+</code></pre><h2 id="how-do-i-name-sessions">How do I name sessions?</h2>
+<p>I'd like to name my tmux sessions so I can leave one,
+drop into another,
+and go back to the original with all my state maintained
+(files still open in my editor, console/logs I want open, etc.).</p>
+<p>Create a new session:</p>
+<pre><code>tmux new -s airbrake
+</code></pre><p>Attach to a session:</p>
+<pre><code>tmux attach -t airbrake
+</code></pre><h2 id="how-do-i-split-and-move-between-windows">How do I split and move between windows?</h2>
+<p>Create a window:</p>
+<pre><code>prefix c
+</code></pre><p>Move to window 1:</p>
+<pre><code>prefix 1
+</code></pre><p>Move to window 2:</p>
+<pre><code>prefix 2
+</code></pre><p>Kill a window:</p>
+<pre><code>prefix x
+</code></pre><h2 id="how-do-i-reload-tmuxconf">How do I reload <code>~/.tmux.conf</code>?</h2>
+<p>After editing <code>~/.tmux.conf</code>, execute this from a shell:</p>
+<pre><code>tmux source-file ~/.tmux.conf
+</code></pre><p>Give tmux a shot!</p>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-faq%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-faq%2f&amp;text=Tmux%20FAQ"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-faq%2f&amp;title=Tmux%20FAQ"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Tmux%20FAQ&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2ffixme%2ftmux-faq%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+    
+</body>
+</html>

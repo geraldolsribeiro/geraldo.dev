@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML5 on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/html5/</link>
+    <description>Recent content in HTML5 on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/html5/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Usando data attributes</title>
+      <link>https://geraldo.dev/posts/fixme/html5-dataset/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fixme/html5-dataset/</guid>
+      <description>https://developer.mozilla.org/pt-BR/docs/Web/Guide/HTML/Using_data_attributes
+1&amp;lt;article 2 id=&amp;#34;electriccars&amp;#34; 3 data-columns=&amp;#34;3&amp;#34; 4 data-index-number=&amp;#34;12314&amp;#34; 5 data-parent=&amp;#34;cars&amp;#34;&amp;gt; 6 ... 7&amp;lt;/article&amp;gt; Acesse as propriedades através de dataset tocando o camelcase pelo snakecase
+1var article = document.getElementById(&amp;#39;electriccars&amp;#39;); 2 3article.dataset.columns // &amp;#34;3&amp;#34; 4article.dataset.indexNumber // &amp;#34;12314&amp;#34; 5article.dataset.parent // &amp;#34;cars&amp;#34; </description>
+    </item>
+    
+  </channel>
+</rss>

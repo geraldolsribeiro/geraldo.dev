@@ -59,12 +59,12 @@
   
   <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-01-06T09:43:43-03:00</lastmod>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-01-06T09:43:43-03:00</lastmod>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>
@@ -74,7 +74,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-01-04T21:32:55-03:00</lastmod>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>
@@ -149,7 +149,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2020-01-03T11:46:54-03:00</lastmod>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>
@@ -238,6 +238,21 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/format/</loc>
+    <lastmod>2020-01-07T13:42:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</loc>
+    <lastmod>2020-01-07T13:42:44-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gitattributes/</loc>
+    <lastmod>2020-01-07T13:42:44-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/firewall/</loc>
     <lastmod>2019-12-16T09:23:38-03:00</lastmod>
   </url>
@@ -289,7 +304,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/console/</loc>
-    <lastmod>2019-11-21T00:07:52-03:00</lastmod>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>
@@ -453,6 +468,436 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/fixme/ack/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/angular-com-php/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/arduino/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cordova/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/css-ribbon-generator/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/css-texto-responsivo/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/css-videos-youtube/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/firebase-cloud-messaging/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/firebase/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/firebaseui/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/hubot/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-ajax-tree/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-archive-prompt/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-calculadora/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-csv/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-extract/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-extract-text/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-loop-tag/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-search/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imacros-web-test/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/inkscape-simplify-threshold/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/inkscape-open-symbols/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-copy-to-clipboard/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-run-url/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-fetch/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-array-buffer-e-data-view/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-bliss/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-prototipos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-zeptojs/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-emit-dblclick/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-async-await/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/jest/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/jquery-bbq/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/json_cpp/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/json-server/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/jsonplaceholder/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/json_placeholder/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/loweb/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/markjs/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/material-icons/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/materialize/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/materialize-edit-in-place/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/xfce/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-promessas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/javascript-seletores-do-dom-plano/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/xfce-terminal/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-submodule/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bash/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bash-trap/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bash-ler-arquivos-para-array/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-bugfix-git-gui-no-mac/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/chrome-dev-pesquisar-em-todos-os-arquivos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/chrome-extension/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/chrome-extension-obter-id/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-trocar-origem-http-por-ssh/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/emoji/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-log-time/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-fixes/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gui/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-log/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-merge-vs-rebase/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-stash/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-intmain-git-flow-vs-git/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-mudar-origem-remota/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gitbook/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/gitflow/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gitignore-para-todos-os-projetos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gitkraken/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gitmoji/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-restore-a-deleted-branch/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/html5/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html5-drag-and-drop/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html5-web-worker/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html5-websocket/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-user-interfaces/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-intmain-git-workflow/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-mastering-git-subtrees/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/chrome-pdf-abrir-automaticamente/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-reset-local-repo/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-merge/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ssh-tunel-reverso/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ssh-previnir-queda-da-conexao/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/submodule/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html5-dataset/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-gitignore/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/argdo/</loc>
     <lastmod>2019-11-21T00:07:52-03:00</lastmod>
   </url>
@@ -555,6 +1000,821 @@
   <url>
     <loc>https://geraldo.dev/posts/vim-webvim/</loc>
     <lastmod>2019-12-16T20:34:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/imagens-lorempixel/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-cta/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-eventos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-grupos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-respostas-instantaneas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-respostas-salvas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-status-de-ausencia/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-mensagem-de-ausencia/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/facebook-pixel/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-atualizando-github/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/brew_atualizar_e_limpar/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/chrome/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/doxygen-mac/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/smath/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/tmux-faq/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/tmux-only-for-long-running-processes/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/git-update-a-github-fork/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/xpath/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/chrome-xpath-no-chrome/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/action/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/samba_ajustar_workgroup_default/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/apache-modrewrite/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/backup/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bash-echo-para-saida-de-erro/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/dns-benchmark-de-dns/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/postgres-pqxx/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/btsync/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-cast-operator/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/catch2/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-construtor/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/postgres-create-postgres-indexes-concurrently/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html-dicas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/postgres-postgres-full-text-search-tsvectors-triggers/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/pgp_gpg/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html-lint/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/html-to-jade/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/btsync_install_btsync/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/conky_ethon_conky_with_lightdm/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nodejs-install-npm/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/postgres-postgresql/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/jasmine-with-rails/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/irc/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/jquery/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/jwt/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-latex/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/makefile/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/miller/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/samba_mount/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/mysql/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nginx/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nodejs/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nodejs-nodejs/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nodejs-npm/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nodejs-npmjs/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ocr-em-portugues/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bootstrap-ocultar-elementos-de-acordo-com-o-tamanho-do-dispositivo/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ocr-optical-mark-recognition/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/pagseguro/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/papertrail/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/pass-2/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/pass/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/pgp/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/postgres-pqxx-preparacao-do-ambiente/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/redis-1149_redis/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/redis/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/sidekiq_2021_restart_sidekiq/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/rollbar/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/scss_1143_scss_lint/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/scss_1183_scss_lint/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/sidekiq/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/sms/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ssh/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bash-replace-variable/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/bootstrap-tamanhos-de-dispositivos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/thunar/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/samba-thunar/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/nginx-proxy/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-10-erros-c&#43;&#43;/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi-params/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-algoritmos-paralelos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-awesome_ruby/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/debian-criar-autostart-com-systemd/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-ctags_com_ruby/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/debian/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-debugging-in-elixir/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/debian-desktop-icon/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-migrate/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-scheduler/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-docker/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-ecto/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-mix-task/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-standalone-elixir-ectoapp/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi-em-c&#43;&#43;/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi-fastcgipp/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi-no-apache/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fastcgi-fcgx/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-install-elixir/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-ruby_spec_let/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-ruby_lint/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/elixir-phoenix/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-marca_texto/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-ruby_module_vs_class/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/debian-pacote/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ranger-filemanager/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-remover_nil_ruby/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/ruby-ruby_style_guide/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/debian-servico/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/web-meter/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/web-imagens/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/mailgun/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/web-pretty-url/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/web-banner-size/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/web-youtube/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-php/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-apache/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-armazenamento-de-certificados/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-autenticacao-para-icp-brasil/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-cabecalhos-publicos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/cabe%C3%A7alhos-p%C3%BAblicos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-certificate-authority/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-charter/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/clara/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-classes/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-comparacoes/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-concatenar-string/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-criando-arquivo-p12/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-criando-certificado-na-cacert/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-codigo-de-erro/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-envlab/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-eurosym/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-executar-script/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-exportacao-se-simbolos-no-gcc/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-faq/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-filtrar-certificados-por-pasta/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/fontes-para-console/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/cpp-guarda-de-cabecalhos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-idiomas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-importando-certificado-para-o-navegador/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/internet-explorer-para-teste/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-jquery/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-microtype/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/mime-type/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/monitoramento-de-sites/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/natural-language-processing/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-novo-certificado-de-cliente-cacert/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-ocsp-check/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-pacotes/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-padrao-projeto-argumentos-como-array/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-pagegrid/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/performance-web/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/phonegap/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/polyfill/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/markdown-preview/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/publicacao-local-do-imbok/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/servidor-de-badges/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/sigterm/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-textpos/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/torrent/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/latex-upquote/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/certificado-digital-certificar-apenas-algumas-paginas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/fixme/coffeescript-variaveis-privadas/</loc>
+    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
   </url>
   
   <url>

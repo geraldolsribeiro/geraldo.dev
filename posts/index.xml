@@ -13,11 +13,11 @@
     
     <item>
       <title>C&#43;&#43; - Gerenciando layout em FLTK</title>
-      <link>https://geraldo.dev/posts/cxx-fltk-layout/</link>
+      <link>https://geraldo.dev/posts/cpp-fltk-layout/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/cxx-fltk-layout/</guid>
-      <description>Introdução O FLTK utiliza um sistema simple, porém versátil para redimensionar interfaces.
+      <guid>https://geraldo.dev/posts/cpp-fltk-layout/</guid>
+      <description>Introdução O FLTK utiliza um sistema simples, porém versátil para redimensionar interfaces.
 Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplicação composta de 9 botões com labels de 1 até 9. Note que eu criei os botões totalmente fora de ordem: 5, 2, 4, 8, 6, 1, 3, 7 e 9. Isto não importa para o layout. Todos os botões são filhos da janela principal.  Arquivo 01.</description>
     </item>
     

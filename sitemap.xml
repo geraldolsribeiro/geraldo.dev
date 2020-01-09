@@ -48,6 +48,31 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/cxx-fltk-layout/</loc>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/cpp-sort/</loc>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/docker/</loc>
     <lastmod>2020-01-06T09:43:43-03:00</lastmod>
   </url>
@@ -58,33 +83,18 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-01-08T13:23:33-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-01-07T13:42:44-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/algoritmos/</loc>
-    <lastmod>2020-01-04T21:32:55-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-01-04T21:32:55-03:00</lastmod>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-array/</loc>
-    <lastmod>2020-01-04T21:32:55-03:00</lastmod>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/stdarray/</loc>
-    <lastmod>2020-01-04T21:32:55-03:00</lastmod>
+    <lastmod>2020-01-08T23:10:31-03:00</lastmod>
   </url>
   
   <url>

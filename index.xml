@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Mon, 06 Jan 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jan 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -96,6 +96,25 @@ I am a teaching instructor for the following courses at University X:
     </item>
     
     <item>
+      <title>C&#43;&#43; - Gerenciando layout em FLTK</title>
+      <link>https://geraldo.dev/posts/cxx-fltk-layout/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cxx-fltk-layout/</guid>
+      <description>Introdução O FLTK utiliza um sistema simple, porém versátil para redimensionar interfaces.
+Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplicação composta de 9 botões com labels de 1 até 9. Note que eu criei os botões totalmente fora de ordem: 5, 2, 4, 8, 6, 1, 3, 7 e 9. Isto não importa para o layout. Todos os botões são filhos da janela principal.  Arquivo 01.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; - Ordernação</title>
+      <link>https://geraldo.dev/posts/cpp-sort/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-sort/</guid>
+      <description>Estatísticas    Método Comparações Swaps Escrita Escrita auxiliar Tempo ms     Bubble sort 2.096.128 1.001.372 2.002.744 0 110   Cocktail Shaker sort 2.097.152 1.010.635 2.021.270 0 109   Gnome sort 2.002.322 1.000.141 2.000.282 0 106   Odd-Even sort 2.057.262 1.047.262 2.094.524 0 112   Comb sort 58.752 10.198 20.396 0 6    Os dados desta tabela forma tirados do vídeo https://www.</description>
+    </item>
+    
+    <item>
       <title>Docker - exportar imagem</title>
       <link>https://geraldo.dev/posts/docker-exportar-imagem/</link>
       <pubDate>Mon, 06 Jan 2020 00:00:00 -0300</pubDate>
@@ -111,7 +130,7 @@ I am a teaching instructor for the following courses at University X:
       <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-array/</guid>
-      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos 1#include &amp;lt;algorithm&amp;gt;2#include &amp;lt;array&amp;gt;3#include &amp;lt;iostream&amp;gt;4 5using namespace std; 6 7int main( int argc, char **argv ) 8{ 9 //{{{ 10 auto print = []( const auto &amp;amp;arr ) { 11 cout &amp;lt;&amp;lt; &amp;#34;{ &amp;#34;; 12 for( const auto &amp;amp;x : arr ) { 13 cout &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &amp;#34;&amp;#34;; 14 } 15 cout &amp;lt;&amp;lt; &amp;#34;}&amp;#34; &amp;lt;&amp;lt; endl; 16 }; 17 18 array&amp;lt;int, 3&amp;gt; a = {2, 1, 3}; 19 int c[3] = {2, 1, 3}; // old C style 20 21 sort( a.</description>
+      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos 1#include &amp;lt;algorithm&amp;gt;2#include &amp;lt;array&amp;gt;3#include &amp;lt;iostream&amp;gt;4 5using namespace std; 6 7// Multidimensionais 8template &amp;lt;class T, size_t ROW, size_t COL&amp;gt; 9using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; 10 11template &amp;lt;class T, size_t I, size_t.</description>
     </item>
     
     <item>

@@ -12,6 +12,37 @@
     
     
     <item>
+      <title>Varicad - configurando arquivos de legenda</title>
+      <link>https://geraldo.dev/posts/varicad-legenda/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/varicad-legenda/</guid>
+      <description>Definindo arquivos de legenda  Execute o comando atm (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)   Comando atm   Clique no botão Legendas   Clicar no botão legendas   Clicar na legenda e depois em modificar legenda   Legendas padrão   Configurar a legenda   Configuração para parte    Dx = -7 Dy = 7 Arquivo = IntMainPart.dwb Para peças   Configuração para montagem    Dx = -7 Dy = 7 Arquivo = IntMainAssembly.</description>
+    </item>
+    
+    <item>
+      <title>Varicad - configurando moldura da página</title>
+      <link>https://geraldo.dev/posts/varicad-moldura/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/varicad-moldura/</guid>
+      <description>Margens por tamanho de folha    Formato Margem esquerda Demais margens     A0 25 mm 10 mm   A1 25 mm 10 mm   A2 25 mm 7 mm   A3 25 mm 7 mm   A4 25 mm 5 mm    Definindo parâmetros da moldura   Execute o comando sbd (Ferramentas/Definição dos formatos de folha)
+  Clicar em Definir o estilo da fronteira da folha de desenho</description>
+    </item>
+    
+    <item>
+      <title>Primeiros passos com o insomnia</title>
+      <link>https://geraldo.dev/posts/web-insomnia/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/web-insomnia/</guid>
+      <description>Instalação Adicionar ao sources.list
+1echo &amp;#34;deb https://dl.bintray.com/getinsomnia/Insomnia /&amp;#34; \ 2 | sudo tee -a /etc/apt/sources.list.d/insomnia.list Adicionar a chave pública para verificar as assinaturas dos pacotes
+1wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \ 2 | sudo apt-key add - Atualizar a lista de pacotes disponíveis e instalar o pacote insomnia.
+1apt-get update 2apt-get install insomnia Referências  Installation  </description>
+    </item>
+    
+    <item>
       <title>C&#43;&#43; - const_cast</title>
       <link>https://geraldo.dev/posts/cpp-const-cast/</link>
       <pubDate>Fri, 10 Jan 2020 00:00:00 -0300</pubDate>

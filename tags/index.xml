@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jan 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>varicad</title>
+      <link>https://geraldo.dev/tags/varicad/</link>
+      <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/varicad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://geraldo.dev/tags/web/</link>
+      <pubDate>Sun, 12 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/web/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C&#43;&#43;</title>

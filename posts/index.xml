@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Varicad - configurando visão pré-definida para isométrica</title>
+      <link>https://geraldo.dev/posts/varicad-visao-predefinida/</link>
+      <pubDate>Tue, 11 Feb 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/varicad-visao-predefinida/</guid>
+      <description> Execute o comando `cfg&amp;rsquo; (Ferramentas/Configurações do Sistema) Abra o item Definições da Vistas 3D Pré-Definidas em 3D Defina os seguinte valores   Rotação ao redor do eixo visualizado X: 35.264 Rotação ao redor do eixo visualizado Y: -45 Rotação ao redor do eixo visualizado Z: 0   Comando atm   </description>
+    </item>
+    
+    <item>
       <title>Varicad - configurando arquivos de legenda</title>
       <link>https://geraldo.dev/posts/varicad-legenda/</link>
       <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>

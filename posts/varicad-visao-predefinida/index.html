@@ -56,6 +56,24 @@ if (!doNotTrack) {
 
 
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: false,
+    packages: {'[+]': ['noerrors']}
+  },
+  loader: {
+    load: ['[tex]/noerrors']
+  }
+};
+  </script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.0.0/es5/tex-mml-chtml.js">
+</script>
+
+
 
 
 </head>
@@ -121,7 +139,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 16/Feb/2020
+            Atualizado em: 18/Feb/2020
           </div>
           
         </div>
@@ -150,7 +168,7 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <ol>
-<li>Execute o comando `cfg&rsquo; (Ferramentas/Configurações do Sistema)</li>
+<li>Execute o comando <code>cfg</code> (Ferramentas/Configurações do Sistema)</li>
 <li>Abra o item <em>Definições da Vistas 3D Pré-Definidas</em> em <em>3D</em></li>
 <li>Defina os seguinte valores</li>
 </ol>
@@ -166,6 +184,11 @@ if (!doNotTrack) {
       <figcaption>Comando atm</figcaption>
     </figure>
   </div>
+<div>
+$$
+\arcsin(\tan 30°) \approx 35.264
+$$
+</div>
         </div>
 
         

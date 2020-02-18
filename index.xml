@@ -124,6 +124,15 @@ I am a teaching instructor for the following courses at University X:
     </item>
     
     <item>
+      <title>Otimizando código com clang-tidy</title>
+      <link>https://geraldo.dev/posts/clang-tidy/</link>
+      <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/clang-tidy/</guid>
+      <description>Instalação 1apt-get install clang-tidy Verificadores disponíveis 1clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; 2 modernize-avoid-bind 3 modernize-deprecated-headers 4 modernize-loop-convert 5 modernize-make-shared 6 modernize-make-unique 7 modernize-pass-by-value 8 modernize-raw-string-literal 9 modernize-redundant-void-arg 10 modernize-replace-auto-ptr 11 modernize-replace-random-shuffle 12 modernize-return-braced-init-list 13 modernize-shrink-to-fit 14 modernize-unary-static-assert 15 modernize-use-auto 16 modernize-use-bool-literals 17 modernize-use-default-member-init 18 modernize-use-emplace 19 modernize-use-equals-default 20 modernize-use-equals-delete 21 modernize-use-noexcept 22 modernize-use-nullptr 23 modernize-use-override 24 modernize-use-transparent-functors 25 modernize-use-uncaught-exceptions 26 modernize-use-using Uso 1clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
+    </item>
+    
+    <item>
       <title>Primeiros passos com o insomnia</title>
       <link>https://geraldo.dev/posts/web-insomnia/</link>
       <pubDate>Sun, 12 Jan 2020 00:00:00 -0300</pubDate>

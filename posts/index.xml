@@ -444,8 +444,7 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-formatar-json/</guid>
-      <description>Crie um comando com:
-1nmap =j :%!python -m json.</description>
+      <description>Antes: Um exemplo de json colapsado 1{ &amp;#34;quiz&amp;#34;: { &amp;#34;sport&amp;#34;: { &amp;#34;q1&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;Which one is correct team name in NBA?&amp;#34;, 2&amp;#34;options&amp;#34;: [ &amp;#34;New York Bulls&amp;#34;, &amp;#34;Los Angeles Kings&amp;#34;, &amp;#34;Golden State Warriros&amp;#34;, 3&amp;#34;Huston Rocket&amp;#34; ], &amp;#34;answer&amp;#34;: &amp;#34;Huston Rocket&amp;#34; } }, &amp;#34;maths&amp;#34;: { &amp;#34;q1&amp;#34;: 4{ &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;10&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;12&amp;#34;, &amp;#34;13&amp;#34; ], &amp;#34;answer&amp;#34;: 5&amp;#34;12&amp;#34; }, &amp;#34;q2&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;12 - 8 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;, &amp;#34;4&amp;#34; ], 6&amp;#34;answer&amp;#34;: &amp;#34;4&amp;#34; } } } } Depois: endentado 1{ 2 &amp;#34;quiz&amp;#34;: { 3 &amp;#34;maths&amp;#34;: { 4 &amp;#34;q1&amp;#34;: { 5 &amp;#34;answer&amp;#34;: &amp;#34;12&amp;#34;, 6 &amp;#34;options&amp;#34;: [ 7 &amp;#34;10&amp;#34;, 8 &amp;#34;11&amp;#34;, 9 &amp;#34;12&amp;#34;, 10 &amp;#34;13&amp;#34; 11 ], 12 &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?</description>
     </item>
     
     <item>

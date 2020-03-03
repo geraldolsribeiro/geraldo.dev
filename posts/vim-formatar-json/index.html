@@ -125,7 +125,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 16/Dec/2019
+            Atualizado em: 03/Mar/2020
           </div>
           
         </div>
@@ -146,15 +146,73 @@ if (!doNotTrack) {
   <header>
     <h3>Sumário</h3>
   </header>
-  
+  <ul>
+    <li><a href="https://geraldo.dev/posts/vim-formatar-json/#antes-um-exemplo-de-json-colapsado">Antes: Um exemplo de json colapsado</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-formatar-json/#depois-endentado">Depois: endentado</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/vim-formatar-json/#usando-python">Usando python</a></li>
+        <li><a href="https://geraldo.dev/posts/vim-formatar-json/#usando-jq">Usando jq</a></li>
+      </ul>
+    </li>
+  </ul>
+
 </aside>
 
 
 
 
         <div class="gr-main-content">
-        <p>Crie um comando com:</p>
+        <h2 id="antes-um-exemplo-de-json-colapsado">Antes: Um exemplo de json colapsado</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>{ <span style="color:#f92672">&#34;quiz&#34;</span>: { <span style="color:#f92672">&#34;sport&#34;</span>: { <span style="color:#f92672">&#34;q1&#34;</span>: { <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;Which one is correct team name in NBA?&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#f92672">&#34;options&#34;</span>: [ <span style="color:#e6db74">&#34;New York Bulls&#34;</span>, <span style="color:#e6db74">&#34;Los Angeles Kings&#34;</span>, <span style="color:#e6db74">&#34;Golden State Warriros&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#e6db74">&#34;Huston Rocket&#34;</span> ], <span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;Huston Rocket&#34;</span> } }, <span style="color:#f92672">&#34;maths&#34;</span>: { <span style="color:#f92672">&#34;q1&#34;</span>:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>{ <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;5 + 7 = ?&#34;</span>, <span style="color:#f92672">&#34;options&#34;</span>: [ <span style="color:#e6db74">&#34;10&#34;</span>, <span style="color:#e6db74">&#34;11&#34;</span>, <span style="color:#e6db74">&#34;12&#34;</span>, <span style="color:#e6db74">&#34;13&#34;</span> ], <span style="color:#f92672">&#34;answer&#34;</span>:
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#e6db74">&#34;12&#34;</span> }, <span style="color:#f92672">&#34;q2&#34;</span>: { <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;12 - 8 = ?&#34;</span>, <span style="color:#f92672">&#34;options&#34;</span>: [ <span style="color:#e6db74">&#34;1&#34;</span>, <span style="color:#e6db74">&#34;2&#34;</span>, <span style="color:#e6db74">&#34;3&#34;</span>, <span style="color:#e6db74">&#34;4&#34;</span> ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;4&#34;</span> } } } }
+</code></pre></div><h2 id="depois-endentado">Depois: endentado</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    <span style="color:#f92672">&#34;quiz&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>        <span style="color:#f92672">&#34;maths&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>            <span style="color:#f92672">&#34;q1&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>                <span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;12&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>                <span style="color:#f92672">&#34;options&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>                    <span style="color:#e6db74">&#34;10&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>                    <span style="color:#e6db74">&#34;11&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>                    <span style="color:#e6db74">&#34;12&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>                    <span style="color:#e6db74">&#34;13&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>                ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>                <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;5 + 7 = ?&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>            },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>            <span style="color:#f92672">&#34;q2&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>                <span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;4&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>                <span style="color:#f92672">&#34;options&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>                    <span style="color:#e6db74">&#34;1&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>                    <span style="color:#e6db74">&#34;2&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>                    <span style="color:#e6db74">&#34;3&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>                    <span style="color:#e6db74">&#34;4&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>                ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>                <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;12 - 8 = ?&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        },
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        <span style="color:#f92672">&#34;sport&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>            <span style="color:#f92672">&#34;q1&#34;</span>: {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>                <span style="color:#f92672">&#34;answer&#34;</span>: <span style="color:#e6db74">&#34;Huston Rocket&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>                <span style="color:#f92672">&#34;options&#34;</span>: [
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>                    <span style="color:#e6db74">&#34;New York Bulls&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>                    <span style="color:#e6db74">&#34;Los Angeles Kings&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>                    <span style="color:#e6db74">&#34;Golden State Warriros&#34;</span>,
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>                    <span style="color:#e6db74">&#34;Huston Rocket&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>                ],
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>                <span style="color:#f92672">&#34;question&#34;</span>: <span style="color:#e6db74">&#34;Which one is correct team name in NBA?&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>            }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>}
+</code></pre></div><p>Crie um atalho para executar um comando externo.</p>
+<h3 id="usando-python">Usando python</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">nmap</span> =<span style="color:#a6e22e">j</span> :%!<span style="color:#a6e22e">python</span> -<span style="color:#a6e22e">m</span> <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">tool</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><h3 id="usando-jq">Usando jq</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">nmap</span> =<span style="color:#a6e22e">j</span> :%!<span style="color:#a6e22e">jq</span> .&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
 </span></code></pre></div>
         </div>
 

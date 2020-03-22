@@ -7,10 +7,46 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>debian</title>
+      <link>https://geraldo.dev/tags/debian/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/debian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xcalib</title>
+      <link>https://geraldo.dev/tags/xcalib/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xcalib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xfce</title>
+      <link>https://geraldo.dev/tags/xfce/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xfce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xorg</title>
+      <link>https://geraldo.dev/tags/xorg/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xorg/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>varicad</title>
@@ -193,15 +229,6 @@
     </item>
     
     <item>
-      <title>debian</title>
-      <link>https://geraldo.dev/tags/debian/</link>
-      <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/debian/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>preact</title>
       <link>https://geraldo.dev/tags/preact/</link>
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
@@ -378,15 +405,6 @@
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/nemo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xfce</title>
-      <link>https://geraldo.dev/tags/xfce/</link>
-      <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/xfce/</guid>
       <description></description>
     </item>
     

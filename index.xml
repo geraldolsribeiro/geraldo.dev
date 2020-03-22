@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 11 Feb 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,16 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Como inverter as cores no X</title>
+      <link>https://geraldo.dev/posts/x-inverter-cores/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/x-inverter-cores/</guid>
+      <description>Use o utilitário xcalib para inverter as cores da tela:
+1apt install xcalib 2xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
     </item>
     
     <item>

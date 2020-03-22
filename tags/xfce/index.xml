@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 23 Jul 2019 10:33:17 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/xfce/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Como inverter as cores no X</title>
+      <link>https://geraldo.dev/posts/x-inverter-cores/</link>
+      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/x-inverter-cores/</guid>
+      <description>Use o utilitário xcalib para inverter as cores da tela:
+1apt install xcalib 2xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
+    </item>
     
     <item>
       <title>Nemo como Gerenciador De Arquivos Padrão</title>

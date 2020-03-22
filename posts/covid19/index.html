@@ -156,97 +156,87 @@ if (!doNotTrack) {
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-  Papa.parse("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
-    download: true,
-    complete: function( result ) {
-      var datasets = [];
-      var labels = [];
-      var maxsize = 0;
-      var minValue = 30;
-      var maxValue = 10000;
-      var brazilLine = {};
-      result.data.forEach( function( locationData, index ) {
-        // ignora o cabeçalho
-        if( index == 0 ) { return; }
-<pre><code>    [state,country,lat,long, ...data] = locationData;
-    current = data[ data.length - 1 ];
-    // Corta os paises com baixa contagem
-    if( current &lt; 1000 ) {
-      return;
-    }
-
-    data = data.map(function(x) { return parseInt(x,10); });
-    data = data.filter( function(x) { return x &gt;= minValue &amp;&amp; x &lt;= maxValue; });
-    maxsize = data.length &gt; maxsize ? data.length : maxsize;
-
-    line = {};
-    line.fill = false;
-    line.data = data;
-    line.label = country + &quot; &quot; + state;
-
-    var r = Math.floor(Math.random() * 255);
-    var g = Math.floor(Math.random() * 255);
-    var b = Math.floor(Math.random() * 255);
-
-    line.borderColor = &quot;orange&quot;;
-    line.borderColor = &quot;rgba(&quot; + r + &quot;,&quot; + g + &quot;,&quot; + b + &quot;,0.2)&quot;;
-
-    if( country != &quot;Brazil&quot; ) {
-      datasets.push( line );
-    } else {
-      brazilLine = line;
-    }
-  });
-
-  maxsize = maxsize &gt; 30 ? 30 : maxsize;
-
-  //var len = datasets[0].data.length;
-  for( var i=0; i&lt;maxsize; ++i ) {
-    labels.push( i );
-  }
-
-  brazilLine.borderColor = &quot;black&quot;;
-  brazilLine.fill = true;
-
-  datasets.unshift( brazilLine );
-  new Chart( document.getElementById(&quot;line-chart&quot;), {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: datasets
-    },
-    options: {
-      responsive: true,
-      scales: {
-        xAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: &quot;Dias a partir de &quot; + minValue + &quot; casos&quot;
-          },
-        }],
-        yAxes: [{
-          scaleLabel: {
-            display: true,
-            labelString: &quot;Número de casos&quot;,
-          },
-          ticks: {
-            callback: function(value, index, values) {
-              return value;
-            }
-          },
-          type: 'logarithmic'
-          //type: 'linear'
-        }]
-      },
-      title: {
-        display: true,
-        text: 'Número de infectados pelo COVID-19'
-      }
-    }
-  });
+Papa.parse("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
+download: true,
+complete: function( result ) {
+var datasets = [];
+var labels = [];
+var maxsize = 0;
+var minValue = 30;
+var maxValue = 10000;
+var brazilLine = {};
+result.data.forEach( function( locationData, index ) {
+// ignora o cabeçalho
+if( index == 0 ) { return; }
+<p>[state,country,lat,long, &hellip;data] = locationData;
+current = data[ data.length - 1 ];
+// Corta os paises com baixa contagem
+if( current &lt; 1000 ) {
+return;
+}</p>
+<p>data = data.map(function(x) { return parseInt(x,10); });
+data = data.filter( function(x) { return x &gt;= minValue &amp;&amp; x &lt;= maxValue; });
+maxsize = data.length &gt; maxsize ? data.length : maxsize;</p>
+<p>line = {};
+line.fill = false;
+line.data = data;
+line.label = country + &quot; &quot; + state;</p>
+<p>var r = Math.floor(Math.random() * 255);
+var g = Math.floor(Math.random() * 255);
+var b = Math.floor(Math.random() * 255);</p>
+<p>line.borderColor = &ldquo;orange&rdquo;;
+line.borderColor = &ldquo;rgba(&rdquo; + r + &ldquo;,&rdquo; + g + &ldquo;,&rdquo; + b + &ldquo;,0.2)&quot;;</p>
+<p>if( country != &ldquo;Brazil&rdquo; ) {
+datasets.push( line );
+} else {
+brazilLine = line;
 }
-</code></pre>
-<p>});</p>
+});</p>
+<p>maxsize = maxsize &gt; 30 ? 30 : maxsize;</p>
+<p>//var len = datasets[0].data.length;
+for( var i=0; i&lt;maxsize; ++i ) {
+labels.push( i );
+}</p>
+<p>brazilLine.borderColor = &ldquo;black&rdquo;;
+brazilLine.fill = true;</p>
+<p>datasets.unshift( brazilLine );
+new Chart( document.getElementById(&ldquo;line-chart&rdquo;), {
+type: &lsquo;line&rsquo;,
+data: {
+labels: labels,
+datasets: datasets
+},
+options: {
+responsive: true,
+scales: {
+xAxes: [{
+scaleLabel: {
+display: true,
+labelString: &ldquo;Dias a partir de &quot; + minValue + &quot; casos&rdquo;
+},
+}],
+yAxes: [{
+scaleLabel: {
+display: true,
+labelString: &ldquo;Número de casos&rdquo;,
+},
+ticks: {
+callback: function(value, index, values) {
+return value;
+}
+},
+type: &lsquo;logarithmic&rsquo;
+//type: &lsquo;linear&rsquo;
+}]
+},
+title: {
+display: true,
+text: &lsquo;Número de infectados pelo COVID-19&rsquo;
+}
+}
+});
+}
+});</p>
 <p></script></p>
 <h2 id="referncias">Referências</h2>
 <ul>

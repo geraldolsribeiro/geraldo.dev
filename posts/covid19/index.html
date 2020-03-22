@@ -156,7 +156,7 @@ if (!doNotTrack) {
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
-  Papa.parse("./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
+  Papa.parse("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
     download: true,
     complete: function( result ) {
       var datasets = [];

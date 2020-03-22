@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,15 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>COVID-19</title>
+      <link>https://geraldo.dev/posts/covid19/</link>
+      <pubDate>Sun, 22 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/covid19/</guid>
+      <description>&amp;lt;canvas id=&amp;quot;line-chart&amp;quot; width=&amp;quot;800&amp;quot; height=&amp;quot;350&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/papaparse@latest/papaparse.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; function drawChart() { } Papa.parse(&amp;quot;./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&amp;quot;, { download: true, complete: function( result ) { var datasets = []; var labels = []; var maxsize = 0; var minValue = 30; var maxValue = 10000; var brazilLine = {}; result.data.forEach( function( locationData, index ) { // ignora o cabeçalho if( index == 0 ) { return; } [state,country,lat,long, ...data] = locationData; current = data[ data.</description>
     </item>
     
     <item>

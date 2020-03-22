@@ -17,7 +17,7 @@
       <pubDate>Sun, 22 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/covid19/</guid>
-      <description>&amp;lt;canvas id=&amp;quot;line-chart&amp;quot; width=&amp;quot;800&amp;quot; height=&amp;quot;350&amp;quot;&amp;gt;&amp;lt;/canvas&amp;gt; &amp;lt;script src=&amp;quot;https://unpkg.com/papaparse@latest/papaparse.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js&amp;quot;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; function drawChart() { } Papa.parse(&amp;quot;./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&amp;quot;, { download: true, complete: function( result ) { var datasets = []; var labels = []; var maxsize = 0; var minValue = 30; var maxValue = 10000; var brazilLine = {}; result.data.forEach( function( locationData, index ) { // ignora o cabeçalho if( index == 0 ) { return; } [state,country,lat,long, ...data] = locationData; current = data[ data.</description>
+      <description>Papa.parse(&#34;./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&#34;, { download: true, complete: function( result ) { var datasets = []; var labels = []; var maxsize = 0; var minValue = 30; var maxValue = 10000; var brazilLine = {}; result.data.forEach( function( locationData, index ) { // ignora o cabeçalho if( index == 0 ) { return; } [state,country,lat,long, ...data] = locationData; current = data[ data.length - 1 ]; // Corta os paises com baixa contagem if( current = minValue &amp;&amp; x maxsize ?</description>
     </item>
     
     <item>

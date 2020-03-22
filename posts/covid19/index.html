@@ -152,15 +152,11 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <pre><code>&lt;canvas id=&quot;line-chart&quot; width=&quot;800&quot; height=&quot;350&quot;&gt;&lt;/canvas&gt;
-&lt;script src=&quot;https://unpkg.com/papaparse@latest/papaparse.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-
-  function drawChart() {
-  }
-
-  Papa.parse(&quot;./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&quot;, {
+        <p><canvas id="line-chart" width="800" height="350"></canvas></p>
+<script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+  Papa.parse("./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
     download: true,
     complete: function( result ) {
       var datasets = [];
@@ -172,92 +168,91 @@ if (!doNotTrack) {
       result.data.forEach( function( locationData, index ) {
         // ignora o cabeçalho
         if( index == 0 ) { return; }
+<pre><code>    [state,country,lat,long, ...data] = locationData;
+    current = data[ data.length - 1 ];
+    // Corta os paises com baixa contagem
+    if( current &lt; 1000 ) {
+      return;
+    }
 
-        [state,country,lat,long, ...data] = locationData;
-        current = data[ data.length - 1 ];
-        // Corta os paises com baixa contagem
-        if( current &lt; 1000 ) {
-          return;
-        }
+    data = data.map(function(x) { return parseInt(x,10); });
+    data = data.filter( function(x) { return x &gt;= minValue &amp;&amp; x &lt;= maxValue; });
+    maxsize = data.length &gt; maxsize ? data.length : maxsize;
 
-        data = data.map(function(x) { return parseInt(x,10); });
-        data = data.filter( function(x) { return x &gt;= minValue &amp;&amp; x &lt;= maxValue; });
-        maxsize = data.length &gt; maxsize ? data.length : maxsize;
+    line = {};
+    line.fill = false;
+    line.data = data;
+    line.label = country + &quot; &quot; + state;
 
-        line = {};
-        line.fill = false;
-        line.data = data;
-        line.label = country + &quot; &quot; + state;
+    var r = Math.floor(Math.random() * 255);
+    var g = Math.floor(Math.random() * 255);
+    var b = Math.floor(Math.random() * 255);
 
-        var r = Math.floor(Math.random() * 255);
-        var g = Math.floor(Math.random() * 255);
-        var b = Math.floor(Math.random() * 255);
+    line.borderColor = &quot;orange&quot;;
+    line.borderColor = &quot;rgba(&quot; + r + &quot;,&quot; + g + &quot;,&quot; + b + &quot;,0.2)&quot;;
 
-        line.borderColor = &quot;orange&quot;;
-        line.borderColor = &quot;rgba(&quot; + r + &quot;,&quot; + g + &quot;,&quot; + b + &quot;,0.2)&quot;;
-
-        if( country != &quot;Brazil&quot; ) {
-          datasets.push( line );
-        } else {
-          brazilLine = line;
-        }
-      });
-
-      maxsize = maxsize &gt; 30 ? 30 : maxsize;
-
-      //var len = datasets[0].data.length;
-      for( var i=0; i&lt;maxsize; ++i ) {
-        labels.push( i );
-      }
-
-      brazilLine.borderColor = &quot;black&quot;;
-      brazilLine.fill = true;
-
-      datasets.unshift( brazilLine );
-      new Chart( document.getElementById(&quot;line-chart&quot;), {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: datasets
-        },
-        options: {
-          responsive: true,
-          scales: {
-            xAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: &quot;Dias a partir de &quot; + minValue + &quot; casos&quot;
-              },
-            }],
-            yAxes: [{
-              scaleLabel: {
-                display: true,
-                labelString: &quot;Número de casos&quot;,
-              },
-              ticks: {
-                callback: function(value, index, values) {
-                  return value;
-                }
-              },
-              type: 'logarithmic'
-              //type: 'linear'
-            }]
-          },
-          title: {
-            display: true,
-            text: 'Número de infectados pelo COVID-19'
-          }
-        }
-      });
+    if( country != &quot;Brazil&quot; ) {
+      datasets.push( line );
+    } else {
+      brazilLine = line;
     }
   });
 
-&lt;/script&gt;
+  maxsize = maxsize &gt; 30 ? 30 : maxsize;
+
+  //var len = datasets[0].data.length;
+  for( var i=0; i&lt;maxsize; ++i ) {
+    labels.push( i );
+  }
+
+  brazilLine.borderColor = &quot;black&quot;;
+  brazilLine.fill = true;
+
+  datasets.unshift( brazilLine );
+  new Chart( document.getElementById(&quot;line-chart&quot;), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: datasets
+    },
+    options: {
+      responsive: true,
+      scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: &quot;Dias a partir de &quot; + minValue + &quot; casos&quot;
+          },
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: &quot;Número de casos&quot;,
+          },
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            }
+          },
+          type: 'logarithmic'
+          //type: 'linear'
+        }]
+      },
+      title: {
+        display: true,
+        text: 'Número de infectados pelo COVID-19'
+      }
+    }
+  });
+}
 </code></pre>
+<p>});</p>
+<p></script></p>
 <h2 id="referncias">Referências</h2>
 <ul>
 <li>[]()</li>
 </ul>
+
         </div>
 
         

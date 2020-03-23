@@ -121,7 +121,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 22/Mar/2020
+            Atualizado em: 23/Mar/2020
           </div>
           
         </div>
@@ -153,93 +153,10 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <p>Usando os dados do <strong>Johns Hopkins CSSE</strong> e deslocando no tempo os dados para poder comparar as evoluções do número de contaminados.</p>
-<p>Gráficos preliminares.</p>
 <p><canvas id="line-chart" width="800" height="350"></canvas></p>
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script>
-Papa.parse("https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv", {
-download: true,
-complete: function( result ) {
-var datasets = [];
-var labels = [];
-var maxsize = 0;
-var minValue = 30;
-var maxValue = 10000;
-var brazilLine = {};
-result.data.forEach( function( locationData, index ) {
-// ignora o cabeçalho
-if( index == 0 ) { return; }
-[state,country,lat,long, ...data] = locationData;
-current = data[ data.length - 1 ];
-// Corta os paises com baixa contagem
-if( current < 1000 ) {
-return;
-}
-data = data.map(function(x) { return parseInt(x,10); });
-data = data.filter( function(x) { return x >= minValue && x <= maxValue; });
-maxsize = data.length > maxsize ? data.length : maxsize;
-line = {};
-line.fill = false;
-line.data = data;
-line.label = country + " " + state;
-var r = Math.floor(Math.random() * 255);
-var g = Math.floor(Math.random() * 255);
-var b = Math.floor(Math.random() * 255);
-line.borderColor = "orange";
-line.borderColor = "rgba(" + r + "," + g + "," + b + ",0.2)";
-if( country != "Brazil" ) {
-datasets.push( line );
-} else {
-brazilLine = line;
-}
-});
-maxsize = maxsize > 30 ? 30 : maxsize;
-//var len = datasets[0].data.length;
-for( var i=0; i<maxsize; ++i ) {
-labels.push( i );
-}
-brazilLine.borderColor = "black";
-brazilLine.fill = true;
-datasets.unshift( brazilLine );
-new Chart( document.getElementById("line-chart"), {
-type: 'line',
-data: {
-labels: labels,
-datasets: datasets
-},
-options: {
-responsive: true,
-scales: {
-xAxes: [{
-scaleLabel: {
-display: true,
-labelString: "Dias a partir de " + minValue + " casos"
-},
-}],
-yAxes: [{
-scaleLabel: {
-display: true,
-labelString: "Número de casos",
-},
-ticks: {
-callback: function(value, index, values) {
-return value;
-}
-},
-type: 'logarithmic'
-//type: 'linear'
-}]
-},
-title: {
-display: true,
-text: 'Número de infectados pelo COVID-19'
-}
-}
-});
-}
-});
-</script>
+<script src="/js/covid19.js"></script>
 <h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</a></li>

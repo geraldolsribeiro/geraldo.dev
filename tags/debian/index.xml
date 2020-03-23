@@ -13,14 +13,14 @@
     
     
     <item>
-      <title>COVID-19</title>
+      <title>COVID-19 no Brasil</title>
       <link>https://geraldo.dev/posts/covid19/</link>
       <pubDate>Sun, 22 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/covid19/</guid>
-      <description>Usando os dados do Johns Hopkins CSSE e deslocando no tempo os dados para poder comparar as evoluções do número de contaminados.
-
-   Referências  2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE  </description>
+      <description>Comparação da evolução dos casos de COVID-19 no Brasil e no mundo utilizando os dados do Johns Hopkins CSSE.
+Os scripts utilizado podem ser encontrados em https://github.com/geraldolsribeiro/covid19.
+Todos começando quase juntos Neste cenário o início de cada curva foi deslocada no tempo para quando o país constatou pelo menos 30 casos. Isto nos dá uma ideia da velocidade de propagação da doença e, baseado nos dados do resto do mundo, estimar o que esperar para o Brasil nos próximos dias.</description>
     </item>
     
     <item>

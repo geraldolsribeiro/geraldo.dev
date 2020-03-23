@@ -7,21 +7,10 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 22 Mar 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>COVID-19 no Brasil</title>
-      <link>https://geraldo.dev/posts/covid19/</link>
-      <pubDate>Sun, 22 Mar 2020 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/posts/covid19/</guid>
-      <description>Comparação da evolução dos casos de COVID-19 no Brasil e no mundo utilizando os dados do Johns Hopkins CSSE.
-Nota para desenvolvedores: Os scripts utilizado podem ser encontrados em https://github.com/geraldolsribeiro/covid19.
-Todos começando quase juntos Neste cenário o início de cada curva foi deslocada no tempo para quando o país constatou pelo menos 30 casos. Isto nos dá uma ideia da velocidade de propagação da doença e, baseado nos dados do resto do mundo, estimar o que esperar para o Brasil nos próximos dias.</description>
-    </item>
     
     <item>
       <title>Como inverter as cores no X</title>

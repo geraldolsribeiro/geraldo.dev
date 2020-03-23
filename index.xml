@@ -101,7 +101,9 @@ I am a teaching instructor for the following courses at University X:
       <pubDate>Sun, 22 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/covid19/</guid>
-      <description>Papa.parse(&#34;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&#34;, { download: true, complete: function( result ) { var datasets = []; var labels = []; var maxsize = 0; var minValue = 30; var maxValue = 10000; var brazilLine = {}; result.data.forEach( function( locationData, index ) { // ignora o cabeçalho if( index == 0 ) { return; } [state,country,lat,long, ...data] = locationData; current = data[ data.length - 1 ]; // Corta os paises com baixa contagem if( current = minValue &amp;&amp; x maxsize ?</description>
+      <description>Usando os dados do Johns Hopkins CSSE e deslocando no tempo os dados para poder comparar as evoluções do número de contaminados.
+
+   Papa.parse(&#34;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv&#34;, { download: true, complete: function( result ) { var datasets = []; var labels = []; var maxsize = 0; var minValue = 30; var maxValue = 10000; var brazilLine = {}; result.data.forEach( function( locationData, index ) { // ignora o cabeçalho if( index == 0 ) { return; } [state,country,lat,long, .</description>
     </item>
     
     <item>

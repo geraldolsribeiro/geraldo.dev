@@ -16,7 +16,7 @@
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/headers/debian.jpg" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/covid19.jpg" />
 <meta property="og:description" content="Alguns dados sobre a COVID-19." /><meta property="og:url" content="https://geraldo.dev/posts/covid19/" />
     <meta property="og:site_name" content="geraldo.dev" />
     <meta property="og:title" content="COVID-19" />
@@ -109,8 +109,8 @@ if (!doNotTrack) {
         
         <div class="project-header center-align">
           <picture>
-            <source srcset="img/headers/debian.webp" type="image/webp">
-            <img src="img/headers/debian.jpg" class="responsive-img z-depth-3">
+            <source srcset="img/headers/covid19.webp" type="image/webp">
+            <img src="img/headers/covid19.jpg" class="responsive-img z-depth-3">
           </picture>
         </div>
         
@@ -152,7 +152,8 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <p><canvas id="line-chart" width="800" height="350"></canvas></p>
+        <p>Usando os dados do <strong>Johns Hopkins CSSE</strong> e deslocando no tempo os dados para poder comparar as evoluções do número de contaminados.</p>
+<p><canvas id="line-chart" width="800" height="350"></canvas></p>
 <script src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script>
@@ -168,40 +169,40 @@ var brazilLine = {};
 result.data.forEach( function( locationData, index ) {
 // ignora o cabeçalho
 if( index == 0 ) { return; }
-<p>[state,country,lat,long, &hellip;data] = locationData;
+[state,country,lat,long, ...data] = locationData;
 current = data[ data.length - 1 ];
 // Corta os paises com baixa contagem
-if( current &lt; 1000 ) {
+if( current < 1000 ) {
 return;
-}</p>
-<p>data = data.map(function(x) { return parseInt(x,10); });
-data = data.filter( function(x) { return x &gt;= minValue &amp;&amp; x &lt;= maxValue; });
-maxsize = data.length &gt; maxsize ? data.length : maxsize;</p>
-<p>line = {};
+}
+data = data.map(function(x) { return parseInt(x,10); });
+data = data.filter( function(x) { return x >= minValue && x <= maxValue; });
+maxsize = data.length > maxsize ? data.length : maxsize;
+line = {};
 line.fill = false;
 line.data = data;
-line.label = country + &quot; &quot; + state;</p>
-<p>var r = Math.floor(Math.random() * 255);
+line.label = country + " " + state;
+var r = Math.floor(Math.random() * 255);
 var g = Math.floor(Math.random() * 255);
-var b = Math.floor(Math.random() * 255);</p>
-<p>line.borderColor = &ldquo;orange&rdquo;;
-line.borderColor = &ldquo;rgba(&rdquo; + r + &ldquo;,&rdquo; + g + &ldquo;,&rdquo; + b + &ldquo;,0.2)&quot;;</p>
-<p>if( country != &ldquo;Brazil&rdquo; ) {
+var b = Math.floor(Math.random() * 255);
+line.borderColor = "orange";
+line.borderColor = "rgba(" + r + "," + g + "," + b + ",0.2)";
+if( country != "Brazil" ) {
 datasets.push( line );
 } else {
 brazilLine = line;
 }
-});</p>
-<p>maxsize = maxsize &gt; 30 ? 30 : maxsize;</p>
-<p>//var len = datasets[0].data.length;
-for( var i=0; i&lt;maxsize; ++i ) {
+});
+maxsize = maxsize > 30 ? 30 : maxsize;
+//var len = datasets[0].data.length;
+for( var i=0; i<maxsize; ++i ) {
 labels.push( i );
-}</p>
-<p>brazilLine.borderColor = &ldquo;black&rdquo;;
-brazilLine.fill = true;</p>
-<p>datasets.unshift( brazilLine );
-new Chart( document.getElementById(&ldquo;line-chart&rdquo;), {
-type: &lsquo;line&rsquo;,
+}
+brazilLine.borderColor = "black";
+brazilLine.fill = true;
+datasets.unshift( brazilLine );
+new Chart( document.getElementById("line-chart"), {
+type: 'line',
 data: {
 labels: labels,
 datasets: datasets
@@ -212,32 +213,32 @@ scales: {
 xAxes: [{
 scaleLabel: {
 display: true,
-labelString: &ldquo;Dias a partir de &quot; + minValue + &quot; casos&rdquo;
+labelString: "Dias a partir de " + minValue + " casos"
 },
 }],
 yAxes: [{
 scaleLabel: {
 display: true,
-labelString: &ldquo;Número de casos&rdquo;,
+labelString: "Número de casos",
 },
 ticks: {
 callback: function(value, index, values) {
 return value;
 }
 },
-type: &lsquo;logarithmic&rsquo;
-//type: &lsquo;linear&rsquo;
+type: 'logarithmic'
+//type: 'linear'
 }]
 },
 title: {
 display: true,
-text: &lsquo;Número de infectados pelo COVID-19&rsquo;
+text: 'Número de infectados pelo COVID-19'
 }
 }
 });
 }
-});</p>
-<p></script></p>
+});
+</script>
 <h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://github.com/CSSEGISandData/COVID-19">2019 Novel Coronavirus COVID-19 (2019-nCoV) Data Repository by Johns Hopkins CSSE</a></li>

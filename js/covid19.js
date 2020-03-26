@@ -2,9 +2,12 @@
 // Os dados são obtidos do Johns Hopkins CSSE disponibilizados no github no endereço
 // https://github.com/CSSEGISandData/COVID-19
 
-var url;
-// url = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
-url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+var confirmedURL;
+// confirmedURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+confirmedURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
+
+var deadURL;
+deathsURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
 
 var datasets = [];
 var labels = [];
@@ -80,7 +83,7 @@ function prependBrazil() {
 }
 
 function drawChart() {
-  new Chart( document.getElementById("line-chart"), {
+  new Chart( document.getElementById("confirmed-line-chart"), {
     type: 'line',
     data: {
       labels: labels,
@@ -128,7 +131,7 @@ function downloadComplete( result ) {
   drawChart();
 }
 
-Papa.parse(url, {
+Papa.parse(confirmedURL, {
   download: true,
   complete: downloadComplete
 });

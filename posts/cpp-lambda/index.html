@@ -127,7 +127,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 04/Jan/2020
+            Atualizado em: 05/Apr/2020
           </div>
           
         </div>
@@ -154,6 +154,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="https://geraldo.dev/posts/cpp-lambda/#funes-de-primeira-classe">Funções de primeira classe</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-lambda/#lambdas">Lambdas</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#programao-funcional-com-lambdas">Programação funcional com lambdas</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-lambda/#referncias">Referências</a></li>
   </ul>
 
@@ -185,7 +186,17 @@ a linguagem permita.</p>
 <li>3 <code>{}</code> corpo da função lambda</li>
 <li>4 <code>()</code> executa a função</li>
 </ul>
-<h2 id="referncias">Referências</h2>
+<h2 id="programao-funcional-com-lambdas">Programação funcional com lambdas</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#75715e">// f(x,y) = x² + y² + 2xy;
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#75715e"></span>std<span style="color:#f92672">:</span><span style="color:#f92672">:</span>function<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">int</span>(<span style="color:#66d9ef">int</span>,<span style="color:#66d9ef">int</span>)<span style="color:#f92672">&gt;</span> fxsquare <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#66d9ef">int</span> xsquare <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">int</span> x) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> { <span style="color:#66d9ef">return</span> x <span style="color:#f92672">*</span> x; }(x);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#66d9ef">int</span> ysquare <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> { <span style="color:#66d9ef">return</span> y <span style="color:#f92672">*</span> y; }(y);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#66d9ef">int</span> twoxy   <span style="color:#f92672">=</span> [](<span style="color:#66d9ef">int</span> x, <span style="color:#66d9ef">int</span> y) <span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">int</span> { <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> x <span style="color:#f92672">*</span> y; }(x,y);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  <span style="color:#66d9ef">return</span> xsquare <span style="color:#f92672">+</span> ysquare <span style="color:#f92672">+</span> twoxy;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fxsquare(<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">3</span>) <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl; <span style="color:#75715e">// 64
+</span></code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://geraldo.dev/posts/cpp-array/">std::array</a></li>
 <li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus">Functional Programming in C++</a></li>

@@ -13,7 +13,7 @@ var datasets = [];
 var labels = [];
 var maxDays = 0;
 var minValue = 30;
-var maxValue = 10000;
+var maxValue = 20000;
 var threshold = 1000;
 var brazilLine = {};
 

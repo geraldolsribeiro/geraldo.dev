@@ -3,25 +3,37 @@
 // https://github.com/CSSEGISandData/COVID-19
 
 var confirmedURL;
-// confirmedURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+confirmedURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 confirmedURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
 
 var deadURL;
-deathsURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv";
+// deathsURL = "./COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
+deathsURL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv";
 
-var datasets = [];
-var labels = [];
-var maxDays = 0;
-var minValue = 30;
-var maxValue = 20000;
-var threshold = 1000;
-var brazilLine = {};
+var confirmedDatasets = [];
+var confirmedLabels = [];
+var confirmedMaxDays = 0;
+var confirmedMinValue = 1000;
+var confirmedMaxValue = 1000000;
+var confirmedBrazilLine = {};
 
-function extractData( result ) {
-  result.data.forEach( extractDataItem );
+var deathsDatasets = [];
+var deathsLabels = [];
+var deathsMaxDays = 0;
+var deathsMinValue = 100;
+var deathsMaxValue = 1000000;
+var deathsBrazilLine = {};
+
+
+function confirmedExtractData( result ) {
+  result.data.forEach( confirmedExtractDataItem );
 }
 
-function extractDataItem( locationData, index ) {
+function deathsExtractData( result ) {
+  result.data.forEach( deathsExtractDataItem );
+}
+
+function confirmedExtractDataItem( locationData, index ) {
   // ignora o cabeçalho
   if( index == 0 ) { return; }
 
@@ -32,7 +44,7 @@ function extractDataItem( locationData, index ) {
   current = data[ data.length - 1 ];
 
   // Corta os paises com baixa contagem
-  if( current < threshold ) {
+  if( current < confirmedMinValue ) {
     return;
   }
 
@@ -40,10 +52,10 @@ function extractDataItem( locationData, index ) {
   data = data.map( function(x) { return parseInt(x,10); } );
 
   // Corta os dados fora da faixa de interesse
-  data = data.filter( function(x) { return x >= minValue && x <= maxValue; });
+  data = data.filter( function(x) { return x >= confirmedMinValue && x <= confirmedMaxValue; });
 
   // Obtém o número de dias restantes após filtragem
-  maxDays = data.length > maxDays ? data.length : maxDays;
+  confirmedMaxDays = data.length > confirmedMaxDays ? data.length : confirmedMaxDays;
 
   var r = Math.floor(Math.random() * 255);
   var g = Math.floor(Math.random() * 255);
@@ -58,36 +70,95 @@ function extractDataItem( locationData, index ) {
 
   // Deixa o brasil para ser inserido por último para sobrepor as demais linhas
   if( country != "Brazil" ) {
-    datasets.push( line );
+    confirmedDatasets.push( line );
   } else {
-    brazilLine = line;
+    confirmedBrazilLine = line;
+  }
+}
+
+function deathsExtractDataItem( locationData, index ) {
+  // ignora o cabeçalho
+  if( index == 0 ) { return; }
+
+  // Desestrutura o dado
+  [state,country,lat,long, ...data] = locationData;
+
+  // Valor atual está na última posição
+  current = data[ data.length - 1 ];
+
+  // Corta os paises com baixa contagem
+  if( current < deathsMinValue ) {
+    return;
+  }
+
+  // Converte texto para inteiro
+  data = data.map( function(x) { return parseInt(x,10); } );
+
+  // Corta os dados fora da faixa de interesse
+  data = data.filter( function(x) { return x >= deathsMinValue && x <= deathsMaxValue; });
+
+  // Obtém o número de dias restantes após filtragem
+  deathsMaxDays = data.length > deathsMaxDays ? data.length : deathsMaxDays;
+
+  var r = Math.floor(Math.random() * 255);
+  var g = Math.floor(Math.random() * 255);
+  var b = Math.floor(Math.random() * 255);
+
+  line = {};
+  line.fill = false;
+  line.data = data;
+  line.label = country + " " + state;
+  line.borderColor = "orange";
+  line.borderColor = "rgba(" + r + "," + g + "," + b + ",0.2)";
+
+  // Deixa o brasil para ser inserido por último para sobrepor as demais linhas
+  if( country != "Brazil" ) {
+    deathsDatasets.push( line );
+  } else {
+    deathsBrazilLine = line;
   }
 }
 
 // Limita o tempo futuro
-function cutDays( days ) {
-  maxDays = maxDays > days ? days : maxDays;
+function confirmedCutDays( days ) {
+  confirmedMaxDays = confirmedMaxDays > days ? days : confirmedMaxDays;
 }
 
-function prepareLabels() {
-  for( var i=0; i<maxDays; ++i ) {
-    labels.push( i );
+function deathsCutDays( days ) {
+  deathsMaxDays = deathsMaxDays > days ? days : deathsMaxDays;
+}
+
+function confirmedPrepareLabels() {
+  for( var i=0; i<confirmedMaxDays; ++i ) {
+    confirmedLabels.push( i );
+  }
+}
+
+function deathsPrepareLabels() {
+  for( var i=0; i<deathsMaxDays; ++i ) {
+    deathsLabels.push( i );
   }
 }
 
 // Insere os dados do Brasil para aparecer sobre os demais
-function prependBrazil() {
-  brazilLine.borderColor = "black";
-  brazilLine.fill = true;
-  datasets.unshift( brazilLine );
+function confirmedPrependBrazil() {
+  confirmedBrazilLine.borderColor = "black";
+  confirmedBrazilLine.fill = true;
+  confirmedDatasets.unshift( confirmedBrazilLine );
 }
 
-function drawChart() {
+function deathsPrependBrazil() {
+  deathsBrazilLine.borderColor = "black";
+  deathsBrazilLine.fill = true;
+  deathsDatasets.unshift( deathsBrazilLine );
+}
+
+function confirmedDrawChart() {
   new Chart( document.getElementById("confirmed-line-chart"), {
     type: 'line',
     data: {
-      labels: labels,
-      datasets: datasets
+      labels: confirmedLabels,
+      datasets: confirmedDatasets
     },
     options: {
       legend: {
@@ -98,13 +169,13 @@ function drawChart() {
         xAxes: [{
           scaleLabel: {
             display: true,
-            labelString: "Dias a partir de " + minValue + " casos"
+            labelString: "Dias a partir de " + confirmedMinValue + " infectados"
           },
         }],
         yAxes: [{
           scaleLabel: {
             display: true,
-            labelString: "Número de casos",
+            labelString: "Número de infectados",
           },
           ticks: {
             callback: function(value, index, values) {
@@ -123,17 +194,71 @@ function drawChart() {
   });
 }
 
-function downloadComplete( result ) {
-  extractData( result );
-  cutDays( 30 );
-  prepareLabels();
-  prependBrazil();
-  drawChart();
+function deathsDrawChart() {
+  new Chart( document.getElementById("deaths-line-chart"), {
+    type: 'line',
+    data: {
+      labels: deathsLabels,
+      datasets: deathsDatasets
+    },
+    options: {
+      legend: {
+        display: false,
+      },
+      responsive: true,
+      scales: {
+        xAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: "Dias a partir de " + deathsMinValue + " mortes"
+          },
+        }],
+        yAxes: [{
+          scaleLabel: {
+            display: true,
+            labelString: "Número de mortes",
+          },
+          ticks: {
+            callback: function(value, index, values) {
+              return value;
+            }
+          },
+          type: 'logarithmic'
+          //type: 'linear'
+        }]
+      },
+      title: {
+        display: true,
+        text: 'Número de mortos pelo COVID-19'
+      }
+    }
+  });
+}
+
+function confirmedDownloadComplete( result ) {
+  confirmedExtractData( result );
+  confirmedCutDays( 30 );
+  confirmedPrepareLabels();
+  confirmedPrependBrazil();
+  confirmedDrawChart();
+}
+
+function deathsDownloadComplete( result ) {
+  deathsExtractData( result );
+  deathsCutDays( 30 );
+  deathsPrepareLabels();
+  deathsPrependBrazil();
+  deathsDrawChart();
 }
 
 Papa.parse(confirmedURL, {
   download: true,
-  complete: downloadComplete
+  complete: confirmedDownloadComplete
 });
 
+
+Papa.parse(deathsURL, {
+  download: true,
+  complete: deathsDownloadComplete
+});
 

@@ -237,7 +237,7 @@ function deathsDrawChart() {
 
 function confirmedDownloadComplete( result ) {
   confirmedExtractData( result );
-  confirmedCutDays( 30 );
+  confirmedCutDays( 50 );
   confirmedPrepareLabels();
   confirmedPrependBrazil();
   confirmedDrawChart();
@@ -245,7 +245,7 @@ function confirmedDownloadComplete( result ) {
 
 function deathsDownloadComplete( result ) {
   deathsExtractData( result );
-  deathsCutDays( 30 );
+  deathsCutDays( 50 );
   deathsPrepareLabels();
   deathsPrependBrazil();
   deathsDrawChart();

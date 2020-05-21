@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 22 Mar 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://geraldo.dev/tags/git/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/git/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>covid19</title>
@@ -180,15 +189,6 @@
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/%C3%A1lgebra-linear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://geraldo.dev/tags/git/</link>
-      <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/git/</guid>
       <description></description>
     </item>
     

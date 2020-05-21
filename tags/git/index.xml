@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 08 Dec 2019 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 19 May 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git - diff de imagens</title>
+      <link>https://geraldo.dev/posts/git-diff-image/</link>
+      <pubDate>Tue, 19 May 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-diff-image/</guid>
+      <description>Dizer ao git que imagem é imagem Primeiro é necessário informar ao git para tratar imagens de um modo especial. Isso pode ser feito globalmente ou por projeto.
+O comando abaixo diz ao git que algumas extensões são imagens.
+1git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39; 1cat ~/.gitattributes 2*.gif diff=image 3*.jpg diff=image 4*.png diff=image Dizer ao git como fazer o diff O comando abaixo diz ao git qual programa executar para fazer o diff da imagem.</description>
+    </item>
     
     <item>
       <title>git - dicas</title>

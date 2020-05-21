@@ -48,22 +48,32 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-05-19T16:28:07-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/git/</loc>
+    <lastmod>2020-05-19T16:28:07-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/git-diff-image/</loc>
+    <lastmod>2020-05-19T16:28:07-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-05-19T16:28:07-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/covid19/</loc>
     <lastmod>2020-04-20T20:35:51-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/covid19/</loc>
-    <lastmod>2020-04-20T20:35:51-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-04-20T20:35:51-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-04-20T20:35:51-03:00</lastmod>
   </url>
   
@@ -235,11 +245,6 @@
   <url>
     <loc>https://geraldo.dev/posts/armadillo/</loc>
     <lastmod>2020-01-04T21:11:42-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2020-01-07T13:42:44-03:00</lastmod>
   </url>
   
   <url>

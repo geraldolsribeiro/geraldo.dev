@@ -14,7 +14,7 @@ var confirmedDatasets = [];
 var confirmedLabels = [];
 var confirmedMaxDays = 0;
 var confirmedMinValue = 1000;
-var confirmedMaxValue = 1000000;
+var confirmedMaxValue = 2000000;
 var confirmedBrazilLine = {};
 
 var deathsDatasets = [];
@@ -237,7 +237,7 @@ function deathsDrawChart() {
 
 function confirmedDownloadComplete( result ) {
   confirmedExtractData( result );
-  confirmedCutDays( 50 );
+  confirmedCutDays( 100 );
   confirmedPrepareLabels();
   confirmedPrependBrazil();
   confirmedDrawChart();
@@ -245,7 +245,7 @@ function confirmedDownloadComplete( result ) {
 
 function deathsDownloadComplete( result ) {
   deathsExtractData( result );
-  deathsCutDays( 50 );
+  deathsCutDays( 100 );
   deathsPrepareLabels();
   deathsPrependBrazil();
   deathsDrawChart();

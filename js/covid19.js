@@ -21,7 +21,7 @@ var deathsDatasets = [];
 var deathsLabels = [];
 var deathsMaxDays = 0;
 var deathsMinValue = 100;
-var deathsMaxValue = 1000000;
+var deathsMaxValue = 2000000;
 var deathsBrazilLine = {};
 
 

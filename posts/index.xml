@@ -284,14 +284,14 @@ Para desabilitar a função use:
     </item>
     
     <item>
-      <title>Formatando automaticamente antes do commit</title>
+      <title>Formatando o código automaticamente antes do commit</title>
       <link>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</link>
       <pubDate>Thu, 21 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</guid>
       <description>Escrever um arquivo .gitattributes contendo:
 1*.java filter=clang-format-java Acrescentar os operações clean e smudge
-1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo. O uso da opção -assume-filename=test.</description>
+1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
     </item>
     
     <item>

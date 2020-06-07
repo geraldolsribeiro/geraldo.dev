@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Formatando automaticamente antes do commit | geraldo.dev</title>
+<title>Formatando o código automaticamente antes do commit | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/">
 <meta name="generator" content="Hugo 0.62.0" />
 
@@ -17,10 +17,9 @@
 
 
     <meta property="og:image" content="https://geraldo.dev/img/headers/git.svg" />
-<meta property="og:description" content="Como misturar de forma saudável diferentes distribuições do Debian.
-Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo." /><meta property="og:url" content="https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/" />
+<meta property="og:description" content="Como formatar o código de maneira automática antes de realizar o git commit." /><meta property="og:url" content="https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Formatando automaticamente antes do commit" />
+    <meta property="og:title" content="Formatando o código automaticamente antes do commit" />
 
 
     <meta property="og:tags" content="git" />
@@ -31,8 +30,7 @@ Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistem
 
 
 
-<meta name="description" content="Como misturar de forma saudável diferentes distribuições do Debian.
-Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.">
+<meta name="description" content="Como formatar o código de maneira automática antes de realizar o git commit.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -127,7 +125,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 07/Jan/2020
+            Atualizado em: 07/Jun/2020
           </div>
           
         </div>
@@ -147,7 +145,7 @@ if (!doNotTrack) {
                 </div>
 
 
-        <h1>Formatando automaticamente antes do commit</h1>
+        <h1>Formatando o código automaticamente antes do commit</h1>
 
         
 <aside class="table-of-contents">
@@ -173,8 +171,8 @@ if (!doNotTrack) {
 <li><code>clean</code> ocorre quando os arquivos são enviados para o <code>stage</code></li>
 <li><code>smudge</code> quando os arquivos são enviados para o workspace (checkout)</li>
 </ul>
-<p>Quando os arquivos são enviados para <code>stage</code> (git add) são passados via <code>stdin</code> então não
-dá para saber qual o tipo. O uso da opção <code>-assume-filename=test.java</code> faz com
+<p>Quando os arquivos são enviados para <em>stage</em> (<code>git add</code>) são passados via <em>stdin</em> então não
+dá para saber qual o tipo do arquivo. O uso da opção <code>-assume-filename=test.java</code> faz com
 que o <code>clang-format</code> saiba como proceder.</p>
 <h2 id="referncias">Referências</h2>
 <ul>
@@ -198,7 +196,7 @@ que o <code>clang-format</code> saiba como proceder.</p>
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f&amp;text=Formatando%20automaticamente%20antes%20do%20commit"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f&amp;text=Formatando%20o%20c%c3%b3digo%20automaticamente%20antes%20do%20commit"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -206,7 +204,7 @@ que o <code>clang-format</code> saiba como proceder.</p>
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f&amp;title=Formatando%20automaticamente%20antes%20do%20commit"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f&amp;title=Formatando%20o%20c%c3%b3digo%20automaticamente%20antes%20do%20commit"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -214,7 +212,7 @@ que o <code>clang-format</code> saiba como proceder.</p>
 
     <li>
       <a class="email"
-         href="mailto:?subject=Formatando%20automaticamente%20antes%20do%20commit&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f">
+         href="mailto:?subject=Formatando%20o%20c%c3%b3digo%20automaticamente%20antes%20do%20commit&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fgit-auto-formatart-antes-do-commit%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>

@@ -48,6 +48,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/docker-acesso-ssh-tunelado-para-localhost/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/checkout/</loc>
     <lastmod>2020-06-13T11:28:47-03:00</lastmod>
   </url>
@@ -63,6 +68,11 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/docker/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/</loc>
     <lastmod>2020-06-13T11:28:47-03:00</lastmod>
   </url>
@@ -73,8 +83,23 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/ssh/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-06-13T11:28:47-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/t%C3%BAnel/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/xgd-open/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
   </url>
   
   <url>
@@ -185,11 +210,6 @@
   <url>
     <loc>https://geraldo.dev/posts/cpp-sort/</loc>
     <lastmod>2020-01-08T23:10:31-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/docker/</loc>
-    <lastmod>2020-01-06T09:43:43-03:00</lastmod>
   </url>
   
   <url>

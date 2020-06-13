@@ -31,11 +31,47 @@
     </item>
     
     <item>
+      <title>docker</title>
+      <link>https://geraldo.dev/tags/docker/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>git</title>
       <link>https://geraldo.dev/tags/git/</link>
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>https://geraldo.dev/tags/ssh/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/ssh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>túnel</title>
+      <link>https://geraldo.dev/tags/t%C3%BAnel/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/t%C3%BAnel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xgd-open</title>
+      <link>https://geraldo.dev/tags/xgd-open/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xgd-open/</guid>
       <description></description>
     </item>
     
@@ -126,15 +162,6 @@
       <pubDate>Sun, 12 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://geraldo.dev/tags/docker/</link>
-      <pubDate>Mon, 06 Jan 2020 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/docker/</guid>
       <description></description>
     </item>
     

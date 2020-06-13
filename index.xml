@@ -96,6 +96,17 @@ I am a teaching instructor for the following courses at University X:
     </item>
     
     <item>
+      <title>Acessar uma aplicação rodando em remoto via túnel SSH</title>
+      <link>https://geraldo.dev/posts/docker-acesso-ssh-tunelado-para-localhost/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/docker-acesso-ssh-tunelado-para-localhost/</guid>
+      <description>Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.
+Connecting to the web admin interface on a remote / virtual host via SSH Where remote is an alias for the remote user@hostname:
+1# Iniciar um tunel para redirecionamento de porta 2# localhost:porta remoto aponta para localhost:porta local 3ssh -fNTL localhost:8080:$(ssh remote &amp;#34;docker inspect --format \ 4&amp;#39;{{ .</description>
+    </item>
+    
+    <item>
       <title>Como realizar o checkout somente da última versão</title>
       <link>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</link>
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>

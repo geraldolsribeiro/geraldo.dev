@@ -167,18 +167,17 @@ if (!doNotTrack) {
         <div class="gr-main-content">
         <p>Para acessar uma interface de administração que só está disponível para localhost remotamente
 você pode usar uma conexão SSH através de um túnel.</p>
-<p>Connecting to the web admin interface on a remote / virtual host via SSH
-Where remote is an alias for the remote user@hostname:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e"># Iniciar um tunel para redirecionamento de porta</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"># localhost:porta remoto aponta para localhost:porta local</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>ssh -fNTL localhost:8080:<span style="color:#66d9ef">$(</span>ssh remote <span style="color:#e6db74">&#34;docker inspect --format \
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#e6db74">  &#39;{{ .NetworkSettings.IPAddress }}&#39; nome-do-container&#34;</span><span style="color:#66d9ef">)</span>:8080 remote
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"># Abrir o navegador para acessar através do tunel</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>xdg-open http://localhost:8080
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"># Terminar o tunel</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>kill <span style="color:#66d9ef">$(</span>lsof -t -i @localhost:8080 -sTCP:listen<span style="color:#66d9ef">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>ssh -fNTL localhost:8080:<span style="color:#66d9ef">$(</span>ssh nome-ou-ip-do-servidor <span style="color:#ae81ff">\
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#ae81ff"></span>  <span style="color:#e6db74">&#34;docker inspect --format &#39;{{ .NetworkSettings.IPAddress }}&#39; \
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#e6db74">    nome-do-container&#34;</span><span style="color:#66d9ef">)</span>:8080 nome-ou-ip-do-servidor
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"># Abrir o navegador para acessar através do tunel</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>xdg-open http://localhost:8080
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"># Terminar o tunel</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>kill <span style="color:#66d9ef">$(</span>lsof -t -i @localhost:8080 -sTCP:listen<span style="color:#66d9ef">)</span>
 </code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://hub.docker.com/_/rethinkdb">Connecting to the web admin interface on a remote / virtual host via SSH</a></li>

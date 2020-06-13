@@ -12,6 +12,18 @@
     
     
     <item>
+      <title>Como realizar o checkout somente da última versão</title>
+      <link>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</guid>
+      <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
+Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
+Exemplo de uso retirado do site do mongodb:
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  []()  </description>
+    </item>
+    
+    <item>
       <title>Exibindo problemas de formatação com git diff</title>
       <link>https://geraldo.dev/posts/git-diff/</link>
       <pubDate>Sun, 07 Jun 2020 00:00:00 -0300</pubDate>

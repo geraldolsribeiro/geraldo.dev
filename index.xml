@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 07 Jun 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,18 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Como realizar o checkout somente da última versão</title>
+      <link>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</guid>
+      <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
+Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
+Exemplo de uso retirado do site do mongodb:
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  []()  </description>
     </item>
     
     <item>

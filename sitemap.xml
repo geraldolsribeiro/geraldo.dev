@@ -48,27 +48,32 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/git/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-06-13T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/diff/</loc>
     <lastmod>2020-06-07T14:20:43-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/git-diff/</loc>
-    <lastmod>2020-06-07T14:20:43-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-06-07T14:20:43-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2020-06-07T14:20:43-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-06-07T14:20:43-03:00</lastmod>
   </url>
   

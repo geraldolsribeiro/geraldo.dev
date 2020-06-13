@@ -20,7 +20,7 @@
       <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
 Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
 Exemplo de uso retirado do site do mongodb:
-1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  []()  </description>
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  Installing the mongocxx driver  </description>
     </item>
     
     <item>

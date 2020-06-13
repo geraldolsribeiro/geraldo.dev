@@ -48,7 +48,17 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/checkout/</loc>
+    <lastmod>2020-06-13T11:28:47-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</loc>
+    <lastmod>2020-06-13T11:28:47-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/depth/</loc>
     <lastmod>2020-06-13T11:28:47-03:00</lastmod>
   </url>
   

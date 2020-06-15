@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sat, 13 Jun 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cpp</title>
+      <link>https://geraldo.dev/tags/cpp/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>optimlib</title>
+      <link>https://geraldo.dev/tags/optimlib/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/optimlib/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>otimização</title>
+      <link>https://geraldo.dev/tags/otimiza%C3%A7%C3%A3o/</link>
+      <pubDate>Mon, 15 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/otimiza%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>checkout</title>

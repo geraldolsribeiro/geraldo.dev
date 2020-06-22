@@ -17,7 +17,7 @@
 
 
     <meta property="og:image" content="https://geraldo.dev/img/headers/plot.jpg" />
-<meta property="og:description" content="Exemplo d" /><meta property="og:url" content="https://geraldo.dev/posts/web-chart-morris/" />
+<meta property="og:description" content="Exemplo de criação de gráficos para aplicações web." /><meta property="og:url" content="https://geraldo.dev/posts/web-chart-morris/" />
     <meta property="og:site_name" content="geraldo.dev" />
     <meta property="og:title" content="Gráficos para aplicações web com morris.js" />
 
@@ -28,9 +28,11 @@
 
     <meta property="og:tags" content="web" />
 
+    <meta property="og:tags" content="Materialize" />
 
 
-<meta name="description" content="Exemplo d">
+
+<meta name="description" content="Exemplo de criação de gráficos para aplicações web.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -156,6 +158,7 @@ if (!doNotTrack) {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/web/">web</a>
                 </div>
+              
 
 
         <h1>Gráficos para aplicações web com morris.js</h1>
@@ -190,7 +193,6 @@ if (!doNotTrack) {
 <li>adicione as dependências (jquery, raphael e morris)</li>
 <li>adicione uma div</li>
 <li>adicione um script</li>
-<li>funciona bem com materializecss</li>
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&#34;</span>&gt;
 &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
@@ -264,7 +266,11 @@ new Morris.Line({
   <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
 });
 </code></pre></div>
+<div class="row">
+<div class="col s12">
 <div id="area-example" style="height: 250px;"></div>
+</div>
+</div>
 
 <script>
 Morris.Area({
@@ -301,7 +307,11 @@ Morris.Area({
   <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
 });
 </code></pre></div>
+<div class="row">
+<div class="col s12">
 <div id="bar-example" style="height: 250px;"></div>
+</div>
+</div>
 
 <script>
 Morris.Bar({
@@ -331,7 +341,11 @@ Morris.Bar({
   ]
 });
 </code></pre></div>
+<div class="row">
+<div class="col s12">
 <div id="donut-example" style="height: 250px;"></div>
+</div>
+</div>
 
 <script>
 Morris.Donut({
@@ -346,8 +360,11 @@ Morris.Donut({
 
 <h2 id="materialize">Materialize</h2>
 
-<div class="row">
+<ul>
+<li>funciona bem com materializecss</li>
+</ul>
 
+<div class="row">
 <div class="col s12 m4">
 <div class="card hoverable">
 <div class="card-content ">

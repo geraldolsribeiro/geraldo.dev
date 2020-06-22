@@ -49,7 +49,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/web-chart-morris/</loc>
-    <lastmod>2020-06-22T10:17:40-03:00</lastmod>
+    <lastmod>2020-06-22T11:50:13-03:00</lastmod>
   </url>
   
   <url>
@@ -537,7 +537,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/chart/</loc>
-    <lastmod>2020-06-22T10:17:40-03:00</lastmod>
+    <lastmod>2020-06-22T11:50:13-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -805,6 +805,12 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/materialize/</loc>
+    <lastmod>2020-06-22T11:50:13-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/mlpack/</loc>
     <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
@@ -812,7 +818,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/morris.js/</loc>
-    <lastmod>2020-06-22T10:17:40-03:00</lastmod>
+    <lastmod>2020-06-22T11:50:13-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -967,7 +973,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/web/</loc>
-    <lastmod>2020-06-22T10:17:40-03:00</lastmod>
+    <lastmod>2020-06-22T11:50:13-03:00</lastmod>
     <priority>0</priority>
   </url>
   

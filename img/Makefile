@@ -1,3 +1,6 @@
+%.png: %.svg
+	inkscape --export-png=$@ -z $^
+
 %.webp: %.jpg
 	cwebp -q 80 $^ -o $@
 

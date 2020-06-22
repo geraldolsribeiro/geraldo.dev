@@ -54,7 +54,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-optimlib/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -103,8 +103,8 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/clang-tidy/</loc>
-    <lastmod>2020-02-18T11:37:25-03:00</lastmod>
+    <loc>https://geraldo.dev/posts/cpp-clant-tidy/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -114,17 +114,17 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-const-cast/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-fltk-layout/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-sort/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -134,7 +134,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-array/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -158,8 +158,8 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/armadillo/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <loc>https://geraldo.dev/posts/cpp-armadillo/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -244,7 +244,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-lambda/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -263,8 +263,8 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <loc>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
   </url>
   
   <url>
@@ -450,7 +450,13 @@
   
   <url>
     <loc>https://geraldo.dev/tags/algoritmos/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-01-04T21:27:05-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/algor%C3%ADtimos/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -486,7 +492,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/armadillo/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -515,7 +521,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -543,13 +549,19 @@
   
   <url>
     <loc>https://geraldo.dev/tags/clang-tidy/</loc>
-    <lastmod>2020-02-18T11:37:25-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/console/</loc>
     <lastmod>2019-11-21T00:07:52-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/const_cast/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -567,7 +579,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/cpp/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -597,7 +609,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/differential-evolution/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -633,7 +645,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/ffn/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -658,6 +670,12 @@
   <url>
     <loc>https://geraldo.dev/tags/flameshot/</loc>
     <lastmod>2019-12-16T09:23:38-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/fltk/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -758,7 +776,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/lambda/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -788,7 +806,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/mlpack/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -818,13 +836,19 @@
   
   <url>
     <loc>https://geraldo.dev/tags/optimlib/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/ordena%C3%A7%C3%A3o/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/otimiza%C3%A7%C3%A3o/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -870,6 +894,12 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/sort/</loc>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/ssh/</loc>
     <lastmod>2020-06-13T13:04:24-03:00</lastmod>
     <priority>0</priority>
@@ -877,7 +907,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/stdarray/</loc>
-    <lastmod>2020-06-22T11:15:21-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -984,7 +1014,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/%C3%A1lgebra-linear/</loc>
-    <lastmod>2020-01-04T21:11:42-03:00</lastmod>
+    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
     <priority>0</priority>
   </url>
   

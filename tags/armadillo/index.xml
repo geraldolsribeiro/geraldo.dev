@@ -14,10 +14,10 @@
     
     <item>
       <title>Álgebra linear com Armadillo</title>
-      <link>https://geraldo.dev/posts/armadillo/</link>
+      <link>https://geraldo.dev/posts/cpp-armadillo/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/armadillo/</guid>
+      <guid>https://geraldo.dev/posts/cpp-armadillo/</guid>
       <description>$$ A_{m,n} = \begin{pmatrix} a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\ a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} \end{pmatrix} $$  Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
 Provê suporte para:
  vetores (tensores de primeira ordem) matrizes (tensores de segunda ordem) cubos (tensores de terceira ordem) matrizes densas e esparsas números inteiros, de ponto flutuante e complexos decomposição (via LAPACK) multi-thread (Intel MKL ou OpenBLAS) avaliador de expressão baseado em meta-programação paralelização (via OpenMP)  Principais usos:</description>
@@ -25,10 +25,10 @@ Provê suporte para:
     
     <item>
       <title>Feed Forward Neural Network no debian com mlpack</title>
-      <link>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</link>
+      <link>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
+      <guid>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</guid>
       <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
 Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
    Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>

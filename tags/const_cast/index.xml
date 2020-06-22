@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Const_cast on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/const_cast/</link>
+    <description>Recent content in Const_cast on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/const_cast/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>C&#43;&#43; - const_cast</title>
+      <link>https://geraldo.dev/posts/cpp-const-cast/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-const-cast/</guid>
+      <description>O operadorconst_cast é utilizado para:
+ adicionar um modificador const a um tipo remover um modificador const de um tipo adicionar um modificador volatile a um tipo remover um modificador volatile de um tipo  #include &amp;lt;iostream&amp;gt;using namespace std; void f(int* p) { cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl; } int main(void) { const int a = 10; const int* b = &amp;amp;a; // A função f() espera receber um int* e não um const int*  // f(b);  int* c = const_cast&amp;lt;int*&amp;gt;(b); f(c); // Lvalue é const  // *b = 20;  // Comportamento indefinido  // *c = 30;  int a1 = 40; const int* b1 = &amp;amp;a1; int* c1 = const_cast&amp;lt;int*&amp;gt;(b1); // o inteiro a1 referenciado por c1 não foi declarado como const  *c1 = 50; return 0; }  Referências  [const_cast operator syntax(https://www.</description>
+    </item>
+    
+  </channel>
+</rss>

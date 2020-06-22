@@ -6,29 +6,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Otimizando código com clang-tidy | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/clang-tidy/">
+<title>Sort | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/tags/sort/">
 <meta name="generator" content="Hugo 0.54.0" />
 
 
-    <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="13/01/2020">
+    <meta property="og:type" content="website" />
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/headers/cpp.png" />
-<meta property="og:description" content="Como atualizar seu código C&#43;&#43; utilizando a ferramenta clang-tity." /><meta property="og:url" content="https://geraldo.dev/posts/clang-tidy/" />
+    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/tags/sort/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Otimizando código com clang-tidy" />
-
-
-    <meta property="og:tags" content="C&#43;&#43;" />
-
-    <meta property="og:tags" content="clang-tidy" />
+    <meta property="og:title" content="Sort" />
 
 
 
-<meta name="description" content="Como atualizar seu código C&#43;&#43; utilizando a ferramenta clang-tity.">
+
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -109,175 +108,45 @@ if (!doNotTrack) {
     
 
     
+  <div class="container">
+    <h1>Artigos marcados com Sort</h1>
 
-    <main>
-      <div class="page container">
-
+    <ul class="collection">
         
-        <div class="project-header center-align">
-          <picture>
-            <source srcset="img/headers/cpp.webp" type="image/webp">
-            <img src="img/headers/cpp.png" class="responsive-img z-depth-3">
-          </picture>
-        </div>
-        
-
-        <div class="row">
-          <div class="col s12 m6 center-align grey-text">
-            Publicado em: 13/Jan/2020
-          </div>
           
-          <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 18/Feb/2020
-          </div>
-          
-        </div>
-
-        
-        
-        
+<li class="collection-item">
+  <div class="row">
+    <div class="col s12"><a href="https://geraldo.dev/posts/cpp-sort/">C&#43;&#43; - Ordenação</a></div>
+    <div class="col s12 m1"><span class="post-date">01/2020</span></div>
+    <div class="col s12 m10 xxx-clearfix">
             
-              
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/clang-tidy/">clang-tidy</a>
-                </div>
+              <span class="chip">
+              <a href="tags/c&#43;&#43;">C&#43;&#43;</a>
+              </span>
+            
+              <span class="chip">
+              <a href="tags/cpp">cpp</a>
+              </span>
+            
+              <span class="chip">
+              <a href="tags/ordena%C3%A7%C3%A3o">ordenação</a>
+              </span>
+            
+              <span class="chip">
+              <a href="tags/sort">sort</a>
+              </span>
+            
 
-
-        <h1>Otimizando código com clang-tidy</h1>
-
-        
-<aside class="table-of-contents">
-  <header>
-    <h3>Sumário</h3>
-  </header>
-  <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/clang-tidy/#instalação">Instalação</a></li>
-<li><a href="https://geraldo.dev/posts/clang-tidy/#verificadores-disponíveis">Verificadores disponíveis</a></li>
-<li><a href="https://geraldo.dev/posts/clang-tidy/#uso">Uso</a></li>
-<li><a href="https://geraldo.dev/posts/clang-tidy/#referências">Referências</a></li>
-</ul></li>
-</ul>
-
-</aside>
-
-
-
-
-        <div class="gr-main-content">
-        <h2 id="instalação">Instalação</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install clang-tidy</code></pre></div>
-<h2 id="verificadores-disponíveis">Verificadores disponíveis</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clang-tidy --list-checks -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*&#39;</span> | grep <span style="color:#e6db74">&#34;modernize&#34;</span>
-    modernize-avoid-bind
-    modernize-deprecated-headers
-    modernize-loop-convert
-    modernize-make-shared
-    modernize-make-unique
-    modernize-pass-by-value
-    modernize-raw-string-literal
-    modernize-redundant-void-arg
-    modernize-replace-auto-ptr
-    modernize-replace-random-shuffle
-    modernize-return-braced-init-list
-    modernize-shrink-to-fit
-    modernize-unary-static-assert
-    modernize-use-auto
-    modernize-use-bool-literals
-    modernize-use-default-member-init
-    modernize-use-emplace
-    modernize-use-equals-default
-    modernize-use-equals-delete
-    modernize-use-noexcept
-    modernize-use-nullptr
-    modernize-use-override
-    modernize-use-transparent-functors
-    modernize-use-uncaught-exceptions
-    modernize-use-using</code></pre></div>
-<h2 id="uso">Uso</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clang-tidy -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;modernize-use-override&#39;</span> -fix test.cpp -- -std<span style="color:#f92672">=</span>c++11</code></pre></div>
-<h2 id="referências">Referências</h2>
-
-<ul>
-<li><a href="http://clang.llvm.org/extra/clang-tidy/" target="_blank">Extra Clang Tools 10 documentation - CLANG-TIDY</a></li>
-<li><a href="https://github.com/KratosMultiphysics/Kratos/wiki/How-to-use-Clang-Tidy-to-automatically-correct-code" target="_blank">How to use Clang Tidy to automatically correct code</a></li>
-</ul>
-
-        </div>
-
-        
-
-<div class="share-box center-align" aria-hidden="true">
-  <ul class="share">
-    <li>
-      <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fclang-tidy%2f"
-        aria-label="share on Facebook"
-        target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-facebook"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fclang-tidy%2f&amp;text=Otimizando%20c%c3%b3digo%20com%20clang-tidy"
-         target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-twitter"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fclang-tidy%2f&amp;title=Otimizando%20c%c3%b3digo%20com%20clang-tidy"
-         target="_blank" rel="noopener">
-        <span class="mdi mdi-48px mdi-linkedin"></span>
-      </a>
-    </li>
-
-    <li>
-      <a class="email"
-         href="mailto:?subject=Otimizando%20c%c3%b3digo%20com%20clang-tidy&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fclang-tidy%2f">
-        <span class="mdi mdi-48px mdi-email"></span>
-      </a>
-    </li>
-
-  </ul>
-  <span>Compartilhe!</span>
 </div>
+    <div class="col s12">Como misturar de forma saudável diferentes distribuições do Debian.
+Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.</div>
+  </div>
+</li>
 
+        
+    </ul>
 
-
-
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        <script>
-var disqus_config = function () {
-  this.language = "pt";
-};
-</script>
-
-      </div>
-
-    </main>
+  </div>
 
 
     

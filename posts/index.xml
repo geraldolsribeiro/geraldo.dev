@@ -129,10 +129,10 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
     
     <item>
       <title>Otimizando código com clang-tidy</title>
-      <link>https://geraldo.dev/posts/clang-tidy/</link>
+      <link>https://geraldo.dev/posts/cpp-clant-tidy/</link>
       <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/clang-tidy/</guid>
+      <guid>https://geraldo.dev/posts/cpp-clant-tidy/</guid>
       <description> Instalação apt-get install clang-tidy Verificadores disponíveis clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; modernize-avoid-bind modernize-deprecated-headers modernize-loop-convert modernize-make-shared modernize-make-unique modernize-pass-by-value modernize-raw-string-literal modernize-redundant-void-arg modernize-replace-auto-ptr modernize-replace-random-shuffle modernize-return-braced-init-list modernize-shrink-to-fit modernize-unary-static-assert modernize-use-auto modernize-use-bool-literals modernize-use-default-member-init modernize-use-emplace modernize-use-equals-default modernize-use-equals-delete modernize-use-noexcept modernize-use-nullptr modernize-use-override modernize-use-transparent-functors modernize-use-uncaught-exceptions modernize-use-using Uso clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
     </item>
     
@@ -169,7 +169,7 @@ Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplica�
     </item>
     
     <item>
-      <title>C&#43;&#43; - Ordernação</title>
+      <title>C&#43;&#43; - Ordenação</title>
       <link>https://geraldo.dev/posts/cpp-sort/</link>
       <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
       
@@ -242,10 +242,10 @@ I say this: Hello World! Hello World! Hello World!  Definição com várias linh
     
     <item>
       <title>Álgebra linear com Armadillo</title>
-      <link>https://geraldo.dev/posts/armadillo/</link>
+      <link>https://geraldo.dev/posts/cpp-armadillo/</link>
       <pubDate>Tue, 17 Dec 2019 00:00:00 -0300</pubDate>
       
-      <guid>https://geraldo.dev/posts/armadillo/</guid>
+      <guid>https://geraldo.dev/posts/cpp-armadillo/</guid>
       <description>$$ A_{m,n} = \begin{pmatrix} a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\ a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n} \end{pmatrix} $$  Armadillo é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do Matlab.
 Provê suporte para:
  vetores (tensores de primeira ordem) matrizes (tensores de segunda ordem) cubos (tensores de terceira ordem) matrizes densas e esparsas números inteiros, de ponto flutuante e complexos decomposição (via LAPACK) multi-thread (Intel MKL ou OpenBLAS) avaliador de expressão baseado em meta-programação paralelização (via OpenMP)  Principais usos:</description>
@@ -472,10 +472,10 @@ O locais padrão para os arquivos de script são:
     
     <item>
       <title>Feed Forward Neural Network no debian com mlpack</title>
-      <link>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</link>
+      <link>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</link>
       <pubDate>Mon, 29 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://geraldo.dev/posts/mlpack-feed-forward-neural-network-no-debian/</guid>
+      <guid>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</guid>
       <description>Este artigo mostra como criar uma rede neural simples no Debian stable utilizando a mlpack. A mlpack é uma biblioteca popular e de alta performance para aprendizado de máquina em C++.
 Versões do mlpack disponíveis do Debian As versões disponíveis no momento da escrita deste artigo são:
    Versão do Debian Versão do mlpack Arquiteturas     jessie (oldstable) 1.0.10-1 amd64 armel armhf i386   stretch (stable) 2.</description>

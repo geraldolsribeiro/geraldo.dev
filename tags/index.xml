@@ -24,9 +24,18 @@
     <item>
       <title>Algoritmos</title>
       <link>https://geraldo.dev/tags/algoritmos/</link>
-      <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
+      <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/algoritmos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorítimos</title>
+      <link>https://geraldo.dev/tags/algor%C3%ADtimos/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/algor%C3%ADtimos/</guid>
       <description></description>
     </item>
     
@@ -153,6 +162,15 @@
       <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/console/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Const_cast</title>
+      <link>https://geraldo.dev/tags/const_cast/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/const_cast/</guid>
       <description></description>
     </item>
     
@@ -315,6 +333,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/tags/flameshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fltk</title>
+      <link>https://geraldo.dev/tags/fltk/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/fltk/</guid>
       <description></description>
     </item>
     
@@ -544,6 +571,15 @@
     </item>
     
     <item>
+      <title>Ordenação</title>
+      <link>https://geraldo.dev/tags/ordena%C3%A7%C3%A3o/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/ordena%C3%A7%C3%A3o/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Otimização</title>
       <link>https://geraldo.dev/tags/otimiza%C3%A7%C3%A3o/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 -0300</pubDate>
@@ -585,6 +621,15 @@
       <pubDate>Fri, 26 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/tags/screenshot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sort</title>
+      <link>https://geraldo.dev/tags/sort/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/sort/</guid>
       <description></description>
     </item>
     

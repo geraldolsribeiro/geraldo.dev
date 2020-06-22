@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Preact - Petit React | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/preact/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -50,9 +50,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -143,10 +148,13 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/preact/#ciclo-de-vida">Ciclo de vida</a></li>
-    <li><a href="https://geraldo.dev/posts/preact/#preact-sem-babel-ou-jsx">Preact sem babel ou JSX</a></li>
-    <li><a href="https://geraldo.dev/posts/preact/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/preact/#ciclo-de-vida">Ciclo de vida</a></li>
+<li><a href="https://geraldo.dev/posts/preact/#preact-sem-babel-ou-jsx">Preact sem babel ou JSX</a></li>
+<li><a href="https://geraldo.dev/posts/preact/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -155,6 +163,7 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <h2 id="ciclo-de-vida">Ciclo de vida</h2>
+
 <ul>
 <li><code>componentWillMount</code>: Antes que o componente seja montado no DOM</li>
 <li><code>componentDidMount</code>: Depois que o componente é montado no DOM</li>
@@ -164,76 +173,82 @@ if (!doNotTrack) {
 <li><code>componentWillUpdate</code>: Antes <code>render()</code></li>
 <li><code>componentDidUpdate</code>: Depois <code>render()</code></li>
 </ul>
+
 <h2 id="preact-sem-babel-ou-jsx">Preact sem babel ou JSX</h2>
+
 <p>index.html</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>&lt;<span style="color:#f92672">html</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  &lt;<span style="color:#f92672">head</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    &lt;<span style="color:#f92672">title</span>&gt;Preact sem Babel or JSX&lt;/<span style="color:#f92672">title</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  &lt;/<span style="color:#f92672">head</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  &lt;<span style="color:#f92672">body</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/preact&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  &lt;/<span style="color:#f92672">body</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>&lt;/<span style="color:#f92672">html</span>&gt;
-</code></pre></div><p>index.js</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#e6db74">&#39;use strict&#39;</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e">/** Example classful component */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#a6e22e">componentDidMount</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Hello!&#39;</span> });
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">state</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#66d9ef">return</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;div&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;app&#39;</span>},
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Header</span>, { <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">message</span> }),
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Main</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>      )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#75715e">/** Components can just be pure functions */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Header</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;header&#39;</span>, <span style="color:#66d9ef">null</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h1&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;App&#39;</span>),
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h2&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#75715e">/** Instead of JSX, use: h(type, props, ...children) */</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>  <span style="color:#a6e22e">render</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">item</span>) =&gt; (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;li&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#a6e22e">item</span>}, <span style="color:#e6db74">&#39;Item &#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    ));
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    <span style="color:#66d9ef">return</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;main&#39;</span>, <span style="color:#66d9ef">null</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>        <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">items</span>)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>      )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
-</code></pre></div><p>Exemplo de preact com mitt</p>
-<p><a href="https://codepen.io/developit/pen/rjMEwW?editors=0010">https://codepen.io/developit/pen/rjMEwW?editors=0010</a></p>
-<h2 id="referncias">Referências</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!DOCTYPE html&gt;</span>
+&lt;<span style="color:#f92672">html</span>&gt;
+  &lt;<span style="color:#f92672">head</span>&gt;
+    &lt;<span style="color:#f92672">title</span>&gt;Preact sem Babel or JSX&lt;/<span style="color:#f92672">title</span>&gt;
+  &lt;/<span style="color:#f92672">head</span>&gt;
+  &lt;<span style="color:#f92672">body</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/preact&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;index.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+  &lt;/<span style="color:#f92672">body</span>&gt;
+&lt;/<span style="color:#f92672">html</span>&gt;</code></pre></div>
+<p>index.js</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#e6db74">&#39;use strict&#39;</span>;
+
+<span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">h</span>, <span style="color:#a6e22e">render</span> } <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">preact</span>;
+
+<span style="color:#75715e">/** Example classful component */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">App</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">componentDidMount</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({ <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Hello!&#39;</span> });
+  }
+  <span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">props</span>, <span style="color:#a6e22e">state</span>) {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;div&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;app&#39;</span>},
+        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Header</span>, { <span style="color:#a6e22e">message</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">message</span> }),
+        <span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">Main</span>)
+      )
+    );
+  }
+}
+
+
+<span style="color:#75715e">/** Components can just be pure functions */</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Header</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">props</span>) =&gt; {
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;header&#39;</span>, <span style="color:#66d9ef">null</span>,
+    <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h1&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#e6db74">&#39;App&#39;</span>),
+    <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;h2&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">message</span>)
+  );
+};
+
+
+<span style="color:#75715e">/** Instead of JSX, use: h(type, props, ...children) */</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Main</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">items</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>].<span style="color:#a6e22e">map</span>( (<span style="color:#a6e22e">item</span>) =&gt; (
+      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;li&#39;</span>, {<span style="color:#a6e22e">id</span><span style="color:#f92672">:</span><span style="color:#a6e22e">item</span>}, <span style="color:#e6db74">&#39;Item &#39;</span><span style="color:#f92672">+</span><span style="color:#a6e22e">item</span>)
+    ));
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;main&#39;</span>, <span style="color:#66d9ef">null</span>,
+        <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;ul&#39;</span>, <span style="color:#66d9ef">null</span>, <span style="color:#a6e22e">items</span>)
+      )
+    );
+  }
+}
+
+
+<span style="color:#a6e22e">render</span>(<span style="color:#a6e22e">h</span>(<span style="color:#a6e22e">App</span>), document.<span style="color:#a6e22e">body</span>);
+</code></pre></div>
+<p>Exemplo de preact com mitt</p>
+
+<p><a href="https://codepen.io/developit/pen/rjMEwW?editors=0010" target="_blank">https://codepen.io/developit/pen/rjMEwW?editors=0010</a></p>
+
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="https://medium.com/reactbrasil/preact-b128e4bf7625">Preact</a></li>
-<li><a href="https://preactjs.com/guide/getting-started">https://preactjs.com/guide/getting-started</a></li>
-<li><a href="https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/">https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/</a></li>
-<li><a href="https://github.com/developit/preact-without-babel">https://github.com/developit/preact-without-babel</a></li>
-<li><a href="https://blog.moove-it.com/getting-started-preact-progressive-web-apps/">https://blog.moove-it.com/getting-started-preact-progressive-web-apps/</a></li>
-<li><a href="https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/">https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/</a></li>
-<li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome">http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome</a></li>
-<li><a href="https://project-awesome.org/ooade/awesome-preact">https://project-awesome.org/ooade/awesome-preact</a></li>
+<li><a href="https://medium.com/reactbrasil/preact-b128e4bf7625" target="_blank">Preact</a></li>
+<li><a href="https://preactjs.com/guide/getting-started" target="_blank">https://preactjs.com/guide/getting-started</a></li>
+<li><a href="https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/" target="_blank">https://blog.kiprosh.com/getting-started-with-preactjs-a-step-by-step-guide-f3197f871753/</a></li>
+<li><a href="https://github.com/developit/preact-without-babel" target="_blank">https://github.com/developit/preact-without-babel</a></li>
+<li><a href="https://blog.moove-it.com/getting-started-preact-progressive-web-apps/" target="_blank">https://blog.moove-it.com/getting-started-preact-progressive-web-apps/</a></li>
+<li><a href="https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/" target="_blank">https://blog.theodo.fr/2017/11/preact-progressive-web-app-webpack-material-design-web-apis/</a></li>
+<li><a href="http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome" target="_blank">http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome</a></li>
+<li><a href="https://project-awesome.org/ooade/awesome-preact" target="_blank">https://project-awesome.org/ooade/awesome-preact</a></li>
 </ul>
 
         </div>
@@ -465,7 +480,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

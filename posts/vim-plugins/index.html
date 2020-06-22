@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Plugins para o vim | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-plugins/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,9 +54,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -147,15 +152,17 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/vim-plugins/#instalao-do-vundle">Instalação do vundle</a></li>
-    <li><a href="https://geraldo.dev/posts/vim-plugins/#ctrlp">Ctrlp</a></li>
-    <li><a href="https://geraldo.dev/posts/vim-plugins/#ctrlp-modified">Ctrlp modified</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/vim-plugins/#instalao">Instalação</a></li>
-        <li><a href="https://geraldo.dev/posts/vim-plugins/#atalhos">Atalhos</a></li>
-      </ul>
-    </li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/vim-plugins/#instalação-do-vundle">Instalação do vundle</a></li>
+<li><a href="https://geraldo.dev/posts/vim-plugins/#ctrlp">Ctrlp</a></li>
+<li><a href="https://geraldo.dev/posts/vim-plugins/#ctrlp-modified">Ctrlp modified</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/vim-plugins/#instalação">Instalação</a></li>
+<li><a href="https://geraldo.dev/posts/vim-plugins/#atalhos">Atalhos</a></li>
+</ul></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -163,22 +170,29 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="instalao-do-vundle">Instalação do vundle</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-</code></pre></div><h2 id="ctrlp">Ctrlp</h2>
+        <h2 id="instalação-do-vundle">Instalação do vundle</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim</code></pre></div>
+<h2 id="ctrlp">Ctrlp</h2>
+
 <h2 id="ctrlp-modified">Ctrlp modified</h2>
+
 <p>Easily open locally modified files in your git-versioned projects.</p>
-<p>Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)</p>
-<h3 id="instalao">Instalação</h3>
+
+<p>Uso a versão que lista os arquivos [modificadas[(<a href="https://github.com/jasoncodes/ctrlp-modified.vim" target="_blank">https://github.com/jasoncodes/ctrlp-modified.vim</a>)</p>
+
+<h3 id="instalação">Instalação</h3>
+
 <p>Acrescentar no <code>.vimrc</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">Bundle</span> <span style="color:#e6db74">&#39;kien/ctrlp.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Bundle</span> <span style="color:#e6db74">&#39;jasoncodes/ctrlp-modified.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div><p>Rodar o <code>VundleInstall</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">Bundle</span> <span style="color:#e6db74">&#39;kien/ctrlp.vim&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">Bundle</span> <span style="color:#e6db74">&#39;jasoncodes/ctrlp-modified.vim&#39;</span></code></pre></div>
+<p>Rodar o <code>VundleInstall</code></p>
+
 <h3 id="atalhos">Atalhos</h3>
-<p>Acrescentar no <code>.vimrc</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-vim" data-lang="vim"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">Leader</span>&gt;<span style="color:#a6e22e">m</span> :<span style="color:#a6e22e">CtrlPModified</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">Leader</span>&gt;<span style="color:#a6e22e">M</span> :<span style="color:#a6e22e">CtrlPBranch</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
-</span></code></pre></div>
+
+<p><p>Acrescentar no <code>.vimrc</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vim" data-lang="vim"><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">Leader</span>&gt;<span style="color:#a6e22e">m</span> :<span style="color:#a6e22e">CtrlPModified</span>&lt;<span style="color:#a6e22e">CR</span>&gt;<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#a6e22e">map</span> &lt;<span style="color:#a6e22e">Leader</span>&gt;<span style="color:#a6e22e">M</span> :<span style="color:#a6e22e">CtrlPBranch</span>&lt;<span style="color:#a6e22e">CR</span>&gt;</code></pre></div></p>
+
         </div>
 
         
@@ -408,7 +422,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

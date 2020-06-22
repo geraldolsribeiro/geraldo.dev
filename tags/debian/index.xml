@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>debian on geraldo.dev</title>
+    <title>Debian on geraldo.dev</title>
     <link>https://geraldo.dev/tags/debian/</link>
-    <description>Recent content in debian on geraldo.dev</description>
+    <description>Recent content in Debian on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,8 +18,8 @@
       <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/x-inverter-cores/</guid>
-      <description>Use o utilitário xcalib para inverter as cores da tela:
-1apt install xcalib 2xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
+      <description> Use o utilitário xcalib para inverter as cores da tela:
+apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
     </item>
     
     <item>
@@ -28,11 +28,11 @@
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/swap/</guid>
-      <description>Configuração atual 1swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
-1NAME TYPE SIZE USED PRIO 2/dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
+      <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
+NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
 Outro modo de verificar o swap é:
-1free -h Na ausência o valor é informado como zero.
-1Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi 2Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+free -h Na ausência o valor é informado como zero.
+Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
     </item>
     
     <item>
@@ -41,8 +41,8 @@ Outro modo de verificar o swap é:
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
-      <description>Instalação 1apt install ufw Status 1ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações 1ufw app list 2ufw app info OpenSSH Liberando algumas aplicações 1ufw allow OpenSSH 2ufw allow http 3ufw allow https Habilitando o firewall 1ufw enable Liberando uma porta específica 1ufw allow 8080/tcp Liberando um range de portas 1ufw allow 7100:7200/tcp 2ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+      <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -51,8 +51,8 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description>Adicionar repositório.
-1cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list 2deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main 3deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main 4EOF 1apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A 2apt-get update 3apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+      <description> Adicionar repositório.
+cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -63,7 +63,7 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-1# Arquivo: /etc/apt/preferences 2 3# Todos os pacotes vem do stable por padrão 4Package: * 5Pin: release a=stable 6Pin-Priority: 1001 7 8Package: * 9Pin: release a=testing 10Pin-Priority: 650 11 12Package: * 13Pin: release a=unstable 14Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo 1apt install nemo Nemo como gerenciador padrão 1xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
 O locais padrão para os arquivos de script são:
  /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
     </item>
@@ -97,7 +97,7 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
- Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Dica
+ Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
  O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
     </item>
@@ -108,7 +108,7 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação 1apt purge xscreensaver xscreensaver-data 2apt install light-locker Travando pelo terminal 1light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
     </item>
     
     <item>
@@ -118,9 +118,9 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       
       <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
-1echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  2 &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
-1apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
-1apt-get update 2apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
+echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
+apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
+apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
 Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
     </item>
     

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>macro on geraldo.dev</title>
+    <title>Macro on geraldo.dev</title>
     <link>https://geraldo.dev/tags/macro/</link>
-    <description>Recent content in macro on geraldo.dev</description>
+    <description>Recent content in Macro on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</guid>
-      <description>:bufdo execute &amp;quot;normal @a&amp;quot; | write Referências  Run a macro in all buffers in vim  </description>
+      <description> :bufdo execute &amp;quot;normal @a&amp;quot; | write  Referências  Run a macro in all buffers in vim  </description>
     </item>
     
   </channel>

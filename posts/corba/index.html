@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>CORBA | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/corba/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -56,9 +56,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -157,15 +162,9 @@ window.MathJax = {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/corba/">corba</a>
                 </div>
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/idl/">IDL</a>
-                </div>
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
-                </div>
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/python/">Python</a>
-                </div>
+              
+              
+              
 
 
         <h1>CORBA</h1>
@@ -176,78 +175,86 @@ window.MathJax = {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/corba/#introduo">Introdução</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#o-que--corba">O que é CORBA?</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#o-que--a-omg">O que é a OMG?</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#corba-vs-soapxml-rpc">CORBA vs SOAP/XML-RPC</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#corba--pesado">CORBA é pesado?</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#orb---object-request-broker">ORB - Object Request Broker</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#clientes">Clientes</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#servidores">Servidores</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#idl">IDL</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#idl-features">IDL Features</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#tipos-bsicos">Tipos básicos</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#direes-dos-parmetros">Direções dos parâmetros</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#excees">Exceções</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#operaes-oneway">Operações oneway</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#estruturas">Estruturas</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#arrays">Arrays</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#constantes">Constantes</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#typedef">Typedef</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mdulos">Módulos</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#preprocessador">Preprocessador</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-para-linguagem">Mapeamento para linguagem</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-identificadores">Mapeamento de identificadores</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-interface">Mapeamento de interface</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-escopo">Mapeamento de escopo</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-do-mdulo-padro-do-corba">Mapeamento do módulo padrão do CORBA</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-tipos">Mapeamento de tipos</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#repositrio-de-interfaces">Repositório de interfaces</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#repositrio-de-implementao">Repositório de implementação</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#dynamic-invocation-interface">Dynamic Invocation Interface</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#interoperabilidade">Interoperabilidade</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#instalao-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#omniorb">OmniORB</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#mico">MICO</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#exemplo">Exemplo</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#criando-a-idl">Criando a IDL</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#gerando-backend-a-partir-da-idl">Gerando backend a partir da IDL</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#criando-o-servidor">Criando o servidor</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#servercc">Server.cc</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#implementao-do-servant">Implementação do Servant</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#cservicea-ihh">CServiceA_i.hh</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#cservicea-icc">CServiceA_i.cc</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#cliente-corba">Cliente CORBA</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/corba/#clientcc">Client.cc</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#crrquestserviceahh">CRrquestServiceA.hh</a></li>
-        <li><a href="https://geraldo.dev/posts/corba/#crequestserviceacc">CRequestServiceA.cc</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/corba/#makefile">Makefile</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#todo">Todo</a></li>
-    <li><a href="https://geraldo.dev/posts/corba/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#introdução">Introdução</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#o-que-é-corba">O que é CORBA?</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#o-que-é-a-omg">O que é a OMG?</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#corba-vs-soap-xml-rpc">CORBA vs SOAP/XML-RPC</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#corba-é-pesado">CORBA é pesado?</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#orb-object-request-broker">ORB - Object Request Broker</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#clientes">Clientes</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#servidores">Servidores</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#idl">IDL</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#idl-features">IDL Features</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#tipos-básicos">Tipos básicos</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#direções-dos-parâmetros">Direções dos parâmetros</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#exceções">Exceções</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#operações-oneway">Operações oneway</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#estruturas">Estruturas</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#arrays">Arrays</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#constantes">Constantes</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#typedef">Typedef</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#módulos">Módulos</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#preprocessador">Preprocessador</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-para-linguagem">Mapeamento para linguagem</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-identificadores">Mapeamento de identificadores</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-interface">Mapeamento de interface</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-escopo">Mapeamento de escopo</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#interface-para-classe">Interface para classe</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#module-para-namespace">Module para namespace</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-do-módulo-padrão-do-corba">Mapeamento do módulo padrão do CORBA</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mapeamento-de-tipos">Mapeamento de tipos</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#repositório-de-interfaces">Repositório de interfaces</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#repositório-de-implementação">Repositório de implementação</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#dynamic-invocation-interface">Dynamic Invocation Interface</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#interoperabilidade">Interoperabilidade</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#coss-common-object-service-specification">COSS - Common Object Service Specification</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#instalação-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#omniorb">OmniORB</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#mico">MICO</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#exemplo">Exemplo</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#criando-a-idl">Criando a IDL</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#gerando-backend-a-partir-da-idl">Gerando backend a partir da IDL</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#gerando-python">Gerando Python</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#gerando-c">Gerando C++</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#data-hh">Data.hh</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#datask-cc">DataSK.cc</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#criando-o-servidor">Criando o servidor</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#server-cc">Server.cc</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#implementação-do-servant">Implementação do Servant</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#cservicea-i-hh">CServiceA_i.hh</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#cservicea-i-cc">CServiceA_i.cc</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#cliente-corba">Cliente CORBA</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/corba/#client-cc">Client.cc</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#crrquestservicea-hh">CRrquestServiceA.hh</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#crequestservicea-cc">CRequestServiceA.cc</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/corba/#makefile">Makefile</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#todo">Todo</a></li>
+<li><a href="https://geraldo.dev/posts/corba/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -255,8 +262,10 @@ window.MathJax = {
 
 
         <div class="gr-main-content">
-        <h2 id="introduo">Introdução</h2>
-<h3 id="o-que--corba">O que é CORBA?</h3>
+        <h2 id="introdução">Introdução</h2>
+
+<h3 id="o-que-é-corba">O que é CORBA?</h3>
+
 <ul>
 <li>é o acrônimo para <strong>Common Object Request Broker Architecture</strong></li>
 <li>é um framework para construção de sistemas distribuídos orientados a objetos</li>
@@ -266,18 +275,23 @@ window.MathJax = {
 <li>clientes e servidores estão em diferentes máquinas</li>
 <li>programas clientes enviam mensagens para servidores remotos como se este estivesse locais (<em>location transparency</em>)</li>
 </ul>
-<h3 id="o-que--a-omg">O que é a OMG?</h3>
+
+<h3 id="o-que-é-a-omg">O que é a OMG?</h3>
+
 <ul>
-<li><a href="http://www.omg.org">www.omg.org</a></li>
+<li>www.omg.org</li>
 <li>fundada em 1989</li>
 <li>somente provê especificações</li>
 <li>não provê implementações</li>
 <li>todas as especificações são free</li>
 </ul>
-<h3 id="corba-vs-soapxml-rpc">CORBA vs SOAP/XML-RPC</h3>
+
+<h3 id="corba-vs-soap-xml-rpc">CORBA vs SOAP/XML-RPC</h3>
+
 <ul>
 <li><code>SOAP</code> e <code>XML-RPC</code> são protocolos wire</li>
 <li><code>CORBA</code> inclui:
+
 <ul>
 <li>um protocolo wire</li>
 <li><code>GIOP</code></li>
@@ -286,58 +300,69 @@ window.MathJax = {
 <li>mapeamento de linguagem</li>
 <li>serviços</li>
 <li>códigos de cliente e servidor portáveis  entre implementações CORBA</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="corba--pesado">CORBA é pesado?</h3>
+
+<h3 id="corba-é-pesado">CORBA é pesado?</h3>
+
 <ul>
-<li>uma arquitetura mínima requer algumas dezenas de kB (segundo <a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a>)</li>
+<li>uma arquitetura mínima requer algumas dezenas de kB (segundo <a href="https://www.grisby.org/presentations/accu2003.pdf" target="_blank">CORBA? Isn’ t that Obsolete ?</a>)</li>
 </ul>
-<h2 id="orb---object-request-broker">ORB - Object Request Broker</h2>
+
+<h2 id="orb-object-request-broker">ORB - Object Request Broker</h2>
+
 <ul>
 <li>é o núcleo da <em>Object Management Architecture</em></li>
 <li>integra:
+
 <ul>
 <li>diferentes linguagens</li>
 <li>diferentes arquiteturas</li>
 <li>diferentes sistemas operacionais</li>
-</ul>
-</li>
+</ul></li>
 <li>é responsável por:
+
 <ul>
 <li>encontrar uma implementação para uma requisição</li>
 <li>preparar implementações para receber requisições</li>
 <li>comunicar dados das requisições</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h2 id="clientes">Clientes</h2>
+
 <ul>
 <li>possuem referências para objetos e invocam operações nestes objetos</li>
 <li>conhecem apenas a interface dos objetos do servidor</li>
 <li>não conhecem a implementação dos objetos nem os adaptadores utilizados por estas implementações</li>
 <li>invocam interfaces definidas por uma IDL</li>
 <li>invocam as implementações através de:
+
 <ul>
 <li>proxies (<em>IDL generated stubs</em>)</li>
 <li>DII (<em>Dynamic Invocation Interface</em>)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h2 id="servidores">Servidores</h2>
+
 <ul>
 <li>se registram no ORB</li>
 <li>se disponibilizam para aceitar requisições</li>
 <li>implementam uma IDL</li>
 </ul>
+
 <h2 id="idl">IDL</h2>
+
 <ul>
 <li>provê interfaces independente de linguagem e sistema operacional</li>
 <li>é puramente declarativa (não provê detalhes de implementação)</li>
 <li>é fortemente tipada</li>
 <li>especificações podem ser escritas e invocadas em qualquer linguagem</li>
 </ul>
+
 <h3 id="idl-features">IDL Features</h3>
+
 <ul>
 <li>modules</li>
 <li>interfaces</li>
@@ -352,7 +377,9 @@ window.MathJax = {
 <li>consts</li>
 <li>exceptions</li>
 </ul>
-<h3 id="tipos-bsicos">Tipos básicos</h3>
+
+<h3 id="tipos-básicos">Tipos básicos</h3>
+
 <ul>
 <li>float</li>
 <li>double</li>
@@ -365,66 +392,74 @@ window.MathJax = {
 <li>octet</li>
 <li>any</li>
 </ul>
-<h3 id="direes-dos-parmetros">Direções dos parâmetros</h3>
+
+<h3 id="direções-dos-parâmetros">Direções dos parâmetros</h3>
+
 <ul>
 <li><code>in</code> - do cliente para o servidor</li>
 <li><code>out</code> - do servidor para o cliente</li>
 <li><code>inout</code> - do cliente para o servidor e de volta para o cliente</li>
 </ul>
-<h3 id="excees">Exceções</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Bank {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  exception Reject {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    string reason;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  exception TooMany {};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  Account newAccount( in string name ) raises (Reject, TooMany);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>};
-</code></pre></div><h3 id="operaes-oneway">Operações oneway</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Account {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  oneway void notice( in string notice );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>};
-</code></pre></div><ul>
+
+<h3 id="exceções">Exceções</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Interface Bank {
+  exception Reject {
+    string reason;
+  };
+  exception TooMany {};
+  Account newAccount( in string name ) raises (Reject, TooMany);
+};</code></pre></div>
+<h3 id="operações-oneway">Operações oneway</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Interface Account {
+  oneway void notice( in string notice );
+};</code></pre></div>
+<ul>
 <li>não bloqueantes</li>
 <li>não aceitam parâmetros <code>out</code> ou <code>inout</code></li>
 <li>não lançam exceções (não aceitam <code>raise</code>)</li>
 </ul>
+
 <h3 id="estruturas">Estruturas</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>struct PersonalDetails {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  string name;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  short age;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>interface Bank {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  PersonalDetails getPerDet(in string name);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>};
-</code></pre></div><h3 id="arrays">Arrays</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">struct PersonalDetails {
+  string name;
+  short age;
+};
+
+interface Bank {
+  PersonalDetails getPerDet(in string name);
+};</code></pre></div>
+<h3 id="arrays">Arrays</h3>
+
 <ul>
 <li>podem ser multidimensionais</li>
 <li>precisam ter tamanho fixo (<em>conhecido em tempo de definição</em>)</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Account bankAccounts[100];
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>short matrix[10][20]; // 2D array
-</code></pre></div><h3 id="constantes">Constantes</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Bank {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  const long MaxAccounts = 10000;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>};
-</code></pre></div><p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Account bankAccounts[100];
+short matrix[10][20]; // 2D array</code></pre></div>
+<h3 id="constantes">Constantes</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Interface Bank {
+  const long MaxAccounts = 10000;
+};</code></pre></div>
+<p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
+
 <h3 id="typedef">Typedef</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>typedef short size;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>size i;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>typedef Account Accounts[100]; // acho que está invertido aqui
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>Accounts bankAccounts;
-</code></pre></div><h3 id="mdulos">Módulos</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Module Finance {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  interface Bank { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  interface Account { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-</code></pre></div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">typedef short size;
+size i;
+
+typedef Account Accounts[100]; // acho que está invertido aqui
+Accounts bankAccounts;</code></pre></div>
+<h3 id="módulos">Módulos</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Module Finance {
+  interface Bank { ... };
+  interface Account { ... };
+};</code></pre></div>
+<ul>
 <li>são usados para agrupar interfaces em unidades lógicas</li>
 <li>utilize nomes completos (p.e. <code>Finance::Account *a;</code>)</li>
 </ul>
+
 <h3 id="preprocessador">Preprocessador</h3>
+
 <ul>
 <li>baseado no preprocessador do C++</li>
 <li>substituição de macro</li>
@@ -436,7 +471,9 @@ window.MathJax = {
 <li><code>#ifdef</code></li>
 <li><code>#defined</code></li>
 </ul>
+
 <h3 id="mapeamento-para-linguagem">Mapeamento para linguagem</h3>
+
 <ul>
 <li>linguagens <em>OO</em> e <em>non-OO</em> acessam de modos diferentes</li>
 <li>tipos específicos da linguagem</li>
@@ -446,46 +483,59 @@ window.MathJax = {
 <li>adaptadores de objeto</li>
 <li>interface direta ao ORB</li>
 </ul>
+
 <h3 id="mapeamento-de-identificadores">Mapeamento de identificadores</h3>
+
 <ul>
 <li>usa o mesmo nome</li>
 <li>se for uma palavra reservada do C++ receberá um <code>_</code> como prefixo (p.e. <code>_new</code>)</li>
 </ul>
+
 <h3 id="mapeamento-de-interface">Mapeamento de interface</h3>
+
 <ul>
 <li>são mapeadas para classes</li>
 <li>uma IDL mapeada para uma classe C++ não pode ser instanciada</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Account { ... }
-</code></pre></div><p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object { ... }
-</code></pre></div><h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Interface Account { ... }</code></pre></div>
+<p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Account</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">::</span>Object { ... }
+</code></pre></div>
+<h3 id="mapeamento-de-escopo">Mapeamento de escopo</h3>
+
 <h4 id="interface-para-classe">Interface para classe</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Bank {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  struct Details { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>};
-</code></pre></div><p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Bank</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Details</span> { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-</code></pre></div><h4 id="module-para-namespace">Module para namespace</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Module M {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  Interface A { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  Interface B { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-</code></pre></div><p>será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">namespace</span> M {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">A</span> { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">B</span> { ... };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>};
-</code></pre></div><p>Acessíveis via <code>M::A</code> e <code>M::B</code>.</p>
-<h3 id="mapeamento-do-mdulo-padro-do-corba">Mapeamento do módulo padrão do CORBA</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Interface Bank {
+  struct Details { ... };
+};</code></pre></div>
+<p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">Bank</span> {
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">struct</span> Details { ... };
+};
+</code></pre></div>
+<h4 id="module-para-namespace">Module para namespace</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Module M {
+  Interface A { ... };
+  Interface B { ... };
+};</code></pre></div>
+<p>será mapeado para:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> M {
+  <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">A</span> { ... };
+  <span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">B</span> { ... };
+};
+</code></pre></div>
+<p>Acessíveis via <code>M::A</code> e <code>M::B</code>.</p>
+
+<h3 id="mapeamento-do-módulo-padrão-do-corba">Mapeamento do módulo padrão do CORBA</h3>
+
 <p>Será mapeado para:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#66d9ef">namespace</span> CORBA { ... }
-</code></pre></div><p>Utilize os membros como:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( ... );
-</code></pre></div><h3 id="mapeamento-de-tipos">Mapeamento de tipos</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">namespace</span> CORBA { ... }
+</code></pre></div>
+<p>Utilize os membros como:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">CORBA<span style="color:#f92672">::</span>ORB_init( ... );
+</code></pre></div>
+<h3 id="mapeamento-de-tipos">Mapeamento de tipos</h3>
+
 <table>
 <thead>
 <tr>
@@ -494,82 +544,98 @@ window.MathJax = {
 <th>Tamanho e faixa</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>short</td>
 <td>CORBA::Short</td>
 <td>16 bit: $-2^{15} \ldots +2^{15} - 1$</td>
 </tr>
+
 <tr>
 <td>long</td>
 <td>CORBA::Long</td>
 <td>32 bit: $-2^{31} \ldots +2^{31} - 1$</td>
 </tr>
+
 <tr>
 <td>long long</td>
 <td>CORBA::LongLong</td>
 <td>64 bit: $-2^{63} \ldots +2^63 - 1$</td>
 </tr>
+
 <tr>
 <td>unsigned short</td>
 <td>CORBA::UShort</td>
 <td>16 bit: $0 \ldots 2^{16} - 1$</td>
 </tr>
+
 <tr>
 <td>unsigned long</td>
 <td>CORBA::ULong</td>
 <td>32 bit: $0 \ldots 2^{32} - 1$</td>
 </tr>
+
 <tr>
 <td>unsigned long long</td>
 <td>CORBA::ULongLong</td>
 <td>64 bit: $0 \ldots 2^{64}$</td>
 </tr>
+
 <tr>
 <td>float</td>
 <td>CORBA::Float</td>
 <td>32 bit IEEE single precision floating point number</td>
 </tr>
+
 <tr>
 <td>double</td>
 <td>CORBA::Double</td>
 <td>64 bit IEEE double precision floating point number</td>
 </tr>
+
 <tr>
 <td>long double</td>
 <td>CORBA::LongDouble</td>
 <td>&ndash;</td>
 </tr>
+
 <tr>
 <td>char</td>
 <td>CORBA::Char</td>
 <td>8 bit</td>
 </tr>
+
 <tr>
 <td>wchar</td>
 <td>CORBA::WChar</td>
 <td>&ndash; (Wide Char)</td>
 </tr>
+
 <tr>
 <td>string</td>
 <td>CORBA::char *</td>
 <td>&ndash;</td>
 </tr>
+
 <tr>
 <td>wstring</td>
 <td>CORBA::WChar *</td>
 <td>&ndash;</td>
 </tr>
+
 <tr>
 <td>boolean</td>
 <td>CORBA::Boolean</td>
 <td>true/false</td>
 </tr>
+
 <tr>
 <td>octet</td>
 <td>CORBA::Octet</td>
 <td>(unsigned char)  8 bit raw. Sem conversão</td>
 </tr>
+
 <tr>
 <td>any</td>
 <td>CORBA::Any</td>
@@ -577,34 +643,42 @@ window.MathJax = {
 </tr>
 </tbody>
 </table>
-<h2 id="repositrio-de-interfaces">Repositório de interfaces</h2>
+
+<h2 id="repositório-de-interfaces">Repositório de interfaces</h2>
+
 <ul>
 <li>provê armazenamento para informações da IDL</li>
 <li>um programa pode referenciar objetos cuja interface será conhecida em tempo de execução</li>
 <li>estas informações podem ser usadas pelo ORB para realizar requisições</li>
 <li>pode armazenar outras informações sobre interfaces:
+
 <ul>
 <li>debugging</li>
 <li>info</li>
 <li>browser routines</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h2 id="repositrio-de-implementao">Repositório de implementação</h2>
+
+<h2 id="repositório-de-implementação">Repositório de implementação</h2>
+
 <ul>
 <li>informações que o ORB utiliza para localizar e ativar implementações de um servidor de objetos</li>
 <li>armazena informações de ativação:
+
 <ul>
 <li>máquina onde um servidor pode ser iniciado a partir de uma requisição do cliente</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h2 id="dynamic-invocation-interface">Dynamic Invocation Interface</h2>
+
 <ul>
 <li>Em vez de chamar um stub específico de uma operação, é possível especificar um objeto, operação e parâmetros para através de uma chamada ou sequência de chamadas</li>
 <li>o cliente precisa fornecer os tipos dos parâmetros passados</li>
 </ul>
+
 <h2 id="interoperabilidade">Interoperabilidade</h2>
+
 <ul>
 <li>suporta rede de objetos distribuídos em múltiplos ORBs (heterogêneos)</li>
 <li><em>InterORBability</em></li>
@@ -612,7 +686,9 @@ window.MathJax = {
 <li>ESIOP: (Environment Specific Inter-ORB Protocol) protocolo especializado</li>
 <li><code>IIOP</code>: mapeamento <code>TCP/IP</code> para <code>GIOP</code></li>
 </ul>
-<h2 id="coss---common-object-service-specification">COSS - Common Object Service Specification</h2>
+
+<h2 id="coss-common-object-service-specification">COSS - Common Object Service Specification</h2>
+
 <ul>
 <li>naming</li>
 <li>events</li>
@@ -629,13 +705,16 @@ window.MathJax = {
 <li>externalization</li>
 <li>collection</li>
 </ul>
-<h2 id="instalao-do-omniorb-no-debian">Instalação do omniORB no Debian</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install libomniorb4-dev omniidl omniorb omniorb-doc omniorb-nameserver omniidl-python python-omniorb
-</code></pre></div><h2 id="iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</h2>
+
+<h2 id="instalação-do-omniorb-no-debian">Instalação do omniORB no Debian</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install libomniorb4-dev omniidl omniorb omniorb-doc omniorb-nameserver omniidl-python python-omniorb</code></pre></div>
+<h2 id="iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</h2>
+
 <h3 id="omniorb">OmniORB</h3>
+
 <p>Incluir no arquivo <code>/etc/omniORB.cfg</code> a seguinte linha:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>InitRef = OmniNameService=corbaname::localhost
-</code></pre></div><div class="row">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">InitRef = OmniNameService=corbaname::localhost</code></pre></div>
+<div class="row">
   <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card blue darken-5">
       <div class="card-content white-text text-darken-1">
@@ -645,67 +724,80 @@ window.MathJax = {
     </div>
   </div>
 </div>
+
+
 <p>Para iniciar o servidor de nomes do <strong>OmniORB</strong> use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniNames -start
-</code></pre></div><p>Exemplo de saída do comando acima:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniNames: (0) 2019-12-30 15:36:29.516974: Data file: &#39;/var/lib/omniorb/omninames-erebo.dat&#39;.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>omniNames: (0) 2019-12-30 15:36:29.517058: Starting omniNames for the first time.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>omniNames: (0) 2019-12-30 15:36:29.517348: Wrote initial data file &#39;/var/lib/omniorb/omninames-erebo.dat&#39;.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>omniNames: (0) 2019-12-30 15:36:29.517444: Read data file &#39;/var/lib/omniorb/omninames-erebo.dat&#39; successfully.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>omniNames: (0) 2019-12-30 15:36:29.517529: Root context is IOR:010000002b00000049444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e300000010000000000000070000000010102000d0000003139322e3136382e302e31330000f90a0b0000004e616d6553657276696365000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000354544108000000ad430a5e010075e0
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>omniNames: (0) 2019-12-30 15:36:29.517600: Checkpointing Phase 1: Prepare.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>omniNames: (0) 2019-12-30 15:36:29.517703: Checkpointing Phase 2: Commit.
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>omniNames: (0) 2019-12-30 15:36:29.517802: Checkpointing completed.
-</code></pre></div><p>A porta padrão é a <code>2809</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniNames -start</code></pre></div>
+<p>Exemplo de saída do comando acima:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">omniNames: (0) 2019-12-30 15:36:29.516974: Data file: &#39;/var/lib/omniorb/omninames-erebo.dat&#39;.
+omniNames: (0) 2019-12-30 15:36:29.517058: Starting omniNames for the first time.
+omniNames: (0) 2019-12-30 15:36:29.517348: Wrote initial data file &#39;/var/lib/omniorb/omninames-erebo.dat&#39;.
+omniNames: (0) 2019-12-30 15:36:29.517444: Read data file &#39;/var/lib/omniorb/omninames-erebo.dat&#39; successfully.
+omniNames: (0) 2019-12-30 15:36:29.517529: Root context is IOR:010000002b00000049444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e300000010000000000000070000000010102000d0000003139322e3136382e302e31330000f90a0b0000004e616d6553657276696365000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000354544108000000ad430a5e010075e0
+omniNames: (0) 2019-12-30 15:36:29.517600: Checkpointing Phase 1: Prepare.
+omniNames: (0) 2019-12-30 15:36:29.517703: Checkpointing Phase 2: Commit.
+omniNames: (0) 2019-12-30 15:36:29.517802: Checkpointing completed.</code></pre></div>
+<p>A porta padrão é a <code>2809</code>.</p>
+
 <p>Os arquivos de controle serão criados por padrão no diretório <code>/var/lib/omniorb/</code>:</p>
+
 <ul>
 <li><code>/var/lib/omniorb/omninames-nome-da-maquina.dat</code></li>
 <li><code>/var/lib/omniorb/omninames-nome-da-maquina.bak</code></li>
 </ul>
+
 <p>Para especificar um diretório diferente use a opção <code>-logdir</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniNames -logdir /tmp -start
-</code></pre></div><h3 id="mico">MICO</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniNames -logdir /tmp -start</code></pre></div>
+<h3 id="mico">MICO</h3>
+
 <p>Para iniciar o servidor de nomes do <strong>MICO</strong> use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>nsd -ORBIIOPAddr inet:localhost:2809
-</code></pre></div><p>Veja exemplo em <a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">Connecting 3 ORBs</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nsd -ORBIIOPAddr inet:localhost:2809</code></pre></div>
+<p>Veja exemplo em <a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html" target="_blank">Connecting 3 ORBs</a>.</p>
+
 <h2 id="exemplo">Exemplo</h2>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/corba-01.webp" width="663" height="493" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/corba-01.png" alt="Componentes do exemplo" width="663" height="493">
       <figcaption>Componentes do exemplo</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <h3 id="criando-a-idl">Criando a IDL</h3>
+
 <p>Arquivo de interface <code>Data.idl</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">#</span><span style="color:#75715e">ifndef __DATADIST_IDL__</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">define __DATADIST_IDL__</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e"></span>module Data
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  interface ServiceA {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    boolean <span style="color:#a6e22e">CallServiceRoutineA</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>        in    <span style="color:#66d9ef">long</span> num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>        inout <span style="color:#66d9ef">long</span> num2,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>        out   <span style="color:#66d9ef">long</span> retNum );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    boolean <span style="color:#a6e22e">CallServiceRoutineB</span> (
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>        inout <span style="color:#66d9ef">long</span> num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>        inout <span style="color:#66d9ef">long</span> num2);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#75715e">#</span><span style="color:#75715e">endif</span><span style="color:#75715e">
-</span></code></pre></div><h3 id="gerando-backend-a-partir-da-idl">Gerando backend a partir da IDL</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenos=true}" data-lang="c++ {linenos=true}">#ifndef __DATADIST_IDL__
+#define __DATADIST_IDL__
+module Data
+{
+  interface ServiceA {
+    boolean CallServiceRoutineA (
+        in    long num1,
+        inout long num2,
+        out   long retNum );
+    boolean CallServiceRoutineB (
+        inout long num1,
+        inout long num2);
+  };
+};
+#endif</code></pre></div>
+<h3 id="gerando-backend-a-partir-da-idl">Gerando backend a partir da IDL</h3>
+
 <p>Use a opção <code>-b</code> para escolher o <code>backend</code> a ser gerado.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniidl -bcxx    Data.idl
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>omniidl -bpython Data.idl
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>omniidl -bdump   Data.idl
-</code></pre></div><h4 id="gerando-python">Gerando Python</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniidl -bpython Data.idl
-</code></pre></div><p>os arquivos abaixo são criados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniidl -bcxx    Data.idl
+omniidl -bpython Data.idl
+omniidl -bdump   Data.idl</code></pre></div>
+<h4 id="gerando-python">Gerando Python</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniidl -bpython Data.idl</code></pre></div>
+<p>os arquivos abaixo são criados:</p>
+
 <ul>
 <li><code>Data_idl.py</code></li>
 <li><code>Data__POA/__init__.py</code></li>
 <li><code>Data/__init__.py</code></li>
 </ul>
+
 <div class="row">
   <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card red darken-1">
@@ -716,85 +808,90 @@ window.MathJax = {
     </div>
   </div>
 </div>
+
 <h4 id="gerando-c">Gerando C++</h4>
+
 <p>Ao executar o seguinte comando:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>omniidl -bcxx Data.idl
-</code></pre></div><p>os arquivos abaixo são criados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">omniidl -bcxx Data.idl</code></pre></div>
+<p>os arquivos abaixo são criados:</p>
+
 <ul>
 <li><code>Data.hh</code> - cabeçalho que será usado pelo cliente e pelo servidor</li>
 <li><code>DataSK.cc</code> - deve ser compilado e lincado com o programa que proverá a infraestrutura de comunicação</li>
 </ul>
+
 <p>Contendo os seguintes items:</p>
+
 <ul>
 <li>classe <code>ServiceA</code> contendo funções estáticas e definições de tipos</li>
 <li><code>ServiceA_ptr</code> - um ponteiro para o tipo do objeto de referência</li>
 <li><code>ServiceA_var</code> - um helper para gerenciamento de memória usado por <code>ServiceA_ptr</code></li>
 <li>classe <code>POA_Service!</code> - a classe esqueleto para o servidor</li>
 </ul>
-<h5 id="datahh">Data.hh</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">85</span>  <span style="color:#75715e">// interface ServiceA
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">86</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceA</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">87</span>  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">88</span>    <span style="color:#75715e">// Declarations for this interface type.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">89</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">typedef</span> ServiceA_ptr _ptr_type;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">90</span>    <span style="color:#66d9ef">typedef</span> ServiceA_var _var_type;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">91</span>    <span style="color:#66d9ef">static</span> _ptr_type <span style="color:#a6e22e">_duplicate</span>(_ptr_type);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">92</span>    <span style="color:#66d9ef">static</span> _ptr_type <span style="color:#a6e22e">_narrow</span>(<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_ptr);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">93</span>    <span style="color:#66d9ef">static</span> _ptr_type <span style="color:#a6e22e">_unchecked_narrow</span>(<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_ptr);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">94</span>    <span style="color:#66d9ef">static</span> _ptr_type <span style="color:#a6e22e">_nil</span>();
-</code></pre></div><h5 id="dataskcc">DataSK.cc</h5>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// This file is generated by omniidl (C++ backend)- omniORB_4_2. Do not edit.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/IOP_S.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/IOP_C.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/callDescriptor.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/callHandle.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;omniORB4/objTracker.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>OMNI_USING_NAMESPACE(omni)
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>...
-</code></pre></div><h2 id="criando-o-servidor">Criando o servidor</h2>
-<h3 id="servercc">Server.cc</h3>
+
+<p><h5 id="data-hh">Data.hh</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=85}" data-lang="c++ {linenostart=85}">  // interface ServiceA
+  class ServiceA {
+  public:
+    // Declarations for this interface type.
+    typedef ServiceA_ptr _ptr_type;
+    typedef ServiceA_var _var_type;
+    static _ptr_type _duplicate(_ptr_type);
+    static _ptr_type _narrow(::CORBA::Object_ptr);
+    static _ptr_type _unchecked_narrow(::CORBA::Object_ptr);
+    static _ptr_type _nil();</code></pre></div>
+<h5 id="datask-cc">DataSK.cc</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// This file is generated by omniidl (C++ backend)- omniORB_4_2. Do not edit.
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;omniORB4/IOP_S.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;omniORB4/IOP_C.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;omniORB4/callDescriptor.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;omniORB4/callHandle.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;omniORB4/objTracker.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+OMNI_USING_NAMESPACE(omni)
+&hellip;
+</code></pre></div>
+<h2 id="criando-o-servidor">Criando o servidor</h2></p>
+
+<h3 id="server-cc">Server.cc</h3>
+
 <p>Código do servidor:</p>
-<ol>
+
+<p><ol>
 <li>Iniciar o ORB</li>
 <li>Obter a referência para o POA raiz para registra-se</li>
 <li>Vincular com o serviço de nomes</li>
 <li>Iniciar o servidor de objetos</li>
 </ol>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// Server.cc
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA_i.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#f92672">*</span>argv )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  <span style="color:#66d9ef">try</span> {
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#75715e">// (1) Iniciar o ORB
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var orb <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( argc, argv );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    <span style="color:#75715e">// (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var       obj  <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">RootPOA</span><span style="color:#e6db74">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA_var _poa <span style="color:#f92672">=</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj.in() );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    <span style="color:#75715e">// As operações definidas na interface são invocadas pelo objeto de referência.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Um instância de CRequestSocketStream_i é iniciada
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Servant_var<span style="color:#f92672">&lt;</span>CServiceA_i<span style="color:#f92672">&gt;</span> myRequestServiceA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CServiceA_i();
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#75715e">// o servidor e objetos é ativado no RootPOA
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ObjectId_var myRequestServiceA_oid <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate_object( myRequestServiceA );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>    <span style="color:#75715e">// Obtêm o objeto de referência do servidor e registra no servidor de nome
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var SA_obj <span style="color:#f92672">=</span> myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_this();
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>    <span style="color:#75715e">// Obtêm uma referência para o objeto e imprime seu IOR como string
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>String_var sior( orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>object_to_string( SA_obj.in() ) );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sior <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-</code></pre></div><div class="row">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Server.cc
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;assert.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;signal.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;CServiceA_i.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;</p>
+
+<p><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv )
+{
+  <span style="color:#66d9ef">try</span> {
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=17}" data-lang="c++ {linenostart=17}">    // (1) Iniciar o ORB
+    CORBA::ORB_var orb = CORBA::ORB_init( argc, argv );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=19}" data-lang="c++ {linenostart=19}">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+    CORBA::Object_var       obj  = orb-&gt;resolve_initial_references( &#34;RootPOA&#34; );
+    PortableServer::POA_var _poa = PortableServer::POA::_narrow( obj.in() );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=22}" data-lang="c++ {linenostart=22}">    // As operações definidas na interface são invocadas pelo objeto de referência.
+    // Um instância de CRequestSocketStream_i é iniciada
+    PortableServer::Servant_var&lt;CServiceA_i&gt; myRequestServiceA = new CServiceA_i();</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=25}" data-lang="c++ {linenostart=25}">    // o servidor e objetos é ativado no RootPOA
+    PortableServer::ObjectId_var myRequestServiceA_oid = _poa-&gt;activate_object( myRequestServiceA );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=27}" data-lang="c++ {linenostart=27}">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
+    CORBA::Object_var SA_obj = myRequestServiceA-&gt;_this();</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=29}" data-lang="c++ {linenostart=29}">    // Obtêm uma referência para o objeto e imprime seu IOR como string
+    CORBA::String_var sior( orb-&gt;object_to_string( SA_obj.in() ) );
+    cerr &lt;&lt; &#34;&#39;&#34; &lt;&lt; (char *)sior &lt;&lt; &#34;&#39;&#34; &lt;&lt; endl;</code></pre></div>
+<div class="row">
   <div class="col s12 m10 offset-m1 l8 offset-l2">
     <div class="card blue darken-5">
       <div class="card-content white-text text-darken-1">
@@ -803,58 +900,56 @@ window.MathJax = {
       </div>
     </div>
   </div>
-</div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    <span style="color:#75715e">// (3) Vincular com o serviço de nomes
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span style="color:#75715e"></span>    <span style="color:#75715e">// o serviço é definido pela diretiva InitRef e pelo identificador
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span style="color:#75715e"></span>    <span style="color:#75715e">// &#34;OmniNameService&#34; no arquivo omniORB.cfg
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj1 <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OmniNameService</span><span style="color:#e6db74">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj1.in() ) );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext_var nc <span style="color:#f92672">=</span> CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj1.in() );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( nc.in() ) );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Name name;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    name.length( <span style="color:#ae81ff">1</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>    name[<span style="color:#ae81ff">0</span>].id <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string_dup( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DataServiceName1</span><span style="color:#e6db74">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    nc<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>rebind( name, SA_obj.in() );
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>    <span style="color:#75715e">//========================================================================
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span style="color:#75715e"></span>    myRequestServiceA<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>_remove_ref();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>    <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span style="color:#75715e"></span>    PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>POAManager_var pmgr <span style="color:#f92672">=</span> _poa<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>the_POAManager();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    pmgr<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>activate();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>    <span style="color:#75715e">// (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>run();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>    <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Se o ORB deixar o loop de tratamento de eventos
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Atualmente está configurado para nunca dar timeout
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span style="color:#75715e"></span>    orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>destroy();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>    <span style="color:#75715e">//
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span style="color:#75715e"></span>    free( name[<span style="color:#ae81ff">0</span>].id ); <span style="color:#75715e">// str_dup realiza um malloc internamente
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span style="color:#75715e"></span>  }
-</code></pre></div><p>Tratar as exceções:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>TRANSIENT <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught system exception TRANSIENT -- unable to contact the server.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>OBJECT_NOT_EXIST <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught system exception OBJECT_NOT_EXIST</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SystemException <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught CORBA::SystemException.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Exception <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught CORBA::Exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span>  <span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">:</span><span style="color:#f92672">:</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught omniORB::fatalException:</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  file: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.file() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  line: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.line() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  mesg: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span>  <span style="color:#66d9ef">catch</span>( ... ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught unknown exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span>}
-</code></pre></div><ul>
+</div></p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=32}" data-lang="c++ {linenostart=32}">    // (3) Vincular com o serviço de nomes
+    // o serviço é definido pela diretiva InitRef e pelo identificador
+    // &#34;OmniNameService&#34; no arquivo omniORB.cfg
+    CORBA::Object_var obj1 = orb-&gt;resolve_initial_references( &#34;OmniNameService&#34; );
+    assert( !CORBA::is_nil( obj1.in() ) );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=37}" data-lang="c++ {linenostart=37}">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
+    assert( !CORBA::is_nil( nc.in() ) );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=39}" data-lang="c++ {linenostart=39}">    CosNaming::Name name;
+    name.length( 1 );
+    name[0].id = CORBA::string_dup( &#34;DataServiceName1&#34; );
+    nc-&gt;rebind( name, SA_obj.in() );</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=43}" data-lang="c++ {linenostart=43}">    //========================================================================
+    myRequestServiceA-&gt;_remove_ref();
+    //
+    PortableServer::POAManager_var pmgr = _poa-&gt;the_POAManager();
+    pmgr-&gt;activate();
+    // (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
+    orb-&gt;run();
+    //
+    // Se o ORB deixar o loop de tratamento de eventos
+    // Atualmente está configurado para nunca dar timeout
+    orb-&gt;destroy();
+    //
+    free( name[0].id ); // str_dup realiza um malloc internamente
+  }</code></pre></div>
+<p>Tratar as exceções:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {linenostart=57}" data-lang="c++ {linenostart=57}">  catch( CORBA::TRANSIENT &amp; ) {
+    cerr &lt;&lt; &#34;Caught system exception TRANSIENT -- unable to contact the server.&#34; &lt;&lt; endl;
+  }
+  catch( CORBA::OBJECT_NOT_EXIST &amp; ) {
+    cerr &lt;&lt; &#34;Caught system exception OBJECT_NOT_EXIST&#34; &lt;&lt; endl;
+  }
+  catch( CORBA::SystemException &amp; ) {
+    cerr &lt;&lt; &#34;Caught CORBA::SystemException.&#34; &lt;&lt; endl;
+  }
+  catch( CORBA::Exception &amp; ) {
+    cerr &lt;&lt; &#34;Caught CORBA::Exception.&#34; &lt;&lt; endl;
+  }
+  catch( omniORB::fatalException &amp;fe ) {
+    cerr &lt;&lt; &#34;Caught omniORB::fatalException:&#34; &lt;&lt; endl;
+    cerr &lt;&lt; &#34;  file: &#34; &lt;&lt; fe.file() &lt;&lt; endl;
+    cerr &lt;&lt; &#34;  line: &#34; &lt;&lt; fe.line() &lt;&lt; endl;
+    cerr &lt;&lt; &#34;  mesg: &#34; &lt;&lt; fe.errmsg() &lt;&lt; endl;
+  }
+  catch( ... ) {
+    cerr &lt;&lt; &#34;Caught unknown exception.&#34; &lt;&lt; endl;
+  }
+
+  return 0;
+}</code></pre></div>
+<ul>
 <li>O POA (Portable Object Adapter) auxilia o ORB (Object Request Broker) na
 passagem das requisições do clientes para a implementação do servidor
 (servant).</li>
@@ -865,66 +960,89 @@ compatível com a especificação da OMG (Object Management Group)</li>
 <li>POA também habilita a persistência de objetos bem como dá suporte a ciclo de
 vida do serviço</li>
 </ul>
-<h2 id="implementao-do-servant">Implementação do Servant</h2>
+
+<h2 id="implementação-do-servant">Implementação do Servant</h2>
+
 <p>São denotados pelo sufixo <code>_i</code>.</p>
-<h3 id="cservicea-ihh">CServiceA_i.hh</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// CServiceA_i.hh
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CServiceA_i</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> POA_Data<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ServiceA, <span style="color:#66d9ef">public</span> PortableServer<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RefCountServantBase {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  CServiceA_i();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>CServiceA_i();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineA(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#75715e">/*in*/</span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#75715e">/*out*/</span>   CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>retNum );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineB(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2 );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>};
-</code></pre></div><h3 id="cservicea-icc">CServiceA_i.cc</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// CServiceA.cc
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CServiceA_i.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> Data;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CServiceA_i() { }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>CServiceA_i<span style="color:#f92672">:</span><span style="color:#f92672">:</span><span style="color:#f92672">~</span>CServiceA_i( <span style="color:#66d9ef">void</span> ) { }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineA(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#75715e">/*in*/</span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#75715e">/*out*/</span>   CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>retNum )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  num2   <span style="color:#f92672">=</span> num2 <span style="color:#f92672">+</span> num1;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span>  retNum <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  <span style="color:#66d9ef">return</span> true;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Boolean CallServiceRoutineB(
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num1,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long <span style="color:#f92672">&amp;</span>num2 )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span>  num1<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>  num2<span style="color:#f92672">+</span><span style="color:#f92672">+</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>  <span style="color:#66d9ef">return</span> true;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>}
-</code></pre></div><h2 id="cliente-corba">Cliente CORBA</h2>
+
+<h3 id="cservicea-i-hh">CServiceA_i.hh</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CServiceA_i.hh
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">CServiceA_i</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> POA_Data<span style="color:#f92672">::</span>ServiceA, <span style="color:#66d9ef">public</span> PortableServer<span style="color:#f92672">::</span>RefCountServantBase {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  CServiceA_i();
+  <span style="color:#66d9ef">virtual</span> <span style="color:#f92672">~</span>CServiceA_i();
+  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">::</span>Boolean CallServiceRoutineA(
+    <span style="color:#75715e">/*in*/</span>    CORBA<span style="color:#f92672">::</span>Long num1,
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num2,
+    <span style="color:#75715e">/*out*/</span>   CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>retNum );
+  <span style="color:#66d9ef">virtual</span> CORBA<span style="color:#f92672">::</span>Boolean CallServiceRoutineB(
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num1,
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num2 );
+};
+</code></pre></div>
+<h3 id="cservicea-i-cc">CServiceA_i.cc</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CServiceA.cc
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/types.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;vector&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;CServiceA_i.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> Data;
+
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;sys/wait.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+CServiceA_i<span style="color:#f92672">::</span>CServiceA_i() { }
+
+CServiceA_i<span style="color:#f92672">::~</span>CServiceA_i( <span style="color:#66d9ef">void</span> ) { }
+
+CORBA<span style="color:#f92672">::</span>Boolean CallServiceRoutineA(
+    <span style="color:#75715e">/*in*/</span>    CORBA<span style="color:#f92672">::</span>Long num1,
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num2,
+    <span style="color:#75715e">/*out*/</span>   CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>retNum )
+{
+  num2   <span style="color:#f92672">=</span> num2 <span style="color:#f92672">+</span> num1;
+  retNum <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+  <span style="color:#66d9ef">return</span> true;
+}
+
+CORBA<span style="color:#f92672">::</span>Boolean CallServiceRoutineB(
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num1,
+    <span style="color:#75715e">/*inout*/</span> CORBA<span style="color:#f92672">::</span>Long <span style="color:#f92672">&amp;</span>num2 )
+{
+  num1<span style="color:#f92672">++</span>;
+  num2<span style="color:#f92672">++</span>;
+  <span style="color:#66d9ef">return</span> true;
+}
+</code></pre></div>
+<h2 id="cliente-corba">Cliente CORBA</h2>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
   <div class="center-align">
     <figure>
       <source srcset="/img/corba-client.webp" width="1509" height="1113" type="image/webp">
@@ -932,221 +1050,233 @@ vida do serviço</li>
       <figcaption>Cliente CORBA</figcaption>
     </figure>
   </div>
-<h3 id="clientcc">Client.cc</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// Client.cc
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CRequestServiceA.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#f92672">*</span>argv )
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#75715e">// O construtor estabelece o link como o servidor CORBA.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#75715e"></span>  CRequestServiceA requestServiceA;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#66d9ef">if</span>( requestServiceA.RequestServiceARoutineA() ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ServiceA RoutineA: True</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#66d9ef">if</span>( requestServiceA.RequestServiceARoutineB() ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">ServiceA RoutineB: True</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>}
-</code></pre></div><h3 id="crrquestserviceahh">CRrquestServiceA.hh</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e">// CRrquestServiceA.hh
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;cassert&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#75715e"></span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CRequestServiceA</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  CRequestServiceA();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#f92672">~</span>CRequestServiceA();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">RequestServiceARoutineA</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">RequestServiceARoutineB</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Name m_corbaCosName;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#75715e">// CORBA ORB
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#75715e"></span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var m_orb;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var m_obj;  <span style="color:#75715e">// ORB Object
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span style="color:#75715e"></span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var m_obj1; <span style="color:#75715e">// Resolved id to object reference
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  <span style="color:#75715e">// Resolved and narrowed CORBA object for proxy calls
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span style="color:#75715e"></span>  Data<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ServiceA_var m_Data;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DS_ServerConnectionException</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  DS_ServerConnectionException()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>  {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">CORBA COMM_FAILURE</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DS_SystemException</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>  DS_SystemException()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>  {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">CORBA Exception</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DS_FatalException</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>  DS_FatalException()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>  {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">CORBA Fatal Exception</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DS_Exception</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span>  DS_Exception()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span>  {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Exception</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span>};
-</code></pre></div><h3 id="crequestserviceacc">CRequestServiceA.cc</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#75715e">// CRequestServiceA.cc
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#75715e"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#75715e">#</span><span style="color:#75715e">include</span> <span style="color:#75715e">&#34;CRequestServiceA.hh&#34;</span><span style="color:#75715e">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> Data;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>CRequestServiceA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CRequestServiceA()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>  <span style="color:#66d9ef">try</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>    <span style="color:#75715e">// Inicia o objeto ORB
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            argc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Variáveis dummy.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span><span style="color:#f92672">*</span>        argv <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_var orb  <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ORB_init( argc, argv );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>    <span style="color:#75715e">// Vincula o objeto ORB ao servidor de nome
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Deve ser o mesmo nome definido em /etc/omniORB.cfg
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj <span style="color:#f92672">=</span> orb<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve_initial_references( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">OmniNameService</span><span style="color:#e6db74">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span>    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj.in() ) );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span>    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext_var nc <span style="color:#f92672">=</span> CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NamingContext<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj.in() );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( nc.in() ) );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span>    CosNaming<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Name _corbaCosName;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span>    _corbaCosName.length( <span style="color:#ae81ff">1</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>    _corbaCosName[<span style="color:#ae81ff">0</span>].id <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>string_dup( <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">DataServiceName1</span><span style="color:#e6db74">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>    CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Object_var obj1 <span style="color:#f92672">=</span> nc<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>resolve( _corbaCosName );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span>    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( obj1.in() ) );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span>    m_Data <span style="color:#f92672">=</span> ServiceA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>_narrow( obj1.in() );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>    <span style="color:#66d9ef">if</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>is_nil( m_Data.in() ) ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>      cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">IOR is not an SA object reference.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>COMM_FAILURE <span style="color:#f92672">&amp;</span>ex ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught system exception COMM_FAILURE -- unable to contact the </span><span style="color:#e6db74">&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>         <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">object.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_ServerConnectionException</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span>    <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>SystemException <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught a CORBA::SystemException.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_SystemException</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span>    <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Exception <span style="color:#f92672">&amp;</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught CORBA::Exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_Exception</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>    <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span>  <span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">:</span><span style="color:#f92672">:</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught omniORB::fatalException:</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  file: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.file() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  line: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.line() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">  mesg: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_FatalException</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>    <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span>  <span style="color:#66d9ef">catch</span>( ... ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span>    cerr <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Caught unknown exception.</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span>    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_Exception</span>();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>    <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>  <span style="color:#66d9ef">return</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span>CRequestServiceA<span style="color:#f92672">:</span><span style="color:#f92672">:</span><span style="color:#f92672">~</span>CRequestServiceA()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>  <span style="color:#75715e">// ...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span><span style="color:#75715e"></span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span style="color:#66d9ef">bool</span> CRequestServiceA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RequestServiceARoutineA()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long retNum;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span>  cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Valores de entrada para a rotina A do serviço A: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num1 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num2 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> retNum <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span>  <span style="color:#75715e">// Esta chamada CORBA será executada remotamente
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>( m_Data<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>CallServiceRoutineA( num1, num2, retNum ) ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Valores retornados pelo serviço A: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num1 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num2 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> retNum <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>    <span style="color:#66d9ef">return</span> true;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span>  <span style="color:#66d9ef">return</span> false;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span><span style="color:#66d9ef">bool</span> CRequestServiceA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>RequestServiceARoutineB()
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span>  CORBA<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Long num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span>  cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Valores de entrada para a rotina B do serviço A: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num1 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num2 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span>  <span style="color:#75715e">// Esta chamada CORBA será executada remotamente
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>( m_Data<span style="color:#f92672">-</span><span style="color:#f92672">&gt;</span>CallServiceRoutineB( num1, num2 ) ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>    cout <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Valores retornados pelo serviço B: </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num1 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74"> </span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> num2 <span style="color:#f92672">&lt;</span><span style="color:#f92672">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>    <span style="color:#66d9ef">return</span> true;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span>  }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span>  <span style="color:#66d9ef">return</span> false;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>}
-</code></pre></div><h2 id="makefile">Makefile</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-makefile" data-lang="makefile"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#75715e"># Makefile
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#75715e"></span>LDFLAGS<span style="color:#f92672">+=</span>-lomniORB4 -lomnithread -lomniDynamic4
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>CXXFLAGS<span style="color:#f92672">+=</span>-Wall
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> server client
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> DataSK.o CServiceA_i.o Server.o
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>	<span style="color:#66d9ef">$(</span>CXX<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CXXFLAGS<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>	rm -f *.o
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>	rm -f server
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#a6e22e">client</span><span style="color:#f92672">:</span> DataSK.o Client.o CRequestServiceA.o
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>	<span style="color:#66d9ef">$(</span>CXX<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CXXFLAGS<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
-</code></pre></div><p>This is the value of CORBA. This is why we use CORBA. Look at how simple the program looks. The constructor establishes the link with the CORBA server. The subsequent calls to Routine A and B are processed remotely on the CORBA server but called like any other local function call.</p>
+
+<p><h3 id="client-cc">Client.cc</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Client.cc
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;CRequestServiceA.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>( <span style="color:#66d9ef">int</span> argc, <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>argv )
+{
+  <span style="color:#75715e">// O construtor estabelece o link como o servidor CORBA.
+</span><span style="color:#75715e"></span>  CRequestServiceA requestServiceA;</p>
+
+<p><span style="color:#66d9ef">if</span>( requestServiceA.RequestServiceARoutineA() ) {
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;ServiceA RoutineA: True&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  }
+  <span style="color:#66d9ef">if</span>( requestServiceA.RequestServiceARoutineB() ) {
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;ServiceA RoutineB: True&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div>
+<h3 id="crrquestservicea-hh">CRrquestServiceA.hh</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CRrquestServiceA.hh
+</span><span style="color:#75715e"></span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Data.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;cassert&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;fstream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;</p>
+
+<p><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">CRequestServiceA</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  CRequestServiceA();
+  <span style="color:#f92672">~</span>CRequestServiceA();
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">RequestServiceARoutineA</span>();
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">RequestServiceARoutineB</span>();</p>
+
+<p>CosNaming<span style="color:#f92672">::</span>Name m_corbaCosName;</p>
+
+<p><span style="color:#75715e">// CORBA ORB
+</span><span style="color:#75715e"></span>  CORBA<span style="color:#f92672">::</span>ORB_var m_orb;</p>
+
+<p>CORBA<span style="color:#f92672">::</span>Object_var m_obj;  <span style="color:#75715e">// ORB Object
+</span><span style="color:#75715e"></span>  CORBA<span style="color:#f92672">::</span>Object_var m_obj1; <span style="color:#75715e">// Resolved id to object reference
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// Resolved and narrowed CORBA object for proxy calls
+</span><span style="color:#75715e"></span>  Data<span style="color:#f92672">::</span>ServiceA_var m_Data;
+};</p>
+
+<p><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">DS_ServerConnectionException</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  DS_ServerConnectionException()
+  {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;CORBA COMM_FAILURE&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  };
+};</p>
+
+<p><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">DS_SystemException</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  DS_SystemException()
+  {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;CORBA Exception&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  };
+};</p>
+
+<p><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">DS_FatalException</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  DS_FatalException()
+  {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;CORBA Fatal Exception&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  };
+};</p>
+
+<p><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">DS_Exception</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  DS_Exception()
+  {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Exception&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+  };
+};
+</code></pre></div>
+<h3 id="crequestservicea-cc">CRequestServiceA.cc</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// CRequestServiceA.cc
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;CRequestServiceA.hh&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> Data;</p>
+
+<p>CRequestServiceA<span style="color:#f92672">::</span>CRequestServiceA()
+{
+  <span style="color:#66d9ef">try</span> {
+    <span style="color:#75715e">// Inicia o objeto ORB
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span>            argc <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#75715e">// Variáveis dummy.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">**</span>        argv <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    CORBA<span style="color:#f92672">::</span>ORB_var orb  <span style="color:#f92672">=</span> CORBA<span style="color:#f92672">::</span>ORB_init( argc, argv );</p>
+
+<pre><code>&lt;span style=&quot;color:#75715e&quot;&gt;// Vincula o objeto ORB ao servidor de nome
+</code></pre>
+
+<p></span><span style="color:#75715e"></span>    <span style="color:#75715e">// Deve ser o mesmo nome definido em /etc/omniORB.cfg
+</span><span style="color:#75715e"></span>    CORBA<span style="color:#f92672">::</span>Object_var obj <span style="color:#f92672">=</span> orb<span style="color:#f92672">-&gt;</span>resolve_initial_references( <span style="color:#e6db74">&#34;OmniNameService&#34;</span> );
+    assert( <span style="color:#f92672">!</span>CORBA<span style="color:#f92672">::</span>is_nil( obj.in() ) );</p>
+
+<pre><code>CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;NamingContext_var nc &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;NamingContext&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;_narrow( obj.in() );
+assert( &lt;span style=&quot;color:#f92672&quot;&gt;!&lt;/span&gt;CORBA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;is_nil( nc.in() ) );
+
+CosNaming&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;Name _corbaCosName;
+_corbaCosName.length( &lt;span style=&quot;color:#ae81ff&quot;&gt;1&lt;/span&gt; );
+_corbaCosName[&lt;span style=&quot;color:#ae81ff&quot;&gt;0&lt;/span&gt;].id &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; CORBA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;string_dup( &lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;DataServiceName1&amp;#34;&lt;/span&gt; );
+
+CORBA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;Object_var obj1 &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; nc&lt;span style=&quot;color:#f92672&quot;&gt;-&amp;gt;&lt;/span&gt;resolve( _corbaCosName );
+assert( &lt;span style=&quot;color:#f92672&quot;&gt;!&lt;/span&gt;CORBA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;is_nil( obj1.in() ) );
+
+m_Data &lt;span style=&quot;color:#f92672&quot;&gt;=&lt;/span&gt; ServiceA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;_narrow( obj1.in() );
+&lt;span style=&quot;color:#66d9ef&quot;&gt;if&lt;/span&gt;( CORBA&lt;span style=&quot;color:#f92672&quot;&gt;::&lt;/span&gt;is_nil( m_Data.in() ) ) {
+  cerr &lt;span style=&quot;color:#f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&quot;color:#e6db74&quot;&gt;&amp;#34;IOR is not an SA object reference.&amp;#34;&lt;/span&gt; &lt;span style=&quot;color:#f92672&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; endl;
+}
+</code></pre>
+
+<p>}
+  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">::</span>COMM_FAILURE <span style="color:#f92672">&amp;</span>ex ) {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Caught system exception COMM_FAILURE &ndash; unable to contact the &#34;</span>
+         <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;object.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_ServerConnectionException</span>();
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">::</span>SystemException <span style="color:#f92672">&amp;</span> ) {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Caught a CORBA::SystemException.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_SystemException</span>();
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#66d9ef">catch</span>( CORBA<span style="color:#f92672">::</span>Exception <span style="color:#f92672">&amp;</span> ) {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Caught CORBA::Exception.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_Exception</span>();
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#66d9ef">catch</span>( omniORB<span style="color:#f92672">::</span>fatalException <span style="color:#f92672">&amp;</span>fe ) {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Caught omniORB::fatalException:&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;  file: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> fe.file() <span style="color:#f92672">&lt;&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;  line: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> fe.line() <span style="color:#f92672">&lt;&lt;</span> endl;
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;  mesg: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> fe.errmsg() <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_FatalException</span>();
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#66d9ef">catch</span>( &hellip; ) {
+    cerr <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Caught unknown exception.&#34;</span> <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">DS_Exception</span>();
+    <span style="color:#66d9ef">return</span>;
+  }
+  <span style="color:#66d9ef">return</span>;
+}</p>
+
+<p>CRequestServiceA<span style="color:#f92672">::~</span>CRequestServiceA()
+{
+  <span style="color:#75715e">// &hellip;
+</span><span style="color:#75715e"></span>}</p>
+
+<p><span style="color:#66d9ef">bool</span> CRequestServiceA<span style="color:#f92672">::</span>RequestServiceARoutineA()
+{
+  CORBA<span style="color:#f92672">::</span>Long num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+  CORBA<span style="color:#f92672">::</span>Long num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+  CORBA<span style="color:#f92672">::</span>Long retNum;</p>
+
+<p>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Valores de entrada para a rotina A do serviço A: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num2 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> retNum <span style="color:#f92672">&lt;&lt;</span> endl;</p>
+
+<p><span style="color:#75715e">// Esta chamada CORBA será executada remotamente
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>( m_Data<span style="color:#f92672">-&gt;</span>CallServiceRoutineA( num1, num2, retNum ) ) {
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Valores retornados pelo serviço A: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num2 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> retNum <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">return</span> true;
+  }
+  <span style="color:#66d9ef">return</span> false;
+}</p>
+
+<p><span style="color:#66d9ef">bool</span> CRequestServiceA<span style="color:#f92672">::</span>RequestServiceARoutineB()
+{
+  CORBA<span style="color:#f92672">::</span>Long num1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  CORBA<span style="color:#f92672">::</span>Long num2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">50</span>;</p>
+
+<p>cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Valores de entrada para a rotina B do serviço A: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num2 <span style="color:#f92672">&lt;&lt;</span> endl;</p>
+
+<p><span style="color:#75715e">// Esta chamada CORBA será executada remotamente
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span>( m_Data<span style="color:#f92672">-&gt;</span>CallServiceRoutineB( num1, num2 ) ) {
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Valores retornados pelo serviço B: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num1 <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34; &#34;</span> <span style="color:#f92672">&lt;&lt;</span> num2 <span style="color:#f92672">&lt;&lt;</span> endl;
+    <span style="color:#66d9ef">return</span> true;
+  }
+  <span style="color:#66d9ef">return</span> false;
+}
+</code></pre></div>
+<h2 id="makefile">Makefile</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-makefile" data-lang="makefile"><span style="color:#75715e"># Makefile
+</span><span style="color:#75715e"></span>LDFLAGS<span style="color:#f92672">+=</span>-lomniORB4 -lomnithread -lomniDynamic4
+CXXFLAGS<span style="color:#f92672">+=</span>-Wall</p>
+
+<p><span style="color:#a6e22e">all</span><span style="color:#f92672">:</span> server client</p>
+
+<p><span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> DataSK.o CServiceA_i.o Server.o
+    <span style="color:#66d9ef">$(</span>CXX<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CXXFLAGS<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span></p>
+
+<p><span style="color:#a6e22e">clean</span><span style="color:#f92672">:</span>
+    rm -f *.o
+    rm -f server</p>
+
+<p><span style="color:#a6e22e">client</span><span style="color:#f92672">:</span> DataSK.o Client.o CRequestServiceA.o
+    <span style="color:#66d9ef">$(</span>CXX<span style="color:#66d9ef">)</span> <span style="color:#66d9ef">$(</span>CXXFLAGS<span style="color:#66d9ef">)</span> -o $@ $^ <span style="color:#66d9ef">$(</span>LDFLAGS<span style="color:#66d9ef">)</span>
+</code></pre></div>
+<p>This is the value of CORBA. This is why we use CORBA. Look at how simple the program looks. The constructor establishes the link with the CORBA server. The subsequent calls to Routine A and B are processed remotely on the CORBA server but called like any other local function call.</p></p>
+
 <h2 id="todo">Todo</h2>
+
 <ul>
-<li><a href="https://www.grisby.org/presentations/py10tut.pdf">https://www.grisby.org/presentations/py10tut.pdf</a></li>
-<li><a href="https://www.grisby.org/presentations/CORBAControls2002.pdf">https://www.grisby.org/presentations/CORBAControls2002.pdf</a></li>
-<li><a href="https://xennis.org/wiki/CORBA">https://xennis.org/wiki/CORBA</a> &lt;- tutorial que parece muito interessante</li>
-<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">http://www.mario-konrad.ch/blog/programming/connect_orbs.html</a></li>
-<li><a href="https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf">https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf</a></li>
+<li><a href="https://www.grisby.org/presentations/py10tut.pdf" target="_blank">https://www.grisby.org/presentations/py10tut.pdf</a></li>
+<li><a href="https://www.grisby.org/presentations/CORBAControls2002.pdf" target="_blank">https://www.grisby.org/presentations/CORBAControls2002.pdf</a></li>
+<li><a href="https://xennis.org/wiki/CORBA" target="_blank">https://xennis.org/wiki/CORBA</a> &lt;- tutorial que parece muito interessante</li>
+<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html" target="_blank">http://www.mario-konrad.ch/blog/programming/connect_orbs.html</a></li>
+<li><a href="https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf" target="_blank">https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf</a></li>
 </ul>
-<h2 id="referncias">Referências</h2>
+
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>
-<li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></li>
-<li><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf">O Adaptador de Objetos e Interoperabilidade CORBA</a></li>
-<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">CORBA Tutorial: Connecting 3 ORBs</a></li>
-<li><a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a></li>
-<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniidl.html">The omniORB IDL Compiler</a></li>
-<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniNames.html">The omniNames CORBA Naming Service</a></li>
-<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omnithread.html">The OMNI Thread Abstraction</a></li>
-<li>(local) <a href="file:///usr/share/doc/omniorb-doc/utilities.html">The omniORB utilities</a></li>
-<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniORB/index.html">The omniORB version 4.2 Users’ Guide</a></li>
+<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf" target="_blank">Introduction to Distributed Computing using CORBA</a></li>
+<li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html" target="_blank">CORBA, C++ and Linux</a></li>
+<li><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf" target="_blank">O Adaptador de Objetos e Interoperabilidade CORBA</a></li>
+<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html" target="_blank">CORBA Tutorial: Connecting 3 ORBs</a></li>
+<li><a href="https://www.grisby.org/presentations/accu2003.pdf" target="_blank">CORBA? Isn’ t that Obsolete ?</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniidl.html" target="_blank">The omniORB IDL Compiler</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniNames.html" target="_blank">The omniNames CORBA Naming Service</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omnithread.html" target="_blank">The OMNI Thread Abstraction</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/utilities.html" target="_blank">The omniORB utilities</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniORB/index.html" target="_blank">The omniORB version 4.2 Users’ Guide</a></li>
 </ul>
 
         </div>
@@ -1378,7 +1508,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>C&#43;&#43; - Ordernação | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-sort/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -52,9 +52,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -132,9 +137,7 @@ if (!doNotTrack) {
         
         
             
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
-                </div>
+              
 
 
         <h1>C&#43;&#43; - Ordernação</h1>
@@ -145,18 +148,21 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#estatsticas">Estatísticas</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#bubble-sort">Bubble sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#quick-sort">Quick sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#select-sort">Select sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#shell-sort">Shell sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#merge-sort">Merge sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#insert-sort">Insert sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#heap-sort">Heap sort</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#binary-search">Binary search</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#comparao">Comparação</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-sort/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#estatísticas">Estatísticas</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#bubble-sort">Bubble sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#quick-sort">Quick sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#select-sort">Select sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#shell-sort">Shell sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#merge-sort">Merge sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#insert-sort">Insert sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#heap-sort">Heap sort</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#binary-search">Binary search</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#comparação">Comparação</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-sort/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -164,7 +170,8 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="estatsticas">Estatísticas</h2>
+        <h2 id="estatísticas">Estatísticas</h2>
+
 <table>
 <thead>
 <tr>
@@ -176,6 +183,7 @@ if (!doNotTrack) {
 <th>Tempo ms</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>Bubble sort</td>
@@ -185,6 +193,7 @@ if (!doNotTrack) {
 <td>0</td>
 <td>110</td>
 </tr>
+
 <tr>
 <td>Cocktail Shaker sort</td>
 <td align="right">2.097.152</td>
@@ -193,6 +202,7 @@ if (!doNotTrack) {
 <td>0</td>
 <td>109</td>
 </tr>
+
 <tr>
 <td>Gnome sort</td>
 <td align="right">2.002.322</td>
@@ -201,6 +211,7 @@ if (!doNotTrack) {
 <td>0</td>
 <td>106</td>
 </tr>
+
 <tr>
 <td>Odd-Even sort</td>
 <td align="right">2.057.262</td>
@@ -209,6 +220,7 @@ if (!doNotTrack) {
 <td>0</td>
 <td>112</td>
 </tr>
+
 <tr>
 <td>Comb sort</td>
 <td align="right">58.752</td>
@@ -219,47 +231,69 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p>Os dados desta tabela forma tirados do vídeo <a href="https://www.youtube.com/watch?v=FZ8FaztJGEo">https://www.youtube.com/watch?v=FZ8FaztJGEo</a></p>
+
+<p>Os dados desta tabela forma tirados do vídeo <a href="https://www.youtube.com/watch?v=FZ8FaztJGEo" target="_blank">https://www.youtube.com/watch?v=FZ8FaztJGEo</a></p>
+
 <h2 id="bubble-sort">Bubble sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/lyZQPjUT5B4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/lyZQPjUT5B4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="quick-sort">Quick sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/ywWBy6J5gz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/ywWBy6J5gz8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="select-sort">Select sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/Ns4TPTC8whw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/Ns4TPTC8whw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="shell-sort">Shell sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/CmPA7zE8mx0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/CmPA7zE8mx0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="merge-sort">Merge sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/XaqR3G_NVoo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/XaqR3G_NVoo" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="insert-sort">Insert sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/ROalU379l3U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/ROalU379l3U" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="heap-sort">Heap sort</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/Xw2D9aJRBY4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/Xw2D9aJRBY4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
+
 <h2 id="binary-search">Binary search</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/iP897Z5Nerk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/iP897Z5Nerk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-<h2 id="comparao">Comparação</h2>
+
+<h2 id="comparação">Comparação</h2>
+
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/DSMCZZGbZo4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="//www.youtube.com/embed/DSMCZZGbZo4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-<h2 id="referncias">Referências</h2>
+
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="https://github.com/BonzaiThePenguin/WikiSort">Fast and stable sort algorithm that uses O(1) memory. Public domain.</a></li>
+<li><a href="https://github.com/BonzaiThePenguin/WikiSort" target="_blank">Fast and stable sort algorithm that uses O(1) memory. Public domain.</a></li>
 </ul>
+
         </div>
 
         
@@ -489,7 +523,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

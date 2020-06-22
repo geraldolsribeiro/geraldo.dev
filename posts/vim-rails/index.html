@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Vim com rails | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-rails/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,9 +54,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -153,7 +158,8 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <p><a href="https://github.com/tpope/vim-rails">https://github.com/tpope/vim-rails</a></p>
+        <p><a href="https://github.com/tpope/vim-rails" target="_blank">https://github.com/tpope/vim-rails</a></p>
+
 <ul>
 <li><code>gf</code> considers context and knows about partials, fixtures, and much more.  There are two commands,</li>
 <li><code>:A</code> (alternate) and</li>
@@ -163,53 +169,48 @@ helper, and controller to functional test.  Commands like</li>
 <li><code>:Eview</code>,</li>
 <li><code>:Econtroller</code></li>
 </ul>
+
 <p>are provided to <code>:edit</code> files by type, along with <code>S</code>, <code>V</code>, and <code>T</code> variants for <code>:split</code>, <code>:vsplit</code>, and
-<code>:tabedit</code>.  Throw a bang on the end (<code>:Emodel foo!</code>) to automatically
-create the file with the standard boilerplate if it doesn't exist.
-<code>:help rails-navigation</code></p>
+  <code>:tabedit</code>.  Throw a bang on the end (<code>:Emodel foo!</code>) to automatically
+  create the file with the standard boilerplate if it doesn&rsquo;t exist.
+  <code>:help rails-navigation</code></p>
+
 <ul>
-<li>
-<p>Enhanced syntax highlighting.  From <code>has_and_belongs_to_many</code> to
-<code>distance_of_time_in_words</code>, it's here.</p>
-</li>
-<li>
-<p>Interface to rake.  Use <code>:Rake</code> to run the current test, spec, or
+<li><p>Enhanced syntax highlighting.  From <code>has_and_belongs_to_many</code> to
+<code>distance_of_time_in_words</code>, it&rsquo;s here.</p></li>
+
+<li><p>Interface to rake.  Use <code>:Rake</code> to run the current test, spec, or
 feature.  Use <code>:.Rake</code> to do a focused run of just the method,
 example, or scenario on the current line.  <code>:Rake</code> can also run
 arbitrary migrations, load individual fixtures, and more.
-<code>:help rails-rake</code></p>
-</li>
-<li>
-<p>Interface to the <code>rails</code> command.  Generally, use <code>:Rails console</code> to
+<code>:help rails-rake</code></p></li>
+
+<li><p>Interface to the <code>rails</code> command.  Generally, use <code>:Rails console</code> to
 call <code>rails console</code>.  Many commands have wrappers with additional features:
 <code>:Rgenerate controller Blog</code> generates a blog controller and loads the
 generated files into the quickfix list, and <code>:Rrunner</code> wraps <code>rails runner</code>
-and doubles as a direct test runner.  <code>:help rails-scripts</code></p>
-</li>
-<li>
-<p>Partial and concern extraction.  In a view, <code>:Rextract {file}</code>
+and doubles as a direct test runner.  <code>:help rails-scripts</code></p></li>
+
+<li><p>Partial and concern extraction.  In a view, <code>:Rextract {file}</code>
 replaces the desired range (typically selected in visual line mode)
 with <code>render '{file}'</code>, which is automatically created with your
 content.  In a model or controller, a concern is created, with the
 appropriate <code>include</code> declaration left behind.
-<code>:help rails-:Rextract</code></p>
-</li>
-<li>
-<p>Fully customizable. Define &ldquo;projections&rdquo; at the global, app, or gem
+<code>:help rails-:Rextract</code></p></li>
+
+<li><p>Fully customizable. Define &ldquo;projections&rdquo; at the global, app, or gem
 level to define navigation commands and override the alternate file,
 default rake task, syntax highlighting, abbreviations, and more.
-<code>:help rails-projections</code>.</p>
-</li>
-<li>
-<p>Integration with other plugins.  If
-<a href="http://www.vim.org/scripts/script.php?script_id=356">dbext.vim</a> is
+<code>:help rails-projections</code>.</p></li>
+
+<li><p>Integration with other plugins.  If
+<a href="http://www.vim.org/scripts/script.php?script_id=356" target="_blank">dbext.vim</a> is
 installed, it will be transparently configured to reflect
 <code>database.yml</code>.  Users of
-<a href="https://github.com/tpope/vim-abolish">abolish.vim</a> get pluralize and
+<a href="https://github.com/tpope/vim-abolish" target="_blank">abolish.vim</a> get pluralize and
 tableize coercions, and users of
-<a href="https://github.com/tpope/vim-bundler">bundler.vim</a> get a smattering of
-features.  <code>:help rails-integration</code></p>
-</li>
+<a href="https://github.com/tpope/vim-bundler" target="_blank">bundler.vim</a> get a smattering of
+features.  <code>:help rails-integration</code></p></li>
 </ul>
 
         </div>
@@ -441,7 +442,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Otimizando código com clang-tidy | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/clang-tidy/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -52,9 +52,14 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9e3ce174be768153dcf516f5eac5a7697a43da9708d5b1290103e0a7195c5a5c.css"
-      integrity="sha256-njzhdL52gVPc9Rb16sWnaXpD2pcI1bEpAQPgpxlcWlw="
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
       media="screen" async>
+
+
+
+
+
 
 
 
@@ -132,9 +137,7 @@ if (!doNotTrack) {
         
         
             
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
-                </div>
+              
               <div class="chip">
                   <a href="https://geraldo.dev/tags/clang-tidy/">clang-tidy</a>
                 </div>
@@ -148,11 +151,14 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/clang-tidy/#instalao">Instalação</a></li>
-    <li><a href="https://geraldo.dev/posts/clang-tidy/#verificadores-disponveis">Verificadores disponíveis</a></li>
-    <li><a href="https://geraldo.dev/posts/clang-tidy/#uso">Uso</a></li>
-    <li><a href="https://geraldo.dev/posts/clang-tidy/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/clang-tidy/#instalação">Instalação</a></li>
+<li><a href="https://geraldo.dev/posts/clang-tidy/#verificadores-disponíveis">Verificadores disponíveis</a></li>
+<li><a href="https://geraldo.dev/posts/clang-tidy/#uso">Uso</a></li>
+<li><a href="https://geraldo.dev/posts/clang-tidy/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -160,41 +166,42 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="instalao">Instalação</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt-get install clang-tidy
-</code></pre></div><h2 id="verificadores-disponveis">Verificadores disponíveis</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>clang-tidy --list-checks -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*&#39;</span> | grep <span style="color:#e6db74">&#34;modernize&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>    modernize-avoid-bind
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    modernize-deprecated-headers
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    modernize-loop-convert
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    modernize-make-shared
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    modernize-make-unique
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    modernize-pass-by-value
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    modernize-raw-string-literal
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    modernize-redundant-void-arg
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    modernize-replace-auto-ptr
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    modernize-replace-random-shuffle
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>    modernize-return-braced-init-list
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    modernize-shrink-to-fit
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    modernize-unary-static-assert
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>    modernize-use-auto
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    modernize-use-bool-literals
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    modernize-use-default-member-init
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    modernize-use-emplace
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>    modernize-use-equals-default
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    modernize-use-equals-delete
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>    modernize-use-noexcept
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>    modernize-use-nullptr
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    modernize-use-override
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    modernize-use-transparent-functors
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    modernize-use-uncaught-exceptions
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    modernize-use-using
-</code></pre></div><h2 id="uso">Uso</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>clang-tidy -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;modernize-use-override&#39;</span> -fix test.cpp -- -std<span style="color:#f92672">=</span>c++11
-</code></pre></div><h2 id="referncias">Referências</h2>
+        <h2 id="instalação">Instalação</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get install clang-tidy</code></pre></div>
+<h2 id="verificadores-disponíveis">Verificadores disponíveis</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clang-tidy --list-checks -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;*&#39;</span> | grep <span style="color:#e6db74">&#34;modernize&#34;</span>
+    modernize-avoid-bind
+    modernize-deprecated-headers
+    modernize-loop-convert
+    modernize-make-shared
+    modernize-make-unique
+    modernize-pass-by-value
+    modernize-raw-string-literal
+    modernize-redundant-void-arg
+    modernize-replace-auto-ptr
+    modernize-replace-random-shuffle
+    modernize-return-braced-init-list
+    modernize-shrink-to-fit
+    modernize-unary-static-assert
+    modernize-use-auto
+    modernize-use-bool-literals
+    modernize-use-default-member-init
+    modernize-use-emplace
+    modernize-use-equals-default
+    modernize-use-equals-delete
+    modernize-use-noexcept
+    modernize-use-nullptr
+    modernize-use-override
+    modernize-use-transparent-functors
+    modernize-use-uncaught-exceptions
+    modernize-use-using</code></pre></div>
+<h2 id="uso">Uso</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">clang-tidy -checks<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;modernize-use-override&#39;</span> -fix test.cpp -- -std<span style="color:#f92672">=</span>c++11</code></pre></div>
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="http://clang.llvm.org/extra/clang-tidy/">Extra Clang Tools 10 documentation - CLANG-TIDY</a></li>
-<li><a href="https://github.com/KratosMultiphysics/Kratos/wiki/How-to-use-Clang-Tidy-to-automatically-correct-code">How to use Clang Tidy to automatically correct code</a></li>
+<li><a href="http://clang.llvm.org/extra/clang-tidy/" target="_blank">Extra Clang Tools 10 documentation - CLANG-TIDY</a></li>
+<li><a href="https://github.com/KratosMultiphysics/Kratos/wiki/How-to-use-Clang-Tidy-to-automatically-correct-code" target="_blank">How to use Clang Tidy to automatically correct code</a></li>
 </ul>
 
         </div>
@@ -426,7 +433,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

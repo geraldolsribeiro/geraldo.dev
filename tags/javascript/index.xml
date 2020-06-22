@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>javascript on geraldo.dev</title>
+    <title>Javascript on geraldo.dev</title>
     <link>https://geraldo.dev/tags/javascript/</link>
-    <description>Recent content in javascript on geraldo.dev</description>
+    <description>Recent content in Javascript on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/js-eventos/</guid>
-      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline 1&amp;lt;h1 onclick=&amp;#34;this.</description>
+      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline &amp;lt;h1 onclick=&amp;#34;this.</description>
     </item>
     
     <item>
@@ -28,7 +28,7 @@
       
       <guid>https://geraldo.dev/posts/js-set/</guid>
       <description>https://alligator.io/js/sets-introduction/
-1let animals = new Set(); 2 3animals.add(&amp;#39;🐷&amp;#39;); 4animals.add(&amp;#39;🐼&amp;#39;); 5animals.add(&amp;#39;🐢&amp;#39;); 6animals.add(&amp;#39;🐿&amp;#39;); 7console.log(animals.size); // 4 8animals.add(&amp;#39;🐼&amp;#39;); 9console.log(animals.size); // 4 10 11console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true 12animals.delete(&amp;#39;🐷&amp;#39;); 13console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false 14 15animals.forEach(animal =&amp;gt; { 16 console.log(\`Hey ${animal}!\`); 17}); 1819// Hey 🐼! 20// Hey 🐢! 21// Hey 🐿! 2223animals.clear(); 24console.log(animals.size); // 0 1let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); 2 3myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); 4myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); 5console.log(myAnimals.size); // 4 6 7myAnimals.forEach(animal =&amp;gt; { 8 console.</description>
+let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log( animal ); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
     </item>
     
     <item>
@@ -38,10 +38,10 @@
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-1&amp;lt;html&amp;gt; 2 &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; 3 &amp;lt;body&amp;gt; 4 &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; 5 &amp;lt;/body&amp;gt; 6&amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
  img   Para obter o elemento do botão poderiamos fazer o seguinte:
-1var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.</description>
+var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );  Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
+Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
     </item>
     
   </channel>

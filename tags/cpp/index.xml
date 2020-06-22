@@ -24,5 +24,54 @@ Exemplo 1 Neste exemplo usaremos o método Differential Evolution (DE) que é um
 Localizar o mínimo da função $f(x) = x^2 - 5x + 6$.</description>
     </item>
     
+    <item>
+      <title>C&#43;&#43; - const_cast</title>
+      <link>https://geraldo.dev/posts/cpp-const-cast/</link>
+      <pubDate>Fri, 10 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-const-cast/</guid>
+      <description>O operadorconst_cast é utilizado para:
+ adicionar um modificador const a um tipo remover um modificador const de um tipo adicionar um modificador volatile a um tipo remover um modificador volatile de um tipo  #include &amp;lt;iostream&amp;gt;using namespace std; void f(int* p) { cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl; } int main(void) { const int a = 10; const int* b = &amp;amp;a; // A função f() espera receber um int* e não um const int*  // f(b);  int* c = const_cast&amp;lt;int*&amp;gt;(b); f(c); // Lvalue é const  // *b = 20;  // Comportamento indefinido  // *c = 30;  int a1 = 40; const int* b1 = &amp;amp;a1; int* c1 = const_cast&amp;lt;int*&amp;gt;(b1); // o inteiro a1 referenciado por c1 não foi declarado como const  *c1 = 50; return 0; }  Referências  [const_cast operator syntax(https://www.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; - Gerenciando layout em FLTK</title>
+      <link>https://geraldo.dev/posts/cpp-fltk-layout/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-fltk-layout/</guid>
+      <description>Introdução O FLTK utiliza um sistema simples, porém versátil para redimensionar interfaces.
+Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplicação composta de 9 botões com labels de 1 até 9. Note que eu criei os botões totalmente fora de ordem: 5, 2, 4, 8, 6, 1, 3, 7 e 9. Isto não importa para o layout. Todos os botões são filhos da janela principal.  Arquivo 01.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; - Ordernação</title>
+      <link>https://geraldo.dev/posts/cpp-sort/</link>
+      <pubDate>Wed, 08 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-sort/</guid>
+      <description>Estatísticas    Método Comparações Swaps Escrita Escrita auxiliar Tempo ms     Bubble sort 2.096.128 1.001.372 2.002.744 0 110   Cocktail Shaker sort 2.097.152 1.010.635 2.021.270 0 109   Gnome sort 2.002.322 1.000.141 2.000.282 0 106   Odd-Even sort 2.057.262 1.047.262 2.094.524 0 112   Comb sort 58.752 10.198 20.396 0 6    Os dados desta tabela forma tirados do vídeo https://www.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;: array</title>
+      <link>https://geraldo.dev/posts/cpp-array/</link>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-array/</guid>
+      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos #include &amp;lt;algorithm&amp;gt;#include &amp;lt;array&amp;gt;#include &amp;lt;iostream&amp;gt; using namespace std; // Multidimensionais template &amp;lt;classT, size_t ROW, size_t COL&amp;gt; using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; template &amp;lt;classT, size_t I, size_t.</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; Lambda</title>
+      <link>https://geraldo.dev/posts/cpp-lambda/</link>
+      <pubDate>Sun, 07 Jul 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-lambda/</guid>
+      <description>Funções de primeira classe Em programação funcional funções são cidadães de primeira classe, o que significa que elas se comportam com dados e suportam quaisquer operações que a linguagem permita.
+Algumas características das funções de primeira classe são:
+ atribuir uma função a uma variável passar uma função como parâmetro para outra função retornar a função como valor de outra função armazenar a função em uma estrutura de dados  Lambdas Lambdas são funções anônimas (sem um nome) definidas in-place.</description>
+    </item>
+    
   </channel>
 </rss>

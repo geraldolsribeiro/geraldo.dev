@@ -96,6 +96,15 @@ I am a teaching instructor for the following courses at University X:
     </item>
     
     <item>
+      <title>Gráficos para aplicações web com morris.js</title>
+      <link>https://geraldo.dev/posts/web-chart-morris/</link>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/web-chart-morris/</guid>
+      <description>O uso é bem simples  adicione as dependências (jquery, raphael e morris) adicione uma div adicione um script funciona bem com materializecss  &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt; new Morris... &amp;lt;/script&amp;gt; Gráfico de linha &amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;new Morris.Line({ // ID of the element in which to draw the chart.  element: &amp;#39;myfirstchart&amp;#39;, // Chart data records -- each entry in this array corresponds to a point on  // the chart.</description>
+    </item>
+    
+    <item>
       <title>Otimização numérica em C&#43;&#43;</title>
       <link>https://geraldo.dev/posts/cpp-optimlib/</link>
       <pubDate>Mon, 15 Jun 2020 00:00:00 -0300</pubDate>

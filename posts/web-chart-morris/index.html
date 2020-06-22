@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Gráficos para aplicações web com morris.js | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/web-chart-morris/">
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="22/06/2020">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/headers/plot.jpg" />
+<meta property="og:description" content="Exemplo d" /><meta property="og:url" content="https://geraldo.dev/posts/web-chart-morris/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Gráficos para aplicações web com morris.js" />
+
+
+    <meta property="og:tags" content="morris.js" />
+
+    <meta property="og:tags" content="chart" />
+
+    <meta property="og:tags" content="web" />
+
+
+
+<meta name="description" content="Exemplo d">
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
+      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
+      media="screen" async>
+
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="img/headers/plot.webp" type="image/webp">
+            <img src="img/headers/plot.jpg" class="responsive-img z-depth-3">
+          </picture>
+        </div>
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 22/Jun/2020
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 22/Jun/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+            
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/morris.js/">morris.js</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/chart/">chart</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/web/">web</a>
+                </div>
+
+
+        <h1>Gráficos para aplicações web com morris.js</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#o-uso-é-bem-simples">O uso é bem simples</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-linha">Gráfico de linha</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-área">Gráfico de Área</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-barras">Gráfico de barras</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-rosquinha">Gráfico de rosquinha</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#materialize">Materialize</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#referências">Referências</a></li>
+</ul></li>
+</ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <h2 id="o-uso-é-bem-simples">O uso é bem simples</h2>
+
+<ul>
+<li>adicione as dependências (jquery, raphael e morris)</li>
+<li>adicione uma div</li>
+<li>adicione um script</li>
+<li>funciona bem com materializecss</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&#34;</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myfirstchart&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Morris</span>...
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<h2 id="gráfico-de-linha">Gráfico de linha</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myfirstchart&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Line</span>({
+  <span style="color:#75715e">// ID of the element in which to draw the chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;myfirstchart&#39;</span>,
+  <span style="color:#75715e">// Chart data records -- each entry in this array corresponds to a point on
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// the chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> }
+  ],
+  <span style="color:#75715e">// The name of the data record attribute that contains x-values.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;year&#39;</span>,
+  <span style="color:#75715e">// A list of names of data record attributes that contain y-values.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;value&#39;</span>],
+  <span style="color:#75715e">// Labels for the ykeys -- will be displayed when you hover over the
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Value&#39;</span>]
+});
+</code></pre></div>
+<div id="myfirstchart" style="height: 250px;"></div>
+
+<script>
+if( Morris ) {
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+}
+</script>
+
+<h2 id="gráfico-de-área">Gráfico de Área</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;area-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Area</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;area-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2006&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2007&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> }
+  ],
+  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;y&#39;</span>,
+  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>],
+  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
+});
+</code></pre></div>
+<div id="area-example" style="height: 250px;"></div>
+
+<script>
+Morris.Area({
+  element: 'area-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+
+<h2 id="gráfico-de-barras">Gráfico de barras</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Bar</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2006&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2007&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> }
+  ],
+  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;y&#39;</span>,
+  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>],
+  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
+});
+</code></pre></div>
+<div id="bar-example" style="height: 250px;"></div>
+
+<script>
+Morris.Bar({
+  element: 'bar-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+
+<h2 id="gráfico-de-rosquinha">Gráfico de rosquinha</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;donut-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Donut</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;donut-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Download Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>},
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;In-Store Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>},
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Mail-Order Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}
+  ]
+});
+</code></pre></div>
+<div id="donut-example" style="height: 250px;"></div>
+
+<script>
+Morris.Donut({
+  element: 'donut-example',
+  data: [
+    {label: "Download Sales", value: 12},
+    {label: "In-Store Sales", value: 30},
+    {label: "Mail-Order Sales", value: 20}
+  ]
+});
+</script>
+
+<h2 id="materialize">Materialize</h2>
+
+<div class="row">
+
+<div class="col s12 m4">
+<div class="card hoverable">
+<div class="card-content ">
+  <div id="materialize-morris-area1-chart"></div>
+</div>
+<div class="card-action blue-grey lighten-4">
+<span class="card-title black-text">Area Chart Example</span>
+</div>
+</div>
+</div>
+
+<!-- coluna 2 -->
+
+<div class="col s12 m8">
+<div class="card hoverable">
+<div class="card-content ">
+  <div id="materialize-morris-area2-chart"></div>
+</div>
+<div class="card-action blue-grey lighten-4">
+<span class="card-title black-text">Area Chart Example</span>
+</div>
+</div>
+</div>
+
+<p></div></p>
+
+<script>
+Morris.Area({
+  element: 'materialize-morris-area1-chart',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+
+Morris.Area({
+  element: 'materialize-morris-area2-chart',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+
+<h2 id="referências">Referências</h2>
+
+<ul>
+<li><a href="http://morrisjs.github.io/morris.js/" target="_blank">morris.js - good-looking charts shouldn&rsquo;t be difficult</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/donuts.html" target="_blank">Documentação: donut</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/lines.html" target="_blank">Documentação: lines</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/bar.html" target="_blank">Documentação: bar</a></li>
+</ul>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fweb-chart-morris%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fweb-chart-morris%2f&amp;text=Gr%c3%a1ficos%20para%20aplica%c3%a7%c3%b5es%20web%20com%20morris.js"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fweb-chart-morris%2f&amp;title=Gr%c3%a1ficos%20para%20aplica%c3%a7%c3%b5es%20web%20com%20morris.js"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Gr%c3%a1ficos%20para%20aplica%c3%a7%c3%b5es%20web%20com%20morris.js&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fweb-chart-morris%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+
+
+    
+</body>
+</html>

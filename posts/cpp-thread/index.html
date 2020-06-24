@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Thread em C&#43;&#43; | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/cpp-thread/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="23/06/2020">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/headers/cpp.jpg" />
+<meta property="og:description" content="Escrevendo funções e classes para execução em paralelo." /><meta property="og:url" content="https://geraldo.dev/posts/cpp-thread/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Thread em C&#43;&#43;" />
+
+
+    <meta property="og:tags" content="C&#43;&#43;" />
+
+    <meta property="og:tags" content="cpp" />
+
+    <meta property="og:tags" content="thread" />
+
+
+
+<meta name="description" content="Escrevendo funções e classes para execução em paralelo.">
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      media="screen" async>
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    
+        <header>
+            <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="https://geraldo.dev/" class="brand-logo">geraldo.dev</a>
+
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+            
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  
+<li><a href="/">Home</a></li>
+
+<li><a href="/posts">Posts</a></li>
+
+<li><a href="/publications">Artigos</a></li>
+
+<li><a href="/projects">Projetos</a></li>
+
+
+</ul>
+
+
+        </header>
+    
+
+    
+
+    <main>
+      <div class="page container">
+
+        
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="img/headers/cpp.webp" type="image/webp">
+            <img src="img/headers/cpp.jpg" class="responsive-img z-depth-3">
+          </picture>
+        </div>
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 23/Jun/2020
+          </div>
+          
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 23/Jun/2020
+          </div>
+          
+        </div>
+
+        
+        
+        
+            
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/cpp/">cpp</a>
+                </div>
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/thread/">thread</a>
+                </div>
+
+
+        <h1>Thread em C&#43;&#43;</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-funo-sem-argumentos">Thread com função sem argumentos</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-classe-callable">Thread com classe callable</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-lambda">Thread com lambda</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceo">Tratamento de exceção</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#referncias">Referências</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <h2 id="thread-com-funo-sem-argumentos">Thread com função sem argumentos</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">foo</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>}
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span> () {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  <span style="color:#069;font-weight:bold">thread</span> t1( foo );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#09f;font-style:italic"></span>  t1.join();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
+</code></pre></div><h2 id="thread-com-classe-callable">Thread com classe callable</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CallableClass</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#078;font-weight:bold">void</span> <span style="color:#069;font-weight:bold">operator</span>()() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  CallableClass obj;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#069;font-weight:bold">thread</span> t2( obj );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  t2.join();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+</code></pre></div><h2 id="thread-com-lambda">Thread com lambda</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic">// Sintaxe
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) -&gt; ret { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]{ body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#069;font-weight:bold">thread</span> t3( []{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  } );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  t3.join();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
+</code></pre></div><h2 id="join-detach-e-terminate">Join, detach e terminate</h2>
+<ul>
+<li>Uma thread representa um objeto de execução em nível de hardware e está num estado chamado <em>joinable</em></li>
+<li>A opções no estado <em>joinable</em> são:
+<ul>
+<li><code>join</code> - introduz um ponto de sincronismo e bloqueia a execução</li>
+<li><code>detach</code> - faz a execução continuar em modo independente</li>
+</ul>
+</li>
+<li>Após esta escolha a thread se torna <em>non joinable</em></li>
+<li>Se esquecer de realizar o join ou detach a função <code>std::terminate</code> será chamada pelo destrutor</li>
+<li>Um programa com <code>std::terminate</code> é considerado não seguro.</li>
+</ul>
+<h2 id="tratamento-de-exceo">Tratamento de exceção</h2>
+<p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
+<strong>RAII - Resource acquisition is initialization</strong>.</p>
+<p>RAII:</p>
+<ul>
+<li><em>Construtor adquire os recursos</em></li>
+<li><em>Destrutor libera os recursos</em></li>
+</ul>
+<p>Exemplo de código com problema:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Algum erro antes do join/detach</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  t4.join(); <span style="color:#09f;font-style:italic">// esta linha nunca vai ser executada
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
+sempre executado quando o objeto sair do contexto.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ThreadGuard</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">thread</span> <span style="color:#555">&amp;</span> mThread;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#09f;font-style:italic">// garantir que não haverá conversões implícitas
+</span><span style="display:block;width:100%;background-color:#d8dada"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">explicit</span> ThreadGuard( <span style="color:#069;font-weight:bold">thread</span> <span style="color:#555">&amp;</span> t ) <span style="color:#555">:</span> mThread( t ) {  }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#09f;font-style:italic">// realiza o join pelo destrutor
+</span><span style="display:block;width:100%;background-color:#d8dada"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">~</span>ThreadGuard() { <span style="color:#069;font-weight:bold">if</span>( mThread.joinable() ) { mThread.join(); } }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#09f;font-style:italic">// não permite o uso dos contrutores de cópia e atribuição
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>    ThreadGuard( <span style="color:#069;font-weight:bold">const</span> ThreadGuard <span style="color:#555">&amp;</span> ) <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">delete</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    ThreadGuard <span style="color:#555">&amp;</span> <span style="color:#069;font-weight:bold">operator</span><span style="color:#555">=</span> ( <span style="color:#069;font-weight:bold">const</span> ThreadGuard <span style="color:#555">&amp;</span> ) <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">delete</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  ThreadGuard tg( t4 ); <span style="color:#09f;font-style:italic">// quando sair do escopo o join será chamado
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Este erro não afeta a thread acima</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
+</code></pre></div><h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
+</ul>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-thread%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-thread%2f&amp;text=Thread%20em%20C%2b%2b"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-thread%2f&amp;title=Thread%20em%20C%2b%2b"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Thread%20em%20C%2b%2b&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcpp-thread%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
+</div>
+
+
+
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
+
+      </div>
+
+    </main>
+
+
+    
+        <footer class="page-footer orange">
+  <div class="container">
+    <div class="row">
+      <div class="col l9 s12">
+        <h5 class="white-text">Você tem uma grande ideia?</h5>
+        <p class="grey-text text-lighten-4">
+          <ul>
+            
+          </ul>
+        </p>
+
+        <p class="grey-text text-lighten-4">
+          Vamos marcar um café, talvez a solução seja muito mais simples do que você imagina.
+        </p>
+      </div>
+      <div class="col l3 s12">
+        <h5 class="white-text">Contatos</h5>
+        <ul>
+        
+          <li>
+            <a class="white-text" href="https://geraldo.dev">
+              <span class="mdi mdi-24px mdi-web"></span>
+              https://geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="mailto:geraldolsribeiro@gmail.com">
+              <span class="mdi mdi-24px mdi-email"></span>
+              geraldo@intmain.io
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+              (12) 9 8230 2703
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://twitter.com/geraldo_dev">
+              <span class="mdi mdi-24px mdi-twitter"></span>
+              geraldo_dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.instagram.com/geraldo.dev/">
+              <span class="mdi mdi-24px mdi-instagram"></span>
+              geraldo.dev
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.linkedin.com/in/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-linkedin"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://www.facebook.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-facebook"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://github.com/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-github-circle"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://t.me/geraldolsribeiro">
+              <span class="mdi mdi-24px mdi-telegram"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="#ZgotmplZ">
+              <span class="mdi mdi-24px mdi-skype"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://codepen.io/geraldolsribeiro/">
+              <span class="mdi mdi-24px mdi-codepen"></span>
+              geraldolsribeiro
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro">
+              <span class="mdi mdi-24px mdi-stack-overflow"></span>
+              Stack overflow
+            </a>
+          </li>
+        
+          <li>
+            <a class="white-text" href="https://scholar.google.com.br/citations?user=qsuG5ZkAAAAJ">
+              <span class="mdi mdi-24px mdi-school"></span>
+              Google Scholar
+            </a>
+          </li>
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large waves-effect waves-light ">
+        <i class="large material-icons">chat</i>
+      </a>
+      <ul>
+        
+        
+          <li>
+              <a class="btn-floating waves-effect waves-light green darken-4"
+                title="Chame pelo whatsapp!"
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Ol%c3%a1,%20Geraldo!">
+              <span class="mdi mdi-24px mdi-whatsapp"></span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+  <div class="footer-copyright">
+    <div class="container">
+      Feito com <i class="material-icons yellow-text" style="vertical-align: middle;">favorite</i> por Geraldo Ribeiro
+    </div>
+  </div>
+</footer>
+
+    
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+    
+</body>
+</html>

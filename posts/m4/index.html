@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Preprocessador M4 | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/m4/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
-      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -148,18 +148,15 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/m4/#definindo-uma-macro">Definindo uma macro</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#definição-com-várias-linhas">Definição com várias linhas</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#passando-parâmetros">Passando parâmetros</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#condicionais">Condicionais</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#delete-tudo-até-a-próxima-nova-linha">Delete tudo até a próxima nova linha</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#incluir-um-arquivo">Incluir um arquivo</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#operações-matemáticas">Operações matemáticas</a></li>
-<li><a href="https://geraldo.dev/posts/m4/#referências">Referências</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/m4/#definindo-uma-macro">Definindo uma macro</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#definio-com-vrias-linhas">Definição com várias linhas</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#passando-parmetros">Passando parâmetros</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#condicionais">Condicionais</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#delete-tudo-at-a-prxima-nova-linha">Delete tudo até a próxima nova linha</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#incluir-um-arquivo">Incluir um arquivo</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#operaes-matemticas">Operações matemáticas</a></li>
+    <li><a href="https://geraldo.dev/posts/m4/#referncias">Referências</a></li>
+  </ul>
 
 </aside>
 
@@ -168,51 +165,42 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <p><strong>m4</strong> é uma linguagem de macro desenvolvida pelo <em>Dennis M. Ritchie</em></p>
-
 <h2 id="definindo-uma-macro">Definindo uma macro</h2>
-
 <p>O delimitador padrão é o <em>backtick</em> (<code>`</code>)  junto com o <em>single quote</em> (<code>'</code>).</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">define(`yoo&#39;,`Hello World!&#39;)
-I say this: yoo yoo yoo</code></pre></div>
-<p>Executando <code>m4 nome_do_arquivo.m4</code> temos:</p>
-
+<pre><code class="language-m4" data-lang="m4">define(`yoo',`Hello World!')
+I say this: yoo yoo yoo
+</code></pre><p>Executando <code>m4 nome_do_arquivo.m4</code> temos:</p>
 <pre><code>I say this: Hello World! Hello World! Hello World!
-</code></pre>
-
-<h2 id="definição-com-várias-linhas">Definição com várias linhas</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">define(`header&#39;,
+</code></pre><h2 id="definio-com-vrias-linhas">Definição com várias linhas</h2>
+<pre><code class="language-m4" data-lang="m4">define(`header',
 `
 &lt;html&gt;
   &lt;head&gt;
-    &lt;meta charset=&#34;utf-8&#34;/&gt;
+    &lt;meta charset=&quot;utf-8&quot;/&gt;
     &lt;title&gt;Meu título&lt;/title&gt;
   &lt;/head&gt;
-&#39;)</code></pre></div>
-<h2 id="passando-parâmetros">Passando parâmetros</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">define(`my_value&#39;,`$1_file&#39;)
-my_value(`test&#39;)</code></pre></div>
-<p>Use $1, $2, &hellip; para passar parâmetros:</p>
-
+')
+</code></pre><h2 id="passando-parmetros">Passando parâmetros</h2>
+<pre><code class="language-m4" data-lang="m4">define(`my_value',`$1_file')
+my_value(`test')
+</code></pre><p>Use $1, $2, &hellip; para passar parâmetros:</p>
 <pre><code>test_file
-</code></pre>
-
-<h2 id="condicionais">Condicionais</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">ifelse(`first_text&#39;,`second_text&#39;,`true_action&#39;,`false_action&#39;)</code></pre></div>
-<p>No exemplo abaixo se <code>my_filename</code> for <code>index.html</code> então será gerado apenas
+</code></pre><h2 id="condicionais">Condicionais</h2>
+<pre><code class="language-m4" data-lang="m4">ifelse(`first_text',`second_text',`true_action',`false_action')
+</code></pre><p>No exemplo abaixo se <code>my_filename</code> for <code>index.html</code> então será gerado apenas
 a palavra <code>Home</code>, do contrário será gerado um link apontando para <code>index.html</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">ifelse(my_filename,`index.html&#39;,`Home&#39;,`&lt;a href=&#34;/index.html&#34; title=&#34;To index page&#34;&gt;Home&lt;/a&gt;&#39;)</code></pre></div>
-<h2 id="delete-tudo-até-a-próxima-nova-linha">Delete tudo até a próxima nova linha</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">dnl uma opção para colocar comentários
-dnl ou para garantir que não tem espaços extras</code></pre></div>
-<h2 id="incluir-um-arquivo">Incluir um arquivo</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">include(filename)</code></pre></div>
-<h2 id="operações-matemáticas">Operações matemáticas</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-m4" data-lang="m4">define(decr,`eval($1-1)&#39;)</code></pre></div>
-<h2 id="referências">Referências</h2>
-
+<pre><code class="language-m4" data-lang="m4">ifelse(my_filename,`index.html',`Home',`&lt;a href=&quot;/index.html&quot; title=&quot;To index page&quot;&gt;Home&lt;/a&gt;')
+</code></pre><h2 id="delete-tudo-at-a-prxima-nova-linha">Delete tudo até a próxima nova linha</h2>
+<pre><code class="language-m4" data-lang="m4">dnl uma opção para colocar comentários
+dnl ou para garantir que não tem espaços extras
+</code></pre><h2 id="incluir-um-arquivo">Incluir um arquivo</h2>
+<pre><code class="language-m4" data-lang="m4">include(filename)
+</code></pre><h2 id="operaes-matemticas">Operações matemáticas</h2>
+<pre><code class="language-m4" data-lang="m4">define(decr,`eval($1-1)')
+</code></pre><h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://box.matto.nl/m4.html" target="_blank">Using the m4 macro processor for fun and profit</a></li>
-<li><a href="http://www.cs.stir.ac.uk/~kjt/research/pdf/expl-m4.pdf" target="_blank">Exploiting the m4 Macro Language</a></li>
+<li><a href="https://box.matto.nl/m4.html">Using the m4 macro processor for fun and profit</a></li>
+<li><a href="http://www.cs.stir.ac.uk/~kjt/research/pdf/expl-m4.pdf">Exploiting the m4 Macro Language</a></li>
 </ul>
 
         </div>
@@ -444,7 +432,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

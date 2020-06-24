@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Álgebra linear com Armadillo | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-armadillo/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -56,8 +56,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.ba0b8d14c3edd16e9097f450b458d1bc8c5ba36e89cccc575e1569bf90fd6f5e.css"
-      integrity="sha256-uguNFMPt0W6Ql/RQtFjRvIxbo26JzMxXXhVpv5D9b14="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -162,7 +162,9 @@ window.MathJax = {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/armadillo/">armadillo</a>
                 </div>
-              
+              <div class="chip">
+                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
+                </div>
               <div class="chip">
                   <a href="https://geraldo.dev/tags/cpp/">cpp</a>
                 </div>
@@ -177,14 +179,11 @@ window.MathJax = {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/cpp-armadillo/#instalação-no-debian">Instalação no Debian</a></li>
-<li><a href="https://geraldo.dev/posts/cpp-armadillo/#instalação-no-macos">Instalação no MacOS</a></li>
-<li><a href="https://geraldo.dev/posts/cpp-armadillo/#exemplos-de-uso">Exemplos de uso</a></li>
-<li><a href="https://geraldo.dev/posts/cpp-armadillo/#referências">Referências</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/cpp-armadillo/#instalao-no-debian">Instalação no Debian</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-armadillo/#instalao-no-macos">Instalação no MacOS</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-armadillo/#exemplos-de-uso">Exemplos de uso</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-armadillo/#referncias">Referências</a></li>
+  </ul>
 
 </aside>
 
@@ -203,11 +202,8 @@ a_{m,1} & a_{m,2} & \cdots & a_{m,n}
 \end{pmatrix}
 $$
 </div>
-
 <p><strong>Armadillo</strong> é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do <strong>Matlab</strong>.</p>
-
 <p>Provê suporte para:</p>
-
 <ul>
 <li>vetores (tensores de primeira ordem)</li>
 <li>matrizes (tensores de segunda ordem)</li>
@@ -219,9 +215,7 @@ $$
 <li>avaliador de expressão baseado em meta-programação</li>
 <li>paralelização (via OpenMP)</li>
 </ul>
-
 <p>Principais usos:</p>
-
 <ul>
 <li>machine learning</li>
 <li>reconhecimento de padrões</li>
@@ -231,151 +225,148 @@ $$
 <li>estatística</li>
 <li>finanças</li>
 </ul>
-
-<h2 id="instalação-no-debian">Instalação no Debian</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install libarmadillo-dev</code></pre></div>
-<h2 id="instalação-no-macos">Instalação no MacOS</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install armadillo</code></pre></div>
-<h2 id="exemplos-de-uso">Exemplos de uso</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;armadillo&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;iostream&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> std;
-<span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> arma;
-
-<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>()
-{
-  <span style="color:#75715e">// inicia o gerador de números aleatórios
-</span><span style="color:#75715e"></span>  arma_rng<span style="color:#f92672">::</span>set_seed_random();
-
-  <span style="color:#75715e">// Cria uma matriz com dados aleatório com dimensão 2x3
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">auto</span> A <span style="color:#f92672">=</span> randu( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> A <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    0.7038   0.6819   0.9555
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.3804   0.9666   0.9270
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// Transposta
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> A.t() <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    0.7526   0.5681
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.5874   0.9469
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.3562   0.9346
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// Multiplicação de matrizes
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> A.t() <span style="color:#f92672">*</span> A <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    0.0536   0.2644   0.2534
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.4731   0.3874   0.9599
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.1739   0.3313   0.4768
-</span><span style="color:#75715e"></span>
-  mat B( <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, fill<span style="color:#f92672">::</span>randu );
-  cout <span style="color:#f92672">&lt;&lt;</span> B <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    0.9563   0.8955   0.0919
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.3291   0.3086   0.3452
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.1894   0.9898   0.8642
-</span><span style="color:#75715e"></span>
-  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Determinante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> det( B ) <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// Determinante: -0.243228
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">auto</span> C <span style="color:#f92672">=</span> randu( <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> C <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    0.5561   0.6219   0.2147
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.3105   0.2813   0.9172
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.3408   0.1925   0.4703
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Determinante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> det( C ) <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// Determinante: -0.254525
-</span><span style="color:#75715e"></span>
-  mat D <span style="color:#f92672">=</span> {{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>}};
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">//    1.0000   2.0000   3.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    4.0000   5.0000   6.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    7.0000   8.0000   9.0000
-</span><span style="color:#75715e"></span>  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Determinante: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> det( D ) <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// Determinante: 6.66134e-16
-</span><span style="color:#75715e"></span>
-  D.row( <span style="color:#ae81ff">0</span> ) <span style="color:#f92672">=</span> D.row( <span style="color:#ae81ff">1</span> ) <span style="color:#f92672">+</span> D.row( <span style="color:#ae81ff">2</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000   13.0000   15.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  4.0000    5.0000    6.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  7.0000    8.0000    9.0000
-</span><span style="color:#75715e"></span>
-  D.row( <span style="color:#ae81ff">1</span> ) <span style="color:#f92672">=</span> D.row( <span style="color:#ae81ff">1</span> ) <span style="color:#f92672">*</span> <span style="color:#ae81ff">5</span>;
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000   13.0000   15.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 20.0000   25.0000   30.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//  7.0000    8.0000    9.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//
-</span><span style="color:#75715e"></span>
-  D.row( <span style="color:#ae81ff">2</span> ).zeros();
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000   13.0000   15.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 20.0000   25.0000   30.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0         0         0
-</span><span style="color:#75715e"></span>
-  D.col( <span style="color:#ae81ff">2</span> ) <span style="color:#f92672">=</span> D.col( <span style="color:#ae81ff">2</span> ) <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span>;
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000   13.0000   25.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 20.0000   25.0000   40.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0         0   10.0000
-</span><span style="color:#75715e"></span>
-  D <span style="color:#f92672">=</span> diagmat( D );
-  cout <span style="color:#f92672">&lt;&lt;</span> D <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000         0         0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0   25.0000         0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0         0   10.0000
-</span><span style="color:#75715e"></span>
-  D.save( <span style="color:#e6db74">&#34;D.bin&#34;</span> );
-
-  D.save( <span style="color:#e6db74">&#34;D.txt&#34;</span>, arma_ascii );
-  <span style="color:#75715e">// ARMA_MAT_TXT_FN008
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 3 3
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    1.10000000000000e+01   0.00000000000000e+00   0.00000000000000e+00
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.00000000000000e+00   2.50000000000000e+01   0.00000000000000e+00
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//    0.00000000000000e+00   0.00000000000000e+00   1.00000000000000e+01
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">auto</span> O <span style="color:#f92672">=</span> ones( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> O <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 1.0000   1.0000
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 1.0000   1.0000
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">auto</span> Z <span style="color:#f92672">=</span> zeros( <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> Z <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 0        0        0        0        0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 0        0        0        0        0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 0        0        0        0        0
-</span><span style="color:#75715e"></span>
-  mat F1, F2;
-  F1.load( <span style="color:#e6db74">&#34;D.bin&#34;</span> );
-  F2.load( <span style="color:#e6db74">&#34;D.txt&#34;</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> F1 <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 11.0000         0         0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0   25.0000         0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//       0         0   10.000
-</span><span style="color:#75715e"></span>
-  cout <span style="color:#f92672">&lt;&lt;</span> F1 <span style="color:#f92672">-</span> F2 <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 0        0        0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 0        0        0
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 0        0        0
-</span><span style="color:#75715e"></span>
-  mat F( <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span> );
-  F.fill( <span style="color:#ae81ff">3.14</span> );
-  cout <span style="color:#f92672">&lt;&lt;</span> F <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 3.1400   3.1400   3.1400
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 3.1400   3.1400   3.1400
-</span><span style="color:#75715e"></span>
-  F <span style="color:#f92672">=</span> F.ones();
-  F.col( <span style="color:#ae81ff">0</span> ) <span style="color:#f92672">*=</span> datum<span style="color:#f92672">::</span>pi;
-  F.col( <span style="color:#ae81ff">1</span> ) <span style="color:#f92672">*=</span> datum<span style="color:#f92672">::</span>inf;
-  F.col( <span style="color:#ae81ff">2</span> ) <span style="color:#f92672">*=</span> datum<span style="color:#f92672">::</span>nan;
-  cout <span style="color:#f92672">&lt;&lt;</span> F <span style="color:#f92672">&lt;&lt;</span> endl;
-  <span style="color:#75715e">// 3.1416      inf      nan
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">// 3.1416      inf      nan
-</span><span style="color:#75715e"></span>
-  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div>
-<h2 id="referências">Referências</h2>
-
+<h2 id="instalao-no-debian">Instalação no Debian</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install libarmadillo-dev
+</code></pre></div><h2 id="instalao-no-macos">Instalação no MacOS</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>brew install armadillo
+</code></pre></div><h2 id="exemplos-de-uso">Exemplos de uso</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  1</span><span style="color:#099">#</span><span style="color:#099">include</span> <span style="color:#099">&lt;armadillo&gt;</span><span style="color:#099">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  2</span><span style="color:#099"></span><span style="color:#099">#</span><span style="color:#099">include</span> <span style="color:#099">&lt;iostream&gt;</span><span style="color:#099">
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  3</span><span style="color:#099"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  4</span><span style="color:#069;font-weight:bold">using</span> <span style="color:#069;font-weight:bold">namespace</span> std;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  5</span><span style="color:#069;font-weight:bold">using</span> <span style="color:#069;font-weight:bold">namespace</span> arma;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  7</span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>()
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  8</span>{
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">  9</span>  <span style="color:#09f;font-style:italic">// inicia o gerador de números aleatórios
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 10</span><span style="color:#09f;font-style:italic"></span>  arma_rng<span style="color:#555">:</span><span style="color:#555">:</span>set_seed_random();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 11</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 12</span>  <span style="color:#09f;font-style:italic">// Cria uma matriz com dados aleatório com dimensão 2x3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 13</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">auto</span> A <span style="color:#555">=</span> randu( <span style="color:#f60">2</span>, <span style="color:#f60">3</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 14</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> A <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 15</span>  <span style="color:#09f;font-style:italic">//    0.7038   0.6819   0.9555
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 16</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.3804   0.9666   0.9270
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 17</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 18</span>  <span style="color:#09f;font-style:italic">// Transposta
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 19</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> A.t() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 20</span>  <span style="color:#09f;font-style:italic">//    0.7526   0.5681
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 21</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.5874   0.9469
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 22</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.3562   0.9346
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 23</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 24</span>  <span style="color:#09f;font-style:italic">// Multiplicação de matrizes
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 25</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> A.t() <span style="color:#555">*</span> A <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 26</span>  <span style="color:#09f;font-style:italic">//    0.0536   0.2644   0.2534
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 27</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.4731   0.3874   0.9599
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 28</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.1739   0.3313   0.4768
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 29</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 30</span>  mat B( <span style="color:#f60">3</span>, <span style="color:#f60">3</span>, fill<span style="color:#555">:</span><span style="color:#555">:</span>randu );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 31</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> B <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 32</span>  <span style="color:#09f;font-style:italic">//    0.9563   0.8955   0.0919
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 33</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.3291   0.3086   0.3452
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 34</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.1894   0.9898   0.8642
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 35</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 36</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Determinante: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> det( B ) <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 37</span>  <span style="color:#09f;font-style:italic">// Determinante: -0.243228
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 38</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 39</span>  <span style="color:#069;font-weight:bold">auto</span> C <span style="color:#555">=</span> randu( <span style="color:#f60">3</span>, <span style="color:#f60">3</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 40</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> C <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 41</span>  <span style="color:#09f;font-style:italic">//    0.5561   0.6219   0.2147
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 42</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.3105   0.2813   0.9172
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 43</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.3408   0.1925   0.4703
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 44</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Determinante: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> det( C ) <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 45</span>  <span style="color:#09f;font-style:italic">// Determinante: -0.254525
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 46</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 47</span>  mat D <span style="color:#555">=</span> {{<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>}, {<span style="color:#f60">4</span>, <span style="color:#f60">5</span>, <span style="color:#f60">6</span>}, {<span style="color:#f60">7</span>, <span style="color:#f60">8</span>, <span style="color:#f60">9</span>}};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 48</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 49</span>  <span style="color:#09f;font-style:italic">//    1.0000   2.0000   3.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 50</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    4.0000   5.0000   6.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 51</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    7.0000   8.0000   9.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 52</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Determinante: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> det( D ) <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 53</span>  <span style="color:#09f;font-style:italic">// Determinante: 6.66134e-16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 54</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 55</span>  D.row( <span style="color:#f60">0</span> ) <span style="color:#555">=</span> D.row( <span style="color:#f60">1</span> ) <span style="color:#555">+</span> D.row( <span style="color:#f60">2</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 56</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 57</span>  <span style="color:#09f;font-style:italic">// 11.0000   13.0000   15.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 58</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//  4.0000    5.0000    6.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 59</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//  7.0000    8.0000    9.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 60</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 61</span>  D.row( <span style="color:#f60">1</span> ) <span style="color:#555">=</span> D.row( <span style="color:#f60">1</span> ) <span style="color:#555">*</span> <span style="color:#f60">5</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 62</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 63</span>  <span style="color:#09f;font-style:italic">// 11.0000   13.0000   15.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 64</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 20.0000   25.0000   30.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 65</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//  7.0000    8.0000    9.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 66</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 67</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 68</span>  D.row( <span style="color:#f60">2</span> ).zeros();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 69</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 70</span>  <span style="color:#09f;font-style:italic">// 11.0000   13.0000   15.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 71</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 20.0000   25.0000   30.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 72</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0         0         0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 73</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 74</span>  D.col( <span style="color:#f60">2</span> ) <span style="color:#555">=</span> D.col( <span style="color:#f60">2</span> ) <span style="color:#555">+</span> <span style="color:#f60">10</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 75</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 76</span>  <span style="color:#09f;font-style:italic">// 11.0000   13.0000   25.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 77</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 20.0000   25.0000   40.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 78</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0         0   10.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 79</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 80</span>  D <span style="color:#555">=</span> diagmat( D );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 81</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> D <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 82</span>  <span style="color:#09f;font-style:italic">// 11.0000         0         0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 83</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0   25.0000         0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 84</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0         0   10.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 85</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 86</span>  D.save( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">D.bin</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 87</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 88</span>  D.save( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">D.txt</span><span style="color:#c30">&#34;</span>, arma_ascii );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 89</span>  <span style="color:#09f;font-style:italic">// ARMA_MAT_TXT_FN008
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 90</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 3 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 91</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    1.10000000000000e+01   0.00000000000000e+00   0.00000000000000e+00
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 92</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.00000000000000e+00   2.50000000000000e+01   0.00000000000000e+00
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 93</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//    0.00000000000000e+00   0.00000000000000e+00   1.00000000000000e+01
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 94</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 95</span>  <span style="color:#069;font-weight:bold">auto</span> O <span style="color:#555">=</span> ones( <span style="color:#f60">2</span>, <span style="color:#f60">2</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 96</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> O <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 97</span>  <span style="color:#09f;font-style:italic">// 1.0000   1.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 98</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 1.0000   1.0000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 99</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">100</span>  <span style="color:#069;font-weight:bold">auto</span> Z <span style="color:#555">=</span> zeros( <span style="color:#f60">3</span>, <span style="color:#f60">5</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">101</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> Z <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">102</span>  <span style="color:#09f;font-style:italic">// 0        0        0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">103</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 0        0        0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">104</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 0        0        0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">105</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">106</span>  mat F1, F2;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">107</span>  F1.load( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">D.bin</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">108</span>  F2.load( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">D.txt</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">109</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> F1 <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">110</span>  <span style="color:#09f;font-style:italic">// 11.0000         0         0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">111</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0   25.0000         0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">112</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">//       0         0   10.000
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">113</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">114</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> F1 <span style="color:#555">-</span> F2 <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">115</span>  <span style="color:#09f;font-style:italic">// 0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">116</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">117</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 0        0        0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">118</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">119</span>  mat F( <span style="color:#f60">2</span>, <span style="color:#f60">3</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">120</span>  F.fill( <span style="color:#f60">3.14</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">121</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> F <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">122</span>  <span style="color:#09f;font-style:italic">// 3.1400   3.1400   3.1400
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">123</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 3.1400   3.1400   3.1400
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">124</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">125</span>  F <span style="color:#555">=</span> F.ones();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">126</span>  F.col( <span style="color:#f60">0</span> ) <span style="color:#555">*</span><span style="color:#555">=</span> datum<span style="color:#555">:</span><span style="color:#555">:</span>pi;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">127</span>  F.col( <span style="color:#f60">1</span> ) <span style="color:#555">*</span><span style="color:#555">=</span> datum<span style="color:#555">:</span><span style="color:#555">:</span>inf;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">128</span>  F.col( <span style="color:#f60">2</span> ) <span style="color:#555">*</span><span style="color:#555">=</span> datum<span style="color:#555">:</span><span style="color:#555">:</span>nan;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">129</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> F <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">130</span>  <span style="color:#09f;font-style:italic">// 3.1416      inf      nan
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">131</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// 3.1416      inf      nan
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">132</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">133</span>  <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">134</span>}
+</code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="http://arma.sourceforge.net/" target="_blank">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
+<li><a href="http://arma.sourceforge.net/">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
 </ul>
 
         </div>
@@ -607,7 +598,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

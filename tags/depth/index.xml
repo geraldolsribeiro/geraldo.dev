@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Depth on geraldo.dev</title>
+    <title>depth on geraldo.dev</title>
     <link>https://geraldo.dev/tags/depth/</link>
-    <description>Recent content in Depth on geraldo.dev</description>
+    <description>Recent content in depth on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,10 +18,10 @@
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</guid>
-      <description> Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
+      <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
 Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
 Exemplo de uso retirado do site do mongodb:
-git clone https://github.com/mongodb/mongo-cxx-driver.git \  --branch releases/stable \  --depth 1 Referências  Installing the mongocxx driver  </description>
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  Installing the mongocxx driver  </description>
     </item>
     
   </channel>

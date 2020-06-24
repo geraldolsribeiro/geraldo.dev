@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Screensaver on geraldo.dev</title>
+    <title>screensaver on geraldo.dev</title>
     <link>https://geraldo.dev/tags/screensaver/</link>
-    <description>Recent content in Screensaver on geraldo.dev</description>
+    <description>Recent content in screensaver on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
+      <description>Instalação 1apt purge xscreensaver xscreensaver-data 2apt install light-locker Travando pelo terminal 1light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
     </item>
     
   </channel>

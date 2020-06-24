@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Console on geraldo.dev</title>
+    <title>console on geraldo.dev</title>
     <link>https://geraldo.dev/tags/console/</link>
-    <description>Recent content in Console on geraldo.dev</description>
+    <description>Recent content in console on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -19,10 +19,10 @@
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+1&amp;lt;html&amp;gt; 2 &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; 3 &amp;lt;body&amp;gt; 4 &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; 5 &amp;lt;/body&amp;gt; 6&amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
  img   Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );  Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
+1var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
+Ao enviar a variável btn para a função console.</description>
     </item>
     
   </channel>

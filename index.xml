@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>geraldo.dev</title>
@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -96,12 +96,21 @@ I am a teaching instructor for the following courses at University X:
     </item>
     
     <item>
+      <title>Thread em C&#43;&#43;</title>
+      <link>https://geraldo.dev/posts/cpp-thread/</link>
+      <pubDate>Tue, 23 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-thread/</guid>
+      <description>Thread com função sem argumentos 1void foo() { 2 cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; 3} 4 5void run () { 6 thread t1( foo ); 7 // Algum processamento... 8 t1.join(); 9} Thread com classe callable 1class CallableClass { 2 public: 3 void operator()() { 4 cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; 5 } 6}; 7 8void run() { 9 CallableClass obj; 10 thread t2( obj ); 11 // Algum processamento.</description>
+    </item>
+    
+    <item>
       <title>Gráficos para aplicações web com morris.js</title>
       <link>https://geraldo.dev/posts/web-chart-morris/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/web-chart-morris/</guid>
-      <description>O uso é bem simples  adicione as dependências (jquery, raphael e morris) adicione uma div adicione um script  &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt; new Morris... &amp;lt;/script&amp;gt; Gráfico de linha &amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;new Morris.Line({ // ID of the element in which to draw the chart.  element: &amp;#39;myfirstchart&amp;#39;, // Chart data records -- each entry in this array corresponds to a point on  // the chart.</description>
+      <description>O uso é bem simples  adicione as dependências (jquery, raphael e morris) adicione uma div adicione um script  1&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&amp;#34;&amp;gt; 2&amp;lt;script src=&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 3&amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 4&amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 1&amp;lt;script&amp;gt; 2 new Morris... 3&amp;lt;/script&amp;gt; Gráfico de linha 1&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 1new Morris.Line({ 2 // ID of the element in which to draw the chart. 3 element: &amp;#39;myfirstchart&amp;#39;, 4 // Chart data records -- each entry in this array corresponds to a point on 5 // the chart.</description>
     </item>
     
     <item>
@@ -111,7 +120,7 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/posts/cpp-optimlib/</guid>
       <description>A OptimLib é uma biblioteca C++ lightweight para otimização numérica de funções não lineares.
-Instalação da optimlib git clone https://github.com/kthohr/optim.git cd optim ./configure --header-only-version Após os comandos acima é criado um diretório chamado header_only_version. A partir daí é só incluir este diretório nos flags de compilação: -Ialgum-lugar/header_only_version
+Instalação da optimlib 1git clone https://github.com/kthohr/optim.git 2cd optim 3./configure --header-only-version Após os comandos acima é criado um diretório chamado header_only_version. A partir daí é só incluir este diretório nos flags de compilação: -Ialgum-lugar/header_only_version
 Exemplo 1 Neste exemplo usaremos o método Differential Evolution (DE) que é uma busca genética estocástica para otimização global.
 Localizar o mínimo da função $f(x) = x^2 - 5x + 6$.</description>
     </item>
@@ -122,8 +131,8 @@ Localizar o mínimo da função $f(x) = x^2 - 5x + 6$.</description>
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/docker-acesso-ssh-tunelado-para-localhost/</guid>
-      <description> Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.
-# Iniciar um tunel para redirecionamento de porta # localhost:porta remoto aponta para localhost:porta local ssh -fNTL localhost:8080:$(ssh nome-ou-ip-do-servidor \  &amp;#34;docker inspect --format &amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39; \ nome-do-container&amp;#34;):8080 nome-ou-ip-do-servidor # Abrir o navegador para acessar através do tunel xdg-open http://localhost:8080 # Terminar o tunel kill $(lsof -t -i @localhost:8080 -sTCP:listen) Referências  Connecting to the web admin interface on a remote / virtual host via SSH  </description>
+      <description>Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.
+1# Iniciar um tunel para redirecionamento de porta 2# localhost:porta remoto aponta para localhost:porta local 3ssh -fNTL localhost:8080:$(ssh nome-ou-ip-do-servidor \ 4 &amp;#34;docker inspect --format &amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39; \ 5nome-do-container&amp;#34;):8080 nome-ou-ip-do-servidor 6 7# Abrir o navegador para acessar através do tunel 8xdg-open http://localhost:8080 9 10# Terminar o tunel 11kill $(lsof -t -i @localhost:8080 -sTCP:listen) Referências  Connecting to the web admin interface on a remote / virtual host via SSH  </description>
     </item>
     
     <item>
@@ -132,10 +141,10 @@ Localizar o mínimo da função $f(x) = x^2 - 5x + 6$.</description>
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</guid>
-      <description> Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
+      <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
 Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
 Exemplo de uso retirado do site do mongodb:
-git clone https://github.com/mongodb/mongo-cxx-driver.git \  --branch releases/stable \  --depth 1 Referências  Installing the mongocxx driver  </description>
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  Installing the mongocxx driver  </description>
     </item>
     
     <item>
@@ -145,8 +154,8 @@ git clone https://github.com/mongodb/mongo-cxx-driver.git \  --branch releases/s
       
       <guid>https://geraldo.dev/posts/git-diff/</guid>
       <description>Sem espaços no final da linha ou final do arquivo O comando abaixo adiciona uma marcação no git diff no terminal ou no git gui.
-git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; Após rodar o comando acima o arquivo ~/.gitconfig é alterado para conter as seguintes linhas:
-[core] whitespace = blank-at-eol Exemplos Uma linha com espaço sobrando no final aparece assim no git gui:
+1git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; Após rodar o comando acima o arquivo ~/.gitconfig é alterado para conter as seguintes linhas:
+1[core] 2	whitespace = blank-at-eol Exemplos Uma linha com espaço sobrando no final aparece assim no git gui:
  diff no git gui.   Uma linha com espaço sobrando no final (acrescentei mais alguns) aparece assim no terminal:</description>
     </item>
     
@@ -158,7 +167,7 @@ git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; 
       <guid>https://geraldo.dev/posts/git-diff-image/</guid>
       <description>Dizer ao git que imagem é imagem Primeiro é necessário informar ao git para tratar imagens de um modo especial. Isso pode ser feito globalmente ou por projeto.
 O comando abaixo diz ao git que algumas extensões são imagens.
-git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39;cat ~/.gitattributes *.gif diff=image *.jpg diff=image *.png diff=image Dizer ao git como fazer o diff O comando abaixo diz ao git qual programa executar para fazer o diff da imagem.</description>
+1git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39; 1cat ~/.gitattributes 2*.gif diff=image 3*.jpg diff=image 4*.png diff=image Dizer ao git como fazer o diff O comando abaixo diz ao git qual programa executar para fazer o diff da imagem.</description>
     </item>
     
     <item>
@@ -178,8 +187,8 @@ Todos começando quase juntos Neste cenário o início de cada curva foi desloca
       <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/x-inverter-cores/</guid>
-      <description> Use o utilitário xcalib para inverter as cores da tela:
-apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
+      <description>Use o utilitário xcalib para inverter as cores da tela:
+1apt install xcalib 2xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
     </item>
     
     <item>
@@ -188,7 +197,7 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
       <pubDate>Tue, 11 Feb 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-visao-predefinida/</guid>
-      <description> Execute o comando cfg (Ferramentas/Configurações do Sistema) Abra o item Definições da Vistas 3D Pré-Definidas em 3D Defina os seguinte valores  Rotação ao redor do eixo visualizado X: 35.264 Rotação ao redor do eixo visualizado Y: -45 Rotação ao redor do eixo visualizado Z: 0    Comando atm    $$ \arcsin(\tan 30°) \approx 35.264 $$  </description>
+      <description> Execute o comando cfg (Ferramentas/Configurações do Sistema) Abra o item Definições da Vistas 3D Pré-Definidas em 3D Defina os seguinte valores   Rotação ao redor do eixo visualizado X: 35.264 Rotação ao redor do eixo visualizado Y: -45 Rotação ao redor do eixo visualizado Z: 0   Comando atm    $$ \arcsin(\tan 30°) \approx 35.264 $$  </description>
     </item>
     
     <item>
@@ -197,7 +206,7 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
       <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-legenda/</guid>
-      <description>Definindo arquivos de legenda  Execute o comando atm (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)   Comando atm    Clique no botão Legendas   Clicar no botão legendas    Clicar na legenda e depois em modificar legenda   Legendas padrão    Configurar a legenda   Configuração para parte   Dx = -7 Dy = 7 Arquivo = IntMainPart.</description>
+      <description>Definindo arquivos de legenda  Execute o comando atm (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)   Comando atm   Clique no botão Legendas   Clicar no botão legendas   Clicar na legenda e depois em modificar legenda   Legendas padrão   Configurar a legenda   Configuração para parte    Dx = -7 Dy = 7 Arquivo = IntMainPart.dwb Para peças   Configuração para montagem    Dx = -7 Dy = 7 Arquivo = IntMainAssembly.</description>
     </item>
     
     <item>
@@ -206,8 +215,8 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
       <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-moldura/</guid>
-      <description>Margens por tamanho de folha    Formato Margem esquerda Demais margens     A0 25 mm 10 mm   A1 25 mm 10 mm   A2 25 mm 7 mm   A3 25 mm 7 mm   A4 25 mm 5 mm    Definindo parâmetros da moldura  Execute o comando sbd (Ferramentas/Definição dos formatos de folha)
- Clicar em Definir o estilo da fronteira da folha de desenho</description>
+      <description>Margens por tamanho de folha    Formato Margem esquerda Demais margens     A0 25 mm 10 mm   A1 25 mm 10 mm   A2 25 mm 7 mm   A3 25 mm 7 mm   A4 25 mm 5 mm    Definindo parâmetros da moldura   Execute o comando sbd (Ferramentas/Definição dos formatos de folha)
+  Clicar em Definir o estilo da fronteira da folha de desenho</description>
     </item>
     
     <item>
@@ -216,7 +225,7 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
       <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-clant-tidy/</guid>
-      <description> Instalação apt-get install clang-tidy Verificadores disponíveis clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; modernize-avoid-bind modernize-deprecated-headers modernize-loop-convert modernize-make-shared modernize-make-unique modernize-pass-by-value modernize-raw-string-literal modernize-redundant-void-arg modernize-replace-auto-ptr modernize-replace-random-shuffle modernize-return-braced-init-list modernize-shrink-to-fit modernize-unary-static-assert modernize-use-auto modernize-use-bool-literals modernize-use-default-member-init modernize-use-emplace modernize-use-equals-default modernize-use-equals-delete modernize-use-noexcept modernize-use-nullptr modernize-use-override modernize-use-transparent-functors modernize-use-uncaught-exceptions modernize-use-using Uso clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
+      <description>Instalação 1apt-get install clang-tidy Verificadores disponíveis 1clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; 2 modernize-avoid-bind 3 modernize-deprecated-headers 4 modernize-loop-convert 5 modernize-make-shared 6 modernize-make-unique 7 modernize-pass-by-value 8 modernize-raw-string-literal 9 modernize-redundant-void-arg 10 modernize-replace-auto-ptr 11 modernize-replace-random-shuffle 12 modernize-return-braced-init-list 13 modernize-shrink-to-fit 14 modernize-unary-static-assert 15 modernize-use-auto 16 modernize-use-bool-literals 17 modernize-use-default-member-init 18 modernize-use-emplace 19 modernize-use-equals-default 20 modernize-use-equals-delete 21 modernize-use-noexcept 22 modernize-use-nullptr 23 modernize-use-override 24 modernize-use-transparent-functors 25 modernize-use-uncaught-exceptions 26 modernize-use-using Uso 1clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
     </item>
     
     <item>
@@ -225,10 +234,10 @@ apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </d
       <pubDate>Sun, 12 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/web-insomnia/</guid>
-      <description> Instalação Adicionar ao sources.list
-echo &amp;#34;deb https://dl.bintray.com/getinsomnia/Insomnia /&amp;#34; \  | sudo tee -a /etc/apt/sources.list.d/insomnia.list Adicionar a chave pública para verificar as assinaturas dos pacotes
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \  | sudo apt-key add - Atualizar a lista de pacotes disponíveis e instalar o pacote insomnia.
-apt-get update apt-get install insomnia Referências  Installation  </description>
+      <description>Instalação Adicionar ao sources.list
+1echo &amp;#34;deb https://dl.bintray.com/getinsomnia/Insomnia /&amp;#34; \ 2 | sudo tee -a /etc/apt/sources.list.d/insomnia.list Adicionar a chave pública para verificar as assinaturas dos pacotes
+1wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \ 2 | sudo apt-key add - Atualizar a lista de pacotes disponíveis e instalar o pacote insomnia.
+1apt-get update 2apt-get install insomnia Referências  Installation  </description>
     </item>
     
     <item>
@@ -238,7 +247,7 @@ apt-get update apt-get install insomnia Referências  Installation  </descriptio
       
       <guid>https://geraldo.dev/posts/cpp-const-cast/</guid>
       <description>O operadorconst_cast é utilizado para:
- adicionar um modificador const a um tipo remover um modificador const de um tipo adicionar um modificador volatile a um tipo remover um modificador volatile de um tipo  #include &amp;lt;iostream&amp;gt;using namespace std; void f(int* p) { cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl; } int main(void) { const int a = 10; const int* b = &amp;amp;a; // A função f() espera receber um int* e não um const int*  // f(b);  int* c = const_cast&amp;lt;int*&amp;gt;(b); f(c); // Lvalue é const  // *b = 20;  // Comportamento indefinido  // *c = 30;  int a1 = 40; const int* b1 = &amp;amp;a1; int* c1 = const_cast&amp;lt;int*&amp;gt;(b1); // o inteiro a1 referenciado por c1 não foi declarado como const  *c1 = 50; return 0; }  Referências  [const_cast operator syntax(https://www.</description>
+ adicionar um modificador const a um tipo remover um modificador const de um tipo adicionar um modificador volatile a um tipo remover um modificador volatile de um tipo  1#include &amp;lt;iostream&amp;gt;2using namespace std; 3 4void f(int* p) { 5 cout &amp;lt;&amp;lt; *p &amp;lt;&amp;lt; endl; 6} 7 8int main(void) { 9 const int a = 10; 10 const int* b = &amp;amp;a; 11 12 // A função f() espera receber um int* e não um const int* 13 // f(b); 14 15 int* c = const_cast&amp;lt;int*&amp;gt;(b); 16 f(c); 17 18 // Lvalue é const 19 // *b = 20; 20 21 // Comportamento indefinido 22 // *c = 30; 23 24 int a1 = 40; 25 const int* b1 = &amp;amp;a1; 26 int* c1 = const_cast&amp;lt;int*&amp;gt;(b1); 27 28 // o inteiro a1 referenciado por c1 não foi declarado como const 29 *c1 = 50; 30 31 return 0; 32} Referências  [const_cast operator syntax(https://www.</description>
     </item>
     
     <item>
@@ -266,7 +275,7 @@ Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplica�
       <pubDate>Mon, 06 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/docker-exportar-imagem/</guid>
-      <description> docker export nome-da-imagem &amp;gt; arquivo.tardocker export --output=&amp;#34;arquivo.tar&amp;#34; nome-da-image Nota Exte comando não salva o conteúdo dos volumes.
+      <description>1docker export nome-da-imagem &amp;gt; arquivo.tar 1docker export --output=&amp;#34;arquivo.tar&amp;#34; nome-da-image Nota Exte comando não salva o conteúdo dos volumes.
     Referências  docker export  </description>
     </item>
     
@@ -276,7 +285,7 @@ Aplicação inicial  Para demonstrar o gerenciamento do layout criei uma aplica�
       <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-array/</guid>
-      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos #include &amp;lt;algorithm&amp;gt;#include &amp;lt;array&amp;gt;#include &amp;lt;iostream&amp;gt; using namespace std; // Multidimensionais template &amp;lt;classT, size_t ROW, size_t COL&amp;gt; using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; template &amp;lt;classT, size_t I, size_t.</description>
+      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos 1#include &amp;lt;algorithm&amp;gt;2#include &amp;lt;array&amp;gt;3#include &amp;lt;iostream&amp;gt;4 5using namespace std; 6 7// Multidimensionais 8template &amp;lt;class T, size_t ROW, size_t COL&amp;gt; 9using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; 10 11template &amp;lt;class T, size_t I, size_t.</description>
     </item>
     
     <item>
@@ -295,11 +304,11 @@ Estruturas lineares de dados  Arrays Linked List - Single and Doubly Stack Queue
       <pubDate>Fri, 03 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/grafana-reset-senha-do-admin/</guid>
-      <description> Iniciar os containers
-cd /opt/docker/docker-compose-influxdb-grafana docker-compose up -d Localizar o id do container do &amp;lsquo;/run.sh&amp;rsquo;
-docker ps -a CONTAINER ID IMAGE COMMAND CREATED ... 265059f8820a grafana/grafana:latest &amp;#34;/run.sh&amp;#34; 6 seconds ago ... 637c3d25845f chronograf:latest &amp;#34;/entrypoint.sh chro…&amp;#34; 6 seconds ago ... 21b3a8d77cae influxdb:latest &amp;#34;/entrypoint.sh infl…&amp;#34; 7 seconds ago ... Abrir um shell no container do run.sh (265059f8820a)
-docker exec -ti 265059f8820a bash Trocar a senha usando o grafana-cli
-bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha INFO[01-03|16:34:42] Connecting to DB logger=sqlstore dbtype=sqlite3 INFO[01-03|16:34:42] Starting DB migration logger=migrator Admin password changed successfully ✔ Referências  Reset Grafana password when running in Docker on Raspberry Pi  </description>
+      <description>Iniciar os containers
+1cd /opt/docker/docker-compose-influxdb-grafana 2docker-compose up -d Localizar o id do container do &amp;lsquo;/run.sh&amp;rsquo;
+1docker ps -a 2CONTAINER ID IMAGE COMMAND CREATED ... 3265059f8820a grafana/grafana:latest &amp;#34;/run.sh&amp;#34; 6 seconds ago ... 4637c3d25845f chronograf:latest &amp;#34;/entrypoint.sh chro…&amp;#34; 6 seconds ago ... 521b3a8d77cae influxdb:latest &amp;#34;/entrypoint.sh infl…&amp;#34; 7 seconds ago ... Abrir um shell no container do run.sh (265059f8820a)
+1docker exec -ti 265059f8820a bash Trocar a senha usando o grafana-cli
+1 2bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha 3INFO[01-03|16:34:42] Connecting to DB logger=sqlstore dbtype=sqlite3 4INFO[01-03|16:34:42] Starting DB migration logger=migrator 5 6Admin password changed successfully ✔ Referências  Reset Grafana password when running in Docker on Raspberry Pi  </description>
     </item>
     
     <item>
@@ -308,7 +317,7 @@ bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha INFO[01-0
       <pubDate>Fri, 27 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/corba/</guid>
-      <description>Introdução O que é CORBA?  é o acrônimo para Common Object Request Broker Architecture é um framework para construção de sistemas distribuídos orientados a objetos é multiplataforma é independente de linguagem é um padrão aberto e extensível definido pela Object Management Group clientes e servidores estão em diferentes máquinas programas clientes enviam mensagens para servidores remotos como se este estivesse locais (location transparency)  O que é a OMG?</description>
+      <description>Introdução O que é CORBA?  é o acrônimo para Common Object Request Broker Architecture é um framework para construção de sistemas distribuídos orientados a objetos é multiplataforma é independente de linguagem é um padrão aberto e extensível definido pela Object Management Group clientes e servidores estão em diferentes máquinas programas clientes enviam mensagens para servidores remotos como se este estivesse locais (location transparency)  O que é a OMG?  www.</description>
     </item>
     
     <item>
@@ -319,8 +328,8 @@ bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha INFO[01-0
       <guid>https://geraldo.dev/posts/m4/</guid>
       <description>m4 é uma linguagem de macro desenvolvida pelo Dennis M. Ritchie
 Definindo uma macro O delimitador padrão é o backtick (`) junto com o single quote (&#39;).
-define(`yoo&amp;#39;,`Hello World!&amp;#39;) I say this: yoo yoo yoo Executando m4 nome_do_arquivo.m4 temos:
-I say this: Hello World! Hello World! Hello World!  Definição com várias linhas define(`header&amp;#39;, ` &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;/&amp;gt; &amp;lt;title&amp;gt;Meu título&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;#39;) Passando parâmetros define(`my_value&amp;#39;,`$1_file&amp;#39;) my_value(`test&amp;#39;) Use $1, $2, &amp;hellip; para passar parâmetros:</description>
+define(`yoo&#39;,`Hello World!&#39;) I say this: yoo yoo yoo Executando m4 nome_do_arquivo.m4 temos:
+I say this: Hello World! Hello World! Hello World! Definição com várias linhas define(`header&#39;, ` &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;/&amp;gt; &amp;lt;title&amp;gt;Meu título&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &#39;) Passando parâmetros define(`my_value&#39;,`$1_file&#39;) my_value(`test&#39;) Use $1, $2, &amp;hellip; para passar parâmetros:</description>
     </item>
     
     <item>
@@ -340,9 +349,9 @@ Provê suporte para:
       <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-dicas/</guid>
-      <description> Diferença entre dois branches &amp;ndash; somente nomes de arquivos git diff --name-only branch-1 branch-2 Status:
+      <description>Diferença entre dois branches &amp;ndash; somente nomes de arquivos 1git diff --name-only branch-1 branch-2 Status:
  M arquivos modificados A arquivos adicionados D arquivos removidos  Filtrando por estes códigos de status temos as próximas dicas.
-Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
+Listar somente os arquivos modificados entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
     </item>
     
     <item>
@@ -364,8 +373,8 @@ EMF é uma API do tipo reflection e pode ser facilmente utilizada para gerar edi
       
       <guid>https://geraldo.dev/posts/git-limpeza/</guid>
       <description>Para listar todos os branch locais que já formam mergeados no dev:
-git branch --merged dev ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando * test-naming-service testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink  Nota: O branch marcado com * é o branch atual e não deve ser removido se estiver dentro dele.
-$ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink  Passando esta lista para um xargs fica fácil executar o git branch -d para cada um dos branches mergeados.</description>
+git branch --merged dev ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando * test-naming-service testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink Nota: O branch marcado com * é o branch atual e não deve ser removido se estiver dentro dele.
+$ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink Passando esta lista para um xargs fica fácil executar o git branch -d para cada um dos branches mergeados.</description>
     </item>
     
     <item>
@@ -374,7 +383,7 @@ $ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inc
       <pubDate>Tue, 03 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/js-eventos/</guid>
-      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline &amp;lt;h1 onclick=&amp;#34;this.</description>
+      <description>Principais eventos  onBlur: remove o foco do elemento onChange: muda o valor do elemento onClick: o elemento é clicado pelo usuário onFocus: o elemento é focado onKeyPress: o usuário pressiona uma tecla sobre o elemento onLoad: carrega o elemento por completo onMouseOver: define ação quando o usuário passa o mouse sobre o elemento onMouseOut: define ação quando o usuário retira o mouse sobre o elemento onSubmit: define ação ao enviar um formulário  Eventos inline 1&amp;lt;h1 onclick=&amp;#34;this.</description>
     </item>
     
     <item>
@@ -384,7 +393,7 @@ $ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inc
       
       <guid>https://geraldo.dev/posts/js-set/</guid>
       <description>https://alligator.io/js/sets-introduction/
-let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#39;🐼&amp;#39;); animals.add(&amp;#39;🐢&amp;#39;); animals.add(&amp;#39;🐿&amp;#39;); console.log(animals.size); // 4 animals.add(&amp;#39;🐼&amp;#39;); console.log(animals.size); // 4  console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true animals.delete(&amp;#39;🐷&amp;#39;); console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false  animals.forEach(animal =&amp;gt; { console.log(\`Hey ${animal}!\`); }); // Hey 🐼! // Hey 🐢! // Hey 🐿! animals.clear(); console.log(animals.size); // 0 let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); console.log(myAnimals.size); // 4  myAnimals.forEach(animal =&amp;gt; { console.log( animal ); }); // 🐷 // 🐢 // [&amp;#34;🐨&amp;#34;, &amp;#34;🐑&amp;#34;] // Object { name: &amp;#34;Rud&amp;#34;, type: &amp;#34;🐢&amp;#34; } </description>
+1let animals = new Set(); 2 3animals.add(&amp;#39;🐷&amp;#39;); 4animals.add(&amp;#39;🐼&amp;#39;); 5animals.add(&amp;#39;🐢&amp;#39;); 6animals.add(&amp;#39;🐿&amp;#39;); 7console.log(animals.size); // 4 8animals.add(&amp;#39;🐼&amp;#39;); 9console.log(animals.size); // 4 10 11console.log(animals.has(&amp;#39;🐷&amp;#39;)); // true 12animals.delete(&amp;#39;🐷&amp;#39;); 13console.log(animals.has(&amp;#39;🐷&amp;#39;)); // false 14 15animals.forEach(animal =&amp;gt; { 16 console.log(\`Hey ${animal}!\`); 17}); 1819// Hey 🐼! 20// Hey 🐢! 21// Hey 🐿! 2223animals.clear(); 24console.log(animals.size); // 0 1let myAnimals = new Set([&amp;#39;🐷&amp;#39;, &amp;#39;🐢&amp;#39;, &amp;#39;🐷&amp;#39;, &amp;#39;🐷&amp;#39;]); 2 3myAnimals.add([&amp;#39;🐨&amp;#39;, &amp;#39;🐑&amp;#39;]); 4myAnimals.add({ name: &amp;#39;Rud&amp;#39;, type: &amp;#39;🐢&amp;#39; }); 5console.log(myAnimals.size); // 4 6 7myAnimals.forEach(animal =&amp;gt; { 8 console.</description>
     </item>
     
     <item>
@@ -393,11 +402,11 @@ let animals = new Set(); animals.add(&amp;#39;🐷&amp;#39;); animals.add(&amp;#
       <pubDate>Mon, 02 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/swap/</guid>
-      <description>Configuração atual swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
-NAME TYPE SIZE USED PRIO /dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
+      <description>Configuração atual 1swapon --show A saída do comando acima, se tiver swap configurado, será parecido com:
+1NAME TYPE SIZE USED PRIO 2/dev/sda5 partition 2,9G 1G -2 Neste caso uma partição foi utilizada para swap.
 Outro modo de verificar o swap é:
-free -h Na ausência o valor é informado como zero.
-Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
+1free -h Na ausência o valor é informado como zero.
+1Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi 2Swap: 0B 0B 0B Verificar se existe espaço disponível para criação Antes de criar o swap é necessário garantir que existe espaço em disco.</description>
     </item>
     
     <item>
@@ -407,7 +416,7 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       
       <guid>https://geraldo.dev/posts/preact/</guid>
       <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
+1&amp;lt;!DOCTYPE html&amp;gt; 2&amp;lt;html&amp;gt; 3 &amp;lt;head&amp;gt; 4 &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; 5 &amp;lt;/head&amp;gt; 6 &amp;lt;body&amp;gt; 7 &amp;lt;script src=&amp;#34;https://unpkg.</description>
     </item>
     
     <item>
@@ -418,8 +427,8 @@ Mem: 996Mi 262Mi 79Mi 40Mi 654Mi 514Mi Swap: 0B 0B 0B Verificar se existe espaç
       <guid>https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/</guid>
       <description>Frequentemente tenho colado texto no editor enquanto tentava apens clicar para posicionar o cursor. Isto ocorre no notebook em que o touchpad não tem separação tátil entre os botões. É muito fácil clicar um pouco mais para a direita e acertar o botão errado.
 Para desabilitar a função use:
-gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false Para habilitar a função use:
-gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referências  [How do I disable middle mouse button click paste?</description>
+1gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false Para habilitar a função use:
+1gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referências  [How do I disable middle mouse button click paste?</description>
     </item>
     
     <item>
@@ -429,8 +438,8 @@ gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referên
       
       <guid>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</guid>
       <description>Escrever um arquivo .gitattributes contendo:
-*.java filter=clang-format-java Acrescentar os operações clean e smudge
-git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
+1*.java filter=clang-format-java Acrescentar os operações clean e smudge
+1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
     </item>
     
     <item>
@@ -439,8 +448,8 @@ git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume
       <pubDate>Sun, 17 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/firewall/</guid>
-      <description>Instalação apt install ufw Status ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
-ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6)  Listando aplicações ufw app list ufw app info OpenSSH Liberando algumas aplicações ufw allow OpenSSH ufw allow http ufw allow https Habilitando o firewall ufw enable Liberando uma porta específica ufw allow 8080/tcp Liberando um range de portas ufw allow 7100:7200/tcp ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
+      <description>Instalação 1apt install ufw Status 1ufw status verbose Depois de configurado alguns serviços a saída do comando pode ser similar a:
+ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 80/tcp ALLOW Anywhere 443/tcp ALLOW Anywhere OpenSSH (v6) ALLOW Anywhere (v6) 80/tcp (v6) ALLOW Anywhere (v6) 443/tcp (v6) ALLOW Anywhere (v6) Listando aplicações 1ufw app list 2ufw app info OpenSSH Liberando algumas aplicações 1ufw allow OpenSSH 2ufw allow http 3ufw allow https Habilitando o firewall 1ufw enable Liberando uma porta específica 1ufw allow 8080/tcp Liberando um range de portas 1ufw allow 7100:7200/tcp 2ufw allow 7100:7200/udp Liberando acesso a um IP específico Cuidado: Este comando libera todas as portas para o IP especificado!</description>
     </item>
     
     <item>
@@ -450,7 +459,7 @@ ufw status Status: active To Action From -- ------ ---- OpenSSH ALLOW Anywhere 8
       
       <guid>https://geraldo.dev/posts/junit-excecao/</guid>
       <description>Este artigo apresenta uma visão suscinta sobre testes de exceção com JUnit usando o idioma try/fail/catch, o parâmetro expected da anotação @Test e a anotação @Rule. Cada um dos métodos apresenta prós e contras.
-Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;função que deveria lançar uma exceção&amp;#34;); fail(); // Ponto que nunca deveria ser alcançado quando o teste passar  } catch (NotFoundException e) { assertThat(e.getMessage(), containsString(&amp;#34;algo que indique que a exceção certa ocorreu&amp;#34;)); } // .</description>
+Usando bloco try/catch 1@Test 2public void example1() { 3 try { 4 find(&amp;#34;função que deveria lançar uma exceção&amp;#34;); 5 fail(); 6 // Ponto que nunca deveria ser alcançado quando o teste passar 7 } catch (NotFoundException e) { 8 assertThat(e.</description>
     </item>
     
     <item>
@@ -459,7 +468,7 @@ Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;funç�
       <pubDate>Thu, 07 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-executar-macro-em-todos-os-buffers/</guid>
-      <description> :bufdo execute &amp;quot;normal @a&amp;quot; | write  Referências  Run a macro in all buffers in vim  </description>
+      <description>:bufdo execute &amp;quot;normal @a&amp;quot; | write Referências  Run a macro in all buffers in vim  </description>
     </item>
     
     <item>
@@ -469,10 +478,10 @@ Usando bloco try/catch @Test public void example1() { try { find(&amp;#34;funç�
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
       <description>Considere o seguinte página:
-&amp;lt;html&amp;gt; &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
+1&amp;lt;html&amp;gt; 2 &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; 3 &amp;lt;body&amp;gt; 4 &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; 5 &amp;lt;/body&amp;gt; 6&amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
  img   Para obter o elemento do botão poderiamos fazer o seguinte:
-var btn = document.getElementById( &amp;#39;clickMe&amp;#39; );  Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
-Ao enviar a variável btn para a função console.log veremos a seguinte representação:</description>
+1var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.
+Ao enviar a variável btn para a função console.</description>
     </item>
     
     <item>
@@ -483,7 +492,8 @@ Ao enviar a variável btn para a função console.log veremos a seguinte represe
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
-# Uma animação simples de um sen(x+t)reset set term gif animate set output &amp;#34;animacao_do_seno.gif&amp;#34; n=24 # quantidade de frames a serem gerados dt=2*pi/n set xrange [0:4*pi] i=0 # contador load &amp;#34;animate.</description>
+1#Umaanimaçãosimplesdeumsen(x+t)2reset 3set term gif animate 4set output &amp;#34;animacao_do_seno.gif&amp;#34; 5n=24 #quantidadedeframesaseremgerados 6dt=2*pi/n 7set xrange [0:4*pi] 8i=0 #contador 9load &amp;#34;animate.gnuplot&amp;#34; 10set output O arquivo animate.gnuplot contem os comandos:
+1plot sin(x+i*dt) w l lt 1 lw 1.</description>
     </item>
     
     <item>
@@ -492,8 +502,8 @@ O segredo está no em configurar a saída para gif animate no comando set term.
       <pubDate>Tue, 23 Jul 2019 11:33:38 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/java-12-no-debian-buster/</guid>
-      <description> Adicionar repositório.
-cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main EOFapt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A apt-get update apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
+      <description>Adicionar repositório.
+1cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list 2deb http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main 3deb-src http://ppa.launchpad.net/linuxuprising/java/ubuntu bionic main 4EOF 1apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EA8CACC073C3DB2A 2apt-get update 3apt-get install oracle-java12-installer Referências  How to Install Java 12 on Debian 10/9/8 via PPA  </description>
     </item>
     
     <item>
@@ -502,11 +512,11 @@ cat &amp;lt;&amp;lt;EOF &amp;gt; /etc/apt/sources.list.d/java-12-debian.list deb
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description>Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
-gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
-gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
+      <description>Trocando o Nautilus pelo Nemo no GNOME 1xdg-mime default \ 2 nemo.desktop inode/directory \ 3 application/x-gnome-saved-search Desabilitando o Nautilus
+1gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
+1gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
  img   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
- img   Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.</description>
+ img   Testando 1xdg-open $HOME Usar o xfce4-terminal no nemo 1gsettings set org.</description>
     </item>
     
     <item>
@@ -528,7 +538,7 @@ Algumas características das funções de primeira classe são:
       <guid>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</guid>
       <description>Parte 1 - Regra geral Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão stable por padrão.
 No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente as seguintes linhas:
-# Arquivo: /etc/apt/preferences # Todos os pacotes vem do stable por padrão Package: * Pin: release a=stable Pin-Priority: 1001 Package: * Pin: release a=testing Pin-Priority: 650 Package: * Pin: release a=unstable Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
+1# Arquivo: /etc/apt/preferences 2 3# Todos os pacotes vem do stable por padrão 4Package: * 5Pin: release a=stable 6Pin-Priority: 1001 7 8Package: * 9Pin: release a=testing 10Pin-Priority: 650 11 12Package: * 13Pin: release a=unstable 14Pin-Priority: 600 O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o stable.</description>
     </item>
     
     <item>
@@ -539,7 +549,7 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+Instalando o nemo 1apt install nemo Nemo como gerenciador padrão 1xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
 O locais padrão para os arquivos de script são:
  /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
     </item>
@@ -550,7 +560,7 @@ O locais padrão para os arquivos de script são:
       <pubDate>Wed, 15 May 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/como-limpar-o-audio-com-o-audacity/</guid>
-      <description> Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
+      <description>Efeito redução de ruído  Selecionar somente o ruído (sem vóz) Menu Efeitos Menu Redução de ruídos Clicar no botão Obter perfil do ruído Ctrl+A Para para selecionar tudo Menu Efeitos Menu Redução de ruídos Clicar no botão OK  Efeito compressor  Ctrl+A para selecionar tudo Menu Efeitos Menu Compressor Não precisa mexer em nada Clicar no botão OK  Efeito normalizar  Ctrl+A para selecionar tudo Menu Efeitos Menu Normalizar Não precisa mexer em nada Clicar no botão OK  Efeito equalização  Ctrl+A para selecionar tudo Menu Efeitos Menu Equalização Selecione a curva 100Hz Rumble Clicar no botão OK  </description>
     </item>
     
     <item>
@@ -571,7 +581,7 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
- Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
+ Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
  O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
     </item>
@@ -583,8 +593,8 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       
       <guid>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</guid>
       <description>Para fazer a linha do título acima &amp;lt;esc&amp;gt;70i=&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;
-&amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt; N número de repetições c caractere ou palavra
-&amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;XXXXX&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;X Y X Y X Y X Y X Y </description>
+1 &amp;lt;esc&amp;gt;Nic&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;N número de repetições c caractere ou palavra
+1&amp;lt;esc&amp;gt;5iX&amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;2XXXXX34&amp;lt;esc&amp;gt;5iX Y &amp;lt;esc&amp;gt;&amp;lt;esc&amp;gt;5X Y X Y X Y X Y X Y </description>
     </item>
     
     <item>
@@ -593,7 +603,7 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-compilar-vim-8/</guid>
-      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make  </description>
+      <description>cd ~/git git clone https://github.com/vim/vim.git cd vim ./configure --with-compiledby=&amp;quot;Geraldo Ribeiro &amp;lt;geraldolsribeiro@gmail.com&amp;gt;&amp;quot; \ --with-features=huge \ --enable-gui=auto \ --with-x \ --enable-rubyinterp \ --with-ruby-command=/usr/bin/ruby \ --enable-perlinterp \ --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config \ --enable-fontset \ --enable-cscope \ --enable-gtk2-check \ --enable-gnome-check make </description>
     </item>
     
     <item>
@@ -603,9 +613,9 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       
       <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
-:grep sometext  Can we grep faster?
-Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
-&amp;#34; The Silver Searcherif executable(&amp;#39;ag&amp;#39;)&amp;#34; Use ag over grep set grepprg=ag\ --nogroup\ --nocolor&amp;#34; Use ag in CtrlP for listing files.</description>
+:grep sometext Can we grep faster?
+Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
+1&amp;#34; The Silver Searcher2if executable(&amp;#39;ag&amp;#39;)3&amp;#34; Use ag over grep4 set grepprg=ag\ --nogroup\ --nocolor56&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
     <item>
@@ -614,7 +624,7 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-formatar-json/</guid>
-      <description>Antes: Um exemplo de json colapsado { &amp;#34;quiz&amp;#34;: { &amp;#34;sport&amp;#34;: { &amp;#34;q1&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;Which one is correct team name in NBA?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;New York Bulls&amp;#34;, &amp;#34;Los Angeles Kings&amp;#34;, &amp;#34;Golden State Warriros&amp;#34;, &amp;#34;Huston Rocket&amp;#34; ], &amp;#34;answer&amp;#34;: &amp;#34;Huston Rocket&amp;#34; } }, &amp;#34;maths&amp;#34;: { &amp;#34;q1&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;10&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;12&amp;#34;, &amp;#34;13&amp;#34; ], &amp;#34;answer&amp;#34;: &amp;#34;12&amp;#34; }, &amp;#34;q2&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;12 - 8 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;, &amp;#34;4&amp;#34; ], &amp;#34;answer&amp;#34;: &amp;#34;4&amp;#34; } } } } Depois: endentado { &amp;#34;quiz&amp;#34;: { &amp;#34;maths&amp;#34;: { &amp;#34;q1&amp;#34;: { &amp;#34;answer&amp;#34;: &amp;#34;12&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;10&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;12&amp;#34;, &amp;#34;13&amp;#34; ], &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?</description>
+      <description>Antes: Um exemplo de json colapsado 1{ &amp;#34;quiz&amp;#34;: { &amp;#34;sport&amp;#34;: { &amp;#34;q1&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;Which one is correct team name in NBA?&amp;#34;, 2&amp;#34;options&amp;#34;: [ &amp;#34;New York Bulls&amp;#34;, &amp;#34;Los Angeles Kings&amp;#34;, &amp;#34;Golden State Warriros&amp;#34;, 3&amp;#34;Huston Rocket&amp;#34; ], &amp;#34;answer&amp;#34;: &amp;#34;Huston Rocket&amp;#34; } }, &amp;#34;maths&amp;#34;: { &amp;#34;q1&amp;#34;: 4{ &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;10&amp;#34;, &amp;#34;11&amp;#34;, &amp;#34;12&amp;#34;, &amp;#34;13&amp;#34; ], &amp;#34;answer&amp;#34;: 5&amp;#34;12&amp;#34; }, &amp;#34;q2&amp;#34;: { &amp;#34;question&amp;#34;: &amp;#34;12 - 8 = ?&amp;#34;, &amp;#34;options&amp;#34;: [ &amp;#34;1&amp;#34;, &amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;, &amp;#34;4&amp;#34; ], 6&amp;#34;answer&amp;#34;: &amp;#34;4&amp;#34; } } } } Depois: endentado 1{ 2 &amp;#34;quiz&amp;#34;: { 3 &amp;#34;maths&amp;#34;: { 4 &amp;#34;q1&amp;#34;: { 5 &amp;#34;answer&amp;#34;: &amp;#34;12&amp;#34;, 6 &amp;#34;options&amp;#34;: [ 7 &amp;#34;10&amp;#34;, 8 &amp;#34;11&amp;#34;, 9 &amp;#34;12&amp;#34;, 10 &amp;#34;13&amp;#34; 11 ], 12 &amp;#34;question&amp;#34;: &amp;#34;5 + 7 = ?</description>
     </item>
     
     <item>
@@ -623,7 +633,7 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-formatar-xml/</guid>
-      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format -  </description>
+      <description>:&#39;&amp;lt;,&#39;&amp;gt;!xmllint --format - </description>
     </item>
     
     <item>
@@ -632,12 +642,12 @@ Override to use The Silver Searcher grep is a built-in command of Vim. By defaul
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-plugins/</guid>
-      <description> Instalação do vundle git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
+      <description>Instalação do vundle 1git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim Ctrlp Ctrlp modified Easily open locally modified files in your git-versioned projects.
 Uso a versão que lista os arquivos [modificadas[(https://github.com/jasoncodes/ctrlp-modified.vim)
 Instalação Acrescentar no .vimrc
-Bundle &amp;#39;kien/ctrlp.vim&amp;#39;Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39; Rodar o VundleInstall
+1Bundle &amp;#39;kien/ctrlp.vim&amp;#39;2Bundle &amp;#39;jasoncodes/ctrlp-modified.vim&amp;#39;Rodar o VundleInstall
 Atalhos Acrescentar no .vimrc
-map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
+1map &amp;lt;Leader&amp;gt;m :CtrlPModified&amp;lt;CR&amp;gt;2map &amp;lt;Leader&amp;gt;M :CtrlPBranch&amp;lt;CR&amp;gt;</description>
     </item>
     
     <item>
@@ -657,28 +667,7 @@ Enter vim-rspec, a lightweight Vim plugin that runs specs directly from within V
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-substituicao-de-texto-avancada/</guid>
-      <description> Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update   O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update  Referências  Search and replace in multiple buffers  </description>
-    </item>
-    
-    <item>
-      <title>VIM single instance</title>
-      <link>https://geraldo.dev/posts/vim-single-instance/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
-      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
-    </item>
-    
-    <item>
-      <title>Vim Spell Checking</title>
-      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
-Switching on spell-checking We can switch on spell checking with this command:
-:setlocal spell  We can also specify the language:
-:setlocal spell spelllang=en_us  What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
+      <description>Como substituir texto em todos os buffers abertos :bufdo %s/pattern/replace/ge | update  O e server para não gerar erro quando o padrão não for encontrado em algum dos buffers. o comando update salva os buffers modificados.  Como substituir texto em um padrão :arg *.cpp :argadd ../include/*.hpp ... :argdo %s/search/replace/ge | update Referências  Search and replace in multiple buffers  </description>
     </item>
     
     <item>
@@ -689,8 +678,8 @@ Switching on spell-checking We can switch on spell checking with this command:
       <guid>https://geraldo.dev/posts/vim-argdo/</guid>
       <description>O editor vim nos ajuda muito quando precisamos editar uma grande quantidade de arquivos para realizar uma refatoração ou realizar modificações em lote.
 Carregamento de arquivos por condição Carregar todos os arquivos md.
-:args `find . -name &#39;*.md&#39;`  Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
-:args `git grep -l Apple`  o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
+:args `find . -name &#39;*.md&#39;` Carregar todos os arquivos que são rastreados pelo controle de versão que contenham a palavra Apple.
+:args `git grep -l Apple` o -l do git-grep faz listar somente os arquivos sem o texto que faz match.</description>
     </item>
     
     <item>
@@ -708,7 +697,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-with-python/</guid>
-      <description>apt install vim-nox ou apt install vim-gtk</description>
+      <description>1apt install vim-nox 2ou 3apt install vim-gtk </description>
     </item>
     
     <item>
@@ -727,7 +716,7 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-slow/</guid>
-      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  :set cursorline!:set lazyredrawset synmaxcol=128syntax sync minlines=256</description>
+      <description> http://eduncan911.com/software/fix-slow-scrolling-in-vim-and-neovim.html  1:set cursorline!2:set lazyredraw1set synmaxcol=1282syntax sync minlines=256</description>
     </item>
     
     <item>
@@ -736,16 +725,48 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-abolish/</guid>
-      <description> https://github.com/tpope/vim-abolish
- crm - MixedCase
- crc - camelCase
- crs - snake_case
- cru - UPPER_CASE
- cr- - dash-case
- cr. - dot.case
- cr&amp;lt;space&amp;gt; - space case
- crt - Title Case
+      <description>  https://github.com/tpope/vim-abolish
+  crm - MixedCase
+  crc - camelCase
+  crs - snake_case
+  cru - UPPER_CASE
+  cr- - dash-case
+  cr. - dot.case
+  cr&amp;lt;space&amp;gt; - space case
+  crt - Title Case
   </description>
+    </item>
+    
+    <item>
+      <title>VIM single instance</title>
+      <link>https://geraldo.dev/posts/vim-single-instance/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-single-instance/</guid>
+      <description> http://unix.stackexchange.com/questions/23162/how-to-run-gvim-in-a-single-instance http://www.phacks.net/open-multiple-text-files-as-tabs-gvim-kde4/  </description>
+    </item>
+    
+    <item>
+      <title>Vim Spell Checking</title>
+      <link>https://geraldo.dev/posts/vim-spell-checking/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&#39;s spell-checking to help us avoid embarrassing mistakes.
+Switching on spell-checking We can switch on spell checking with this command:
+:setlocal spell We can also specify the language:
+:setlocal spell spelllang=en_us What does it look like Here&#39;s a screenshot of what I see as I edit this blog post:</description>
+    </item>
+    
+    <item>
+      <title>vim-livro-noob-gratis.md</title>
+      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
+      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
+      <description> Um livro guia/referência para quem deseja aprender a utilizar o editor de textos Vim
+ Confira em https://leanpub.com/vimparanoobs
+Referência  https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html  </description>
     </item>
     
     <item>
@@ -769,17 +790,6 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
     </item>
     
     <item>
-      <title>vim-livro-noob-gratis.md</title>
-      <link>https://geraldo.dev/posts/vim-livro-noob-gratis/</link>
-      <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/posts/vim-livro-noob-gratis/</guid>
-      <description>  Um livro guia/referência para quem deseja aprender a utilizar o editor de textos Vim
- Confira em https://leanpub.com/vimparanoobs
-Referência  https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plugins-no-vundle.html  </description>
-    </item>
-    
-    <item>
       <title>Pass</title>
       <link>https://geraldo.dev/posts/fixme/pass-2/</link>
       <pubDate>Thu, 06 Sep 2018 00:00:00 +0000</pubDate>
@@ -789,8 +799,8 @@ Referência  https://woliveiras.com.br/vimparanoobs/chapters/pesquisando-por-plu
 abre a caixa de exportação de senha do google chrome
 chrome://settings-frame/passwords
 Instalar extensão para o chrome https://github.com/dannyvankooten/browserpass
-apt-get install pass qtpass Os arquivos ficam em ~/.password-store/
-Uso básico zx2c4@laptop ~ $ pass Password Store ├── Business │ ├── some-silly-business-site.com │ └── another-business-site.net ├── Email │ ├── donenfeld.com │ └── zx2c4.com └── France ├── bank ├── freebox └── mobilephone zx2c4@laptop ~ $ pass Email/zx2c4.com sup3rh4x3rizmynam3 zx2c4@laptop ~ $ pass -c Email/zx2c4.</description>
+1apt-get install pass qtpass Os arquivos ficam em ~/.password-store/
+Uso básico 1zx2c4@laptop ~ $ pass 2Password Store 3├── Business 4│ ├── some-silly-business-site.com 5│ └── another-business-site.net 6├── Email 7│ ├── donenfeld.com 8│ └── zx2c4.com 9└── France 10 ├── bank 11 ├── freebox 12 └── mobilephone 13 14zx2c4@laptop ~ $ pass Email/zx2c4.</description>
     </item>
     
     <item>
@@ -811,7 +821,7 @@ De maneira muito breve:
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description> Instalação apt purge xscreensaver xscreensaver-data apt install light-locker Travando pelo terminal light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
+      <description>Instalação 1apt purge xscreensaver xscreensaver-data 2apt install light-locker Travando pelo terminal 1light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
     </item>
     
     <item>
@@ -830,9 +840,9 @@ De maneira muito breve:
       
       <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
-echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
-apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
+1echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  2 &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
+1apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
+1apt-get update 2apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
 Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
     </item>
     
@@ -854,7 +864,7 @@ O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é
       
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
- About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
+ About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&#39;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>
     
     <item>
@@ -923,20 +933,20 @@ In this context, a single company usually does not develop all the components th
     </item>
     
     <item>
-      <title>Pousada Santa Cecília</title>
-      <link>https://geraldo.dev/projects/pousada-santa-cecilia/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/projects/pousada-santa-cecilia/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>dFerias.com</title>
       <link>https://geraldo.dev/projects/dferias/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/projects/dferias/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pousada Santa Cecília</title>
+      <link>https://geraldo.dev/projects/pousada-santa-cecilia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/projects/pousada-santa-cecilia/</guid>
       <description></description>
     </item>
     

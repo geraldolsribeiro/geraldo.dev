@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gerenciador De Arquivos on geraldo.dev</title>
+    <title>gerenciador de arquivos on geraldo.dev</title>
     <link>https://geraldo.dev/tags/gerenciador-de-arquivos/</link>
-    <description>Recent content in Gerenciador De Arquivos on geraldo.dev</description>
+    <description>Recent content in gerenciador de arquivos on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -20,7 +20,7 @@
       <guid>https://geraldo.dev/posts/gerenciador-de-arquivos/</guid>
       <description>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.
 Você já conhece o Nemo, um fork do GNOME Files?
-Instalando o nemo apt install nemo Nemo como gerenciador padrão xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
+Instalando o nemo 1apt install nemo Nemo como gerenciador padrão 1xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search Criando novas funções O arquivo /usr/share/nemo/actions/sample.nemo_action contém um exemplo de script para criação de comandos.
 O locais padrão para os arquivos de script são:
  /usr/share/nemo/actions/ para todos os usuários do sistema ~/.</description>
     </item>

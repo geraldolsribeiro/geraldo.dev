@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xorg on geraldo.dev</title>
+    <title>xorg on geraldo.dev</title>
     <link>https://geraldo.dev/tags/xorg/</link>
-    <description>Recent content in Xorg on geraldo.dev</description>
+    <description>Recent content in xorg on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,8 +18,8 @@
       <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/x-inverter-cores/</guid>
-      <description> Use o utilitário xcalib para inverter as cores da tela:
-apt install xcalib xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
+      <description>Use o utilitário xcalib para inverter as cores da tela:
+1apt install xcalib 2xcalib -i -a Referências  invert colors on X (or xfce4)  </description>
     </item>
     
   </channel>

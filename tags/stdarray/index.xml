@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Stdarray on geraldo.dev</title>
+    <title>std::array on geraldo.dev</title>
     <link>https://geraldo.dev/tags/stdarray/</link>
-    <description>Recent content in Stdarray on geraldo.dev</description>
+    <description>Recent content in std::array on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Sat, 04 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-array/</guid>
-      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos #include &amp;lt;algorithm&amp;gt;#include &amp;lt;array&amp;gt;#include &amp;lt;iostream&amp;gt; using namespace std; // Multidimensionais template &amp;lt;classT, size_t ROW, size_t COL&amp;gt; using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; template &amp;lt;classT, size_t I, size_t.</description>
+      <description>Características  é um wrapper para o array do C array oferece uma sintaxe mais amigável comparada com a array do C pode ser passado e retornado por valor pode ser passado e retornado por referência uso mais conveniente de size uso mais conveniente de iteradores STL possui exatamente a mesma performace da array do C  Array vs Vector  array é estático e possui tamanho definido em tempo de compilação vector é dinâmico e é alocado no heap  Exemplos 1#include &amp;lt;algorithm&amp;gt;2#include &amp;lt;array&amp;gt;3#include &amp;lt;iostream&amp;gt;4 5using namespace std; 6 7// Multidimensionais 8template &amp;lt;class T, size_t ROW, size_t COL&amp;gt; 9using Matrix = std::array&amp;lt;std::array&amp;lt;T, COL&amp;gt;, ROW&amp;gt;; 10 11template &amp;lt;class T, size_t I, size_t.</description>
     </item>
     
   </channel>

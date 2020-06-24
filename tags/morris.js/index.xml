@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Morris.js on geraldo.dev</title>
+    <title>morris.js on geraldo.dev</title>
     <link>https://geraldo.dev/tags/morris.js/</link>
-    <description>Recent content in Morris.js on geraldo.dev</description>
+    <description>Recent content in morris.js on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Mon, 22 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/web-chart-morris/</guid>
-      <description>O uso é bem simples  adicione as dependências (jquery, raphael e morris) adicione uma div adicione um script  &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;script&amp;gt; new Morris... &amp;lt;/script&amp;gt; Gráfico de linha &amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt;new Morris.Line({ // ID of the element in which to draw the chart.  element: &amp;#39;myfirstchart&amp;#39;, // Chart data records -- each entry in this array corresponds to a point on  // the chart.</description>
+      <description>O uso é bem simples  adicione as dependências (jquery, raphael e morris) adicione uma div adicione um script  1&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&amp;#34;&amp;gt; 2&amp;lt;script src=&amp;#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 3&amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 4&amp;lt;script src=&amp;#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; 1&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 1&amp;lt;script&amp;gt; 2 new Morris... 3&amp;lt;/script&amp;gt; Gráfico de linha 1&amp;lt;div id=&amp;#34;myfirstchart&amp;#34; style=&amp;#34;height: 250px;&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; 1new Morris.Line({ 2 // ID of the element in which to draw the chart. 3 element: &amp;#39;myfirstchart&amp;#39;, 4 // Chart data records -- each entry in this array corresponds to a point on 5 // the chart.</description>
     </item>
     
   </channel>

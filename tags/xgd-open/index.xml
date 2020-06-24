@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Xgd Open on geraldo.dev</title>
+    <title>xgd-open on geraldo.dev</title>
     <link>https://geraldo.dev/tags/xgd-open/</link>
-    <description>Recent content in Xgd Open on geraldo.dev</description>
+    <description>Recent content in xgd-open on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,8 +18,8 @@
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/docker-acesso-ssh-tunelado-para-localhost/</guid>
-      <description> Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.
-# Iniciar um tunel para redirecionamento de porta # localhost:porta remoto aponta para localhost:porta local ssh -fNTL localhost:8080:$(ssh nome-ou-ip-do-servidor \  &amp;#34;docker inspect --format &amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39; \ nome-do-container&amp;#34;):8080 nome-ou-ip-do-servidor # Abrir o navegador para acessar através do tunel xdg-open http://localhost:8080 # Terminar o tunel kill $(lsof -t -i @localhost:8080 -sTCP:listen) Referências  Connecting to the web admin interface on a remote / virtual host via SSH  </description>
+      <description>Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.
+1# Iniciar um tunel para redirecionamento de porta 2# localhost:porta remoto aponta para localhost:porta local 3ssh -fNTL localhost:8080:$(ssh nome-ou-ip-do-servidor \ 4 &amp;#34;docker inspect --format &amp;#39;{{ .NetworkSettings.IPAddress }}&amp;#39; \ 5nome-do-container&amp;#34;):8080 nome-ou-ip-do-servidor 6 7# Abrir o navegador para acessar através do tunel 8xdg-open http://localhost:8080 9 10# Terminar o tunel 11kill $(lsof -t -i @localhost:8080 -sTCP:listen) Referências  Connecting to the web admin interface on a remote / virtual host via SSH  </description>
     </item>
     
   </channel>

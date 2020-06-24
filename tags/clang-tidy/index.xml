@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Clang Tidy on geraldo.dev</title>
+    <title>clang-tidy on geraldo.dev</title>
     <link>https://geraldo.dev/tags/clang-tidy/</link>
-    <description>Recent content in Clang Tidy on geraldo.dev</description>
+    <description>Recent content in clang-tidy on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Mon, 13 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-clant-tidy/</guid>
-      <description> Instalação apt-get install clang-tidy Verificadores disponíveis clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; modernize-avoid-bind modernize-deprecated-headers modernize-loop-convert modernize-make-shared modernize-make-unique modernize-pass-by-value modernize-raw-string-literal modernize-redundant-void-arg modernize-replace-auto-ptr modernize-replace-random-shuffle modernize-return-braced-init-list modernize-shrink-to-fit modernize-unary-static-assert modernize-use-auto modernize-use-bool-literals modernize-use-default-member-init modernize-use-emplace modernize-use-equals-default modernize-use-equals-delete modernize-use-noexcept modernize-use-nullptr modernize-use-override modernize-use-transparent-functors modernize-use-uncaught-exceptions modernize-use-using Uso clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
+      <description>Instalação 1apt-get install clang-tidy Verificadores disponíveis 1clang-tidy --list-checks -checks=&amp;#39;*&amp;#39; | grep &amp;#34;modernize&amp;#34; 2 modernize-avoid-bind 3 modernize-deprecated-headers 4 modernize-loop-convert 5 modernize-make-shared 6 modernize-make-unique 7 modernize-pass-by-value 8 modernize-raw-string-literal 9 modernize-redundant-void-arg 10 modernize-replace-auto-ptr 11 modernize-replace-random-shuffle 12 modernize-return-braced-init-list 13 modernize-shrink-to-fit 14 modernize-unary-static-assert 15 modernize-use-auto 16 modernize-use-bool-literals 17 modernize-use-default-member-init 18 modernize-use-emplace 19 modernize-use-equals-default 20 modernize-use-equals-delete 21 modernize-use-noexcept 22 modernize-use-nullptr 23 modernize-use-override 24 modernize-use-transparent-functors 25 modernize-use-uncaught-exceptions 26 modernize-use-using Uso 1clang-tidy -checks=&amp;#39;modernize-use-override&amp;#39; -fix test.cpp -- -std=c++11 Referências  Extra Clang Tools 10 documentation - CLANG-TIDY How to use Clang Tidy to automatically correct code  </description>
     </item>
     
   </channel>

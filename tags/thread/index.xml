@@ -18,7 +18,7 @@
       <pubDate>Tue, 23 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-thread/</guid>
-      <description>Thread com função sem argumentos void foo() { printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } void run () { thread t1( foo ); // Algum processamento...  t1.join(); }  Thread com classe callable classCallableClass { public: void operator()() { printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } }; void run() { CallableClass obj; thread t2( obj ); // Algum processamento...  t2.join(); }  Thread com lambda // Sintaxe // [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&amp;gt; ret { body } // [capture-list]( params ) -&amp;gt; ret { body } // [capture-list]( params ) { body } // [capture-list]{ body }  void run() { thread t3( []{ printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } ); // Algum processamento.</description>
+      <description>Thread com função sem argumentos void foo() { cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; } void run () { thread t1( foo ); // Algum processamento...  t1.join(); }  Thread com função passando parâmetros por valor void fooByRef( int &amp;amp; a ) { while( true ) { cout &amp;lt;&amp;lt; &amp;#34;O valor é &amp;#34; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl; this_thread::sleep_for( chrono::milliseconds( 1000 ) ); } } void run () { int p = 9; thread t2( fooByRef, std::ref( p ) ); // usar o wrapper ref para não passar por valor  // Algum processamento.</description>
     </item>
     
   </channel>

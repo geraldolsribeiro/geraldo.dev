@@ -130,7 +130,7 @@ if (!doNotTrack) {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 23/Jun/2020
+            Atualizado em: 24/Jun/2020
           </div>
           
         </div>
@@ -159,10 +159,13 @@ if (!doNotTrack) {
 <li>
 <ul>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-sem-argumentos">Thread com função sem argumentos</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-passando-parâmetros-por-valor">Thread com função passando parâmetros por valor</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-passando-parâmetros-por-referência">Thread com função passando parâmetros por referência</a></li>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-classe-callable">Thread com classe callable</a></li>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-lambda">Thread com lambda</a></li>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceção">Tratamento de exceção</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#transferindo-a-posse-das-threads">Transferindo a posse das threads</a></li>
 <li><a href="https://geraldo.dev/posts/cpp-thread/#referências">Referências</a></li>
 </ul></li>
 </ul>
@@ -175,7 +178,7 @@ if (!doNotTrack) {
         <div class="gr-main-content">
         <h2 id="thread-com-função-sem-argumentos">Thread com função sem argumentos</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>() {
-  printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+  cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Corpo da função: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> this_thread<span style="color:#f92672">::</span>get_id() <span style="color:#f92672">&lt;&lt;</span> endl;
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span> () {
@@ -184,11 +187,40 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>  t1.join();
 }
 </code></pre></div>
+<h2 id="thread-com-função-passando-parâmetros-por-valor">Thread com função passando parâmetros por valor</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fooByRef</span>( <span style="color:#66d9ef">int</span> <span style="color:#f92672">&amp;</span> a ) {
+  <span style="color:#66d9ef">while</span>( true ) {
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;O valor é &#34;</span> <span style="color:#f92672">&lt;&lt;</span> a <span style="color:#f92672">&lt;&lt;</span> endl;
+    this_thread<span style="color:#f92672">::</span>sleep_for( chrono<span style="color:#f92672">::</span>milliseconds( <span style="color:#ae81ff">1000</span> ) );
+  }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span> () {
+  <span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+  <span style="color:#66d9ef">thread</span> t2( fooByRef, std<span style="color:#f92672">::</span>ref( p ) ); <span style="color:#75715e">// usar o wrapper ref para não passar por valor
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Algum processamento...
+</span><span style="color:#75715e"></span>  this_thread<span style="color:#f92672">::</span>sleep_for( chrono<span style="color:#f92672">::</span>milliseconds( <span style="color:#ae81ff">5000</span> ) );
+  p <span style="color:#f92672">=</span> <span style="color:#ae81ff">30</span>;
+  t1.join();
+}
+</code></pre></div>
+<h2 id="thread-com-função-passando-parâmetros-por-referência">Thread com função passando parâmetros por referência</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>( <span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b ) {
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span> () {
+  <span style="color:#66d9ef">int</span> p <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+  <span style="color:#66d9ef">int</span> q <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+  <span style="color:#66d9ef">thread</span> t1( foo, p, q );
+  <span style="color:#75715e">// Algum processamento...
+</span><span style="color:#75715e"></span>  t1.join();
+}
+</code></pre></div>
 <h2 id="thread-com-classe-callable">Thread com classe callable</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">CallableClass</span> {
   <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
     <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()() {
-      printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+      cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Corpo da função: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> this_thread<span style="color:#f92672">::</span>get_id() <span style="color:#f92672">&lt;&lt;</span> endl;
     }
 };
 
@@ -208,7 +240,7 @@ if (!doNotTrack) {
 </span><span style="color:#75715e"></span>
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
   <span style="color:#66d9ef">thread</span> t3( []{
-    printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+    cout <span style="color:#f92672">&lt;&lt;</span> <span style="color:#e6db74">&#34;Corpo da função: &#34;</span> <span style="color:#f92672">&lt;&lt;</span> this_thread<span style="color:#f92672">::</span>get_id() <span style="color:#f92672">&lt;&lt;</span> endl;
   } );
   <span style="color:#75715e">// Algum processamento...
 </span><span style="color:#75715e"></span>  t3.join();
@@ -230,40 +262,65 @@ if (!doNotTrack) {
 </ul>
 
 <h2 id="tratamento-de-exceção">Tratamento de exceção</h2>
+
+<p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
+<strong>RAII - Resource acquisition is initialization</strong>.</p>
+
+<p>RAII:</p>
+
+<ul>
+<li><em>Construtor adquire os recursos</em></li>
+<li><em>Destrutor libera os recursos</em></li>
+</ul>
+
+<p><p>Exemplo de código com problema:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
   <span style="color:#66d9ef">thread</span> t4( foo );
   <span style="color:#66d9ef">throw</span> runtime_error( <span style="color:#e6db74">&#34;Algum erro antes do join/detach&#34;</span> );
   t4.join(); <span style="color:#75715e">// esta linha nunca vai ser executada
 </span><span style="color:#75715e"></span>}
 </code></pre></div>
-<p>Resolvendo com <strong>RAII - Resource acquisition is initialization</strong></p>
+<p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
+sempre executado quando o objeto sair do contexto.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++ {hl_lines=[6,9]}" data-lang="c++ {hl_lines=[6,9]}">class ThreadGuard {
+  thread &amp; mThread;</p>
 
-<ul>
-<li><em>Constructor acquire resources</em></li>
-<li><em>Destructor releases resources</em></li>
-</ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">ThreadGuard</span> {
-  <span style="color:#66d9ef">thread</span> <span style="color:#f92672">&amp;</span> mThread;
+<p>public:
+    // garantir que não haverá conversões implícitas
+    explicit ThreadGuard( thread &amp; t ) : mThread( t ) {  }</p>
 
-  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-    <span style="color:#75715e">// garantir que não haverá conversões implícitas
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">explicit</span> ThreadGuard( <span style="color:#66d9ef">thread</span> <span style="color:#f92672">&amp;</span> t ) <span style="color:#f92672">:</span> mThread( t ) {  }
+<pre><code>// realiza o join pelo destrutor
+~ThreadGuard() { if( mThread.joinable() ) { mThread.join(); } }
 
-    <span style="color:#75715e">// realiza o join pelo destrutor
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">~</span>ThreadGuard() { <span style="color:#66d9ef">if</span>( mThread.joinable() ) { mThread.join(); } }
+// não permite o uso dos contrutores de cópia e atribuição
+ThreadGuard( const ThreadGuard &amp;amp; ) = delete;
+ThreadGuard &amp;amp; operator= ( const ThreadGuard &amp;amp; ) = delete;
+</code></pre>
 
-    <span style="color:#75715e">// não permite o uso dos contrutores de cópia e atribuição
-</span><span style="color:#75715e"></span>    ThreadGuard( ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">const</span> ) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
-    ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">=</span> ( ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">const</span> ) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
-};
+<p>};</p>
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
-  <span style="color:#66d9ef">thread</span> t4( foo );
-  ThreadGuard tg( t4 ); <span style="color:#75715e">// quando sair do escopo o join será chamado
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">throw</span> runtime_error( <span style="color:#e6db74">&#34;Este erro não afeta a thread acima&#34;</span> );
+<p>void run() {
+  thread t4( foo );
+  ThreadGuard tg( t4 ); // quando sair do escopo o join será chamado
+  throw runtime_error( &#34;Este erro não afeta a thread acima&#34; );
+}</code></pre></div>
+<h2 id="transferindo-a-posse-das-threads">Transferindo a posse das threads</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>() { }
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">bar</span>() { }</p>
+
+<p><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+  <span style="color:#66d9ef">thread</span> t1( foo );
+  <span style="color:#75715e">// thread t2 = t1; // Se fizer isso vai gerar erro de compilação
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// usar move para transferir a posse da thread
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">thread</span> t2 <span style="color:#f92672">=</span> std<span style="color:#f92672">::</span>move( t1 ); <span style="color:#75715e">// t1 não é mais dono da thread
+</span><span style="color:#75715e"></span>  t1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">thread</span>( bar ); <span style="color:#75715e">// t1 tem nova thread
+</span><span style="color:#75715e"></span>
+  t1.join();
+  t2.join();
 }
 </code></pre></div>
-<h2 id="referências">Referências</h2>
+<h2 id="referências">Referências</h2></p>
 
 <ul>
 <li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/" target="_blank">Modern C++ Concurrency in Depth</a></li>

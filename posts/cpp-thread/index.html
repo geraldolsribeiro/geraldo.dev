@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Thread em C&#43;&#43; | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-thread/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
-      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
+      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
       media="screen" async>
 
 
@@ -139,9 +139,7 @@ if (!doNotTrack) {
         
         
             
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/c&#43;&#43;/">C&#43;&#43;</a>
-                </div>
+              
               <div class="chip">
                   <a href="https://geraldo.dev/tags/cpp/">cpp</a>
                 </div>
@@ -158,13 +156,16 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-funo-sem-argumentos">Thread com função sem argumentos</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-classe-callable">Thread com classe callable</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-lambda">Thread com lambda</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceo">Tratamento de exceção</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-sem-argumentos">Thread com função sem argumentos</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-classe-callable">Thread com classe callable</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-lambda">Thread com lambda</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceção">Tratamento de exceção</a></li>
+<li><a href="https://geraldo.dev/posts/cpp-thread/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -172,96 +173,100 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="thread-com-funo-sem-argumentos">Thread com função sem argumentos</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">foo</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span> () {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  <span style="color:#069;font-weight:bold">thread</span> t1( foo );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#09f;font-style:italic"></span>  t1.join();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
-</code></pre></div><h2 id="thread-com-classe-callable">Thread com classe callable</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CallableClass</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#078;font-weight:bold">void</span> <span style="color:#069;font-weight:bold">operator</span>()() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  CallableClass obj;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#069;font-weight:bold">thread</span> t2( obj );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  t2.join();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
-</code></pre></div><h2 id="thread-com-lambda">Thread com lambda</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic">// Sintaxe
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) -&gt; ret { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]{ body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#069;font-weight:bold">thread</span> t3( []{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  } );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  t3.join();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
-</code></pre></div><h2 id="join-detach-e-terminate">Join, detach e terminate</h2>
+        <h2 id="thread-com-função-sem-argumentos">Thread com função sem argumentos</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span>() {
+  printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span> () {
+  <span style="color:#66d9ef">thread</span> t1( foo );
+  <span style="color:#75715e">// Algum processamento...
+</span><span style="color:#75715e"></span>  t1.join();
+}
+</code></pre></div>
+<h2 id="thread-com-classe-callable">Thread com classe callable</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">CallableClass</span> {
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#66d9ef">void</span> <span style="color:#66d9ef">operator</span>()() {
+      printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+    }
+};
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+  CallableClass obj;
+  <span style="color:#66d9ef">thread</span> t2( obj );
+  <span style="color:#75715e">// Algum processamento...
+</span><span style="color:#75715e"></span>  t2.join();
+}
+</code></pre></div>
+<h2 id="thread-com-lambda">Thread com lambda</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// Sintaxe
+</span><span style="color:#75715e">// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
+</span><span style="color:#75715e">// [capture-list]( params ) -&gt; ret { body }
+</span><span style="color:#75715e">// [capture-list]( params ) { body }
+</span><span style="color:#75715e">// [capture-list]{ body }
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+  <span style="color:#66d9ef">thread</span> t3( []{
+    printf( <span style="color:#e6db74">&#34;Corpo da função: %d</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, this_thread<span style="color:#f92672">::</span>get_id() );
+  } );
+  <span style="color:#75715e">// Algum processamento...
+</span><span style="color:#75715e"></span>  t3.join();
+}
+</code></pre></div>
+<h2 id="join-detach-e-terminate">Join, detach e terminate</h2>
+
 <ul>
 <li>Uma thread representa um objeto de execução em nível de hardware e está num estado chamado <em>joinable</em></li>
 <li>A opções no estado <em>joinable</em> são:
+
 <ul>
 <li><code>join</code> - introduz um ponto de sincronismo e bloqueia a execução</li>
 <li><code>detach</code> - faz a execução continuar em modo independente</li>
-</ul>
-</li>
+</ul></li>
 <li>Após esta escolha a thread se torna <em>non joinable</em></li>
 <li>Se esquecer de realizar o join ou detach a função <code>std::terminate</code> será chamada pelo destrutor</li>
 <li>Um programa com <code>std::terminate</code> é considerado não seguro.</li>
 </ul>
-<h2 id="tratamento-de-exceo">Tratamento de exceção</h2>
-<p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
-<strong>RAII - Resource acquisition is initialization</strong>.</p>
-<p>RAII:</p>
+
+<h2 id="tratamento-de-exceção">Tratamento de exceção</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+  <span style="color:#66d9ef">thread</span> t4( foo );
+  <span style="color:#66d9ef">throw</span> runtime_error( <span style="color:#e6db74">&#34;Algum erro antes do join/detach&#34;</span> );
+  t4.join(); <span style="color:#75715e">// esta linha nunca vai ser executada
+</span><span style="color:#75715e"></span>}
+</code></pre></div>
+<p>Resolvendo com <strong>RAII - Resource acquisition is initialization</strong></p>
+
 <ul>
-<li><em>Construtor adquire os recursos</em></li>
-<li><em>Destrutor libera os recursos</em></li>
+<li><em>Constructor acquire resources</em></li>
+<li><em>Destructor releases resources</em></li>
 </ul>
-<p>Exemplo de código com problema:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Algum erro antes do join/detach</span><span style="color:#c30">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  t4.join(); <span style="color:#09f;font-style:italic">// esta linha nunca vai ser executada
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#09f;font-style:italic"></span>}
-</code></pre></div><p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
-sempre executado quando o objeto sair do contexto.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">ThreadGuard</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">thread</span> <span style="color:#555">&amp;</span> mThread;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#09f;font-style:italic">// garantir que não haverá conversões implícitas
-</span><span style="display:block;width:100%;background-color:#d8dada"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#069;font-weight:bold">explicit</span> ThreadGuard( <span style="color:#069;font-weight:bold">thread</span> <span style="color:#555">&amp;</span> t ) <span style="color:#555">:</span> mThread( t ) {  }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#09f;font-style:italic">// realiza o join pelo destrutor
-</span><span style="display:block;width:100%;background-color:#d8dada"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>    <span style="color:#555">~</span>ThreadGuard() { <span style="color:#069;font-weight:bold">if</span>( mThread.joinable() ) { mThread.join(); } }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#09f;font-style:italic">// não permite o uso dos contrutores de cópia e atribuição
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>    ThreadGuard( <span style="color:#069;font-weight:bold">const</span> ThreadGuard <span style="color:#555">&amp;</span> ) <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">delete</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    ThreadGuard <span style="color:#555">&amp;</span> <span style="color:#069;font-weight:bold">operator</span><span style="color:#555">=</span> ( <span style="color:#069;font-weight:bold">const</span> ThreadGuard <span style="color:#555">&amp;</span> ) <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">delete</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  ThreadGuard tg( t4 ); <span style="color:#09f;font-style:italic">// quando sair do escopo o join será chamado
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Este erro não afeta a thread acima</span><span style="color:#c30">&#34;</span> );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
-</code></pre></div><h2 id="referncias">Referências</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">class</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#a6e22e">ThreadGuard</span> {
+  <span style="color:#66d9ef">thread</span> <span style="color:#f92672">&amp;</span> mThread;
+
+  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+    <span style="color:#75715e">// garantir que não haverá conversões implícitas
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">explicit</span> ThreadGuard( <span style="color:#66d9ef">thread</span> <span style="color:#f92672">&amp;</span> t ) <span style="color:#f92672">:</span> mThread( t ) {  }
+
+    <span style="color:#75715e">// realiza o join pelo destrutor
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">~</span>ThreadGuard() { <span style="color:#66d9ef">if</span>( mThread.joinable() ) { mThread.join(); } }
+
+    <span style="color:#75715e">// não permite o uso dos contrutores de cópia e atribuição
+</span><span style="color:#75715e"></span>    ThreadGuard( ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">const</span> ) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+    ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">operator</span><span style="color:#f92672">=</span> ( ThreadGuard <span style="color:#f92672">&amp;</span> <span style="color:#66d9ef">const</span> ) <span style="color:#f92672">=</span> <span style="color:#66d9ef">delete</span>;
+};
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span>() {
+  <span style="color:#66d9ef">thread</span> t4( foo );
+  ThreadGuard tg( t4 ); <span style="color:#75715e">// quando sair do escopo o join será chamado
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">throw</span> runtime_error( <span style="color:#e6db74">&#34;Este erro não afeta a thread acima&#34;</span> );
+}
+</code></pre></div>
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
+<li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/" target="_blank">Modern C++ Concurrency in Depth</a></li>
 </ul>
 
         </div>
@@ -493,7 +498,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

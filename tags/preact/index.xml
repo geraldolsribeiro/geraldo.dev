@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>preact on geraldo.dev</title>
+    <title>Preact on geraldo.dev</title>
     <link>https://geraldo.dev/tags/preact/</link>
-    <description>Recent content in preact on geraldo.dev</description>
+    <description>Recent content in Preact on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -19,7 +19,7 @@
       
       <guid>https://geraldo.dev/posts/preact/</guid>
       <description>Ciclo de vida  componentWillMount: Antes que o componente seja montado no DOM componentDidMount: Depois que o componente é montado no DOM componentWillUnmount: Antes da remoção do DOM componentWillReceiveProps: Antes que novas props sejam aceitas shouldComponentUpdate: Antes de render(). Retorne false caso queiram pular o render() componentWillUpdate: Antes render() componentDidUpdate: Depois render()  Preact sem babel ou JSX index.html
-1&amp;lt;!DOCTYPE html&amp;gt; 2&amp;lt;html&amp;gt; 3 &amp;lt;head&amp;gt; 4 &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; 5 &amp;lt;/head&amp;gt; 6 &amp;lt;body&amp;gt; 7 &amp;lt;script src=&amp;#34;https://unpkg.</description>
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;title&amp;gt;Preact sem Babel or JSX&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;script src=&amp;#34;https://unpkg.</description>
     </item>
     
   </channel>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>touchpad on geraldo.dev</title>
+    <title>Touchpad on geraldo.dev</title>
     <link>https://geraldo.dev/tags/touchpad/</link>
-    <description>Recent content in touchpad on geraldo.dev</description>
+    <description>Recent content in Touchpad on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -20,8 +20,8 @@
       <guid>https://geraldo.dev/posts/touchpad-desabilitar-colar-com-botao-do-meio/</guid>
       <description>Frequentemente tenho colado texto no editor enquanto tentava apens clicar para posicionar o cursor. Isto ocorre no notebook em que o touchpad não tem separação tátil entre os botões. É muito fácil clicar um pouco mais para a direita e acertar o botão errado.
 Para desabilitar a função use:
-1gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false Para habilitar a função use:
-1gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referências  [How do I disable middle mouse button click paste?</description>
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste false Para habilitar a função use:
+gsettings set org.gnome.desktop.interface gtk-enable-primary-paste true Referências  [How do I disable middle mouse button click paste?</description>
     </item>
     
   </channel>

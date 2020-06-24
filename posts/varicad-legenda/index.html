@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Varicad - configurando arquivos de legenda | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/varicad-legenda/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
-      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
+      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
       media="screen" async>
 
 
@@ -148,15 +148,17 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/varicad-legenda/#definindo-arquivos-de-legenda">Definindo arquivos de legenda</a></li>
-    <li><a href="https://geraldo.dev/posts/varicad-legenda/#formato-dos-arquivos-de-legenda">Formato dos arquivos de legenda</a></li>
-    <li><a href="https://geraldo.dev/posts/varicad-legenda/#posicionamento-dos-campos">Posicionamento dos campos</a>
-      <ul>
-        <li><a href="https://geraldo.dev/posts/varicad-legenda/#tabela-de-posicionamento">Tabela de posicionamento</a></li>
-      </ul>
-    </li>
-    <li><a href="https://geraldo.dev/posts/varicad-legenda/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/varicad-legenda/#definindo-arquivos-de-legenda">Definindo arquivos de legenda</a></li>
+<li><a href="https://geraldo.dev/posts/varicad-legenda/#formato-dos-arquivos-de-legenda">Formato dos arquivos de legenda</a></li>
+<li><a href="https://geraldo.dev/posts/varicad-legenda/#posicionamento-dos-campos">Posicionamento dos campos</a>
+<ul>
+<li><a href="https://geraldo.dev/posts/varicad-legenda/#tabela-de-posicionamento">Tabela de posicionamento</a></li>
+</ul></li>
+<li><a href="https://geraldo.dev/posts/varicad-legenda/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -165,121 +167,145 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <h2 id="definindo-arquivos-de-legenda">Definindo arquivos de legenda</h2>
+
 <ol>
 <li>Execute o comando <code>atm</code> (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)</li>
 </ol>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-01.webp" width="289" height="213" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-01.png" alt="Comando atm" width="289" height="213">
       <figcaption>Comando atm</figcaption>
     </figure>
-  </div>
-<ol start="2">
+  </div></p>
+
+<ol>
 <li>Clique no botão <strong>Legendas</strong></li>
 </ol>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-02.webp" width="991" height="321" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-02.png" alt="Clicar no botão legendas" width="991" height="321">
       <figcaption>Clicar no botão legendas</figcaption>
     </figure>
-  </div>
-<ol start="3">
+  </div></p>
+
+<ol>
 <li>Clicar na legenda e depois em <strong>modificar legenda</strong></li>
 </ol>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-03.webp" width="1001" height="269" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-03.png" alt="Legendas padrão" width="1001" height="269">
       <figcaption>Legendas padrão</figcaption>
     </figure>
-  </div>
-<ol start="4">
+  </div></p>
+
+<ol>
 <li>Configurar a legenda</li>
 </ol>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-04.webp" width="666" height="517" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-04.png" alt="Configuração para parte" width="666" height="517">
       <figcaption>Configuração para parte</figcaption>
     </figure>
-  </div>
-<ul>
+  </div></p>
+
+<ul class="task-list">
 <li>Dx = <code>-7</code></li>
 <li>Dy =  <code>7</code></li>
 <li>Arquivo = <code>IntMainPart.dwb</code></li>
-<li><input checked="" disabled="" type="checkbox">Para peças</li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Para peças</label></li>
 </ul>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-05.webp" width="669" height="518" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-05.png" alt="Configuração para montagem" width="669" height="518">
       <figcaption>Configuração para montagem</figcaption>
     </figure>
-  </div>
-<ul>
+  </div></p>
+
+<ul class="task-list">
 <li>Dx = <code>-7</code></li>
 <li>Dy =  <code>7</code></li>
 <li>Arquivo = <code>IntMainAssembly.dwb</code></li>
-<li><input checked="" disabled="" type="checkbox">Para montagens</li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Para montagens</label></li>
 </ul>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-09.webp" width="407" height="257" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-09.png" alt="Deslocamento a partir do canto inferior direito" width="407" height="257">
       <figcaption>Deslocamento a partir do canto inferior direito</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <h2 id="formato-dos-arquivos-de-legenda">Formato dos arquivos de legenda</h2>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-06.webp" width="1298" height="248" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-06.png" alt="Legenda para componente fabricado" width="1298" height="248">
       <figcaption>Legenda para componente fabricado</figcaption>
     </figure>
-  </div>
-  <div class="center-align">
+  </div></p>
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-07.webp" width="1288" height="333" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-07.png" alt="Legenda para montagem" width="1288" height="333">
       <figcaption>Legenda para montagem</figcaption>
     </figure>
-  </div>
-  <div class="center-align">
+  </div></p>
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-08.webp" width="1302" height="250" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-08.png" alt="Legenda para componente comprado" width="1302" height="250">
       <figcaption>Legenda para componente comprado</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <h2 id="posicionamento-dos-campos">Posicionamento dos campos</h2>
+
 <ol>
 <li>Execute o comando <code>atm</code> (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)</li>
 </ol>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-10.webp" width="1061" height="446" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-10.png" alt="Campos marcados para aparecer na legenda" width="1061" height="446">
       <figcaption>Campos marcados para aparecer na legenda</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <p>Clique em cada um dos itens marcados para aparecer na legenda e depois escolha <strong>Editar atributo</strong></p>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-11.webp" width="1047" height="511" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-11.png" alt="Edição de atributos" width="1047" height="511">
       <figcaption>Edição de atributos</figcaption>
     </figure>
-  </div>
-  <div class="center-align">
+  </div></p>
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/varicad-legenda-12.webp" width="472" height="281" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/varicad-legenda-12.png" alt="Formato de texto padrão" width="472" height="281">
       <figcaption>Formato de texto padrão</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <h3 id="tabela-de-posicionamento">Tabela de posicionamento</h3>
+
 <table>
 <thead>
 <tr>
@@ -288,67 +314,80 @@ if (!doNotTrack) {
 <th>Dy</th>
 </tr>
 </thead>
+
 <tbody>
 <tr>
 <td>name</td>
 <td>-113</td>
 <td>9</td>
 </tr>
+
 <tr>
 <td>date</td>
 <td>-19</td>
 <td>17</td>
 </tr>
+
 <tr>
 <td>weight</td>
 <td>-19</td>
 <td>25</td>
 </tr>
+
 <tr>
 <td>material</td>
 <td>-113</td>
 <td>25</td>
 </tr>
+
 <tr>
 <td>dwg no.</td>
 <td>-19</td>
 <td>9</td>
 </tr>
+
 <tr>
 <td>assembly no.</td>
 <td>-19</td>
 <td>9</td>
 </tr>
+
 <tr>
 <td>scale</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>drawing format</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>designer</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>checker</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>approver</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>drafter</td>
 <td>x</td>
 <td>y</td>
 </tr>
+
 <tr>
 <td>revision</td>
 <td>x</td>
@@ -356,12 +395,15 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<h2 id="referncias">Referências</h2>
+
+<h2 id="referências">Referências</h2>
+
 <ul>
 <li>NP 48:1968 Norma portuguesa: Tamanho de folhas</li>
 <li>NP 204:1968 Norma portuguesa</li>
 <li>ISO 7200:1984 Norma ISO</li>
 </ul>
+
         </div>
 
         
@@ -591,7 +633,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

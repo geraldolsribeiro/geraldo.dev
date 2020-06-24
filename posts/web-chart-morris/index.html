@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Gráficos para aplicações web com morris.js | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/web-chart-morris/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -56,8 +56,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
-      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
+      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
       media="screen" async>
 
 
@@ -158,9 +158,7 @@ if (!doNotTrack) {
               <div class="chip">
                   <a href="https://geraldo.dev/tags/web/">web</a>
                 </div>
-              <div class="chip">
-                  <a href="https://geraldo.dev/tags/materialize/">Materialize</a>
-                </div>
+              
 
 
         <h1>Gráficos para aplicações web com morris.js</h1>
@@ -171,14 +169,17 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#o-uso--bem-simples">O uso é bem simples</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#grfico-de-linha">Gráfico de linha</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#grfico-de-rea">Gráfico de Área</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#grfico-de-barras">Gráfico de barras</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#grfico-de-rosquinha">Gráfico de rosquinha</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#materialize">Materialize</a></li>
-    <li><a href="https://geraldo.dev/posts/web-chart-morris/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#o-uso-é-bem-simples">O uso é bem simples</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-linha">Gráfico de linha</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-área">Gráfico de Área</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-barras">Gráfico de barras</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#gráfico-de-rosquinha">Gráfico de rosquinha</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#materialize">Materialize</a></li>
+<li><a href="https://geraldo.dev/posts/web-chart-morris/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -186,43 +187,43 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="o-uso--bem-simples">O uso é bem simples</h2>
+        <h2 id="o-uso-é-bem-simples">O uso é bem simples</h2>
+
 <ul>
 <li>adicione as dependências (jquery, raphael e morris)</li>
 <li>adicione uma div</li>
 <li>adicione um script</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">link</span> <span style="color:#309">rel</span><span style="color:#555">=</span><span style="color:#c30">&#34;stylesheet&#34;</span> <span style="color:#309">href</span><span style="color:#555">=</span><span style="color:#c30">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&#34;</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>&lt;<span style="color:#309;font-weight:bold">script</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;myfirstchart&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">script</span>&gt;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#069;font-weight:bold">new</span> Morris...
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>&lt;/<span style="color:#309;font-weight:bold">script</span>&gt;
-</code></pre></div><h2 id="grfico-de-linha">Gráfico de linha</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;myfirstchart&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">new</span> Morris.Line({
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#09f;font-style:italic">// ID of the element in which to draw the chart.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#09f;font-style:italic"></span>  element<span style="color:#555">:</span> <span style="color:#c30">&#39;myfirstchart&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#09f;font-style:italic">// Chart data records -- each entry in this array corresponds to a point on
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// the chart.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>  data<span style="color:#555">:</span> [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    { year<span style="color:#555">:</span> <span style="color:#c30">&#39;2008&#39;</span>, value<span style="color:#555">:</span> <span style="color:#f60">20</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    { year<span style="color:#555">:</span> <span style="color:#c30">&#39;2009&#39;</span>, value<span style="color:#555">:</span> <span style="color:#f60">10</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    { year<span style="color:#555">:</span> <span style="color:#c30">&#39;2010&#39;</span>, value<span style="color:#555">:</span> <span style="color:#f60">5</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    { year<span style="color:#555">:</span> <span style="color:#c30">&#39;2011&#39;</span>, value<span style="color:#555">:</span> <span style="color:#f60">5</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    { year<span style="color:#555">:</span> <span style="color:#c30">&#39;2012&#39;</span>, value<span style="color:#555">:</span> <span style="color:#f60">20</span> }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  ],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  <span style="color:#09f;font-style:italic">// The name of the data record attribute that contains x-values.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#09f;font-style:italic"></span>  xkey<span style="color:#555">:</span> <span style="color:#c30">&#39;year&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#09f;font-style:italic">// A list of names of data record attributes that contain y-values.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#09f;font-style:italic"></span>  ykeys<span style="color:#555">:</span> [<span style="color:#c30">&#39;value&#39;</span>],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#09f;font-style:italic">// Labels for the ykeys -- will be displayed when you hover over the
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// chart.
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#09f;font-style:italic"></span>  labels<span style="color:#555">:</span> [<span style="color:#c30">&#39;Value&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>});
-</code></pre></div><div id="myfirstchart" style="height: 250px;"></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css&#34;</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myfirstchart&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
+  <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Morris</span>...
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<h2 id="gráfico-de-linha">Gráfico de linha</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myfirstchart&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Line</span>({
+  <span style="color:#75715e">// ID of the element in which to draw the chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;myfirstchart&#39;</span>,
+  <span style="color:#75715e">// Chart data records -- each entry in this array corresponds to a point on
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// the chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span> },
+    { <span style="color:#a6e22e">year</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span> }
+  ],
+  <span style="color:#75715e">// The name of the data record attribute that contains x-values.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;year&#39;</span>,
+  <span style="color:#75715e">// A list of names of data record attributes that contain y-values.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;value&#39;</span>],
+  <span style="color:#75715e">// Labels for the ykeys -- will be displayed when you hover over the
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// chart.
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Value&#39;</span>]
+});
+</code></pre></div>
+<div id="myfirstchart" style="height: 250px;"></div>
+
 <script>
 if( Morris ) {
 new Morris.Line({
@@ -247,28 +248,30 @@ new Morris.Line({
 });
 }
 </script>
-<h2 id="grfico-de-rea">Gráfico de Área</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;area-example&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Morris.Area({
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  element<span style="color:#555">:</span> <span style="color:#c30">&#39;area-example&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  data<span style="color:#555">:</span> [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2006&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">100</span>, b<span style="color:#555">:</span> <span style="color:#f60">90</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2007&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2008&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">50</span>,  b<span style="color:#555">:</span> <span style="color:#f60">40</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2009&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2010&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">50</span>,  b<span style="color:#555">:</span> <span style="color:#f60">40</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2011&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2012&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">100</span>, b<span style="color:#555">:</span> <span style="color:#f60">90</span> }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  ],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  xkey<span style="color:#555">:</span> <span style="color:#c30">&#39;y&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  ykeys<span style="color:#555">:</span> [<span style="color:#c30">&#39;a&#39;</span>, <span style="color:#c30">&#39;b&#39;</span>],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  labels<span style="color:#555">:</span> [<span style="color:#c30">&#39;Series A&#39;</span>, <span style="color:#c30">&#39;Series B&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>});
-</code></pre></div><div class="row">
+
+<h2 id="gráfico-de-área">Gráfico de Área</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;area-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Area</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;area-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2006&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2007&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> }
+  ],
+  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;y&#39;</span>,
+  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>],
+  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
+});
+</code></pre></div>
+<div class="row">
 <div class="col s12">
 <div id="area-example" style="height: 250px;"></div>
 </div>
 </div>
+
 <script>
 Morris.Area({
   element: 'area-example',
@@ -286,28 +289,30 @@ Morris.Area({
   labels: ['Series A', 'Series B']
 });
 </script>
-<h2 id="grfico-de-barras">Gráfico de barras</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;bar-example&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>Morris.Bar({
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  element<span style="color:#555">:</span> <span style="color:#c30">&#39;bar-example&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  data<span style="color:#555">:</span> [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2006&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">100</span>, b<span style="color:#555">:</span> <span style="color:#f60">90</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2007&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2008&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">50</span>,  b<span style="color:#555">:</span> <span style="color:#f60">40</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2009&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2010&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">50</span>,  b<span style="color:#555">:</span> <span style="color:#f60">40</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2011&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">75</span>,  b<span style="color:#555">:</span> <span style="color:#f60">65</span> },
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    { y<span style="color:#555">:</span> <span style="color:#c30">&#39;2012&#39;</span>, a<span style="color:#555">:</span> <span style="color:#f60">100</span>, b<span style="color:#555">:</span> <span style="color:#f60">90</span> }
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  ],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  xkey<span style="color:#555">:</span> <span style="color:#c30">&#39;y&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  ykeys<span style="color:#555">:</span> [<span style="color:#c30">&#39;a&#39;</span>, <span style="color:#c30">&#39;b&#39;</span>],
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  labels<span style="color:#555">:</span> [<span style="color:#c30">&#39;Series A&#39;</span>, <span style="color:#c30">&#39;Series B&#39;</span>]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>});
-</code></pre></div><div class="row">
+
+<h2 id="gráfico-de-barras">Gráfico de barras</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Bar</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bar-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2006&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2007&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2008&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2009&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2010&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">50</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">40</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2011&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">75</span>,  <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">65</span> },
+    { <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;2012&#39;</span>, <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">90</span> }
+  ],
+  <span style="color:#a6e22e">xkey</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;y&#39;</span>,
+  <span style="color:#a6e22e">ykeys</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>],
+  <span style="color:#a6e22e">labels</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#39;Series A&#39;</span>, <span style="color:#e6db74">&#39;Series B&#39;</span>]
+});
+</code></pre></div>
+<div class="row">
 <div class="col s12">
 <div id="bar-example" style="height: 250px;"></div>
 </div>
 </div>
+
 <script>
 Morris.Bar({
   element: 'bar-example',
@@ -325,21 +330,23 @@ Morris.Bar({
   labels: ['Series A', 'Series B']
 });
 </script>
-<h2 id="grfico-de-rosquinha">Gráfico de rosquinha</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>&lt;<span style="color:#309;font-weight:bold">div</span> <span style="color:#309">id</span><span style="color:#555">=</span><span style="color:#c30">&#34;donut-example&#34;</span> <span style="color:#309">style</span><span style="color:#555">=</span><span style="color:#c30">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#309;font-weight:bold">div</span>&gt;
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Morris.Donut({
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  element<span style="color:#555">:</span> <span style="color:#c30">&#39;donut-example&#39;</span>,
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  data<span style="color:#555">:</span> [
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>    {label<span style="color:#555">:</span> <span style="color:#c30">&#34;Download Sales&#34;</span>, value<span style="color:#555">:</span> <span style="color:#f60">12</span>},
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>    {label<span style="color:#555">:</span> <span style="color:#c30">&#34;In-Store Sales&#34;</span>, value<span style="color:#555">:</span> <span style="color:#f60">30</span>},
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>    {label<span style="color:#555">:</span> <span style="color:#c30">&#34;Mail-Order Sales&#34;</span>, value<span style="color:#555">:</span> <span style="color:#f60">20</span>}
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  ]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>});
-</code></pre></div><div class="row">
+
+<h2 id="gráfico-de-rosquinha">Gráfico de rosquinha</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;donut-example&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;height: 250px;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#a6e22e">Morris</span>.<span style="color:#a6e22e">Donut</span>({
+  <span style="color:#a6e22e">element</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;donut-example&#39;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Download Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">12</span>},
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;In-Store Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">30</span>},
+    {<span style="color:#a6e22e">label</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Mail-Order Sales&#34;</span>, <span style="color:#a6e22e">value</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>}
+  ]
+});
+</code></pre></div>
+<div class="row">
 <div class="col s12">
 <div id="donut-example" style="height: 250px;"></div>
 </div>
 </div>
+
 <script>
 Morris.Donut({
   element: 'donut-example',
@@ -350,10 +357,13 @@ Morris.Donut({
   ]
 });
 </script>
+
 <h2 id="materialize">Materialize</h2>
+
 <ul>
 <li>funciona bem com materializecss</li>
 </ul>
+
 <div class="row">
 <div class="col s12 m4">
 <div class="card hoverable">
@@ -365,7 +375,9 @@ Morris.Donut({
 </div>
 </div>
 </div>
+
 <!-- coluna 2 -->
+
 <div class="col s12 m8">
 <div class="card hoverable">
 <div class="card-content ">
@@ -376,7 +388,9 @@ Morris.Donut({
 </div>
 </div>
 </div>
-</div>
+
+<p></div></p>
+
 <script>
 Morris.Area({
   element: 'materialize-morris-area1-chart',
@@ -393,29 +407,32 @@ Morris.Area({
   ykeys: ['a', 'b'],
   labels: ['Series A', 'Series B']
 });
-<p>Morris.Area({
-element: &lsquo;materialize-morris-area2-chart&rsquo;,
-data: [
-{ y: &lsquo;2006&rsquo;, a: 100, b: 90 },
-{ y: &lsquo;2007&rsquo;, a: 75,  b: 65 },
-{ y: &lsquo;2008&rsquo;, a: 50,  b: 40 },
-{ y: &lsquo;2009&rsquo;, a: 75,  b: 65 },
-{ y: &lsquo;2010&rsquo;, a: 50,  b: 40 },
-{ y: &lsquo;2011&rsquo;, a: 75,  b: 65 },
-{ y: &lsquo;2012&rsquo;, a: 100, b: 90 }
-],
-xkey: &lsquo;y&rsquo;,
-ykeys: [&lsquo;a&rsquo;, &lsquo;b&rsquo;],
-labels: [&lsquo;Series A&rsquo;, &lsquo;Series B&rsquo;]
+
+Morris.Area({
+  element: 'materialize-morris-area2-chart',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
 });
-</script></p>
-<h2 id="referncias">Referências</h2>
+</script>
+
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="http://morrisjs.github.io/morris.js/">morris.js - good-looking charts shouldn't be difficult</a></li>
-<li><a href="https://morrisjs.github.io/morris.js/donuts.html">Documentação: donut</a></li>
-<li><a href="https://morrisjs.github.io/morris.js/lines.html">Documentação: lines</a></li>
-<li><a href="https://morrisjs.github.io/morris.js/bar.html">Documentação: bar</a></li>
-<li><a href="http://lazarohcm.github.io/MaterialAdmin/morris.html">Template materialize feito pelo Lázaro Marques</a></li>
+<li><a href="http://morrisjs.github.io/morris.js/" target="_blank">morris.js - good-looking charts shouldn&rsquo;t be difficult</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/donuts.html" target="_blank">Documentação: donut</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/lines.html" target="_blank">Documentação: lines</a></li>
+<li><a href="https://morrisjs.github.io/morris.js/bar.html" target="_blank">Documentação: bar</a></li>
+<li><a href="http://lazarohcm.github.io/MaterialAdmin/morris.html" target="_blank">Template materialize feito pelo Lázaro Marques</a></li>
 </ul>
 
         </div>
@@ -647,7 +664,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

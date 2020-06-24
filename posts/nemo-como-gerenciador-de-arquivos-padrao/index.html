@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Nemo como Gerenciador De Arquivos Padrão | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -62,8 +62,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
-      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
+      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
       media="screen" async>
 
 
@@ -170,12 +170,15 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#testando">Testando</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</a></li>
+<li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</a></li>
+<li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#testando">Testando</a></li>
+<li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</a></li>
+<li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -184,38 +187,44 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <h2 id="trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xdg-mime default <span style="color:#c30;font-weight:bold">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#c30;font-weight:bold"></span>  nemo.desktop inode/directory <span style="color:#c30;font-weight:bold">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#c30;font-weight:bold"></span>  application/x-gnome-saved-search
-</code></pre></div><p>Desabilitando o Nautilus</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.gnome.desktop.background show-desktop-icons <span style="color:#366">false</span>
-</code></pre></div><p>Habilitando o Nemo</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.nemo.desktop show-desktop-icons <span style="color:#366">true</span>
-</code></pre></div><h2 id="trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-mime default <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  nemo.desktop inode/directory <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  application/x-gnome-saved-search</code></pre></div>
+<p>Desabilitando o Nautilus</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.gnome.desktop.background show-desktop-icons false</code></pre></div>
+<p>Habilitando o Nemo</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.nemo.desktop show-desktop-icons true</code></pre></div>
+<h2 id="trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</h2>
+
 <p>Em <strong>Configurações</strong> acesse <strong>Aplicativos preferidos</strong></p>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/post-nemo-xfce-01.webp" width="783" height="529" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/post-nemo-xfce-01.webp" alt="img" width="783" height="529">
       <figcaption>img</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <p>Abra a aba <strong>Utilitários</strong> e altere para <strong>nemo</strong> em <strong>Gerenciador de Arquivos</strong></p>
-  <div class="center-align">
+
+<p><div class="center-align">
     <figure>
       <source srcset="/img/post-nemo-xfce-02.webp" width="786" height="530" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/post-nemo-xfce-02.webp" alt="img" width="786" height="530">
       <figcaption>img</figcaption>
     </figure>
-  </div>
+  </div></p>
+
 <h2 id="testando">Testando</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xdg-open <span style="color:#033">$HOME</span>
-</code></pre></div><h2 id="usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.cinnamon.desktop.default-applications.terminal <span style="color:#c30;font-weight:bold">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#c30;font-weight:bold"></span>    <span style="color:#366">exec</span> xfce4-terminal
-</code></pre></div><h2 id="referncias">Referências</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">xdg-open $HOME</code></pre></div>
+<h2 id="usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gsettings set org.cinnamon.desktop.default-applications.terminal <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>    exec xfce4-terminal</code></pre></div>
+<h2 id="referências">Referências</h2>
+
 <ul>
-<li><a href="https://itsfoss.com/install-nemo-file-manager-ubuntu/">How to Install and Make Nemo the Default File Manager in Ubuntu</a></li>
+<li><a href="https://itsfoss.com/install-nemo-file-manager-ubuntu/" target="_blank">How to Install and Make Nemo the Default File Manager in Ubuntu</a></li>
 </ul>
 
         </div>
@@ -447,7 +456,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

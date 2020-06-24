@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>thread on geraldo.dev</title>
+    <title>Thread on geraldo.dev</title>
     <link>https://geraldo.dev/tags/thread/</link>
-    <description>Recent content in thread on geraldo.dev</description>
+    <description>Recent content in Thread on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 23 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-thread/</guid>
-      <description>Thread com função sem argumentos 1void foo() { 2 cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; 3} 4 5void run () { 6 thread t1( foo ); 7 // Algum processamento... 8 t1.join(); 9} Thread com classe callable 1class CallableClass { 2 public: 3 void operator()() { 4 cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; 5 } 6}; 7 8void run() { 9 CallableClass obj; 10 thread t2( obj ); 11 // Algum processamento.</description>
+      <description>Thread com função sem argumentos void foo() { printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } void run () { thread t1( foo ); // Algum processamento...  t1.join(); }  Thread com classe callable classCallableClass { public: void operator()() { printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } }; void run() { CallableClass obj; thread t2( obj ); // Algum processamento...  t2.join(); }  Thread com lambda // Sintaxe // [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&amp;gt; ret { body } // [capture-list]( params ) -&amp;gt; ret { body } // [capture-list]( params ) { body } // [capture-list]{ body }  void run() { thread t3( []{ printf( &amp;#34;Corpo da função: %d\n&amp;#34;, this_thread::get_id() ); } ); // Algum processamento.</description>
     </item>
     
   </channel>

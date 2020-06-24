@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Git - diff de imagens | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/git-diff-image/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.54.0" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
-      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
+      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
       media="screen" async>
 
 
@@ -148,11 +148,14 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/git-diff-image/#dizer-ao-git-que-imagem--imagem">Dizer ao git que imagem é imagem</a></li>
-    <li><a href="https://geraldo.dev/posts/git-diff-image/#dizer-ao-git-como-fazer-o-diff">Dizer ao git como fazer o diff</a></li>
-    <li><a href="https://geraldo.dev/posts/git-diff-image/#o-programa-de-diff">O programa de diff</a></li>
-    <li><a href="https://geraldo.dev/posts/git-diff-image/#referncias">Referências</a></li>
-  </ul>
+<li>
+<ul>
+<li><a href="https://geraldo.dev/posts/git-diff-image/#dizer-ao-git-que-imagem-é-imagem">Dizer ao git que imagem é imagem</a></li>
+<li><a href="https://geraldo.dev/posts/git-diff-image/#dizer-ao-git-como-fazer-o-diff">Dizer ao git como fazer o diff</a></li>
+<li><a href="https://geraldo.dev/posts/git-diff-image/#o-programa-de-diff">O programa de diff</a></li>
+<li><a href="https://geraldo.dev/posts/git-diff-image/#referências">Referências</a></li>
+</ul></li>
+</ul>
 
 </aside>
 
@@ -160,33 +163,36 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="dizer-ao-git-que-imagem--imagem">Dizer ao git que imagem é imagem</h2>
+        <h2 id="dizer-ao-git-que-imagem-é-imagem">Dizer ao git que imagem é imagem</h2>
+
 <p>Primeiro é necessário informar ao <code>git</code> para tratar imagens de um modo especial.
 Isso pode ser feito globalmente ou por projeto.</p>
-<p>O comando abaixo diz ao <code>git</code> que algumas extensões são imagens.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git config --global core.attributesfile <span style="color:#c30">&#39;~/.gitattributes&#39;</span>
-</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>cat ~/.gitattributes
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>*.gif <span style="color:#033">diff</span><span style="color:#555">=</span>image
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>*.jpg <span style="color:#033">diff</span><span style="color:#555">=</span>image
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>*.png <span style="color:#033">diff</span><span style="color:#555">=</span>image
-</code></pre></div><h2 id="dizer-ao-git-como-fazer-o-diff">Dizer ao git como fazer o diff</h2>
-<p>O comando abaixo diz ao <code>git</code> qual programa executar para fazer o diff da imagem.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git config --global diff.image.command <span style="color:#c30">&#39;~/bin/git-imgdiff&#39;</span>
-</code></pre></div><h2 id="o-programa-de-diff">O programa de diff</h2>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span>cat <span style="color:#c30">&lt;&lt; &#39;EOF&#39; &gt; ~/bin/git-imgdiff
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#c30">#!/bin/sh
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#c30"># Descomente o modo que desejar
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#c30">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#c30"># 3 imagens lado a lado: NOVA | DIFF | ANTIGA
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#c30">compare &#34;$2&#34; &#34;$1&#34; png:- | montage -geometry +4+4 &#34;$2&#34; - &#34;$1&#34; png:- | display -title &#34;$1&#34; -
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#c30">
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#c30"># 1 imagem: DIFF
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#c30"># compare &#34;$2&#34; &#34;$1&#34; png:- | display -title &#34;$1&#34; -
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#c30">EOF</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>chmod <span style="color:#f60">755</span> ~/bin/git-imgdiff
-</code></pre></div><h2 id="referncias">Referências</h2>
+
+<p><p>O comando abaixo diz ao <code>git</code> que algumas extensões são imagens.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config &ndash;global core.attributesfile <span style="color:#e6db74">&#39;~/.gitattributes&#39;</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat ~/.gitattributes
+*.gif diff<span style="color:#f92672">=</span>image
+*.jpg diff<span style="color:#f92672">=</span>image
+*.png diff<span style="color:#f92672">=</span>image</code></pre></div>
+<h2 id="dizer-ao-git-como-fazer-o-diff">Dizer ao git como fazer o diff</h2></p>
+
+<p><p>O comando abaixo diz ao <code>git</code> qual programa executar para fazer o diff da imagem.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git config &ndash;global diff.image.command <span style="color:#e6db74">&#39;~/bin/git-imgdiff&#39;</span></code></pre></div>
+<h2 id="o-programa-de-diff">O programa de diff</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat <span style="color:#e6db74">&lt;&lt; &#39;EOF&#39; &gt; ~/bin/git-imgdiff
+</span><span style="color:#e6db74">#!/bin/sh
+</span><span style="color:#e6db74"># Descomente o modo que desejar
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"># 3 imagens lado a lado: NOVA | DIFF | ANTIGA
+</span><span style="color:#e6db74">compare &#34;$2&#34; &#34;$1&#34; png:- | montage -geometry +4+4 &#34;$2&#34; - &#34;$1&#34; png:- | display -title &#34;$1&#34; -
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"># 1 imagem: DIFF
+</span><span style="color:#e6db74"># compare &#34;$2&#34; &#34;$1&#34; png:- | display -title &#34;$1&#34; -
+</span><span style="color:#e6db74">EOF</span>
+chmod <span style="color:#ae81ff">755</span> ~/bin/git-imgdiff</code></pre></div>
+<h2 id="referências">Referências</h2></p>
+
 <ul>
-<li><a href="https://akikoskinen.info/image-diffs-with-git/">Image diffs with git</a></li>
+<li><a href="https://akikoskinen.info/image-diffs-with-git/" target="_blank">Image diffs with git</a></li>
 </ul>
 
         </div>
@@ -418,7 +424,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
 
 
     

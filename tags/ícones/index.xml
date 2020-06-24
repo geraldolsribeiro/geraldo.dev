@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ícones on geraldo.dev</title>
+    <title>ícones on geraldo.dev</title>
     <link>https://geraldo.dev/tags/%C3%ADcones/</link>
-    <description>Recent content in Ícones on geraldo.dev</description>
+    <description>Recent content in ícones on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -19,9 +19,9 @@
       
       <guid>https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/</guid>
       <description>O pacote papirus-icon-theme está no Debian Sid. Para instalar na versão stable basta criar um arquivo papirus-icon-theme.list contendo o endereço do repositório:
-echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
-apt-get update apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
+1echo &amp;#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&amp;#34; \  2 &amp;gt; /etc/apt/sources.list.d/papirus-icon-theme.list Adicionar a chave
+1apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F Instalar
+1apt-get update 2apt-get install papirus-icon-theme Pronto, agora é só selecionar o tema papirus na configuração do seu ambiente.
 Selecionando o tema no XFCE Em Configurações escolha Aparência e depois Ícones.</description>
     </item>
     

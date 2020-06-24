@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Como instalar o tema de ícones Papirus no Debian | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -56,8 +56,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
-      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -157,12 +157,9 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/#selecionando-o-tema-no-xfce">Selecionando o tema no XFCE</a></li>
-<li><a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/#referências">Referências</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/#selecionando-o-tema-no-xfce">Selecionando o tema no XFCE</a></li>
+    <li><a href="https://geraldo.dev/posts/como-instalar-o-tema-papirus-no-debian/#referncias">Referências</a></li>
+  </ul>
 
 </aside>
 
@@ -172,41 +169,35 @@ if (!doNotTrack) {
         <div class="gr-main-content">
         <p>O pacote <code>papirus-icon-theme</code> está no <code>Debian Sid</code>. Para instalar na versão <code>stable</code> basta
 criar um arquivo <code>papirus-icon-theme.list</code> contendo o endereço do repositório:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo <span style="color:#e6db74">&#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&#34;</span> <span style="color:#ae81ff">\ </span>
-  &gt; /etc/apt/sources.list.d/papirus-icon-theme.list</code></pre></div>
-<p>Adicionar a chave</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F</code></pre></div>
-<p>Instalar</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt-get update
-apt-get install papirus-icon-theme</code></pre></div>
-<p>Pronto, agora é só selecionar o tema <code>papirus</code> na configuração do seu ambiente.</p>
-
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#366">echo</span> <span style="color:#c30">&#34;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&#34;</span> <span style="color:#c30;font-weight:bold">\ </span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  &gt; /etc/apt/sources.list.d/papirus-icon-theme.list
+</code></pre></div><p>Adicionar a chave</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F
+</code></pre></div><p>Instalar</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt-get update
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>apt-get install papirus-icon-theme
+</code></pre></div><p>Pronto, agora é só selecionar o tema <code>papirus</code> na configuração do seu ambiente.</p>
 <h2 id="selecionando-o-tema-no-xfce">Selecionando o tema no XFCE</h2>
-
 <p>Em <strong>Configurações</strong> escolha <strong>Aparência</strong> e depois <strong>Ícones</strong>.</p>
-
-<p><div class="center-align">
+  <div class="center-align">
     <figure>
       <source srcset="/img/papirus-02.webp" width="828" height="407" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/papirus-02.png" alt="img" width="828" height="407">
       <figcaption>img</figcaption>
     </figure>
-  </div></p>
-
-<p><div class="center-align">
+  </div>
+  <div class="center-align">
     <figure>
       <source srcset="/img/papirus-03.webp" width="826" height="407" type="image/webp">
       <img class="responsive-img z-depth-3" src="/img/papirus-03.png" alt="img" width="826" height="407">
       <figcaption>img</figcaption>
     </figure>
-  </div></p>
-
-<h2 id="referências">Referências</h2>
-
+  </div>
+<h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/" target="_blank">Github do projeto</a></li>
-<li><a href="https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/" target="_blank">https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/</a></li>
-<li><a href="https://github.com/nizarmah/tintedarc" target="_blank">https://github.com/nizarmah/tintedarc</a></li>
+<li><a href="https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/">Github do projeto</a></li>
+<li><a href="https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/">https://www.reddit.com/r/unixporn/comments/6a0cfp/xfce_my_style_of_mac_osx_for_linux/</a></li>
+<li><a href="https://github.com/nizarmah/tintedarc">https://github.com/nizarmah/tintedarc</a></li>
 </ul>
 
         </div>
@@ -438,7 +429,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

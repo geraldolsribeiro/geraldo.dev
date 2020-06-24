@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Thread on geraldo.dev</title>
+    <title>thread on geraldo.dev</title>
     <link>https://geraldo.dev/tags/thread/</link>
-    <description>Recent content in Thread on geraldo.dev</description>
+    <description>Recent content in thread on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 23 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/cpp-thread/</guid>
-      <description>Thread com função sem argumentos void foo() { cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; } void run () { thread t1( foo ); // Algum processamento...  t1.join(); }  Thread com função passando parâmetros por valor void fooByRef( int &amp;amp; a ) { while( true ) { cout &amp;lt;&amp;lt; &amp;#34;O valor é &amp;#34; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl; this_thread::sleep_for( chrono::milliseconds( 1000 ) ); } } void run () { int p = 9; thread t2( fooByRef, std::ref( p ) ); // usar o wrapper ref para não passar por valor  // Algum processamento.</description>
+      <description>Thread com função sem argumentos 1void foo() { 2 cout &amp;lt;&amp;lt; &amp;#34;Corpo da função: &amp;#34; &amp;lt;&amp;lt; this_thread::get_id() &amp;lt;&amp;lt; endl; 3} 4 5void run () { 6 thread t1( foo ); 7 // Algum processamento... 8 t1.join(); 9} Thread com função passando parâmetros por valor 1void fooByRef( int &amp;amp; a ) { 2 while( true ) { 3 cout &amp;lt;&amp;lt; &amp;#34;O valor é &amp;#34; &amp;lt;&amp;lt; a &amp;lt;&amp;lt; endl; 4 this_thread::sleep_for( chrono::milliseconds( 1000 ) ); 5 } 6} 7 8void run () { 9 int p = 9; 10 thread t2( fooByRef, std::ref( p ) ); // usar o wrapper ref para não passar por valor 11 // Algum processamento.</description>
     </item>
     
   </channel>

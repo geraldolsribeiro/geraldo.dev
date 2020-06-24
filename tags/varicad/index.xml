@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Varicad on geraldo.dev</title>
+    <title>varicad on geraldo.dev</title>
     <link>https://geraldo.dev/tags/varicad/</link>
-    <description>Recent content in Varicad on geraldo.dev</description>
+    <description>Recent content in varicad on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,7 +18,7 @@
       <pubDate>Tue, 11 Feb 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-visao-predefinida/</guid>
-      <description> Execute o comando cfg (Ferramentas/Configurações do Sistema) Abra o item Definições da Vistas 3D Pré-Definidas em 3D Defina os seguinte valores  Rotação ao redor do eixo visualizado X: 35.264 Rotação ao redor do eixo visualizado Y: -45 Rotação ao redor do eixo visualizado Z: 0    Comando atm    $$ \arcsin(\tan 30°) \approx 35.264 $$  </description>
+      <description> Execute o comando cfg (Ferramentas/Configurações do Sistema) Abra o item Definições da Vistas 3D Pré-Definidas em 3D Defina os seguinte valores   Rotação ao redor do eixo visualizado X: 35.264 Rotação ao redor do eixo visualizado Y: -45 Rotação ao redor do eixo visualizado Z: 0   Comando atm    $$ \arcsin(\tan 30°) \approx 35.264 $$  </description>
     </item>
     
     <item>
@@ -27,7 +27,7 @@
       <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-legenda/</guid>
-      <description>Definindo arquivos de legenda  Execute o comando atm (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)   Comando atm    Clique no botão Legendas   Clicar no botão legendas    Clicar na legenda e depois em modificar legenda   Legendas padrão    Configurar a legenda   Configuração para parte   Dx = -7 Dy = 7 Arquivo = IntMainPart.</description>
+      <description>Definindo arquivos de legenda  Execute o comando atm (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)   Comando atm   Clique no botão Legendas   Clicar no botão legendas   Clicar na legenda e depois em modificar legenda   Legendas padrão   Configurar a legenda   Configuração para parte    Dx = -7 Dy = 7 Arquivo = IntMainPart.dwb Para peças   Configuração para montagem    Dx = -7 Dy = 7 Arquivo = IntMainAssembly.</description>
     </item>
     
     <item>
@@ -36,8 +36,8 @@
       <pubDate>Wed, 29 Jan 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/varicad-moldura/</guid>
-      <description>Margens por tamanho de folha    Formato Margem esquerda Demais margens     A0 25 mm 10 mm   A1 25 mm 10 mm   A2 25 mm 7 mm   A3 25 mm 7 mm   A4 25 mm 5 mm    Definindo parâmetros da moldura  Execute o comando sbd (Ferramentas/Definição dos formatos de folha)
- Clicar em Definir o estilo da fronteira da folha de desenho</description>
+      <description>Margens por tamanho de folha    Formato Margem esquerda Demais margens     A0 25 mm 10 mm   A1 25 mm 10 mm   A2 25 mm 7 mm   A3 25 mm 7 mm   A4 25 mm 5 mm    Definindo parâmetros da moldura   Execute o comando sbd (Ferramentas/Definição dos formatos de folha)
+  Clicar em Definir o estilo da fronteira da folha de desenho</description>
     </item>
     
   </channel>

@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Vim Spell Checking | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/vim-spell-checking/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
-      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -152,15 +152,12 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/vim-spell-checking/#switching-on-spell-checking">Switching on spell-checking</a></li>
-<li><a href="https://geraldo.dev/posts/vim-spell-checking/#what-does-it-look-like">What does it look like</a></li>
-<li><a href="https://geraldo.dev/posts/vim-spell-checking/#spell-check-per-filetype">Spell check per filetype</a></li>
-<li><a href="https://geraldo.dev/posts/vim-spell-checking/#we-get-word-completion-for-free">We get word completion for free</a></li>
-<li><a href="https://geraldo.dev/posts/vim-spell-checking/#add-words-to-the-dictionary">Add words to the dictionary</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/vim-spell-checking/#switching-on-spell-checking">Switching on spell-checking</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-spell-checking/#what-does-it-look-like">What does it look like</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-spell-checking/#spell-check-per-filetype">Spell check per filetype</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-spell-checking/#we-get-word-completion-for-free">We get word completion for free</a></li>
+    <li><a href="https://geraldo.dev/posts/vim-spell-checking/#add-words-to-the-dictionary">Add words to the dictionary</a></li>
+  </ul>
 
 </aside>
 
@@ -171,67 +168,40 @@ if (!doNotTrack) {
         <p>There are times when we edit prose in Vim,
 such as in a project <code>README</code> or Git commit message.
 In those cases,
-we can use Vim&rsquo;s spell-checking to help us avoid embarrassing mistakes.</p>
-
+we can use Vim's spell-checking to help us avoid embarrassing mistakes.</p>
 <h2 id="switching-on-spell-checking">Switching on spell-checking</h2>
-
 <p>We can switch on spell checking with this command:</p>
-
 <pre><code>:setlocal spell
-</code></pre>
-
-<p>We can also specify the language:</p>
-
+</code></pre><p>We can also specify the language:</p>
 <pre><code>:setlocal spell spelllang=en_us
-</code></pre>
-
-<h2 id="what-does-it-look-like">What does it look like</h2>
-
-<p>Here&rsquo;s a screenshot of what I see as I edit this blog post:</p>
-
-<p><div class="center-align">
+</code></pre><h2 id="what-does-it-look-like">What does it look like</h2>
+<p>Here's a screenshot of what I see as I edit this blog post:</p>
+  <div class="center-align">
     <figure>
       <img class="responsive-img z-depth-3" src="images/vim-spell-check.webp" alt="&#39;&#39;">
       <figcaption>&#39;&#39;</figcaption>
     </figure>
-  </div></p>
-
+  </div>
 <p>The highlighted words are considered misspellings.</p>
-
 <h2 id="spell-check-per-filetype">Spell check per filetype</h2>
-
 <p>It would be tedious to manually turn on spell-checking each time we need it.
-Luckily, we can guess by convention that we&rsquo;ll want to spell-check certain files.</p>
-
+Luckily, we can guess by convention that we'll want to spell-check certain files.</p>
 <p>We automatically turn on spell-checking for Markdown files based on their file
-extension with this line in our <code>~/.vimrc</code> via <a href="https://github.com/thoughtbot/dotfiles/blob/master/vimrc" target="_blank">thoughtbot/dotfiles</a>:</p>
-
+extension with this line in our <code>~/.vimrc</code> via <a href="https://github.com/thoughtbot/dotfiles/blob/master/vimrc">thoughtbot/dotfiles</a>:</p>
 <pre><code>autocmd BufRead,BufNewFile *.md setlocal spell
-</code></pre>
-
-<p>Another way to do it for certain filetypes is like this:</p>
-
+</code></pre><p>Another way to do it for certain filetypes is like this:</p>
 <pre><code>autocmd FileType gitcommit setlocal spell
-</code></pre>
-
-<h2 id="we-get-word-completion-for-free">We get word completion for free</h2>
-
-<p>By turning on spell-checking in our <code>~/.vimrc</code>, we&rsquo;ll be turning on word
+</code></pre><h2 id="we-get-word-completion-for-free">We get word completion for free</h2>
+<p>By turning on spell-checking in our <code>~/.vimrc</code>, we'll be turning on word
 completion as well. The following command will let us press <code>CTRL-N</code> or
-<code>CTRL-P</code> in insert-mode to complete the word we&rsquo;re typing!</p>
-
+<code>CTRL-P</code> in insert-mode to complete the word we're typing!</p>
 <pre><code>set complete+=kspell
-</code></pre>
-
-<h2 id="add-words-to-the-dictionary">Add words to the dictionary</h2>
-
+</code></pre><h2 id="add-words-to-the-dictionary">Add words to the dictionary</h2>
 <p>We can add words like &ldquo;RSpec&rdquo; or &ldquo;thoughtbot&rdquo; to the <code>spellfile</code>
 (a list of correctly-spelled words)
 by cursoring over those words in a file and typing:</p>
-
 <pre><code>zg
 </code></pre>
-
         </div>
 
         
@@ -461,7 +431,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

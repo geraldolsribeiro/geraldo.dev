@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Git - Limpando o repositório | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/git-limpeza/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -50,8 +50,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
-      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -148,11 +148,8 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/git-limpeza/#referências">Referências</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/git-limpeza/#referncias">Referências</a></li>
+  </ul>
 
 </aside>
 
@@ -161,7 +158,6 @@ if (!doNotTrack) {
 
         <div class="gr-main-content">
         <p>Para listar todos os branch locais que já formam mergeados no <code>dev</code>:</p>
-
 <pre><code>git branch --merged dev
   ajuste-cabecalho-inclui-guarda-de-formatacao
   dev
@@ -175,10 +171,7 @@ if (!doNotTrack) {
   teste-funcional
   teste-funcional-com-geracao-de-screenshot
   update-documentation-from-testlink
-</code></pre>
-
-<p>Nota: O branch marcado com <code>*</code> é o branch atual e não deve ser removido se estiver dentro dele.</p>
-
+</code></pre><p>Nota: O branch marcado com <code>*</code> é o branch atual e não deve ser removido se estiver dentro dele.</p>
 <pre><code>$ git branch --merged dev | egrep -v &quot;\*&quot;
   ajuste-cabecalho-inclui-guarda-de-formatacao
   dev
@@ -191,10 +184,7 @@ if (!doNotTrack) {
   teste-funcional
   teste-funcional-com-geracao-de-screenshot
   update-documentation-from-testlink
-</code></pre>
-
-<p>Passando esta lista para um <code>xargs</code> fica fácil executar o <code>git branch -d</code> para cada um dos branches mergeados.</p>
-
+</code></pre><p>Passando esta lista para um <code>xargs</code> fica fácil executar o <code>git branch -d</code> para cada um dos branches mergeados.</p>
 <pre><code>$ git branch --merged dev | egrep -v &quot;\*&quot; | xargs git branch -d
 Deleted branch ajuste-cabecalho-inclui-guarda-de-formatacao (was 712f81f5).
 Deleted branch dev (was d4ab4ffd).
@@ -207,14 +197,11 @@ Deleted branch testar-xml-gerado-contra-dtd (was 1d3b0381).
 Deleted branch teste-funcional (was 0967bcdd).
 Deleted branch teste-funcional-com-geracao-de-screenshot (was 0967bcdd).
 Deleted branch update-documentation-from-testlink (was cae58772).
-</code></pre>
-
-<h2 id="referências">Referências</h2>
-
+</code></pre><h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://erikaybar.name/git-deleting-old-local-branches" target="_blank">Git Tip: Deleting Old Local Branches</a></li>
-<li><a href="https://www.kevinkuszyk.com/2016/08/17/git-tips-5-prune-branches-to-keep-your-repro-in-good-shape/" target="_blank">Git Tips #5 - Prune branches to keep your repro in good shape</a></li>
-<li><a href="https://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged" target="_blank">How can I delete all Git branches which have been merged?</a></li>
+<li><a href="https://erikaybar.name/git-deleting-old-local-branches">Git Tip: Deleting Old Local Branches</a></li>
+<li><a href="https://www.kevinkuszyk.com/2016/08/17/git-tips-5-prune-branches-to-keep-your-repro-in-good-shape/">Git Tips #5 - Prune branches to keep your repro in good shape</a></li>
+<li><a href="https://stackoverflow.com/questions/6127328/how-can-i-delete-all-git-branches-which-have-been-merged">How can I delete all Git branches which have been merged?</a></li>
 </ul>
 
         </div>
@@ -446,7 +433,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

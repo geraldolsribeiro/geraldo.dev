@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Git on geraldo.dev</title>
+    <title>git on geraldo.dev</title>
     <link>https://geraldo.dev/tags/git/</link>
-    <description>Recent content in Git on geraldo.dev</description>
+    <description>Recent content in git on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,10 +18,10 @@
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-checkout-somente-da-ultima-versao/</guid>
-      <description> Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
+      <description>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto. Principalmente quando estamos usando bibliotecas de terceiros.
 Para indicar o número máximo de commits a ser baixado use a opção --depth, adicionalmente você pode indicar de qual o branch deve ser baixado.
 Exemplo de uso retirado do site do mongodb:
-git clone https://github.com/mongodb/mongo-cxx-driver.git \  --branch releases/stable \  --depth 1 Referências  Installing the mongocxx driver  </description>
+1git clone https://github.com/mongodb/mongo-cxx-driver.git \ 2 --branch releases/stable \ 3 --depth 1 Referências  Installing the mongocxx driver  </description>
     </item>
     
     <item>
@@ -31,8 +31,8 @@ git clone https://github.com/mongodb/mongo-cxx-driver.git \  --branch releases/s
       
       <guid>https://geraldo.dev/posts/git-diff/</guid>
       <description>Sem espaços no final da linha ou final do arquivo O comando abaixo adiciona uma marcação no git diff no terminal ou no git gui.
-git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; Após rodar o comando acima o arquivo ~/.gitconfig é alterado para conter as seguintes linhas:
-[core] whitespace = blank-at-eol Exemplos Uma linha com espaço sobrando no final aparece assim no git gui:
+1git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; Após rodar o comando acima o arquivo ~/.gitconfig é alterado para conter as seguintes linhas:
+1[core] 2	whitespace = blank-at-eol Exemplos Uma linha com espaço sobrando no final aparece assim no git gui:
  diff no git gui.   Uma linha com espaço sobrando no final (acrescentei mais alguns) aparece assim no terminal:</description>
     </item>
     
@@ -44,7 +44,7 @@ git config --global core.whitespace &amp;#39;blank-at-eol,blank-at-eof&amp;#39; 
       <guid>https://geraldo.dev/posts/git-diff-image/</guid>
       <description>Dizer ao git que imagem é imagem Primeiro é necessário informar ao git para tratar imagens de um modo especial. Isso pode ser feito globalmente ou por projeto.
 O comando abaixo diz ao git que algumas extensões são imagens.
-git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39;cat ~/.gitattributes *.gif diff=image *.jpg diff=image *.png diff=image Dizer ao git como fazer o diff O comando abaixo diz ao git qual programa executar para fazer o diff da imagem.</description>
+1git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39; 1cat ~/.gitattributes 2*.gif diff=image 3*.jpg diff=image 4*.png diff=image Dizer ao git como fazer o diff O comando abaixo diz ao git qual programa executar para fazer o diff da imagem.</description>
     </item>
     
     <item>
@@ -53,9 +53,9 @@ git config --global core.attributesfile &amp;#39;~/.gitattributes&amp;#39;cat ~/
       <pubDate>Sun, 08 Dec 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/git-dicas/</guid>
-      <description> Diferença entre dois branches &amp;ndash; somente nomes de arquivos git diff --name-only branch-1 branch-2 Status:
+      <description>Diferença entre dois branches &amp;ndash; somente nomes de arquivos 1git diff --name-only branch-1 branch-2 Status:
  M arquivos modificados A arquivos adicionados D arquivos removidos  Filtrando por estes códigos de status temos as próximas dicas.
-Listar somente os arquivos modificados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
+Listar somente os arquivos modificados entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^M\s\+//p&amp;#34;  filtra somente as linhas que começam com M de modificado.  Listar somente os arquivos adicionados entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^A\s\+//p&amp;#34;  filtra somente as linhas que começam com A de adicionado  Listar somente os arquivos removidos entre dois branches 1git diff --name-status branch-1 branch-2 | sed -n &amp;#34;s/^D\s\+//p&amp;#34;  filtra somente as linhas que começam com D de deletados  Referências  Git - Getting a list of files changed between branches  </description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ Listar somente os arquivos modificados entre dois branches git diff --name-statu
       
       <guid>https://geraldo.dev/posts/git-limpeza/</guid>
       <description>Para listar todos os branch locais que já formam mergeados no dev:
-git branch --merged dev ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando * test-naming-service testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink  Nota: O branch marcado com * é o branch atual e não deve ser removido se estiver dentro dele.
-$ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink  Passando esta lista para um xargs fica fácil executar o git branch -d para cada um dos branches mergeados.</description>
+git branch --merged dev ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando * test-naming-service testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink Nota: O branch marcado com * é o branch atual e não deve ser removido se estiver dentro dele.
+$ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inclui-guarda-de-formatacao dev fix-270B fix-86 fix-gitignore fix-wakeup hotfix-import-faltando testar-xml-gerado-contra-dtd teste-funcional teste-funcional-com-geracao-de-screenshot update-documentation-from-testlink Passando esta lista para um xargs fica fácil executar o git branch -d para cada um dos branches mergeados.</description>
     </item>
     
     <item>
@@ -76,8 +76,8 @@ $ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inc
       
       <guid>https://geraldo.dev/posts/git-auto-formatart-antes-do-commit/</guid>
       <description>Escrever um arquivo .gitattributes contendo:
-*.java filter=clang-format-java Acrescentar os operações clean e smudge
-git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
+1*.java filter=clang-format-java Acrescentar os operações clean e smudge
+1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
     </item>
     
   </channel>

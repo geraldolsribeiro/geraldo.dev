@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Grafana: Reset da senha do admin | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/grafana-reset-senha-do-admin/">
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.9f12b66a9b95d665a852e082e59177e2964160ba39ba803f4e817a09586738bb.css"
-      integrity="sha256-nxK2apuV1mWoUuCC5ZF34pZBYLo5uoA/ToF6CVhnOLs="
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
       media="screen" async>
 
 
@@ -155,11 +155,8 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-<li>
-<ul>
-<li><a href="https://geraldo.dev/posts/grafana-reset-senha-do-admin/#referências">Referências</a></li>
-</ul></li>
-</ul>
+    <li><a href="https://geraldo.dev/posts/grafana-reset-senha-do-admin/#referncias">Referências</a></li>
+  </ul>
 
 </aside>
 
@@ -167,28 +164,27 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <p><p>Iniciar os containers</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cd /opt/docker/docker-compose-influxdb-grafana
-docker-compose up -d</code></pre></div>
-<p>Localizar o id do container do &lsquo;/run.sh&rsquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker ps -a
-CONTAINER ID IMAGE                  COMMAND                  CREATED       &hellip;
-265059f8820a grafana/grafana:latest <span style="color:#e6db74">&#34;/run.sh&#34;</span>                <span style="color:#ae81ff">6</span> seconds ago &hellip;
-637c3d25845f chronograf:latest      <span style="color:#e6db74">&#34;/entrypoint.sh chro…&#34;</span>   <span style="color:#ae81ff">6</span> seconds ago &hellip;
-21b3a8d77cae influxdb:latest        <span style="color:#e6db74">&#34;/entrypoint.sh infl…&#34;</span>   <span style="color:#ae81ff">7</span> seconds ago &hellip;</code></pre></div>
-<p>Abrir um shell no container do <code>run.sh</code> (<code>265059f8820a</code>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker exec -ti 265059f8820a bash</code></pre></div>
-<p>Trocar a senha usando o <code>grafana-cli</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><br />
-bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha
-INFO<span style="color:#f92672">[</span><span style="color:#ae81ff">01</span>-03|<span style="color:#ae81ff">16</span>:34:42<span style="color:#f92672">]</span> Connecting to DB      logger<span style="color:#f92672">=</span>sqlstore dbtype<span style="color:#f92672">=</span>sqlite3
-INFO<span style="color:#f92672">[</span><span style="color:#ae81ff">01</span>-03|<span style="color:#ae81ff">16</span>:34:42<span style="color:#f92672">]</span> Starting DB migration logger<span style="color:#f92672">=</span>migrator</p>
-
-<p>Admin password changed successfully ✔</code></pre></div>
-<h2 id="referências">Referências</h2></p>
-
+        <p>Iniciar os containers</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#366">cd</span> /opt/docker/docker-compose-influxdb-grafana
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>docker-compose up -d
+</code></pre></div><p>Localizar o id do container do &lsquo;/run.sh&rsquo;</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>docker ps -a
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>CONTAINER ID IMAGE                  COMMAND                  CREATED       ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>265059f8820a grafana/grafana:latest <span style="color:#c30">&#34;/run.sh&#34;</span>                <span style="color:#f60">6</span> seconds ago ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>637c3d25845f chronograf:latest      <span style="color:#c30">&#34;/entrypoint.sh chro…&#34;</span>   <span style="color:#f60">6</span> seconds ago ...
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>21b3a8d77cae influxdb:latest        <span style="color:#c30">&#34;/entrypoint.sh infl…&#34;</span>   <span style="color:#f60">7</span> seconds ago ...
+</code></pre></div><p>Abrir um shell no container do <code>run.sh</code> (<code>265059f8820a</code>)</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>docker <span style="color:#366">exec</span> -ti 265059f8820a bash
+</code></pre></div><p>Trocar a senha usando o <code>grafana-cli</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>   
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>INFO<span style="color:#555">[</span>01-03|16:34:42<span style="color:#555">]</span> Connecting to DB      <span style="color:#033">logger</span><span style="color:#555">=</span>sqlstore <span style="color:#033">dbtype</span><span style="color:#555">=</span>sqlite3
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>INFO<span style="color:#555">[</span>01-03|16:34:42<span style="color:#555">]</span> Starting DB migration <span style="color:#033">logger</span><span style="color:#555">=</span>migrator
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>Admin password changed successfully ✔
+</code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
-<li><a href="https://community.grafana.com/t/reset-grafana-password-when-running-in-docker-on-raspberry-pi/7070" target="_blank">Reset Grafana password when running in Docker on Raspberry Pi</a></li>
+<li><a href="https://community.grafana.com/t/reset-grafana-password-when-running-in-docker-on-raspberry-pi/7070">Reset Grafana password when running in Docker on Raspberry Pi</a></li>
 </ul>
 
         </div>
@@ -420,7 +416,7 @@ var disqus_config = function () {
 
 
 
-<script type="text/javascript" src="https://geraldo.dev/app.min.279059c89e89e0aaac782e66d27b61efd80e8c62da4721db90f688b8c88612bd.js" integrity="sha256-J5BZyJ6J4KqseC5m0nth79gOjGLaRyHbkPaIuMiGEr0=" media="screen"></script>
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
 
 
     

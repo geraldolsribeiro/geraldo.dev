@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>File Manager on geraldo.dev</title>
+    <title>file manager on geraldo.dev</title>
     <link>https://geraldo.dev/tags/file-manager/</link>
-    <description>Recent content in File Manager on geraldo.dev</description>
+    <description>Recent content in file manager on geraldo.dev</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
@@ -18,11 +18,11 @@
       <pubDate>Tue, 23 Jul 2019 10:33:17 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/</guid>
-      <description>Trocando o Nautilus pelo Nemo no GNOME xdg-mime default \  nemo.desktop inode/directory \  application/x-gnome-saved-search Desabilitando o Nautilus
-gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
-gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
+      <description>Trocando o Nautilus pelo Nemo no GNOME 1xdg-mime default \ 2 nemo.desktop inode/directory \ 3 application/x-gnome-saved-search Desabilitando o Nautilus
+1gsettings set org.gnome.desktop.background show-desktop-icons false Habilitando o Nemo
+1gsettings set org.nemo.desktop show-desktop-icons true Trocando o Thunar pelo Nemo no XFCE Em Configurações acesse Aplicativos preferidos
  img   Abra a aba Utilitários e altere para nemo em Gerenciador de Arquivos
- img   Testando xdg-open $HOME Usar o xfce4-terminal no nemo gsettings set org.</description>
+ img   Testando 1xdg-open $HOME Usar o xfce4-terminal no nemo 1gsettings set org.</description>
     </item>
     
   </channel>

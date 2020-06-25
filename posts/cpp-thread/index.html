@@ -166,6 +166,10 @@ if (!doNotTrack) {
     <li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceo">Tratamento de exceção</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#transferindo-a-posse-das-threads">Transferindo a posse das threads</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#threadget-id">thread::get_id()</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#sleep-for">sleep_for</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdthis-threadyield">std::this_thread::yield()</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdhardware-concurrency">std:🧵:hardware_concurrency()</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#referncias">Referências</a></li>
   </ul>
 
@@ -304,7 +308,39 @@ sempre executado quando o objeto sair do contexto.</p>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  t1.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  t2.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>}
-</code></pre></div><h2 id="referncias">Referências</h2>
+</code></pre></div><h2 id="threadget-id">thread::get_id()</h2>
+<ul>
+<li>retorna um id único para cada thread ativa em execução</li>
+<li>retorna 0 para todas as threads não ativas</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">thread</span> t1( foo );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#069;font-weight:bold">thread</span> t2( foo );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#069;font-weight:bold">thread</span> t3;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t1.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 1234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t2.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 5678
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t3.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  t1.join();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  t2.join();
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t1.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t2.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#09f;font-style:italic"></span>}
+</code></pre></div><h2 id="sleep-for">sleep_for</h2>
+<h2 id="stdthis-threadyield"><code>std::this_thread::yield()</code></h2>
+<ul>
+<li>retorna a fatia de tempo</li>
+<li>reinsere a thread na fila de execução</li>
+</ul>
+<h2 id="stdhardware-concurrency"><code>std:🧵:hardware_concurrency()</code></h2>
+<ul>
+<li>retorna o número de thread concorrentes suportado pela implementação do sistema</li>
+<li>considere este valor apenas como uma dica</li>
+<li>é usualmente o número de cores lógicos</li>
+</ul>
+<h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
 </ul>

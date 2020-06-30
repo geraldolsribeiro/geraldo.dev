@@ -12,6 +12,50 @@
     
     
     <item>
+      <title>Certbot Hooks</title>
+      <link>https://geraldo.dev/posts/certbot-hooks/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/certbot-hooks/</guid>
+      <description>Exemplo Exemplos retirados de How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8.
+O certbot utiliza as portas 80 (HTTP) e 443 (HTTPS).
+Vamos usar apenas a porta 80.
+sudo ufw allow http sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com crontab -e 15 3 * * * certbot renew --noninteractive --post-hook &amp;#34;systemctl restart mosquitto&amp;#34; Opções --pre-hook PRE_HOOK Comando a ser executado antes de obter um certificado.</description>
+    </item>
+    
+    <item>
+      <title>Criando zip com múltiplos volumes</title>
+      <link>https://geraldo.dev/posts/zip-multiplos-volumes/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/zip-multiplos-volumes/</guid>
+      <description>Para gerar um zip dividido em múltiplos volumes acrescente -s e o tamanho do volume.
+1zip -s 50m new.zip big.iso # partes de 50 MB 2zip -s 3g new.zip big.iso # partes de 3G (útil para vfat) Use:
+ k para kB m para MB g para GB t para TB o default é m  Referências  How do I split a .zip file into multiple segments?  </description>
+    </item>
+    
+    <item>
+      <title>Autocompletar no VIM</title>
+      <link>https://geraldo.dev/posts/vim-complete/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-complete/</guid>
+      <description>C-x C-u C-x C-n C-x C-p Referências  []()  </description>
+    </item>
+    
+    <item>
+      <title>Introdução ao Apache Kafka</title>
+      <link>https://geraldo.dev/posts/kafka-intro/</link>
+      <pubDate>Sat, 27 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/kafka-intro/</guid>
+      <description>Introdução O Apache Kafka é uma Plataforma distribuída de streaming.
+De forma distribuída ele consegue processar uma grande quantidade de dados entregar em tempo real aos seus consumidores.
+Características:
+ plataforma banco de dados extremamente rápido e baixíssima latência utiliza o disco ao invés da memória para processar os dados não é apenas um sistema tradicional de mensageiria como o RabbitMQ publish &amp;amp; subscriber processamento em tempo real armazenamento de streams em um modo seguro, distribuído e replicável producer consumer topic - onde os dados são transmitidos  Topic  é um stream de dados que atua com um banco de dados um tópico possui diversas partições diversos consumidores podem ler de modo independente, cada um num offset diferente  Cluster  conjunto de brokers (intermediários) cada broker é um server cada broker é responsável por armazenar os dados de uma partição replication factory  Producer  envia mensagem para os brokers  Referências  Apache Kafka: Trabalhando com Mensageria e Real Time  </description>
+    </item>
+    
+    <item>
       <title>Thread em C&#43;&#43;</title>
       <link>https://geraldo.dev/posts/cpp-thread/</link>
       <pubDate>Tue, 23 Jun 2020 00:00:00 -0300</pubDate>

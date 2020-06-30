@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hooks on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/hooks/</link>
+    <description>Recent content in hooks on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Mon, 29 Jun 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Certbot Hooks</title>
+      <link>https://geraldo.dev/posts/certbot-hooks/</link>
+      <pubDate>Mon, 29 Jun 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/certbot-hooks/</guid>
+      <description>Exemplo Exemplos retirados de How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8.
+O certbot utiliza as portas 80 (HTTP) e 443 (HTTPS).
+Vamos usar apenas a porta 80.
+sudo ufw allow http sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com crontab -e 15 3 * * * certbot renew --noninteractive --post-hook &amp;#34;systemctl restart mosquitto&amp;#34; Opções --pre-hook PRE_HOOK Comando a ser executado antes de obter um certificado.</description>
+    </item>
+    
+  </channel>
+</rss>

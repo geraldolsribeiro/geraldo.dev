@@ -48,33 +48,88 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <loc>https://geraldo.dev/tags/certbot/</loc>
+    <lastmod>2020-06-29T00:00:00-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/tags/cpp/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <loc>https://geraldo.dev/posts/certbot-hooks/</loc>
+    <lastmod>2020-06-29T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/zip-multiplos-volumes/</loc>
+    <lastmod>2020-06-29T11:06:33-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <lastmod>2020-06-29T11:06:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/hooks/</loc>
+    <lastmod>2020-06-29T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/letsencrypt/</loc>
+    <lastmod>2020-06-29T00:00:00-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <lastmod>2020-06-29T11:06:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/zip/</loc>
+    <lastmod>2020-06-29T11:06:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/vim-complete/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/autocomplete/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/kafka-intro/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/kafka/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/vim/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/cpp/</loc>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/thread/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-thread/</loc>
-    <lastmod>2020-06-24T08:50:12-03:00</lastmod>
+    <lastmod>2020-06-27T17:04:16-03:00</lastmod>
   </url>
   
   <url>
@@ -505,11 +560,6 @@
   <url>
     <loc>https://geraldo.dev/tags/macro/</loc>
     <lastmod>2019-11-07T13:23:25-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/vim/</loc>
-    <lastmod>2020-03-03T09:18:52-03:00</lastmod>
   </url>
   
   <url>

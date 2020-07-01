@@ -56,6 +56,11 @@ if (!doNotTrack) {
       media="screen" async>
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+
+
+
+
 
 
 
@@ -113,18 +118,18 @@ if (!doNotTrack) {
         <br><br>
 
         
-        <div class="logo center">
-          <img class="responsive-img" src="/img/avatar.jpg">
+        <div class="logo center wow">
+          <img class="responsive-img wow rollIn" src="/img/avatar.jpg">
         </div>
         
 
-        <h1 class="header center ">Geraldo Ribeiro</h1>
-        <div class="row center">
+        <h1 class="header center  wow  zoomIn">Geraldo Ribeiro</h1>
+        <div class="row center wow zoomIn">
             <h5 class="header col s12 light">Desenvolvedor de Software</h5>
         </div>
 
         
-        <div class="row center">
+        <div class="row center wow zoomIn">
           <p>Mais de 20 anos trabalhando na área de <strong>desenvolvimento de sistemas e produtos</strong>.
 Participei de equipes multidisciplinares responsáveis por diversos projetos
 científicos, tais como: acreditação internacional de laboratório de metrologia,
@@ -308,6 +313,24 @@ comunicação segura e projetos para indústria de defesa.</p>
 
 
 <script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+
+
+<script type="application/javascript" src='/js/wow.min.js'></script>
+<script>
+
+  wow = new WOW(
+    {
+      boxClass:     'wow',      
+      animateClass: 'animated', 
+      offset:       0,          
+      mobile:       true,       
+      live:         true        
+    }
+  )
+  wow.init();
+</script>
 
 
     

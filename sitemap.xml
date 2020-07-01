@@ -963,6 +963,10 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/slides/teste/</loc>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/publications/</loc>
     <lastmod>2019-10-28T07:54:13-03:00</lastmod>
   </url>
@@ -994,6 +998,10 @@
   <url>
     <loc>https://geraldo.dev/projects/</loc>
     <lastmod>2019-04-26T11:15:08-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/slides/</loc>
   </url>
   
 </urlset>

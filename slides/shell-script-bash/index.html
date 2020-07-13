@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<base href="https://geraldo.dev/">
+<title>Shell script | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/slides/shell-script-bash/">
+<meta name="generator" content="Hugo 0.62.0" />
+
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="01/01/0001">
+
+
+
+    <meta property="og:image" content="https://geraldo.dev/img/slides/shell-script-bash.png" />
+<meta property="og:description" content="Dicas sobre shell script" /><meta property="og:url" content="https://geraldo.dev/slides/shell-script-bash/" />
+    <meta property="og:site_name" content="geraldo.dev" />
+    <meta property="og:title" content="Shell script" />
+
+
+
+
+<meta name="description" content="Dicas sobre shell script">
+<meta name="author" content="Geraldo Ribeiro">
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-139336679-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+
+
+<link rel="stylesheet" async href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" async href="https://cdn.materialdesignicons.com/2.8.94/css/materialdesignicons.min.css">
+
+
+
+<link rel="stylesheet"
+      href="https://geraldo.dev/style.main.min.30af390bd960f34050fb7b879ecacfd90554acd27046ed7b4d82f3fac3861756.css"
+      integrity="sha256-MK85C9lg80BQ&#43;3uHnsrP2QVUrNJwRu17TYLz&#43;sOGF1Y="
+      media="screen" async>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
+
+
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css"
+      integrity="sha256-ol2N5Xr80jdDqxK0lte3orKGb9Ja3sOnpAUV7TTADmg="
+      crossorigin="anonymous" />
+<link rel="stylesheet"
+      href='https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/white.min.css' />
+<link rel="stylesheet"
+      href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css' />
+
+<link rel="stylesheet" href='/css/reveal-fix.css' />
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+    
+
+
+
+    
+  <div class="reveal">
+    <div class="slides">
+        
+        <section data-separator-notes="^Note:"><h1 id="terminal">Terminal</h1>
+</section><section data-separator-notes="^Note:">
+<h2 id="xfce4-terminal"><code>xfce4-terminal</code></h2>
+<p><img src="/img/slides/shell-script-bash-000.png" alt="pic alt"></p>
+</section><section data-separator-notes="^Note:">
+<h1 id="bash---bourne-again-shell">BASH - Bourne Again Shell</h1>
+</section><section data-separator-notes="^Note:">
+<h2 id="bash---bourne-again-shell-1">BASH - Bourne Again Shell</h2>
+<ul>
+<li>Default na maioria das distribuições Linux</li>
+</ul>
+</section><section data-separator-notes="^Note:">
+<h2 id="teclas-de-atalho-bsico">Teclas de atalho (básico)</h2>
+<ul>
+<li><code>^E</code>: Vai para o final da linha</li>
+<li><code>^A</code>: Vai para o início da linha</li>
+<li><code>^R</code>: Busca por comando no histórico</li>
+<li><code>^L</code>: Limpa a tela</li>
+<li><code>^C</code>: Interrompe o processo atual</li>
+<li><code>^Z</code>: Suspende o processo atual (<code>bg</code> e <code>fg</code>)</li>
+<li><code>^S</code>: Suspende a saída para a tela</li>
+<li><code>^Q</code>: Continua a saída para a tela</li>
+</ul>
+</section><section data-separator-notes="^Note:">
+<h2 id="teclas-de-atalho-todas">Teclas de atalho (todas)</h2>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="nohighlight" data-noescape><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#366">bind</span> -P
+</code></pre></div></section><section data-separator-notes="^Note:">
+<h1 id="referncias">Referências</h1>
+</section><section data-separator-notes="^Note:">
+<h2 id="referncias-1">Referências</h2>
+<ul>
+<li><a href="https://www.putorius.net/top-5-bash-tips-for-beginners.html">Top 5 Bash Tips and Tricks for Beginners</a></li>
+</ul>
+</section></div>
+  </div>
+
+
+    
+
+
+
+    
+        
+
+
+
+
+
+
+<script type="text/javascript" src="https://geraldo.dev/app.min.59882aba5a267177ea44b8e23767eb6092ffbd0fba04434f754edcc58be60ec5.js" integrity="sha256-WYgqulomcXfqRLjiN2frYJL/vQ&#43;6BENPdU7cxYvmDsU=" media="screen"></script>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/js/reveal.js" integrity="sha256-jIDphiUsO0Kxsj0ZvBZwUem0zvYuz04RXkB1hRIchR8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/notes/notes.js" integrity="sha256-9LcG9aeNsvtSY7pwhogBjIIk59RBHsCrzDCMqprz8s8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/highlight/highlight.js" integrity="sha256-bFxb8Gp85ZYXEnxQ7lJ9ew4L5X88OYExIMCMcSOvVpI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/zoom-js/zoom.js" integrity="sha256-uAloG+rCINEePb2uywDNOmCrqGMrmoUXmHuE1fkfY4c=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/print-pdf/print-pdf.js" integrity="sha256-dH417paeQ8K6NMOoN851hbCUhaqM3WNoYhUsF8XIO7Y=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/math/math.js" integrity="sha256-bK1uz5M75u2F4FETA7KN5z6q00VjiSZQPnDDnlcT9Lg=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/plugin/search/search.js" integrity="sha256-99fourBG/HdDaUTNNaMYaf4pVg8ViPZ8Bg9KFl6/Fvc=" crossorigin="anonymous"></script>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"
+        integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw="
+        crossorigin="anonymous"></script>
+
+
+
+<script type="application/json"
+        id="reveal-user-config">null</script>
+<script type="application/json"
+        id="reveal-default-config">null</script>
+
+<script type="application/javascript" src='/js/hugo-theme-revealjs.js'></script>
+
+
+
+
+<script type="application/javascript" src='/js/wow.min.js'></script>
+<script>
+
+  wow = new WOW(
+    {
+      boxClass:     'wow',      
+      animateClass: 'animated', 
+      offset:       0,          
+      mobile:       true,       
+      live:         true        
+    }
+  )
+  wow.init();
+</script>
+
+
+    
+</body>
+</html>

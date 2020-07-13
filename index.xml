@@ -968,54 +968,6 @@ In this context, a single company usually does not develop all the components th
     </item>
     
     <item>
-      <title>Aqui vai o título</title>
-      <link>https://geraldo.dev/slides/teste/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/slides/teste/</guid>
-      <description>Multiline highlighting with Highlight.js  This presentation shows the use of the new highlighting features which were introduced with Reveal.js v3.9.0.
- Prerequisite Disable codeFences in to your config.toml to prevent Hugo&#39;s built-in highlighting for code inside of --- fences.
-1for i in a b c 2do 3 echo $i 4done 1[markup.highlight] 2codeFences = false  Theme Specify a theme for Highlight.js in config.toml
-1[params.reveal_hugo] 2highlight_theme = &amp;#34;github&amp;#34;  &amp;hellip;or in the _index.</description>
-    </item>
-    
-    <item>
-      <title>Aqui vai o título</title>
-      <link>https://geraldo.dev/slides/teste01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/slides/teste01/</guid>
-      <description>Multiline highlighting with Highlight.js  This presentation shows the use of the new highlighting features which were introduced with Reveal.js v3.9.0.
- Prerequisite Disable codeFences in to your config.toml to prevent Hugo&#39;s built-in highlighting for code inside of --- fences.
-1for i in a b c 2do 3 echo $i 4done 1[markup.highlight] 2codeFences = false  Theme Specify a theme for Highlight.js in config.toml
-1[params.reveal_hugo] 2highlight_theme = &amp;#34;github&amp;#34;  &amp;hellip;or in the _index.</description>
-    </item>
-    
-    <item>
-      <title>Aqui vai o título</title>
-      <link>https://geraldo.dev/slides/teste03/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/slides/teste03/</guid>
-      <description>Multiline highlighting with Highlight.js  This presentation shows the use of the new highlighting features which were introduced with Reveal.js v3.9.0.
- Prerequisite Disable codeFences in to your config.toml to prevent Hugo&#39;s built-in highlighting for code inside of --- fences.
-1for i in a b c 2do 3 echo $i 4done 1[markup.highlight] 2codeFences = false  Theme Specify a theme for Highlight.js in config.toml
-1[params.reveal_hugo] 2highlight_theme = &amp;#34;github&amp;#34;  &amp;hellip;or in the _index.</description>
-    </item>
-    
-    <item>
-      <title>Aqui vai o título</title>
-      <link>https://geraldo.dev/slides/teste04/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://geraldo.dev/slides/teste04/</guid>
-      <description>Multiline highlighting with Highlight.js  This presentation shows the use of the new highlighting features which were introduced with Reveal.js v3.9.0.
- Prerequisite Disable codeFences in to your config.toml to prevent Hugo&#39;s built-in highlighting for code inside of --- fences.
-1for i in a b c 2do 3 echo $i 4done 1[markup.highlight] 2codeFences = false  Theme Specify a theme for Highlight.js in config.toml
-1[params.reveal_hugo] 2highlight_theme = &amp;#34;github&amp;#34;  &amp;hellip;or in the _index.</description>
-    </item>
-    
-    <item>
       <title>Café pré pago</title>
       <link>https://geraldo.dev/projects/cafe-pre-pago/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -1040,6 +992,15 @@ In this context, a single company usually does not develop all the components th
       
       <guid>https://geraldo.dev/projects/pousada-santa-cecilia/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Shell script</title>
+      <link>https://geraldo.dev/slides/shell-script-bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/slides/shell-script-bash/</guid>
+      <description>Terminal  xfce4-terminal  BASH - Bourne Again Shell  BASH - Bourne Again Shell  Default na maioria das distribuições Linux   Teclas de atalho (básico)  ^E: Vai para o final da linha ^A: Vai para o início da linha ^R: Busca por comando no histórico ^L: Limpa a tela ^C: Interrompe o processo atual ^Z: Suspende o processo atual (bg e fg) ^S: Suspende a saída para a tela ^Q: Continua a saída para a tela   Teclas de atalho (todas) 1bind -P  Referências  Referências  Top 5 Bash Tips and Tricks for Beginners  </description>
     </item>
     
   </channel>

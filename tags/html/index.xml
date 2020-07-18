@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>html on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/html/</link>
+    <description>Recent content in html on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>input pattern</title>
+      <link>https://geraldo.dev/posts/html-input-pattern/</link>
+      <pubDate>Sat, 18 Jul 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/html-input-pattern/</guid>
+      <description>Apenas letras
+1&amp;lt;input 2 type=&amp;#34;text&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 name=&amp;#34;text&amp;#34; 5 pattern=&amp;#34;[a-z\s]+$&amp;#34; /&amp;gt; Apenas números
+1&amp;lt;input 2 type=&amp;#34;text&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 name=&amp;#34;numbers&amp;#34; 5 pattern=&amp;#34;[0-9]+$&amp;#34; /&amp;gt; Data
+1&amp;lt;input 2 type=&amp;#34;date&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 maxlength=&amp;#34;10&amp;#34; 5 name=&amp;#34;date&amp;#34; 6 pattern=&amp;#34;[0-9]{2}\/[0-9]{2}\/[0-9]{4}$&amp;#34; 7 min=&amp;#34;2012-01-01&amp;#34; 8 max=&amp;#34;2014-02-18&amp;#34; /&amp;gt; Hora
+1&amp;lt;input 2 type=&amp;#34;time&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 maxlength=&amp;#34;8&amp;#34; 5 name=&amp;#34;hour&amp;#34; 6 pattern=&amp;#34;[0-9]{2}:[0-9]{2} [0-9]{2}$&amp;#34; /&amp;gt; Campos genéricos de texto
+1&amp;lt;input 2 type=&amp;#34;text&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 name=&amp;#34;name&amp;#34; /&amp;gt; Telefone
+1&amp;lt;input 2 type=&amp;#34;tel&amp;#34; 3 required=&amp;#34;required&amp;#34; 4 maxlength=&amp;#34;15&amp;#34; 5 name=&amp;#34;phone&amp;#34; 6 pattern=&amp;#34;\([0-9]{2}\) [0-9]{4,6}-[0-9]{3,4}$&amp;#34; /&amp;gt; Email</description>
+    </item>
+    
+  </channel>
+</rss>

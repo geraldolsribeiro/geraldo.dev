@@ -17,9 +17,7 @@
 
 
     <meta property="og:image" content="https://geraldo.dev//img/headers/filemanager.webp" />
-
-    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/" />
+<meta property="og:description" content="Como configurar o nemo como gerenciador de arquivos padrão." /><meta property="og:url" content="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/" />
     <meta property="og:site_name" content="geraldo.dev" />
     <meta property="og:title" content="Nemo como Gerenciador De Arquivos Padrão" />
 
@@ -36,9 +34,7 @@
 
 
 
-
-    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Como configurar o nemo como gerenciador de arquivos padrão.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -175,12 +171,21 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</a></li>
+    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-nautilus-pelo-nemo-no-gnome">Trocando o Nautilus pelo Nemo no GNOME</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#desabilitando-o-nautilus">Desabilitando o Nautilus</a></li>
+        <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#habilitando-o-nemo">Habilitando o Nemo</a></li>
+      </ul>
+    </li>
     <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</a></li>
     <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#testando">Testando</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-gnome-shell-no-nemo">Usar o gnome-shell no nemo</a></li>
-    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-gnome-terminal-no-nemo">Usar o gnome-terminal no nemo</a></li>
+    <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#configurando-o-terminal">Configurando o terminal</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-xfce4-terminal-no-nemo">Usar o xfce4-terminal no nemo</a></li>
+        <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-gnome-shell-no-nemo">Usar o gnome-shell no nemo</a></li>
+        <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#usar-o-gnome-terminal-no-nemo">Usar o gnome-terminal no nemo</a></li>
+      </ul>
+    </li>
     <li><a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/#referncias">Referências</a></li>
   </ul>
 
@@ -194,9 +199,9 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xdg-mime default <span style="color:#c30;font-weight:bold">\
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#c30;font-weight:bold"></span>  nemo.desktop inode/directory <span style="color:#c30;font-weight:bold">\
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#c30;font-weight:bold"></span>  application/x-gnome-saved-search
-</code></pre></div><p>Desabilitando o Nautilus</p>
+</code></pre></div><h3 id="desabilitando-o-nautilus">Desabilitando o Nautilus</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.gnome.desktop.background show-desktop-icons <span style="color:#366">false</span>
-</code></pre></div><p>Habilitando o Nemo</p>
+</code></pre></div><h3 id="habilitando-o-nemo">Habilitando o Nemo</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.nemo.desktop show-desktop-icons <span style="color:#366">true</span>
 </code></pre></div><h2 id="trocando-o-thunar-pelo-nemo-no-xfce">Trocando o Thunar pelo Nemo no XFCE</h2>
 <p>Em <strong>Configurações</strong> acesse <strong>Aplicativos preferidos</strong></p>
@@ -217,11 +222,12 @@ if (!doNotTrack) {
   </div>
 <h2 id="testando">Testando</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xdg-open <span style="color:#033">$HOME</span>
-</code></pre></div><h2 id="usar-o-xfce4-terminal-no-nemo">Usar o <code>xfce4-terminal</code> no nemo</h2>
+</code></pre></div><h2 id="configurando-o-terminal">Configurando o terminal</h2>
+<h3 id="usar-o-xfce4-terminal-no-nemo">Usar o <code>xfce4-terminal</code> no nemo</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.cinnamon.desktop.default-applications.terminal <span style="color:#366">exec</span> xfce4-terminal
-</code></pre></div><h2 id="usar-o-gnome-shell-no-nemo">Usar o <code>gnome-shell</code> no nemo</h2>
+</code></pre></div><h3 id="usar-o-gnome-shell-no-nemo">Usar o <code>gnome-shell</code> no nemo</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.cinnamon.desktop.default-applications.terminal <span style="color:#366">exec</span> gnome-shell
-</code></pre></div><h2 id="usar-o-gnome-terminal-no-nemo">Usar o <code>gnome-terminal</code> no nemo</h2>
+</code></pre></div><h3 id="usar-o-gnome-terminal-no-nemo">Usar o <code>gnome-terminal</code> no nemo</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>gsettings <span style="color:#366">set</span> org.cinnamon.desktop.default-applications.terminal <span style="color:#366">exec</span> gnome-terminal
 </code></pre></div><h2 id="referncias">Referências</h2>
 <ul>

@@ -6,28 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>xfce | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/xfce/">
+<title>Liberando o alt do xfce para o figma | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/figma-xfce-alt-disable/">
 <meta name="generator" content="Hugo 0.62.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="26/07/2020">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
-
-    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/xfce/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/xfce.jpg" />
+<meta property="og:description" content="Liberando a tecla alt utilizada para mover janelas para o figma." /><meta property="og:url" content="https://geraldo.dev/posts/figma-xfce-alt-disable/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="xfce" />
+    <meta property="og:title" content="Liberando o alt do xfce para o figma" />
+
+
+    <meta property="og:tags" content="xfce" />
+
+    <meta property="og:tags" content="figma" />
 
 
 
-
-
-    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Liberando a tecla alt utilizada para mover janelas para o figma.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -117,35 +118,30 @@ if (!doNotTrack) {
     
 
     
-  <div class="container">
-    <h1>Artigos marcados com xfce</h1>
 
-    <ul class="row">
+    <main>
+      <div class="page container">
+
         
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="img/headers/xfce.webp" type="image/webp">
+            <img src="img/headers/xfce.jpg" class="responsive-img z-depth-3">
+          </picture>
+        </div>
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 26/Jul/2020
+          </div>
           
-
-
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/figma-xfce-alt-disable/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 27/Jul/2020
+          </div>
           
-          <source srcset="img/headers/xfce.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/xfce.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
+        </div>
 
-      <div class="card-content">
-        <span class="card-title">Liberando o alt do xfce para o figma</span>
-        <p class="date">27/07/2020 08:59</p>
-        <p class="truncate">Liberando a tecla alt utilizada para mover janelas para o figma.</p>
-      </div>
-
-      <div class="card-action">
         
         
         
@@ -155,102 +151,132 @@ if (!doNotTrack) {
               
                   <a href="https://geraldo.dev/tags/figma/">#figma</a>
 
-      </div>
-    </a>
+
+        <h1>Liberando o alt do xfce para o figma</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/figma-xfce-alt-disable/#introduo">Introdução</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/figma-xfce-alt-disable/#alterando-comportamento-do-alt-pela-interface-grfica">Alterando comportamento do alt pela interface gráfica</a></li>
+        <li><a href="https://geraldo.dev/posts/figma-xfce-alt-disable/#alterando-comportamento-do-alt-pelo-terminal">Alterando comportamento do alt pelo terminal</a></li>
+      </ul>
+    </li>
+    <li><a href="https://geraldo.dev/posts/figma-xfce-alt-disable/#referncias">Referências</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <h2 id="introduo">Introdução</h2>
+<p>O Figma utiliza a tecla alt para copiar elementos e o xfce4 também utiliza a mesma tecla para mover janelas.</p>
+<h3 id="alterando-comportamento-do-alt-pela-interface-grfica">Alterando comportamento do alt pela interface gráfica</h3>
+<p>Para liberar a tecla <strong>Alt</strong> para uso pelo <strong>Figma</strong> acesse o painel de <strong>Configurações</strong> e depois vá em <strong>Ajustes do gerenciador de janelas</strong>:</p>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/xfce-disable-alt-01.webp" width="794" height="663" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/xfce-disable-alt-01.png" alt="Painel de Configurações" width="794" height="663">
+      <figcaption>Painel de Configurações</figcaption>
+    </figure>
   </div>
+<p>Na aba <strong>Acessibilidade</strong> escolha <strong>None</strong> para a tecla de captura de janelas:</p>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/xfce-disable-alt-02.webp" width="797" height="663" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/xfce-disable-alt-02.png" alt="Escolher none para tecla de captura." width="797" height="663">
+      <figcaption>Escolher none para tecla de captura.</figcaption>
+    </figure>
+  </div>
+<h3 id="alterando-comportamento-do-alt-pelo-terminal">Alterando comportamento do alt pelo terminal</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xfconf-query -c xfwm4 -p /general/easy_click -s none
+</code></pre></div><p>Para retornar o <strong>Alt</strong> use:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>xfconf-query -c xfwm4 -p /general/easy_click -s Alt
+</code></pre></div><h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://askubuntu.com/questions/270032/how-do-i-disable-window-move-with-alt-left-mouse-button-in-xubuntu#:~:text=1%20Answer&amp;text=If%20you%20go%20to%20the,be%20just%20what%20you%20want.">How do I disable window move with alt + left mouse button in Xubuntu?</a></li>
+</ul>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2ffigma-xfce-alt-disable%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2ffigma-xfce-alt-disable%2f&amp;text=Liberando%20o%20alt%20do%20xfce%20para%20o%20figma"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2ffigma-xfce-alt-disable%2f&amp;title=Liberando%20o%20alt%20do%20xfce%20para%20o%20figma"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Liberando%20o%20alt%20do%20xfce%20para%20o%20figma&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2ffigma-xfce-alt-disable%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
 </div>
 
-        
-          
 
 
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/x-inverter-cores/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
-          
-          <source srcset="img/headers/debian.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/debian.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
 
-      <div class="card-content">
-        <span class="card-title">Como inverter as cores no X</span>
-        <p class="date">15/03/2020 15:39</p>
-        <p class="truncate">Como inverter as cores no Xserver, muito útil para ler documentos pdf.</p>
-      </div>
-
-      <div class="card-action">
-        
-        
-        
-            
-              
-                  <a href="https://geraldo.dev/tags/debian/">#debian</a>
-              
-                  <a href="https://geraldo.dev/tags/xorg/">#xorg</a>
-              
-                  <a href="https://geraldo.dev/tags/xcalib/">#xcalib</a>
-              
-                  <a href="https://geraldo.dev/tags/xfce/">#xfce</a>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
 
       </div>
-    </a>
-  </div>
-</div>
 
-        
-          
-
-
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/nemo-como-gerenciador-de-arquivos-padrao/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
-          
-          <source srcset="/img/headers/filemanager.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/filemanager.webp" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
-
-      <div class="card-content">
-        <span class="card-title">Nemo como Gerenciador De Arquivos Padrão</span>
-        <p class="date">27/07/2020 08:59</p>
-        <p class="truncate">Como configurar o <code>nemo</code> como gerenciador de arquivos padrão.</p>
-      </div>
-
-      <div class="card-action">
-        
-        
-        
-            
-              
-              
-                  <a href="https://geraldo.dev/tags/nemo/">#nemo</a>
-              
-                  <a href="https://geraldo.dev/tags/nautilus/">#nautilus</a>
-              
-                  <a href="https://geraldo.dev/tags/gnome/">#gnome</a>
-              
-                  <a href="https://geraldo.dev/tags/xfce/">#xfce</a>
-
-      </div>
-    </a>
-  </div>
-</div>
-
-        
-    </ul>
-
-  </div>
+    </main>
 
 
     

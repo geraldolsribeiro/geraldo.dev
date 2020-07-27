@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sat, 18 Jul 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>figma</title>
+      <link>https://geraldo.dev/tags/figma/</link>
+      <pubDate>Sun, 26 Jul 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/figma/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xfce</title>
+      <link>https://geraldo.dev/tags/xfce/</link>
+      <pubDate>Sun, 26 Jul 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/xfce/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>html</title>
@@ -270,15 +288,6 @@
       <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/xcalib/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xfce</title>
-      <link>https://geraldo.dev/tags/xfce/</link>
-      <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/xfce/</guid>
       <description></description>
     </item>
     

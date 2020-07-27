@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 15 Mar 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/xfce/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Liberando o alt do xfce para o figma</title>
+      <link>https://geraldo.dev/posts/figma-xfce-alt-disable/</link>
+      <pubDate>Sun, 26 Jul 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/figma-xfce-alt-disable/</guid>
+      <description>Introdução O Figma utiliza a tecla alt para copiar elementos e o xfce4 também utiliza a mesma tecla para mover janelas.
+Alterando comportamento do alt pela interface gráfica Para liberar a tecla Alt para uso pelo Figma acesse o painel de Configurações e depois vá em Ajustes do gerenciador de janelas:
+ Painel de Configurações   Na aba Acessibilidade escolha None para a tecla de captura de janelas:
+ Escolher none para tecla de captura.</description>
+    </item>
     
     <item>
       <title>Como inverter as cores no X</title>

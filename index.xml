@@ -392,6 +392,15 @@ Estruturas lineares de dados  Arrays Linked List - Single and Doubly Stack Queue
     </item>
     
     <item>
+      <title>Plantuml</title>
+      <link>https://geraldo.dev/posts/plantuml/</link>
+      <pubDate>Tue, 24 Dec 2019 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/plantuml/</guid>
+      <description>Usando ícones 1@startuml ../../static/img/plantuml-icon-01.png 2 3skinparam DefaultFontSize 24 4skinparam DefaultTextAlignment center 5 6title &amp;lt;&amp;amp;caret-right&amp;gt; Using icons in PlantUML &amp;lt;&amp;amp;caret-left&amp;gt; 7 8package &amp;#34;Charts &amp;lt;&amp;amp;menu&amp;gt;&amp;#34; as charts { 9 10 file bar [ 11 Bar 12 13 &amp;lt;size:120&amp;gt;&amp;lt;&amp;amp;bar-chart&amp;gt;&amp;lt;/size&amp;gt; 14 ] 15 16 file pie [ 17 Pie 18 19 &amp;lt;size:42&amp;gt;&amp;lt;&amp;amp;pie-chart&amp;gt;&amp;lt;/size&amp;gt; 20 ] 21 22} 23 24@enduml   Exemplo de uso de ícone.   Ícones disponíveis 1@startuml ../../static/img/plantuml-icon-02.png 2listopeniconic 3@enduml   Ícones disponíveis   Referências  PlantUML Pleasantness: Using The Built-in Icons  </description>
+    </item>
+    
+    <item>
       <title>Preprocessador M4</title>
       <link>https://geraldo.dev/posts/m4/</link>
       <pubDate>Mon, 23 Dec 2019 00:00:00 -0300</pubDate>

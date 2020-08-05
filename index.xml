@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 26 Jul 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,16 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Fluid</title>
+      <link>https://geraldo.dev/posts/cpp-fltk-fluid/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-fltk-fluid/</guid>
+      <description>Para usar o gvim como editor externo no fluid use o modo foreground:
+1gvim -f   Usando o gvim em modo foreground.   </description>
     </item>
     
     <item>

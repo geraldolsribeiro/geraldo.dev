@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Fluid</title>
+      <link>https://geraldo.dev/posts/cpp-fltk-fluid/</link>
+      <pubDate>Wed, 05 Aug 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/cpp-fltk-fluid/</guid>
+      <description>Para usar o gvim como editor externo no fluid use o modo foreground:
+1gvim -f   Usando o gvim em modo foreground.   </description>
+    </item>
+    
+    <item>
       <title>Liberando o alt do xfce para o figma</title>
       <link>https://geraldo.dev/posts/figma-xfce-alt-disable/</link>
       <pubDate>Sun, 26 Jul 2020 00:00:00 -0300</pubDate>

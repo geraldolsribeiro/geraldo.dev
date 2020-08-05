@@ -48,23 +48,38 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
+    <lastmod>2020-08-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/flkt/</loc>
+    <lastmod>2020-08-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/cpp-fltk-fluid/</loc>
+    <lastmod>2020-08-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-08-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-08-05T00:00:00-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/figma/</loc>
     <lastmod>2020-07-27T08:59:47-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-07-31T10:50:34-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/posts/figma-xfce-alt-disable/</loc>
     <lastmod>2020-07-27T08:59:47-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-07-31T10:50:34-03:00</lastmod>
   </url>
   
   <url>
@@ -135,11 +150,6 @@
   <url>
     <loc>https://geraldo.dev/tags/vim/</loc>
     <lastmod>2020-06-27T17:04:16-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-07-28T10:11:19-03:00</lastmod>
   </url>
   
   <url>

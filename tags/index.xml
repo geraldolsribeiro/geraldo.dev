@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 05 Aug 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git</title>
+      <link>https://geraldo.dev/tags/git/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/tags/git/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C&#43;&#43;</title>
@@ -225,15 +234,6 @@
       <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/tags/docker/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://geraldo.dev/tags/git/</link>
-      <pubDate>Sat, 13 Jun 2020 00:00:00 -0300</pubDate>
-      
-      <guid>https://geraldo.dev/tags/git/</guid>
       <description></description>
     </item>
     

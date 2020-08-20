@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sat, 13 Jun 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Thu, 20 Aug 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>git diff para odt</title>
+      <link>https://geraldo.dev/posts/git-odt/</link>
+      <pubDate>Thu, 20 Aug 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-odt/</guid>
+      <description>Instalar as dependências:
+1apt install odt2txt Acrescentar o mapeamento das extensões no .gitattributes que serão conhecidas por odf:
+*.ods diff=odf *.odt diff=odf *.odp diff=odf *.ods difftool=odf *.odt difftool=odf *.odp difftool=odf Definir qual ferramenta será usada para conversão de texto para o tipo odf.
+1git config diff.odf.textconv odt2txt Referências  How to diff .odt files with difftool? kdiff3 diff outputs unreadable characters  </description>
+    </item>
     
     <item>
       <title>Como realizar o checkout somente da última versão</title>

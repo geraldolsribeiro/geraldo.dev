@@ -48,6 +48,26 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-08-20T13:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/git/</loc>
+    <lastmod>2020-08-20T13:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/git-odt/</loc>
+    <lastmod>2020-08-20T13:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-08-20T13:38:02-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
     <lastmod>2020-08-05T07:29:52-03:00</lastmod>
   </url>
@@ -59,16 +79,6 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-fltk-fluid/</loc>
-    <lastmod>2020-08-05T07:29:52-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-08-05T07:29:52-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-08-05T07:29:52-03:00</lastmod>
   </url>
   
@@ -234,11 +244,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/docker/</loc>
-    <lastmod>2020-06-13T13:04:24-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/git/</loc>
     <lastmod>2020-06-13T13:04:24-03:00</lastmod>
   </url>
   

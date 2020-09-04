@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Copiar o nome do arquivo atual</title>
+      <link>https://geraldo.dev/posts/vim-copiar-nome-do-arquivo/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-copiar-nome-do-arquivo/</guid>
+      <description>Ao preparar relatórios por vezes preciso obter o caminho completo do arquivo que estou analisando. Uma maneira prática de obter esse caminho é colar o conteúdo do registrador % e recortá-lo para a área de transferência com dd:
+&amp;quot;%pdd Para o comando acima copiar diretamente para a área de transferência do desktop é necessário a seguinte configuração no .vimrc:
+1set clipboard=unnamedplusCaso contrário seria necessário especificar o registrador &amp;quot;+ e o comando ficaria um pouquinho maior:</description>
+    </item>
+    
+    <item>
       <title>git diff para odt</title>
       <link>https://geraldo.dev/posts/git-odt/</link>
       <pubDate>Thu, 20 Aug 2020 00:00:00 -0300</pubDate>

@@ -159,7 +159,7 @@ window.MathJax = {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 28/Jul/2020
+            Atualizado em: 02/Sep/2020
           </div>
           
         </div>
@@ -223,6 +223,14 @@ window.MathJax = {
     <li><a href="https://geraldo.dev/posts/corba/#dynamic-invocation-interface">Dynamic Invocation Interface</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#interoperabilidade">Interoperabilidade</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#oa---object-adapter">OA - Object Adapter</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#boa---basic-object-adapter">BOA - Basic Object Adapter</a></li>
+    <li><a href="https://geraldo.dev/posts/corba/#poa-portable-object-adapter">POA Portable Object Adapter</a>
+      <ul>
+        <li><a href="https://geraldo.dev/posts/corba/#identificador-de-objeto">Identificador de Objeto</a></li>
+        <li><a href="https://geraldo.dev/posts/corba/#o-campo-object-id-da-ior">O Campo Object Id da IOR</a></li>
+      </ul>
+    </li>
     <li><a href="https://geraldo.dev/posts/corba/#instalao-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li>
     <li><a href="https://geraldo.dev/posts/corba/#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a>
       <ul>
@@ -382,13 +390,39 @@ window.MathJax = {
 <li><code>inout</code> - do cliente para o servidor e de volta para o cliente</li>
 </ul>
 <h3 id="excees">Exceções</h3>
+<p>CORBA define dois tipos de exceções:</p>
+<ul>
+<li>
+<p><strong>system exceptions</strong>: exceções padrões definidas pelo CORBA</p>
+</li>
+<li>
+<p><strong>user defined exceptions</strong>: exceções definidas pelo usuário através da IDL</p>
+</li>
+<li>
+<p>Implicitamente, todas as operações definidas na IDL podem lançar qualquer uma das exceções padrão do sistema CORBA</p>
+</li>
+<li>
+<p>Nenhuma referência para exceções padrão devem aparecer na especificação da IDL</p>
+</li>
+<li>
+<p>para especificar que uma operação <strong>pode</strong> lançar uma exceção definida pelo usuário você deve:</p>
+<ul>
+<li>primeiro definir a estrutura da exceção</li>
+<li>incluir <code>raises</code> à definição da operação</li>
+</ul>
+</li>
+<li>
+<p>uma exceção da IDL pode conter membros</p>
+</li>
+</ul>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Bank {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  exception Reject {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    string reason;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>    string reason; // membro da exceção
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  };
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  exception TooMany {};
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  Account newAccount( in string name ) raises (Reject, TooMany);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>};
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  exception TooMany {}; // exceção sem membros
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  Account newAccount( in string name ) raises (Reject, TooMany);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>};
 </code></pre></div><h3 id="operaes-oneway">Operações oneway</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Interface Account {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  oneway void notice( in string notice );
@@ -397,6 +431,45 @@ window.MathJax = {
 <li>não bloqueantes</li>
 <li>não aceitam parâmetros <code>out</code> ou <code>inout</code></li>
 <li>não lançam exceções (não aceitam <code>raise</code>)</li>
+</ul>
+<p>The OMG CORBA specification defines the following exceptions:</p>
+<ul>
+<li><code>BAD_CONTEXT</code> - if a request does not contain a correct context this exception is raised.</li>
+<li><code>BAD_INV_ORDER</code> - this exception indicates that operations has been invoked operations in the wrong order, which would cause, for example, a dead-lock.</li>
+<li><code>BAD_OPERATION</code> - raised if the target object exists, but that the invoked operation is not supported.</li>
+<li><code>BAD_PARAM</code> - is thrown if, for example, a parameter is out of range or otherwise considered illegal.</li>
+<li><code>BAD_TYPECODE</code> - if illegal type code is passed, for example, encapsulated in an any data type the &lsquo;BAD_TYPECODE&rsquo; exception will be raised.</li>
+<li><code>BAD_QOS</code> - raised whenever an object cannot support the required quality of service.</li>
+<li><code>CODESET_INCOMPATIBLE</code> - raised if two ORB's cannot communicate due to different representation of, for example, char and/or wchar.</li>
+<li><code>COMM_FAILURE</code> - raised if an ORB is unable to setup communication or it is lost while an operation is in progress.</li>
+<li><code>DATA_CONVERSION</code> - raised if an ORB cannot convert data received to the native representation. See also the &lsquo;CODESET_INCOMPATIBLE&rsquo; exception.</li>
+<li><code>FREE_MEM</code> - the ORB failed to free dynamic memory and failed.</li>
+<li><code>IMP_LIMIT</code> - an implementation limit was exceeded in the ORB at run time. A object factory may, for example, limit the number of object clients are allowed to create.</li>
+<li><code>INTERNAL</code> - an internal failure occurred in an ORB, which is unrecognized. You may consider contacting the ORB providers support.</li>
+<li><code>INTF_REPOS</code> - the ORB was not able to reach the interface repository, or some other failure relating to the interface repository is detected.</li>
+<li><code>INITIALIZE</code> - the ORB initialization failed due to, for example, network or configuration error.</li>
+<li><code>INVALID_TRANSACTION</code> - is raised if the request carried an invalid transaction context.</li>
+<li><code>INV_FLAG</code> - an invalid flag was passed to an operation, which caused, for example, a connection to be closed.</li>
+<li><code>INV_IDENT</code> - this exception indicates that an IDL identifier is incorrect.</li>
+<li><code>INV_OBJREF</code> - this exception is raised if an objet reference is malformed or a nil reference (see also corba:create_nil_objref/0).</li>
+<li><code>INV_POLICY</code> - the invocation cannot be made due to an incompatibility between policy overrides that apply to the particular invocation.</li>
+<li><code>MARSHAL</code> - this exception may be raised by the client- or server-side when either ORB is unable to marshal/unmarshal requests or replies.</li>
+<li><code>NO_IMPLEMENT</code> - if the operation exists but no implementation exists, this exception is raised.</li>
+<li><code>NO_MEMORY</code> - the ORB has run out of memory.</li>
+<li><code>NO_PERMISSION</code> - the caller has insufficient privileges, such as, for example, bad SSL certificate.</li>
+<li><code>NO_RESOURCES</code> - a general platform resource limit exceeded.</li>
+<li><code>NO_RESPONSE</code> - no response available of a deferred synchronous request.</li>
+<li><code>OBJ_ADAPTER</code> - indicates administrative mismatch; the object adapter is not able to associate an object with the implementation repository.</li>
+<li><code>OBJECT_NOT_EXIST</code> - the object have been disposed or terminated; clients should remove all copies of the object reference and initiate desired recovery process.</li>
+<li><code>PERSIST_STORE</code> - the ORB was not able to establish a connection to its persistent storage or data contained in the the storage is corrupted.</li>
+<li><code>REBIND</code> - a request resulted in, for example, a &lsquo;LOCATION_FORWARD&rsquo; message; if the policies are incompatible this exception is raised.</li>
+<li><code>TIMEOUT</code> - raised if a request fail to complete within the given time-limit.</li>
+<li><code>TRANSACTION_MODE</code> - a transaction policy mismatch detected.</li>
+<li><code>TRANSACTION_REQUIRED</code> - a transaction is required for the invoked operation but the request contained no transaction context.</li>
+<li><code>TRANSACTION_ROLLEDBACK</code> - the transaction associated with the request has already been rolled back or will be.</li>
+<li><code>TRANSACTION_UNAVAILABLE</code> - no transaction context can be supplied since the ORB is unable to contact the Transaction Service.</li>
+<li><code>TRANSIENT</code> - the ORB could not determine the current status of an object since it could not be reached. The error may be temporary.</li>
+<li><code>UNKNOWN</code> - is thrown if an implementation throws a non-CORBA, or unrecognized, exception.</li>
 </ul>
 <h3 id="estruturas">Estruturas</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-text" data-lang="text"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>struct PersonalDetails {
@@ -639,6 +712,56 @@ window.MathJax = {
 <li>externalization</li>
 <li>collection</li>
 </ul>
+<h2 id="oa---object-adapter">OA - Object Adapter</h2>
+<ul>
+<li>Conectam implementações de objetos ao ORB</li>
+<li>Ativam os múltiplos objetos implementados por um servidor</li>
+<li>Encaminhamento de requisições de serviço</li>
+<li>Geram <em>object references</em>
+<ul>
+<li>Para ter o status de <strong>CORBA Object</strong> o objeto deve ser registrado com o adaptador</li>
+</ul>
+</li>
+</ul>
+<h2 id="boa---basic-object-adapter">BOA - Basic Object Adapter</h2>
+<ul>
+<li>Presente na especificação CORBA até a revisão 2.1</li>
+<li>CORBA 2.2 substituiu o BOA pelo POA</li>
+<li>ORB com BOA significa que os servidores não são portáveis</li>
+</ul>
+<h2 id="poa-portable-object-adapter">POA Portable Object Adapter</h2>
+<ul>
+<li>O POA (<em>Portable Object Adapter</em>) auxilia o ORB (<em>Object Request Broker</em>) na
+passagem das requisições do clientes para a implementação do servidor
+(servant).</li>
+<li>O POA interpreta a requisição, empacota a passagem de parâmetros e então
+localiza o servant e os tratadores de recuperação erros e de segurança.</li>
+<li>Isto habilita portabilidade, independência de fabricantes e extensibilidade
+compatível com a especificação da OMG (Object Management Group)</li>
+<li>POA também habilita a persistência de objetos bem como dá suporte a ciclo de
+vida do serviço</li>
+<li>Identificadores de objetos automaticamente gerados ou especificados pelo usuário</li>
+<li>Ativação explícita ou por demanda</li>
+<li>Relação: um servant &lt;-&gt; um ou mais objetos CORBA</li>
+<li>Aplicação tem total controle sobre o comportamento e sobre a existência dos objetos CORBA</li>
+<li><em>Servants</em> podem usar esqueletos estáticos ou dinâmicos</li>
+</ul>
+<h3 id="identificador-de-objeto">Identificador de Objeto</h3>
+<ul>
+<li>Valor usado para identificar um objeto no contexto de um POA
+<ul>
+<li>Não é um identificador globalmente único!</li>
+</ul>
+</li>
+<li>Pode ser determinado pela aplicação ou gerado pelo POA
+<ul>
+<li><code>typedef sequence&lt;octet&gt; ObjectID;</code></li>
+</ul>
+</li>
+<li>O POA coloca esse valor no campo <em>object id</em> da IOR</li>
+</ul>
+<h3 id="o-campo-object-id-da-ior">O Campo Object Id da IOR</h3>
+<p><img src="/img/corba-ior-object-id.png" alt=""></p>
 <h2 id="instalao-do-omniorb-no-debian">Instalação do omniORB no Debian</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install libomniorb4-dev omniidl omniorb omniorb-doc omniorb-nameserver omniidl-python python-omniorb
 </code></pre></div><h2 id="iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</h2>
@@ -864,18 +987,7 @@ window.MathJax = {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">78</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">79</span>  <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">80</span>}
-</code></pre></div><ul>
-<li>O POA (Portable Object Adapter) auxilia o ORB (Object Request Broker) na
-passagem das requisições do clientes para a implementação do servidor
-(servant).</li>
-<li>O POA interpreta a requisição, empacota a passagem de parâmetros e então
-localiza o servant e os tratadores de recuperação erros e de segurança.</li>
-<li>Isto habilita portabilidade, independência de fabricantes e extensibilidade
-compatível com a especificação da OMG (Object Management Group)</li>
-<li>POA também habilita a persistência de objetos bem como dá suporte a ciclo de
-vida do serviço</li>
-</ul>
-<h2 id="implementao-do-servant">Implementação do Servant</h2>
+</code></pre></div><h2 id="implementao-do-servant">Implementação do Servant</h2>
 <p>São denotados pelo sufixo <code>_i</code>.</p>
 <h3 id="cservicea-ihh">CServiceA_i.hh</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic">// CServiceA_i.hh
@@ -1147,39 +1259,20 @@ vida do serviço</li>
 </ul>
 <h2 id="referncias">Referências</h2>
 <ul>
-<li>
-<p><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></p>
-</li>
-<li>
-<p><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></p>
-</li>
-<li>
-<p><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf">O Adaptador de Objetos e Interoperabilidade CORBA</a></p>
-</li>
-<li>
-<p><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">CORBA Tutorial: Connecting 3 ORBs</a></p>
-</li>
-<li>
-<p><a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a></p>
-</li>
-<li>
-<p>(local) <a href="file:///usr/share/doc/omniorb-doc/omniidl.html">The omniORB IDL Compiler</a></p>
-</li>
-<li>
-<p>(local) <a href="file:///usr/share/doc/omniorb-doc/omniNames.html">The omniNames CORBA Naming Service</a></p>
-</li>
-<li>
-<p>(local) <a href="file:///usr/share/doc/omniorb-doc/omnithread.html">The OMNI Thread Abstraction</a></p>
-</li>
-<li>
-<p>(local) <a href="file:///usr/share/doc/omniorb-doc/utilities.html">The omniORB utilities</a></p>
-</li>
-<li>
-<p>(local) <a href="file:///usr/share/doc/omniorb-doc/omniORB/index.html">The omniORB version 4.2 Users’ Guide</a></p>
-</li>
-<li>
-<p><a href="https://docs.oracle.com/cd/E13211_01/wle/cref/member.htm">Mapping of OMG IDL Statements to C++</a></p>
-</li>
+<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>
+<li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></li>
+<li><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf">O Adaptador de Objetos e Interoperabilidade CORBA</a></li>
+<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">CORBA Tutorial: Connecting 3 ORBs</a></li>
+<li><a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniidl.html">The omniORB IDL Compiler</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniNames.html">The omniNames CORBA Naming Service</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omnithread.html">The OMNI Thread Abstraction</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/utilities.html">The omniORB utilities</a></li>
+<li>(local) <a href="file:///usr/share/doc/omniorb-doc/omniORB/index.html">The omniORB version 4.2 Users’ Guide</a></li>
+<li><a href="https://docs.oracle.com/cd/E13211_01/wle/cref/member.htm">Mapping of OMG IDL Statements to C++</a></li>
+<li><a href="http://www.cs.rpi.edu/~musser/dsc/idl/idl-overview_5.html">Raising Exceptions in IDL Operations</a></li>
+<li><a href="https://www.ime.usp.br/~reverbel/SMW-07/Slides/POA.pdf">O Portable Object Adapter</a></li>
+<li><a href="http://erlang.org/documentation/doc-5.7/lib/orber-3.6.11/doc/html/ch_exceptions.html">CORBA System and User Defined Exceptions</a></li>
 </ul>
 
         </div>

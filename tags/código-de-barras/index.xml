@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>código de barras on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/c%C3%B3digo-de-barras/</link>
+    <description>Recent content in código de barras on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Sun, 06 Sep 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/c%C3%B3digo-de-barras/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Código de barras</title>
+      <link>https://geraldo.dev/posts/codigo-de-barras/</link>
+      <pubDate>Sun, 06 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/codigo-de-barras/</guid>
+      <description>EAN  Esse código é usado principalmente nos pontos de venda porque permite fazer uma leitura mais simples. É o formato mais comum e contém uma sequência de números que totaliza 13 dígitos na maioria das vezes. Pode ser usado para as vendas ou o controle interno, porque o EAN armazena dados sobre a numeração única da unidade ou do lote. Esse código também se subdivide, como ocorre com o ISBN, que é voltado para livros e produtos semelhantes.</description>
+    </item>
+    
+  </channel>
+</rss>

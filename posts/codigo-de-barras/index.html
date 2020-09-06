@@ -6,35 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>Como instalar o flameshot no Debian stretch | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/">
+<title>Código de barras | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/codigo-de-barras/">
 <meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
-    <meta property="article:published_time" content="26/04/2019">
+    <meta property="article:published_time" content="06/09/2020">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev//img/headers/annotations.jpg" />
-<meta property="og:description" content="Screenshots com anotação usando o flameshot" /><meta property="og:url" content="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/barcode.jpg" />
+
+    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
+    <meta property="og:url" content="https://geraldo.dev/posts/codigo-de-barras/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="Como instalar o flameshot no Debian stretch" />
+    <meta property="og:title" content="Código de barras" />
 
 
-    <meta property="og:tags" content="backports" />
-
-    <meta property="og:tags" content="flameshot" />
-
-    <meta property="og:tags" content="screenshot" />
-
-    <meta property="og:tags" content="annotation" />
-
-    <meta property="og:tags" content="debian" />
+    <meta property="og:tags" content="código de barras" />
 
 
 
-<meta name="description" content="Screenshots com anotação usando o flameshot">
+
+    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
+    
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -127,19 +123,15 @@ if (!doNotTrack) {
         
         <div class="project-header center-align">
           <picture>
-            <source srcset="/img/headers/annotations.webp" type="image/webp">
-            <img src="/img/headers/annotations.jpg" class="responsive-img z-depth-3">
+            <source srcset="img/headers/barcode.webp" type="image/webp">
+            <img src="img/headers/barcode.jpg" class="responsive-img z-depth-3">
           </picture>
         </div>
         
 
         <div class="row">
           <div class="col s12 m6 center-align grey-text">
-            Publicado em: 26/Apr/2019
-          </div>
-          
-          <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 16/Dec/2019
+            Publicado em: 06/Sep/2020
           </div>
           
         </div>
@@ -149,18 +141,9 @@ if (!doNotTrack) {
         
             
               
-                  <a href="https://geraldo.dev/tags/backports/">#backports</a>
-              
-                  <a href="https://geraldo.dev/tags/flameshot/">#flameshot</a>
-              
-                  <a href="https://geraldo.dev/tags/screenshot/">#screenshot</a>
-              
-                  <a href="https://geraldo.dev/tags/annotation/">#annotation</a>
-              
-                  <a href="https://geraldo.dev/tags/debian/">#debian</a>
 
 
-        <h1>Como instalar o flameshot no Debian stretch</h1>
+        <h1>Código de barras</h1>
 
         
 <aside class="table-of-contents">
@@ -168,7 +151,15 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#ean">EAN</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#databar">Databar</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#upc">UPC</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#itf-14">ITF-14</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#cdigo-128">Código 128</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#cdigo-25-intercalado">Código 25 intercalado</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#qr-code">QR code</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#datamatrix">DataMatrix</a></li>
+    <li><a href="https://geraldo.dev/posts/codigo-de-barras/#referncias">Referências</a></li>
   </ul>
 
 </aside>
@@ -177,32 +168,125 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <p>O <code>flameshot</code> é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.</p>
+        <h2 id="ean">EAN</h2>
+<ul>
+<li>Esse código é usado principalmente nos pontos de venda porque permite fazer uma leitura mais simples.</li>
+<li>É o formato mais comum e contém uma sequência de números que totaliza 13 dígitos na maioria das vezes.</li>
+<li>Pode ser usado para as vendas ou o controle interno, porque o EAN armazena dados sobre a numeração única da unidade ou do lote.</li>
+<li>Esse código também se subdivide, como ocorre com o ISBN, que é voltado para livros e produtos semelhantes.</li>
+</ul>
   <div class="center-align">
     <figure>
-      <img class="responsive-img z-depth-3" src="https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif" alt="Demonstração de uso do flameshot">
-      <figcaption>Demonstração de uso do flameshot</figcaption>
+      <source srcset="/img/codigo-de-barras_EAN-300x219.webp" width="300" height="219" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras_EAN-300x219.png" alt="EAN" width="300" height="219">
+      <figcaption>EAN</figcaption>
     </figure>
   </div>
-<style type="text/css">.notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative}</style>
-<p><svg width="0" height="0" display="none" xmlns="http://www.w3.org/2000/svg"><symbol id="tip-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></symbol><symbol id="note-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M504 256c0 136.997-111.043 248-248 248S8 392.997 8 256C8 119.083 119.043 8 256 8s248 111.083 248 248zm-248 50c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="warning-notice" viewBox="0 0 576 512" preserveAspectRatio="xMidYMid meet"><path d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"/></symbol><symbol id="info-notice" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet"><path d="M256 8C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm0 110c23.196 0 42 18.804 42 42s-18.804 42-42 42-42-18.804-42-42 18.804-42 42-42zm56 254c0 6.627-5.373 12-12 12h-88c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h12v-64h-12c-6.627 0-12-5.373-12-12v-24c0-6.627 5.373-12 12-12h64c6.627 0 12 5.373 12 12v100h12c6.627 0 12 5.373 12 12v24z"/></symbol></svg><div class="notice tip" ></p>
-<p class="first notice-title"><span class="icon-notice baseline"><svg><use href="#tip-notice"></use></svg></span>Dica</p><p><strong>Atualização:</strong> Agora que o <strong>Debian 10</strong> foi lançado não é mais necessário recorrer ao <strong>backports</strong>, então basta usar <code>apt install flameshot</code>.</p></div>
-<p>O <code>flameshot</code> já está disponível no <code>Debian 10</code>, mas enquanto aguardamos
-a versão nova do Debian ser lançada é preciso utilizar a versão do
-<code>stretch-backports</code>.</p>
-<p>Primeiramente vamos acrescentar o repositório backports:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#366">echo</span> <span style="color:#c30">&#34;deb http://deb.debian.org/debian stretch-backports main&#34;</span> <span style="color:#c30;font-weight:bold">\
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#c30;font-weight:bold"></span>     &gt;&gt; /etc/apt/sources.list.d/backports.list
-</code></pre></div><p>Atualizar a lista de pacotes disponíveis:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt update
-</code></pre></div><p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install -t stretch-backports flameshot
-</code></pre></div><h2 id="referncias">Referências</h2>
+<h2 id="databar">Databar</h2>
 <ul>
-<li><a href="https://github.com/lupoDharkael/flameshot">Github do projeto flameshot</a></li>
-<li><a href="https://askubuntu.com/questions/3578/tool-to-add-shapes-annotations-and-text-using-templates-to-images/3584">Tool to add shapes, annotations and text using templates to images</a></li>
+<li>Tem um funcionamento similar ao do EAN-13 e pode ser usado no ponto de venda.</li>
+<li>A diferença é que tem um tamanho reduzido.</li>
+<li>Devido a essa característica, é utilizado principalmente em verduras, frutas e legumes, além de outros produtos menores, como joias e cosméticos.</li>
+<li>Outra característica é que o Databar pode armazenar dados sobre o prazo de validade, o que permite ter um controle maior das vendas e evitar que uma mercadoria vencida seja comercializada.</li>
 </ul>
-
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-DataBar.webp" width="350" height="468" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-DataBar.jpg" alt="Databar" width="350" height="468">
+      <figcaption>Databar</figcaption>
+    </figure>
+  </div>
+<h2 id="upc">UPC</h2>
+<ul>
+<li>É muito utilizado para identificar mercadorias nos Estados Unidos e no Canadá.</li>
+<li>Tem uma sequência de 12 números e é usado nos pontos de venda.</li>
+<li>A vantagem é que o UPC garante que o produto seja aceito em toda a América do Norte.</li>
+<li>Possui semelhanças com os códigos anteriores.</li>
+<li>Por exemplo: o UPC-A corresponde ao EAN-13 e o UPC-E é parecido com o Databar.</li>
+<li>Não é um código interessante para usar no Brasil, mas quem quer exportar para os Estados Unidos e o Canadá deve considerar o UPC.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-UPC-300x196.webp" width="300" height="196" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-UPC-300x196.jpg" alt="UPC" width="300" height="196">
+      <figcaption>UPC</figcaption>
+    </figure>
+  </div>
+<h2 id="itf-14">ITF-14</h2>
+<ul>
+<li>Possui 14 dígitos e é mais voltado para unidades logísticas.</li>
+<li>É usado em operações internas para rastreio e localização de mercadorias nas mais diversas etapas logísticas.</li>
+<li>Pode ser usado diretamente nas caixas ou nos lotes de produtos, mas não tem validade para produtos únicos ou aqueles que chegarão aos pontos de venda.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-ITF-14-300x95.webp" width="300" height="95" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-ITF-14-300x95.png" alt="ITF-14" width="300" height="95">
+      <figcaption>ITF-14</figcaption>
+    </figure>
+  </div>
+<h2 id="cdigo-128">Código 128</h2>
+<ul>
+<li>Esse também é um código indicado para aplicações logísticas.</li>
+<li>Ele apresenta informações que vão desde a data de validade até números de lote e de série.</li>
+<li>Sua composição é alfanumérica e seu tamanho pode variar conforme a aplicação.</li>
+<li>É bastante usado no transporte de produtos de saúde e oferece um rastreamento mais completo.</li>
+<li>Por meio do código 128 é possível encontrar onde a mercadoria está na cadeia logística e elevar a visibilidade de todo o processo.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-ean-128-300x169.webp" width="300" height="169" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-ean-128-300x169.jpg" alt="Código 128" width="300" height="169">
+      <figcaption>Código 128</figcaption>
+    </figure>
+  </div>
+<h2 id="cdigo-25-intercalado">Código 25 intercalado</h2>
+<ul>
+<li>O código 25 intercalado pode ser utilizado para o manuseio e o transporte de itens do tipo fichas, inventários, passagens aéreas e envelopes.</li>
+<li>No processo logístico é usado especialmente para equipamentos despachados, bagagens e cargas.</li>
+<li>Outra possibilidade é usá-lo em relógios de ponto, boletos de pagamento, entre outras possibilidades que não se ligam a um ponto de venda ou à logística.</li>
+<li>Seu comprimento pode variar.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-2de5-intercalado.webp" width="227" height="83" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-2de5-intercalado.jpg" alt="Legenda da imagem" width="227" height="83">
+      <figcaption>Legenda da imagem</figcaption>
+    </figure>
+  </div>
+<h2 id="qr-code">QR code</h2>
+<ul>
+<li>Esse é um código criado para smartphones e outros dispositivos móveis. Devido a isso, é bidimensional e tem um padrão único.</li>
+<li>O escaneamento deve ser realizado com leitores próprios, que fazem o redirecionamento para uma página com informações sobre o produto, por exemplo.</li>
+<li>A vantagem é pode armazenar uma quantidade maior de informações e facilitar o conhecimento do consumidor a respeito do produto, situação chamada de embalagem estendida.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras-qrcode.webp" width="300" height="300" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras-qrcode.jpg" alt="QR code" width="300" height="300">
+      <figcaption>QR code</figcaption>
+    </figure>
+  </div>
+<h2 id="datamatrix">DataMatrix</h2>
+<ul>
+<li>É semelhante ao QR code por ser bidimensional e com tamanho reduzido.</li>
+<li>Pode ser gravado no produto para ser inviolável.</li>
+<li>É mais utilizado na área de saúde por aumentar a confiabilidade e a rastreabilidade das informações.</li>
+<li>Como você pôde perceber, os vários tipos de códigos existentes servem para situações específicas, que melhoram a visibilidade do processo e facilitam as operações internas do seu negócio.</li>
+<li>E você, já adotou algum dos códigos de barras abordados?</li>
+<li>Se você tem algo a compartilhar ou possui uma dúvida, deixe seu comentário no post.</li>
+</ul>
+  <div class="center-align">
+    <figure>
+      <source srcset="/img/codigo-de-barras_DATAMATRIX.webp" width="244" height="244" type="image/webp">
+      <img class="responsive-img z-depth-3" src="/img/codigo-de-barras_DATAMATRIX.png" alt="DataMatrix" width="244" height="244">
+      <figcaption>DataMatrix</figcaption>
+    </figure>
+  </div>
+<h2 id="referncias">Referências</h2>
+<ul>
+<li><a href="https://ibid.com.br/blog/codigos-de-barras-conheca-os-8-tipos-existentes/">Códigos de barras: conheça os 8 tipos existentes</a></li>
+</ul>
         </div>
 
         
@@ -211,7 +295,7 @@ a versão nova do Debian ser lançada é preciso utilizar a versão do
   <ul class="share">
     <li>
       <a class="facebook"
-        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fcodigo-de-barras%2f"
         aria-label="share on Facebook"
         target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-facebook"></span>
@@ -220,7 +304,7 @@ a versão nova do Debian ser lançada é preciso utilizar a versão do
 
     <li>
       <a class="twitter"
-         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f&amp;text=Como%20instalar%20o%20flameshot%20no%20Debian%20stretch"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fcodigo-de-barras%2f&amp;text=C%c3%b3digo%20de%20barras"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-twitter"></span>
       </a>
@@ -228,7 +312,7 @@ a versão nova do Debian ser lançada é preciso utilizar a versão do
 
     <li>
       <a class="linkedin"
-         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f&amp;title=Como%20instalar%20o%20flameshot%20no%20Debian%20stretch"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fcodigo-de-barras%2f&amp;title=C%c3%b3digo%20de%20barras"
          target="_blank" rel="noopener">
         <span class="mdi mdi-48px mdi-linkedin"></span>
       </a>
@@ -236,7 +320,7 @@ a versão nova do Debian ser lançada é preciso utilizar a versão do
 
     <li>
       <a class="email"
-         href="mailto:?subject=Como%20instalar%20o%20flameshot%20no%20Debian%20stretch&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcomo-instalar-o-flameshot-no-debian-stable%2f">
+         href="mailto:?subject=C%c3%b3digo%20de%20barras&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fcodigo-de-barras%2f">
         <span class="mdi mdi-48px mdi-email"></span>
       </a>
     </li>

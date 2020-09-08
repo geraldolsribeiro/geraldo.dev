@@ -48,22 +48,32 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/nnn/</loc>
+    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nnn/</loc>
+    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/codigo-de-barras/</loc>
     <lastmod>2020-09-06T12:10:30-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/c%C3%B3digo-de-barras/</loc>
-    <lastmod>2020-09-06T12:10:30-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-09-06T12:10:30-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-09-06T12:10:30-03:00</lastmod>
   </url>
   

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>fail2ban on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/fail2ban/</link>
+    <description>Recent content in fail2ban on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/fail2ban/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>fail2ban</title>
+      <link>https://geraldo.dev/posts/failban/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/failban/</guid>
+      <description>Referências  How fail2ban works Install and configure Fail2ban with Docker  </description>
+    </item>
+    
+  </channel>
+</rss>

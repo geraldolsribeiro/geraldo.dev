@@ -48,8 +48,23 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/fail2ban/</loc>
+    <lastmod>2020-09-09T17:34:27-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/failban/</loc>
+    <lastmod>2020-09-09T17:34:27-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
+    <lastmod>2020-09-09T17:34:27-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-09-09T17:34:27-03:00</lastmod>
   </url>
   
   <url>
@@ -59,11 +74,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/nnn/</loc>
-    <lastmod>2020-09-08T08:46:12-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-09-08T08:46:12-03:00</lastmod>
   </url>
   

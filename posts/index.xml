@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>fail2ban</title>
+      <link>https://geraldo.dev/posts/failban/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/failban/</guid>
+      <description>Referências  How fail2ban works Install and configure Fail2ban with Docker  </description>
+    </item>
+    
+    <item>
       <title>Gerenciador de arquivos nnn</title>
       <link>https://geraldo.dev/posts/nnn/</link>
       <pubDate>Tue, 08 Sep 2020 00:00:00 -0300</pubDate>

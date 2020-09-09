@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 08 Sep 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,15 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>fail2ban</title>
+      <link>https://geraldo.dev/posts/failban/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/failban/</guid>
+      <description>Referências  How fail2ban works Install and configure Fail2ban with Docker  </description>
     </item>
     
     <item>

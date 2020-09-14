@@ -101,7 +101,9 @@ I am a teaching instructor for the following courses at University X:
       <pubDate>Wed, 09 Sep 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/failban/</guid>
-      <description>Referências  How fail2ban works Install and configure Fail2ban with Docker  </description>
+      <description>Objetivo TBD
+Instalação 1apt update 2apt install fail2ban Copie o arquivo padrão jail.conf para jail.local para que numa futura atualização não se perca a personalização.
+1cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local Referências  How fail2ban works Install and configure Fail2ban with Docker  </description>
     </item>
     
     <item>

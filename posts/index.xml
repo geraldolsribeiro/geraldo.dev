@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Convertendo um repositório git para bare</title>
+      <link>https://geraldo.dev/posts/git-bare/</link>
+      <pubDate>Mon, 14 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-bare/</guid>
+      <description>1cd repo 2mv .git ../repo.git # renaming just for clarity 3cd .. 4rm -fr repo 5cd repo.git 6git config --bool core.bare true Referências  How to convert a normal Git repository to a bare one?  </description>
+    </item>
+    
+    <item>
       <title>fail2ban</title>
       <link>https://geraldo.dev/posts/failban/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 -0300</pubDate>

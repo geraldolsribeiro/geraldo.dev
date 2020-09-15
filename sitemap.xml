@@ -48,22 +48,42 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/bash/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/ex/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/ex/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/vim/</loc>
+    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/posts/git-bare/</loc>
     <lastmod>2020-09-14T11:44:11-03:00</lastmod>
   </url>
   
   <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-09-14T11:44:11-03:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://geraldo.dev/tags/git/</loc>
-    <lastmod>2020-09-14T11:44:11-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
     <lastmod>2020-09-14T11:44:11-03:00</lastmod>
   </url>
   
@@ -99,11 +119,6 @@
   
   <url>
     <loc>https://geraldo.dev/posts/vim-copiar-nome-do-arquivo/</loc>
-    <lastmod>2020-09-04T18:13:35-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/vim/</loc>
     <lastmod>2020-09-04T18:13:35-03:00</lastmod>
   </url>
   

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 04 Sep 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 15 Sep 2020 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Editando arquivos com ex / vim</title>
+      <link>https://geraldo.dev/posts/ex/</link>
+      <pubDate>Tue, 15 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/ex/</guid>
+      <description>1ex foo.txt &amp;lt;&amp;lt;-EOF 2g/^\s*$/d 3%s/^/[/ 4%s/\(.*\)\(\s\+\)\(.*\)/\3\2\1 5%s/$/]/ 6%s/design/test/ 7wq &amp;#34; Update changes and quit. 8EOF  o comando ex é equivalente a vim -E. acrescente -V1 para saída mais verbosa  Exemplo uma linha:
+1ex +&amp;#34;g/^\s*$/d&amp;#34; +&amp;#34;%s/^/[/&amp;#34; +&amp;#34;%s/design/test/&amp;#34; -cwq foo.txt Referências  How to run a series of vim commands from command prompt  </description>
+    </item>
     
     <item>
       <title>Copiar o nome do arquivo atual</title>

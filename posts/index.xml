@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Dígrafos no VIM</title>
+      <link>https://geraldo.dev/posts/vim-digraphs/</link>
+      <pubDate>Tue, 29 Sep 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/vim-digraphs/</guid>
+      <description>Em modo de edição teclar Ctrl+K seguido de dois caracteres:
+   Dígrafo Caractere Descrição     SE § SEction   DG ° DeGree   -a ª    -o º    Co © Copyright   PI ¶ Pilcrow   .M · Meddle dot   My µ Micro   +- ±    0S ⁰ 0 superescrito   1S ¹ 1 superescrito   2S ² 2 superescrito   3S ³ 3 superescrito   4S ⁴ 4 superescrito   9S ⁹ 9 superescrito   0s ₀ 0 subescrito   1s ₁ 1 subescrito   2s ₂ 2 subescrito   9s ₉ 9 subescrito   14 ¼    12 ½    34 ¾    o/ ø    O/ Ø    -: ÷    A* Α Alfa (grego)   B* Β Beta (grego)   G* Γ Gama (grego)   D* Δ Delta (grego)   H* Θ Teta (grego)   L* Λ Lambda (grego)   S* Σ Sigma (grego)   F* Φ Phi (grefo)   Q* Ψ Psi (grego)   W* Ω Omega (grego)   a* α Alga (grego)   b* β Beta (grego)   g* γ Gama (greto)   d* δ Delta (grego)   e* ε Epslon (grego)   p* π Pi (grego)   -3 ― Barra horizontal   :X ※ Marca de referência   Eu € Euro   oC ℃ Graus Célsius   TM ™ Trademark   1R Ⅰ 1 romano   2R Ⅱ 2 romano   3R Ⅲ 3 romano   4R Ⅳ 4 romano   5R Ⅴ 5 romano   9R Ⅸ 9 romano   aR Ⅹ 10 romano   bR Ⅺ 11 romano   cR Ⅻ 12 romano   1r ⅰ 1 romano   2r ⅱ 2 romano   &amp;lt;- ←    -&amp;gt; →    -v ↓    -!</description>
+    </item>
+    
+    <item>
       <title>Editando arquivos com ex / vim</title>
       <link>https://geraldo.dev/posts/ex/</link>
       <pubDate>Tue, 15 Sep 2020 00:00:00 -0300</pubDate>

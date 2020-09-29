@@ -48,6 +48,26 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/posts/vim-digraphs/</loc>
+    <lastmod>2020-09-29T07:31:55-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2020-09-29T07:31:55-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2020-09-29T07:31:55-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/vim/</loc>
+    <lastmod>2020-09-29T07:31:55-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/bash/</loc>
     <lastmod>2020-09-15T10:57:38-03:00</lastmod>
   </url>
@@ -59,21 +79,6 @@
   
   <url>
     <loc>https://geraldo.dev/tags/ex/</loc>
-    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2020-09-15T10:57:38-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/vim/</loc>
     <lastmod>2020-09-15T10:57:38-03:00</lastmod>
   </url>
   

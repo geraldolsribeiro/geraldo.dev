@@ -657,7 +657,7 @@ Usando bloco try/catch 1@Test 2public void example1() { 3 try { 4 find(&amp;#34;
       <pubDate>Wed, 06 Nov 2019 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/javascript-console-dir/</guid>
-      <description>Considere o seguinte página:
+      <description>Considere a seguinte página:
 1&amp;lt;html&amp;gt; 2 &amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; 3 &amp;lt;body&amp;gt; 4 &amp;lt;input id=&amp;#34;clickMe&amp;#34; type=&amp;#34;button&amp;#34; value=&amp;#34;Clique aqui&amp;#34;&amp;gt; 5 &amp;lt;/body&amp;gt; 6&amp;lt;/html&amp;gt; Que quando aberta no navegador tem a seguinte aparência:
  img   Para obter o elemento do botão poderiamos fazer o seguinte:
 1var btn = document.getElementById( &amp;#39;clickMe&amp;#39; ); Agora que temos o objeto botão armazenado em uma variável chamada btn podemos obter mais informações.

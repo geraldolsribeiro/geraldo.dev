@@ -49,12 +49,12 @@
   
   <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2021-01-17T12:09:53-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2021-01-17T12:09:53-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>
@@ -65,6 +65,36 @@
   <url>
     <loc>https://geraldo.dev/posts/vim-explorer/</loc>
     <lastmod>2020-12-30T13:26:20-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/nanomsg/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/sbe/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/sbe/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/zeromq/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/nanomsg/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/zeromq/</loc>
+    <lastmod>2021-01-29T08:48:36-03:00</lastmod>
   </url>
   
   <url>
@@ -139,7 +169,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/c&#43;&#43;/</loc>
-    <lastmod>2020-09-02T19:40:11-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>
@@ -229,7 +259,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/cpp/</loc>
-    <lastmod>2020-07-13T21:52:50-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>
@@ -419,7 +449,7 @@
   
   <url>
     <loc>https://geraldo.dev/posts/cpp-fltk-layout/</loc>
-    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>
@@ -429,7 +459,7 @@
   
   <url>
     <loc>https://geraldo.dev/tags/fltk/</loc>
-    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
+    <lastmod>2021-01-29T08:54:23-03:00</lastmod>
   </url>
   
   <url>

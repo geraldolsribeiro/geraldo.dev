@@ -21,6 +21,39 @@
     </item>
     
     <item>
+      <title>SBE - Simple Binary Encoding</title>
+      <link>https://geraldo.dev/posts/sbe/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/sbe/</guid>
+      <description> ~25X greater throughput than Google Protocol Buffers (GPB) with very low and predictable latency. A typical market data message can be encoded, or decoded, in ~25ns compared to ~1000ns for the same message with GPB on the same hardware. XML and FIX tag value messages are orders of magnitude slower again.  NOTE: Parece que o artigo do Mechanical Sympathy está melhor revisado
+Referências  github: Simple Binary Encoding (SBE) - High Performance Message Codec DZone: Simple Binary Encoding Mechanical Sympathy: Simple Binary Encoding Cap&#39;n Proto, FlatBuffers, and SBE  </description>
+    </item>
+    
+    <item>
+      <title>nanomsg</title>
+      <link>https://geraldo.dev/posts/nanomsg/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/nanomsg/</guid>
+      <description>nanomsg  olhar nanomsg https://nanomsg.org/gettingstarted/pipeline.html nanomsg library is MIT-licensed. What it means is that, unlike with ZeroMQ, you can modify the source code and re-release it under a different license, as a proprietary product, etc. More reasoning about the licensing can be found here.  https://staysail.github.io/nng_presentation/nng_presentation.html SCALABILITY PROTOCOLS (nanomsg, nng, mangos, and other critters) February 13, 2018 Importar esta apresentação</description>
+    </item>
+    
+    <item>
+      <title>ZeroMQ</title>
+      <link>https://geraldo.dev/posts/zeromq/</link>
+      <pubDate>Wed, 07 Oct 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/zeromq/</guid>
+      <description>orientado a transporte de bytes (mensagens)
+  inspirado no sistema de atores do erlang para trocar mensagens e evitar problemas comuns na programação concorrente
+  resolve o problema de carregar bytes de um lugar para outro
+  não é apenas um modelo de socket crú
+  oferece alguns modelos de programação em cima de uma API baseada em socket
+ publish/subscribe push/pull dealer-router    comunicação entre threads</description>
+    </item>
+    
+    <item>
       <title>Dígrafos no VIM</title>
       <link>https://geraldo.dev/posts/vim-digraphs/</link>
       <pubDate>Tue, 29 Sep 2020 00:00:00 -0300</pubDate>

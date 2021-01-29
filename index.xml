@@ -219,6 +219,15 @@ Instalação 1apt update 2apt install fail2ban Copie o arquivo padrão jail.conf
     </item>
     
     <item>
+      <title>Fuzzy finder</title>
+      <link>https://geraldo.dev/posts/fzf/</link>
+      <pubDate>Sun, 16 Aug 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fzf/</guid>
+      <description>Escolhendo um item 1echo -e &amp;#34;Um\nDois\nTrês&amp;#34; | fzf Formatação avançada 1 2format_info() { 3 echo xxxx 4} 5 6# para disponibilizar função para subshell 7export -f format_info 8 9local opts=&amp;#39;--reverse -e -i --tiebreak=begin --prompt=: &amp;#39; 10local pwin=&amp;#39;--preview-window=down:%40&amp;#39; 11fzf $opts $pwin --preview=&amp;#39;format_info &amp;#34;$(file {})&amp;#34;&amp;#39; &amp;lt;&amp;lt;&amp;lt; $(dir_contents $1) Referências  Além do Bash - #23 - Opções do fzf e preview de informações dos arquivos Vim universe. fzf - command line fuzzy finder  </description>
+    </item>
+    
+    <item>
       <title>Fluid &#43; gvim</title>
       <link>https://geraldo.dev/posts/cpp-fltk-fluid/</link>
       <pubDate>Wed, 05 Aug 2020 00:00:00 -0300</pubDate>

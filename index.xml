@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,15 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Bash - trap</title>
+      <link>https://geraldo.dev/posts/mktemp/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/mktemp/</guid>
+      <description>1cd $(mktemp -d) </description>
     </item>
     
     <item>

@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Bash - trap</title>
+      <link>https://geraldo.dev/posts/mktemp/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/mktemp/</guid>
+      <description>1cd $(mktemp -d) </description>
+    </item>
+    
+    <item>
       <title>VIM - Explorer</title>
       <link>https://geraldo.dev/posts/vim-explorer/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 -0300</pubDate>

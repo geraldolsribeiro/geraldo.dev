@@ -48,13 +48,28 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/tags/bash/</loc>
+    <lastmod>2021-02-01T21:12:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/mktemp/</loc>
+    <lastmod>2021-02-01T21:12:19-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2021-01-29T09:10:24-03:00</lastmod>
+    <lastmod>2021-02-01T21:12:19-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/mktemp/</loc>
+    <lastmod>2021-02-01T21:12:19-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2021-01-29T09:10:24-03:00</lastmod>
+    <lastmod>2021-02-01T21:12:19-03:00</lastmod>
   </url>
   
   <url>
@@ -100,11 +115,6 @@
   <url>
     <loc>https://geraldo.dev/posts/vim-digraphs/</loc>
     <lastmod>2020-09-29T07:31:55-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/bash/</loc>
-    <lastmod>2021-01-29T09:10:24-03:00</lastmod>
   </url>
   
   <url>

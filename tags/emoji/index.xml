@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>emoji on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/emoji/</link>
+    <description>Recent content in emoji on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Tue, 27 Nov 2018 00:00:00 -0200</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/emoji/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Emojis na mensagem de commit</title>
+      <link>https://geraldo.dev/posts/git-gitmoji/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-gitmoji/</guid>
+      <description>Mensagem padrão de commit Para definir um modelo para as mensagens de commit use:
+1git config commit.template /absolute/path/to/file 2git config commit.template relative-path-from-repository-root 3git config commit.template ~/commit.template.txt Emojis selecionados  ✨ ✨ sparkles Novas funcionalidades 💄 💄 lipstick Atualização de UI e arquivos de estilo 🎉 🎉 tada Commit inicial 🐛 🐛 bug Correção de bug ⚡️ ⚡ zap Melhoria de performance ✅ ✅ white_check_mark Testes adicionados 🚑 🚑 ambulance Hotfix crítico 🚀 🚀 rocket Deploy 🚧 🚧 construction trabalho em progresso 🏁 🏁 checkered_flag Feature implementada 🙈 🙈 see_no_evil Atualizando .</description>
+    </item>
+    
+  </channel>
+</rss>

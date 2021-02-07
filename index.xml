@@ -816,6 +816,16 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
     </item>
     
     <item>
+      <title>Emojis na mensagem de commit</title>
+      <link>https://geraldo.dev/posts/git-gitmoji/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-gitmoji/</guid>
+      <description>Mensagem padrão de commit Para definir um modelo para as mensagens de commit use:
+1git config commit.template /absolute/path/to/file 2git config commit.template relative-path-from-repository-root 3git config commit.template ~/commit.template.txt Emojis selecionados  ✨ ✨ sparkles Novas funcionalidades 💄 💄 lipstick Atualização de UI e arquivos de estilo 🎉 🎉 tada Commit inicial 🐛 🐛 bug Correção de bug ⚡️ ⚡ zap Melhoria de performance ✅ ✅ white_check_mark Testes adicionados 🚑 🚑 ambulance Hotfix crítico 🚀 🚀 rocket Deploy 🚧 🚧 construction trabalho em progresso 🏁 🏁 checkered_flag Feature implementada 🙈 🙈 see_no_evil Atualizando .</description>
+    </item>
+    
+    <item>
       <title>Como repetir texto no vim</title>
       <link>https://geraldo.dev/posts/vim-inserir-caracteres-repetidos/</link>
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>

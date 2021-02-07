@@ -101,5 +101,15 @@ $ git branch --merged dev | egrep -v &amp;quot;\*&amp;quot; ajuste-cabecalho-inc
 1git config --global filter.clang-format-java.clean &amp;#39;clang-format -assume-filename=test.java&amp;#39; 2git config --global filter.clang-format-java.smudge cat  clean ocorre quando os arquivos são enviados para o stage smudge quando os arquivos são enviados para o workspace (checkout)  Quando os arquivos são enviados para stage (git add) são passados via stdin então não dá para saber qual o tipo do arquivo. O uso da opção -assume-filename=test.</description>
     </item>
     
+    <item>
+      <title>Emojis na mensagem de commit</title>
+      <link>https://geraldo.dev/posts/git-gitmoji/</link>
+      <pubDate>Tue, 27 Nov 2018 00:00:00 -0200</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-gitmoji/</guid>
+      <description>Mensagem padrão de commit Para definir um modelo para as mensagens de commit use:
+1git config commit.template /absolute/path/to/file 2git config commit.template relative-path-from-repository-root 3git config commit.template ~/commit.template.txt Emojis selecionados  ✨ ✨ sparkles Novas funcionalidades 💄 💄 lipstick Atualização de UI e arquivos de estilo 🎉 🎉 tada Commit inicial 🐛 🐛 bug Correção de bug ⚡️ ⚡ zap Melhoria de performance ✅ ✅ white_check_mark Testes adicionados 🚑 🚑 ambulance Hotfix crítico 🚀 🚀 rocket Deploy 🚧 🚧 construction trabalho em progresso 🏁 🏁 checkered_flag Feature implementada 🙈 🙈 see_no_evil Atualizando .</description>
+    </item>
+    
   </channel>
 </rss>

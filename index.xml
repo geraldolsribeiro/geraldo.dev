@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Mon, 01 Feb 2021 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,18 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Fontconfig - escondendo fontes</title>
+      <link>https://geraldo.dev/posts/fontconfig/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/fontconfig/</guid>
+      <description>Após a instalação do LaTeX muitas fontes matemáticas e algumas muito estranhas ficaram sendo listadas no inkscape, libreoffice, &amp;hellip;
+É possível especificar quais fontes devem ser listadas pelos programas através do arquivo ~/.config/fontconfig/fonts.conf.
+Para obter o caminho das fontes para remoção use fc-list | grep -i &amp;quot;parte do nome da fonte&amp;quot;.
+1$ fc-list | grep -i &amp;#34;noto&amp;#34; 2/home/geraldo/.fonts/Noto/Noto-Mono-for-Powerline.ttf: Noto Mono for Powerline:style=Regular 3/usr/share/fonts/truetype/noto/NotoSans-Bold.ttf: Noto Sans:style=Bold 4/usr/share/fonts/truetype/noto/NotoSans-Italic.ttf: Noto Sans:style=Italic 5/usr/share/fonts/truetype/noto/NotoSerif-Regular.ttf: Noto Serif:style=Regular 6/usr/share/fonts/truetype/noto/NotoSerif-Italic.</description>
     </item>
     
     <item>

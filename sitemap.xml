@@ -64,12 +64,12 @@
   
   <url>
     <loc>https://geraldo.dev/</loc>
-    <lastmod>2021-04-27T09:33:10-03:00</lastmod>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2021-04-27T09:33:10-03:00</lastmod>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
   </url>
   
   <url>
@@ -418,13 +418,33 @@
   </url>
   
   <url>
-    <loc>https://geraldo.dev/posts/x-inverter-cores/</loc>
-    <lastmod>2020-03-15T15:39:53-03:00</lastmod>
+    <loc>https://geraldo.dev/tags/cadexchanger/</loc>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://geraldo.dev/tags/debian/</loc>
-    <lastmod>2020-06-22T11:33:58-03:00</lastmod>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/varicad-importando-do-solidworks/</loc>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/step/</loc>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/varicad/</loc>
+    <lastmod>2021-07-11T21:18:56-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/x-inverter-cores/</loc>
+    <lastmod>2020-03-15T15:39:53-03:00</lastmod>
   </url>
   
   <url>
@@ -435,11 +455,6 @@
   <url>
     <loc>https://geraldo.dev/tags/xorg/</loc>
     <lastmod>2020-03-15T15:39:53-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/varicad/</loc>
-    <lastmod>2020-02-18T10:52:04-03:00</lastmod>
   </url>
   
   <url>

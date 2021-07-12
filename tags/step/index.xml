@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>step on geraldo.dev</title>
+    <link>https://geraldo.dev/tags/step/</link>
+    <description>Recent content in step on geraldo.dev</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
+    <lastBuildDate>Tue, 17 Mar 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/step/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Importando arquivos do SolidWorks para o VariCAD</title>
+      <link>https://geraldo.dev/posts/varicad-importando-do-solidworks/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/varicad-importando-do-solidworks/</guid>
+      <description>Extrai o conversor cadexchanger
+1cd /tmp/work 2unzip cadexchanger_3.7.1_build12316_lin64.zip Renomeia a extensão dos arquivos do SolidWorks para minúscula pois o cadexchanger não reconhece.
+1sudo apt-install rename 2cd /tmp/work 3rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 4rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 5rename &amp;#34;s/SLDDRW/slddrw/&amp;#34; * 1/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh Diretórios criados  ~/.cache/CADEX/ ~/.cache/mesa_shader_cache ~/.cache/qtshadercache ~/.config/CAD Exchanger ~/.local/share/CAD Exchanger  Referências  []()  </description>
+    </item>
+    
+  </channel>
+</rss>

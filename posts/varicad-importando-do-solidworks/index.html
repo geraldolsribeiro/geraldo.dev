@@ -6,28 +6,33 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 <base href="https://geraldo.dev/">
-<title>varicad | geraldo.dev</title>
-<link rel="canonical" href="https://geraldo.dev/tags/varicad/">
+<title>Importando arquivos do SolidWorks para o VariCAD | geraldo.dev</title>
+<link rel="canonical" href="https://geraldo.dev/posts/varicad-importando-do-solidworks/">
 <meta name="generator" content="Hugo 0.62.0" />
 
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="17/03/2020">
 
 
 
-    <meta property="og:image" content="https://geraldo.dev/img/open_graph_02_1200x1200.jpg" />
-
-    <meta property="og:description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource" />
-    <meta property="og:url" content="https://geraldo.dev/tags/varicad/" />
+    <meta property="og:image" content="https://geraldo.dev/img/headers/varicad.jpg" />
+<meta property="og:description" content="Importando arquivos do SolidWorks para o VariCAD." /><meta property="og:url" content="https://geraldo.dev/posts/varicad-importando-do-solidworks/" />
     <meta property="og:site_name" content="geraldo.dev" />
-    <meta property="og:title" content="varicad" />
+    <meta property="og:title" content="Importando arquivos do SolidWorks para o VariCAD" />
+
+
+    <meta property="og:tags" content="varicad" />
+
+    <meta property="og:tags" content="step" />
+
+    <meta property="og:tags" content="cadexchanger" />
+
+    <meta property="og:tags" content="debian" />
 
 
 
-
-
-    <meta name="description" content="Tecnologia, c&#43;&#43;, web, linux, git, desenvolvimento de software, dicas, tutoriais e notícias sobre o mundo opensource">
-    
+<meta name="description" content="Importando arquivos do SolidWorks para o VariCAD.">
 <meta name="author" content="Geraldo Ribeiro">
 
 <script type="application/javascript">
@@ -113,35 +118,30 @@ if (!doNotTrack) {
     
 
     
-  <div class="container">
-    <h1>Artigos marcados com varicad</h1>
 
-    <ul class="row">
+    <main>
+      <div class="page container">
+
         
+        <div class="project-header center-align">
+          <picture>
+            <source srcset="img/headers/varicad.webp" type="image/webp">
+            <img src="img/headers/varicad.jpg" class="responsive-img z-depth-3">
+          </picture>
+        </div>
+        
+
+        <div class="row">
+          <div class="col s12 m6 center-align grey-text">
+            Publicado em: 17/Mar/2020
+          </div>
           
-
-
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/varicad-importando-do-solidworks/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
+          <div class="col s12 m6 center-align grey-text">
+            Atualizado em: 11/Jul/2021
+          </div>
           
-          <source srcset="img/headers/varicad.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/varicad.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
+        </div>
 
-      <div class="card-content">
-        <span class="card-title">Importando arquivos do SolidWorks para o VariCAD</span>
-        <p class="date">11/07/2021 21:18</p>
-        <p class="truncate">Importando arquivos do SolidWorks para o VariCAD.</p>
-      </div>
-
-      <div class="card-action">
         
         
         
@@ -155,126 +155,123 @@ if (!doNotTrack) {
               
                   <a href="https://geraldo.dev/tags/debian/">#debian</a>
 
-      </div>
-    </a>
-  </div>
+
+        <h1>Importando arquivos do SolidWorks para o VariCAD</h1>
+
+        
+<aside class="table-of-contents">
+  <header>
+    <h3>Sumário</h3>
+  </header>
+  <ul>
+    <li><a href="https://geraldo.dev/posts/varicad-importando-do-solidworks/#diretrios-criados">Diretórios criados</a></li>
+    <li><a href="https://geraldo.dev/posts/varicad-importando-do-solidworks/#referncias">Referências</a></li>
+  </ul>
+
+</aside>
+
+
+
+
+        <div class="gr-main-content">
+        <p>Extrai o conversor cadexchanger</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#366">cd</span> /tmp/work
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>unzip cadexchanger_3.7.1_build12316_lin64.zip
+</code></pre></div><p>Renomeia a extensão dos arquivos do SolidWorks para minúscula pois o cadexchanger não reconhece.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>sudo apt-install rename
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#366">cd</span> /tmp/work
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>rename <span style="color:#c30">&#34;s/SLDPRT/sldprt/&#34;</span> *
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>rename <span style="color:#c30">&#34;s/SLDPRT/sldprt/&#34;</span> *
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>rename <span style="color:#c30">&#34;s/SLDDRW/slddrw/&#34;</span> *
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh
+</code></pre></div><h2 id="diretrios-criados">Diretórios criados</h2>
+<ul>
+<li><code>~/.cache/CADEX/</code></li>
+<li><code>~/.cache/mesa_shader_cache</code></li>
+<li><code>~/.cache/qtshadercache</code></li>
+<li><code>~/.config/CAD Exchanger</code></li>
+<li><code>~/.local/share/CAD Exchanger</code></li>
+</ul>
+<p><img src="img/varicad-convert-step-via-cad-exchanger.png" alt="Converter para step"></p>
+<h2 id="referncias">Referências</h2>
+<ul>
+<li>[]()</li>
+</ul>
+
+        </div>
+
+        
+
+<div class="share-box center-align" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="facebook"
+        href="https://www.facebook.com/sharer.php?u=https%3a%2f%2fgeraldo.dev%2fposts%2fvaricad-importando-do-solidworks%2f"
+        aria-label="share on Facebook"
+        target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-facebook"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?url=https%3a%2f%2fgeraldo.dev%2fposts%2fvaricad-importando-do-solidworks%2f&amp;text=Importando%20arquivos%20do%20SolidWorks%20para%20o%20VariCAD"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-twitter"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2fgeraldo.dev%2fposts%2fvaricad-importando-do-solidworks%2f&amp;title=Importando%20arquivos%20do%20SolidWorks%20para%20o%20VariCAD"
+         target="_blank" rel="noopener">
+        <span class="mdi mdi-48px mdi-linkedin"></span>
+      </a>
+    </li>
+
+    <li>
+      <a class="email"
+         href="mailto:?subject=Importando%20arquivos%20do%20SolidWorks%20para%20o%20VariCAD&amp;body=https%3a%2f%2fgeraldo.dev%2fposts%2fvaricad-importando-do-solidworks%2f">
+        <span class="mdi mdi-48px mdi-email"></span>
+      </a>
+    </li>
+
+  </ul>
+  <span>Compartilhe!</span>
 </div>
 
-        
-          
 
 
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/varicad-visao-predefinida/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
-          
-          <source srcset="img/headers/varicad.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/varicad.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
 
-      <div class="card-content">
-        <span class="card-title">Varicad - configurando visão pré-definida para isométrica</span>
-        <p class="date">18/02/2020 10:52</p>
-        <p class="truncate">Como configurar a visão pré-definida para isométrica no Varicad.</p>
-      </div>
-
-      <div class="card-action">
-        
-        
-        
-            
-              
-                  <a href="https://geraldo.dev/tags/varicad/">#varicad</a>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "geraldo-dev" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        <script>
+var disqus_config = function () {
+  this.language = "pt";
+};
+</script>
 
       </div>
-    </a>
-  </div>
-</div>
 
-        
-          
-
-
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/varicad-moldura/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
-          
-          <source srcset="img/headers/varicad.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/varicad.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
-
-      <div class="card-content">
-        <span class="card-title">Varicad - configurando moldura da página</span>
-        <p class="date">30/01/2020 00:19</p>
-        <p class="truncate">Como configurar a moldura da página no Varicad.</p>
-      </div>
-
-      <div class="card-action">
-        
-        
-        
-            
-              
-                  <a href="https://geraldo.dev/tags/varicad/">#varicad</a>
-
-      </div>
-    </a>
-  </div>
-</div>
-
-        
-          
-
-
-<div class="col s12 m4">
-  <div class="card wow zoomIn small">
-    <a href="https://geraldo.dev/posts/varicad-legenda/">
-      
-      <div class="card-image grey lighten-3">
-        <picture>
-          
-          <source srcset="img/headers/varicad.webp" type="image/webp">
-              <img src="https://geraldo.dev/img/headers/varicad.jpg" class="responsive-img z-depth-1 post-list-thumbnail">
-          
-        </picture>
-      </div>
-      
-
-      <div class="card-content">
-        <span class="card-title">Varicad - configurando arquivos de legenda</span>
-        <p class="date">30/01/2020 00:18</p>
-        <p class="truncate">Como configurar os arquivos de legenda personalizados no Varicad.</p>
-      </div>
-
-      <div class="card-action">
-        
-        
-        
-            
-              
-                  <a href="https://geraldo.dev/tags/varicad/">#varicad</a>
-
-      </div>
-    </a>
-  </div>
-</div>
-
-        
-    </ul>
-
-  </div>
+    </main>
 
 
     

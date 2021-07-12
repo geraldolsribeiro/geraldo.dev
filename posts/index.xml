@@ -332,6 +332,17 @@ Todos começando quase juntos Neste cenário o início de cada curva foi desloca
     </item>
     
     <item>
+      <title>Importando arquivos do SolidWorks para o VariCAD</title>
+      <link>https://geraldo.dev/posts/varicad-importando-do-solidworks/</link>
+      <pubDate>Tue, 17 Mar 2020 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/varicad-importando-do-solidworks/</guid>
+      <description>Extrai o conversor cadexchanger
+1cd /tmp/work 2unzip cadexchanger_3.7.1_build12316_lin64.zip Renomeia a extensão dos arquivos do SolidWorks para minúscula pois o cadexchanger não reconhece.
+1sudo apt-install rename 2cd /tmp/work 3rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 4rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 5rename &amp;#34;s/SLDDRW/slddrw/&amp;#34; * 1/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh Diretórios criados  ~/.cache/CADEX/ ~/.cache/mesa_shader_cache ~/.cache/qtshadercache ~/.config/CAD Exchanger ~/.local/share/CAD Exchanger  Referências  []()  </description>
+    </item>
+    
+    <item>
       <title>Como inverter as cores no X</title>
       <link>https://geraldo.dev/posts/x-inverter-cores/</link>
       <pubDate>Sun, 15 Mar 2020 00:00:00 -0300</pubDate>

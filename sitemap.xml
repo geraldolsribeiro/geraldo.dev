@@ -48,6 +48,26 @@
   </url>
   
   <url>
+    <loc>https://geraldo.dev/</loc>
+    <lastmod>2021-07-21T13:59:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/git/</loc>
+    <lastmod>2021-07-21T13:59:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/posts/git-remover-arquivos-e-preservar-copia-local/</loc>
+    <lastmod>2021-07-21T13:59:26-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://geraldo.dev/tags/</loc>
+    <lastmod>2021-07-21T13:59:26-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://geraldo.dev/tags/font/</loc>
     <lastmod>2021-04-27T09:33:10-03:00</lastmod>
   </url>
@@ -60,16 +80,6 @@
   <url>
     <loc>https://geraldo.dev/posts/fontconfig/</loc>
     <lastmod>2021-04-27T09:33:10-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/</loc>
-    <lastmod>2021-07-21T13:50:15-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/</loc>
-    <lastmod>2021-07-21T13:50:15-03:00</lastmod>
   </url>
   
   <url>
@@ -144,11 +154,6 @@
   
   <url>
     <loc>https://geraldo.dev/posts/git-bare/</loc>
-    <lastmod>2021-07-21T13:50:15-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://geraldo.dev/tags/git/</loc>
     <lastmod>2021-07-21T13:50:15-03:00</lastmod>
   </url>
   

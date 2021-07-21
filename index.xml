@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 27 Apr 2021 00:00:00 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 -0300</lastBuildDate>
     
 	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     
@@ -93,6 +93,16 @@ I am a teaching instructor for the following courses at University X:
       
       <guid>https://geraldo.dev/home/contact/</guid>
       <description></description>
+    </item>
+    
+    <item>
+      <title>Remover arquivos do controle de versão preservando cópia local</title>
+      <link>https://geraldo.dev/posts/git-remover-arquivos-e-preservar-copia-local/</link>
+      <pubDate>Wed, 21 Jul 2021 00:00:00 -0300</pubDate>
+      
+      <guid>https://geraldo.dev/posts/git-remover-arquivos-e-preservar-copia-local/</guid>
+      <description> Acrescente o arquivo ao .gitignore Remova do git com git rm --cached nome/do/arquivo  A flag --cached vai manter a cópia local.
+Referências  How To Remove Committed Files From Git Version Control  </description>
     </item>
     
     <item>

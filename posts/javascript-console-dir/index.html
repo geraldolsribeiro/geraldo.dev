@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Javascript - console.dir | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/javascript-console-dir/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -91,6 +91,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -105,6 +107,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -157,8 +161,8 @@ if (!doNotTrack) {
   </header>
   <ul>
     <li><a href="https://geraldo.dev/posts/javascript-console-dir/#adicionado-um-evento-de-clique">Adicionado um evento de clique</a></li>
-    <li><a href="https://geraldo.dev/posts/javascript-console-dir/#mais-opes-do-console">Mais opções do console</a></li>
-    <li><a href="https://geraldo.dev/posts/javascript-console-dir/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/javascript-console-dir/#mais-opções-do-console">Mais opções do console</a></li>
+    <li><a href="https://geraldo.dev/posts/javascript-console-dir/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -210,7 +214,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#09f;font-style:italic">// Definindo uma função de tratamento
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic"></span>meuClique <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">function</span>() { alert(<span style="color:#c30">&#39;Fui clicado&#39;</span>); }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#09f;font-style:italic">// Vinculando a função ao evento de clique do botão
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// Não usar `on`. Em vez de `onclick` use `click` 
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#09f;font-style:italic">// Não usar `on`. Em vez de `onclick` use `click` 
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#09f;font-style:italic"></span>btn.addEventListener(<span style="color:#c30">&#34;click&#34;</span>, meuClique);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span style="color:#09f;font-style:italic">// Clicar no botão ou executar `btn.click()`
@@ -257,9 +261,9 @@ alguma informação sobre a função de tratamento, mas estava <code>null</code>
 </span></code></pre></div><p><code>monitorEvents(object[, events])</code> monitora eventos</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>monitorEvents(<span style="color:#366">window</span>, <span style="color:#c30">&#34;resize&#34;</span>);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic">// resize Event {isTrusted: true, type: &#34;resize&#34;, target: Window, currentTarget: Window, eventPhase: 2, …}
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// resize Event {isTrusted: true, type: &#34;resize&#34;, target: Window, currentTarget: Window, eventPhase: 2, …}
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#09f;font-style:italic">// resize Event {isTrusted: true, type: &#34;resize&#34;, target: Window, currentTarget: Window, eventPhase: 2, …}
 </span></code></pre></div><p><code>unmonitorEvents(object[, events])</code></p>
-<h2 id="mais-opes-do-console">Mais opções do console</h2>
+<h2 id="mais-opções-do-console">Mais opções do console</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#069;font-weight:bold">const</span> label <span style="color:#555">=</span> <span style="color:#c30">&#39;Adolescent Irradiated Espionage Tortoises&#39;</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>console.group(label);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>console.info(<span style="color:#c30">&#39;Leo&#39;</span>);
@@ -290,7 +294,7 @@ alguma informação sobre a função de tratamento, mas estava <code>null</code>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>]);
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>console.time();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#069;font-weight:bold">for</span> (<span style="color:#069;font-weight:bold">var</span> i <span style="color:#555">=</span> <span style="color:#f60">0</span>; i <span style="color:#555">&lt;</span> <span style="color:#f60">100000</span>; i<span style="color:#555">++</span>) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">let</span> square <span style="color:#555">=</span> i <span style="color:#555">*</span><span style="color:#555">*</span> <span style="color:#f60">2</span>;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">let</span> square <span style="color:#555">=</span> i <span style="color:#555">**</span> <span style="color:#f60">2</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>console.timeEnd();
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#069;font-weight:bold">const</span> first <span style="color:#555">=</span> () =&gt; { second(); };
@@ -306,7 +310,7 @@ alguma informação sobre a função de tratamento, mas estava <code>null</code>
       <figcaption>img</figcaption>
     </figure>
   </div>
-<h2 id="referncias">Referências</h2>
+<h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/console/dir">MDN Console.dir()</a></li>
 <li><a href="https://developers.google.com/web/tools/chrome-devtools/console/api">Console API Reference</a></li>

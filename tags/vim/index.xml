@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://geraldo.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/vim/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>VIM - Explorer</title>
       <link>https://geraldo.dev/posts/vim-explorer/</link>
@@ -58,7 +54,7 @@
       <pubDate>Sat, 27 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-complete/</guid>
-      <description>C-x C-u C-x C-n C-x C-p Referências  []()  </description>
+      <description>C-x C-u C-x C-n C-x C-p Referências    </description>
     </item>
     
     <item>
@@ -98,7 +94,7 @@
       <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
 :grep sometext Can we grep faster?
-Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
+Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
 1&amp;#34; The Silver Searcher2if executable(&amp;#39;ag&amp;#39;)3&amp;#34; Use ag over grep4 set grepprg=ag\ --nogroup\ --nocolor56&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
@@ -236,10 +232,10 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&#39;s spell-checking to help us avoid embarrassing mistakes.
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
 Switching on spell-checking We can switch on spell checking with this command:
 :setlocal spell We can also specify the language:
-:setlocal spell spelllang=en_us What does it look like Here&#39;s a screenshot of what I see as I edit this blog post:</description>
+:setlocal spell spelllang=en_us What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
     </item>
     
     <item>

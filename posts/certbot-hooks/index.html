@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Certbot Hooks | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/certbot-hooks/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -93,6 +93,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -107,6 +109,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -161,16 +165,16 @@ if (!doNotTrack) {
   </header>
   <ul>
     <li><a href="https://geraldo.dev/posts/certbot-hooks/#exemplo">Exemplo</a></li>
-    <li><a href="https://geraldo.dev/posts/certbot-hooks/#opes">Opções</a>
+    <li><a href="https://geraldo.dev/posts/certbot-hooks/#opções">Opções</a>
       <ul>
-        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--pre-hook-pre-hook">--pre-hook PRE_HOOK</a></li>
-        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--post-hook-post-hook">--post-hook POST_HOOK</a></li>
-        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--deploy-hook-deploy-hook">--deploy-hook DEPLOY_HOOK</a></li>
-        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--disable-hook-validation">--disable-hook-validation</a></li>
-        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--no-directory-hooks">--no-directory-hooks</a></li>
+        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--pre-hook-pre_hook"><code>--pre-hook PRE_HOOK</code></a></li>
+        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--post-hook-post_hook"><code>--post-hook POST_HOOK</code></a></li>
+        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--deploy-hook-deploy_hook"><code>--deploy-hook DEPLOY_HOOK</code></a></li>
+        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--disable-hook-validation"><code>--disable-hook-validation</code></a></li>
+        <li><a href="https://geraldo.dev/posts/certbot-hooks/#--no-directory-hooks"><code>--no-directory-hooks</code></a></li>
       </ul>
     </li>
-    <li><a href="https://geraldo.dev/posts/certbot-hooks/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/certbot-hooks/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -187,20 +191,20 @@ if (!doNotTrack) {
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash">crontab -e
 </code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="color:#f60">15</span> <span style="color:#f60">3</span> * * * certbot renew --noninteractive --post-hook <span style="color:#c30">&#34;systemctl restart mosquitto&#34;</span>
-</code></pre></div><h2 id="opes">Opções</h2>
-<h3 id="--pre-hook-pre-hook"><code>--pre-hook PRE_HOOK</code></h3>
+</code></pre></div><h2 id="opções">Opções</h2>
+<h3 id="--pre-hook-pre_hook"><code>--pre-hook PRE_HOOK</code></h3>
 <p>Comando a ser executado antes de obter um certificado.
 Se existirem vários hooks iguais somente um será executado.</p>
 <ul>
 <li>Parar um servidor.</li>
 </ul>
-<h3 id="--post-hook-post-hook"><code>--post-hook POST_HOOK</code></h3>
+<h3 id="--post-hook-post_hook"><code>--post-hook POST_HOOK</code></h3>
 <p>Comando a ser executado depois da tentativa de obter ou renovar o certificado.
 Se existirem vários hooks iguais somente um será executado.</p>
 <ul>
 <li>Reiniciar/iniciar um servidor</li>
 </ul>
-<h3 id="--deploy-hook-deploy-hook"><code>--deploy-hook DEPLOY_HOOK</code></h3>
+<h3 id="--deploy-hook-deploy_hook"><code>--deploy-hook DEPLOY_HOOK</code></h3>
 <p>Comando a ser executado uma vez para cada certificado emitido.
 São passados as seguintes variáveis para o shell:</p>
 <ul>
@@ -213,16 +217,16 @@ São passados as seguintes variáveis para o shell:</p>
 <p>Manual: Ordinarily the commands specified for &ndash;pre-
 hook/&ndash;post-hook/&ndash;deploy-hook will be checked for validity, to see if the
 programs being run are in the $PATH, so that mistakes can be caught early, even
-when the hooks aren't being run just yet. The validation is rather simplistic
+when the hooks aren&rsquo;t being run just yet. The validation is rather simplistic
 and fails if you use more advanced shell constructs, so you can use this switch
 to disable it. (default: False)</p>
 </blockquote>
 <h3 id="--no-directory-hooks"><code>--no-directory-hooks</code></h3>
 <blockquote>
-<p>Manual: Disable running executables found in Certbot's hook directories
+<p>Manual: Disable running executables found in Certbot&rsquo;s hook directories
 during renewal. (default: False)</p>
 </blockquote>
-<h2 id="referncias">Referências</h2>
+<h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-debian-8">How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8</a></li>
 </ul>

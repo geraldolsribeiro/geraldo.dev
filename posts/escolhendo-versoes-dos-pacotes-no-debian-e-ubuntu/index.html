@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Escolhendo versões dos pacotes no Debian/Ubuntu | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -62,8 +62,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -101,6 +101,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -115,6 +117,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -175,7 +179,7 @@ if (!doNotTrack) {
   </header>
   <ul>
     <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#parte-1---regra-geral">Parte 1 - Regra geral</a></li>
-    <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#parte-2---excees--regra-geral">Parte 2 - Exceções à regra geral</a>
+    <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#parte-2---exceções-à-regra-geral">Parte 2 - Exceções à regra geral</a>
       <ul>
         <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#por-target">Por target</a></li>
         <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#por-origem">Por origem</a></li>
@@ -184,13 +188,13 @@ if (!doNotTrack) {
     <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#parte-3---upgradedowngrade">Parte 3 - Upgrade/Downgrade</a></li>
     <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#entendendo-os-valores-das-prioridades">Entendendo os valores das prioridades</a>
       <ul>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#p--1000">P > 1000</a></li>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#990--p--1000">990 < P <= 1000</a></li>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#500--p--990">500 < P <= 990</a></li>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#100--p--500">100 < P <= 500</a></li>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#0--p--100">0 < P <= 100</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#p--1000">P &gt; 1000</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#990--p--1000">990 &lt; P &lt;= 1000</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#500--p--990">500 &lt; P &lt;= 990</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#100--p--500">100 &lt; P &lt;= 500</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#0--p--100">0 &lt; P &lt;= 100</a></li>
         <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#p--1">P == 1</a></li>
-        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#p--0">P < 0</a></li>
+        <li><a href="https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/#p--0">P &lt; 0</a></li>
       </ul>
     </li>
   </ul>
@@ -220,7 +224,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>Pin-Priority: <span style="color:#f60">600</span>
 </code></pre></div><p>O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o <code>stable</code>.</p>
 <p>Agora que já definimos uma REGRA GERAL podemos começar a definir as exceções à regra.</p>
-<h2 id="parte-2---excees--regra-geral">Parte 2 - Exceções à regra geral</h2>
+<h2 id="parte-2---exceções-à-regra-geral">Parte 2 - Exceções à regra geral</h2>
 <h3 id="por-target">Por target</h3>
 <p>Para exemplo vamos escolher o pacote <code>hugo</code> para este post.
 Você pode usar este mesmo procedimento para qualquer pacote.</p>

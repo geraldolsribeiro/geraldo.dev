@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Thread em C&#43;&#43; | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-thread/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -93,6 +93,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -107,6 +109,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -160,19 +164,19 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-funo-sem-argumentos">Thread com função sem argumentos</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-funo-passando-parmetros-por-valor">Thread com função passando parâmetros por valor</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-funo-passando-parmetros-por-referncia">Thread com função passando parâmetros por referência</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-sem-argumentos">Thread com função sem argumentos</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-passando-parâmetros-por-valor">Thread com função passando parâmetros por valor</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-função-passando-parâmetros-por-referência">Thread com função passando parâmetros por referência</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-classe-callable">Thread com classe callable</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#thread-com-lambda">Thread com lambda</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#join-detach-e-terminate">Join, detach e terminate</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceo">Tratamento de exceção</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#tratamento-de-exceção">Tratamento de exceção</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-thread/#transferindo-a-posse-das-threads">Transferindo a posse das threads</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#threadget-id">thread::get_id()</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#sleep-for">sleep_for</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdthis-threadyield">std::this_thread::yield()</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdhardware-concurrency">std:🧵:hardware_concurrency()</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-thread/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#threadget_id">thread::get_id()</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#sleep_for">sleep_for</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdthis_threadyield"><code>std::this_thread::yield()</code></a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#stdhardware_concurrency"><code>std:🧵:hardware_concurrency()</code></a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-thread/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -181,9 +185,9 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="thread-com-funo-sem-argumentos">Thread com função sem argumentos</h2>
+        <h2 id="thread-com-função-sem-argumentos">Thread com função sem argumentos</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">foo</span>() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Corpo da função: &#34;</span> <span style="color:#555">&lt;&lt;</span> this_thread<span style="color:#555">::</span>get_id() <span style="color:#555">&lt;&lt;</span> endl;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span> () {
@@ -191,23 +195,23 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span style="color:#09f;font-style:italic"></span>  t1.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>}
-</code></pre></div><h2 id="thread-com-funo-passando-parmetros-por-valor">Thread com função passando parâmetros por valor</h2>
+</code></pre></div><h2 id="thread-com-função-passando-parâmetros-por-valor">Thread com função passando parâmetros por valor</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">fooByRef</span>( <span style="color:#078;font-weight:bold">int</span> <span style="color:#555">&amp;</span> a ) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">while</span>( <span style="color:#366">true</span> ) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">O valor é </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> a <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    this_thread<span style="color:#555">:</span><span style="color:#555">:</span>sleep_for( chrono<span style="color:#555">:</span><span style="color:#555">:</span>milliseconds( <span style="color:#f60">1000</span> ) );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;O valor é &#34;</span> <span style="color:#555">&lt;&lt;</span> a <span style="color:#555">&lt;&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>    this_thread<span style="color:#555">::</span>sleep_for( chrono<span style="color:#555">::</span>milliseconds( <span style="color:#f60">1000</span> ) );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span> () {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>  <span style="color:#078;font-weight:bold">int</span> p <span style="color:#555">=</span> <span style="color:#f60">9</span>;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#069;font-weight:bold">thread</span> t2( fooByRef, std<span style="color:#555">:</span><span style="color:#555">:</span>ref( p ) ); <span style="color:#09f;font-style:italic">// usar o wrapper ref para não passar por valor
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  <span style="color:#069;font-weight:bold">thread</span> t2( fooByRef, std<span style="color:#555">::</span>ref( p ) ); <span style="color:#09f;font-style:italic">// usar o wrapper ref para não passar por valor
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// Algum processamento...
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  this_thread<span style="color:#555">:</span><span style="color:#555">:</span>sleep_for( chrono<span style="color:#555">:</span><span style="color:#555">:</span>milliseconds( <span style="color:#f60">5000</span> ) );
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  this_thread<span style="color:#555">::</span>sleep_for( chrono<span style="color:#555">::</span>milliseconds( <span style="color:#f60">5000</span> ) );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  p <span style="color:#555">=</span> <span style="color:#f60">30</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>  t1.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>}
-</code></pre></div><h2 id="thread-com-funo-passando-parmetros-por-referncia">Thread com função passando parâmetros por referência</h2>
+</code></pre></div><h2 id="thread-com-função-passando-parâmetros-por-referência">Thread com função passando parâmetros por referência</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">foo</span>( <span style="color:#078;font-weight:bold">int</span> a, <span style="color:#078;font-weight:bold">int</span> b ) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
@@ -222,7 +226,7 @@ if (!doNotTrack) {
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#069;font-weight:bold">class</span> <span style="color:#0a8;font-weight:bold">CallableClass</span> {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span>  <span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>    <span style="color:#078;font-weight:bold">void</span> <span style="color:#069;font-weight:bold">operator</span>()() {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>      cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Corpo da função: &#34;</span> <span style="color:#555">&lt;&lt;</span> this_thread<span style="color:#555">::</span>get_id() <span style="color:#555">&lt;&lt;</span> endl;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>};
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
@@ -234,14 +238,14 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>}
 </code></pre></div><h2 id="thread-com-lambda">Thread com lambda</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic">// Sintaxe
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) -&gt; ret { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]( params ) { body }
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#09f;font-style:italic"></span><span style="color:#09f;font-style:italic">// [capture-list]{ body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#09f;font-style:italic">// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#09f;font-style:italic">// [capture-list]( params ) -&gt; ret { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#09f;font-style:italic">// [capture-list]( params ) { body }
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#09f;font-style:italic">// [capture-list]{ body }
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#09f;font-style:italic"></span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#069;font-weight:bold">thread</span> t3( []{
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Corpo da função: </span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> this_thread<span style="color:#555">:</span><span style="color:#555">:</span>get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Corpo da função: &#34;</span> <span style="color:#555">&lt;&lt;</span> this_thread<span style="color:#555">::</span>get_id() <span style="color:#555">&lt;&lt;</span> endl;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  } );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  <span style="color:#09f;font-style:italic">// Algum processamento...
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#09f;font-style:italic"></span>  t3.join();
@@ -259,7 +263,7 @@ if (!doNotTrack) {
 <li>Se esquecer de realizar o join ou detach a função <code>std::terminate</code> será chamada pelo destrutor</li>
 <li>Um programa com <code>std::terminate</code> é considerado não seguro.</li>
 </ul>
-<h2 id="tratamento-de-exceo">Tratamento de exceção</h2>
+<h2 id="tratamento-de-exceção">Tratamento de exceção</h2>
 <p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
 <strong>RAII - Resource acquisition is initialization</strong>.</p>
 <p>RAII:</p>
@@ -270,7 +274,7 @@ if (!doNotTrack) {
 <p>Exemplo de código com problema:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Algum erro antes do join/detach</span><span style="color:#c30">&#34;</span> );
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30">&#34;Algum erro antes do join/detach&#34;</span> );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  t4.join(); <span style="color:#09f;font-style:italic">// esta linha nunca vai ser executada
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span style="color:#09f;font-style:italic"></span>}
 </code></pre></div><p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
@@ -293,7 +297,7 @@ sempre executado quando o objeto sair do contexto.</p>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">run</span>() {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>  <span style="color:#069;font-weight:bold">thread</span> t4( foo );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  ThreadGuard tg( t4 ); <span style="color:#09f;font-style:italic">// quando sair do escopo o join será chamado
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Este erro não afeta a thread acima</span><span style="color:#c30">&#34;</span> );
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">throw</span> runtime_error( <span style="color:#c30">&#34;Este erro não afeta a thread acima&#34;</span> );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>}
 </code></pre></div><h2 id="transferindo-a-posse-das-threads">Transferindo a posse das threads</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">foo</span>() { }
@@ -304,13 +308,13 @@ sempre executado quando o objeto sair do contexto.</p>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  <span style="color:#09f;font-style:italic">// thread t2 = t1; // Se fizer isso vai gerar erro de compilação
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#09f;font-style:italic"></span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#09f;font-style:italic">// usar move para transferir a posse da thread
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">thread</span> t2 <span style="color:#555">=</span> std<span style="color:#555">:</span><span style="color:#555">:</span>move( t1 ); <span style="color:#09f;font-style:italic">// t1 não é mais dono da thread
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#069;font-weight:bold">thread</span> t2 <span style="color:#555">=</span> std<span style="color:#555">::</span>move( t1 ); <span style="color:#09f;font-style:italic">// t1 não é mais dono da thread
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#09f;font-style:italic"></span>  t1 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">thread</span>( bar ); <span style="color:#09f;font-style:italic">// t1 tem nova thread
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#09f;font-style:italic"></span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  t1.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  t2.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>}
-</code></pre></div><h2 id="threadget-id">thread::get_id()</h2>
+</code></pre></div><h2 id="threadget_id">thread::get_id()</h2>
 <ul>
 <li>retorna um id único para cada thread ativa em execução</li>
 <li>retorna 0 para todas as threads não ativas</li>
@@ -320,29 +324,29 @@ sempre executado quando o objeto sair do contexto.</p>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>  <span style="color:#069;font-weight:bold">thread</span> t2( foo );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>  <span style="color:#069;font-weight:bold">thread</span> t3;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t1.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 1234
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t2.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 5678
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t3.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  cout <span style="color:#555">&lt;&lt;</span> t1.get_id() <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 1234
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;&lt;</span> t2.get_id() <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 5678
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;&lt;</span> t3.get_id() <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#09f;font-style:italic"></span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>  t1.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>  t2.join();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t1.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> t2.get_id() <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>  cout <span style="color:#555">&lt;&lt;</span> t1.get_id() <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#09f;font-style:italic"></span>  cout <span style="color:#555">&lt;&lt;</span> t2.get_id() <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 0
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span style="color:#09f;font-style:italic"></span>}
-</code></pre></div><h2 id="sleep-for">sleep_for</h2>
-<h2 id="stdthis-threadyield"><code>std::this_thread::yield()</code></h2>
+</code></pre></div><h2 id="sleep_for">sleep_for</h2>
+<h2 id="stdthis_threadyield"><code>std::this_thread::yield()</code></h2>
 <ul>
 <li>retorna a fatia de tempo</li>
 <li>reinsere a thread na fila de execução</li>
 </ul>
-<h2 id="stdhardware-concurrency"><code>std:🧵:hardware_concurrency()</code></h2>
+<h2 id="stdhardware_concurrency"><code>std:🧵:hardware_concurrency()</code></h2>
 <ul>
 <li>retorna o número de thread concorrentes suportado pela implementação do sistema</li>
 <li>considere este valor apenas como uma dica</li>
 <li>é usualmente o número de cores lógicos</li>
 </ul>
-<h2 id="referncias">Referências</h2>
+<h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
 </ul>

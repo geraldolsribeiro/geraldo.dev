@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>C&#43;&#43; Lambda | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-lambda/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -58,8 +58,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -97,6 +97,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -111,6 +113,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -164,10 +168,10 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/cpp-lambda/#funes-de-primeira-classe">Funções de primeira classe</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#funções-de-primeira-classe">Funções de primeira classe</a></li>
     <li><a href="https://geraldo.dev/posts/cpp-lambda/#lambdas">Lambdas</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-lambda/#programao-funcional-com-lambdas">Programação funcional com lambdas</a></li>
-    <li><a href="https://geraldo.dev/posts/cpp-lambda/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#programação-funcional-com-lambdas">Programação funcional com lambdas</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-lambda/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -176,7 +180,7 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="funes-de-primeira-classe">Funções de primeira classe</h2>
+        <h2 id="funções-de-primeira-classe">Funções de primeira classe</h2>
 <p>Em programação funcional funções são <strong>cidadães de primeira classe</strong>, o que
 significa que elas se comportam com dados e suportam quaisquer operações que
 a linguagem permita.</p>
@@ -190,7 +194,7 @@ a linguagem permita.</p>
 <h2 id="lambdas">Lambdas</h2>
 <p>Lambdas são funções anônimas (sem um nome) definidas <em>in-place</em>.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#09f;font-style:italic">//  1   2                           3                               4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic"></span>   [ ] ( ) { std<span style="color:#555">:</span><span style="color:#555">:</span>cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#c30"></span><span style="color:#c30">&#34;</span><span style="color:#c30">Hello from C++ Lambda!</span><span style="color:#c30">&#34;</span> <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> std<span style="color:#555">:</span><span style="color:#555">:</span>endl; } ( );
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic"></span>   [ ] ( ) { std<span style="color:#555">::</span>cout <span style="color:#555">&lt;&lt;</span> <span style="color:#c30">&#34;Hello from C++ Lambda!&#34;</span> <span style="color:#555">&lt;&lt;</span> std<span style="color:#555">::</span>endl; } ( );
 </code></pre></div><p>Vamos ver o que cada grupo significa:</p>
 <ul>
 <li>1 <code>[]</code> <code>lambda introducer</code> ou <code>lambda closure</code></li>
@@ -198,17 +202,17 @@ a linguagem permita.</p>
 <li>3 <code>{}</code> corpo da função lambda</li>
 <li>4 <code>()</code> executa a função</li>
 </ul>
-<h2 id="programao-funcional-com-lambdas">Programação funcional com lambdas</h2>
+<h2 id="programação-funcional-com-lambdas">Programação funcional com lambdas</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-cpp" data-lang="cpp"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#09f;font-style:italic">// f(x,y) = x² + y² + 2xy;
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic"></span>std<span style="color:#555">:</span><span style="color:#555">:</span>function<span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span>(<span style="color:#078;font-weight:bold">int</span>,<span style="color:#078;font-weight:bold">int</span>)<span style="color:#555">&gt;</span> fxsquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x, <span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-</span><span style="color:#555">&gt;</span> <span style="color:#078;font-weight:bold">int</span> {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#078;font-weight:bold">int</span> xsquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x) <span style="color:#555">-</span><span style="color:#555">&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> x <span style="color:#555">*</span> x; }(x);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#078;font-weight:bold">int</span> ysquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-</span><span style="color:#555">&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> y <span style="color:#555">*</span> y; }(y);
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#078;font-weight:bold">int</span> twoxy   <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x, <span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-</span><span style="color:#555">&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">2</span> <span style="color:#555">*</span> x <span style="color:#555">*</span> y; }(x,y);
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#09f;font-style:italic"></span>std<span style="color:#555">::</span>function<span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span>(<span style="color:#078;font-weight:bold">int</span>,<span style="color:#078;font-weight:bold">int</span>)<span style="color:#555">&gt;</span> fxsquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x, <span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-&gt;</span> <span style="color:#078;font-weight:bold">int</span> {
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>  <span style="color:#078;font-weight:bold">int</span> xsquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x) <span style="color:#555">-&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> x <span style="color:#555">*</span> x; }(x);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span>  <span style="color:#078;font-weight:bold">int</span> ysquare <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> y <span style="color:#555">*</span> y; }(y);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span>  <span style="color:#078;font-weight:bold">int</span> twoxy   <span style="color:#555">=</span> [](<span style="color:#078;font-weight:bold">int</span> x, <span style="color:#078;font-weight:bold">int</span> y) <span style="color:#555">-&gt;</span> <span style="color:#078;font-weight:bold">int</span> { <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">2</span> <span style="color:#555">*</span> x <span style="color:#555">*</span> y; }(x,y);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span>  <span style="color:#069;font-weight:bold">return</span> xsquare <span style="color:#555">+</span> ysquare <span style="color:#555">+</span> twoxy;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> fxsquare(<span style="color:#f60">5</span>,<span style="color:#f60">3</span>) <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl; <span style="color:#09f;font-style:italic">// 64
-</span></code></pre></div><h2 id="referncias">Referências</h2>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span>cout <span style="color:#555">&lt;&lt;</span> fxsquare(<span style="color:#f60">5</span>,<span style="color:#f60">3</span>) <span style="color:#555">&lt;&lt;</span> endl; <span style="color:#09f;font-style:italic">// 64
+</span></code></pre></div><h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://geraldo.dev/posts/cpp-array/">std::array</a></li>
 <li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus">Functional Programming in C++</a></li>

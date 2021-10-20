@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://geraldo.dev/tags/const_cast/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 10 Jan 2020 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/const_cast/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C&#43;&#43; - const_cast</title>
       <link>https://geraldo.dev/posts/cpp-const-cast/</link>

@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 21 Jul 2021 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://geraldo.dev/home/about/</link>
@@ -142,7 +138,7 @@ Para obter o caminho das fontes para remoção use fc-list | grep -i &amp;quot;p
       
       <guid>https://geraldo.dev/posts/sbe/</guid>
       <description> ~25X greater throughput than Google Protocol Buffers (GPB) with very low and predictable latency. A typical market data message can be encoded, or decoded, in ~25ns compared to ~1000ns for the same message with GPB on the same hardware. XML and FIX tag value messages are orders of magnitude slower again.  NOTE: Parece que o artigo do Mechanical Sympathy está melhor revisado
-Referências  github: Simple Binary Encoding (SBE) - High Performance Message Codec DZone: Simple Binary Encoding Mechanical Sympathy: Simple Binary Encoding Cap&#39;n Proto, FlatBuffers, and SBE  </description>
+Referências  github: Simple Binary Encoding (SBE) - High Performance Message Codec DZone: Simple Binary Encoding Mechanical Sympathy: Simple Binary Encoding Cap&amp;rsquo;n Proto, FlatBuffers, and SBE  </description>
     </item>
     
     <item>
@@ -324,7 +320,7 @@ sudo ufw allow http sudo certbot certonly --standalone --standalone-supported-ch
       <pubDate>Sat, 27 Jun 2020 00:00:00 -0300</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-complete/</guid>
-      <description>C-x C-u C-x C-n C-x C-p Referências  []()  </description>
+      <description>C-x C-u C-x C-n C-x C-p Referências    </description>
     </item>
     
     <item>
@@ -433,7 +429,7 @@ Todos começando quase juntos Neste cenário o início de cada curva foi desloca
       <guid>https://geraldo.dev/posts/varicad-importando-do-solidworks/</guid>
       <description>Extrai o conversor cadexchanger
 1cd /tmp/work 2unzip cadexchanger_3.7.1_build12316_lin64.zip Renomeia a extensão dos arquivos do SolidWorks para minúscula pois o cadexchanger não reconhece.
-1sudo apt-install rename 2cd /tmp/work 3rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 4rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 5rename &amp;#34;s/SLDDRW/slddrw/&amp;#34; * 1/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh Diretórios criados  ~/.cache/CADEX/ ~/.cache/mesa_shader_cache ~/.cache/qtshadercache ~/.config/CAD Exchanger ~/.local/share/CAD Exchanger  Referências  []()  </description>
+1sudo apt-install rename 2cd /tmp/work 3rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 4rename &amp;#34;s/SLDPRT/sldprt/&amp;#34; * 5rename &amp;#34;s/SLDDRW/slddrw/&amp;#34; * 1/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh Diretórios criados  ~/.cache/CADEX/ ~/.cache/mesa_shader_cache ~/.cache/qtshadercache ~/.config/CAD Exchanger ~/.local/share/CAD Exchanger  Referências    </description>
     </item>
     
     <item>
@@ -756,8 +752,7 @@ Ao enviar a variável btn para a função console.</description>
       <guid>https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/</guid>
       <description>A partir da versão 4.6 do gnuplot está bem mais fácil criar uma animação. Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.
 O segredo está no em configurar a saída para gif animate no comando set term.
-1#Umaanimaçãosimplesdeumsen(x+t)2reset 3set term gif animate 4set output &amp;#34;animacao_do_seno.gif&amp;#34; 5n=24 #quantidadedeframesaseremgerados 6dt=2*pi/n 7set xrange [0:4*pi] 8i=0 #contador 9load &amp;#34;animate.gnuplot&amp;#34; 10set output O arquivo animate.gnuplot contem os comandos:
-1plot sin(x+i*dt) w l lt 1 lw 1.</description>
+1# Uma animação simples de um sen(x+t)2reset 3set term gif animate 4set output &amp;#34;animacao_do_seno.gif&amp;#34; 5n=24 # quantidade de frames a serem gerados 6dt=2*pi/n 7set xrange [0:4*pi] 8i=0 # contador 9load &amp;#34;animate.</description>
     </item>
     
     <item>
@@ -886,7 +881,7 @@ Atualização: Agora que o Debian 10 foi lançado não é mais necessário recor
       <guid>https://geraldo.dev/posts/vim-fast-search-vim/</guid>
       <description>Projects can be searched for specific text within Vim:
 :grep sometext Can we grep faster?
-Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&#39;s grep command. We can overwrite it to use The Silver Searcher&amp;lsquo;s ag command by putting this in our ~/.vimrc:
+Override to use The Silver Searcher grep is a built-in command of Vim. By default, it will use the system&amp;rsquo;s grep command. We can overwrite it to use The Silver Searcher&amp;rsquo;s ag command by putting this in our ~/.vimrc:
 1&amp;#34; The Silver Searcher2if executable(&amp;#39;ag&amp;#39;)3&amp;#34; Use ag over grep4 set grepprg=ag\ --nogroup\ --nocolor56&amp;#34; Use ag in CtrlP for listing files.</description>
     </item>
     
@@ -1024,10 +1019,10 @@ Carregamento de arquivos por condição Carregar todos os arquivos md.
       <pubDate>Mon, 19 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/posts/vim-spell-checking/</guid>
-      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&#39;s spell-checking to help us avoid embarrassing mistakes.
+      <description>There are times when we edit prose in Vim, such as in a project README or Git commit message. In those cases, we can use Vim&amp;rsquo;s spell-checking to help us avoid embarrassing mistakes.
 Switching on spell-checking We can switch on spell checking with this command:
 :setlocal spell We can also specify the language:
-:setlocal spell spelllang=en_us What does it look like Here&#39;s a screenshot of what I see as I edit this blog post:</description>
+:setlocal spell spelllang=en_us What does it look like Here&amp;rsquo;s a screenshot of what I see as I edit this blog post:</description>
     </item>
     
     <item>
@@ -1093,7 +1088,7 @@ De maneira muito breve:
       <pubDate>Wed, 25 Oct 2017 09:42:40 -0200</pubDate>
       
       <guid>https://geraldo.dev/posts/bloqueando-a-sessao-com-light-locker/</guid>
-      <description>Instalação 1apt purge xscreensaver xscreensaver-data 2apt install light-locker Travando pelo terminal 1light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&#39;s an alternative?  </description>
+      <description>Instalação 1apt purge xscreensaver xscreensaver-data 2apt install light-locker Travando pelo terminal 1light-locker-command -l Referências  Instale Light Locker: Um novo bloqueador de sessão para LightDM Debian xscreensaver very old. What&amp;rsquo;s an alternative?  </description>
     </item>
     
     <item>
@@ -1136,7 +1131,7 @@ O arquivo de sistema que guarda o nome da máquina para ser usado a cada boot é
       
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
- About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&#39;t need and customize the parameters of the widgets you wish to keep.</description>
+ About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>
     
     <item>

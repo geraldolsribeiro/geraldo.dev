@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Emojis na mensagem de commit | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/git-gitmoji/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -93,6 +93,8 @@ if (!doNotTrack) {
 
 <li><a href="/projects">Projetos</a></li>
 
+<li><a href="/certificates">Certificados</a></li>
+
 
         </ul>
     </div>
@@ -107,6 +109,8 @@ if (!doNotTrack) {
 <li><a href="/publications">Artigos</a></li>
 
 <li><a href="/projects">Projetos</a></li>
+
+<li><a href="/certificates">Certificados</a></li>
 
 
 </ul>
@@ -160,13 +164,13 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/git-gitmoji/#mensagem-padro-de-commit">Mensagem padrão de commit</a></li>
+    <li><a href="https://geraldo.dev/posts/git-gitmoji/#mensagem-padrão-de-commit">Mensagem padrão de commit</a></li>
     <li><a href="https://geraldo.dev/posts/git-gitmoji/#emojis-selecionados">Emojis selecionados</a></li>
     <li><a href="https://geraldo.dev/posts/git-gitmoji/#outro-emojis">Outro emojis</a></li>
-    <li><a href="https://geraldo.dev/posts/git-gitmoji/#no-suportado-pelo-gogs">Não suportado pelo gogs</a></li>
+    <li><a href="https://geraldo.dev/posts/git-gitmoji/#não-suportado-pelo-gogs">Não suportado pelo gogs</a></li>
     <li><a href="https://geraldo.dev/posts/git-gitmoji/#outros">Outros</a></li>
     <li><a href="https://geraldo.dev/posts/git-gitmoji/#cli">CLI</a></li>
-    <li><a href="https://geraldo.dev/posts/git-gitmoji/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/git-gitmoji/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -175,7 +179,7 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="mensagem-padro-de-commit">Mensagem padrão de commit</h2>
+        <h2 id="mensagem-padrão-de-commit">Mensagem padrão de commit</h2>
 <p>Para definir um modelo para as mensagens de commit use:</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>git config commit.template /absolute/path/to/file
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>git config commit.template relative-path-from-repository-root
@@ -195,8 +199,8 @@ if (!doNotTrack) {
 <li>🙈 🙈 <code>see_no_evil</code> Atualizando .gitignore</li>
 <li>📝 📝 <code>memo</code> Documentação</li>
 <li>🔧 🔧 <code>wrench</code> Mudança em arquivos de configuração</li>
-<li>✏️ ✏ <code>pencil2</code> Corrigindo ortografia</li>
-<li>♻️ ♻ <code>recycle</code> Refactoring code</li>
+<li>✏️ ✏️ <code>pencil2</code> Corrigindo ortografia</li>
+<li>♻️ ♻️ <code>recycle</code> Refactoring code</li>
 <li>🚚 🚚 <code>truck</code> Movendo ou renomeando arquivos</li>
 <li>👽 👽 <code>alien</code> Atualizando código devido a mudança de API externa</li>
 </ul>
@@ -211,12 +215,12 @@ if (!doNotTrack) {
 <li>🔖 🔖 <code>bookmark</code> Releasing / Version tags.</li>
 <li>🚨 🚨 <code>rotating_light</code> Removing linter warnings.</li>
 <li>💚 💚 <code>green_heart</code> Fixing CI Build.</li>
-<li>⬇️ ⬇ <code>arrow_down</code> Downgrading dependencies.</li>
-<li>⬆️ ⬆ <code>arrow_up</code> Upgrading dependencies.</li>
+<li>⬇️ ⬇️ <code>arrow_down</code> Downgrading dependencies.</li>
+<li>⬆️ ⬆️ <code>arrow_up</code> Upgrading dependencies.</li>
 <li>📌 📌 <code>pushpin</code> Pinning dependencies to specific versions.</li>
-<li>👷 👷 <code>construction_worker</code> Adding CI build system.</li>
+<li>👷 👷‍♂️ <code>construction_worker</code> Adding CI build system.</li>
 <li>📈 📈 <code>chart_with_upwards_trend</code> Adding analytics or tracking code.</li>
-<li>🐳 🐋 <code>whale</code> Work about Docker.</li>
+<li>🐳 🐳 <code>whale</code> Work about Docker.</li>
 <li>➕ ➕ <code>heavy_plus_sign</code> Adding a dependency.</li>
 <li>➖ ➖ <code>heavy_minus_sign</code> Removing a dependency.</li>
 <li>🌐 🌐 <code>globe_with_meridians</code> Internationalization and localization.</li>
@@ -239,12 +243,12 @@ if (!doNotTrack) {
 <li>🥚 🥚 <code>egg</code> Adding an easter egg.</li>
 <li>🔍 🔍 <code>mag</code> Improving SEO</li>
 </ul>
-<h2 id="no-suportado-pelo-gogs">Não suportado pelo gogs</h2>
+<h2 id="não-suportado-pelo-gogs">Não suportado pelo gogs</h2>
 <ul>
-<li>⚗ ⚗ <code>alembic</code> Experimenting new things</li>
-<li>🏗  🏗 <code>building_construction</code> Mudanças arquiteturais</li>
+<li>⚗ ⚗️ <code>alembic</code> Experimenting new things</li>
+<li>🏗  🏗️ <code>building_construction</code> Mudanças arquiteturais</li>
 <li>📸 📸 <code>camera_flash</code> Adding or updating snapshots</li>
-<li>🗃  🗃 <code>card_file_box</code> Performing database related changes.</li>
+<li>🗃  🗃️ <code>card_file_box</code> Performing database related changes.</li>
 <li>🤡 🤡 <code>clown_face</code> Mocking things.</li>
 <li>🔊 🔊 <code>loud_sound</code> Adding logs.</li>
 <li>🤖 🤖 <code>robot</code> Fixing something on Android.</li>
@@ -316,7 +320,7 @@ if (!doNotTrack) {
 </ul>
 <h2 id="cli">CLI</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>npm i -g gitmoji-cli
-</code></pre></div><h2 id="referncias">Referências</h2>
+</code></pre></div><h2 id="referências">Referências</h2>
 <ul>
 <li><a href="https://gitmoji.carloscuesta.me/">https://gitmoji.carloscuesta.me/</a></li>
 <li><a href="https://gist.github.com/parmentf/035de27d6ed1dce0b36a">https://gist.github.com/parmentf/035de27d6ed1dce0b36a</a></li>

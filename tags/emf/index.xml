@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://geraldo.dev/tags/emf/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 05 Dec 2019 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/emf/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Eclipse Modeling Framework - Lendo e escrevendo XML</title>
       <link>https://geraldo.dev/posts/eclipse-emf-xml/</link>

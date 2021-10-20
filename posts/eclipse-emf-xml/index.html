@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Eclipse Modeling Framework - Lendo e escrevendo XML | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/eclipse-emf-xml/">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
-      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
+      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
+      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
       media="screen" async>
 
 
@@ -164,15 +164,15 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#configuração-do-emf-e-namespace">Configuração do EMF e namespace</a>
+    <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#configurao-do-emf-e-namespace">Configuração do EMF e namespace</a>
       <ul>
-        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#elemento-raiz-do-xml-no-namespace-com-prefixo-xmlnsns">Elemento raiz do XML no namespace com prefixo (<code>xmlns:ns=”…”&gt;</code>)</a></li>
-        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#elemento-raiz-do-xml-no-namespace-padrão-elm-xmlns">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</a></li>
-        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#nenhuma-informação-sobre-namespace-no-the-xml-elm">Nenhuma informação sobre namespace no the XML (<code>&lt;elm&gt;</code>)</a></li>
+        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#elemento-raiz-do-xml-no-namespace-com-prefixo-xmlnsns">Elemento raiz do XML no namespace com prefixo (xmlns:ns=”…”>)</a></li>
+        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#elemento-raiz-do-xml-no-namespace-padro-elm-xmlns">Elemento raiz do XML no namespace padrão (<elm xmlns=”…”>)</a></li>
+        <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#nenhuma-informao-sobre-namespace-no-the-xml-elm">Nenhuma informação sobre namespace no the XML (<elm>)</a></li>
       </ul>
     </li>
     <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#notas-gerais-sobre-salvar-e-carregar-xml-pelo-emf">Notas gerais sobre salvar e carregar XML pelo EMF</a></li>
-    <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#referências">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/eclipse-emf-xml/#referncias">Referências</a></li>
   </ul>
 
 </aside>
@@ -201,7 +201,7 @@ URI de namespace que pode ser conhecida através do XSD.</p>
 <p>Instâncias do modelo são compostas de <code>EObjects</code> (e classes de suporte como
 <code>EList</code>).</p>
 <p>Cada um destes elementos é representado por uma classe Java.</p>
-<h2 id="configuração-do-emf-e-namespace">Configuração do EMF e namespace</h2>
+<h2 id="configurao-do-emf-e-namespace">Configuração do EMF e namespace</h2>
 <p>Existem três opções:</p>
 <ul>
 <li>namespace com prefixo explícito</li>
@@ -211,14 +211,14 @@ URI de namespace que pode ser conhecida através do XSD.</p>
 <h3 id="elemento-raiz-do-xml-no-namespace-com-prefixo-xmlnsns">Elemento raiz do XML no namespace com prefixo (<code>xmlns:ns=”…”&gt;</code>)</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#309;font-weight:bold">&lt;myRootElement</span> <span style="color:#309">xmlns:ns=</span><span style="color:#c30">&#34;http://example.com/myXml&#34;</span> <span style="color:#309">someAttribute=</span><span style="color:#c30">&#34;value&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>   <span style="color:#309;font-weight:bold">&lt;myAnotherElement</span> <span style="color:#309">anotherAttribute=</span><span style="color:#c30">&#34;value 2&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#309;font-weight:bold">&lt;myRootElement&gt;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#309;font-weight:bold">&lt;myRootElement</span><span style="color:#309;font-weight:bold">&gt;</span>
 </code></pre></div><p>Use a API <code>Resource.save(...)</code></p>
-<h3 id="elemento-raiz-do-xml-no-namespace-padrão-elm-xmlns">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</h3>
+<h3 id="elemento-raiz-do-xml-no-namespace-padro-elm-xmlns">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</h3>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-xml" data-lang="xml"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#309;font-weight:bold">&lt;myRootElement</span> <span style="color:#309">xmlns=</span><span style="color:#c30">&#34;http://example.com/myXml&#34;</span> <span style="color:#309">someAttribute=</span><span style="color:#c30">&#34;value&#34;</span><span style="color:#309;font-weight:bold">&gt;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>   <span style="color:#309;font-weight:bold">&lt;myAnotherElement</span> <span style="color:#309">anotherAttribute=</span><span style="color:#c30">&#34;value 2&#34;</span><span style="color:#309;font-weight:bold">/&gt;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#309;font-weight:bold">&lt;/myRootElement&gt;</span>
 </code></pre></div><p>Veja esta <a href="http://www.eclipse.org/forums/index.php?t=tree&amp;th=129347&amp;S=4a71b44b5931c4dbe7bac446b6ee10c6">dica</a></p>
-<h3 id="nenhuma-informação-sobre-namespace-no-the-xml-elm">Nenhuma informação sobre namespace no the XML (<code>&lt;elm&gt;</code>)</h3>
+<h3 id="nenhuma-informao-sobre-namespace-no-the-xml-elm">Nenhuma informação sobre namespace no the XML (<code>&lt;elm&gt;</code>)</h3>
 <p>Este é o pior caso pois o XML de entrada não se descreve suficientemente e você
 precisa conhecer ou chutar o <code>EPackage</code> correto para realizar o parser.</p>
 <p>Certamente seria melhor se você tivesse informação do namespace. Mas algumas
@@ -231,7 +231,7 @@ será capaz de realizar o match com o <code>EPackage</code> e consequentemente n
 capaz de carregar apropriadamente a menos que você registre um <code>EPackage</code> alvo
 com o <code>ResourceSet</code> global com uma URI nula.</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#069;font-weight:bold">for</span> <span style="color:#555">(</span>EPackage ePackage<span style="color:#555">:</span> eCorePackages<span style="color:#555">)</span> <span style="color:#555">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	resourceSet<span style="color:#555">.</span><span style="color:#309">getPackageRegistry</span><span style="color:#555">().</span><span style="color:#309">put</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">,</span> ePackage<span style="color:#555">);</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>	resourceSet<span style="color:#555">.</span><span style="color:#309">getPackageRegistry</span><span style="color:#555">(</span><span style="color:#555">)</span><span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span><span style="color:#069;font-weight:bold">null</span><span style="color:#555">,</span> ePackage<span style="color:#555">)</span><span style="color:#555">;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>	<span style="color:#09f;font-style:italic">// alternatively could call EPackage.Registry.INSTANCE.put(..)
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">}</span>
 </code></pre></div><p>De acordo com a <a href="https://www.eclipse.org/forums/index.php/mv/msg/128831/#msg_397577">dica do
@@ -241,17 +241,17 @@ não pode injetar a declaração faltante do XMLNS no XML, mas pode especificar
 registro do <code>ResourceSet</code>.</p>
 <h2 id="notas-gerais-sobre-salvar-e-carregar-xml-pelo-emf">Notas gerais sobre salvar e carregar XML pelo EMF</h2>
 <p>Quando carregar do XML ou salvar para o XML você precisa passar algumas das seguintes opções para os métodos <code>save</code> ou <code>load</code>:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Map<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> Object<span style="color:#555">&gt;</span> options <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> HashMap<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> Object<span style="color:#555">&gt;();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>options<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>XMLResource<span style="color:#555">.</span><span style="color:#309">OPTION_EXTENDED_META_DATA</span><span style="color:#555">,</span> Boolean<span style="color:#555">.</span><span style="color:#309">TRUE</span><span style="color:#555">);</span>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-java" data-lang="java"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>Map<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> Object<span style="color:#555">&gt;</span> options <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">new</span> HashMap<span style="color:#555">&lt;</span>String<span style="color:#555">,</span> Object<span style="color:#555">&gt;</span><span style="color:#555">(</span><span style="color:#555">)</span><span style="color:#555">;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>options<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>XMLResource<span style="color:#555">.</span><span style="color:#309">OPTION_EXTENDED_META_DATA</span><span style="color:#555">,</span> Boolean<span style="color:#555">.</span><span style="color:#309">TRUE</span><span style="color:#555">)</span><span style="color:#555">;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#09f;font-style:italic">// options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#09f;font-style:italic"></span>options<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>XMLResource<span style="color:#555">.</span><span style="color:#309">OPTION_ENCODING</span><span style="color:#555">,</span> <span style="color:#c30">&#34;UTF-8&#34;</span><span style="color:#555">);</span>
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span style="color:#09f;font-style:italic"></span>options<span style="color:#555">.</span><span style="color:#309">put</span><span style="color:#555">(</span>XMLResource<span style="color:#555">.</span><span style="color:#309">OPTION_ENCODING</span><span style="color:#555">,</span> <span style="color:#c30">&#34;UTF-8&#34;</span><span style="color:#555">)</span><span style="color:#555">;</span>
 </code></pre></div><ul>
 <li><code>OPTION_EXTENDED_META_DATA</code> - cria elementos aninhados em vez de atributos. Não estou certo se isto influencia no carregamento</li>
 <li><code>OPTION_RECORD_UNKNOWN_FEATURE</code> - quando um elemento desconhecido for encontrado no carregamento não será lançada uma exceção de <code>unknown feature</code> e o campo será apenas pulado</li>
 <li><code>OPTION_ENCODING</code> – é o encoding para geração do XML, onde o padrão é ASCII. Não estou certo se isto influencia no carregamento</li>
 </ul>
 <p>Ver capítulo 13 do livro</p>
-<h2 id="referências">Referências</h2>
+<h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://dzone.com/articles/emf-reading-model-xml-%E2%80%93-how">EMF: Reading a Model from XML - How to Correctly Declare the Namespace</a></li>
 <li><a href="https://blog.jakubholy.net/2011/01/03/emf-reading-a-model-from-xml-how-to-correctly-delcare-a-namespace-variants/">EMF: Reading a model from XML - how to correctly declare its namespace - variants</a></li>

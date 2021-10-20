@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Criando um gif animado com o gnuplot | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -58,8 +58,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
-      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
+      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
+      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
       media="screen" async>
 
 
@@ -168,7 +168,7 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/#referências">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/criando-animacao-com-o-gnuplot/#referncias">Referências</a></li>
   </ul>
 
 </aside>
@@ -180,18 +180,18 @@ if (!doNotTrack) {
         <p>A partir da versão 4.6 do <a href="http://www.gnuplot.info/">gnuplot</a> está bem mais fácil criar uma animação.
 Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.</p>
 <p>O segredo está no em configurar a saída para <code>gif animate</code> no comando <code>set term</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-gnuplot" data-lang="gnuplot"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic"># Uma animação simples de um sen(x+t)</span><span style="color:#a00;background-color:#faa">
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-gnuplot" data-lang="gnuplot"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#09f;font-style:italic">#</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">U</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">n</span><span style="color:#09f;font-style:italic">i</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">ç</span><span style="color:#09f;font-style:italic">ã</span><span style="color:#09f;font-style:italic">o</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">s</span><span style="color:#09f;font-style:italic">i</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic">p</span><span style="color:#09f;font-style:italic">l</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">s</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">u</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">s</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">n</span><span style="color:#09f;font-style:italic">(</span><span style="color:#09f;font-style:italic">x</span><span style="color:#09f;font-style:italic">+</span><span style="color:#09f;font-style:italic">t</span><span style="color:#09f;font-style:italic">)</span><span style="color:#a00;background-color:#faa">
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">reset</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#069;font-weight:bold">set</span> <span style="color:#366">term</span> gif animate
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#069;font-weight:bold">set</span> <span style="color:#366">output</span> <span style="color:#c30">&#34;animacao_do_seno.gif&#34;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#033">n</span><span style="color:#555">=</span><span style="color:#f60">24</span>    <span style="color:#09f;font-style:italic"># quantidade de frames a serem gerados</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#069;font-weight:bold">set</span> <span style="color:#366">output</span> <span style="color:#c30">&#34;</span><span style="color:#c30">animacao_do_seno.gif</span><span style="color:#c30">&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#033">n</span><span style="color:#555">=</span><span style="color:#f60">24</span>    <span style="color:#09f;font-style:italic">#</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">q</span><span style="color:#09f;font-style:italic">u</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">n</span><span style="color:#09f;font-style:italic">t</span><span style="color:#09f;font-style:italic">i</span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">f</span><span style="color:#09f;font-style:italic">r</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">s</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">s</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">r</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">m</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">g</span><span style="color:#09f;font-style:italic">e</span><span style="color:#09f;font-style:italic">r</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">o</span><span style="color:#09f;font-style:italic">s</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span style="color:#033">dt</span><span style="color:#555">=</span><span style="color:#f60">2</span><span style="color:#555">*</span>pi<span style="color:#555">/</span>n
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#069;font-weight:bold">set</span> <span style="color:#366">xrange</span> [<span style="color:#f60">0</span><span style="color:#555">:</span><span style="color:#f60">4</span><span style="color:#555">*</span>pi]
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#033">i</span><span style="color:#555">=</span><span style="color:#f60">0</span> <span style="color:#09f;font-style:italic"># contador</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#069;font-weight:bold">load</span> <span style="color:#c30">&#34;animate.gnuplot&#34;</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#033">i</span><span style="color:#555">=</span><span style="color:#f60">0</span> <span style="color:#09f;font-style:italic">#</span><span style="color:#09f;font-style:italic"> </span><span style="color:#09f;font-style:italic">c</span><span style="color:#09f;font-style:italic">o</span><span style="color:#09f;font-style:italic">n</span><span style="color:#09f;font-style:italic">t</span><span style="color:#09f;font-style:italic">a</span><span style="color:#09f;font-style:italic">d</span><span style="color:#09f;font-style:italic">o</span><span style="color:#09f;font-style:italic">r</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span style="color:#069;font-weight:bold">load</span> <span style="color:#c30">&#34;</span><span style="color:#c30">animate.gnuplot</span><span style="color:#c30">&#34;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#069;font-weight:bold">set</span> <span style="color:#366">output</span>
 </code></pre></div><p>O arquivo <code>animate.gnuplot</code> contem os comandos:</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-gnuplot" data-lang="gnuplot"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#069;font-weight:bold">plot</span> <span style="color:#c0f">sin</span>(x<span style="color:#555">+</span><span style="color:#366">i</span><span style="color:#555">*</span>dt) <span style="color:#366">w</span> l lt <span style="color:#f60">1</span> lw <span style="color:#f60">1.5</span> <span style="color:#366">title</span> <span style="color:#c0f">sprintf</span>(<span style="color:#c30">&#34;t=%i&#34;</span><span style="color:#555">,</span><span style="color:#366">i</span>)
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-gnuplot" data-lang="gnuplot"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span style="color:#069;font-weight:bold">plot</span> <span style="color:#c0f">sin</span>(x<span style="color:#555">+</span><span style="color:#366">i</span><span style="color:#555">*</span>dt) <span style="color:#366">w</span> l lt <span style="color:#f60">1</span> lw <span style="color:#f60">1.5</span> <span style="color:#366">title</span> <span style="color:#c0f">sprintf</span>(<span style="color:#c30">&#34;</span><span style="color:#c30">t=%i</span><span style="color:#c30">&#34;</span><span style="color:#555">,</span><span style="color:#366">i</span>)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span style="color:#033">i</span><span style="color:#555">=</span>i<span style="color:#555">+</span><span style="color:#f60">1</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span style="color:#069;font-weight:bold">if</span> (i <span style="color:#555">&lt;</span> n) <span style="color:#069;font-weight:bold">reread</span>
 </code></pre></div><p>Note que este arquivo irá se recarregar mais 23 vezes através do <code>reread</code> para plotar cada um dos 24 frames da animação.</p>
@@ -202,7 +202,7 @@ Algumas vezes uma animação deixar as coisas mais fáceis de serem entendidas.<
       <figcaption>img</figcaption>
     </figure>
   </div>
-<h2 id="referências">Referências</h2>
+<h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="http://gnuplot-surprising.blogspot.com/2011/09/creating-gif-animation-using-gnuplot.html">Creating gif animation using gnuplot</a></li>
 </ul>

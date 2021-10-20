@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/sbe/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/sbe/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>SBE - Simple Binary Encoding</title>
       <link>https://geraldo.dev/posts/sbe/</link>
@@ -15,7 +19,7 @@
       
       <guid>https://geraldo.dev/posts/sbe/</guid>
       <description> ~25X greater throughput than Google Protocol Buffers (GPB) with very low and predictable latency. A typical market data message can be encoded, or decoded, in ~25ns compared to ~1000ns for the same message with GPB on the same hardware. XML and FIX tag value messages are orders of magnitude slower again.  NOTE: Parece que o artigo do Mechanical Sympathy está melhor revisado
-Referências  github: Simple Binary Encoding (SBE) - High Performance Message Codec DZone: Simple Binary Encoding Mechanical Sympathy: Simple Binary Encoding Cap&amp;rsquo;n Proto, FlatBuffers, and SBE  </description>
+Referências  github: Simple Binary Encoding (SBE) - High Performance Message Codec DZone: Simple Binary Encoding Mechanical Sympathy: Simple Binary Encoding Cap&#39;n Proto, FlatBuffers, and SBE  </description>
     </item>
     
   </channel>

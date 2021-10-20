@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Configurando um firewall no Debian | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/firewall/">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.62.0" />
 
 
     <meta property="og:type" content="article" />
@@ -52,8 +52,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
-      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
+      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
+      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
       media="screen" async>
 
 
@@ -160,20 +160,20 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/firewall/#instalação">Instalação</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#instalao">Instalação</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#status">Status</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#listando-aplicações">Listando aplicações</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#liberando-algumas-aplicações">Liberando algumas aplicações</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#listando-aplicaes">Listando aplicações</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#liberando-algumas-aplicaes">Liberando algumas aplicações</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#habilitando-o-firewall">Habilitando o firewall</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#liberando-uma-porta-específica">Liberando uma porta específica</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#liberando-uma-porta-especfica">Liberando uma porta específica</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#liberando-um-range-de-portas">Liberando um range de portas</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#liberando-acesso-a-um-ip-específico">Liberando acesso a um IP específico</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#liberando-acesso-a-uma-porta-para-a-um-ip-específico">Liberando acesso a uma porta para a um IP específico</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#liberando-acesso-a-um-ip-especfico">Liberando acesso a um IP específico</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#liberando-acesso-a-uma-porta-para-a-um-ip-especfico">Liberando acesso a uma porta para a um IP específico</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#liberando-acesso-a-uma-subrede">Liberando acesso a uma subrede</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#proibindo-conexões">Proibindo conexões</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#proibindo-conexes">Proibindo conexões</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#removendo-regras">Removendo regras</a></li>
     <li><a href="https://geraldo.dev/posts/firewall/#desabilitando-o-firewall">Desabilitando o firewall</a></li>
-    <li><a href="https://geraldo.dev/posts/firewall/#referências">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/firewall/#referncias">Referências</a></li>
   </ul>
 
 </aside>
@@ -182,7 +182,7 @@ if (!doNotTrack) {
 
 
         <div class="gr-main-content">
-        <h2 id="instalação">Instalação</h2>
+        <h2 id="instalao">Instalação</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>apt install ufw
 </code></pre></div><h2 id="status">Status</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw status verbose
@@ -197,29 +197,29 @@ Status: active
 OpenSSH (v6)               ALLOW       Anywhere (v6)
 80/tcp (v6)                ALLOW       Anywhere (v6)
 443/tcp (v6)               ALLOW       Anywhere (v6)
-</code></pre><h2 id="listando-aplicações">Listando aplicações</h2></p>
+</code></pre><h2 id="listando-aplicaes">Listando aplicações</h2></p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw app list
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ufw app info OpenSSH
-</code></pre></div><h2 id="liberando-algumas-aplicações">Liberando algumas aplicações</h2>
+</code></pre></div><h2 id="liberando-algumas-aplicaes">Liberando algumas aplicações</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow OpenSSH
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ufw allow http
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span>ufw allow https
 </code></pre></div><h2 id="habilitando-o-firewall">Habilitando o firewall</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw <span style="color:#366">enable</span>
-</code></pre></div><h2 id="liberando-uma-porta-específica">Liberando uma porta específica</h2>
+</code></pre></div><h2 id="liberando-uma-porta-especfica">Liberando uma porta específica</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow 8080/tcp
 </code></pre></div><h2 id="liberando-um-range-de-portas">Liberando um range de portas</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow 7100:7200/tcp
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ufw allow 7100:7200/udp
-</code></pre></div><h2 id="liberando-acesso-a-um-ip-específico">Liberando acesso a um IP específico</h2>
+</code></pre></div><h2 id="liberando-acesso-a-um-ip-especfico">Liberando acesso a um IP específico</h2>
 <p>Cuidado: Este comando libera todas as portas para o IP especificado!</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow from 64.63.62.61
-</code></pre></div><h2 id="liberando-acesso-a-uma-porta-para-a-um-ip-específico">Liberando acesso a uma porta para a um IP específico</h2>
+</code></pre></div><h2 id="liberando-acesso-a-uma-porta-para-a-um-ip-especfico">Liberando acesso a uma porta para a um IP específico</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow from 64.63.62.61 to any port <span style="color:#f60">22</span>
 </code></pre></div><h2 id="liberando-acesso-a-uma-subrede">Liberando acesso a uma subrede</h2>
 <p>Neste exemplo os IPs <code>192.168.1.1</code> até <code>192.168.1.254</code> podem acessar a porta <code>3306</code> (MySQL).</p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw allow from 192.168.1.0/24 to any port <span style="color:#f60">3306</span>
-</code></pre></div><h2 id="proibindo-conexões">Proibindo conexões</h2>
+</code></pre></div><h2 id="proibindo-conexes">Proibindo conexões</h2>
 <p>Bloqueando todo o acesso de faixa de IPs <code>23.24.25.0/24</code></p>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw deny from 23.24.25.0/24
 </code></pre></div><p>Bloqueando somente alguns serviços:</p>
@@ -242,7 +242,7 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span>ufw delete allow <span style="color:#f60">8069</span>
 </code></pre></div><h2 id="desabilitando-o-firewall">Desabilitando o firewall</h2>
 <div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span>ufw disable
-</code></pre></div><h2 id="referências">Referências</h2>
+</code></pre></div><h2 id="referncias">Referências</h2>
 <ul>
 <li><a href="https://linuxize.com/post/how-to-setup-a-firewall-with-ufw-on-debian-9/">How To Set Up a Firewall with UFW on Debian 9</a></li>
 </ul>

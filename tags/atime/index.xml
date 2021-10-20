@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Fri, 17 Nov 2017 10:14:46 -0200</lastBuildDate><atom:link href="https://geraldo.dev/tags/atime/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2017 10:14:46 -0200</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/atime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Diferenças entre mtime ctime atime</title>
       <link>https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/</link>

@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://geraldo.dev/tags/ffn/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/ffn/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Feed Forward Neural Network no debian com mlpack</title>
       <link>https://geraldo.dev/posts/cpp-mlpack-feed-forward-neural-network-no-debian/</link>

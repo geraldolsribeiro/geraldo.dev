@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sat, 04 Jan 2020 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/stdarray/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 04 Jan 2020 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/stdarray/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>C&#43;&#43;: array</title>
       <link>https://geraldo.dev/posts/cpp-array/</link>

@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Jul 2019 00:00:00 -0300</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
       <link>https://geraldo.dev/posts/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu/</link>
@@ -26,7 +30,7 @@ No arquivo /etc/apt/preferences (que deve estar vazio inicialmente) acrescente a
       
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
- About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
+ About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&#39;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>
     
   </channel>

@@ -7,7 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://geraldo.dev/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://geraldo.dev/tags/academic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Customizing the homepage with widgets</title>
       <link>https://geraldo.dev/posts/widgets/</link>
@@ -15,7 +19,7 @@
       
       <guid>https://geraldo.dev/posts/widgets/</guid>
       <description>Homepage widgets display as sections on the homepage. They can be enabled/disabled and configured as desired. Academic has the following widgets available to use:
- About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&amp;rsquo;t need and customize the parameters of the widgets you wish to keep.</description>
+ About/biography Selected publications Recent publications Recent news/blog posts Projects Selected talks Recent talks Contact Tag cloud Custom widget (demonstrated with the teaching example)  The example site that you copied to create your site uses all the different types of widget (except talks), so you can generally just delete the widgets you don&#39;t need and customize the parameters of the widgets you wish to keep.</description>
     </item>
     
   </channel>

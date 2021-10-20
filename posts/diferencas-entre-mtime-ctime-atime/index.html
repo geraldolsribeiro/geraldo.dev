@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>Diferenças entre mtime ctime atime | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -60,8 +60,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -165,8 +165,8 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/#mtime">mtime</a></li>
-    <li><a href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/#atime">atime</a></li>
+    <li><a href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/#mtime"><code>mtime</code></a></li>
+    <li><a href="https://geraldo.dev/posts/diferencas-entre-mtime-ctime-atime/#atime"><code>atime</code></a></li>
   </ul>
 
 </aside>
@@ -197,7 +197,7 @@ ctime (change time) is the timestamp of a file that indicates the time that it w
 On a Unix-like system, lets create a file and check its atime, mtime and ctime.
 We can see, all the timestamps are same.</p>
 <p>Now, let us print its contents.
-Since the text file was blank, it didn't print anything. But looking at its stats, we see the access time has changed, while the others remain unchanged.</p>
+Since the text file was blank, it didn&rsquo;t print anything. But looking at its stats, we see the access time has changed, while the others remain unchanged.</p>
 <p>Now, let us write something into the file.
 Notice how all of its timestamps have changed! Since the file had to be accessed to modify it, the atime has changed. And since the contents of the file changed, its mtime and ctime both changed.</p>
 <p>Now, instead of contents, what happens if we change its attributes? Say, file permissions?

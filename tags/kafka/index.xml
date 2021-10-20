@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 -0300</lastBuildDate>
-    
-	<atom:link href="https://geraldo.dev/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 -0300</lastBuildDate><atom:link href="https://geraldo.dev/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introdução ao Apache Kafka</title>
       <link>https://geraldo.dev/posts/kafka-intro/</link>

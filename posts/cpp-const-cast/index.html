@@ -8,7 +8,7 @@
 <base href="https://geraldo.dev/">
 <title>C&#43;&#43; - const_cast | geraldo.dev</title>
 <link rel="canonical" href="https://geraldo.dev/posts/cpp-const-cast/">
-<meta name="generator" content="Hugo 0.62.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 
     <meta property="og:type" content="article" />
@@ -54,8 +54,8 @@ if (!doNotTrack) {
 
 
 <link rel="stylesheet"
-      href="https://geraldo.dev/style.main.min.42332c5cebba2f53b91afbbc625bc6613d7c6b2cc697ec63732d7ab92b126ef5.css"
-      integrity="sha256-QjMsXOu6L1O5Gvu8YlvGYT18ayzGl&#43;xjcy16uSsSbvU="
+      href="https://geraldo.dev/style.main.min.815c954a68d3a57c846a97e6f205aafc93cc56dbd5352b068bcd22050b83e31b.css"
+      integrity="sha256-gVyVSmjTpXyEapfm8gWq/JPMVtvVNSsGi80iBQuD4xs="
       media="screen" async>
 
 
@@ -164,7 +164,7 @@ if (!doNotTrack) {
     <h3>Sumário</h3>
   </header>
   <ul>
-    <li><a href="https://geraldo.dev/posts/cpp-const-cast/#referncias">Referências</a></li>
+    <li><a href="https://geraldo.dev/posts/cpp-const-cast/#referências">Referências</a></li>
   </ul>
 
 </aside>
@@ -180,11 +180,11 @@ if (!doNotTrack) {
 <li>adicionar um modificador <code>volatile</code> a um tipo</li>
 <li>remover um modificador <code>volatile</code> de um tipo</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#099">#</span><span style="color:#099">include</span> <span style="color:#099">&lt;iostream&gt;</span><span style="color:#099">
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-c++" data-lang="c++"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#099">#include</span> <span style="color:#099">&lt;iostream&gt;</span><span style="color:#099">
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#099"></span><span style="color:#069;font-weight:bold">using</span> <span style="color:#069;font-weight:bold">namespace</span> std;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span style="color:#078;font-weight:bold">void</span> <span style="color:#c0f">f</span>(<span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> p) {
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  cout <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> <span style="color:#555">*</span>p <span style="color:#555">&lt;</span><span style="color:#555">&lt;</span> endl;
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>  cout <span style="color:#555">&lt;&lt;</span> <span style="color:#555">*</span>p <span style="color:#555">&lt;&lt;</span> endl;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span style="color:#078;font-weight:bold">int</span> <span style="color:#c0f">main</span>(<span style="color:#078;font-weight:bold">void</span>) {
@@ -194,7 +194,7 @@ if (!doNotTrack) {
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#09f;font-style:italic">// A função f() espera receber um int* e não um const int*
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#09f;font-style:italic">// f(b);
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#09f;font-style:italic"></span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> c <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">const_cast</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span><span style="color:#555">&gt;</span>(b);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>  <span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> c <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">const_cast</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">*&gt;</span>(b);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>  f(c);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>  <span style="color:#09f;font-style:italic">// Lvalue é const
@@ -205,14 +205,14 @@ if (!doNotTrack) {
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span style="color:#09f;font-style:italic"></span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>  <span style="color:#078;font-weight:bold">int</span> a1 <span style="color:#555">=</span> <span style="color:#f60">40</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>  <span style="color:#069;font-weight:bold">const</span> <span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> b1 <span style="color:#555">=</span> <span style="color:#555">&amp;</span>a1;
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  <span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> c1 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">const_cast</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span><span style="color:#555">&gt;</span>(b1);
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>  <span style="color:#078;font-weight:bold">int</span><span style="color:#555">*</span> c1 <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">const_cast</span><span style="color:#555">&lt;</span><span style="color:#078;font-weight:bold">int</span><span style="color:#555">*&gt;</span>(b1);
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>  <span style="color:#09f;font-style:italic">// o inteiro a1 referenciado por c1 não foi declarado como const
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#09f;font-style:italic"></span>  <span style="color:#555">*</span>c1 <span style="color:#555">=</span> <span style="color:#f60">50</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>  <span style="color:#069;font-weight:bold">return</span> <span style="color:#f60">0</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>}
-</code></pre></div><h2 id="referncias">Referências</h2>
+</code></pre></div><h2 id="referências">Referências</h2>
 <ul>
 <li>[const_cast operator syntax(https://www.ibm.com/support/knowledgecenter/SSLTBW_2.4.0/com.ibm.zos.v2r4.cbclx01/keyword_const_cast.htm)</li>
 </ul>

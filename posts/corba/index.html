@@ -159,7 +159,7 @@ window.MathJax = {
           </div>
           
           <div class="col s12 m6 center-align grey-text">
-            Atualizado em: 02/Sep/2020
+            Atualizado em: 14/Dec/2021
           </div>
           
         </div>
@@ -1241,13 +1241,13 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span style="color:#c0f">server</span><span style="color:#555">:</span> DataSK.o CServiceA_i.o Server.o
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>	<span style="color:#069;font-weight:bold">$(</span>CXX<span style="color:#069;font-weight:bold">)</span> <span style="color:#069;font-weight:bold">$(</span>CXXFLAGS<span style="color:#069;font-weight:bold">)</span> -o <span style="color:#033">$@</span> $^ <span style="color:#069;font-weight:bold">$(</span>LDFLAGS<span style="color:#069;font-weight:bold">)</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#c0f">clean</span><span style="color:#555">:</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>	rm -f *.o
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>	rm -f server
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#c0f">client</span><span style="color:#555">:</span> DataSK.o Client.o CRequestServiceA.o
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>	<span style="color:#069;font-weight:bold">$(</span>CXX<span style="color:#069;font-weight:bold">)</span> <span style="color:#069;font-weight:bold">$(</span>CXXFLAGS<span style="color:#069;font-weight:bold">)</span> -o <span style="color:#033">$@</span> $^ <span style="color:#069;font-weight:bold">$(</span>LDFLAGS<span style="color:#069;font-weight:bold">)</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span style="color:#c0f">client</span><span style="color:#555">:</span> DataSK.o Client.o CRequestServiceA.o
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>	<span style="color:#069;font-weight:bold">$(</span>CXX<span style="color:#069;font-weight:bold">)</span> <span style="color:#069;font-weight:bold">$(</span>CXXFLAGS<span style="color:#069;font-weight:bold">)</span> -o <span style="color:#033">$@</span> $^ <span style="color:#069;font-weight:bold">$(</span>LDFLAGS<span style="color:#069;font-weight:bold">)</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span style="color:#c0f">clean</span><span style="color:#555">:</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>	rm -f *.o
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>	rm -f server
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>	rm -f client
 </code></pre></div><p>This is the value of CORBA. This is why we use CORBA. Look at how simple the program looks. The constructor establishes the link with the CORBA server. The subsequent calls to Routine A and B are processed remotely on the CORBA server but called like any other local function call.</p>
 <h2 id="todo">Todo</h2>
 <ul>

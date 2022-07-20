@@ -997,11 +997,11 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span style="color:#069;font-weight:bold">public</span><span style="color:#555">:</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>  CServiceA_i();
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>  <span style="color:#069;font-weight:bold">virtual</span> <span style="color:#555">~</span>CServiceA_i();
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#069;font-weight:bold">virtual</span> CORBA<span style="color:#555">::</span>Boolean CallServiceRoutineA(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>  <span style="color:#069;font-weight:bold">virtual</span> CORBA<span style="color:#555">::</span>Boolean CallServiceARoutineA(
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#09f;font-style:italic">/*in*/</span>    CORBA<span style="color:#555">::</span>Long num1,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num2,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span>    <span style="color:#09f;font-style:italic">/*out*/</span>   CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>retNum );
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#069;font-weight:bold">virtual</span> CORBA<span style="color:#555">::</span>Boolean CallServiceRoutineB(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span>  <span style="color:#069;font-weight:bold">virtual</span> CORBA<span style="color:#555">::</span>Boolean CallServiceARoutineB(
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num1,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num2 );
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>};
@@ -1028,7 +1028,7 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span>CServiceA_i<span style="color:#555">::~</span>CServiceA_i( <span style="color:#078;font-weight:bold">void</span> ) { }
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>CORBA<span style="color:#555">::</span>Boolean CallServiceRoutineA(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>CORBA<span style="color:#555">::</span>Boolean CallServiceARoutineA(
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>    <span style="color:#09f;font-style:italic">/*in*/</span>    CORBA<span style="color:#555">::</span>Long num1,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num2,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span>    <span style="color:#09f;font-style:italic">/*out*/</span>   CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>retNum )
@@ -1038,7 +1038,7 @@ vida do serviço</li>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>  <span style="color:#069;font-weight:bold">return</span> <span style="color:#366">true</span>;
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>}
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>CORBA<span style="color:#555">::</span>Boolean CallServiceRoutineB(
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>CORBA<span style="color:#555">::</span>Boolean CallServiceARoutineB(
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num1,
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>    <span style="color:#09f;font-style:italic">/*inout*/</span> CORBA<span style="color:#555">::</span>Long <span style="color:#555">&amp;</span>num2 )
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>{

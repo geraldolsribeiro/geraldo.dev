@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-br</language>
     <copyright>&amp;copy; 2019-2020 Geraldo Ribeiro</copyright>
-    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://geraldo.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>https://geraldo.dev/home/about/</link>
@@ -88,6 +88,51 @@ I am a teaching instructor for the following courses at University X:
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
       
       <guid>https://geraldo.dev/home/contact/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Build Your Own Professional Training Quick Start Guide</title>
+      <link>https://geraldo.dev/certificates/2022-07-20_ea4268e6a8868021b2745d7d6ac5bfaf9c4971f6058ee6a773294c0733990aff/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/certificates/2022-07-20_ea4268e6a8868021b2745d7d6ac5bfaf9c4971f6058ee6a773294c0733990aff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating Fun and Engaging Video Training The How</title>
+      <link>https://geraldo.dev/certificates/2022-07-20_6cd21c10ddcd3039781bba209c01146edd24c2caf016c81a11abf28522231c05/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/certificates/2022-07-20_6cd21c10ddcd3039781bba209c01146edd24c2caf016c81a11abf28522231c05/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creating Fun and Engaging Video Training The Why</title>
+      <link>https://geraldo.dev/certificates/2022-07-20_234b78e93f535626aa80c76d6f8e15d8fdeff495324eeca43e9e1997f6099a4b/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/certificates/2022-07-20_234b78e93f535626aa80c76d6f8e15d8fdeff495324eeca43e9e1997f6099a4b/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dynamic Application Security Testing DAST</title>
+      <link>https://geraldo.dev/certificates/2022-07-20_43ec79bb6762d98450109f53716f1f71bf9f2049d0debe52053b9e4203620976/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/certificates/2022-07-20_43ec79bb6762d98450109f53716f1f71bf9f2049d0debe52053b9e4203620976/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kultivi Oratória de alta performance</title>
+      <link>https://geraldo.dev/certificates/2022-07-01_46a68007b305bd87714ce30a2cf5fad1f954571b5e9dc6b84d3cf5bf52732381/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://geraldo.dev/certificates/2022-07-01_46a68007b305bd87714ce30a2cf5fad1f954571b5e9dc6b84d3cf5bf52732381/</guid>
       <description></description>
     </item>
     
@@ -2035,7 +2080,7 @@ Versões do mlpack disponíveis do Debian As versões disponíveis no momento da
       
       <guid>https://geraldo.dev/posts/como-instalar-o-flameshot-no-debian-stable/</guid>
       <description>O flameshot é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.
- Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip{background:#e6f9e6}.icon-notice{display:inline-flex;align-self:center;margin-right:8px}.icon-notice img,.icon-notice svg{height:1em;width:1em;fill:currentColor}.icon-notice img,.icon-notice.baseline svg{top:0.125em;position:relative} Dica
+ Demonstração de uso do flameshot   .notice{padding:18px;line-height:24px;margin-bottom:24px;border-radius:4px;color:#444;background:#e7f2fa}.notice p:last-child{margin-bottom:0}.notice-title{margin:-18px -18px 12px;padding:4px 18px;border-radius:4px 4px 0 0;font-weight:700;color:#fff;background:#6ab0de}.notice-title:before{margin-right:8px;font-family:&#34;Font Awesome 5 Free&#34;,FontAwesome;font-weight:400}.notice.warning .notice-title{background:rgba(217,83,79,.9)}.notice.warning .notice-title:before{content:&#39;\f071&#39;}.notice.warning{background:#fae2e2}.notice.info .notice-title{background:#f0b37e}.notice.info .notice-title:before{content:&#39;\f05a&#39;}.notice.info{background:#fff2db}.notice.note .notice-title{background:#6ab0de}.notice.note .notice-title:before{content:&#39;\f06a&#39;}.notice.note{background:#e7f2fA}.notice.tip .notice-title{background:rgba(92,184,92,.8)}.notice.tip .notice-title:before{content:&#39;\f058&#39;}.notice.tip{background:#e6f9e6}Dica
 Atualização: Agora que o Debian 10 foi lançado não é mais necessário recorrer ao backports, então basta usar apt install flameshot.
  O flameshot já está disponível no Debian 10, mas enquanto aguardamos a versão nova do Debian ser lançada é preciso utilizar a versão do stretch-backports.</description>
     </item>

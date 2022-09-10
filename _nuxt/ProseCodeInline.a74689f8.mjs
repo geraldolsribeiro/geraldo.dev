@@ -1,0 +1,1 @@
+import{h as o,o as s,a as t,r}from"./entry.a3b2d25d.mjs";const c={},n={class:"text-slate-300"};function a(e,l){return s(),t("code",n,[r(e.$slots,"default")])}const d=o(c,[["render",a]]);export{d as default};

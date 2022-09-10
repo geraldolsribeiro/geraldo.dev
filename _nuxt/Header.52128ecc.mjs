@@ -1,0 +1,1 @@
+import t from"./NavBar.31f99be4.mjs";import{h as e,o as n,a as _,L as c}from"./entry.a3b2d25d.mjs";import"./HamburgerButton.34c53960.mjs";import"./logo.a1814e05.mjs";const r={};function a(m,s){const o=t;return n(),_("div",null,[c(o)])}const u=e(r,[["render",a]]);export{u as default};

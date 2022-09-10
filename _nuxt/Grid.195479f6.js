@@ -1,0 +1,1 @@
+import{h as e,o as s,a as t,r}from"./entry.fea3dd41.js";const c={},a={class:"mt-4 lg:mt-12 grid gap-4 md:gap-8 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"};function l(o,n){return s(),t("div",a,[r(o.$slots,"default")])}const _=e(c,[["render",l]]);export{_ as default};

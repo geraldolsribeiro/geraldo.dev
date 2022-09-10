@@ -1,0 +1,1 @@
+import{h as t,o,a as s,r as n}from"./entry.fea3dd41.js";const r={},c={class:"text-slate-300"};function a(e,_){return o(),s("strong",c,[n(e.$slots,"default")])}const f=t(r,[["render",a]]);export{f as default};

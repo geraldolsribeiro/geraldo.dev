@@ -1,0 +1,1 @@
+import t from"./NavBar.e0a627ee.js";import{h as e,o as n,a as _,L as c}from"./entry.fea3dd41.js";import"./HamburgerButton.360c02d0.js";import"./logo.d2eabc24.js";const r={};function a(m,s){const o=t;return n(),_("div",null,[c(o)])}const u=e(r,[["render",a]]);export{u as default};

@@ -1,1 +1,0 @@
-import{i as e,o as s,b as t,r}from"./entry.0c9fb520.js";const c={},l={class:"mt-4 px-2 lg:mt-12 grid gap-4 md:gap-8 lg:gap-12 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"};function n(o,a){return s(),t("div",l,[r(o.$slots,"default")])}const _=e(c,[["render",n]]);export{_ as default};

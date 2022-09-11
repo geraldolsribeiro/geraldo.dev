@@ -1,1 +1,0 @@
-import r from"./Header.6fc59479.js";import c from"./Footer.25cf4bfc.js";import{i as _,o as s,b as a,L as o,r as m}from"./entry.0c9fb520.js";import"./NavBar.68f677a0.js";import"./logo.d2eabc24.js";const p={},i={class:"bg-black text-slate-100"};function l(t,d){const e=r,n=c;return s(),a("div",i,[o(e),m(t.$slots,"default"),o(n)])}const h=_(p,[["render",l]]);export{h as default};

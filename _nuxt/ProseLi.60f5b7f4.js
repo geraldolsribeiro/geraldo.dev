@@ -1,1 +1,0 @@
-import{h as s,o,a as r,r as t}from"./entry.fea3dd41.js";const a={},c={class:"hover:bg-slate-800"};function n(e,l){return o(),r("li",c,[t(e.$slots,"default")])}const f=s(a,[["render",n]]);export{f as default};

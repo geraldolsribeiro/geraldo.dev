@@ -1,1 +1,0 @@
-import{i as e}from"./entry.fea3dd41.js";const n=e({props:{code:{type:String,default:""},language:{type:String,default:null},filename:{type:String,default:null},highlights:{type:Array,default:()=>[]}}});export{n as _};

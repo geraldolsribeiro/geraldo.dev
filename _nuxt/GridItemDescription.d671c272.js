@@ -1,1 +1,0 @@
-import{h as t,o,a as s,r as n}from"./entry.fea3dd41.js";const r={},a={class:"mt-3 text-slate-400 hover:text-slate-300"};function c(e,_){return o(),s("div",a,[n(e.$slots,"default")])}const d=t(r,[["render",c]]);export{d as default};

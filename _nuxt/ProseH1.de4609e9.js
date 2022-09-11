@@ -1,0 +1,1 @@
+import{i as e,o,b as s,r as n}from"./entry.eb817c78.js";const c={},l={class:"text-3xl lg:text-5xl px-2 mt-4 lg:mt-16 text-blue-500 font-semibold"};function r(t,_){return o(),s("h1",l,[n(t.$slots,"default")])}const x=e(c,[["render",r]]);export{x as default};

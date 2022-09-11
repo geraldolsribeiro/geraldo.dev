@@ -1,0 +1,1 @@
+import"./PaperHeading.vue_vue_type_script_setup_true_lang.3ce5fa85.js";import{_ as i}from"./PaperHeading.vue_vue_type_script_setup_true_lang.3ce5fa85.js";import"./ProseH1.de4609e9.js";import"./entry.eb817c78.js";export{i as default};

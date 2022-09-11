@@ -1,1 +1,0 @@
-import{c as a}from"./index.ccb8f240.js";import{a as s,o,b as n,e as t,t as c,u as i,O as r}from"./entry.9470010a.js";const d={class:"text-slate-600 text-md my-2"},m=r(" Last uptate: "),l=["datetime"],x=s({__name:"TilDate",props:{date:null},setup(e){return(_,p)=>(o(),n("div",null,[t("div",d,[m,t("time",{datetime:e.date},c(i(a)(e.date)),9,l)])]))}});export{x as _};

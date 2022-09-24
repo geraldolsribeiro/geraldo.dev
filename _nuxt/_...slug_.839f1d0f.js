@@ -1,0 +1,1 @@
+import{i as s,o as n,c as a,w as c,L as _,e as r,M as l,N as d}from"./entry.3c8828bd.js";const u={},f={class:"mx-auto prose prose-lg text-slate-400 markdown"};function i(m,p){const e=d,t=_;return n(),a(t,null,{default:c(({doc:o})=>[r("div",f,[l(e,{value:o},null,8,["value"])])]),_:1})}const h=s(u,[["render",i]]);export{h as default};

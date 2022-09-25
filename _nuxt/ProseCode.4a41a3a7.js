@@ -1,0 +1,1 @@
+import{_ as e}from"./ProseCode.vue_vue_type_style_index_0_lang.15a4342c.js";import{i as o,r as s}from"./entry.5bec0cf4.js";function t(r,a,n,f,p,_){return s(r.$slots,"default")}const i=o(e,[["render",t]]);export{i as default};

@@ -1,1 +1,0 @@
-import t from"./NotFound.5d44f791.js";import{i as c,o as n,c as _}from"./entry.42fc5608.js";import"./ProseH1.67bdb95d.js";const e={};function r(s,a){const o=t;return n(),_(o)}const i=c(e,[["render",r]]);export{i as default};

@@ -1,1 +1,0 @@
-import{i as t,o,b as s,r as c,M as r}from"./entry.42fc5608.js";const a={},n=r(" Layout: custom ");function l(e,_){return o(),s("div",null,[n,c(e.$slots,"default")])}const u=t(a,[["render",l]]);export{u as default};

@@ -1,0 +1,1 @@
+import{i as t,o,b as s,r as n}from"./entry.d7110729.js";const r={},c={class:"text-slate-300"};function _(e,a){return o(),s("strong",c,[n(e.$slots,"default")])}const f=t(r,[["render",_]]);export{f as default};

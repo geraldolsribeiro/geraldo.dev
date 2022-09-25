@@ -1,0 +1,2 @@
+import{a as t,o,b as r,e as a}from"./entry.d7110729.js";const c={class:"bg-blue-100 aspect-video"},s=["src"],p=t({__name:"YoutubeEmbed",props:{videoId:{type:String}},setup(e){return(d,i)=>(o(),r("div",c,[a("iframe",{src:`https://www.youtube.com/embed/${e.videoId}`,frameborder:"0",width:"100%",height:"100%",allow:"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",allowfullscreen:""},`
+    `,8,s)]))}});export{p as default};

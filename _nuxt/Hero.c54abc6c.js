@@ -1,1 +1,0 @@
-import{i as o,o as t,b as r,e as c,r as s}from"./entry.e84ad813.js";const n={},a={class:"text-4xl"};function l(e,d){return t(),r("section",null,[c("h1",a,[s(e.$slots,"default")]),s(e.$slots,"description")])}const _=o(n,[["render",l]]);export{_ as default};

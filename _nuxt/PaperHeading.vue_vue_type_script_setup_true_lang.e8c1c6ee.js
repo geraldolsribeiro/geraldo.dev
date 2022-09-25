@@ -1,0 +1,1 @@
+import n from"./ProseH1.cfe8ebd7.js";import{a as s,o as t,b as a,L as r,w as c,t as _,R as m,M as p}from"./entry.baa51cfb.js";const i=p(" Research Paper "),l={key:0},h=s({__name:"PaperHeading",props:{tag:null},setup(e){return(u,d)=>{const o=n;return t(),a("div",null,[r(o,null,{default:c(()=>[i,e.tag?(t(),a("span",l," \u2014 "+_(e.tag),1)):m("",!0)]),_:1})])}}});export{h as _};

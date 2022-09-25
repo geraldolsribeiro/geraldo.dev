@@ -1,0 +1,1 @@
+[{"_path":"/til/cruft","title":"Cruft","description":"cruft is a useful tool exactly for this purpose: it makes a comparison between a file system and the database of installed Debian packages. In addition to listing unknown files it also lists files which are missing but should be there.","date":"2019-11-17T00:00:00.000Z","tags":["cruft"]}]

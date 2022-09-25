@@ -1,0 +1,1 @@
+import"./CertificateHeading.vue_vue_type_script_setup_true_lang.93048d25.js";import{_ as i}from"./CertificateHeading.vue_vue_type_script_setup_true_lang.93048d25.js";import"./ProseH1.9db9b61f.js";import"./entry.102d34ac.js";export{i as default};

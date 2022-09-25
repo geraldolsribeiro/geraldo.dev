@@ -1,1 +1,0 @@
-import e from"./NavBar.94ea0ec8.js";import{i as n,o as t,b as _,L as c}from"./entry.d7110729.js";import"./logo.d2eabc24.js";const r={};function a(s,m){const o=e;return t(),_("div",null,[c(o)])}const l=n(r,[["render",a]]);export{l as default};

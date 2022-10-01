@@ -1,0 +1,1 @@
+import{a as s,o,b as n,e as a,r}from"./entry.01054f4e.js";const l=["id"],d=["href"],m=s({__name:"ProseH2",props:{id:null},setup(e){return(t,c)=>(o(),n("h2",{id:e.id,class:"text-3xl text-blue-500 mt-8 font-semibold"},[a("a",{href:`#${e.id}`,class:"no-underline"},[r(t.$slots,"default")],8,d)],8,l))}});export{m as _};

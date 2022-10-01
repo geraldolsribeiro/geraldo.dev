@@ -1,1 +1,0 @@
-import{a,o,b as r,r as s}from"./entry.7a85c139.js";const n=["href"],c=a({__name:"ProseA",props:{href:{type:String,default:""},blank:{type:Boolean,default:!1}},setup(e){return(t,l)=>(o(),r("a",{href:e.href,class:"text-slate-200"},[s(t.$slots,"default")],8,n))}});export{c as default};

@@ -1,0 +1,1 @@
+export default (function(a){return {data:{"content-/til/tag":a,"content-query-QqjHsHAJPx":a},prerenderedAt:1664656575650}}(null))

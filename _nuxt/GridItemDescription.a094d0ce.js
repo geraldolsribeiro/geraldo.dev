@@ -1,0 +1,1 @@
+import{i as t,o,b as s,r as n}from"./entry.e53db9b4.js";const r={},c={class:"mt-3 text-slate-400 hover:text-slate-300"};function a(e,_){return o(),s("div",c,[n(e.$slots,"default")])}const d=t(r,[["render",a]]);export{d as default};

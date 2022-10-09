@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -25,66 +26,80 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
+    <div class="max-w-prose mx-auto p-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="search-input" type="search" name="query" placeholder="Search Mockups, Logos..." required="">
+          <button class="text-white absolute bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
     <main class="bg-black text-slate-100 min-h-screen">
       <div class="bg-slate-900 container mx-auto py-4">
         <h1 class="px-4">Certificates / C++</h1>
         <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div class="grid-item-with-gradient"><a href="/certificate/2021-09-12_linkedin_C++_Design_Patterns_Behavioral.html" title="C++ Design Patterns Behavioral">
-              <div class="p-4"><img class="mx-auto" src="/certificate/83658e84-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/83658e84-small.webp"></div>
               <h3>C++ Design Patterns Behavioral</h3>
               <p class="text-slate-400">2021-09-12</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-05-28_linkedin_Training_Neural_Networks_in_C++.html" title="Training Neural Networks in C++">
-              <div class="p-4"><img class="mx-auto" src="/certificate/e85c0eb3-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/e85c0eb3-small.webp"></div>
               <h3>Training Neural Networks in C++</h3>
               <p class="text-slate-400">2021-05-28</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-12-17_linkedin_Code_Clinic_CPP.html" title="Code Clinic CPP">
-              <div class="p-4"><img class="mx-auto" src="/certificate/aed19075-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/aed19075-small.webp"></div>
               <h3>Code Clinic CPP</h3>
               <p class="text-slate-400">2020-12-17</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-12-16_linkedin_Web_Servers_and_APIs_using_CPP.html" title="Web Servers and APIs using CPP">
-              <div class="p-4"><img class="mx-auto" src="/certificate/2677aea7-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/2677aea7-small.webp"></div>
               <h3>Web Servers and APIs using CPP</h3>
               <p class="text-slate-400">2020-12-16</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-12-16_linkedin_Introducing_Functional_Programming_in_CPP.html" title="Introducing Functional Programming in CPP">
-              <div class="p-4"><img class="mx-auto" src="/certificate/f54fc6f1-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/f54fc6f1-small.webp"></div>
               <h3>Introducing Functional Programming in CPP</h3>
               <p class="text-slate-400">2020-12-16</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-12-16_linkedin_CPP_Best_Practices_for_Developers.html" title="CPP Best Practices for Developers">
-              <div class="p-4"><img class="mx-auto" src="/certificate/3bde0d1a-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/3bde0d1a-small.webp"></div>
               <h3>CPP Best Practices for Developers</h3>
               <p class="text-slate-400">2020-12-16</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-12-16_linkedin_Code_Clinic_CPP.html" title="Code Clinic CPP">
-              <div class="p-4"><img class="mx-auto" src="/certificate/49a19ac3-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/49a19ac3-small.webp"></div>
               <h3>Code Clinic CPP</h3>
               <p class="text-slate-400">2020-12-16</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2018-07-14_linkedin_CPP_Smart_Pointers.html" title="CPP Smart Pointers">
-              <div class="p-4"><img class="mx-auto" src="/certificate/5b58a3c3-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/5b58a3c3-small.webp"></div>
               <h3>CPP Smart Pointers</h3>
               <p class="text-slate-400">2018-07-14</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2018-07-12_linkedin_CPP_Move_Semantics.html" title="CPP Move Semantics">
-              <div class="p-4"><img class="mx-auto" src="/certificate/a83cce1f-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/a83cce1f-small.webp"></div>
               <h3>CPP Move Semantics</h3>
               <p class="text-slate-400">2018-07-12</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2010-08-14_TempoReal_7o_Encontro_de_programadores_C++_Brasil.html" title="TempoReal 7o Encontro de programadores C++ Brasil">
-              <div class="p-4"><img class="mx-auto" src="/certificate/cb9ba0bf-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/cb9ba0bf-small.webp"></div>
               <h3>TempoReal 7o Encontro de programadores C++ Brasil</h3>
               <p class="text-slate-400">2010-08-14</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/C++.html">C++</a>

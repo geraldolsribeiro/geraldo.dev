@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -25,54 +26,68 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
+    <div class="max-w-prose mx-auto p-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="search-input" type="search" name="query" placeholder="Search Mockups, Logos..." required="">
+          <button class="text-white absolute bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
     <main class="bg-black text-slate-100 min-h-screen">
       <div class="bg-slate-900 container mx-auto py-4">
         <h1 class="px-4">Certificates / vue</h1>
         <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div class="grid-item-with-gradient"><a href="/certificate/2022-08-04_stefanini_Nuxt.js_2.html" title="Nuxt.js 2">
-              <div class="p-4"><img class="mx-auto" src="/certificate/020b7afc-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/020b7afc-small.webp"></div>
               <h3>Nuxt.js 2</h3>
               <p class="text-slate-400">2022-08-04</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/nuxt.html">nuxt</a><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-30_linkedin_Learning_Nuxt.js.html" title="Learning Nuxt.js">
-              <div class="p-4"><img class="mx-auto" src="/certificate/4ba9ccd1-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/4ba9ccd1-small.webp"></div>
               <h3>Learning Nuxt.js</h3>
               <p class="text-slate-400">2022-07-30</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/nuxt.html">nuxt</a><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-30_linkedin_Learning_Vuex.html" title="Learning Vuex">
-              <div class="p-4"><img class="mx-auto" src="/certificate/e466aba6-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/e466aba6-small.webp"></div>
               <h3>Learning Vuex</h3>
               <p class="text-slate-400">2022-07-30</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-09-17_linkedin_Vue.js_Testing_and_Debugging.html" title="Vue.js Testing and Debugging">
-              <div class="p-4"><img class="mx-auto" src="/certificate/f52b0361-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/f52b0361-small.webp"></div>
               <h3>Vue.js Testing and Debugging</h3>
               <p class="text-slate-400">2021-09-17</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-06-03_linkedin_Building_Vue_and_Node_Apps_with_Authentication.html" title="Building Vue and Node Apps with Authentication">
-              <div class="p-4"><img class="mx-auto" src="/certificate/58c44975-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/58c44975-small.webp"></div>
               <h3>Building Vue and Node Apps with Authentication</h3>
               <p class="text-slate-400">2021-06-03</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-06-02_linkedin_Learning_Vue.js.html" title="Learning Vue.js">
-              <div class="p-4"><img class="mx-auto" src="/certificate/e531007b-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/e531007b-small.webp"></div>
               <h3>Learning Vue.js</h3>
               <p class="text-slate-400">2021-06-02</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-05-27_linkedin_Vue.js_3_Essential_Training.html" title="Vue.js 3 Essential Training">
-              <div class="p-4"><img class="mx-auto" src="/certificate/28af26bd-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/28af26bd-small.webp"></div>
               <h3>Vue.js 3 Essential Training</h3>
               <p class="text-slate-400">2021-05-27</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-11-25_RLSystem_VueJS_primeiros_passos.html" title="RLSystem VueJS primeiros passos">
-              <div class="p-4"><img class="mx-auto" src="/certificate/c2a000ad-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/c2a000ad-small.webp"></div>
               <h3>RLSystem VueJS primeiros passos</h3>
               <p class="text-slate-400">2020-11-25</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/vue.html">vue</a>

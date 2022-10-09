@@ -1,0 +1,2390 @@
+[
+  {
+    "description": "Usando o operador `const_cast`",
+    "id": 0,
+    "title": "C++ - const_cast",
+    "url": "/til/cpp-const-cast.html"
+  },
+  {
+    "description": "Descrerver aqui",
+    "id": 1,
+    "title": "Flutter",
+    "url": "/til/flutter.html"
+  },
+  {
+    "description": "",
+    "id": 2,
+    "title": "CSS - Scroll Snap",
+    "url": "/til/css-scroll-snap.html"
+  },
+  {
+    "description": "Como fazer diff de imagem.",
+    "id": 3,
+    "title": "Git - diff de imagens",
+    "url": "/til/git-diff-image.html"
+  },
+  {
+    "description": "Dicas de autocompletar no vim.",
+    "id": 4,
+    "title": "Autocompletar no VIM",
+    "url": "/til/vim-complete.html"
+  },
+  {
+    "description": "",
+    "id": 5,
+    "title": "MapProxy",
+    "url": "/til/mapproxy.html"
+  },
+  {
+    "description": "",
+    "id": 6,
+    "title": "TMSU",
+    "url": "/til/tmsu.html"
+  },
+  {
+    "description": "Resumo sobre o comando inxi.",
+    "id": 7,
+    "title": "inxi - Obtendo informações sobre sua distribuição Linux",
+    "url": "/til/inxi.html"
+  },
+  {
+    "description": "Visualizador de imagens no terminal",
+    "id": 8,
+    "title": "Chafa",
+    "url": "/til/chafa.html"
+  },
+  {
+    "description": "Mostrando informações de objetos no DOM",
+    "id": 9,
+    "title": "Javascript - console.dir",
+    "url": "/til/javascript-console-dir.html"
+  },
+  {
+    "description": "Uma alternativa ao velho xscreensaver",
+    "id": 10,
+    "title": "Bloqueando a Sessão com Light Locker",
+    "url": "/til/bloqueando-a-sessao-com-light-locker.html"
+  },
+  {
+    "description": "",
+    "id": 11,
+    "title": "Templates em C++",
+    "url": "/til/cpp-templates.html"
+  },
+  {
+    "description": "Notas sobre o preact.js",
+    "id": 12,
+    "title": "Preact - Petit React",
+    "url": "/til/preact.html"
+  },
+  {
+    "description": "Testes com SWTBot",
+    "id": 13,
+    "title": "Testes com SWTBot",
+    "url": "/til/junit-swtbot.html"
+  },
+  {
+    "description": "",
+    "id": 14,
+    "title": "vim-livro-noob-gratis.md",
+    "url": "/til/vim-livro-noob-gratis.html"
+  },
+  {
+    "description": "Experiências sobre desenvolvimento de plugin para eclipse",
+    "id": 15,
+    "title": "Desenvolvimento de plugin para o Eclipse",
+    "url": "/til/eclipse-plugin.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 16,
+    "title": "Criando VAPID key",
+    "url": "/til/vapid-key.html"
+  },
+  {
+    "description": "Como editar a página diretamente no browser para realizar testes.",
+    "id": 17,
+    "title": "Editando a página diretamente no browser",
+    "url": "/til/design-mode.html"
+  },
+  {
+    "description": "",
+    "id": 18,
+    "title": "PRINCE2",
+    "url": "/til/prince2.html"
+  },
+  {
+    "description": "",
+    "id": 19,
+    "title": "Linguagem DART",
+    "url": "/til/dart.html"
+  },
+  {
+    "description": "Nomes de classes e ids que devem ser evitados.",
+    "id": 20,
+    "title": "Nomes de classes a evitar no CSS",
+    "url": "/til/css-banner.html"
+  },
+  {
+    "description": "Publique de forma rápida e prática seu site e mantenha-o atualizado com apenas um clique.",
+    "id": 21,
+    "title": "Publique seu site com com git",
+    "url": "/til/deploy-site-with-git.html"
+  },
+  {
+    "description": "Como converter um repositório existente para bare.",
+    "id": 22,
+    "title": "Convertendo um repositório git para bare",
+    "url": "/til/git-bare.html"
+  },
+  {
+    "description": "",
+    "id": 23,
+    "title": "Mosquitto",
+    "url": "/til/mosquitto.html"
+  },
+  {
+    "description": "",
+    "id": 24,
+    "title": "Como limpar o audio com audacity",
+    "url": "/til/como-limpar-o-audio-com-o-audacity.html"
+  },
+  {
+    "description": "",
+    "id": 25,
+    "title": "Formatar código via linha de comando com eclipse",
+    "url": "/til/eclipse-formatar-codigo-via-linha-de-comando.html"
+  },
+  {
+    "description": "",
+    "id": 26,
+    "title": "cURL",
+    "url": "/til/curl.html"
+  },
+  {
+    "description": "",
+    "id": 27,
+    "title": "Plugins para o vim",
+    "url": "/til/vim-plugins.html"
+  },
+  {
+    "description": "",
+    "id": 28,
+    "title": "C++ Literais definidas pelo usuário",
+    "url": "/til/cpp-user-literals.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 29,
+    "title": "Como ler o medium de graça",
+    "url": "/til/medium-free.html"
+  },
+  {
+    "description": "",
+    "id": 30,
+    "title": "Como instalar o tema de ícones Papirus no Debian",
+    "url": "/til/como-instalar-o-tema-papirus-no-debian.html"
+  },
+  {
+    "description": "",
+    "id": 31,
+    "title": "Formatar JSON no Vim",
+    "url": "/til/vim-formatar-json.html"
+  },
+  {
+    "description": "",
+    "id": 32,
+    "title": "Código de barras",
+    "url": "/til/codigo-de-barras.html"
+  },
+  {
+    "description": "",
+    "id": 33,
+    "title": "Cruft",
+    "url": "/til/cruft.html"
+  },
+  {
+    "description": "Como instalar e começar a utilizar o RStudio do debian.",
+    "id": 34,
+    "title": "RStudio no debian",
+    "url": "/til/rstudio.html"
+  },
+  {
+    "description": "",
+    "id": 35,
+    "title": "Vim awesome",
+    "url": "/til/vim-awesome.html"
+  },
+  {
+    "description": "Como configurar o git para mostrar problemas de formatação do código.",
+    "id": 36,
+    "title": "Exibindo problemas de formatação com git diff",
+    "url": "/til/git-diff.html"
+  },
+  {
+    "description": "Notas sobre a notação Big O.",
+    "id": 37,
+    "title": "Notação Big O",
+    "url": "/til/big-o-notation.html"
+  },
+  {
+    "description": "Muitas vezes não precisamos baixar todo o histórico de commits de um projeto.",
+    "id": 38,
+    "title": "Como realizar o checkout somente da última versão",
+    "url": "/til/git-checkout-somente-da-ultima-versao.html"
+  },
+  {
+    "description": "Conjuntos em javascript.",
+    "id": 39,
+    "title": "javascript set",
+    "url": "/til/js-set.html"
+  },
+  {
+    "description": "",
+    "id": 40,
+    "title": "Algoritmos",
+    "url": "/til/algoritmos.html"
+  },
+  {
+    "description": "Como proteger ataques de força bruta ao ssh.",
+    "id": 41,
+    "title": "fail2ban",
+    "url": "/til/failban.html"
+  },
+  {
+    "description": "Como configurar o `nemo` como gerenciador de arquivos padrão.",
+    "id": 42,
+    "title": "Nemo como Gerenciador De Arquivos Padrão",
+    "url": "/til/nemo-como-gerenciador-de-arquivos-padrao.html"
+  },
+  {
+    "description": "Exemplos de plantuml",
+    "id": 43,
+    "title": "Plantuml",
+    "url": "/til/plantuml.html"
+  },
+  {
+    "description": "",
+    "id": 44,
+    "title": "Magic Enum C++",
+    "url": "/til/cpp-magic-enum.html"
+  },
+  {
+    "description": "Como instalar o mlpack no Mac OS.",
+    "id": 45,
+    "title": "Instalando o mlpack no Mac OS",
+    "url": "/til/mlpack-macos.html"
+  },
+  {
+    "description": "xxx",
+    "id": 46,
+    "title": "Golang",
+    "url": "/til/go.html"
+  },
+  {
+    "description": "Como configura um firewall básico para proteger seu servidor Debian.",
+    "id": 47,
+    "title": "Configurando um firewall no Debian",
+    "url": "/til/firewall.html"
+  },
+  {
+    "description": "Como inserir caracteres especiais no vim.",
+    "id": 48,
+    "title": "Dígrafos no VIM",
+    "url": "/til/vim-digraphs.html"
+  },
+  {
+    "description": "",
+    "id": 49,
+    "title": "Compilar Vim 8",
+    "url": "/til/vim-compilar-vim-8.html"
+  },
+  {
+    "description": "",
+    "id": 50,
+    "title": "Bash - trap",
+    "url": "/til/mktemp.html"
+  },
+  {
+    "description": "Liberação de funcionalidades prontas para produção para um subconjunto dos seus usuários antes de liberar para todos os usuário.",
+    "id": 51,
+    "title": "Canary Release & Dark Launching",
+    "url": "/til/canary-release.html"
+  },
+  {
+    "description": "Como controlar o layout em FLTK.",
+    "id": 52,
+    "title": "C++ - Gerenciando layout em FLTK",
+    "url": "/til/cpp-fltk-layout.html"
+  },
+  {
+    "description": "",
+    "id": 53,
+    "title": "Vim lento",
+    "url": "/til/vim-slow.html"
+  },
+  {
+    "description": "Como obter o nome do arquivo atual e copiá-lo para a área de transferência.",
+    "id": 54,
+    "title": "Copiar o nome do arquivo atual",
+    "url": "/til/vim-copiar-nome-do-arquivo.html"
+  },
+  {
+    "description": "Manipular árvore de arquivos no vim.",
+    "id": 55,
+    "title": "VIM - Explorer",
+    "url": "/til/vim-explorer.html"
+  },
+  {
+    "description": "Debugando no eclipse",
+    "id": 56,
+    "title": "Debugando no eclipse",
+    "url": "/til/eclipse-debug.html"
+  },
+  {
+    "description": "",
+    "id": 57,
+    "title": "Fonte Para Desenvolvimento",
+    "url": "/til/fonte-para-desenvolvimento.html"
+  },
+  {
+    "description": "Como fazer upload de arquivos em javascript.",
+    "id": 58,
+    "title": "Dropzone",
+    "url": "/til/dropzonejs.html"
+  },
+  {
+    "description": "Como usar o insomnia para testar aplicação.",
+    "id": 59,
+    "title": "Primeiros passos com o insomnia",
+    "url": "/til/web-insomnia.html"
+  },
+  {
+    "description": "",
+    "id": 60,
+    "title": "Configurações para o simple-screen-recorder",
+    "url": "/til/simple-screen-recorder.html"
+  },
+  {
+    "description": "Como manter somente os n últimos commits.",
+    "id": 61,
+    "title": "git - como manter somente os n últimos commits",
+    "url": "/til/git-manter-somente-os-n-ultimos-commit.html"
+  },
+  {
+    "description": "Cópia do post do William Bruno",
+    "id": 62,
+    "title": "input pattern",
+    "url": "/til/html-input-pattern.html"
+  },
+  {
+    "description": "",
+    "id": 63,
+    "title": "Eclipse Juno 4.2",
+    "url": "/til/eclipse-juno-4.2.2-no-debian-buster.html"
+  },
+  {
+    "description": "Como inverter as cores no Xserver, muito útil para ler documentos pdf.",
+    "id": 64,
+    "title": "Como inverter as cores no X",
+    "url": "/til/x-inverter-cores.html"
+  },
+  {
+    "description": "",
+    "id": 65,
+    "title": "Análise se Pontos de Função",
+    "url": "/til/analise-de-ponto-de-funcao.html"
+  },
+  {
+    "description": "",
+    "id": 66,
+    "title": "Otimização numérica em C++",
+    "url": "/til/cpp-optimlib.html"
+  },
+  {
+    "description": "Usando o gvim como editor externo no flui.",
+    "id": 67,
+    "title": "Fluid + gvim",
+    "url": "/til/cpp-fltk-fluid.html"
+  },
+  {
+    "description": "",
+    "id": 68,
+    "title": "Troca Rápida De Usuário No Xfce",
+    "url": "/til/troca-rapida-de-usuario-no-xfce.html"
+  },
+  {
+    "description": "O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.",
+    "id": 69,
+    "title": "Gerenciador de arquivos",
+    "url": "/til/gerenciador-de-arquivos.html"
+  },
+  {
+    "description": "",
+    "id": 70,
+    "title": "OpenDDS",
+    "url": "/til/opendds.html"
+  },
+  {
+    "description": "",
+    "id": 71,
+    "title": "BindFS - visualizando filesystem com outro usuário",
+    "url": "/til/bindfs.html"
+  },
+  {
+    "description": "",
+    "id": 72,
+    "title": "Imgui",
+    "url": "/til/imgui.html"
+  },
+  {
+    "description": "Dicas sobre o gerenciador de janelas i3",
+    "id": 73,
+    "title": "i3",
+    "url": "/til/i3.html"
+  },
+  {
+    "description": "Como desabilitar a função colocar com o botão do meio no touchpad.",
+    "id": 74,
+    "title": "Desabilitar função color com botão do meio",
+    "url": "/til/touchpad-desabilitar-colar-com-botao-do-meio.html"
+  },
+  {
+    "description": "Como montar scripts de edição de arquivos.",
+    "id": 75,
+    "title": "Editando arquivos com ex / vim",
+    "url": "/til/ex.html"
+  },
+  {
+    "description": "Formatação de html no vim.",
+    "id": 76,
+    "title": "Formatação de HTML no vim",
+    "url": "/til/vim-tidy-html.html"
+  },
+  {
+    "description": "Como detectar e registar erros em javascript.",
+    "id": 77,
+    "title": "Logando erros em javascript",
+    "url": "/til/javascript-error-logging.html"
+  },
+  {
+    "description": "",
+    "id": 78,
+    "title": "JWT",
+    "url": "/til/jwt.html"
+  },
+  {
+    "description": "",
+    "id": 79,
+    "title": "Como repetir texto no vim",
+    "url": "/til/vim-inserir-caracteres-repetidos.html"
+  },
+  {
+    "description": "",
+    "id": 80,
+    "title": "Como executar macro em todos os buffers do Vim",
+    "url": "/til/vim-executar-macro-em-todos-os-buffers.html"
+  },
+  {
+    "description": "",
+    "id": 81,
+    "title": "Materialize",
+    "url": "/til/materialize.html"
+  },
+  {
+    "description": "",
+    "id": 82,
+    "title": "Auto completar especial no Vim",
+    "url": "/til/vim-special-auto-complete.html"
+  },
+  {
+    "description": "JUnit Rules",
+    "id": 83,
+    "title": "JUnit Rules",
+    "url": "/til/junit-rules.html"
+  },
+  {
+    "description": "Como configurar a moldura da página no Varicad.",
+    "id": 84,
+    "title": "Varicad - configurando moldura da página",
+    "url": "/til/varicad-moldura.html"
+  },
+  {
+    "description": "Como testar exceções usando o junit.",
+    "id": 85,
+    "title": "Testando exceções com junit",
+    "url": "/til/junit-excecao.html"
+  },
+  {
+    "description": "Tratando upload não seguro no chrome",
+    "id": 86,
+    "title": "Tratando upload não seguro no chrome",
+    "url": "/til/chrome-upload-nao-seguro.html"
+  },
+  {
+    "description": "",
+    "id": 87,
+    "title": "Documentando Projetos Com Doxygen E Markdown",
+    "url": "/til/documentando-projetos-com-doxygen-e-markdown.html"
+  },
+  {
+    "description": "",
+    "id": 88,
+    "title": "TinyXML2",
+    "url": "/til/xml-tinyxml2.html"
+  },
+  {
+    "description": "",
+    "id": 89,
+    "title": "conky",
+    "url": "/til/conky.html"
+  },
+  {
+    "description": "",
+    "id": 90,
+    "title": "git - update everything",
+    "url": "/til/git-update.html"
+  },
+  {
+    "description": "Otimização com constexpr.",
+    "id": 91,
+    "title": "C++ - otimização com constexpr",
+    "url": "/til/cpp-constexpr.html"
+  },
+  {
+    "description": "Exibindo diferenças de arquivos odf no git",
+    "id": 92,
+    "title": "git diff para odt",
+    "url": "/til/git-odt.html"
+  },
+  {
+    "description": "Como configurar os arquivos de legenda personalizados no Varicad.",
+    "id": 93,
+    "title": "Varicad - configurando arquivos de legenda",
+    "url": "/til/varicad-legenda.html"
+  },
+  {
+    "description": "Como automatizar o download dos livros disponibilizados gratuitamente pela Packt.",
+    "id": 94,
+    "title": "Baixando livros gratuitos da PacktPub",
+    "url": "/til/packt.html"
+  },
+  {
+    "description": "Como executar comandos juntos com o processo de obtenção de certificados SSL.",
+    "id": 95,
+    "title": "Certbot Hooks",
+    "url": "/til/certbot-hooks.html"
+  },
+  {
+    "description": "",
+    "id": 96,
+    "title": "LGPD - Lei Geral de Proteção de Dados",
+    "url": "/til/lgpd.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 97,
+    "title": "Escolhendo versões dos pacotes no Debian/Ubuntu",
+    "url": "/til/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu.html"
+  },
+  {
+    "description": "",
+    "id": 98,
+    "title": "The network ip command",
+    "url": "/til/network_ip.html"
+  },
+  {
+    "description": "Como criar uma rede neural do tipo feed forward em C++ no Debian stable",
+    "id": 99,
+    "title": "Feed Forward Neural Network no debian com mlpack",
+    "url": "/til/cpp-mlpack-feed-forward-neural-network-no-debian.html"
+  },
+  {
+    "description": "Como usar a área de transferência com o vim.",
+    "id": 100,
+    "title": "VIM - Área de transferência",
+    "url": "/til/vim-clipboard.html"
+  },
+  {
+    "description": "",
+    "id": 101,
+    "title": "Java 12 no Debian Buster",
+    "url": "/til/java-12-no-debian-buster.html"
+  },
+  {
+    "description": "",
+    "id": 102,
+    "title": "Editor micro",
+    "url": "/til/micro.html"
+  },
+  {
+    "description": "Como validar documentos XML usando DTD",
+    "id": 103,
+    "title": "DTD",
+    "url": "/til/dtd.html"
+  },
+  {
+    "description": "Importando arquivos do SolidWorks para o VariCAD.",
+    "id": 104,
+    "title": "Importando arquivos do SolidWorks para o VariCAD",
+    "url": "/til/varicad-importando-do-solidworks.html"
+  },
+  {
+    "description": "",
+    "id": 105,
+    "title": "How to update no-ip by using the command line?",
+    "url": "/til/noip.html"
+  },
+  {
+    "description": "",
+    "id": 106,
+    "title": "C++ array",
+    "url": "/til/cpp-array.html"
+  },
+  {
+    "description": "",
+    "id": 107,
+    "title": "Pencil - wireframe",
+    "url": "/til/pencil.html"
+  },
+  {
+    "description": "Dicas do git",
+    "id": 108,
+    "title": "git - dicas",
+    "url": "/til/git-dicas.html"
+  },
+  {
+    "description": "",
+    "id": 109,
+    "title": "Como escolher o terminal padrão",
+    "url": "/til/escolher-o-terminal-padrao.html"
+  },
+  {
+    "description": "Como exportar imagens do docker.",
+    "id": 110,
+    "title": "Docker - exportar imagem",
+    "url": "/til/docker-exportar-imagem.html"
+  },
+  {
+    "description": "",
+    "id": 111,
+    "title": "Kali linux",
+    "url": "/til/kali.html"
+  },
+  {
+    "description": "Notas sobre XML.",
+    "id": 112,
+    "title": "XML",
+    "url": "/til/xml.html"
+  },
+  {
+    "description": "",
+    "id": 113,
+    "title": "Meili Search",
+    "url": "/til/meilisearch.html"
+  },
+  {
+    "description": "Como manipular eventos em javascript.",
+    "id": 114,
+    "title": "Eventos em javascript",
+    "url": "/til/js-eventos.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 115,
+    "title": "Dicas do sed",
+    "url": "/til/sed-cheat-sheet.html"
+  },
+  {
+    "description": "",
+    "id": 116,
+    "title": "English",
+    "url": "/til/english.html"
+  },
+  {
+    "description": "Como criar zip com múltiplos volumes para arquivos grandes.",
+    "id": 117,
+    "title": "Criando zip com múltiplos volumes",
+    "url": "/til/zip-multiplos-volumes.html"
+  },
+  {
+    "description": "",
+    "id": 118,
+    "title": "Ensmallen - flexible C++ library for efficient numerical optimization",
+    "url": "/til/ensmallen.html"
+  },
+  {
+    "description": "",
+    "id": 119,
+    "title": "C++ Lambda",
+    "url": "/til/cpp-lambda.html"
+  },
+  {
+    "description": "Mithril",
+    "id": 120,
+    "title": "Mithril.js",
+    "url": "/til/mithril.html"
+  },
+  {
+    "description": "",
+    "id": 121,
+    "title": "Download de livros",
+    "url": "/til/hacking.html"
+  },
+  {
+    "description": "",
+    "id": 122,
+    "title": "Álgebra linear com Armadillo",
+    "url": "/til/cpp-armadillo.html"
+  },
+  {
+    "description": "",
+    "id": 123,
+    "title": "Vim Spell Checking",
+    "url": "/til/vim-spell-checking.html"
+  },
+  {
+    "description": "Preprocessador M4",
+    "id": 124,
+    "title": "Preprocessador M4",
+    "url": "/til/m4.html"
+  },
+  {
+    "description": "Configuração de arquivo de swap",
+    "id": 125,
+    "title": "Gerenciamento de memória swap",
+    "url": "/til/swap.html"
+  },
+  {
+    "description": "",
+    "id": 126,
+    "title": "Sed",
+    "url": "/til/sed.html"
+  },
+  {
+    "description": "Grupos de controle linux.",
+    "id": 127,
+    "title": "cgroup - Grupos de controle linux",
+    "url": "/til/linux-cgroup.html"
+  },
+  {
+    "description": "",
+    "id": 128,
+    "title": "Criando um gif animado com o gnuplot",
+    "url": "/til/criando-animacao-com-o-gnuplot.html"
+  },
+  {
+    "description": "",
+    "id": 129,
+    "title": "Vim com rails",
+    "url": "/til/vim-rails.html"
+  },
+  {
+    "description": "Como configurar a visão pré-definida para isométrica no Varicad.",
+    "id": 130,
+    "title": "Varicad - configurando visão pré-definida para isométrica",
+    "url": "/til/varicad-visao-predefinida.html"
+  },
+  {
+    "description": "",
+    "id": 131,
+    "title": "Trader - ordens",
+    "url": "/til/trader-ordens.html"
+  },
+  {
+    "description": "",
+    "id": 132,
+    "title": "Como inserir emojis na mensagem de commit",
+    "url": "/til/git-gitmoji.html"
+  },
+  {
+    "description": "Log do git.",
+    "id": 133,
+    "title": "git log",
+    "url": "/til/git-log.html"
+  },
+  {
+    "description": "",
+    "id": 134,
+    "title": "Cracking the C++",
+    "url": "/til/cpp-cracking-the-c++-interview.html"
+  },
+  {
+    "description": "",
+    "id": 135,
+    "title": "Como remover arquivos do controle de versão preservando cópia local",
+    "url": "/til/git-remover-arquivos-e-preservar-copia-local.html"
+  },
+  {
+    "description": "",
+    "id": 136,
+    "title": "Símbolos para traders",
+    "url": "/til/trader-simbolos.html"
+  },
+  {
+    "description": "",
+    "id": 137,
+    "title": "Vim args, argdo",
+    "url": "/til/vim-argdo.html"
+  },
+  {
+    "description": "",
+    "id": 138,
+    "title": "Vim com python habilitado",
+    "url": "/til/vim-with-python.html"
+  },
+  {
+    "description": "",
+    "id": 139,
+    "title": "Como instalar o flameshot no Debian stretch",
+    "url": "/til/como-instalar-o-flameshot-no-debian-stable.html"
+  },
+  {
+    "description": "",
+    "id": 140,
+    "title": "Diferenças entre mtime ctime atime",
+    "url": "/til/diferencas-entre-mtime-ctime-atime.html"
+  },
+  {
+    "description": "",
+    "id": 141,
+    "title": "Dispose window",
+    "url": "/til/eclipse-java-window-listener.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 142,
+    "title": "Grafana --- Reset da senha do admin",
+    "url": "/til/grafana-reset-senha-do-admin.html"
+  },
+  {
+    "description": "Notas sobre java reflection",
+    "id": 143,
+    "title": "Java Reflection",
+    "url": "/til/java-reflection.html"
+  },
+  {
+    "description": "Escrevendo funções e classes para execução em paralelo.",
+    "id": 144,
+    "title": "Thread em C++",
+    "url": "/til/cpp-thread.html"
+  },
+  {
+    "description": "Como usar o yad, um fork do zenity",
+    "id": 145,
+    "title": "YAD - Yet Another Dialog",
+    "url": "/til/yad-yet-another-dialog.html"
+  },
+  {
+    "description": "",
+    "id": 146,
+    "title": "Clangd + vim",
+    "url": "/til/clangd.html"
+  },
+  {
+    "description": "",
+    "id": 147,
+    "title": "Run Tests in Vim",
+    "url": "/til/vim-run-tests.html"
+  },
+  {
+    "description": "",
+    "id": 148,
+    "title": "Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case",
+    "url": "/til/vim-abolish.html"
+  },
+  {
+    "description": "Como misturar de forma saudável diferentes distribuições do Debian. Instale exatamente a versão do aplicativo que você quer sem bagunçar o sistema todo.",
+    "id": 149,
+    "title": "C++ - Ordenação",
+    "url": "/til/cpp-sort.html"
+  },
+  {
+    "description": "",
+    "id": 150,
+    "title": "Habilitando e desabilitando o modo composite no Xfce",
+    "url": "/til/xfce-xfconf-query.html"
+  },
+  {
+    "description": "",
+    "id": 151,
+    "title": "Obtendo key do windows a partir do linux",
+    "url": "/til/windows-key.html"
+  },
+  {
+    "description": "Tamanhos de imagens e vídeos para redes sociais.",
+    "id": 152,
+    "title": "Tamanhos de imagens e vídeos para redes sociais",
+    "url": "/til/socialsizeio.html"
+  },
+  {
+    "description": "",
+    "id": 153,
+    "title": "Pdf.js",
+    "url": "/til/pdfjs.html"
+  },
+  {
+    "description": "",
+    "id": 154,
+    "title": "Como trocar o nome do servidor sem reiniciar",
+    "url": "/til/como-trocar-hostname-sem-reiniciar.html"
+  },
+  {
+    "description": "",
+    "id": 155,
+    "title": "Bash - trap",
+    "url": "/til/bash-trap.html"
+  },
+  {
+    "description": "",
+    "id": 156,
+    "title": "SBE - Simple Binary Encoding",
+    "url": "/til/sbe.html"
+  },
+  {
+    "description": "",
+    "id": 157,
+    "title": "SWTBot",
+    "url": "/til/eclipse-swtbot.html"
+  },
+  {
+    "description": "Computação distribuída com CORBA",
+    "id": 158,
+    "title": "CORBA",
+    "url": "/til/corba.html"
+  },
+  {
+    "description": "Como atualizar seu código C++ utilizando a ferramenta clang-tity.",
+    "id": 159,
+    "title": "Otimizando código com clang-tidy",
+    "url": "/til/cpp-clant-tidy.html"
+  },
+  {
+    "description": "",
+    "id": 160,
+    "title": "Fontconfig - escondendo fontes",
+    "url": "/til/fontconfig.html"
+  },
+  {
+    "description": "",
+    "id": 161,
+    "title": "Substituição de texto avançada no Vim",
+    "url": "/til/vim-substituicao-de-texto-avancada.html"
+  },
+  {
+    "description": "Como deixar o repositório git em boa forma.",
+    "id": 162,
+    "title": "Git - Limpando o repositório",
+    "url": "/til/git-limpeza.html"
+  },
+  {
+    "description": "",
+    "id": 163,
+    "title": "Como programar para Lego NXT no Debian - parte 1",
+    "url": "/til/como-programar-para-nxt-no-debian.html"
+  },
+  {
+    "description": "Muito material sobre empacotamento no Debian.",
+    "id": 164,
+    "title": "Empacotamento no Debian",
+    "url": "/til/deb-empacotamento.html"
+  },
+  {
+    "description": "Para acessar uma interface de administração que só está disponível para localhost remotamente você pode usar uma conexão SSH através de um túnel.",
+    "id": 165,
+    "title": "Acessar uma aplicação rodando em 'localhost' remoto via túnel SSH",
+    "url": "/til/docker-acesso-ssh-tunelado-para-localhost.html"
+  },
+  {
+    "description": "",
+    "id": 166,
+    "title": "Webvim",
+    "url": "/til/vim-webvim.html"
+  },
+  {
+    "description": "descrever melhor",
+    "id": 167,
+    "title": "SCA e CORBA",
+    "url": "/til/sca-corba.html"
+  },
+  {
+    "description": "",
+    "id": 168,
+    "title": "VIM single instance",
+    "url": "/til/vim-single-instance.html"
+  },
+  {
+    "description": "",
+    "id": 169,
+    "title": "Adicionando adsense no hugo",
+    "url": "/til/hugo-adsense.html"
+  },
+  {
+    "description": "",
+    "id": 170,
+    "title": "Servindo CGI com NGINX no Debian",
+    "url": "/til/nginx-cgi.html"
+  },
+  {
+    "description": "Um gerenciador de arquivos minimalista e muito prático.",
+    "id": 171,
+    "title": "Gerenciador de arquivos nnn",
+    "url": "/til/nnn.html"
+  },
+  {
+    "description": "Como personalizar o vim make.",
+    "id": 172,
+    "title": "vim makepkg",
+    "url": "/til/vim-makeprg.html"
+  },
+  {
+    "description": "",
+    "id": 173,
+    "title": "Testlink",
+    "url": "/til/testlink.html"
+  },
+  {
+    "description": "Liberando a tecla alt utilizada para mover janelas para o figma.",
+    "id": 174,
+    "title": "Liberando o alt do xfce para o figma",
+    "url": "/til/figma-xfce-alt-disable.html"
+  },
+  {
+    "description": "Como fazer download de arquivo quando o certificado não está válido.",
+    "id": 175,
+    "title": "Download com certificado inválido no wget",
+    "url": "/til/wget-ignorar-certificado-invalido.html"
+  },
+  {
+    "description": "",
+    "id": 176,
+    "title": "ZeroMQ",
+    "url": "/til/zeromq.html"
+  },
+  {
+    "description": "Como formatar o código de maneira automática antes de realizar o git commit.",
+    "id": 177,
+    "title": "Formatando o código automaticamente antes do commit",
+    "url": "/til/git-auto-formatart-antes-do-commit.html"
+  },
+  {
+    "description": "",
+    "id": 178,
+    "title": "LXC - Linux Container",
+    "url": "/til/lxc.html"
+  },
+  {
+    "description": "",
+    "id": 179,
+    "title": "RabbitMQ",
+    "url": "/til/rabbitmq.html"
+  },
+  {
+    "description": "Como formatar artigos no hugo.",
+    "id": 180,
+    "title": "Hugo --- formatação",
+    "url": "/til/hugo-formatacao.html"
+  },
+  {
+    "description": "Como lidar com arquivo binários no CVS.",
+    "id": 181,
+    "title": "CVS - controlando arquivos binários",
+    "url": "/til/cvs-binary.html"
+  },
+  {
+    "description": "Boletos",
+    "id": 182,
+    "title": "Boleto",
+    "url": "/til/boleto.html"
+  },
+  {
+    "description": "Enable/disable and configure widgets to customize your homepage.",
+    "id": 183,
+    "title": "Customizing the homepage with widgets",
+    "url": "/til/widgets.html"
+  },
+  {
+    "description": "",
+    "id": 184,
+    "title": "Fast Search in Vim",
+    "url": "/til/vim-fast-search-vim.html"
+  },
+  {
+    "description": "Como criar aplicativos para android e IOS usando C++ com Djinni.",
+    "id": 185,
+    "title": "Desenvolvendo em C++ para mobile com Djinni",
+    "url": "/til/app-djinni.html"
+  },
+  {
+    "description": "",
+    "id": 186,
+    "title": "Update all the node.js dependencies to their last version",
+    "url": "/til/npm-check-updates.html"
+  },
+  {
+    "description": "",
+    "id": 187,
+    "title": "Salário equivalente para autônomo",
+    "url": "/til/salario-autonomo.html"
+  },
+  {
+    "description": "Introdução ao Apache Kafka",
+    "id": 188,
+    "title": "Introdução ao Apache Kafka",
+    "url": "/til/kafka-intro.html"
+  },
+  {
+    "description": "Como ler e escrever arquivos XML a partir do EMF.",
+    "id": 189,
+    "title": "Eclipse Modeling Framework - Lendo e escrevendo XML",
+    "url": "/til/eclipse-emf-xml.html"
+  },
+  {
+    "description": "Como limpar submódulos",
+    "id": 190,
+    "title": "git - como limpar submódulos",
+    "url": "/til/git-como-limpar-submodulos.html"
+  },
+  {
+    "description": "",
+    "id": 191,
+    "title": "Formatar XML no vim",
+    "url": "/til/vim-formatar-xml.html"
+  },
+  {
+    "description": "",
+    "id": 192,
+    "title": "Instalando virtualbox no debian 10",
+    "url": "/til/virtualbox.html"
+  },
+  {
+    "description": "",
+    "id": 193,
+    "title": "Fuzzy finder",
+    "url": "/til/fzf.html"
+  },
+  {
+    "description": "",
+    "id": 194,
+    "title": "nanomsg",
+    "url": "/til/nanomsg.html"
+  },
+  {
+    "description": "",
+    "id": 195,
+    "title": "Datilografia",
+    "url": "/certificate/1989-09-29_SantaMargarida_Datilografia.html"
+  },
+  {
+    "description": "",
+    "id": 196,
+    "title": "Curso de Aprendizagem Industrial",
+    "url": "/certificate/1992-12-30_SENAI_Curso_de_Aprendizagem_Industrial.html"
+  },
+  {
+    "description": "",
+    "id": 197,
+    "title": "IESC Tecnólogo em Mecânica Modalidade Projetos",
+    "url": "/certificate/1997-02-01_IESC_Tecnólogo_em_Mecânica_Modalidade_Projetos.html"
+  },
+  {
+    "description": "",
+    "id": 198,
+    "title": "INPE 5Ss uma opção para o desenvolvimento profissional",
+    "url": "/certificate/1997-09-15_INPE_5Ss_uma_opção_para_o_desenvolvimento_profissional.html"
+  },
+  {
+    "description": "",
+    "id": 199,
+    "title": "Curso de Operadores de Caldeira",
+    "url": "/certificate/1998-02-09_Curso_de_Operadores_de_Caldeira.html"
+  },
+  {
+    "description": "",
+    "id": 200,
+    "title": "INPE Curso de Combustão I INPE",
+    "url": "/certificate/2001-11-05_INPE_Curso_de_Combustão_I_INPE.html"
+  },
+  {
+    "description": "",
+    "id": 201,
+    "title": "ENCIT Combustão Básica",
+    "url": "/certificate/2002-10-15_ENCIT_Combustão_Básica.html"
+  },
+  {
+    "description": "",
+    "id": 202,
+    "title": "Requisitos Gerais para Competência de Laboratórios de Ensaio e Calibração ABNT ISO IEC 17025",
+    "url": "/certificate/2005-02-21_HOFR_Requisitos_Gerais_para_Competência_de_Laboratórios_de_Ensaio_e_Calibração_ABNT_ISO_IEC_17025.html"
+  },
+  {
+    "description": "",
+    "id": 203,
+    "title": "HOFR Ciclo PDCA e as Ferramentas para Melhoria da Qualidade",
+    "url": "/certificate/2005-03-01_HOFR_Ciclo_PDCA_e_as_Ferramentas_para_Melhoria_da_Qualidade.html"
+  },
+  {
+    "description": "",
+    "id": 204,
+    "title": "microsoft Supporting Users Running the Microsoft Windows XP Operating System",
+    "url": "/certificate/2005-06-25_microsoft_Supporting_Users_Running_the_Microsoft_Windows_XP_Operating_System.html"
+  },
+  {
+    "description": "",
+    "id": 205,
+    "title": "microsoft Supporting users running applications on a Microsoft Windows XP Operation System",
+    "url": "/certificate/2005-07-01_microsoft_Supporting_users_running_applications_on_a_Microsoft_Windows_XP_Operation_System.html"
+  },
+  {
+    "description": "",
+    "id": 206,
+    "title": "4Linux Pen Test Analise e Testes de Vulnerabilidades em Redes Corporativas",
+    "url": "/certificate/2005-12-02_4Linux_Pen-Test_Analise_e_Testes_de_Vulnerabilidades_em_Redes_Corporativas.html"
+  },
+  {
+    "description": "",
+    "id": 207,
+    "title": "INPE LIT Cálculo de Incerteza de Medições",
+    "url": "/certificate/2006-05-04_INPE_LIT_Cálculo_de_Incerteza_de_Medições.html"
+  },
+  {
+    "description": "",
+    "id": 208,
+    "title": "REMESP Cálculo de incerteza de Medições",
+    "url": "/certificate/2006-11-28_REMESP_Cálculo_de_incerteza_de_Medições.html"
+  },
+  {
+    "description": "",
+    "id": 209,
+    "title": "LPI LPIC 1",
+    "url": "/certificate/2007-05-13_LPI_LPIC-1.html"
+  },
+  {
+    "description": "",
+    "id": 210,
+    "title": "ESSS Técnicas de Otimização de Projetos de Engenharia usando o Software modeFrontier",
+    "url": "/certificate/2008-08-08_ESSS_Técnicas_de_Otimização_de_Projetos_de_Engenharia_usando_o_Software_modeFrontier.html"
+  },
+  {
+    "description": "",
+    "id": 211,
+    "title": "TempoReal Nagios",
+    "url": "/certificate/2008-09-06_TempoReal_Nagios.html"
+  },
+  {
+    "description": "",
+    "id": 212,
+    "title": "PLM Introduction to Pro Engineer Wildfire 4.0",
+    "url": "/certificate/2008-10-31_PLM_Introduction_to_Pro_Engineer_Wildfire_4.0.html"
+  },
+  {
+    "description": "",
+    "id": 213,
+    "title": "PLM Detailing with Pro Engineer Wildfire 4.0",
+    "url": "/certificate/2008-11-10_PLM_Detailing_with_Pro_Engineer_Wildfire_4.0.html"
+  },
+  {
+    "description": "",
+    "id": 214,
+    "title": "PLM Advanced Assembly Management with Pro Engineer Wildfire 4.0 e Top Down Design with Pro Engineer Wildfire 3.0",
+    "url": "/certificate/2009-01-12_PLM_Advanced_Assembly_Management_with_Pro_Engineer_Wildfire_4.0_e_Top_Down_Design_with_Pro_Engineer_Wildfire_3.0.html"
+  },
+  {
+    "description": "",
+    "id": 215,
+    "title": "ESSS Técnicas de Otimização de Projetos de Engenharia usando o Software modeFrontier",
+    "url": "/certificate/2009-08-18_ESSS_Técnicas_de_Otimização_de_Projetos_de_Engenharia_usando_o_Software_modeFrontier.html"
+  },
+  {
+    "description": "",
+    "id": 216,
+    "title": "INPE LIT Curso de Engenharia de Sistemas",
+    "url": "/certificate/2010-01-12_INPE_LIT_Curso_de_Engenharia_de_Sistemas.html"
+  },
+  {
+    "description": "",
+    "id": 217,
+    "title": "Applied Systems Engineering",
+    "url": "/certificate/2010-02-22_Applied_Systems_Engineering.html"
+  },
+  {
+    "description": "",
+    "id": 218,
+    "title": "TempoReal 7o Encontro de programadores C++ Brasil",
+    "url": "/certificate/2010-08-14_TempoReal_7o_Encontro_de_programadores_C++_Brasil.html"
+  },
+  {
+    "description": "",
+    "id": 219,
+    "title": "QPB FMEA Analise de modo e efeitos de falha",
+    "url": "/certificate/2011-08-25_QPB_FMEA_Analise_de_modo_e_efeitos_de_falha.html"
+  },
+  {
+    "description": "",
+    "id": 220,
+    "title": "UFRJ Curso de Extensão Programação de GPU utilizando CUDA",
+    "url": "/certificate/2013-06-05_UFRJ_Curso_de_Extensão_Programação_de_GPU_utilizando_CUDA.html"
+  },
+  {
+    "description": "",
+    "id": 221,
+    "title": "VALE Curso de Motores",
+    "url": "/certificate/2013-09-10_VALE_Curso_de_Motores.html"
+  },
+  {
+    "description": "",
+    "id": 222,
+    "title": "TempoReal Analise Mapeamento e Modelagem de Processos de Negocio",
+    "url": "/certificate/2014-02-15_TempoReal_Analise_Mapeamento_e_Modelagem_de_Processos_de_Negocio.html"
+  },
+  {
+    "description": "",
+    "id": 223,
+    "title": "OOD Object Oriented Design UML",
+    "url": "/certificate/2016-05-01_mectron_OOD_Object_Oriented_Design_UML.html"
+  },
+  {
+    "description": "",
+    "id": 224,
+    "title": "CPP Move Semantics",
+    "url": "/certificate/2018-07-12_linkedin_CPP_Move_Semantics.html"
+  },
+  {
+    "description": "",
+    "id": 225,
+    "title": "CPP Smart Pointers",
+    "url": "/certificate/2018-07-14_linkedin_CPP_Smart_Pointers.html"
+  },
+  {
+    "description": "",
+    "id": 226,
+    "title": "Developing a Style Guide 2012",
+    "url": "/certificate/2018-07-26_linkedin_Developing_a_Style_Guide_2012.html"
+  },
+  {
+    "description": "",
+    "id": 227,
+    "title": "Introdução a linguagem Javascript",
+    "url": "/certificate/2018-10-28_Introdução_a_linguagem_Javascript.html"
+  },
+  {
+    "description": "",
+    "id": 228,
+    "title": "Programação em Perl",
+    "url": "/certificate/2018-10-28_Programação_em_Perl.html"
+  },
+  {
+    "description": "",
+    "id": 229,
+    "title": "Facebook Marketing Como colocar sua empresa no Facebook",
+    "url": "/certificate/2018-10-30_treinaweb_Facebook_Marketing_Como_colocar_sua_empresa_no_Facebook.html"
+  },
+  {
+    "description": "",
+    "id": 230,
+    "title": "Marketing Digital Fundamentos",
+    "url": "/certificate/2018-10-30_treinaweb_Marketing_Digital_Fundamentos.html"
+  },
+  {
+    "description": "",
+    "id": 231,
+    "title": "Digital Ocean Gerenciamento de Servidores e Serviços",
+    "url": "/certificate/2018-10-31_treinaweb_Digital_Ocean_Gerenciamento_de_Servidores_e_Servicos.html"
+  },
+  {
+    "description": "",
+    "id": 232,
+    "title": "Facebook Ads Como anunciar, monitorar e potencializar suas campanhas",
+    "url": "/certificate/2018-10-31_treinaweb_Facebook_Ads_Como_anunciar,_monitorar_e_potencializar_suas_campanhas.html"
+  },
+  {
+    "description": "",
+    "id": 233,
+    "title": "RxJS Programação reativa",
+    "url": "/certificate/2018-10-31_treinaweb_RxJS_Programação_reativa.html"
+  },
+  {
+    "description": "",
+    "id": 234,
+    "title": "Certificado Tributação para desenvolvedores na NFe 4.0",
+    "url": "/certificate/2018-11-01_treinaweb_Certificado_Tributação_para_desenvolvedores_na_NFe_4.0.html"
+  },
+  {
+    "description": "",
+    "id": 235,
+    "title": "Design Thinking",
+    "url": "/certificate/2019-08-02_stefanini_Design_Thinking.html"
+  },
+  {
+    "description": "",
+    "id": 236,
+    "title": "Go Essential Training",
+    "url": "/certificate/2020-02-17_linkedin_Go_Essential_Training.html"
+  },
+  {
+    "description": "",
+    "id": 237,
+    "title": "Steftalk",
+    "url": "/certificate/2020-03-30_stefanini_Steftalk.html"
+  },
+  {
+    "description": "",
+    "id": 238,
+    "title": "Flutter Part 03 Flutter Widgets",
+    "url": "/certificate/2020-05-23_linkedin_Flutter_Part_03_Flutter_Widgets.html"
+  },
+  {
+    "description": "",
+    "id": 239,
+    "title": "Flutter Part 04 Building an App with State br",
+    "url": "/certificate/2020-05-23_linkedin_Flutter_Part_04_Building_an_App_with_State_br.html"
+  },
+  {
+    "description": "",
+    "id": 240,
+    "title": "Flutter Part 04 Building an App with State",
+    "url": "/certificate/2020-05-23_linkedin_Flutter_Part_04_Building_an_App_with_State.html"
+  },
+  {
+    "description": "",
+    "id": 241,
+    "title": "Flutter Part 05 Flutter and Dart Packages",
+    "url": "/certificate/2020-05-23_linkedin_Flutter_Part_05_Flutter_and_Dart_Packages.html"
+  },
+  {
+    "description": "",
+    "id": 242,
+    "title": "Flutter Part 06 Modularizing and Organizing Flutter Code",
+    "url": "/certificate/2020-05-23_linkedin_Flutter_Part_06_Modularizing_and_Organizing_Flutter_Code.html"
+  },
+  {
+    "description": "",
+    "id": 243,
+    "title": "criando sites profissionais",
+    "url": "/certificate/2020-09-14_nodestudio_criando_sites_profissionais.html"
+  },
+  {
+    "description": "",
+    "id": 244,
+    "title": "design responsivo",
+    "url": "/certificate/2020-09-14_nodestudio_design_responsivo.html"
+  },
+  {
+    "description": "",
+    "id": 245,
+    "title": "Developing Distributed Applications with Cshap and ZeroMQ",
+    "url": "/certificate/2020-11-10_linkedin_Developing_Distributed_Applications_with_Cshap_and_ZeroMQ.html"
+  },
+  {
+    "description": "",
+    "id": 246,
+    "title": "Flutter Part 02 Building Apps",
+    "url": "/certificate/2020-11-10_linkedin_Flutter_Part_02_Building_Apps.html"
+  },
+  {
+    "description": "",
+    "id": 247,
+    "title": "Flutter Part 07 Building the UI or Flutter Part 07 Building UIs br",
+    "url": "/certificate/2020-11-10_linkedin_Flutter_Part_07_Building_the_UI_or_Flutter_Part_07_Building_UIs_br.html"
+  },
+  {
+    "description": "",
+    "id": 248,
+    "title": "Flutter Part 07 Building the UI or Flutter Part 07 Building UIs",
+    "url": "/certificate/2020-11-10_linkedin_Flutter_Part_07_Building_the_UI_or_Flutter_Part_07_Building_UIs.html"
+  },
+  {
+    "description": "",
+    "id": 249,
+    "title": "Learning RabbitMQ",
+    "url": "/certificate/2020-11-10_linkedin_Learning_RabbitMQ.html"
+  },
+  {
+    "description": "",
+    "id": 250,
+    "title": "Learning JUnit 5",
+    "url": "/certificate/2020-11-11_linkedin_Learning_JUnit_5.html"
+  },
+  {
+    "description": "",
+    "id": 251,
+    "title": "Software Architecture DomainDriven Design",
+    "url": "/certificate/2020-11-11_linkedin_Software_Architecture_DomainDriven_Design.html"
+  },
+  {
+    "description": "",
+    "id": 252,
+    "title": "Learning Java 8",
+    "url": "/certificate/2020-11-13_linkedin_Learning_Java_8.html"
+  },
+  {
+    "description": "",
+    "id": 253,
+    "title": "RLSystem Flutter primeiros passos",
+    "url": "/certificate/2020-11-25_RLSystem_Flutter_primeiros_passos.html"
+  },
+  {
+    "description": "",
+    "id": 254,
+    "title": "RLSystem VueJS primeiros passos",
+    "url": "/certificate/2020-11-25_RLSystem_VueJS_primeiros_passos.html"
+  },
+  {
+    "description": "",
+    "id": 255,
+    "title": "Antifrágil",
+    "url": "/certificate/2020-11-26_stefanini_Antifrágil.html"
+  },
+  {
+    "description": "",
+    "id": 256,
+    "title": "Como Escutar de Forma Eficaz",
+    "url": "/certificate/2020-11-28_linkedin_Como_Escutar_de_Forma_Eficaz.html"
+  },
+  {
+    "description": "",
+    "id": 257,
+    "title": "Construindo Confiança en",
+    "url": "/certificate/2020-11-28_linkedin_Construindo_Confiança_en.html"
+  },
+  {
+    "description": "",
+    "id": 258,
+    "title": "Construindo Confiança pt",
+    "url": "/certificate/2020-11-28_linkedin_Construindo_Confiança_pt.html"
+  },
+  {
+    "description": "",
+    "id": 259,
+    "title": "Demonstrating Accountability as a Leader",
+    "url": "/certificate/2020-11-28_linkedin_Demonstrating_Accountability_as_a_Leader.html"
+  },
+  {
+    "description": "",
+    "id": 260,
+    "title": "Designing RESTful APIs",
+    "url": "/certificate/2020-11-28_linkedin_Designing_RESTful_APIs.html"
+  },
+  {
+    "description": "",
+    "id": 261,
+    "title": "Transforme se com a Inovação Disruptiva",
+    "url": "/certificate/2020-11-28_linkedin_Transforme-se_com_a_Inovação_Disruptiva.html"
+  },
+  {
+    "description": "",
+    "id": 262,
+    "title": "Web Security OAuth and OpenID Connect",
+    "url": "/certificate/2020-11-28_linkedin_Web_Security_OAuth_and_OpenID_Connect.html"
+  },
+  {
+    "description": "",
+    "id": 263,
+    "title": "Fundamentos de Liderança",
+    "url": "/certificate/2020-12-05_linkedin_Fundamentos_de_Liderança.html"
+  },
+  {
+    "description": "",
+    "id": 264,
+    "title": "Gestão Ágil no Trabalho Como Tornar as Reuniões Ágeis mais Produtivas",
+    "url": "/certificate/2020-12-05_linkedin_Gestão_Ágil_no_Trabalho_Como_Tornar_as_Reuniões_Ágeis_mais_Produtivas.html"
+  },
+  {
+    "description": "",
+    "id": 265,
+    "title": "Desenvolvendo sua Filosofia de Liderança",
+    "url": "/certificate/2020-12-06_linkedin_Desenvolvendo_sua_Filosofia_de_Liderança.html"
+  },
+  {
+    "description": "",
+    "id": 266,
+    "title": "Como Dar Feedback aos Funcionários",
+    "url": "/certificate/2020-12-15_linkedin_Como_Dar_Feedback_aos_Funcionários.html"
+  },
+  {
+    "description": "",
+    "id": 267,
+    "title": "Como Passar De Gerente a Lider",
+    "url": "/certificate/2020-12-15_linkedin_Como_Passar_De_Gerente_a_Lider.html"
+  },
+  {
+    "description": "",
+    "id": 268,
+    "title": "Desenvolvimento da Inteligencia Intercultural",
+    "url": "/certificate/2020-12-15_linkedin_Desenvolvimento_da_Inteligencia_Intercultural.html"
+  },
+  {
+    "description": "",
+    "id": 269,
+    "title": "Liderança com Inteligencia Emocional",
+    "url": "/certificate/2020-12-15_linkedin_Liderança_com_Inteligencia_Emocional.html"
+  },
+  {
+    "description": "",
+    "id": 270,
+    "title": "Liderança Inclusiva",
+    "url": "/certificate/2020-12-15_linkedin_Liderança_Inclusiva.html"
+  },
+  {
+    "description": "",
+    "id": 271,
+    "title": "Liderança sem Autoridade Formal",
+    "url": "/certificate/2020-12-15_linkedin_Liderança_sem_Autoridade_Formal.html"
+  },
+  {
+    "description": "",
+    "id": 272,
+    "title": "Liderando Mudanças",
+    "url": "/certificate/2020-12-15_linkedin_Liderando_Mudanças.html"
+  },
+  {
+    "description": "",
+    "id": 273,
+    "title": "O Poder do Coaching no Desenvolvimento dos Colaboradores",
+    "url": "/certificate/2020-12-15_linkedin_O_Poder_do_Coaching_no_Desenvolvimento_dos_Colaboradores.html"
+  },
+  {
+    "description": "",
+    "id": 274,
+    "title": "Transforme se num Líder Disruptivo",
+    "url": "/certificate/2020-12-15_linkedin_Transforme-se_num_Líder_Disruptivo.html"
+  },
+  {
+    "description": "",
+    "id": 275,
+    "title": "dowhile",
+    "url": "/certificate/2020-12-15_rocketseat_dowhile.html"
+  },
+  {
+    "description": "",
+    "id": 276,
+    "title": "Code Clinic CPP",
+    "url": "/certificate/2020-12-16_linkedin_Code_Clinic_CPP.html"
+  },
+  {
+    "description": "",
+    "id": 277,
+    "title": "CPP Best Practices for Developers",
+    "url": "/certificate/2020-12-16_linkedin_CPP_Best_Practices_for_Developers.html"
+  },
+  {
+    "description": "",
+    "id": 278,
+    "title": "Introducing Functional Programming in CPP",
+    "url": "/certificate/2020-12-16_linkedin_Introducing_Functional_Programming_in_CPP.html"
+  },
+  {
+    "description": "",
+    "id": 279,
+    "title": "Web Servers and APIs using CPP",
+    "url": "/certificate/2020-12-16_linkedin_Web_Servers_and_APIs_using_CPP.html"
+  },
+  {
+    "description": "",
+    "id": 280,
+    "title": "Code Clinic CPP",
+    "url": "/certificate/2020-12-17_linkedin_Code_Clinic_CPP.html"
+  },
+  {
+    "description": "",
+    "id": 281,
+    "title": "Learning COBIT",
+    "url": "/certificate/2020-12-19_linkedin_Learning_COBIT.html"
+  },
+  {
+    "description": "",
+    "id": 282,
+    "title": "Agile at Work Building Your Agile Team",
+    "url": "/certificate/2020-12-31_linkedin_Agile_at_Work_Building_Your_Agile_Team.html"
+  },
+  {
+    "description": "",
+    "id": 283,
+    "title": "Agile at Work Building Your Agile Team PMI",
+    "url": "/certificate/2020-12-31_linkedin_Agile_at_Work_Building_Your_Agile_Team_PMI.html"
+  },
+  {
+    "description": "",
+    "id": 284,
+    "title": "Agile at Work Planning with Agile User Stories PMI",
+    "url": "/certificate/2020-12-31_linkedin_Agile_at_Work_Planning_with_Agile_User_Stories_PMI.html"
+  },
+  {
+    "description": "",
+    "id": 285,
+    "title": "Microservices Asynchronous Messaging",
+    "url": "/certificate/2021-01-29_linkedin_Microservices_Asynchronous_Messaging.html"
+  },
+  {
+    "description": "",
+    "id": 286,
+    "title": "Técnicas de Persuasão em Vendas",
+    "url": "/certificate/2021-02-15_linkedin_Técnicas_de_Persuasão_em_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 287,
+    "title": "Com Fazer Perguntas Poderosas para Vendas",
+    "url": "/certificate/2021-02-24_linkedin_Com_Fazer_Perguntas_Poderosas_para_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 288,
+    "title": "Como Melhorar a Prospecção de Vendas",
+    "url": "/certificate/2021-02-24_linkedin_Como_Melhorar_a_Prospecção_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 289,
+    "title": "Técnicas de Comunicação Interpessoal",
+    "url": "/certificate/2021-02-24_linkedin_Técnicas_de_Comunicação_Interpessoal.html"
+  },
+  {
+    "description": "",
+    "id": 290,
+    "title": "A Ciência das Vendas",
+    "url": "/certificate/2021-02-25_linkedin_A_Ciência_das_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 291,
+    "title": "Fundamentos de Vendas",
+    "url": "/certificate/2021-02-25_linkedin_Fundamentos_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 292,
+    "title": "Técnicas de Fechamento de Vendas",
+    "url": "/certificate/2021-02-25_linkedin_Técnicas_de_Fechamento_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 293,
+    "title": "Técnicas de Fechamento de Vendas",
+    "url": "/certificate/2021-02-26_linkedin_Técnicas_de_Fechamento_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 294,
+    "title": "Estrategia Emocional",
+    "url": "/certificate/2021-02-26_stefanini_Estrategia_Emocional.html"
+  },
+  {
+    "description": "",
+    "id": 295,
+    "title": "Métricas Ágeis",
+    "url": "/certificate/2021-02-26_stefanini_Métricas_Ágeis.html"
+  },
+  {
+    "description": "",
+    "id": 296,
+    "title": "Resiliência",
+    "url": "/certificate/2021-02-26_stefanini_Resiliência.html"
+  },
+  {
+    "description": "",
+    "id": 297,
+    "title": "O Poder das Historias no Contexto das Vendas Parte 2 Historias que Fazem Sucesso",
+    "url": "/certificate/2021-02-27_linkedin_O_Poder_das_Historias_no_Contexto_das_Vendas_Parte_2_Historias_que_Fazem_Sucesso.html"
+  },
+  {
+    "description": "",
+    "id": 298,
+    "title": "Poder das Historias no Contexto das Vendas",
+    "url": "/certificate/2021-02-27_linkedin_Poder_das_Historias_no_Contexto_das_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 299,
+    "title": "Quarta Revolução Industrial Novos Modelos de Vendas",
+    "url": "/certificate/2021-02-27_linkedin_Quarta_Revolução_Industrial_Novos_Modelos_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 300,
+    "title": "Torne se um Profissional de Vendas",
+    "url": "/certificate/2021-02-27_linkedin_Torne-se_um_Profissional_de_Vendas.html"
+  },
+  {
+    "description": "",
+    "id": 301,
+    "title": "Como Preparar e Fazer Apresentações de Negócios",
+    "url": "/certificate/2021-02-28_linkedin_Como_Preparar_e_Fazer_Apresentações_de_Negócios.html"
+  },
+  {
+    "description": "",
+    "id": 302,
+    "title": "Designing a Letterhead System",
+    "url": "/certificate/2021-02-28_linkedin_Designing_a_Letterhead_System.html"
+  },
+  {
+    "description": "",
+    "id": 303,
+    "title": "vim moderno e VimScript",
+    "url": "/certificate/2021-03-09_udemy_vim_moderno_e_VimScript.html"
+  },
+  {
+    "description": "",
+    "id": 304,
+    "title": "certiprof Cyber Security Foundation certiprof",
+    "url": "/certificate/2021-04-05_certiprof_Cyber_Security_Foundation_certiprof.html"
+  },
+  {
+    "description": "",
+    "id": 305,
+    "title": "Comunicação na Liderança 4.0 O Poder da Síntese",
+    "url": "/certificate/2021-04-05_linkedin_Comunicação_na_Liderança_4.0_O_Poder_da_Síntese.html"
+  },
+  {
+    "description": "",
+    "id": 306,
+    "title": "Como a Inteligencia Artificial aprende e onde ela pode chegar",
+    "url": "/certificate/2021-04-13_stefanini_Como_a_Inteligencia_Artificial_aprende_e_onde_ela_pode_chegar.html"
+  },
+  {
+    "description": "",
+    "id": 307,
+    "title": "como dar e receber feedback",
+    "url": "/certificate/2021-04-16_stefanini_como_dar_e_receber_feedback.html"
+  },
+  {
+    "description": "",
+    "id": 308,
+    "title": "comunicação",
+    "url": "/certificate/2021-04-16_stefanini_comunicação.html"
+  },
+  {
+    "description": "",
+    "id": 309,
+    "title": "foco no resultado sustentável",
+    "url": "/certificate/2021-04-16_stefanini_foco_no_resultado_sustentável.html"
+  },
+  {
+    "description": "",
+    "id": 310,
+    "title": "influencia e negociação",
+    "url": "/certificate/2021-04-16_stefanini_influencia_e_negociação.html"
+  },
+  {
+    "description": "",
+    "id": 311,
+    "title": "INSTITUCIONAL STEFANINI",
+    "url": "/certificate/2021-04-16_stefanini_INSTITUCIONAL_STEFANINI.html"
+  },
+  {
+    "description": "",
+    "id": 312,
+    "title": "marketing pessoal",
+    "url": "/certificate/2021-04-16_stefanini_marketing_pessoal.html"
+  },
+  {
+    "description": "",
+    "id": 313,
+    "title": "TRANSFORMAÇÃO DIGITAL E CULTURAL DO PAPEL A PRÁTICA",
+    "url": "/certificate/2021-04-16_stefanini_TRANSFORMAÇÃO_DIGITAL_E_CULTURAL_DO_PAPEL_A_PRÁTICA.html"
+  },
+  {
+    "description": "",
+    "id": 314,
+    "title": "Agile Software Development Dealing with Legacy Code and Technical Debt",
+    "url": "/certificate/2021-05-09_linkedin_Agile_Software_Development_Dealing_with_Legacy_Code_and_Technical_Debt.html"
+  },
+  {
+    "description": "",
+    "id": 315,
+    "title": "End to End JavaScript Testing with Cypress.io",
+    "url": "/certificate/2021-05-12_linkedin_End-to-End_JavaScript_Testing_with_Cypress.io.html"
+  },
+  {
+    "description": "",
+    "id": 316,
+    "title": "Como Conciliar o Trabalho Remoto com a Vida Familiar em Tempos de Crise",
+    "url": "/certificate/2021-05-13_linkedin_Como_Conciliar_o_Trabalho_Remoto_com_a_Vida_Familiar_em_Tempos_de_Crise.html"
+  },
+  {
+    "description": "",
+    "id": 317,
+    "title": "Computação em Nuvem Noções Básicas",
+    "url": "/certificate/2021-05-13_linkedin_Computação_em_Nuvem_Noções_Básicas.html"
+  },
+  {
+    "description": "",
+    "id": 318,
+    "title": "Secure Coding in Java",
+    "url": "/certificate/2021-05-14_linkedin_Secure_Coding_in_Java.html"
+  },
+  {
+    "description": "",
+    "id": 319,
+    "title": "Fundamentos de Comunicação",
+    "url": "/certificate/2021-05-15_linkedin_Fundamentos_de_Comunicação.html"
+  },
+  {
+    "description": "",
+    "id": 320,
+    "title": "Como Desenvolver a Resiliência",
+    "url": "/certificate/2021-05-16_linkedin_Como_Desenvolver_a_Resiliência.html"
+  },
+  {
+    "description": "",
+    "id": 321,
+    "title": "Descubra o CSS",
+    "url": "/certificate/2021-05-19_linkedin_Descubra_o_CSS.html"
+  },
+  {
+    "description": "",
+    "id": 322,
+    "title": "Vue.js 3 Essential Training",
+    "url": "/certificate/2021-05-27_linkedin_Vue.js_3_Essential_Training.html"
+  },
+  {
+    "description": "",
+    "id": 323,
+    "title": "Training Neural Networks in C++",
+    "url": "/certificate/2021-05-28_linkedin_Training_Neural_Networks_in_C++.html"
+  },
+  {
+    "description": "",
+    "id": 324,
+    "title": "Technical Meeting Stefanini",
+    "url": "/certificate/2021-05-29_stefanini_Technical_Meeting_Stefanini.html"
+  },
+  {
+    "description": "",
+    "id": 325,
+    "title": "Project Management Simplified",
+    "url": "/certificate/2021-06-01_linkedin_Project_Management_Simplified.html"
+  },
+  {
+    "description": "",
+    "id": 326,
+    "title": "Learning Vue.js",
+    "url": "/certificate/2021-06-02_linkedin_Learning_Vue.js.html"
+  },
+  {
+    "description": "",
+    "id": 327,
+    "title": "Building Vue and Node Apps with Authentication",
+    "url": "/certificate/2021-06-03_linkedin_Building_Vue_and_Node_Apps_with_Authentication.html"
+  },
+  {
+    "description": "",
+    "id": 328,
+    "title": "Project Management Simplified PMI",
+    "url": "/certificate/2021-06-03_linkedin_Project_Management_Simplified_PMI.html"
+  },
+  {
+    "description": "",
+    "id": 329,
+    "title": "Aprenda a criar indicadores técnicos de investimentos MQL5",
+    "url": "/certificate/2021-06-18_udemy_Aprenda_a_criar_indicadores_técnicos_de_investimentos_MQL5.html"
+  },
+  {
+    "description": "",
+    "id": 330,
+    "title": "Robôs de investimentos MQL5 tópicos avançados",
+    "url": "/certificate/2021-06-18_udemy_Robôs_de_investimentos_MQL5_tópicos_avançados.html"
+  },
+  {
+    "description": "",
+    "id": 331,
+    "title": "Analise Técnica para investidores e analistas quant",
+    "url": "/certificate/2021-06-21_udemy_Analise_Técnica_para_investidores_e_analistas_quant.html"
+  },
+  {
+    "description": "",
+    "id": 332,
+    "title": "C++ Design Patterns Behavioral",
+    "url": "/certificate/2021-09-12_linkedin_C++_Design_Patterns_Behavioral.html"
+  },
+  {
+    "description": "",
+    "id": 333,
+    "title": "Design Patterns Creational",
+    "url": "/certificate/2021-09-12_linkedin_Design_Patterns_Creational.html"
+  },
+  {
+    "description": "",
+    "id": 334,
+    "title": "Choosing a Cross-Platform Development Tool",
+    "url": "/certificate/2021-09-14_linkedin_Choosing_a_CrossPlatform_Development_Tool.html"
+  },
+  {
+    "description": "",
+    "id": 335,
+    "title": "Vue.js Testing and Debugging",
+    "url": "/certificate/2021-09-17_linkedin_Vue.js_Testing_and_Debugging.html"
+  },
+  {
+    "description": "",
+    "id": 336,
+    "title": "TryHackMe Badge webbed",
+    "url": "/certificate/2021-10-10_TryHackMe_Badge_webbed.html"
+  },
+  {
+    "description": "",
+    "id": 337,
+    "title": "aprendendo a lidar com as mudanças",
+    "url": "/certificate/2021-10-18_stefanini_aprendendo_a_lidar_com_as_mudanças.html"
+  },
+  {
+    "description": "",
+    "id": 338,
+    "title": "Growth Mindset",
+    "url": "/certificate/2021-10-18_stefanini_Growth_Mindset.html"
+  },
+  {
+    "description": "",
+    "id": 339,
+    "title": "AGILE 2.0",
+    "url": "/certificate/2021-10-19_stefanini_AGILE_2.0.html"
+  },
+  {
+    "description": "",
+    "id": 340,
+    "title": "ERGONOMIA EM HOME OFFICE",
+    "url": "/certificate/2021-10-19_stefanini_ERGONOMIA_EM_HOME_OFFICE.html"
+  },
+  {
+    "description": "",
+    "id": 341,
+    "title": "EXCEL 2013 CURSO BÁSICO",
+    "url": "/certificate/2021-10-19_stefanini_EXCEL_2013-CURSO_BÁSICO.html"
+  },
+  {
+    "description": "",
+    "id": 342,
+    "title": "EXCEL 2013 CURSO INTERMEDIÁRIO",
+    "url": "/certificate/2021-10-19_stefanini_EXCEL_2013-CURSO_INTERMEDIÁRIO.html"
+  },
+  {
+    "description": "",
+    "id": 343,
+    "title": "INTRODUÇÃO AO SCRUM",
+    "url": "/certificate/2021-10-19_stefanini_INTRODUÇÃO_AO_SCRUM.html"
+  },
+  {
+    "description": "",
+    "id": 344,
+    "title": "METODOLOGIA ÁGIL",
+    "url": "/certificate/2021-10-19_stefanini_METODOLOGIA_ÁGIL.html"
+  },
+  {
+    "description": "",
+    "id": 345,
+    "title": "ORIENTAÇÃO PARA CLIENTES",
+    "url": "/certificate/2021-10-19_stefanini_ORIENTAÇÃO_PARA_CLIENTES.html"
+  },
+  {
+    "description": "",
+    "id": 346,
+    "title": "ORIENTAÇÃO PARA RESULTADOS",
+    "url": "/certificate/2021-10-19_stefanini_ORIENTAÇÃO_PARA_RESULTADOS.html"
+  },
+  {
+    "description": "",
+    "id": 347,
+    "title": "A agilidade da Cloud no mundo Digital",
+    "url": "/certificate/2021-10-20_stefanini_A_agilidade_da_Cloud_no_mundo_Digital.html"
+  },
+  {
+    "description": "",
+    "id": 348,
+    "title": "COMUNICAÇÃO DE ALTO IMPACTO",
+    "url": "/certificate/2021-10-20_stefanini_COMUNICAÇÃO_DE_ALTO_IMPACTO.html"
+  },
+  {
+    "description": "",
+    "id": 349,
+    "title": "POWERPOINT 2013 CURSO BÁSICO",
+    "url": "/certificate/2021-10-20_stefanini_POWERPOINT_2013-CURSO_BÁSICO.html"
+  },
+  {
+    "description": "",
+    "id": 350,
+    "title": "POWERPOINT 2013 CURSO INTERMEDIÁRIO",
+    "url": "/certificate/2021-10-20_stefanini_POWERPOINT_2013-CURSO_INTERMEDIÁRIO.html"
+  },
+  {
+    "description": "",
+    "id": 351,
+    "title": "Testes Automatizados WEB",
+    "url": "/certificate/2021-10-22_stefanini_Testes_Automatizados_WEB.html"
+  },
+  {
+    "description": "",
+    "id": 352,
+    "title": "Fundamentos do GIT Testes de API",
+    "url": "/certificate/2021-11-03_stefanini_Fundamentos_do_GIT_Testes_de_API.html"
+  },
+  {
+    "description": "",
+    "id": 353,
+    "title": "Tutorial Sophie ChatBot",
+    "url": "/certificate/2021-11-04_stefanini_Tutorial_Sophie_ChatBot.html"
+  },
+  {
+    "description": "",
+    "id": 354,
+    "title": "Da Vitimização a Ação",
+    "url": "/certificate/2021-11-14_linkedin_Da_Vitimização_a_Ação.html"
+  },
+  {
+    "description": "",
+    "id": 355,
+    "title": "Treinamento SGA ISO 14001",
+    "url": "/certificate/2021-11-17_stefanini_Treinamento_SGA_ISO_14001.html"
+  },
+  {
+    "description": "",
+    "id": 356,
+    "title": "Integração SMS",
+    "url": "/certificate/2022-01-11_stefanini_Integração_SMS.html"
+  },
+  {
+    "description": "",
+    "id": 357,
+    "title": "NR1 Ordem de Serviço",
+    "url": "/certificate/2022-01-11_stefanini_NR1_Ordem_de_Serviço.html"
+  },
+  {
+    "description": "",
+    "id": 358,
+    "title": "certificate refactoring",
+    "url": "/certificate/2022-04-02_refactoring.guru_certificate-refactoring.html"
+  },
+  {
+    "description": "",
+    "id": 359,
+    "title": "AFL Academia de Formação de Líderes",
+    "url": "/certificate/2022-06-02_stefanini_AFL_Academia_de_Formação_de_Líderes.html"
+  },
+  {
+    "description": "",
+    "id": 360,
+    "title": "Crucial Role of Penetration Testing and Vulnerability Assessments in Cybersecurity",
+    "url": "/certificate/2022-06-02_stefanini_Crucial_Role_of_Penetration_Testing_and_Vulnerability_Assessments_in_Cybersecurity.html"
+  },
+  {
+    "description": "",
+    "id": 361,
+    "title": "Squads",
+    "url": "/certificate/2022-06-02_stefanini_Squads.html"
+  },
+  {
+    "description": "",
+    "id": 362,
+    "title": "AWS for Developers PayPal Payment Processing with Lambdas",
+    "url": "/certificate/2022-06-14_linkedin_AWS_for_Developers_PayPal_Payment_Processing_with_Lambdas.html"
+  },
+  {
+    "description": "",
+    "id": 363,
+    "title": "Advanced SEO Developing an SEO Friendly Website",
+    "url": "/certificate/2022-06-23_linkedin_Advanced_SEO_Developing_an_SEO_Friendly_Website.html"
+  },
+  {
+    "description": "",
+    "id": 364,
+    "title": "HTML Metadata in the Head",
+    "url": "/certificate/2022-06-23_linkedin_HTML_Metadata_in_the_Head.html"
+  },
+  {
+    "description": "",
+    "id": 365,
+    "title": "HTML Structured Semantic Data",
+    "url": "/certificate/2022-06-23_linkedin_HTML_Structured_Semantic_Data.html"
+  },
+  {
+    "description": "",
+    "id": 366,
+    "title": "Advanced SEO Search Factors",
+    "url": "/certificate/2022-06-27_linkedin_Advanced_SEO_Search_Factors.html"
+  },
+  {
+    "description": "",
+    "id": 367,
+    "title": "Improve SEO for Your Website",
+    "url": "/certificate/2022-06-27_linkedin_Improve_SEO_for_Your_Website.html"
+  },
+  {
+    "description": "",
+    "id": 368,
+    "title": "Oratória de alta performance",
+    "url": "/certificate/2022-07-01_kultivi_Oratória_de_alta_performance.html"
+  },
+  {
+    "description": "",
+    "id": 369,
+    "title": "appsecengineer DevSecOps SAST and Code Review for DevSecOps",
+    "url": "/certificate/2022-07-20_appsecengineer_DevSecOps_SAST_and_Code_Review_for_DevSecOps.html"
+  },
+  {
+    "description": "",
+    "id": 370,
+    "title": "Build Your Own Professional Training Quick Start Guide",
+    "url": "/certificate/2022-07-20_linkedin_Build_Your_Own_Professional_Training_Quick_Start_Guide.html"
+  },
+  {
+    "description": "",
+    "id": 371,
+    "title": "Creating Fun and Engaging Video Training The How",
+    "url": "/certificate/2022-07-20_linkedin_Creating_Fun_and_Engaging_Video_Training_The_How.html"
+  },
+  {
+    "description": "",
+    "id": 372,
+    "title": "Creating Fun and Engaging Video Training The Why",
+    "url": "/certificate/2022-07-20_linkedin_Creating_Fun_and_Engaging_Video_Training_The_Why.html"
+  },
+  {
+    "description": "",
+    "id": 373,
+    "title": "Dynamic Application Security Testing DAST",
+    "url": "/certificate/2022-07-20_linkedin_Dynamic_Application_Security_Testing_DAST.html"
+  },
+  {
+    "description": "",
+    "id": 374,
+    "title": "CSSLP Cert Prep 4 Secure Software Implementation",
+    "url": "/certificate/2022-07-21_linkedin_CSSLP_Cert_Prep_4_Secure_Software_Implementation.html"
+  },
+  {
+    "description": "",
+    "id": 375,
+    "title": "CSSLP Cert Prep The Basics",
+    "url": "/certificate/2022-07-22_linkedin_CSSLP_Cert_Prep_The_Basics.html"
+  },
+  {
+    "description": "",
+    "id": 376,
+    "title": "CSSLP Cert Prep 2 Secure Software Requirements",
+    "url": "/certificate/2022-07-25_linkedin_CSSLP_Cert_Prep_2_Secure_Software_Requirements.html"
+  },
+  {
+    "description": "",
+    "id": 377,
+    "title": "CSSLP Cert Prep 3 Secure Software Design",
+    "url": "/certificate/2022-07-27_linkedin_CSSLP_Cert_Prep_3_Secure_Software_Design.html"
+  },
+  {
+    "description": "",
+    "id": 378,
+    "title": "Learning Nuxt.js",
+    "url": "/certificate/2022-07-30_linkedin_Learning_Nuxt.js.html"
+  },
+  {
+    "description": "",
+    "id": 379,
+    "title": "Learning Vuex",
+    "url": "/certificate/2022-07-30_linkedin_Learning_Vuex.html"
+  },
+  {
+    "description": "",
+    "id": 380,
+    "title": "Nuxt.js 2",
+    "url": "/certificate/2022-08-04_stefanini_Nuxt.js_2.html"
+  },
+  {
+    "description": "",
+    "id": 381,
+    "title": "Tailwind CSS 2",
+    "url": "/certificate/2022-08-18_stefanini_Tailwind_CSS_2.html"
+  },
+  {
+    "description": "",
+    "id": 382,
+    "title": "Golang para Web",
+    "url": "/certificate/2022-08-31_stefanini_Golang_para_Web.html"
+  },
+  {
+    "description": "",
+    "id": 383,
+    "title": "Python Machine Learning",
+    "url": "/certificate/2022-08-31_stefanini_Python_Machine_Learning.html"
+  },
+  {
+    "description": "",
+    "id": 384,
+    "title": "Creating Brand Identity Assets",
+    "url": "/certificate/2022-09-02_linkedin_Creating_Brand_Identity_Assets.html"
+  },
+  {
+    "description": "",
+    "id": 385,
+    "title": "Desenvolvimento Seguro",
+    "url": "/certificate/2022-09-02_stefanini_Desenvolvimento_Seguro.html"
+  },
+  {
+    "description": "",
+    "id": 386,
+    "title": "Redis",
+    "url": "/certificate/2022-09-02_stefanini_Redis.html"
+  },
+  {
+    "description": "",
+    "id": 387,
+    "title": "Segurança da Informação",
+    "url": "/certificate/2022-09-02_stefanini_Segurança_da_Informação.html"
+  },
+  {
+    "description": "",
+    "id": 388,
+    "title": "Terraform com AWS",
+    "url": "/certificate/2022-09-02_stefanini_Terraform_com_AWS.html"
+  },
+  {
+    "description": "",
+    "id": 389,
+    "title": "Building a Home IT Lab 2020",
+    "url": "/certificate/2022-09-03_linkedin_Building_a_Home_IT_Lab_2020.html"
+  },
+  {
+    "description": "",
+    "id": 390,
+    "title": "Materialize CSS para Iniciantes",
+    "url": "/certificate/2022-09-04_nodestudio_Materialize_CSS_para_Iniciantes.html"
+  },
+  {
+    "description": "",
+    "id": 391,
+    "title": "Building a Home IT Lab 2022",
+    "url": "/certificate/2022-09-05_linkedin_Building_a_Home_IT_Lab_2022.html"
+  },
+  {
+    "description": "",
+    "id": 392,
+    "title": "ISO 27001 Segurança da Informação",
+    "url": "/certificate/2022-09-09_stefanini_ISO_27001_Segurança_da_Informação.html"
+  },
+  {
+    "description": "",
+    "id": 393,
+    "title": "Docker for Developers",
+    "url": "/certificate/2022-09-12_linkedin_Docker_for_Developers.html"
+  },
+  {
+    "description": "",
+    "id": 394,
+    "title": "Introduction to Network Routing",
+    "url": "/certificate/2022-09-12_linkedin_Introduction_to_Network_Routing.html"
+  },
+  {
+    "description": "",
+    "id": 395,
+    "title": "Paradigmas de Linguagem de Programação",
+    "url": "/certificate/2022-09-16_stefanini_Paradigmas_de_Linguagem_de_Programação.html"
+  },
+  {
+    "description": "",
+    "id": 396,
+    "title": "Gulp.js Web Project Workflows",
+    "url": "/certificate/2022-09-28_linkedin_Gulp.js_Web_Project_Workflows.html"
+  },
+  {
+    "description": "",
+    "id": 397,
+    "title": "stefanini Soft Skill",
+    "url": "/certificate/2022-09-16_stefanini_Soft_Skill.html"
+  }
+]

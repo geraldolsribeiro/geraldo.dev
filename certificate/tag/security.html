@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -25,96 +26,110 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
+    <div class="max-w-prose mx-auto p-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="search-input" type="search" name="query" placeholder="Search Mockups, Logos..." required="">
+          <button class="text-white absolute bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
     <main class="bg-black text-slate-100 min-h-screen">
       <div class="bg-slate-900 container mx-auto py-4">
         <h1 class="px-4">Certificates / security</h1>
         <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <div class="grid-item-with-gradient"><a href="/certificate/2022-09-09_stefanini_ISO_27001_Segurança_da_Informação.html" title="ISO 27001 Segurança da Informação">
-              <div class="p-4"><img class="mx-auto" src="/certificate/f1226dc3-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/f1226dc3-small.webp"></div>
               <h3>ISO 27001 Segurança da Informação</h3>
               <p class="text-slate-400">2022-09-09</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/iso.html">iso</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-09-02_stefanini_Segurança_da_Informação.html" title="Segurança da Informação">
-              <div class="p-4"><img class="mx-auto" src="/certificate/9d1decae-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/9d1decae-small.webp"></div>
               <h3>Segurança da Informação</h3>
               <p class="text-slate-400">2022-09-02</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/owasp.html">owasp</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-09-02_stefanini_Desenvolvimento_Seguro.html" title="Desenvolvimento Seguro">
-              <div class="p-4"><img class="mx-auto" src="/certificate/02296492-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/02296492-small.webp"></div>
               <h3>Desenvolvimento Seguro</h3>
               <p class="text-slate-400">2022-09-02</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/owasp.html">owasp</a><a class="tag" href="/certificate/tag/owasp-zap.html">owasp-zap</a><a class="tag" href="/certificate/tag/sonarqube.html">sonarqube</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-27_linkedin_CSSLP_Cert_Prep_3_Secure_Software_Design.html" title="CSSLP Cert Prep 3 Secure Software Design">
-              <div class="p-4"><img class="mx-auto" src="/certificate/14d4cfe0-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/14d4cfe0-small.webp"></div>
               <h3>CSSLP Cert Prep 3 Secure Software Design</h3>
               <p class="text-slate-400">2022-07-27</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/isc.html">isc</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-25_linkedin_CSSLP_Cert_Prep_2_Secure_Software_Requirements.html" title="CSSLP Cert Prep 2 Secure Software Requirements">
-              <div class="p-4"><img class="mx-auto" src="/certificate/b43a6bfa-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/b43a6bfa-small.webp"></div>
               <h3>CSSLP Cert Prep 2 Secure Software Requirements</h3>
               <p class="text-slate-400">2022-07-25</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/isc.html">isc</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-22_linkedin_CSSLP_Cert_Prep_The_Basics.html" title="CSSLP Cert Prep The Basics">
-              <div class="p-4"><img class="mx-auto" src="/certificate/2ae7aecc-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/2ae7aecc-small.webp"></div>
               <h3>CSSLP Cert Prep The Basics</h3>
               <p class="text-slate-400">2022-07-22</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/isc.html">isc</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-21_linkedin_CSSLP_Cert_Prep_4_Secure_Software_Implementation.html" title="CSSLP Cert Prep 4 Secure Software Implementation">
-              <div class="p-4"><img class="mx-auto" src="/certificate/a0b048e6-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/a0b048e6-small.webp"></div>
               <h3>CSSLP Cert Prep 4 Secure Software Implementation</h3>
               <p class="text-slate-400">2022-07-21</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/isc.html">isc</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-20_linkedin_Dynamic_Application_Security_Testing_DAST.html" title="Dynamic Application Security Testing DAST">
-              <div class="p-4"><img class="mx-auto" src="/certificate/43ec79bb-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/43ec79bb-small.webp"></div>
               <h3>Dynamic Application Security Testing DAST</h3>
               <p class="text-slate-400">2022-07-20</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/dast.html">dast</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/testing.html">testing</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-07-20_appsecengineer_DevSecOps_SAST_and_Code_Review_for_DevSecOps.html" title="appsecengineer DevSecOps SAST and Code Review for DevSecOps">
-              <div class="p-4"><img class="mx-auto" src="/certificate/799547b5-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/799547b5-small.webp"></div>
               <h3>appsecengineer DevSecOps SAST and Code Review for DevSecOps</h3>
               <p class="text-slate-400">2022-07-20</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/sast.html">sast</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a><a class="tag" href="/certificate/tag/code-review.html">code-review</a><a class="tag" href="/certificate/tag/testing.html">testing</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2022-06-02_stefanini_Crucial_Role_of_Penetration_Testing_and_Vulnerability_Assessments_in_Cybersecurity.html" title="Crucial Role of Penetration Testing and Vulnerability Assessments in Cybersecurity">
-              <div class="p-4"><img class="mx-auto" src="/certificate/57b59572-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/57b59572-small.webp"></div>
               <h3>Crucial Role of Penetration Testing and Vulnerability Assessments in Cybersecurity</h3>
               <p class="text-slate-400">2022-06-02</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/pentest.html">pentest</a><a class="tag" href="/certificate/tag/owasp.html">owasp</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-10-10_TryHackMe_Badge_webbed.html" title="TryHackMe Badge webbed">
-              <div class="p-4"><img class="mx-auto" src="/certificate/5531a6e9-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/5531a6e9-small.webp"></div>
               <h3>TryHackMe Badge webbed</h3>
               <p class="text-slate-400">2021-10-10</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-05-14_linkedin_Secure_Coding_in_Java.html" title="Secure Coding in Java">
-              <div class="p-4"><img class="mx-auto" src="/certificate/60726aab-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/60726aab-small.webp"></div>
               <h3>Secure Coding in Java</h3>
               <p class="text-slate-400">2021-05-14</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/java.html">java</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2021-04-05_certiprof_Cyber_Security_Foundation_certiprof.html" title="certiprof Cyber Security Foundation certiprof">
-              <div class="p-4"><img class="mx-auto" src="/certificate/b1e87b53-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/b1e87b53-small.webp"></div>
               <h3>certiprof Cyber Security Foundation certiprof</h3>
               <p class="text-slate-400">2021-04-05</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2020-11-28_linkedin_Web_Security_OAuth_and_OpenID_Connect.html" title="Web Security OAuth and OpenID Connect">
-              <div class="p-4"><img class="mx-auto" src="/certificate/8c77ae43-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/8c77ae43-small.webp"></div>
               <h3>Web Security OAuth and OpenID Connect</h3>
               <p class="text-slate-400">2020-11-28</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a>
               </div></a></div>
           <div class="grid-item-with-gradient"><a href="/certificate/2005-12-02_4Linux_Pen-Test_Analise_e_Testes_de_Vulnerabilidades_em_Redes_Corporativas.html" title="4Linux Pen Test Analise e Testes de Vulnerabilidades em Redes Corporativas">
-              <div class="p-4"><img class="mx-auto" src="/certificate/12bfe0d6-S.webp"></div>
+              <div class="p-4"><img class="mx-auto" src="/certificate/12bfe0d6-small.webp"></div>
               <h3>4Linux Pen Test Analise e Testes de Vulnerabilidades em Redes Corporativas</h3>
               <p class="text-slate-400">2005-12-02</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/pentest.html">pentest</a>

@@ -26,7 +26,10 @@
       </div>
     </nav>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
         <h1>Trader - ordens</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/trader.html">trader</a>
         </div><h2 id="tipos-de-ordens" tabindex="-1">Tipos de ordens</h2>
@@ -80,20 +83,18 @@ campo “Preço Stop Limit”.</p>
 <p>A ordem pode ser colocada juntamente com uma ordem de mercado ou pendente.</p>
 <p>Para posições longas é usado o preço Bid (a ordem sempre se encontra acima do atual preço Bid).</p>
 <p>Para posições curtas é utilizado o preço Ask (a ordem sempre se encontra abaixo do atual preço Ask).</p>
-<p>{{% note %}}
-Se a ordem não puder se executada quando tinha condições (p.e. rejeitada pela bolsa) ela não é removida. E começará a funciona novamente após um novo tick que garanta as condições da ordem.
-{{% /note %}}</p>
+<p {%="" note="" %="">{{% note %}}
+Se a ordem não puder se executada quando tinha condições (p.e. rejeitada pela bolsa) ela não é removida. E começará a funciona novamente após um novo tick que garanta as condições da ordem.</p>
 <h3 id="stop-loss" tabindex="-1">Stop Loss</h3>
 <p>Expectativa de minimizar as perdas no caso do preço se movimentar na direção de perda.</p>
 <p>Se o preço atingir este nível a posição se fecha por completo automaticamente.</p>
 <p>Está sempre ligada à posição aberta ou ordem pendente.</p>
 <p>Para posições longas é usado o preço Bid (a ordem sempre se encontra abaixo do atual preço Bid).</p>
 <p>Para posições curtas é usado o preço Ask (a ordem sempre se encontra acima do preço atual Ask).</p>
-<p>{{% note %}}
-Se a ordem não puder se executada quando tinha condições (p.e. rejeitada pela bolsa) ela não é removida. E começará a funciona novamente após um novo tick que garanta as condições da ordem.
-{{% /note %}}</p>
+<p {%="" note="" %="">{{% note %}}
+Se a ordem não puder se executada quando tinha condições (p.e. rejeitada pela bolsa) ela não é removida. E começará a funciona novamente após um novo tick que garanta as condições da ordem.</p>
 <h2 id="termos-de-heran%C3%A7a-de-stop-loss-e-take-profit-(compensa%C3%A7%C3%A3o)%3A" tabindex="-1">Termos de herança de Stop Loss e Take Profit (compensação):</h2>
-<ul>
+<ul {%="" note="" %="">
 <li>Quando aumenta o volume da posição, e também quando reverte, os níveis Take Profit e Stop Loss são colocados segundo a última ordem (de mercado ou da pendente ativada). Em outras palavras, os níveis stop são substituídos pelos anteriores em cada última ordem segundo uma posição. Além disso, se na ordem for exibido um valor de zero, Stop Loss e Take Profit são excluídos.</li>
 <li>Se houver um fechamento parcial da posição, Stop Loss e Take Profit não são alterados para uma nova ordem.</li>
 <li>Quando houver fechamento total de posições, os níveis Stop Loss e Take Profit serão excluídos, pois estão ligados à posição aberta e não podem existir sem ela.</li>
@@ -107,12 +108,10 @@ Se a ordem não puder se executada quando tinha condições (p.e. rejeitada pela
 <li>Ao executar uma operação de negociação em um clique (através da barra no grafico ou no Livro de ofertas), não são colocados Stop Loss e Take Profit.</li>
 <li>Esses termos são váildos tanto para a negociação manual como para a colocação de ordens por experts (programas MQL5).</li>
 </ul>
-<p>{{% note %}}</p>
-<ul>
+<ul {%="" note="" %="">
 <li>Para automatizar a deslocação da ordem Stop Loss seguindo o preço, você pode utilizar o Trailing Stop.</li>
 <li>A ativação de ordens Take Profit e Stop Loss leva ao total fechamento da posição.</li>
-<li>Para instrumentos com modo de cálculos Exchange Stocks, Exchange Futures e Futures Forts, todos os tipos de ordens Stop Loss e Take Profit são executados de acordo com as regras no mercado de bolsa, onde é realizada a operação. Comumente é usado o preço Last (preço da última transação). Em outras palavras, uma ordem stop funciona uma vez que o preço Last roçar o preço indicado. No entanto, você deve levar em conta que a compra ou venda realizada como resultado da execução de ordens stop, ocorre, em qualquer caso, segundo os preços Bid e Ask.
-{{% /note %}}</li>
+<li>Para instrumentos com modo de cálculos Exchange Stocks, Exchange Futures e Futures Forts, todos os tipos de ordens Stop Loss e Take Profit são executados de acordo com as regras no mercado de bolsa, onde é realizada a operação. Comumente é usado o preço Last (preço da última transação). Em outras palavras, uma ordem stop funciona uma vez que o preço Last roçar o preço indicado. No entanto, você deve levar em conta que a compra ou venda realizada como resultado da execução de ordens stop, ocorre, em qualquer caso, segundo os preços Bid e Ask.</li>
 </ul>
 <h2 id="trailing-stop" tabindex="-1">Trailing Stop</h2>
 <p>“Stop Loss” é projetado para minimizar as perdas, se o preço de um instrumento financeiro começar a se mover em uma direção desfavorável. Quando a posição aberta se torna rentável, o “Stop Loss” pode ser movido manualmente para um nível favorável. Para automatizar esse processo é usado o Trailing Stop. Esse instrumento é particularmente útil quando existe um forte movimento do preço em uma direção, e nos casos em que não é possível acompanhar de perto a evolução do estado do mercado.</p>

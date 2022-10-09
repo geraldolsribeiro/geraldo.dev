@@ -26,7 +26,10 @@
       </div>
     </nav>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
         <h1>Escolhendo versões dos pacotes no Debian/Ubuntu</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/sysadmin.html">sysadmin</a><a class="tag" href="/til/tag/linux.html">linux</a><a class="tag" href="/til/tag/debian.html">debian</a><a class="tag" href="/til/tag/ubuntu.html">ubuntu</a><a class="tag" href="/til/tag/hugo.html">hugo</a><a class="tag" href="/til/tag/apt.html">apt</a>
         </div><h2 id="parte-1---regra-geral" tabindex="-1">Parte 1 - Regra geral</h2>
@@ -59,11 +62,10 @@ Você pode usar este mesmo procedimento para qualquer pacote.</p>
 <li>testing 0.55.6</li>
 <li>unstable 0.55.6</li>
 </ul>
-<p>{{&lt; notice tip &gt;}}
+<p {&lt;="" notice="">{{&lt; notice tip &gt;}}
 Crie um arquivo dentro do diretório <code>/etc/apt/preferences.d/</code> com o nome do
 pacote que você quer especificar a versão. Pode ser qualquer nome aqui, mas
-usando o nome do pacote fica mais fácil de manter o sistema.
-{{&lt; /notice &gt;}}</p>
+usando o nome do pacote fica mais fácil de manter o sistema.</p>
 <pre><code class="language-bash"># /etc/apt/preferences.d/hugo
 Package: hugo
 Pin: release a=testing

@@ -26,10 +26,14 @@
       </div>
     </nav>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
         <h1>CORBA</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/corba.html">corba</a><a class="tag" href="/til/tag/IDL.html">IDL</a><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/Python.html">Python</a>
-        </div><p><div class="table-of-contents"><ul><li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li><li><a href="#orb---object-request-broker">ORB - Object Request Broker</a></li><li><a href="#clientes">Clientes</a></li><li><a href="#servidores">Servidores</a></li><li><a href="#idl">IDL</a></li><li><a href="#reposit%C3%B3rio-de-interfaces">Repositório de interfaces</a></li><li><a href="#reposit%C3%B3rio-de-implementa%C3%A7%C3%A3o">Repositório de implementação</a></li><li><a href="#dynamic-invocation-interface">Dynamic Invocation Interface</a></li><li><a href="#interoperabilidade">Interoperabilidade</a></li><li><a href="#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li><li><a href="#oa---object-adapter">OA - Object Adapter</a></li><li><a href="#boa---basic-object-adapter">BOA - Basic Object Adapter</a></li><li><a href="#poa-portable-object-adapter">POA Portable Object Adapter</a></li><li><a href="#instala%C3%A7%C3%A3o-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li><li><a href="#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a></li><li><a href="#exemplo">Exemplo</a></li><li><a href="#criando-o-servidor">Criando o servidor</a></li><li><a href="#implementa%C3%A7%C3%A3o-do-servant">Implementação do Servant</a></li><li><a href="#cliente-corba">Cliente CORBA</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#todo">Todo</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li><li><a href="#orb---object-request-broker">ORB - Object Request Broker</a></li><li><a href="#clientes">Clientes</a></li><li><a href="#servidores">Servidores</a></li><li><a href="#idl">IDL</a></li><li><a href="#reposit%C3%B3rio-de-interfaces">Repositório de interfaces</a></li><li><a href="#reposit%C3%B3rio-de-implementa%C3%A7%C3%A3o">Repositório de implementação</a></li><li><a href="#dynamic-invocation-interface">Dynamic Invocation Interface</a></li><li><a href="#interoperabilidade">Interoperabilidade</a></li><li><a href="#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li><li><a href="#oa---object-adapter">OA - Object Adapter</a></li><li><a href="#boa---basic-object-adapter">BOA - Basic Object Adapter</a></li><li><a href="#poa-portable-object-adapter">POA Portable Object Adapter</a></li><li><a href="#instala%C3%A7%C3%A3o-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li><li><a href="#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a></li><li><a href="#exemplo">Exemplo</a></li><li><a href="#criando-o-servidor">Criando o servidor</a></li><li><a href="#implementa%C3%A7%C3%A3o-do-servant">Implementação do Servant</a></li><li><a href="#cliente-corba">Cliente CORBA</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#todo">Todo</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
 <h2 id="introdu%C3%A7%C3%A3o" tabindex="-1">Introdução</h2>
 <h3 id="o-que-%C3%A9-corba%3F" tabindex="-1">O que é CORBA?</h3>
 <ul>
@@ -542,9 +546,8 @@ vida do serviço</li>
 <p>Incluir no arquivo <code>/etc/omniORB.cfg</code> a seguinte linha:</p>
 <pre><code class="language-text">InitRef = OmniNameService=corbaname::localhost
 </code></pre>
-<p>{{% note %}}
-O nome <strong>OmniNameService</strong> deve ser conhecido pelo <strong>servidor</strong> e pelo <strong>cliente</strong>.
-{{% /note %}}</p>
+<p {%="" note="" %="">{{% note %}}
+O nome <strong>OmniNameService</strong> deve ser conhecido pelo <strong>servidor</strong> e pelo <strong>cliente</strong>.</p>
 <p>Para iniciar o servidor de nomes do <strong>OmniORB</strong> use:</p>
 <pre><code class="language-bash">omniNames -start
 </code></pre>
@@ -576,7 +579,7 @@ omniNames: (0) 2019-12-30 15:36:29.517802: Checkpointing completed.
 <p><img src="/til/corba-01.webp" alt="Componentes do exemplo"></p>
 <h3 id="criando-a-idl" tabindex="-1">Criando a IDL</h3>
 <p>Arquivo de interface <code>Data.idl</code>:</p>
-<pre><code class="language-c++">#ifndef __DATADIST_IDL__
+<pre><code linenos="true" class="language-c++">#ifndef __DATADIST_IDL__
 #define __DATADIST_IDL__
 module Data
 {
@@ -607,9 +610,8 @@ omniidl -bdump   Data.idl
 <li><code>Data__POA/__init__.py</code></li>
 <li><code>Data/__init__.py</code></li>
 </ul>
-<p>{{% FIXME %}}
-Descrever os arquivos <strong>gerados</strong> em <code>python</code>.
-{{% /FIXME %}}</p>
+<p {%="" FIXME="" %="">{{% FIXME %}}
+Descrever os arquivos <strong>gerados</strong> em <code>python</code>.</p>
 <h4 id="gerando-c%2B%2B" tabindex="-1">Gerando C++</h4>
 <p>Ao executar o seguinte comando:</p>
 <pre><code class="language-bash">omniidl -bcxx Data.idl
@@ -627,7 +629,7 @@ Descrever os arquivos <strong>gerados</strong> em <code>python</code>.
 <li>classe <code>POA_Service!</code> - a classe esqueleto para o servidor</li>
 </ul>
 <h5 id="data.hh" tabindex="-1">Data.hh</h5>
-<pre><code class="language-c++">  // interface ServiceA
+<pre><code linenostart="85" class="language-c++">  // interface ServiceA
   class ServiceA {
   public:
     // Declarations for this interface type.
@@ -677,45 +679,44 @@ int main( int argc, char **argv )
 {
   try {
 </code></pre>
-<pre><code class="language-c++">    // (1) Iniciar o ORB
+<pre><code linenostart="17" class="language-c++">    // (1) Iniciar o ORB
     CORBA::ORB_var orb = CORBA::ORB_init( argc, argv );
 </code></pre>
-<pre><code class="language-c++">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+<pre><code linenostart="19" class="language-c++">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
     CORBA::Object_var       obj  = orb-&gt;resolve_initial_references( &quot;RootPOA&quot; );
     PortableServer::POA_var _poa = PortableServer::POA::_narrow( obj.in() );
 </code></pre>
-<pre><code class="language-c++">    // As operações definidas na interface são invocadas pelo objeto de referência.
+<pre><code linenostart="22" class="language-c++">    // As operações definidas na interface são invocadas pelo objeto de referência.
     // Um instância de CRequestSocketStream_i é iniciada
     PortableServer::Servant_var&lt;CServiceA_i&gt; myRequestServiceA = new CServiceA_i();
 </code></pre>
-<pre><code class="language-c++">    // o servidor e objetos é ativado no RootPOA
+<pre><code linenostart="25" class="language-c++">    // o servidor e objetos é ativado no RootPOA
     PortableServer::ObjectId_var myRequestServiceA_oid = _poa-&gt;activate_object( myRequestServiceA );
 </code></pre>
-<pre><code class="language-c++">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
+<pre><code linenostart="27" class="language-c++">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
     CORBA::Object_var SA_obj = myRequestServiceA-&gt;_this();
 </code></pre>
-<pre><code class="language-c++">    // Obtêm uma referência para o objeto e imprime seu IOR como string
+<pre><code linenostart="29" class="language-c++">    // Obtêm uma referência para o objeto e imprime seu IOR como string
     CORBA::String_var sior( orb-&gt;object_to_string( SA_obj.in() ) );
     cerr &lt;&lt; &quot;'&quot; &lt;&lt; (char *)sior &lt;&lt; &quot;'&quot; &lt;&lt; endl;
 </code></pre>
-<p>{{% note %}}
-Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.
-{{% /note %}}</p>
-<pre><code class="language-c++">    // (3) Vincular com o serviço de nomes
+<p {%="" note="" %="">{{% note %}}
+Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.</p>
+<pre><code linenostart="32" class="language-c++">    // (3) Vincular com o serviço de nomes
     // o serviço é definido pela diretiva InitRef e pelo identificador
     // &quot;OmniNameService&quot; no arquivo omniORB.cfg
     CORBA::Object_var obj1 = orb-&gt;resolve_initial_references( &quot;OmniNameService&quot; );
     assert( !CORBA::is_nil( obj1.in() ) );
 </code></pre>
-<pre><code class="language-c++">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
+<pre><code linenostart="37" class="language-c++">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
     assert( !CORBA::is_nil( nc.in() ) );
 </code></pre>
-<pre><code class="language-c++">    CosNaming::Name name;
+<pre><code linenostart="39" class="language-c++">    CosNaming::Name name;
     name.length( 1 );
     name[0].id = CORBA::string_dup( &quot;DataServiceName1&quot; );
     nc-&gt;rebind( name, SA_obj.in() );
 </code></pre>
-<pre><code class="language-c++">    //========================================================================
+<pre><code linenostart="43" class="language-c++">    //========================================================================
     myRequestServiceA-&gt;_remove_ref();
     //
     PortableServer::POAManager_var pmgr = _poa-&gt;the_POAManager();
@@ -731,7 +732,7 @@ Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <
   }
 </code></pre>
 <p>Tratar as exceções:</p>
-<pre><code class="language-c++">  catch( CORBA::TRANSIENT &amp; ) {
+<pre><code linenostart="57" class="language-c++">  catch( CORBA::TRANSIENT &amp; ) {
     cerr &lt;&lt; &quot;Caught system exception TRANSIENT -- unable to contact the server.&quot; &lt;&lt; endl;
   }
   catch( CORBA::OBJECT_NOT_EXIST &amp; ) {

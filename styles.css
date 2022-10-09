@@ -1321,6 +1321,10 @@ video {
   width: 3rem;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
 .w-24 {
   width: 6rem;
 }
@@ -1331,6 +1335,10 @@ video {
 
 .max-w-prose {
   max-width: 65ch;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .resize {
@@ -1633,8 +1641,6 @@ video {
 h1,  h2,  h3 {
   text-align: center;
   font-weight: 600;
-  --tw-text-opacity: 1;
-  color: rgb(59 130 246 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px) {
@@ -1751,6 +1757,7 @@ svg {
   padding-bottom: 0.125rem;
   font-size: 0.75rem;
   line-height: 1rem;
+  font-weight: 600;
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
@@ -1767,6 +1774,11 @@ svg {
 .hover\:bg-blue-300:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+}
+
+.hover\:text-slate-200:hover {
+  --tw-text-opacity: 1;
+  color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
 .hover\:text-white:hover {

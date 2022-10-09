@@ -26,20 +26,23 @@
       </div>
     </nav>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
         <h1>Certbot Hooks</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/certbot.html">certbot</a><a class="tag" href="/til/tag/hooks.html">hooks</a><a class="tag" href="/til/tag/letsencrypt.html">letsencrypt</a>
         </div><h2 id="exemplo" tabindex="-1">Exemplo</h2>
 <p>Exemplos retirados de <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-debian-8">How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8</a>.</p>
 <p>O certbot utiliza as portas 80 (HTTP) e 443 (HTTPS).</p>
 <p>Vamos usar apenas a porta 80.</p>
-<pre><code class="language-bash">sudo ufw allow http
+<pre><code linenos="false" class="language-bash">sudo ufw allow http
 </code></pre>
-<pre><code class="language-bash">sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com
+<pre><code linenos="false" class="language-bash">sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com
 </code></pre>
-<pre><code class="language-bash">crontab -e
+<pre><code linenos="false" class="language-bash">crontab -e
 </code></pre>
-<pre><code class="language-bash">15 3 * * * certbot renew --noninteractive --post-hook &quot;systemctl restart mosquitto&quot;
+<pre><code linenos="false" class="language-bash">15 3 * * * certbot renew --noninteractive --post-hook &quot;systemctl restart mosquitto&quot;
 </code></pre>
 <h2 id="op%C3%A7%C3%B5es" tabindex="-1">Opções</h2>
 <h3 id="--pre-hook-pre_hook" tabindex="-1"><code>--pre-hook PRE_HOOK</code></h3>

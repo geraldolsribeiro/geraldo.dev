@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Certbot Hooks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Certbot Hooks</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/certbot.html">certbot</a><a class="tag" href="/til/tag/hooks.html">hooks</a><a class="tag" href="/til/tag/letsencrypt.html">letsencrypt</a>
+        </div><h2 id="exemplo" tabindex="-1">Exemplo</h2>
+<p>Exemplos retirados de <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-debian-8">How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8</a>.</p>
+<p>O certbot utiliza as portas 80 (HTTP) e 443 (HTTPS).</p>
+<p>Vamos usar apenas a porta 80.</p>
+<pre><code class="language-bash">sudo ufw allow http
+</code></pre>
+<pre><code class="language-bash">sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d mqtt.example.com
+</code></pre>
+<pre><code class="language-bash">crontab -e
+</code></pre>
+<pre><code class="language-bash">15 3 * * * certbot renew --noninteractive --post-hook &quot;systemctl restart mosquitto&quot;
+</code></pre>
+<h2 id="op%C3%A7%C3%B5es" tabindex="-1">Opções</h2>
+<h3 id="--pre-hook-pre_hook" tabindex="-1"><code>--pre-hook PRE_HOOK</code></h3>
+<p>Comando a ser executado antes de obter um certificado.
+Se existirem vários hooks iguais somente um será executado.</p>
+<ul>
+<li>Parar um servidor.</li>
+</ul>
+<h3 id="--post-hook-post_hook" tabindex="-1"><code>--post-hook POST_HOOK</code></h3>
+<p>Comando a ser executado depois da tentativa de obter ou renovar o certificado.
+Se existirem vários hooks iguais somente um será executado.</p>
+<ul>
+<li>Reiniciar/iniciar um servidor</li>
+</ul>
+<h3 id="--deploy-hook-deploy_hook" tabindex="-1"><code>--deploy-hook DEPLOY_HOOK</code></h3>
+<p>Comando a ser executado uma vez para cada certificado emitido.
+São passados as seguintes variáveis para o shell:</p>
+<ul>
+<li><code>RENEWED_LINEAGE</code> contendo o caminho certificado (p.e.
+<code>/etc/letsencrypt/live/geraldo.dev</code>) que contém a chaves e o certificado.</li>
+<li><code>RENEWED_DOMAINS</code> contem uma lista separada por espaço dos certificados renovados (p.e. <code>geraldo.dev www.geraldo.dev</code>)</li>
+</ul>
+<h3 id="--disable-hook-validation" tabindex="-1"><code>--disable-hook-validation</code></h3>
+<blockquote>
+<p>Manual: Ordinarily the commands specified for --pre-
+hook/–post-hook/–deploy-hook will be checked for validity, to see if the
+programs being run are in the $PATH, so that mistakes can be caught early, even
+when the hooks aren’t being run just yet. The validation is rather simplistic
+and fails if you use more advanced shell constructs, so you can use this switch
+to disable it. (default: False)</p>
+</blockquote>
+<h3 id="--no-directory-hooks" tabindex="-1"><code>--no-directory-hooks</code></h3>
+<blockquote>
+<p>Manual: Disable running executables found in Certbot’s hook directories
+during renewal. (default: False)</p>
+</blockquote>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-debian-8">How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

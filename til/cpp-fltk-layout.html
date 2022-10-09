@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>C++ - Gerenciando layout em FLTK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>C++ - Gerenciando layout em FLTK</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/cpp.html">cpp</a><a class="tag" href="/til/tag/fltk.html">fltk</a>
+        </div><h2 id="introdu%C3%A7%C3%A3o" tabindex="-1">Introdução</h2>
+<p>O FLTK utiliza um sistema simples, porém versátil para redimensionar interfaces.</p>
+<h2 id="aplica%C3%A7%C3%A3o-inicial" tabindex="-1">Aplicação inicial</h2>
+<ul>
+<li>Para demonstrar o gerenciamento do layout criei uma aplicação composta de 9 botões com labels de 1 até 9.</li>
+<li>Note que eu criei os botões totalmente fora de ordem: 5, 2, 4, 8, 6, 1, 3, 7 e 9. Isto não importa para o layout.</li>
+<li>Todos os botões são filhos da janela principal.</li>
+</ul>
+<h3 id="arquivo-01.fl" tabindex="-1">Arquivo 01.fl</h3>
+<pre><code class="language-c++"># data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+Function {} {open
+} {
+  Fl_Window {} {
+    label 01 open selected
+    xywh {122 262 420 180} type Double visible
+  } {
+    Fl_Button {} {
+      label 5
+      xywh {140 60 140 60}
+    }
+    Fl_Button {} {
+      label 2
+      xywh {140 0 140 60}
+    }
+    Fl_Button {} {
+      label 4
+      xywh {0 60 140 60}
+    }
+    Fl_Button {} {
+      label 8
+      xywh {140 120 140 60}
+    }
+    Fl_Button {} {
+      label 6
+      xywh {280 60 140 60}
+    }
+    Fl_Button {} {
+      label 1
+      xywh {0 0 140 60}
+    }
+    Fl_Button {} {
+      label 3
+      xywh {280 0 140 60}
+    }
+    Fl_Button {} {
+      label 7
+      xywh {0 120 140 60}
+    }
+    Fl_Button {} {
+      label 9
+      xywh {280 120 140 60}
+    }
+  }
+}
+</code></pre>
+<h3 id="arquivo-makefile" tabindex="-1">Arquivo Makefile</h3>
+<p>Para realizar a compilação dos programas crie o seguinte <code>Makefile</code>:</p>
+<pre><code class="language-Makefile"># ----------------------------------------------------------------------
+# Copyright (C) 2017-2021 Geraldo Ribeiro &lt;geraldo@intmain.io&gt;
+# ----------------------------------------------------------------------
+
+PROGRAMS=01 02 03 04
+GENERATED=$(addsuffix .h, $(PROGRAMS)) $(addsuffix .cxx, $(PROGRAMS))
+
+CXXFLAGS+=-std=c++17
+CXXFLAGS+=`fltk-config --cxxflags`
+LDFLAGS+=`fltk-config --ldflags`
+
+# Geração de código
+%.cxx: %.fl
+	fluid -c $^
+
+# Opção de compilação 1
+%: %.cxx
+	fltk-config --compile $^
+
+# Opção de compilação 2
+#%: %.cxx
+#	$(CXX) $(LDFLAGS) $^ -o $@ $(LDFLAGS)
+
+
+all: $(PROGRAMS)
+
+clean:
+	rm -f $(PROGRAMS) $(GENERATED)
+</code></pre>
+<h3 id="gera%C3%A7%C3%A3o-de-c%C3%B3digo" tabindex="-1">Geração de código</h3>
+<p>Para gerar o código <strong>C++</strong> (<code>.cxx</code>) a partir do <strong>Fluid</strong> (<code>.fl</code>) basta digitar <code>make</code> que o código é gerado e compilado:</p>
+<pre><code class="language-bash">make
+fluid -c 01.fl
+fltk-config --compile 01.cxx
+</code></pre>
+<h3 id="arquivo-gerado-01.cxx" tabindex="-1">Arquivo gerado 01.cxx</h3>
+<pre><code class="language-c++">// generated by Fast Light User Interface Designer (fluid) version 1.0304
+
+#include &quot;01.h&quot;
+
+int main(int argc, char **argv) {
+  Fl_Double_Window* w;
+  { Fl_Double_Window* o = new Fl_Double_Window(420, 180, &quot;01&quot;);
+    w = o; if (w) {/* empty */}
+    { new Fl_Button(140, 60, 140, 60, &quot;5&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(140, 0, 140, 60, &quot;2&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(0, 60, 140, 60, &quot;4&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(140, 120, 140, 60, &quot;8&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(280, 60, 140, 60, &quot;6&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(0, 0, 140, 60, &quot;1&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(280, 0, 140, 60, &quot;3&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(0, 120, 140, 60, &quot;7&quot;);
+    } // Fl_Button* o
+    { new Fl_Button(280, 120, 140, 60, &quot;9&quot;);
+    } // Fl_Button* o
+    o-&gt;end();
+  } // Fl_Double_Window* o
+  w-&gt;show(argc, argv);
+  return Fl::run();
+}
+</code></pre>
+<h2 id="executando-a-aplica%C3%A7%C3%A3o-01" tabindex="-1">Executando a aplicação 01</h2>
+<p>Ao ser executada a aplicação <code>./01</code> notamos que o redimensionamento está desabilitado, pois
+temos na janela principal somente os botões de <em>enrolar</em>, <em>minimizar</em> e <em>fechar</em>
+habilitados.</p>
+<p>{{% img src=“/img/fltk-01-01.webp” alt=“Aplicação 01 sem possibilidade de redimensionamento.” %}}</p>
+<h2 id="aplica%C3%A7%C3%A3o-02" tabindex="-1">Aplicação 02</h2>
+<p>A aplicação 02 é uma cópia da 01 com redimensionamento (<code>resizable</code>) habilitado na janela principal.</p>
+<p>{{% img src=“/img/fltk-02-00.webp” alt=“Ativando redimensionamento na aplicação 02.” %}}</p>
+<p>Podemos ver pelo <code>diff</code> abaixo que apenas o flag <code>resizable</code> foi adicionado e o título da janela foi alterado para <code>02</code>.</p>
+<pre><code class="language-diff">diff 01.fl 02.fl
+8,9c8,9
+&lt;     label 01 open selected
+&lt;     xywh {122 262 420 180} type Double visible
+---
+&gt;     label 02 open selected
+&gt;     xywh {122 262 420 180} type Double resizable visible
+</code></pre>
+<p>Note que agora o botão de <em>maximizar</em> é adicionado:</p>
+<p>{{% img src=“/img/fltk-02-01.webp” alt=“Aplicação 02 em tamanho inicial.” %}}</p>
+<p>E podemos redimensionar a janela horizontalmente e verticalmente:</p>
+<p>{{% img src=“/img/fltk-02-02.webp” alt=“Aplicação 02 redimensionada horizontalmente.” %}}</p>
+<p>{{% img src=“/img/fltk-02-03.webp” alt=“Aplicação 02 redimensionada verticalmente.” %}}</p>
+<p>Note que todos os 9 botões são redimensionados da mesma forma.</p>
+<h2 id="aplica%C3%A7%C3%A3o-03" tabindex="-1">Aplicação 03</h2>
+<p>A aplicação 03 é uma cópia da 02 com redimensionamento habilitado no botão 5.</p>
+<p>{{% img src=“/img/fltk-03-00.webp” alt=“Ativando o redimensionamento para o botão 05 na aplicação 03.” %}}</p>
+<pre><code class="language-diff">8c8
+&lt;     label 02 open selected
+---
+&gt;     label 03 open selected
+13c13
+&lt;       xywh {140 60 140 60}
+---
+&gt;       xywh {140 60 140 60} resizable
+
+</code></pre>
+<p>{{% img src=“/img/fltk-03-01.webp” alt=“Aplicação 03 em tamanho inicial.” %}}</p>
+<p>Ao redimensionar a janela podemos notar alguns comportamentos:</p>
+<ul>
+<li>os botões 1, 3, 7 e 9 (diagonais de 5) permanecem com suas dimensões originais</li>
+<li>os botões 2 e 8 (acima e abaixo de 5) são redimensionados horizontalmente acompanhando o tamanho 5.</li>
+<li>os botões 4 e 6 (à direita e à esquerda de 5) são redimensionados verticalmente acompanhando o tamanho 5.</li>
+<li>comportamento válido quando se tem somente um widget marcado como <code>resizable</code>.</li>
+</ul>
+<p>{{% img src=“/img/fltk-03-02.webp” alt=“Aplicação 03 redimensionada.” %}}</p>
+<h2 id="aplica%C3%A7%C3%A3o-04" tabindex="-1">Aplicação 04</h2>
+<p>A aplicação 04 é uma cópia da 02 com redimensionamento habilitado no botão 9.</p>
+<p>{{% img src=“/img/fltk-04-01.webp” alt=“Aplicação 04 redimensionada.” %}}</p>
+<p>Observe que o mesmo comportamento geral é aplicado:</p>
+<ul>
+<li>diagonais são mantidas</li>
+<li>acima (e abaixo se houvesse) redimensionados acompanhando a largura de 9</li>
+<li>à esquerda (e à direita se houvesse) redimensionados acompanhando a altura de 9</li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.fltk.org/articles.php?L415">Article #415: How does resizing work?</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

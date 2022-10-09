@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Dígrafos no VIM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Dígrafos no VIM</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/vim.html">vim</a>
+        </div><p>Em modo de edição teclar <code>Ctrl+K</code> seguido de dois caracteres:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Dígrafo</th>
+<th style="text-align:center">Caractere</th>
+<th style="text-align:left">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">SE</td>
+<td style="text-align:center">§</td>
+<td style="text-align:left">SEction</td>
+</tr>
+<tr>
+<td style="text-align:center">DG</td>
+<td style="text-align:center">°</td>
+<td style="text-align:left">DeGree</td>
+</tr>
+<tr>
+<td style="text-align:center">-a</td>
+<td style="text-align:center">ª</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-o</td>
+<td style="text-align:center">º</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">Co</td>
+<td style="text-align:center">©</td>
+<td style="text-align:left">Copyright</td>
+</tr>
+<tr>
+<td style="text-align:center">PI</td>
+<td style="text-align:center">¶</td>
+<td style="text-align:left">Pilcrow</td>
+</tr>
+<tr>
+<td style="text-align:center">.M</td>
+<td style="text-align:center">·</td>
+<td style="text-align:left">Meddle dot</td>
+</tr>
+<tr>
+<td style="text-align:center">My</td>
+<td style="text-align:center">µ</td>
+<td style="text-align:left">Micro</td>
+</tr>
+<tr>
+<td style="text-align:center">±</td>
+<td style="text-align:center">±</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">0S</td>
+<td style="text-align:center">⁰</td>
+<td style="text-align:left">0 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">1S</td>
+<td style="text-align:center">¹</td>
+<td style="text-align:left">1 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">2S</td>
+<td style="text-align:center">²</td>
+<td style="text-align:left">2 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">3S</td>
+<td style="text-align:center">³</td>
+<td style="text-align:left">3 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">4S</td>
+<td style="text-align:center">⁴</td>
+<td style="text-align:left">4 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">9S</td>
+<td style="text-align:center">⁹</td>
+<td style="text-align:left">9 superescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">0s</td>
+<td style="text-align:center">₀</td>
+<td style="text-align:left">0 subescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">1s</td>
+<td style="text-align:center">₁</td>
+<td style="text-align:left">1 subescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">2s</td>
+<td style="text-align:center">₂</td>
+<td style="text-align:left">2 subescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">9s</td>
+<td style="text-align:center">₉</td>
+<td style="text-align:left">9 subescrito</td>
+</tr>
+<tr>
+<td style="text-align:center">14</td>
+<td style="text-align:center">¼</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">12</td>
+<td style="text-align:center">½</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">34</td>
+<td style="text-align:center">¾</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">o/</td>
+<td style="text-align:center">ø</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">O/</td>
+<td style="text-align:center">Ø</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-:</td>
+<td style="text-align:center">÷</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">A*</td>
+<td style="text-align:center">Α</td>
+<td style="text-align:left">Alfa (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">B*</td>
+<td style="text-align:center">Β</td>
+<td style="text-align:left">Beta (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">G*</td>
+<td style="text-align:center">Γ</td>
+<td style="text-align:left">Gama (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">D*</td>
+<td style="text-align:center">Δ</td>
+<td style="text-align:left">Delta (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">H*</td>
+<td style="text-align:center">Θ</td>
+<td style="text-align:left">Teta (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">L*</td>
+<td style="text-align:center">Λ</td>
+<td style="text-align:left">Lambda (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">S*</td>
+<td style="text-align:center">Σ</td>
+<td style="text-align:left">Sigma (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">F*</td>
+<td style="text-align:center">Φ</td>
+<td style="text-align:left">Phi (grefo)</td>
+</tr>
+<tr>
+<td style="text-align:center">Q*</td>
+<td style="text-align:center">Ψ</td>
+<td style="text-align:left">Psi (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">W*</td>
+<td style="text-align:center">Ω</td>
+<td style="text-align:left">Omega (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">a*</td>
+<td style="text-align:center">α</td>
+<td style="text-align:left">Alga (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">b*</td>
+<td style="text-align:center">β</td>
+<td style="text-align:left">Beta (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">g*</td>
+<td style="text-align:center">γ</td>
+<td style="text-align:left">Gama (greto)</td>
+</tr>
+<tr>
+<td style="text-align:center">d*</td>
+<td style="text-align:center">δ</td>
+<td style="text-align:left">Delta (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">e*</td>
+<td style="text-align:center">ε</td>
+<td style="text-align:left">Epslon (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">p*</td>
+<td style="text-align:center">π</td>
+<td style="text-align:left">Pi (grego)</td>
+</tr>
+<tr>
+<td style="text-align:center">-3</td>
+<td style="text-align:center">―</td>
+<td style="text-align:left">Barra horizontal</td>
+</tr>
+<tr>
+<td style="text-align:center">:X</td>
+<td style="text-align:center">※</td>
+<td style="text-align:left">Marca de referência</td>
+</tr>
+<tr>
+<td style="text-align:center">Eu</td>
+<td style="text-align:center">€</td>
+<td style="text-align:left">Euro</td>
+</tr>
+<tr>
+<td style="text-align:center">oC</td>
+<td style="text-align:center">℃</td>
+<td style="text-align:left">Graus Célsius</td>
+</tr>
+<tr>
+<td style="text-align:center">TM</td>
+<td style="text-align:center">™</td>
+<td style="text-align:left">Trademark</td>
+</tr>
+<tr>
+<td style="text-align:center">1R</td>
+<td style="text-align:center">Ⅰ</td>
+<td style="text-align:left">1 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">2R</td>
+<td style="text-align:center">Ⅱ</td>
+<td style="text-align:left">2 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">3R</td>
+<td style="text-align:center">Ⅲ</td>
+<td style="text-align:left">3 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">4R</td>
+<td style="text-align:center">Ⅳ</td>
+<td style="text-align:left">4 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">5R</td>
+<td style="text-align:center">Ⅴ</td>
+<td style="text-align:left">5 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">9R</td>
+<td style="text-align:center">Ⅸ</td>
+<td style="text-align:left">9 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">aR</td>
+<td style="text-align:center">Ⅹ</td>
+<td style="text-align:left">10 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">bR</td>
+<td style="text-align:center">Ⅺ</td>
+<td style="text-align:left">11 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">cR</td>
+<td style="text-align:center">Ⅻ</td>
+<td style="text-align:left">12 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">1r</td>
+<td style="text-align:center">ⅰ</td>
+<td style="text-align:left">1 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">2r</td>
+<td style="text-align:center">ⅱ</td>
+<td style="text-align:left">2 romano</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;-</td>
+<td style="text-align:center">←</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-&gt;</td>
+<td style="text-align:center">→</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-v</td>
+<td style="text-align:center">↓</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">-!</td>
+<td style="text-align:center">↑</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&gt;</td>
+<td style="text-align:center">↔</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">UD</td>
+<td style="text-align:center">↕</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;=</td>
+<td style="text-align:center">⇐</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">=&gt;</td>
+<td style="text-align:center">⇒</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">==</td>
+<td style="text-align:center">⇔</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">FA</td>
+<td style="text-align:center">∀</td>
+<td style="text-align:left">For all</td>
+</tr>
+<tr>
+<td style="text-align:center">TE</td>
+<td style="text-align:center">∃</td>
+<td style="text-align:left">There exists</td>
+</tr>
+<tr>
+<td style="text-align:center">/0</td>
+<td style="text-align:center">∅</td>
+<td style="text-align:left">Vazio</td>
+</tr>
+<tr>
+<td style="text-align:center">DE</td>
+<td style="text-align:center">∆</td>
+<td style="text-align:left">increment</td>
+</tr>
+<tr>
+<td style="text-align:center">NB</td>
+<td style="text-align:center">∇</td>
+<td style="text-align:left">nabla</td>
+</tr>
+<tr>
+<td style="text-align:center">(-</td>
+<td style="text-align:center">∈</td>
+<td style="text-align:left">Pertence a</td>
+</tr>
+<tr>
+<td style="text-align:center">RT</td>
+<td style="text-align:center">√</td>
+<td style="text-align:left">raiz</td>
+</tr>
+<tr>
+<td style="text-align:center">+Z</td>
+<td style="text-align:center">∑</td>
+<td style="text-align:left">Somatório</td>
+</tr>
+<tr>
+<td style="text-align:center">*P</td>
+<td style="text-align:center">∏</td>
+<td style="text-align:left">Produtório</td>
+</tr>
+<tr>
+<td style="text-align:center">Ob</td>
+<td style="text-align:center">∘</td>
+<td style="text-align:left">Ring operator</td>
+</tr>
+<tr>
+<td style="text-align:center">Sb</td>
+<td style="text-align:center">∙</td>
+<td style="text-align:left">Bullet operator</td>
+</tr>
+<tr>
+<td style="text-align:center">00</td>
+<td style="text-align:center">∞</td>
+<td style="text-align:left">Infinito</td>
+</tr>
+<tr>
+<td style="text-align:center">In</td>
+<td style="text-align:center">∫</td>
+<td style="text-align:left">Integral</td>
+</tr>
+<tr>
+<td style="text-align:center">DI</td>
+<td style="text-align:center">∬</td>
+<td style="text-align:left">Integral dupla</td>
+</tr>
+<tr>
+<td style="text-align:center">Io</td>
+<td style="text-align:center">∮</td>
+<td style="text-align:left">Integral de linha</td>
+</tr>
+<tr>
+<td style="text-align:center">Iu</td>
+<td style="text-align:center">⌠</td>
+<td style="text-align:left">Parte de cima da integral</td>
+</tr>
+<tr>
+<td style="text-align:center">Il</td>
+<td style="text-align:center">⌡</td>
+<td style="text-align:left">Parte de baixo da integral</td>
+</tr>
+<tr>
+<td style="text-align:center">.:</td>
+<td style="text-align:center">∴</td>
+<td style="text-align:left">Therefore</td>
+</tr>
+<tr>
+<td style="text-align:center">:.</td>
+<td style="text-align:center">∵</td>
+<td style="text-align:left">Because</td>
+</tr>
+<tr>
+<td style="text-align:center">::</td>
+<td style="text-align:center">∷</td>
+<td style="text-align:left">Proporção</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;/</td>
+<td style="text-align:center">〈</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">/&gt;</td>
+<td style="text-align:center">〉</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:center">FD</td>
+<td style="text-align:center">╱</td>
+<td style="text-align:left">Diagonal</td>
+</tr>
+<tr>
+<td style="text-align:center">BD</td>
+<td style="text-align:center">╲</td>
+<td style="text-align:left">Diagonal</td>
+</tr>
+<tr>
+<td style="text-align:center">FB</td>
+<td style="text-align:center">█</td>
+<td style="text-align:left">Full block</td>
+</tr>
+<tr>
+<td style="text-align:center">LB</td>
+<td style="text-align:center">▄</td>
+<td style="text-align:left">Lower block</td>
+</tr>
+<tr>
+<td style="text-align:center">TB</td>
+<td style="text-align:center">▀</td>
+<td style="text-align:left">Top block</td>
+</tr>
+<tr>
+<td style="text-align:center">fS</td>
+<td style="text-align:center">■</td>
+<td style="text-align:left">Black square</td>
+</tr>
+<tr>
+<td style="text-align:center">OS</td>
+<td style="text-align:center">□</td>
+<td style="text-align:left">White square</td>
+</tr>
+<tr>
+<td style="text-align:center">sB</td>
+<td style="text-align:center">▪</td>
+<td style="text-align:left">Small black square</td>
+</tr>
+<tr>
+<td style="text-align:center">0M</td>
+<td style="text-align:center">●</td>
+<td style="text-align:left">Black circle</td>
+</tr>
+<tr>
+<td style="text-align:center">0m</td>
+<td style="text-align:center">○</td>
+<td style="text-align:left">White circle</td>
+</tr>
+<tr>
+<td style="text-align:center">Ml</td>
+<td style="text-align:center">♂</td>
+<td style="text-align:left">Masculino</td>
+</tr>
+<tr>
+<td style="text-align:center">Fm</td>
+<td style="text-align:center">♀</td>
+<td style="text-align:left">Feminino</td>
+</tr>
+</tbody>
+</table>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://vimhelp.org/digraph.txt.html">Manual Vim: digraph</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

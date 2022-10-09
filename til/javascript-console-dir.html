@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Javascript - console.dir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Javascript - console.dir</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/javascript.html">javascript</a><a class="tag" href="/til/tag/console.html">console</a>
+        </div><p>Considere a seguinte página:</p>
+<pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;input id=&quot;clickMe&quot; type=&quot;button&quot; value=&quot;Clique aqui&quot;&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>Que quando aberta no navegador tem a seguinte aparência:</p>
+<p><img src="/til/javascript-console-dir-00.webp" alt="img"></p>
+<p>Para obter o elemento do botão poderiamos fazer o seguinte:</p>
+<pre><code class="language-javascript">var btn = document.getElementById( 'clickMe' );
+</code></pre>
+<p>Agora que temos o objeto botão armazenado em uma variável chamada <code>btn</code> podemos obter mais informações.</p>
+<p>Ao enviar a variável <code>btn</code> para a função <code>console.log</code> veremos a seguinte representação:</p>
+<pre><code class="language-javascript">console.log( btn )
+&lt;input id=&quot;clickMe&quot; type=&quot;button&quot; value=&quot;Clique aqui&quot;&gt;
+</code></pre>
+<p>Ao enviar a variável <code>btn</code> para a função <code>console.dir</code> teremos acesso a todas as propriedades internas do objeto.</p>
+<pre><code class="language-javascript">console.dir( btn )
+</code></pre>
+<p><img src="/til/javascript-console-dir-01.webp" alt="img"></p>
+<p>A lista de propriedades é muito longa, abaixo vemos um trecho com as funções que tratam eventos (cliques, drag, change, …)</p>
+<p><img src="/til/javascript-console-dir-02.webp" alt="img"></p>
+<h2 id="adicionado-um-evento-de-clique" tabindex="-1">Adicionado um evento de clique</h2>
+<pre><code class="language-javascript">// Definindo uma função de tratamento
+meuClique = function() { alert('Fui clicado'); }
+// Vinculando a função ao evento de clique do botão
+// Não usar `on`. Em vez de `onclick` use `click` 
+btn.addEventListener(&quot;click&quot;, meuClique);
+
+// Clicar no botão ou executar `btn.click()`
+</code></pre>
+<p>Ao clicar no botão uma janela é exibida:</p>
+<p><img src="/til/javascript-console-dir-03.webp" alt="img"></p>
+<p>Ao usar novamente o comando <code>console.dir( btn )</code> esperava ver no <code>onclick</code>
+alguma informação sobre a função de tratamento, mas estava <code>null</code>.</p>
+<p>Usando a função <code>getEventListeners</code> consegui localizar a função <code>meuClique</code></p>
+<p><img src="/til/javascript-console-dir-04.webp" alt="img"></p>
+<p><code>$_</code> retorna o valor da última expressão avaliada</p>
+<p><code>$0</code>, <code>$1</code>,<code>$2</code>, <code>$3</code> e <code>$4</code> referenciam os últimos 5 elementos inspecionados</p>
+<p><code>$(selector, [startNode])</code> referencia o primeiro elemento no DOM especificado pelo seletor CSS.</p>
+<pre><code class="language-bash">$('input')
+&lt;input id=&quot;clickMe&quot; type=&quot;button&quot; value=&quot;Clique aqui&quot;&gt;
+</code></pre>
+<p><code>$$(selector, [startNode])</code> retorna um array de objetos</p>
+<pre><code class="language-javascript">var images = $$('img');
+for (each in images) {
+  console.log(images[each].src);
+}
+</code></pre>
+<p><code>$x(path, [startNode])</code> retorna um array de elementos que batem com uma expressão XPath</p>
+<pre><code class="language-javascript">$x(&quot;//p&quot;)
+</code></pre>
+<p><code>copy</code> copia um objeto para a área de transferência</p>
+<pre><code class="language-javascript">copy($0);
+</code></pre>
+<p><code>monitor(function)</code> monitor a execução de uma função</p>
+<pre><code class="language-javascript">function sum(x, y) {
+  return x + y;
+}
+monitor(sum);
+
+sum(1,2)
+// function sum called with arguments: 1, 2
+</code></pre>
+<p><code>monitorEvents(object[, events])</code> monitora eventos</p>
+<pre><code class="language-javascript">monitorEvents(window, &quot;resize&quot;);
+// resize Event {isTrusted: true, type: &quot;resize&quot;, target: Window, currentTarget: Window, eventPhase: 2, …}
+// resize Event {isTrusted: true, type: &quot;resize&quot;, target: Window, currentTarget: Window, eventPhase: 2, …}
+</code></pre>
+<p><code>unmonitorEvents(object[, events])</code></p>
+<h2 id="mais-op%C3%A7%C3%B5es-do-console" tabindex="-1">Mais opções do console</h2>
+<pre><code class="language-javascript">const label = 'Adolescent Irradiated Espionage Tortoises';
+console.group(label);
+console.info('Leo');
+console.info('Mike');
+console.info('Don');
+console.info('Raph');
+console.groupEnd(label);
+</code></pre>
+<pre><code class="language-javascript">console.count();
+console.count('coffee');
+console.count();
+console.count();
+console.countReset();
+console.countReset('coffee');
+</code></pre>
+<pre><code class="language-javascript">console.table([
+  {
+    first: 'René',
+    last: 'Magritte',
+  },
+  {
+    first: 'Chaim',
+    last: 'Soutine',
+    birthday: '18930113',
+  },
+  {
+    first: 'Henri',
+    last: 'Matisse',
+  }
+]);
+</code></pre>
+<pre><code class="language-javascript">console.time();
+for (var i = 0; i &lt; 100000; i++) {
+  let square = i ** 2;
+}
+console.timeEnd();
+</code></pre>
+<pre><code class="language-javascript">const first = () =&gt; { second(); };
+const second = () =&gt; { third(); };
+const third = () =&gt; { fourth(); };
+const fourth = () =&gt; { console.trace(); };
+first();
+</code></pre>
+<pre><code class="language-javascript">console.log('%c Oh my heavens! ', 'background: #222; color: #bada55');
+</code></pre>
+<p>{{&lt; img src=“<a href="https://developers.google.com/web/updates/images/2015-05-20-get-and-debug-event-listeners/get-debug-event-listeners.gif">https://developers.google.com/web/updates/images/2015-05-20-get-and-debug-event-listeners/get-debug-event-listeners.gif</a>” alt=“img” &gt;}}</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/pt-BR/docs/Web/API/console/dir">MDN Console.dir()</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/api">Console API Reference</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/console/utilities">Console Utilities API Reference</a></li>
+<li><a href="https://www.w3schools.com/jsref/met_element_addeventlistener.asp">HTML DOM addEventListener() Method</a></li>
+<li><a href="https://stackoverflow.com/questions/7505623/colors-in-javascript-console">Colors in JavaScript console</a></li>
+<li><a href="https://developers.google.com/web/updates/2015/05/get-and-debug-event-listeners">Get and debug event listeners</a></li>
+<li>Sugestão de leitor <a href="https://www.websiteplanet.com/blog/html-guide-beginners/">Basic HTML Codes for Beginners</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

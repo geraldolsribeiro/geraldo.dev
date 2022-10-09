@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Eclipse Modeling Framework - Lendo e escrevendo XML</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Eclipse Modeling Framework - Lendo e escrevendo XML</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/eclipse.html">eclipse</a><a class="tag" href="/til/tag/EMF.html">EMF</a><a class="tag" href="/til/tag/XML.html">XML</a>
+        </div><p>EMF é uma API Java que permite definir modelos, criar, salvar e carregar suas
+instâncias em vários formatos (EMF, UML, XSD).</p>
+<p>A principal diferença para o Java é que os modelos podem ser definidos tanto
+estaticamente quanto dinamicamente em tempo de execução.</p>
+<p>EMF suporta múltiplos formatos para o modelo e para input e output das
+intâncias do modelo.</p>
+<p>EMF é uma API do tipo reflection e pode ser facilmente utilizada para gerar
+editores para seus modelos.</p>
+<p>O meta-modelo para definição do modelo consiste dos seguintes elementos:</p>
+<ul>
+<li><code>EClass</code></li>
+<li><code>EAttribute</code></li>
+<li><code>EOperation</code></li>
+<li>etc</li>
+</ul>
+<p>Estes elementos são agrupados em <code>EPackages</code> identificados unicamente por uma
+URI de namespace que pode ser conhecida através do XSD.</p>
+<p>Instâncias do modelo são compostas de <code>EObjects</code> (e classes de suporte como
+<code>EList</code>).</p>
+<p>Cada um destes elementos é representado por uma classe Java.</p>
+<h2 id="configura%C3%A7%C3%A3o-do-emf-e-namespace" tabindex="-1">Configuração do EMF e namespace</h2>
+<p>Existem três opções:</p>
+<ul>
+<li>namespace com prefixo explícito</li>
+<li>namespace sem prefixo (declarado como padrão)</li>
+<li>sem namespace</li>
+</ul>
+<h3 id="elemento-raiz-do-xml-no-namespace-com-prefixo-(xmlns%3Ans%3D%E2%80%9D%E2%80%A6%E2%80%9D%3E)" tabindex="-1">Elemento raiz do XML no namespace com prefixo (<code>xmlns:ns=”…”&gt;</code>)</h3>
+<pre><code class="language-xml">&lt;myRootElement xmlns:ns=&quot;http://example.com/myXml&quot; someAttribute=&quot;value&quot;&gt;
+   &lt;myAnotherElement anotherAttribute=&quot;value 2&quot;/&gt;
+&lt;myRootElement&gt;
+</code></pre>
+<p>Use a API <code>Resource.save(...)</code></p>
+<h3 id="elemento-raiz-do-xml-no-namespace-padr%C3%A3o-(%3Celm-xmlns%3D%E2%80%9D%E2%80%A6%E2%80%9D%3E)" tabindex="-1">Elemento raiz do XML no namespace padrão (<code>&lt;elm xmlns=”…”&gt;</code>)</h3>
+<pre><code class="language-xml">&lt;myRootElement xmlns=&quot;http://example.com/myXml&quot; someAttribute=&quot;value&quot;&gt;
+   &lt;myAnotherElement anotherAttribute=&quot;value 2&quot;/&gt;
+&lt;/myRootElement&gt;
+</code></pre>
+<p>Veja esta <a href="http://www.eclipse.org/forums/index.php?t=tree&amp;th=129347&amp;S=4a71b44b5931c4dbe7bac446b6ee10c6">dica</a></p>
+<h3 id="nenhuma-informa%C3%A7%C3%A3o-sobre-namespace-no-the-xml-(%3Celm%3E)" tabindex="-1">Nenhuma informação sobre namespace no the XML (<code>&lt;elm&gt;</code>)</h3>
+<p>Este é o pior caso pois o XML de entrada não se descreve suficientemente e você
+precisa conhecer ou chutar o <code>EPackage</code> correto para realizar o parser.</p>
+<p>Certamente seria melhor se você tivesse informação do namespace. Mas algumas
+vezes você não terá como influenciar a entrada a ser lida com o EMF.</p>
+<pre><code class="language-xml">&lt;myRootElement someAttribute=&quot;value&quot;&gt;
+   &lt;myAnotherElement anotherAttribute=&quot;value 2&quot;/&gt;
+&lt;/myRootElement&gt;
+</code></pre>
+<p>Se o elemento raiz do XML não possuir prefixo nem namespace então o EMF não
+será capaz de realizar o match com o <code>EPackage</code> e consequentemente não será
+capaz de carregar apropriadamente a menos que você registre um <code>EPackage</code> alvo
+com o <code>ResourceSet</code> global com uma URI nula.</p>
+<pre><code class="language-java">for (EPackage ePackage: eCorePackages) {
+	resourceSet.getPackageRegistry().put(null, ePackage);
+	// alternatively could call EPackage.Registry.INSTANCE.put(..)
+}
+</code></pre>
+<p>De acordo com a <a href="https://www.eclipse.org/forums/index.php/mv/msg/128831/#msg_397577">dica do
+forum</a> você
+não pode injetar a declaração faltante do XMLNS no XML, mas pode especificar
+<code>null</code> para o namespace e o pacote específico para mapear usando o pacote de
+registro do <code>ResourceSet</code>.</p>
+<h2 id="notas-gerais-sobre-salvar-e-carregar-xml-pelo-emf" tabindex="-1">Notas gerais sobre salvar e carregar XML pelo EMF</h2>
+<p>Quando carregar do XML ou salvar para o XML você precisa passar algumas das seguintes opções para os métodos <code>save</code> ou <code>load</code>:</p>
+<pre><code class="language-java">Map&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();
+options.put(XMLResource.OPTION_EXTENDED_META_DATA, Boolean.TRUE);
+// options.put(XMLResource.OPTION_RECORD_UNKNOWN_FEATURE, Boolean.TRUE);
+options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);
+</code></pre>
+<ul>
+<li><code>OPTION_EXTENDED_META_DATA</code> - cria elementos aninhados em vez de atributos. Não estou certo se isto influencia no carregamento</li>
+<li><code>OPTION_RECORD_UNKNOWN_FEATURE</code> - quando um elemento desconhecido for encontrado no carregamento não será lançada uma exceção de <code>unknown feature</code> e o campo será apenas pulado</li>
+<li><code>OPTION_ENCODING</code> – é o encoding para geração do XML, onde o padrão é ASCII. Não estou certo se isto influencia no carregamento</li>
+</ul>
+<p>Ver capítulo 13 do livro</p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://dzone.com/articles/emf-reading-model-xml-%E2%80%93-how">EMF: Reading a Model from XML - How to Correctly Declare the Namespace</a></li>
+<li><a href="https://blog.jakubholy.net/2011/01/03/emf-reading-a-model-from-xml-how-to-correctly-delcare-a-namespace-variants/">EMF: Reading a model from XML - how to correctly declare its namespace - variants</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

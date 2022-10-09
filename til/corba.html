@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>CORBA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>CORBA</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/corba.html">corba</a><a class="tag" href="/til/tag/IDL.html">IDL</a><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/Python.html">Python</a>
+        </div><p><div class="table-of-contents"><ul><li><a href="#introdu%C3%A7%C3%A3o">Introdução</a></li><li><a href="#orb---object-request-broker">ORB - Object Request Broker</a></li><li><a href="#clientes">Clientes</a></li><li><a href="#servidores">Servidores</a></li><li><a href="#idl">IDL</a></li><li><a href="#reposit%C3%B3rio-de-interfaces">Repositório de interfaces</a></li><li><a href="#reposit%C3%B3rio-de-implementa%C3%A7%C3%A3o">Repositório de implementação</a></li><li><a href="#dynamic-invocation-interface">Dynamic Invocation Interface</a></li><li><a href="#interoperabilidade">Interoperabilidade</a></li><li><a href="#coss---common-object-service-specification">COSS - Common Object Service Specification</a></li><li><a href="#oa---object-adapter">OA - Object Adapter</a></li><li><a href="#boa---basic-object-adapter">BOA - Basic Object Adapter</a></li><li><a href="#poa-portable-object-adapter">POA Portable Object Adapter</a></li><li><a href="#instala%C3%A7%C3%A3o-do-omniorb-no-debian">Instalação do omniORB no Debian</a></li><li><a href="#iniciar-o-servidor-de-nomes">Iniciar o servidor de nomes</a></li><li><a href="#exemplo">Exemplo</a></li><li><a href="#criando-o-servidor">Criando o servidor</a></li><li><a href="#implementa%C3%A7%C3%A3o-do-servant">Implementação do Servant</a></li><li><a href="#cliente-corba">Cliente CORBA</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#todo">Todo</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
+<h2 id="introdu%C3%A7%C3%A3o" tabindex="-1">Introdução</h2>
+<h3 id="o-que-%C3%A9-corba%3F" tabindex="-1">O que é CORBA?</h3>
+<ul>
+<li>é o acrônimo para <strong>Common Object Request Broker Architecture</strong></li>
+<li>é um framework para construção de sistemas distribuídos orientados a objetos</li>
+<li>é multiplataforma</li>
+<li>é independente de linguagem</li>
+<li>é um padrão aberto e extensível definido pela <em>Object Management Group</em></li>
+<li>clientes e servidores estão em diferentes máquinas</li>
+<li>programas clientes enviam mensagens para servidores remotos como se este estivesse locais (<em>location transparency</em>)</li>
+</ul>
+<h3 id="o-que-%C3%A9-a-omg%3F" tabindex="-1">O que é a OMG?</h3>
+<ul>
+<li><a href="http://www.omg.org">www.omg.org</a></li>
+<li>fundada em 1989</li>
+<li>somente provê especificações</li>
+<li>não provê implementações</li>
+<li>todas as especificações são free</li>
+</ul>
+<h3 id="corba-vs-soap%2Fxml-rpc" tabindex="-1">CORBA vs SOAP/XML-RPC</h3>
+<ul>
+<li><code>SOAP</code> e <code>XML-RPC</code> são protocolos wire</li>
+<li><code>CORBA</code> inclui:
+<ul>
+<li>um protocolo wire</li>
+<li><code>GIOP</code></li>
+<li>object model</li>
+<li><code>IDL</code></li>
+<li>mapeamento de linguagem</li>
+<li>serviços</li>
+<li>códigos de cliente e servidor portáveis  entre implementações CORBA</li>
+</ul>
+</li>
+</ul>
+<h3 id="corba-%C3%A9-pesado%3F" tabindex="-1">CORBA é pesado?</h3>
+<ul>
+<li>uma arquitetura mínima requer algumas dezenas de kB (segundo <a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a>)</li>
+</ul>
+<h2 id="orb---object-request-broker" tabindex="-1">ORB - Object Request Broker</h2>
+<ul>
+<li>é o núcleo da <em>Object Management Architecture</em></li>
+<li>integra:
+<ul>
+<li>diferentes linguagens</li>
+<li>diferentes arquiteturas</li>
+<li>diferentes sistemas operacionais</li>
+</ul>
+</li>
+<li>é responsável por:
+<ul>
+<li>encontrar uma implementação para uma requisição</li>
+<li>preparar implementações para receber requisições</li>
+<li>comunicar dados das requisições</li>
+</ul>
+</li>
+</ul>
+<h2 id="clientes" tabindex="-1">Clientes</h2>
+<ul>
+<li>possuem referências para objetos e invocam operações nestes objetos</li>
+<li>conhecem apenas a interface dos objetos do servidor</li>
+<li>não conhecem a implementação dos objetos nem os adaptadores utilizados por estas implementações</li>
+<li>invocam interfaces definidas por uma IDL</li>
+<li>invocam as implementações através de:
+<ul>
+<li>proxies (<em>IDL generated stubs</em>)</li>
+<li>DII (<em>Dynamic Invocation Interface</em>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="servidores" tabindex="-1">Servidores</h2>
+<ul>
+<li>se registram no ORB</li>
+<li>se disponibilizam para aceitar requisições</li>
+<li>implementam uma IDL</li>
+</ul>
+<h2 id="idl" tabindex="-1">IDL</h2>
+<ul>
+<li>provê interfaces independente de linguagem e sistema operacional</li>
+<li>é puramente declarativa (não provê detalhes de implementação)</li>
+<li>é fortemente tipada</li>
+<li>especificações podem ser escritas e invocadas em qualquer linguagem</li>
+</ul>
+<h3 id="idl-features" tabindex="-1">IDL Features</h3>
+<ul>
+<li>modules</li>
+<li>interfaces</li>
+<li>operations</li>
+<li>attributes</li>
+<li>inheritance</li>
+<li>basic types</li>
+<li>arrays</li>
+<li>sequences</li>
+<li>struct, enum, union</li>
+<li>typedef</li>
+<li>consts</li>
+<li>exceptions</li>
+</ul>
+<h3 id="tipos-b%C3%A1sicos" tabindex="-1">Tipos básicos</h3>
+<ul>
+<li>float</li>
+<li>double</li>
+<li>long</li>
+<li>short</li>
+<li>unsigned long</li>
+<li>unsigned short</li>
+<li>char</li>
+<li>boolean</li>
+<li>octet</li>
+<li>any</li>
+</ul>
+<h3 id="dire%C3%A7%C3%B5es-dos-par%C3%A2metros" tabindex="-1">Direções dos parâmetros</h3>
+<ul>
+<li><code>in</code> - do cliente para o servidor</li>
+<li><code>out</code> - do servidor para o cliente</li>
+<li><code>inout</code> - do cliente para o servidor e de volta para o cliente</li>
+</ul>
+<h3 id="exce%C3%A7%C3%B5es" tabindex="-1">Exceções</h3>
+<p>CORBA define dois tipos de exceções:</p>
+<ul>
+<li>
+<p><strong>system exceptions</strong>: exceções padrões definidas pelo CORBA</p>
+</li>
+<li>
+<p><strong>user defined exceptions</strong>: exceções definidas pelo usuário através da IDL</p>
+</li>
+<li>
+<p>Implicitamente, todas as operações definidas na IDL podem lançar qualquer uma das exceções padrão do sistema CORBA</p>
+</li>
+<li>
+<p>Nenhuma referência para exceções padrão devem aparecer na especificação da IDL</p>
+</li>
+<li>
+<p>para especificar que uma operação <strong>pode</strong> lançar uma exceção definida pelo usuário você deve:</p>
+<ul>
+<li>primeiro definir a estrutura da exceção</li>
+<li>incluir <code>raises</code> à definição da operação</li>
+</ul>
+</li>
+<li>
+<p>uma exceção da IDL pode conter membros</p>
+</li>
+</ul>
+<pre><code class="language-text">Interface Bank {
+  exception Reject {
+    string reason; // membro da exceção
+  };
+  exception TooMany {}; // exceção sem membros
+
+  Account newAccount( in string name ) raises (Reject, TooMany);
+};
+</code></pre>
+<h3 id="opera%C3%A7%C3%B5es-oneway" tabindex="-1">Operações oneway</h3>
+<pre><code class="language-text">Interface Account {
+  oneway void notice( in string notice );
+};
+</code></pre>
+<ul>
+<li>não bloqueantes</li>
+<li>não aceitam parâmetros <code>out</code> ou <code>inout</code></li>
+<li>não lançam exceções (não aceitam <code>raise</code>)</li>
+</ul>
+<p>The OMG CORBA specification defines the following exceptions:</p>
+<ul>
+<li><code>BAD_CONTEXT</code> - if a request does not contain a correct context this exception is raised.</li>
+<li><code>BAD_INV_ORDER</code> - this exception indicates that operations has been invoked operations in the wrong order, which would cause, for example, a dead-lock.</li>
+<li><code>BAD_OPERATION</code> - raised if the target object exists, but that the invoked operation is not supported.</li>
+<li><code>BAD_PARAM</code> - is thrown if, for example, a parameter is out of range or otherwise considered illegal.</li>
+<li><code>BAD_TYPECODE</code> - if illegal type code is passed, for example, encapsulated in an any data type the ‘BAD_TYPECODE’ exception will be raised.</li>
+<li><code>BAD_QOS</code> - raised whenever an object cannot support the required quality of service.</li>
+<li><code>CODESET_INCOMPATIBLE</code> - raised if two ORB’s cannot communicate due to different representation of, for example, char and/or wchar.</li>
+<li><code>COMM_FAILURE</code> - raised if an ORB is unable to setup communication or it is lost while an operation is in progress.</li>
+<li><code>DATA_CONVERSION</code> - raised if an ORB cannot convert data received to the native representation. See also the ‘CODESET_INCOMPATIBLE’ exception.</li>
+<li><code>FREE_MEM</code> - the ORB failed to free dynamic memory and failed.</li>
+<li><code>IMP_LIMIT</code> - an implementation limit was exceeded in the ORB at run time. A object factory may, for example, limit the number of object clients are allowed to create.</li>
+<li><code>INTERNAL</code> - an internal failure occurred in an ORB, which is unrecognized. You may consider contacting the ORB providers support.</li>
+<li><code>INTF_REPOS</code> - the ORB was not able to reach the interface repository, or some other failure relating to the interface repository is detected.</li>
+<li><code>INITIALIZE</code> - the ORB initialization failed due to, for example, network or configuration error.</li>
+<li><code>INVALID_TRANSACTION</code> - is raised if the request carried an invalid transaction context.</li>
+<li><code>INV_FLAG</code> - an invalid flag was passed to an operation, which caused, for example, a connection to be closed.</li>
+<li><code>INV_IDENT</code> - this exception indicates that an IDL identifier is incorrect.</li>
+<li><code>INV_OBJREF</code> - this exception is raised if an objet reference is malformed or a nil reference (see also corba:create_nil_objref/0).</li>
+<li><code>INV_POLICY</code> - the invocation cannot be made due to an incompatibility between policy overrides that apply to the particular invocation.</li>
+<li><code>MARSHAL</code> - this exception may be raised by the client- or server-side when either ORB is unable to marshal/unmarshal requests or replies.</li>
+<li><code>NO_IMPLEMENT</code> - if the operation exists but no implementation exists, this exception is raised.</li>
+<li><code>NO_MEMORY</code> - the ORB has run out of memory.</li>
+<li><code>NO_PERMISSION</code> - the caller has insufficient privileges, such as, for example, bad SSL certificate.</li>
+<li><code>NO_RESOURCES</code> - a general platform resource limit exceeded.</li>
+<li><code>NO_RESPONSE</code> - no response available of a deferred synchronous request.</li>
+<li><code>OBJ_ADAPTER</code> - indicates administrative mismatch; the object adapter is not able to associate an object with the implementation repository.</li>
+<li><code>OBJECT_NOT_EXIST</code> - the object have been disposed or terminated; clients should remove all copies of the object reference and initiate desired recovery process.</li>
+<li><code>PERSIST_STORE</code> - the ORB was not able to establish a connection to its persistent storage or data contained in the the storage is corrupted.</li>
+<li><code>REBIND</code> - a request resulted in, for example, a ‘LOCATION_FORWARD’ message; if the policies are incompatible this exception is raised.</li>
+<li><code>TIMEOUT</code> - raised if a request fail to complete within the given time-limit.</li>
+<li><code>TRANSACTION_MODE</code> - a transaction policy mismatch detected.</li>
+<li><code>TRANSACTION_REQUIRED</code> - a transaction is required for the invoked operation but the request contained no transaction context.</li>
+<li><code>TRANSACTION_ROLLEDBACK</code> - the transaction associated with the request has already been rolled back or will be.</li>
+<li><code>TRANSACTION_UNAVAILABLE</code> - no transaction context can be supplied since the ORB is unable to contact the Transaction Service.</li>
+<li><code>TRANSIENT</code> - the ORB could not determine the current status of an object since it could not be reached. The error may be temporary.</li>
+<li><code>UNKNOWN</code> - is thrown if an implementation throws a non-CORBA, or unrecognized, exception.</li>
+</ul>
+<h3 id="estruturas" tabindex="-1">Estruturas</h3>
+<pre><code class="language-text">struct PersonalDetails {
+  string name;
+  short age;
+};
+
+interface Bank {
+  PersonalDetails getPerDet(in string name);
+};
+</code></pre>
+<h3 id="arrays" tabindex="-1">Arrays</h3>
+<ul>
+<li>podem ser multidimensionais</li>
+<li>precisam ter tamanho fixo (<em>conhecido em tempo de definição</em>)</li>
+</ul>
+<pre><code class="language-text">Account bankAccounts[100];
+short matrix[10][20]; // 2D array
+</code></pre>
+<h3 id="constantes" tabindex="-1">Constantes</h3>
+<pre><code class="language-text">Interface Bank {
+  const long MaxAccounts = 10000;
+};
+</code></pre>
+<p>Contantes dos tipos <code>long</code>, <code>float</code> e <code>string</code> podem ser declarada.</p>
+<h3 id="typedef" tabindex="-1">Typedef</h3>
+<pre><code class="language-text">typedef short size;
+size i;
+
+typedef Account Accounts[100]; // acho que está invertido aqui
+Accounts bankAccounts;
+</code></pre>
+<h3 id="m%C3%B3dulos" tabindex="-1">Módulos</h3>
+<pre><code class="language-text">Module Finance {
+  interface Bank { ... };
+  interface Account { ... };
+};
+</code></pre>
+<ul>
+<li>são usados para agrupar interfaces em unidades lógicas</li>
+<li>utilize nomes completos (p.e. <code>Finance::Account *a;</code>)</li>
+</ul>
+<h3 id="preprocessador" tabindex="-1">Preprocessador</h3>
+<ul>
+<li>baseado no preprocessador do C++</li>
+<li>substituição de macro</li>
+<li>compilação condicional</li>
+<li>inclusão de IDL</li>
+<li><code>#include</code></li>
+<li><code>#define</code></li>
+<li><code>#if</code></li>
+<li><code>#ifdef</code></li>
+<li><code>#defined</code></li>
+</ul>
+<h3 id="mapeamento-para-linguagem" tabindex="-1">Mapeamento para linguagem</h3>
+<ul>
+<li>linguagens <em>OO</em> e <em>non-OO</em> acessam de modos diferentes</li>
+<li>tipos específicos da linguagem</li>
+<li>estrutura do <em>stub</em> cliente (somente para <em>non-OO</em>)</li>
+<li>interface de invocação dinâmica</li>
+<li>esqueleto de implementação</li>
+<li>adaptadores de objeto</li>
+<li>interface direta ao ORB</li>
+</ul>
+<h3 id="mapeamento-de-identificadores" tabindex="-1">Mapeamento de identificadores</h3>
+<ul>
+<li>usa o mesmo nome</li>
+<li>se for uma palavra reservada do C++ receberá um <code>_</code> como prefixo (p.e. <code>_new</code>)</li>
+</ul>
+<h3 id="mapeamento-de-interface" tabindex="-1">Mapeamento de interface</h3>
+<ul>
+<li>são mapeadas para classes</li>
+<li>uma IDL mapeada para uma classe C++ não pode ser instanciada</li>
+</ul>
+<pre><code class="language-text">Interface Account { ... }
+</code></pre>
+<p>será mapeado para:</p>
+<pre><code class="language-c++">class Account : public virtual CORBA::Object { ... }
+</code></pre>
+<h3 id="mapeamento-de-escopo" tabindex="-1">Mapeamento de escopo</h3>
+<h4 id="interface-para-classe" tabindex="-1">Interface para classe</h4>
+<pre><code class="language-text">Interface Bank {
+  struct Details { ... };
+};
+</code></pre>
+<p>será mapeado para:</p>
+<pre><code class="language-c++">class Bank {
+  public:
+    struct Details { ... };
+};
+</code></pre>
+<h4 id="module-para-namespace" tabindex="-1">Module para namespace</h4>
+<pre><code class="language-text">Module M {
+  Interface A { ... };
+  Interface B { ... };
+};
+</code></pre>
+<p>será mapeado para:</p>
+<pre><code class="language-c++">namespace M {
+  class A { ... };
+  class B { ... };
+};
+</code></pre>
+<p>Acessíveis via <code>M::A</code> e <code>M::B</code>.</p>
+<h3 id="mapeamento-do-m%C3%B3dulo-padr%C3%A3o-do-corba" tabindex="-1">Mapeamento do módulo padrão do CORBA</h3>
+<p>Será mapeado para:</p>
+<pre><code class="language-c++">namespace CORBA { ... }
+</code></pre>
+<p>Utilize os membros como:</p>
+<pre><code class="language-c++">CORBA::ORB_init( ... );
+</code></pre>
+<h3 id="mapeamento-de-tipos" tabindex="-1">Mapeamento de tipos</h3>
+<table>
+<thead>
+<tr>
+<th>IDL</th>
+<th>C++</th>
+<th>Tamanho e faixa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>short</td>
+<td>CORBA::Short</td>
+<td>16 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="17.289ex" height="2.072ex" role="img" focusable="false" viewBox="0 -833.9 7641.8 915.9" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(778,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(2234.8,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(3629,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(4629.2,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(6141.5,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(7141.8,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>15</mn></mrow></msup><mo>…</mo><mo>+</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>15</mn></mrow></msup><mo>−</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>long</td>
+<td>CORBA::Long</td>
+<td>32 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="17.289ex" height="2.072ex" role="img" focusable="false" viewBox="0 -833.9 7641.8 915.9" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(778,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" style="stroke-width: 3;"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(2234.8,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(3629,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(4629.2,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" style="stroke-width: 3;"/><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(6141.5,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(7141.8,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>31</mn></mrow></msup><mo>…</mo><mo>+</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>31</mn></mrow></msup><mo>−</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>long long</td>
+<td>CORBA::LongLong</td>
+<td>64 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="17.62ex" height="2.072ex" role="img" focusable="false" viewBox="0 -833.9 7788.2 915.9" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(778,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" style="stroke-width: 3;"/><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(2234.8,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(3629,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(4629.2,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(533,363) scale(0.707)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" style="stroke-width: 3;"/></g></g><g data-mml-node="mn" transform="translate(5565.8,0)"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(6288,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(7288.2,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>−</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>63</mn></mrow></msup><mo>…</mo><mo>+</mo><msup><mn>2</mn><mn>6</mn></msup><mn>3</mn><mo>−</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>unsigned short</td>
+<td>CORBA::UShort</td>
+<td>16 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="11.353ex" height="2.072ex" role="img" focusable="false" viewBox="0 -833.9 5017.9 915.9" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(666.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(2005.3,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(3517.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(4517.9,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>…</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>16</mn></mrow></msup><mo>−</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>unsigned long</td>
+<td>CORBA::ULong</td>
+<td>32 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.186ex;" xmlns="http://www.w3.org/2000/svg" width="11.353ex" height="2.072ex" role="img" focusable="false" viewBox="0 -833.9 5017.9 915.9" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(666.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(2005.3,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" style="stroke-width: 3;"/><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g><g data-mml-node="mo" transform="translate(3517.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(4517.9,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>…</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>32</mn></mrow></msup><mo>−</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>unsigned long long</td>
+<td>CORBA::ULongLong</td>
+<td>64 bit: <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.05ex;" xmlns="http://www.w3.org/2000/svg" width="7.456ex" height="1.954ex" role="img" focusable="false" viewBox="0 -841.7 3295.4 863.7" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(666.7,0)"><path data-c="2026" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z" style="stroke-width: 3;"/></g><g data-mml-node="msup" transform="translate(2005.3,0)"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g><g data-mml-node="TeXAtom" transform="translate(533,363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z" style="stroke-width: 3;"/><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(500,0)" style="stroke-width: 3;"/></g></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0</mn><mo>…</mo><msup><mn>2</mn><mrow data-mjx-texclass="ORD"><mn>64</mn></mrow></msup></math></mjx-assistive-mml></mjx-container></td>
+</tr>
+<tr>
+<td>float</td>
+<td>CORBA::Float</td>
+<td>32 bit IEEE single precision floating point number</td>
+</tr>
+<tr>
+<td>double</td>
+<td>CORBA::Double</td>
+<td>64 bit IEEE double precision floating point number</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>CORBA::LongDouble</td>
+<td>–</td>
+</tr>
+<tr>
+<td>char</td>
+<td>CORBA::Char</td>
+<td>8 bit</td>
+</tr>
+<tr>
+<td>wchar</td>
+<td>CORBA::WChar</td>
+<td>– (Wide Char)</td>
+</tr>
+<tr>
+<td>string</td>
+<td>CORBA::char *</td>
+<td>–</td>
+</tr>
+<tr>
+<td>wstring</td>
+<td>CORBA::WChar *</td>
+<td>–</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td>CORBA::Boolean</td>
+<td>true/false</td>
+</tr>
+<tr>
+<td>octet</td>
+<td>CORBA::Octet</td>
+<td>(unsigned char)  8 bit raw. Sem conversão</td>
+</tr>
+<tr>
+<td>any</td>
+<td>CORBA::Any</td>
+<td>Arbitrary</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reposit%C3%B3rio-de-interfaces" tabindex="-1">Repositório de interfaces</h2>
+<ul>
+<li>provê armazenamento para informações da IDL</li>
+<li>um programa pode referenciar objetos cuja interface será conhecida em tempo de execução</li>
+<li>estas informações podem ser usadas pelo ORB para realizar requisições</li>
+<li>pode armazenar outras informações sobre interfaces:
+<ul>
+<li>debugging</li>
+<li>info</li>
+<li>browser routines</li>
+</ul>
+</li>
+</ul>
+<h2 id="reposit%C3%B3rio-de-implementa%C3%A7%C3%A3o" tabindex="-1">Repositório de implementação</h2>
+<ul>
+<li>informações que o ORB utiliza para localizar e ativar implementações de um servidor de objetos</li>
+<li>armazena informações de ativação:
+<ul>
+<li>máquina onde um servidor pode ser iniciado a partir de uma requisição do cliente</li>
+</ul>
+</li>
+</ul>
+<h2 id="dynamic-invocation-interface" tabindex="-1">Dynamic Invocation Interface</h2>
+<ul>
+<li>Em vez de chamar um stub específico de uma operação, é possível especificar um objeto, operação e parâmetros para através de uma chamada ou sequência de chamadas</li>
+<li>o cliente precisa fornecer os tipos dos parâmetros passados</li>
+</ul>
+<h2 id="interoperabilidade" tabindex="-1">Interoperabilidade</h2>
+<ul>
+<li>suporta rede de objetos distribuídos em múltiplos ORBs (heterogêneos)</li>
+<li><em>InterORBability</em></li>
+<li><code>GIOP</code>: (General Inter-ORB Protocol) sintaxe padrão de transferência e conjunto de formato de mensagens</li>
+<li>ESIOP: (Environment Specific Inter-ORB Protocol) protocolo especializado</li>
+<li><code>IIOP</code>: mapeamento <code>TCP/IP</code> para <code>GIOP</code></li>
+</ul>
+<h2 id="coss---common-object-service-specification" tabindex="-1">COSS - Common Object Service Specification</h2>
+<ul>
+<li>naming</li>
+<li>events</li>
+<li>life cycle</li>
+<li>time</li>
+<li>transactions</li>
+<li>concurrency</li>
+<li>persistence</li>
+<li>query</li>
+<li>security</li>
+<li>licensing</li>
+<li>relationships</li>
+<li>properties</li>
+<li>externalization</li>
+<li>collection</li>
+</ul>
+<h2 id="oa---object-adapter" tabindex="-1">OA - Object Adapter</h2>
+<ul>
+<li>Conectam implementações de objetos ao ORB</li>
+<li>Ativam os múltiplos objetos implementados por um servidor</li>
+<li>Encaminhamento de requisições de serviço</li>
+<li>Geram <em>object references</em>
+<ul>
+<li>Para ter o status de <strong>CORBA Object</strong> o objeto deve ser registrado com o adaptador</li>
+</ul>
+</li>
+</ul>
+<h2 id="boa---basic-object-adapter" tabindex="-1">BOA - Basic Object Adapter</h2>
+<ul>
+<li>Presente na especificação CORBA até a revisão 2.1</li>
+<li>CORBA 2.2 substituiu o BOA pelo POA</li>
+<li>ORB com BOA significa que os servidores não são portáveis</li>
+</ul>
+<h2 id="poa-portable-object-adapter" tabindex="-1">POA Portable Object Adapter</h2>
+<ul>
+<li>O POA (<em>Portable Object Adapter</em>) auxilia o ORB (<em>Object Request Broker</em>) na
+passagem das requisições do clientes para a implementação do servidor
+(servant).</li>
+<li>O POA interpreta a requisição, empacota a passagem de parâmetros e então
+localiza o servant e os tratadores de recuperação erros e de segurança.</li>
+<li>Isto habilita portabilidade, independência de fabricantes e extensibilidade
+compatível com a especificação da OMG (Object Management Group)</li>
+<li>POA também habilita a persistência de objetos bem como dá suporte a ciclo de
+vida do serviço</li>
+<li>Identificadores de objetos automaticamente gerados ou especificados pelo usuário</li>
+<li>Ativação explícita ou por demanda</li>
+<li>Relação: um servant &lt;-&gt; um ou mais objetos CORBA</li>
+<li>Aplicação tem total controle sobre o comportamento e sobre a existência dos objetos CORBA</li>
+<li><em>Servants</em> podem usar esqueletos estáticos ou dinâmicos</li>
+</ul>
+<h3 id="identificador-de-objeto" tabindex="-1">Identificador de Objeto</h3>
+<ul>
+<li>Valor usado para identificar um objeto no contexto de um POA
+<ul>
+<li>Não é um identificador globalmente único!</li>
+</ul>
+</li>
+<li>Pode ser determinado pela aplicação ou gerado pelo POA
+<ul>
+<li><code>typedef sequence&lt;octet&gt; ObjectID;</code></li>
+</ul>
+</li>
+<li>O POA coloca esse valor no campo <em>object id</em> da IOR</li>
+</ul>
+<h3 id="o-campo-object-id-da-ior" tabindex="-1">O Campo Object Id da IOR</h3>
+<p><img src="/img/corba-ior-object-id.webp" alt=""></p>
+<h2 id="instala%C3%A7%C3%A3o-do-omniorb-no-debian" tabindex="-1">Instalação do omniORB no Debian</h2>
+<pre><code class="language-bash">apt install libomniorb4-dev omniidl omniorb omniorb-doc omniorb-nameserver omniidl-python python-omniorb
+</code></pre>
+<h2 id="iniciar-o-servidor-de-nomes" tabindex="-1">Iniciar o servidor de nomes</h2>
+<h3 id="omniorb" tabindex="-1">OmniORB</h3>
+<p>Incluir no arquivo <code>/etc/omniORB.cfg</code> a seguinte linha:</p>
+<pre><code class="language-text">InitRef = OmniNameService=corbaname::localhost
+</code></pre>
+<p>{{% note %}}
+O nome <strong>OmniNameService</strong> deve ser conhecido pelo <strong>servidor</strong> e pelo <strong>cliente</strong>.
+{{% /note %}}</p>
+<p>Para iniciar o servidor de nomes do <strong>OmniORB</strong> use:</p>
+<pre><code class="language-bash">omniNames -start
+</code></pre>
+<p>Exemplo de saída do comando acima:</p>
+<pre><code class="language-text">omniNames: (0) 2019-12-30 15:36:29.516974: Data file: '/var/lib/omniorb/omninames-erebo.dat'.
+omniNames: (0) 2019-12-30 15:36:29.517058: Starting omniNames for the first time.
+omniNames: (0) 2019-12-30 15:36:29.517348: Wrote initial data file '/var/lib/omniorb/omninames-erebo.dat'.
+omniNames: (0) 2019-12-30 15:36:29.517444: Read data file '/var/lib/omniorb/omninames-erebo.dat' successfully.
+omniNames: (0) 2019-12-30 15:36:29.517529: Root context is IOR:010000002b00000049444c3a6f6d672e6f72672f436f734e616d696e672f4e616d696e67436f6e746578744578743a312e300000010000000000000070000000010102000d0000003139322e3136382e302e31330000f90a0b0000004e616d6553657276696365000300000000000000080000000100000000545441010000001c000000010000000100010001000000010001050901010001000000090101000354544108000000ad430a5e010075e0
+omniNames: (0) 2019-12-30 15:36:29.517600: Checkpointing Phase 1: Prepare.
+omniNames: (0) 2019-12-30 15:36:29.517703: Checkpointing Phase 2: Commit.
+omniNames: (0) 2019-12-30 15:36:29.517802: Checkpointing completed.
+</code></pre>
+<p>A porta padrão é a <code>2809</code>.</p>
+<p>Os arquivos de controle serão criados por padrão no diretório <code>/var/lib/omniorb/</code>:</p>
+<ul>
+<li><code>/var/lib/omniorb/omninames-nome-da-maquina.dat</code></li>
+<li><code>/var/lib/omniorb/omninames-nome-da-maquina.bak</code></li>
+</ul>
+<p>Para especificar um diretório diferente use a opção <code>-logdir</code>:</p>
+<pre><code class="language-bash">omniNames -logdir /tmp -start
+</code></pre>
+<h3 id="mico" tabindex="-1">MICO</h3>
+<p>Para iniciar o servidor de nomes do <strong>MICO</strong> use:</p>
+<pre><code class="language-bash">nsd -ORBIIOPAddr inet:localhost:2809
+</code></pre>
+<p>Veja exemplo em <a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">Connecting 3 ORBs</a>.</p>
+<h2 id="exemplo" tabindex="-1">Exemplo</h2>
+<p><img src="/til/corba-01.webp" alt="Componentes do exemplo"></p>
+<h3 id="criando-a-idl" tabindex="-1">Criando a IDL</h3>
+<p>Arquivo de interface <code>Data.idl</code>:</p>
+<pre><code class="language-c++">#ifndef __DATADIST_IDL__
+#define __DATADIST_IDL__
+module Data
+{
+  interface ServiceA {
+    boolean CallServiceRoutineA (
+        in    long num1,
+        inout long num2,
+        out   long retNum );
+    boolean CallServiceRoutineB (
+        inout long num1,
+        inout long num2);
+  };
+};
+#endif
+</code></pre>
+<h3 id="gerando-backend-a-partir-da-idl" tabindex="-1">Gerando backend a partir da IDL</h3>
+<p>Use a opção <code>-b</code> para escolher o <code>backend</code> a ser gerado.</p>
+<pre><code class="language-bash">omniidl -bcxx    Data.idl
+omniidl -bpython Data.idl
+omniidl -bdump   Data.idl
+</code></pre>
+<h4 id="gerando-python" tabindex="-1">Gerando Python</h4>
+<pre><code class="language-bash">omniidl -bpython Data.idl
+</code></pre>
+<p>os arquivos abaixo são criados:</p>
+<ul>
+<li><code>Data_idl.py</code></li>
+<li><code>Data__POA/__init__.py</code></li>
+<li><code>Data/__init__.py</code></li>
+</ul>
+<p>{{% FIXME %}}
+Descrever os arquivos <strong>gerados</strong> em <code>python</code>.
+{{% /FIXME %}}</p>
+<h4 id="gerando-c%2B%2B" tabindex="-1">Gerando C++</h4>
+<p>Ao executar o seguinte comando:</p>
+<pre><code class="language-bash">omniidl -bcxx Data.idl
+</code></pre>
+<p>os arquivos abaixo são criados:</p>
+<ul>
+<li><code>Data.hh</code> - cabeçalho que será usado pelo cliente e pelo servidor</li>
+<li><code>DataSK.cc</code> - deve ser compilado e lincado com o programa que proverá a infraestrutura de comunicação</li>
+</ul>
+<p>Contendo os seguintes items:</p>
+<ul>
+<li>classe <code>ServiceA</code> contendo funções estáticas e definições de tipos</li>
+<li><code>ServiceA_ptr</code> - um ponteiro para o tipo do objeto de referência</li>
+<li><code>ServiceA_var</code> - um helper para gerenciamento de memória usado por <code>ServiceA_ptr</code></li>
+<li>classe <code>POA_Service!</code> - a classe esqueleto para o servidor</li>
+</ul>
+<h5 id="data.hh" tabindex="-1">Data.hh</h5>
+<pre><code class="language-c++">  // interface ServiceA
+  class ServiceA {
+  public:
+    // Declarations for this interface type.
+    typedef ServiceA_ptr _ptr_type;
+    typedef ServiceA_var _var_type;
+    static _ptr_type _duplicate(_ptr_type);
+    static _ptr_type _narrow(::CORBA::Object_ptr);
+    static _ptr_type _unchecked_narrow(::CORBA::Object_ptr);
+    static _ptr_type _nil();
+</code></pre>
+<h5 id="datask.cc" tabindex="-1"><a href="http://DataSK.cc">DataSK.cc</a></h5>
+<pre><code class="language-c++">// This file is generated by omniidl (C++ backend)- omniORB_4_2. Do not edit.
+
+#include &quot;Data.hh&quot;
+#include &lt;omniORB4/IOP_S.h&gt;
+#include &lt;omniORB4/IOP_C.h&gt;
+#include &lt;omniORB4/callDescriptor.h&gt;
+#include &lt;omniORB4/callHandle.h&gt;
+#include &lt;omniORB4/objTracker.h&gt;
+
+OMNI_USING_NAMESPACE(omni)
+...
+</code></pre>
+<h2 id="criando-o-servidor" tabindex="-1">Criando o servidor</h2>
+<h3 id="server.cc" tabindex="-1"><a href="http://Server.cc">Server.cc</a></h3>
+<p>Código do servidor:</p>
+<ol>
+<li>Iniciar o ORB</li>
+<li>Obter a referência para o POA raiz para registra-se</li>
+<li>Vincular com o serviço de nomes</li>
+<li>Iniciar o servidor de objetos</li>
+</ol>
+<pre><code class="language-c++">// Server.cc
+
+#include &lt;assert.h&gt;
+#include &lt;iostream&gt;
+#include &lt;signal.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string&gt;
+#include &lt;unistd.h&gt;
+#include &quot;CServiceA_i.hh&quot;
+#include &quot;Data.hh&quot;
+
+using namespace std;
+
+int main( int argc, char **argv )
+{
+  try {
+</code></pre>
+<pre><code class="language-c++">    // (1) Iniciar o ORB
+    CORBA::ORB_var orb = CORBA::ORB_init( argc, argv );
+</code></pre>
+<pre><code class="language-c++">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+    CORBA::Object_var       obj  = orb-&gt;resolve_initial_references( &quot;RootPOA&quot; );
+    PortableServer::POA_var _poa = PortableServer::POA::_narrow( obj.in() );
+</code></pre>
+<pre><code class="language-c++">    // As operações definidas na interface são invocadas pelo objeto de referência.
+    // Um instância de CRequestSocketStream_i é iniciada
+    PortableServer::Servant_var&lt;CServiceA_i&gt; myRequestServiceA = new CServiceA_i();
+</code></pre>
+<pre><code class="language-c++">    // o servidor e objetos é ativado no RootPOA
+    PortableServer::ObjectId_var myRequestServiceA_oid = _poa-&gt;activate_object( myRequestServiceA );
+</code></pre>
+<pre><code class="language-c++">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
+    CORBA::Object_var SA_obj = myRequestServiceA-&gt;_this();
+</code></pre>
+<pre><code class="language-c++">    // Obtêm uma referência para o objeto e imprime seu IOR como string
+    CORBA::String_var sior( orb-&gt;object_to_string( SA_obj.in() ) );
+    cerr &lt;&lt; &quot;'&quot; &lt;&lt; (char *)sior &lt;&lt; &quot;'&quot; &lt;&lt; endl;
+</code></pre>
+<p>{{% note %}}
+Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.
+{{% /note %}}</p>
+<pre><code class="language-c++">    // (3) Vincular com o serviço de nomes
+    // o serviço é definido pela diretiva InitRef e pelo identificador
+    // &quot;OmniNameService&quot; no arquivo omniORB.cfg
+    CORBA::Object_var obj1 = orb-&gt;resolve_initial_references( &quot;OmniNameService&quot; );
+    assert( !CORBA::is_nil( obj1.in() ) );
+</code></pre>
+<pre><code class="language-c++">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
+    assert( !CORBA::is_nil( nc.in() ) );
+</code></pre>
+<pre><code class="language-c++">    CosNaming::Name name;
+    name.length( 1 );
+    name[0].id = CORBA::string_dup( &quot;DataServiceName1&quot; );
+    nc-&gt;rebind( name, SA_obj.in() );
+</code></pre>
+<pre><code class="language-c++">    //========================================================================
+    myRequestServiceA-&gt;_remove_ref();
+    //
+    PortableServer::POAManager_var pmgr = _poa-&gt;the_POAManager();
+    pmgr-&gt;activate();
+    // (4) Iniciar o servidor de objetos para aceitar requisições dos clientes
+    orb-&gt;run();
+    //
+    // Se o ORB deixar o loop de tratamento de eventos
+    // Atualmente está configurado para nunca dar timeout
+    orb-&gt;destroy();
+    //
+    free( name[0].id ); // str_dup realiza um malloc internamente
+  }
+</code></pre>
+<p>Tratar as exceções:</p>
+<pre><code class="language-c++">  catch( CORBA::TRANSIENT &amp; ) {
+    cerr &lt;&lt; &quot;Caught system exception TRANSIENT -- unable to contact the server.&quot; &lt;&lt; endl;
+  }
+  catch( CORBA::OBJECT_NOT_EXIST &amp; ) {
+    cerr &lt;&lt; &quot;Caught system exception OBJECT_NOT_EXIST&quot; &lt;&lt; endl;
+  }
+  catch( CORBA::SystemException &amp; ) {
+    cerr &lt;&lt; &quot;Caught CORBA::SystemException.&quot; &lt;&lt; endl;
+  }
+  catch( CORBA::Exception &amp; ) {
+    cerr &lt;&lt; &quot;Caught CORBA::Exception.&quot; &lt;&lt; endl;
+  }
+  catch( omniORB::fatalException &amp;fe ) {
+    cerr &lt;&lt; &quot;Caught omniORB::fatalException:&quot; &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  file: &quot; &lt;&lt; fe.file() &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  line: &quot; &lt;&lt; fe.line() &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  mesg: &quot; &lt;&lt; fe.errmsg() &lt;&lt; endl;
+  }
+  catch( ... ) {
+    cerr &lt;&lt; &quot;Caught unknown exception.&quot; &lt;&lt; endl;
+  }
+
+  return 0;
+}
+</code></pre>
+<h2 id="implementa%C3%A7%C3%A3o-do-servant" tabindex="-1">Implementação do Servant</h2>
+<p>São denotados pelo sufixo <code>_i</code>.</p>
+<h3 id="cservicea_i.hh" tabindex="-1">CServiceA_i.hh</h3>
+<pre><code class="language-c++">// CServiceA_i.hh
+#include &quot;Data.hh&quot;
+
+class CServiceA_i : public POA_Data::ServiceA, public PortableServer::RefCountServantBase {
+public:
+  CServiceA_i();
+  virtual ~CServiceA_i();
+  virtual CORBA::Boolean CallServiceARoutineA(
+    /*in*/    CORBA::Long num1,
+    /*inout*/ CORBA::Long &amp;num2,
+    /*out*/   CORBA::Long &amp;retNum );
+  virtual CORBA::Boolean CallServiceARoutineB(
+    /*inout*/ CORBA::Long &amp;num1,
+    /*inout*/ CORBA::Long &amp;num2 );
+};
+</code></pre>
+<h3 id="cservicea_i.cc" tabindex="-1">CServiceA_i.cc</h3>
+<pre><code class="language-c++">// CServiceA.cc
+
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;string&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;vector&gt;
+
+#include &quot;CServiceA_i.hh&quot;
+
+using namespace Data;
+
+#include &lt;sys/wait.h&gt;
+
+CServiceA_i::CServiceA_i() { }
+
+CServiceA_i::~CServiceA_i( void ) { }
+
+CORBA::Boolean CallServiceARoutineA(
+    /*in*/    CORBA::Long num1,
+    /*inout*/ CORBA::Long &amp;num2,
+    /*out*/   CORBA::Long &amp;retNum )
+{
+  num2   = num2 + num1;
+  retNum = 10;
+  return true;
+}
+
+CORBA::Boolean CallServiceARoutineB(
+    /*inout*/ CORBA::Long &amp;num1,
+    /*inout*/ CORBA::Long &amp;num2 )
+{
+  num1++;
+  num2++;
+  return true;
+}
+</code></pre>
+<h2 id="cliente-corba" tabindex="-1">Cliente CORBA</h2>
+<p>{{&lt; img src=“/img/corba-client.webp” alt=“Cliente CORBA”&gt;}}</p>
+<h3 id="client.cc" tabindex="-1"><a href="http://Client.cc">Client.cc</a></h3>
+<pre><code class="language-c++">// Client.cc
+#include &quot;CRequestServiceA.hh&quot;
+
+int main( int argc, char **argv )
+{
+  // O construtor estabelece o link como o servidor CORBA.
+  CRequestServiceA requestServiceA;
+
+  if( requestServiceA.RequestServiceARoutineA() ) {
+    cout &lt;&lt; &quot;ServiceA RoutineA: True&quot; &lt;&lt; endl;
+  }
+  if( requestServiceA.RequestServiceARoutineB() ) {
+    cout &lt;&lt; &quot;ServiceA RoutineB: True&quot; &lt;&lt; endl;
+  }
+  return 0;
+}
+</code></pre>
+<h3 id="crrquestservicea.hh" tabindex="-1">CRrquestServiceA.hh</h3>
+<pre><code class="language-c++">// CRrquestServiceA.hh
+#include &quot;Data.hh&quot;
+#include &lt;cassert&gt;
+#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+
+class CRequestServiceA {
+public:
+  CRequestServiceA();
+  ~CRequestServiceA();
+  bool RequestServiceARoutineA();
+  bool RequestServiceARoutineB();
+
+  CosNaming::Name m_corbaCosName;
+
+  // CORBA ORB
+  CORBA::ORB_var m_orb;
+
+  CORBA::Object_var m_obj;  // ORB Object
+  CORBA::Object_var m_obj1; // Resolved id to object reference
+
+  // Resolved and narrowed CORBA object for proxy calls
+  Data::ServiceA_var m_Data;
+};
+
+class DS_ServerConnectionException {
+public:
+  DS_ServerConnectionException()
+  {
+    cerr &lt;&lt; &quot;CORBA COMM_FAILURE&quot; &lt;&lt; endl;
+  };
+};
+
+class DS_SystemException {
+public:
+  DS_SystemException()
+  {
+    cerr &lt;&lt; &quot;CORBA Exception&quot; &lt;&lt; endl;
+  };
+};
+
+class DS_FatalException {
+public:
+  DS_FatalException()
+  {
+    cerr &lt;&lt; &quot;CORBA Fatal Exception&quot; &lt;&lt; endl;
+  };
+};
+
+class DS_Exception {
+public:
+  DS_Exception()
+  {
+    cerr &lt;&lt; &quot;Exception&quot; &lt;&lt; endl;
+  };
+};
+</code></pre>
+<h3 id="crequestservicea.cc" tabindex="-1"><a href="http://CRequestServiceA.cc">CRequestServiceA.cc</a></h3>
+<pre><code class="language-c++">// CRequestServiceA.cc
+
+#include &quot;CRequestServiceA.hh&quot;
+using namespace Data;
+
+CRequestServiceA::CRequestServiceA()
+{
+  try {
+    // Inicia o objeto ORB
+    int            argc = 0; // Variáveis dummy.
+    char **        argv = 0;
+    CORBA::ORB_var orb  = CORBA::ORB_init( argc, argv );
+
+    // Vincula o objeto ORB ao servidor de nome
+    // Deve ser o mesmo nome definido em /etc/omniORB.cfg
+    CORBA::Object_var obj = orb-&gt;resolve_initial_references( &quot;OmniNameService&quot; );
+    assert( !CORBA::is_nil( obj.in() ) );
+
+    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj.in() );
+    assert( !CORBA::is_nil( nc.in() ) );
+
+    CosNaming::Name _corbaCosName;
+    _corbaCosName.length( 1 );
+    _corbaCosName[0].id = CORBA::string_dup( &quot;DataServiceName1&quot; );
+
+    CORBA::Object_var obj1 = nc-&gt;resolve( _corbaCosName );
+    assert( !CORBA::is_nil( obj1.in() ) );
+
+    m_Data = ServiceA::_narrow( obj1.in() );
+    if( CORBA::is_nil( m_Data.in() ) ) {
+      cerr &lt;&lt; &quot;IOR is not an SA object reference.&quot; &lt;&lt; endl;
+    }
+  }
+  catch( CORBA::COMM_FAILURE &amp;ex ) {
+    cerr &lt;&lt; &quot;Caught system exception COMM_FAILURE -- unable to contact the &quot;
+         &lt;&lt; &quot;object.&quot; &lt;&lt; endl;
+    throw DS_ServerConnectionException();
+    return;
+  }
+  catch( CORBA::SystemException &amp; ) {
+    cerr &lt;&lt; &quot;Caught a CORBA::SystemException.&quot; &lt;&lt; endl;
+    throw DS_SystemException();
+    return;
+  }
+  catch( CORBA::Exception &amp; ) {
+    cerr &lt;&lt; &quot;Caught CORBA::Exception.&quot; &lt;&lt; endl;
+    throw DS_Exception();
+    return;
+  }
+  catch( omniORB::fatalException &amp;fe ) {
+    cerr &lt;&lt; &quot;Caught omniORB::fatalException:&quot; &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  file: &quot; &lt;&lt; fe.file() &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  line: &quot; &lt;&lt; fe.line() &lt;&lt; endl;
+    cerr &lt;&lt; &quot;  mesg: &quot; &lt;&lt; fe.errmsg() &lt;&lt; endl;
+    throw DS_FatalException();
+    return;
+  }
+  catch( ... ) {
+    cerr &lt;&lt; &quot;Caught unknown exception.&quot; &lt;&lt; endl;
+    throw DS_Exception();
+    return;
+  }
+  return;
+}
+
+CRequestServiceA::~CRequestServiceA()
+{
+  // ...
+}
+
+bool CRequestServiceA::RequestServiceARoutineA()
+{
+  CORBA::Long num1 = 4;
+  CORBA::Long num2 = 5;
+  CORBA::Long retNum;
+
+  cout &lt;&lt; &quot;Valores de entrada para a rotina A do serviço A: &quot; &lt;&lt; num1 &lt;&lt; &quot; &quot; &lt;&lt; num2 &lt;&lt; &quot; &quot; &lt;&lt; retNum &lt;&lt; endl;
+
+  // Esta chamada CORBA será executada remotamente
+  if( m_Data-&gt;CallServiceRoutineA( num1, num2, retNum ) ) {
+    cout &lt;&lt; &quot;Valores retornados pelo serviço A: &quot; &lt;&lt; num1 &lt;&lt; &quot; &quot; &lt;&lt; num2 &lt;&lt; &quot; &quot; &lt;&lt; retNum &lt;&lt; endl;
+    return true;
+  }
+  return false;
+}
+
+bool CRequestServiceA::RequestServiceARoutineB()
+{
+  CORBA::Long num1 = 0;
+  CORBA::Long num2 = 50;
+
+  cout &lt;&lt; &quot;Valores de entrada para a rotina B do serviço A: &quot; &lt;&lt; num1 &lt;&lt; &quot; &quot; &lt;&lt; num2 &lt;&lt; endl;
+
+  // Esta chamada CORBA será executada remotamente
+  if( m_Data-&gt;CallServiceRoutineB( num1, num2 ) ) {
+    cout &lt;&lt; &quot;Valores retornados pelo serviço B: &quot; &lt;&lt; num1 &lt;&lt; &quot; &quot; &lt;&lt; num2 &lt;&lt; endl;
+    return true;
+  }
+  return false;
+}
+</code></pre>
+<h2 id="makefile" tabindex="-1">Makefile</h2>
+<pre><code class="language-makefile"># Makefile
+LDFLAGS+=-lomniORB4 -lomnithread -lomniDynamic4
+CXXFLAGS+=-Wall
+
+all: server client
+
+server: DataSK.o CServiceA_i.o Server.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+client: DataSK.o Client.o CRequestServiceA.o
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+clean:
+	rm -f *.o
+	rm -f server
+	rm -f client
+</code></pre>
+<p>This is the value of CORBA. This is why we use CORBA. Look at how simple the program looks. The constructor establishes the link with the CORBA server. The subsequent calls to Routine A and B are processed remotely on the CORBA server but called like any other local function call.</p>
+<h2 id="todo" tabindex="-1">Todo</h2>
+<ul>
+<li><a href="https://www.grisby.org/presentations/py10tut.pdf">https://www.grisby.org/presentations/py10tut.pdf</a></li>
+<li><a href="https://www.grisby.org/presentations/CORBAControls2002.pdf">https://www.grisby.org/presentations/CORBAControls2002.pdf</a></li>
+<li><a href="https://xennis.org/wiki/CORBA">https://xennis.org/wiki/CORBA</a> &lt;- tutorial que parece muito interessante</li>
+<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">http://www.mario-konrad.ch/blog/programming/connect_orbs.html</a></li>
+<li><a href="https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf">https://docs.oracle.com/cd/E13203_01/tuxedo/tux100/pdf/naming.pdf</a></li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.cse.iitb.ac.in/~rkj/talks/corba-tutorial.pdf">Introduction to Distributed Computing using CORBA</a></li>
+<li><a href="http://www.yolinux.com/TUTORIALS/CORBA.html">CORBA, C++ and Linux</a></li>
+<li><a href="https://www.cin.ufpe.br/~cagf/sdgrad/aulas/POA+GIOP.pdf">O Adaptador de Objetos e Interoperabilidade CORBA</a></li>
+<li><a href="http://www.mario-konrad.ch/blog/programming/connect_orbs.html">CORBA Tutorial: Connecting 3 ORBs</a></li>
+<li><a href="https://www.grisby.org/presentations/accu2003.pdf">CORBA? Isn’ t that Obsolete ?</a></li>
+<li>(local) [The omniORB IDL Compiler](file:///usr/share/doc/omniorb-doc/omniidl.html)</li>
+<li>(local) [The omniNames CORBA Naming Service](file:///usr/share/doc/omniorb-doc/omniNames.html)</li>
+<li>(local) [The OMNI Thread Abstraction](file:///usr/share/doc/omniorb-doc/omnithread.html)</li>
+<li>(local) [The omniORB utilities](file:///usr/share/doc/omniorb-doc/utilities.html)</li>
+<li>(local) [The omniORB version 4.2 Users’ Guide](file:///usr/share/doc/omniorb-doc/omniORB/index.html)</li>
+<li><a href="https://docs.oracle.com/cd/E13211_01/wle/cref/member.htm">Mapping of OMG IDL Statements to C++</a></li>
+<li><a href="http://www.cs.rpi.edu/~musser/dsc/idl/idl-overview_5.html">Raising Exceptions in IDL Operations</a></li>
+<li><a href="https://www.ime.usp.br/~reverbel/SMW-07/Slides/POA.pdf">O Portable Object Adapter</a></li>
+<li><a href="http://erlang.org/documentation/doc-5.7/lib/orber-3.6.11/doc/html/ch_exceptions.html">CORBA System and User Defined Exceptions</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

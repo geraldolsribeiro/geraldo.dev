@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Código de barras</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Código de barras</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/barcode.html">barcode</a>
+        </div><h2 id="ean" tabindex="-1">EAN</h2>
+<ul>
+<li>Esse código é usado principalmente nos pontos de venda porque permite fazer uma leitura mais simples.</li>
+<li>É o formato mais comum e contém uma sequência de números que totaliza 13 dígitos na maioria das vezes.</li>
+<li>Pode ser usado para as vendas ou o controle interno, porque o EAN armazena dados sobre a numeração única da unidade ou do lote.</li>
+<li>Esse código também se subdivide, como ocorre com o ISBN, que é voltado para livros e produtos semelhantes.</li>
+</ul>
+<p><img src="/til/codigo-de-barras_EAN-300x219.webp" alt="EAN"></p>
+<h2 id="databar" tabindex="-1">Databar</h2>
+<ul>
+<li>Tem um funcionamento similar ao do EAN-13 e pode ser usado no ponto de venda.</li>
+<li>A diferença é que tem um tamanho reduzido.</li>
+<li>Devido a essa característica, é utilizado principalmente em verduras, frutas e legumes, além de outros produtos menores, como joias e cosméticos.</li>
+<li>Outra característica é que o Databar pode armazenar dados sobre o prazo de validade, o que permite ter um controle maior das vendas e evitar que uma mercadoria vencida seja comercializada.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-DataBar.jpg" alt="Databar"></p>
+<h2 id="upc" tabindex="-1">UPC</h2>
+<ul>
+<li>É muito utilizado para identificar mercadorias nos Estados Unidos e no Canadá.</li>
+<li>Tem uma sequência de 12 números e é usado nos pontos de venda.</li>
+<li>A vantagem é que o UPC garante que o produto seja aceito em toda a América do Norte.</li>
+<li>Possui semelhanças com os códigos anteriores.</li>
+<li>Por exemplo: o UPC-A corresponde ao EAN-13 e o UPC-E é parecido com o Databar.</li>
+<li>Não é um código interessante para usar no Brasil, mas quem quer exportar para os Estados Unidos e o Canadá deve considerar o UPC.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-UPC-300x196.jpg" alt="UPC"></p>
+<h2 id="itf-14" tabindex="-1">ITF-14</h2>
+<ul>
+<li>Possui 14 dígitos e é mais voltado para unidades logísticas.</li>
+<li>É usado em operações internas para rastreio e localização de mercadorias nas mais diversas etapas logísticas.</li>
+<li>Pode ser usado diretamente nas caixas ou nos lotes de produtos, mas não tem validade para produtos únicos ou aqueles que chegarão aos pontos de venda.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-ITF-14-300x95.webp" alt="ITF-14"></p>
+<h2 id="c%C3%B3digo-128" tabindex="-1">Código 128</h2>
+<ul>
+<li>Esse também é um código indicado para aplicações logísticas.</li>
+<li>Ele apresenta informações que vão desde a data de validade até números de lote e de série.</li>
+<li>Sua composição é alfanumérica e seu tamanho pode variar conforme a aplicação.</li>
+<li>É bastante usado no transporte de produtos de saúde e oferece um rastreamento mais completo.</li>
+<li>Por meio do código 128 é possível encontrar onde a mercadoria está na cadeia logística e elevar a visibilidade de todo o processo.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-ean-128-300x169.jpg" alt="Código 128"></p>
+<h2 id="c%C3%B3digo-25-intercalado" tabindex="-1">Código 25 intercalado</h2>
+<ul>
+<li>O código 25 intercalado pode ser utilizado para o manuseio e o transporte de itens do tipo fichas, inventários, passagens aéreas e envelopes.</li>
+<li>No processo logístico é usado especialmente para equipamentos despachados, bagagens e cargas.</li>
+<li>Outra possibilidade é usá-lo em relógios de ponto, boletos de pagamento, entre outras possibilidades que não se ligam a um ponto de venda ou à logística.</li>
+<li>Seu comprimento pode variar.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-2de5-intercalado.jpg" alt="Legenda da imagem"></p>
+<h2 id="qr-code" tabindex="-1">QR code</h2>
+<ul>
+<li>Esse é um código criado para smartphones e outros dispositivos móveis. Devido a isso, é bidimensional e tem um padrão único.</li>
+<li>O escaneamento deve ser realizado com leitores próprios, que fazem o redirecionamento para uma página com informações sobre o produto, por exemplo.</li>
+<li>A vantagem é pode armazenar uma quantidade maior de informações e facilitar o conhecimento do consumidor a respeito do produto, situação chamada de embalagem estendida.</li>
+</ul>
+<p><img src="/til/codigo-de-barras-qrcode.jpg" alt="QR code"></p>
+<h2 id="datamatrix" tabindex="-1">DataMatrix</h2>
+<ul>
+<li>É semelhante ao QR code por ser bidimensional e com tamanho reduzido.</li>
+<li>Pode ser gravado no produto para ser inviolável.</li>
+<li>É mais utilizado na área de saúde por aumentar a confiabilidade e a rastreabilidade das informações.</li>
+<li>Como você pôde perceber, os vários tipos de códigos existentes servem para situações específicas, que melhoram a visibilidade do processo e facilitam as operações internas do seu negócio.</li>
+<li>E você, já adotou algum dos códigos de barras abordados?</li>
+<li>Se você tem algo a compartilhar ou possui uma dúvida, deixe seu comentário no post.</li>
+</ul>
+<p><img src="/til/codigo-de-barras_DATAMATRIX.webp" alt="DataMatrix"></p>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://ibid.com.br/blog/codigos-de-barras-conheca-os-8-tipos-existentes/">Códigos de barras: conheça os 8 tipos existentes</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

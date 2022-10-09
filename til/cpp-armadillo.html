@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Álgebra linear com Armadillo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Álgebra linear com Armadillo</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/armadillo.html">armadillo</a><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/cpp.html">cpp</a><a class="tag" href="/til/tag/álgebra linear.html">álgebra linear</a>
+        </div><p>Algebra linear com a biblioteca <strong>armadillo</strong>.</p>
+<div>
+$$
+A_{m,n} =
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
+\end{pmatrix}
+$$
+</div>
+<p><strong>Armadillo</strong> é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do <strong>Matlab</strong>.</p>
+<p>Provê suporte para:</p>
+<ul>
+<li>vetores (tensores de primeira ordem)</li>
+<li>matrizes (tensores de segunda ordem)</li>
+<li>cubos (tensores de terceira ordem)</li>
+<li>matrizes densas e esparsas</li>
+<li>números inteiros, de ponto flutuante e complexos</li>
+<li>decomposição (via LAPACK)</li>
+<li>multi-thread (Intel MKL ou OpenBLAS)</li>
+<li>avaliador de expressão baseado em meta-programação</li>
+<li>paralelização (via OpenMP)</li>
+</ul>
+<p>Principais usos:</p>
+<ul>
+<li>machine learning</li>
+<li>reconhecimento de padrões</li>
+<li>visão computacional</li>
+<li>processamento de sinais</li>
+<li>bioinformática</li>
+<li>estatística</li>
+<li>finanças</li>
+</ul>
+<h2 id="instala%C3%A7%C3%A3o-no-debian" tabindex="-1">Instalação no Debian</h2>
+<pre><code class="language-bash">apt install libarmadillo-dev
+</code></pre>
+<h2 id="instala%C3%A7%C3%A3o-no-macos" tabindex="-1">Instalação no MacOS</h2>
+<pre><code class="language-bash">brew install armadillo
+</code></pre>
+<h2 id="exemplos-de-uso" tabindex="-1">Exemplos de uso</h2>
+<pre><code class="language-c++">#include &lt;armadillo&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+using namespace arma;
+
+int main()
+{
+  // inicia o gerador de números aleatórios
+  arma_rng::set_seed_random();
+
+  // Cria uma matriz com dados aleatório com dimensão 2x3
+  auto A = randu( 2, 3 );
+  cout &lt;&lt; A &lt;&lt; endl;
+  //    0.7038   0.6819   0.9555
+  //    0.3804   0.9666   0.9270
+
+  // Transposta
+  cout &lt;&lt; A.t() &lt;&lt; endl;
+  //    0.7526   0.5681
+  //    0.5874   0.9469
+  //    0.3562   0.9346
+
+  // Multiplicação de matrizes
+  cout &lt;&lt; A.t() * A &lt;&lt; endl;
+  //    0.0536   0.2644   0.2534
+  //    0.4731   0.3874   0.9599
+  //    0.1739   0.3313   0.4768
+
+  mat B( 3, 3, fill::randu );
+  cout &lt;&lt; B &lt;&lt; endl;
+  //    0.9563   0.8955   0.0919
+  //    0.3291   0.3086   0.3452
+  //    0.1894   0.9898   0.8642
+
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( B ) &lt;&lt; endl;
+  // Determinante: -0.243228
+
+  auto C = randu( 3, 3 );
+  cout &lt;&lt; C &lt;&lt; endl;
+  //    0.5561   0.6219   0.2147
+  //    0.3105   0.2813   0.9172
+  //    0.3408   0.1925   0.4703
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( C ) &lt;&lt; endl;
+  // Determinante: -0.254525
+
+  mat D = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  cout &lt;&lt; D &lt;&lt; endl;
+  //    1.0000   2.0000   3.0000
+  //    4.0000   5.0000   6.0000
+  //    7.0000   8.0000   9.0000
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( D ) &lt;&lt; endl;
+  // Determinante: 6.66134e-16
+
+  D.row( 0 ) = D.row( 1 ) + D.row( 2 );
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  //  4.0000    5.0000    6.0000
+  //  7.0000    8.0000    9.0000
+
+  D.row( 1 ) = D.row( 1 ) * 5;
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  // 20.0000   25.0000   30.0000
+  //  7.0000    8.0000    9.0000
+  //
+
+  D.row( 2 ).zeros();
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  // 20.0000   25.0000   30.0000
+  //       0         0         0
+
+  D.col( 2 ) = D.col( 2 ) + 10;
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   25.0000
+  // 20.0000   25.0000   40.0000
+  //       0         0   10.0000
+
+  D = diagmat( D );
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000         0         0
+  //       0   25.0000         0
+  //       0         0   10.0000
+
+  D.save( &quot;D.bin&quot; );
+
+  D.save( &quot;D.txt&quot;, arma_ascii );
+  // ARMA_MAT_TXT_FN008
+  // 3 3
+  //    1.10000000000000e+01   0.00000000000000e+00   0.00000000000000e+00
+  //    0.00000000000000e+00   2.50000000000000e+01   0.00000000000000e+00
+  //    0.00000000000000e+00   0.00000000000000e+00   1.00000000000000e+01
+
+  auto O = ones( 2, 2 );
+  cout &lt;&lt; O &lt;&lt; endl;
+  // 1.0000   1.0000
+  // 1.0000   1.0000
+
+  auto Z = zeros( 3, 5 );
+  cout &lt;&lt; Z &lt;&lt; endl;
+  // 0        0        0        0        0
+  // 0        0        0        0        0
+  // 0        0        0        0        0
+
+  mat F1, F2;
+  F1.load( &quot;D.bin&quot; );
+  F2.load( &quot;D.txt&quot; );
+  cout &lt;&lt; F1 &lt;&lt; endl;
+  // 11.0000         0         0
+  //       0   25.0000         0
+  //       0         0   10.000
+
+  cout &lt;&lt; F1 - F2 &lt;&lt; endl;
+  // 0        0        0
+  // 0        0        0
+  // 0        0        0
+
+  mat F( 2, 3 );
+  F.fill( 3.14 );
+  cout &lt;&lt; F &lt;&lt; endl;
+  // 3.1400   3.1400   3.1400
+  // 3.1400   3.1400   3.1400
+
+  F = F.ones();
+  F.col( 0 ) *= datum::pi;
+  F.col( 1 ) *= datum::inf;
+  F.col( 2 ) *= datum::nan;
+  cout &lt;&lt; F &lt;&lt; endl;
+  // 3.1416      inf      nan
+  // 3.1416      inf      nan
+
+  return 0;
+}
+</code></pre>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="http://arma.sourceforge.net/">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

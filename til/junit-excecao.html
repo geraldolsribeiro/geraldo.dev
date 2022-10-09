@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Testando exceções com junit</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Testando exceções com junit</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/java.html">java</a><a class="tag" href="/til/tag/junit.html">junit</a><a class="tag" href="/til/tag/exceção.html">exceção</a><a class="tag" href="/til/tag/try-catch.html">try-catch</a>
+        </div><p>Este artigo apresenta uma visão suscinta sobre testes de exceção com JUnit usando o idioma <code>try/fail/catch</code>, o parâmetro <code>expected</code> da anotação <code>@Test</code> e a anotação <code>@Rule</code>.
+Cada um dos métodos apresenta prós e contras.</p>
+<h2 id="usando-bloco-try%2Fcatch" tabindex="-1">Usando bloco try/catch</h2>
+<pre><code class="language-java">@Test
+public void example1() {
+    try {
+        find(&quot;função que deveria lançar uma exceção&quot;);
+        fail();
+        // Ponto que nunca deveria ser alcançado quando o teste passar
+    } catch (NotFoundException e) {
+        assertThat(e.getMessage(), containsString(&quot;algo que indique que a exceção certa ocorreu&quot;));
+    }
+    // ... Outras exceções podem ser tratadas aqui.
+}
+</code></pre>
+<ul>
+<li>Vantagens:
+<ul>
+<li>Ter acesso à exceção para realizar outros procedimentos</li>
+<li>Poder realizar outros <em>asserts</em> na mesma função</li>
+<li>Funciona bem de os testes forem criado antes</li>
+</ul>
+</li>
+<li>Desvantagens:
+<ul>
+<li>Um erro comum é esquecer de incluir <code>fail()</code> como barreira causando um falso positivo</li>
+</ul>
+</li>
+</ul>
+<h2 id="%40test-(expected-%3D-exception.class)" tabindex="-1">@Test (expected = Exception.class)</h2>
+<pre><code class="language-java">public void example2() throws NotFoundException {
+    find(&quot;função que deveria lançar uma exceção&quot;);
+    // Ponto que nunca deveria ser alcançado quando o teste passar
+}
+</code></pre>
+<ul>
+<li>Vantagens:
+<ul>
+<li>Sintaxe muito mais concisa</li>
+<li>Favorece a escrita de teste focados em um único ponto</li>
+</ul>
+</li>
+<li>Desvantagens:
+<ul>
+<li>Não é possível realizar outros testes após o <code>find</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="expectedexception-rule" tabindex="-1">ExpectedException Rule</h2>
+<pre><code class="language-java">
+@Test
+public void example3() throws NotFoundException {
+    exception.expect(NotFoundException.class);
+    exception.expectMessage(containsString(&quot;algo que indique que a exceção certa ocorreu&quot;));
+    find(&quot;função que deveria lançar uma exceção&quot;);
+    // Ponto que nunca deveria ser alcançado quando o teste passar
+}
+</code></pre>
+<ul>
+<li>Vantagens:
+<ul>
+<li>Mais de uma expetativa sobre a mesma exceção podem ser testadas após o teste</li>
+</ul>
+</li>
+<li>Desvantagens:
+<ul>
+<li>Não é possível realizar outros testes após o <code>find</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="http://baddotrobot.com/blog/2012/03/27/expecting-exception-with-junit-rule/">Expecting Exceptions JUnit Rule</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

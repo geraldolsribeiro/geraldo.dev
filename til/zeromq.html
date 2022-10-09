@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>ZeroMQ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>ZeroMQ</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/zeromq.html">zeromq</a>
+        </div><ul>
+<li>
+<p>orientado a transporte de bytes (mensagens)</p>
+</li>
+<li>
+<p>inspirado no sistema de atores do erlang para trocar mensagens e evitar problemas comuns na programação concorrente</p>
+</li>
+<li>
+<p>resolve o problema de carregar bytes de um lugar para outro</p>
+</li>
+<li>
+<p>não é apenas um modelo de socket crú</p>
+</li>
+<li>
+<p>oferece alguns modelos de programação em cima de uma API baseada em socket</p>
+<ul>
+<li>publish/subscribe</li>
+<li>push/pull</li>
+<li>dealer-router</li>
+</ul>
+</li>
+<li>
+<p>comunicação entre threads</p>
+</li>
+<li>
+<p>suporta IPC</p>
+</li>
+<li>
+<p>suporta TCP</p>
+</li>
+<li>
+<p>suporta multicast UDP</p>
+</li>
+<li>
+<p>pattern match</p>
+</li>
+<li>
+<p>modelo de transporte eficiente</p>
+</li>
+<li>
+<p>escrito em C++ com API no estilo C</p>
+</li>
+<li>
+<p>push é um dos modelos mais rápidos, mas é o que demanda mais controle</p>
+</li>
+<li>
+<p>push usa round-robin para distribuir</p>
+</li>
+<li>
+<p>um publisher pode fazer bind com mais de um protocolo a mesmo tempo, assim um único send envia para dois ou mais protocolos</p>
+<ul>
+<li><code>publisher_socker.bind(&quot;tcp://*:60001&quot;);</code></li>
+<li><code>publisher_socker.bind(&quot;ipc://pub.ipc&quot;);</code></li>
+</ul>
+</li>
+<li>
+<p>prefira usar um socket só para enviar e outro só para receber</p>
+</li>
+<li>
+<p>defina afinidades para cada socket</p>
+</li>
+<li>
+<p>incluir explicação sobre ZMQ_ROUTER_HANDOVER no tempo 40:27</p>
+</li>
+</ul>
+<h3 id="socket-types" tabindex="-1">Socket types</h3>
+<ul>
+<li>
+<p><strong>Request/Reply pattern</strong>: usado para enviar uma requisição e receber posteriormente a resposta para cada mensagem enviada.</p>
+</li>
+<li>
+<p><strong>Publish/Subscribe pattern</strong>: usado para distribuir dados de um único processo (publisher) para múltiplos destinatários (subscribers).</p>
+</li>
+<li>
+<p><strong>Pipeline Pattern</strong>: Usado para distribuir dados entre nós conectados</p>
+</li>
+<li>
+<p><strong>Exclusive Pair Pattern</strong>: Usado para conectar dois nós</p>
+</li>
+<li>
+<p>REQ: request client</p>
+</li>
+<li>
+<p>REP: replay server</p>
+</li>
+<li>
+<p>PUSH: server</p>
+</li>
+<li>
+<p>PULL: client (worker)</p>
+</li>
+<li>
+<p>DEALER: client</p>
+</li>
+<li>
+<p>ROUTER: server</p>
+</li>
+</ul>
+<h2 id="tipo-de-transporte" tabindex="-1">Tipo de transporte</h2>
+<ul>
+<li>In-Process (INPROC): Local (in-process) communication transport.</li>
+<li>Inter-Process (IPC): Local (inter-process) communication transport.</li>
+<li>TCP: Unicast communication transport using TCP.</li>
+<li>PGM: Multicast communication transport using PGM.</li>
+</ul>
+<h2 id="veja-tamb%C3%A9m" tabindex="-1">Veja também</h2>
+<ul>
+<li>[nanomsg]({{&lt; ref “nanomsg” &gt;}} “nanomsg”)</li>
+<li>[sbe]({{&lt; ref “sbe” &gt;}} “Simple Binary Encoding”)</li>
+</ul>
+<h2 id="nnd" tabindex="-1">nnd</h2>
+<h2 id="sbe-simple-binary-encoding" tabindex="-1">SBE simple binary encoding</h2>
+<ul>
+<li><a href="https://github.com/real-logic/simple-binary-encoding">https://github.com/real-logic/simple-binary-encoding</a></li>
+<li>muito usado no mercado financeiro (stock exchanges)</li>
+<li>protocolo para mensagens de negócio</li>
+<li>Martin Tompson (especialista em desempenho dem JVM)</li>
+</ul>
+<h2 id="messagepack" tabindex="-1">MessagePack</h2>
+<ul>
+<li>serializador de alto desempenho</li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.infoq.com/br/presentations/mensagens-distribuidas-com-alto-desempenho-zeromq-e-aplicacoes-financeiras/">Mensagens distribuídas com alto desempenho: ZeroMQ e aplicações financeiras em larga escala</a></li>
+<li><a href="https://github.com/fabiogaluppo/samples/tree/master/events/qconsp2017/code">Código de exemplo da palestra do Fabio Galuppo</a></li>
+<li><a href="https://youtu.be/UrwtQfSbrOs">Video: ZeroMQ (ØMQ) Crash Course</a></li>
+<li><a href="https://brettviren.github.io/cppzmq-tour/">A tour of CPPZMQ, the C++ bindings to libzmq</a></li>
+<li><a href="https://jaxenter.com/using-zeromq-security-part-1-119346.html">Using ZeroMQ Security (Part 1)</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials/how-to-work-with-the-zeromq-messaging-library">How To Work with the ZeroMQ Messaging Library</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

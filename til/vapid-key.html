@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Criando VAPID key</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Criando VAPID key</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/web.html">web</a>
+        </div><p>VAPID (Voluntary Application Server Identification)
+é o novo meio de receber e enviar notificações push através da web.</p>
+<h2 id="cria%C3%A7%C3%A3o-usando-openssl" tabindex="-1">Criação usando openssl</h2>
+<pre><code class="language-bash">mkdir -p certs
+openssl ecparam -name prime256v1 -genkey -noout -out certs/vapid_private.pem
+openssl ec -in certs/vapid_private.pem -pubout  -out certs/vapid_public.pem
+openssl ec -in certs/vapid_private.pem -outform DER \
+  | tail -c +8 | head -c 32 | base64 | tr -d '=' | tr '/+' '_-' \
+  &gt; certs/private_key.txt
+openssl ec -in certs/vapid_private.pem -pubout -outform DER \
+  | tail -c 65 | base64 | tr -d '=' | tr '/+' '_-' \
+  &gt; certs/public_key.txt
+</code></pre>
+<h2 id="cria%C3%A7%C3%A3o-usando-web-push" tabindex="-1">Criação usando web-push</h2>
+<pre><code class="language-bash">npm install -g web-push
+web-push generate-vapid-keys
+</code></pre>
+<h2 id="push-services" tabindex="-1">Push services</h2>
+<ul>
+<li><a href="http://fcm.googleapi.com">fcm.googleapi.com</a> - firebase - Google</li>
+<li><a href="http://updates.push.service.mozilla.com">updates.push.service.mozilla.com</a> - Firefox</li>
+</ul>
+<h2 id="envio-atrav%C3%A9s-do-php-para-android" tabindex="-1">Envio através do PHP para android</h2>
+<pre><code class="language-php">&lt;?php
+
+// API access key from Google API's Console
+define( 'API_ACCESS_KEY', 'YOUR-API-ACCESS-KEY-GOES-HERE' );
+
+
+$registrationIds = array( $_GET['id'] );
+
+// prep the bundle
+$msg = array
+(
+	'message' 	=&gt; 'here is a message. message',
+	'title'		=&gt; 'This is a title. title',
+	'subtitle'	=&gt; 'This is a subtitle. subtitle',
+	'tickerText'	=&gt; 'Ticker text here...Ticker text here...Ticker text here',
+	'vibrate'	=&gt; 1,
+	'sound'		=&gt; 1,
+	'largeIcon'	=&gt; 'large_icon',
+	'smallIcon'	=&gt; 'small_icon'
+);
+
+$fields = array
+(
+	'registration_ids' 	=&gt; $registrationIds,
+	'data'			=&gt; $msg
+);
+ 
+$headers = array
+(
+	'Authorization: key=' . API_ACCESS_KEY,
+	'Content-Type: application/json'
+);
+ 
+$ch = curl_init();
+curl_setopt( $ch,CURLOPT_URL, 'https://android.googleapis.com/gcm/send' );
+curl_setopt( $ch,CURLOPT_POST, true );
+curl_setopt( $ch,CURLOPT_HTTPHEADER, $headers );
+curl_setopt( $ch,CURLOPT_RETURNTRANSFER, true );
+curl_setopt( $ch,CURLOPT_SSL_VERIFYPEER, false );
+curl_setopt( $ch,CURLOPT_POSTFIELDS, json_encode( $fields ) );
+$result = curl_exec($ch );
+curl_close( $ch );
+
+echo $result;
+</code></pre>
+<pre><code class="language-bash">ensure connection is secured, so CURLOPT_SSL_VERIFYPEER should be set to true
+</code></pre>
+<h2 id="envio-via-php-para-ios" tabindex="-1">Envio via PHP para IOS</h2>
+<pre><code class="language-php">&lt;?php
+
+    // Provide the Host Information.
+
+    $tHost = 'gateway.sandbox.push.apple.com';
+
+    $tPort = 2195;
+
+    // Provide the Certificate and Key Data.
+
+    $tCert = 'dev.pem';
+
+    // Provide the Private Key Passphrase (alternatively you can keep this secrete
+
+    // and enter the key manually on the terminal -&gt; remove relevant line from code).
+
+    // Replace XXXXX with your Passphrase
+
+    $tPassphrase = 'xxxxxx';
+
+    // Provide the Device Identifier (Ensure that the Identifier does not have spaces in it).
+
+    // Replace this token with the token of the iOS device that is to receive the notification.
+
+    $tToken = 'ada56107075e4d00f9da001b0ad71200cb953b99266e506884f6eab06f13f666';
+
+    // The message that is to appear on the dialog.
+
+    $empresa = &quot;Petiskeira&quot;;
+
+    $tAlert = $empresa . ' tem um recado para você!';
+
+    // The Badge Number for the Application Icon (integer &gt;=0).
+
+    $tBadge = 1;
+
+    // Audible Notification Option.
+
+    $tSound = 'default';
+
+    // The content that is returned by the LiveCode &quot;pushNotificationReceived&quot; message.
+
+    $tPayload = '{&quot;endereco&quot;:&quot;lauro oscar diefenthaeler&quot;,&quot;tel&quot;:&quot;51 3561-8797&quot;,&quot;numero&quot;:&quot;243&quot;,&quot;complemento&quot;:&quot;0&quot;,&quot;id&quot;:&quot;9&quot;,&quot;nome&quot;:&quot;petiskeira&quot;,&quot;msg&quot;:&quot;Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.&quot;}';
+
+    // Create the message content that is to be sent to the device.
+
+    $tBody['aps'] = array (
+
+    'alert' =&gt; $tAlert,
+
+    'badge' =&gt; $tBadge,
+
+    'sound' =&gt; $tSound,
+
+    );
+
+    $tBody ['payload'] = $tPayload;
+
+    // Encode the body to JSON.
+
+    $tBody = json_encode ($tBody);
+
+    // Create the Socket Stream.
+
+    $tContext = stream_context_create ();
+
+    stream_context_set_option ($tContext, 'ssl', 'local_cert', $tCert);
+
+    // Remove this line if you would like to enter the Private Key Passphrase manually.
+
+    stream_context_set_option ($tContext, 'ssl', 'passphrase', $tPassphrase);
+
+    // Open the Connection to the APNS Server.
+
+    $tSocket = stream_socket_client ('ssl://'.$tHost.':'.$tPort, $error, $errstr, 30, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $tContext);
+
+    // Check if we were able to open a socket.
+
+    if (!$tSocket)
+
+    exit (&quot;APNS Connection Failed: $error $errstr&quot; . PHP_EOL);
+
+    // Build the Binary Notification.
+
+    $tMsg = chr (0) . chr (0) . chr (32) . pack ('H*', $tToken) . pack ('n', strlen ($tBody)) . $tBody;
+
+    // Send the Notification to the Server.
+
+    $tResult = fwrite ($tSocket, $tMsg, strlen ($tMsg));
+
+    if ($tResult){
+
+    echo 'Delivered Message to APNS' . PHP_EOL;
+
+    }else
+
+    echo 'Could not Deliver Message to APNS' . PHP_EOL;
+
+    // Close the Connection to the Server.
+
+    fclose ($tSocket);
+
+?&gt;
+</code></pre>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://github.com/rtancman/flask-pywebpush/blob/master/Makefile">Makefile do flask-pywebpush</a></li>
+<li><a href="https://www.rtancman.com.br/python/criando-sistema-de-notificacoes-com-pywebpush.html">Criando um sistema de notificações com pywebpush</a></li>
+<li><a href="https://medium.com/izettle-engineering/beginners-guide-to-web-push-notifications-using-service-workers-cb3474a17679">Beginners guide to Web Push Notifications using Service Workers</a></li>
+<li><a href="https://gist.github.com/prime31/5675017">gits: envio de webpush usando PHP</a> Aqui tem muitos comentários importantes</li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

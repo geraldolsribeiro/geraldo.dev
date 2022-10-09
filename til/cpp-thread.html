@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Thread em C++</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Thread em C++</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/cpp.html">cpp</a><a class="tag" href="/til/tag/thread.html">thread</a>
+        </div><h2 id="thread-com-fun%C3%A7%C3%A3o-sem-argumentos" tabindex="-1">Thread com função sem argumentos</h2>
+<pre><code class="language-c++">void foo() {
+  cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+}
+
+void run () {
+  thread t1( foo );
+  // Algum processamento...
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-fun%C3%A7%C3%A3o-passando-par%C3%A2metros-por-valor" tabindex="-1">Thread com função passando parâmetros por valor</h2>
+<pre><code class="language-c++">void fooByRef( int &amp; a ) {
+  while( true ) {
+    cout &lt;&lt; &quot;O valor é &quot; &lt;&lt; a &lt;&lt; endl;
+    this_thread::sleep_for( chrono::milliseconds( 1000 ) );
+  }
+}
+
+void run () {
+  int p = 9;
+  thread t2( fooByRef, std::ref( p ) ); // usar o wrapper ref para não passar por valor
+  // Algum processamento...
+  this_thread::sleep_for( chrono::milliseconds( 5000 ) );
+  p = 30;
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-fun%C3%A7%C3%A3o-passando-par%C3%A2metros-por-refer%C3%AAncia" tabindex="-1">Thread com função passando parâmetros por referência</h2>
+<pre><code class="language-c++">void foo( int a, int b ) {
+}
+
+void run () {
+  int p = 9;
+  int q = 8;
+  thread t1( foo, p, q );
+  // Algum processamento...
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-classe-callable" tabindex="-1">Thread com classe callable</h2>
+<pre><code class="language-c++">class CallableClass {
+  public:
+    void operator()() {
+      cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+    }
+};
+
+void run() {
+  CallableClass obj;
+  thread t2( obj );
+  // Algum processamento...
+  t2.join();
+}
+</code></pre>
+<h2 id="thread-com-lambda" tabindex="-1">Thread com lambda</h2>
+<pre><code class="language-c++">// Sintaxe
+// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
+// [capture-list]( params ) -&gt; ret { body }
+// [capture-list]( params ) { body }
+// [capture-list]{ body }
+
+void run() {
+  thread t3( []{
+    cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+  } );
+  // Algum processamento...
+  t3.join();
+}
+</code></pre>
+<h2 id="join%2C-detach-e-terminate" tabindex="-1">Join, detach e terminate</h2>
+<ul>
+<li>Uma thread representa um objeto de execução em nível de hardware e está num estado chamado <em>joinable</em></li>
+<li>A opções no estado <em>joinable</em> são:
+<ul>
+<li><code>join</code> - introduz um ponto de sincronismo e bloqueia a execução</li>
+<li><code>detach</code> - faz a execução continuar em modo independente</li>
+</ul>
+</li>
+<li>Após esta escolha a thread se torna <em>non joinable</em></li>
+<li>Se esquecer de realizar o join ou detach a função <code>std::terminate</code> será chamada pelo destrutor</li>
+<li>Um programa com <code>std::terminate</code> é considerado não seguro.</li>
+</ul>
+<h2 id="tratamento-de-exce%C3%A7%C3%A3o" tabindex="-1">Tratamento de exceção</h2>
+<p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
+<strong>RAII - Resource acquisition is initialization</strong>.</p>
+<p>RAII:</p>
+<ul>
+<li><em>Construtor adquire os recursos</em></li>
+<li><em>Destrutor libera os recursos</em></li>
+</ul>
+<p>Exemplo de código com problema:</p>
+<pre><code class="language-c++">void run() {
+  thread t4( foo );
+  throw runtime_error( &quot;Algum erro antes do join/detach&quot; );
+  t4.join(); // esta linha nunca vai ser executada
+}
+</code></pre>
+<p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
+sempre executado quando o objeto sair do contexto.</p>
+<pre><code class="language-c++">class ThreadGuard {
+  thread &amp; mThread;
+
+  public:
+    // garantir que não haverá conversões implícitas
+    explicit ThreadGuard( thread &amp; t ) : mThread( t ) {  }
+
+    // realiza o join pelo destrutor
+    ~ThreadGuard() { if( mThread.joinable() ) { mThread.join(); } }
+
+    // não permite o uso dos contrutores de cópia e atribuição
+    ThreadGuard( const ThreadGuard &amp; ) = delete;
+    ThreadGuard &amp; operator= ( const ThreadGuard &amp; ) = delete;
+};
+
+void run() {
+  thread t4( foo );
+  ThreadGuard tg( t4 ); // quando sair do escopo o join será chamado
+  throw runtime_error( &quot;Este erro não afeta a thread acima&quot; );
+}
+</code></pre>
+<h2 id="transferindo-a-posse-das-threads" tabindex="-1">Transferindo a posse das threads</h2>
+<pre><code class="language-c++">void foo() { }
+void bar() { }
+
+void run() {
+  thread t1( foo );
+  // thread t2 = t1; // Se fizer isso vai gerar erro de compilação
+
+  // usar move para transferir a posse da thread
+  thread t2 = std::move( t1 ); // t1 não é mais dono da thread
+  t1 = thread( bar ); // t1 tem nova thread
+
+  t1.join();
+  t2.join();
+}
+</code></pre>
+<h2 id="thread%3A%3Aget_id()" tabindex="-1">thread::get_id()</h2>
+<ul>
+<li>retorna um id único para cada thread ativa em execução</li>
+<li>retorna 0 para todas as threads não ativas</li>
+</ul>
+<pre><code class="language-c++">void run() {
+  thread t1( foo );
+  thread t2( foo );
+  thread t3;
+
+  cout &lt;&lt; t1.get_id() &lt;&lt; endl; // 1234
+  cout &lt;&lt; t2.get_id() &lt;&lt; endl; // 5678
+  cout &lt;&lt; t3.get_id() &lt;&lt; endl; // 0
+
+  t1.join();
+  t2.join();
+
+  cout &lt;&lt; t1.get_id() &lt;&lt; endl; // 0
+  cout &lt;&lt; t2.get_id() &lt;&lt; endl; // 0
+}
+</code></pre>
+<h2 id="sleep_for" tabindex="-1">sleep_for</h2>
+<h2 id="std%3A%3Athis_thread%3A%3Ayield()" tabindex="-1"><code>std::this_thread::yield()</code></h2>
+<ul>
+<li>retorna a fatia de tempo</li>
+<li>reinsere a thread na fila de execução</li>
+</ul>
+<h2 id="std%3A%3Athread%3A%3Ahardware_concurrency()" tabindex="-1"><code>std::thread::hardware_concurrency()</code></h2>
+<ul>
+<li>retorna o número de thread concorrentes suportado pela implementação do sistema</li>
+<li>considere este valor apenas como uma dica</li>
+<li>é usualmente o número de cores lógicos</li>
+</ul>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

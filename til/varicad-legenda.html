@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>Varicad - configurando arquivos de legenda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white"> Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6">
+          <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
+      </div>
+    </nav>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4">
+        <h1>Varicad - configurando arquivos de legenda</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/varicad.html">varicad</a>
+        </div><h2 id="definindo-arquivos-de-legenda" tabindex="-1">Definindo arquivos de legenda</h2>
+<ol>
+<li>Execute o comando <code>atm</code> (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)</li>
+</ol>
+<p><img src="/til/varicad-legenda-01.webp" alt="Comando atm"></p>
+<ol start="2">
+<li>Clique no botão <strong>Legendas</strong></li>
+</ol>
+<p><img src="/til/varicad-legenda-02.webp" alt="Clicar no botão legendas"></p>
+<ol start="3">
+<li>Clicar na legenda e depois em <strong>modificar legenda</strong></li>
+</ol>
+<p><img src="/til/varicad-legenda-03.webp" alt="Legendas padrão"></p>
+<ol start="4">
+<li>Configurar a legenda</li>
+</ol>
+<p><img src="/til/varicad-legenda-04.webp" alt="Configuração para parte"></p>
+<ul class="contains-task-list">
+<li>Dx = <code>-7</code></li>
+<li>Dy =  <code>7</code></li>
+<li>Arquivo = <code>IntMainPart.dwb</code></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Para peças</li>
+</ul>
+<p><img src="/til/varicad-legenda-05.webp" alt="Configuração para montagem"></p>
+<ul class="contains-task-list">
+<li>Dx = <code>-7</code></li>
+<li>Dy =  <code>7</code></li>
+<li>Arquivo = <code>IntMainAssembly.dwb</code></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox"> Para montagens</li>
+</ul>
+<p><img src="/til/varicad-legenda-09.webp" alt="Deslocamento a partir do canto inferior direito"></p>
+<h2 id="formato-dos-arquivos-de-legenda" tabindex="-1">Formato dos arquivos de legenda</h2>
+<p><img src="/til/varicad-legenda-06.webp" alt="Legenda para componente fabricado"></p>
+<p><img src="/til/varicad-legenda-07.webp" alt="Legenda para montagem"></p>
+<p><img src="/til/varicad-legenda-08.webp" alt="Legenda para componente comprado"></p>
+<h2 id="posicionamento-dos-campos" tabindex="-1">Posicionamento dos campos</h2>
+<ol>
+<li>Execute o comando <code>atm</code> (Objetos/Atributos e legendas/Lista de materiais e configuração de legenda)</li>
+</ol>
+<p><img src="/til/varicad-legenda-10.webp" alt="Campos marcados para aparecer na legenda"></p>
+<p>Clique em cada um dos itens marcados para aparecer na legenda e depois escolha <strong>Editar atributo</strong></p>
+<p><img src="/til/varicad-legenda-11.webp" alt="Edição de atributos"></p>
+<p><img src="/til/varicad-legenda-12.webp" alt="Formato de texto padrão"></p>
+<h3 id="tabela-de-posicionamento" tabindex="-1">Tabela de posicionamento</h3>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Dx</th>
+<th>Dy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>-113</td>
+<td>9</td>
+</tr>
+<tr>
+<td>date</td>
+<td>-19</td>
+<td>17</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>-19</td>
+<td>25</td>
+</tr>
+<tr>
+<td>material</td>
+<td>-113</td>
+<td>25</td>
+</tr>
+<tr>
+<td>dwg no.</td>
+<td>-19</td>
+<td>9</td>
+</tr>
+<tr>
+<td>assembly no.</td>
+<td>-19</td>
+<td>9</td>
+</tr>
+<tr>
+<td>scale</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>drawing format</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>designer</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>checker</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>approver</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>drafter</td>
+<td>x</td>
+<td>y</td>
+</tr>
+<tr>
+<td>revision</td>
+<td>x</td>
+<td>y</td>
+</tr>
+</tbody>
+</table>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li>NP 48:1968 Norma portuguesa: Tamanho de folhas</li>
+<li>NP 204:1968 Norma portuguesa</li>
+<li>ISO 7200:1984 Norma ISO</li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+  </body>
+</html>

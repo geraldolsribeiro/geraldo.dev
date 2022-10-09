@@ -26,7 +26,7 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
-    <div class="max-w-prose mx-auto p-4">
+    <div class="max-w-prose mx-auto py-4">
       <form id="search" method="get" action="/search.html">
         <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
         <div class="relative">
@@ -35,8 +35,8 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
           </div>
-          <input class="block p-4 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" id="search-input" type="search" name="query" placeholder="Search Mockups, Logos..." required="">
-          <button class="text-white absolute bg-blue-700 font-medium rounded-lg text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit">Search</button>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
         </div>
       </form>
     </div>
@@ -53,9 +53,10 @@
           .then( json => {
             const idx = lunr( function () {
               this.ref('id')
-              this.field('title', { boost: 10 });
-              this.field('description', { boost: 5 });
-              this.field('url');
+              this.field('title', { boost: 30 });
+              this.field('tags', { boost: 20 });
+              this.field('text', { boost: 5 });
+              this.field('location');
               for(let i=0; i<json.length; ++i) {
                 this.add(json[i]);
               }
@@ -68,7 +69,7 @@
               result.map( (item) => {
                 const li = document.createElement("li");
                 const a = document.createElement("a");
-                a.href = json[item.ref].url;
+                a.href = json[item.ref].location;
                 const txtTitle = document.createTextNode( json[item.ref].title );
                 a.appendChild( txtTitle );
                 li.appendChild( a );

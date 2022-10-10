@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -46,6 +47,10 @@
         <script>
           const params = new URLSearchParams(window.location.search);
           const query = params.get('query');
+          const input = document.getElementById('search-input');
+          if ( input ) {
+            input.value = query;
+          }
           console.log("Searching for",query);
           fetch('/lunr.json')
           .then( response => { return response.json(); } )

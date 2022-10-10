@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
-    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -26,20 +25,6 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
-    <div class="max-w-prose mx-auto py-4">
-      <form id="search" method="get" action="/search.html">
-        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
-        <div class="relative">
-          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </div>
-          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
-          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
-        </div>
-      </form>
-    </div>
     <main class="bg-black text-slate-100 min-h-screen">
       <div class="bg-slate-900 container mx-auto py-4">
         <h1 class="px-4">Certificates / isc</h1>

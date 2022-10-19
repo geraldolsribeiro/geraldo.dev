@@ -1402,6 +1402,10 @@ video {
   max-width: 65ch;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1448,6 +1452,10 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .whitespace-nowrap {
@@ -1896,6 +1904,10 @@ svg {
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(241 245 249 / var(--tw-text-opacity));
+}
+
+.video-wrapper-16x9 {
+  padding-bottom: 56.25%;
 }
 
 .hover\:bg-blue-800:hover {

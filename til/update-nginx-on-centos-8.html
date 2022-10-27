@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by eclipse">
-    <title>TIL - eclipse</title>
+    <meta name="description" content="Description not defined">
+    <title>Update Nginx to the latest stable version on CentOS 8</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
@@ -37,52 +37,65 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen">
-      <div class="bg-slate-900 container mx-auto py-4">
-        <div class="px-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
-        </div>
-        <h1 class="px-4">Today I Learned / eclipse</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/eclipse-emf-xml.html" title="Eclipse Modeling Framework - Lendo e escrevendo XML">
-              <h3>Eclipse Modeling Framework - Lendo e escrevendo XML</h3>
-              <p class="text-slate-400">2019-12-05</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/eclipse.html">eclipse</a><a class="tag" href="/til/tag/EMF.html">EMF</a><a class="tag" href="/til/tag/XML.html">XML</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/eclipse-formatar-codigo-via-linha-de-comando.html" title="Formatar código via linha de comando com eclipse">
-              <h3>Formatar código via linha de comando com eclipse</h3>
-              <p class="text-slate-400">2019-11-21</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/eclipse.html">eclipse</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/eclipse-debug.html" title="Debugando no eclipse">
-              <h3>Debugando no eclipse</h3>
-              <p class="text-slate-400">2019-11-12</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/eclipse.html">eclipse</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/eclipse-plugin.html" title="Desenvolvimento de plugin para o Eclipse">
-              <h3>Desenvolvimento de plugin para o Eclipse</h3>
-              <p class="text-slate-400">2019-11-12</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/eclipse.html">eclipse</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/eclipse-juno-4.2.2-no-debian-buster.html" title="Eclipse Juno 4.2">
-              <h3>Eclipse Juno 4.2</h3>
-              <p class="text-slate-400">2019-07-23T13:17:51-03:00</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/eclipse.html">eclipse</a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>Update Nginx to the latest stable version on CentOS 8</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/nginx.html">nginx</a><a class="tag" href="/til/tag/centos.html">centos</a>
+        </div><p>To address the security issue
+<a href="https://nvd.nist.gov/vuln/detail/cve-2019-20372">CVE-2019-20372</a> I needed to
+update the Nginx version to the current stable.</p>
+<p>Remove the old nginx:</p>
+<pre><code class="language-bash">sudo systemctl stop nginx
+sudo dnf remove nginx
+sudo dnf install dnf-utils
+</code></pre>
+<p>Create the repo file:</p>
+<pre><code class="language-bash">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/nginx.repo
+[nginx-stable]
+name=nginx stable repo
+baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=1
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+
+[nginx-mainline]
+name=nginx mainline repo
+baseurl=http://nginx.org/packages/mainline/centos/$releasever/$basearch/
+gpgcheck=1
+enabled=0
+gpgkey=https://nginx.org/keys/nginx_signing.key
+module_hotfixes=true
+EOF
+</code></pre>
+<p>Install and enable the nginx again.</p>
+<pre><code class="language-bash">sudo yum-config-manager --enable nginx-mainline
+sudo dnf install nginx
+sudo systemctl start nginx
+sudo systemctl start nginx
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://www.digitalocean.com/community/questions/how-to-install-the-latest-stable-nginx-version-on-centos-8">How to install the latest stable Nginx version on CentOS 8?</a></li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
+    <script>
+      //- hljs.highlightAll();
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
   </body>
 </html>

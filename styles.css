@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.1.8 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -408,6 +408,12 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+/* Make elements with the HTML hidden attribute stay hidden by default */
+
+[hidden] {
+  display: none;
 }
 
 *, ::before, ::after {
@@ -1777,13 +1783,13 @@ video {
   transition-duration: 300ms;
 }
 
-h1,  h2,  h3 {
+h1, h2, h3 {
   text-align: center;
   font-weight: 600;
 }
 
 @media (min-width: 768px) {
-  h1,  h2,  h3 {
+  h1, h2, h3 {
     text-align: left;
   }
 }
@@ -1935,8 +1941,7 @@ svg {
 }
 
 .hover\:underline:hover {
-  -webkit-text-decoration-line: underline;
-          text-decoration-line: underline;
+  text-decoration-line: underline;
 }
 
 .hover\:opacity-100:hover {

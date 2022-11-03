@@ -18,6 +18,8 @@
           <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
         </ul>
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
@@ -505,6 +507,11 @@
 <td style="text-align:left">Diagonal</td>
 </tr>
 <tr>
+<td style="text-align:center">TB</td>
+<td style="text-align:center">▀</td>
+<td style="text-align:left">Top block</td>
+</tr>
+<tr>
 <td style="text-align:center">FB</td>
 <td style="text-align:center">█</td>
 <td style="text-align:left">Full block</td>
@@ -513,11 +520,6 @@
 <td style="text-align:center">LB</td>
 <td style="text-align:center">▄</td>
 <td style="text-align:left">Lower block</td>
-</tr>
-<tr>
-<td style="text-align:center">TB</td>
-<td style="text-align:center">▀</td>
-<td style="text-align:left">Top block</td>
 </tr>
 <tr>
 <td style="text-align:center">fS</td>
@@ -556,6 +558,11 @@
 </tr>
 </tbody>
 </table>
+<h2 id="define-your-own-digraph" tabindex="-1">Define your own digraph</h2>
+<pre><code class="language-vim">:digraph {char1}{char2} {number}
+:digraphs lc 128557 &quot; 😭
+</code></pre>
+<p><code>{number}</code> is the decimal value for the Unicode character.</p>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>
 <li><a href="https://vimhelp.org/digraph.txt.html">Manual Vim: digraph</a></li>
@@ -576,5 +583,6 @@
         });
       });
     </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

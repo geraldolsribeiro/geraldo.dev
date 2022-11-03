@@ -18,6 +18,8 @@
           <li class="z-40 fixed top-4 right-6 md:hidden"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/projects.html" aria-current="page">Projects</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/papers.html" aria-current="page">Papers</a></li>
           <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
         </ul>
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
@@ -44,9 +46,10 @@
           </svg><span>Back to TILs</span></a>
         <h1>How to create a bootable pendrive from ISO image</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/iso.html">iso</a><a class="tag" href="/til/tag/dd.html">dd</a><a class="tag" href="/til/tag/boot.html">boot</a>
-        </div><p>To install a fresh version of the Debian on the company notebook I need to
-prepare a bootable USB stick.</p>
-<p>First make sure I am writing on the right device. Yes, it is a very old 2GB USB stick.</p>
+        </div><p>To install a fresh version of the Debian I need to prepare a bootable USB
+stick.</p>
+<p>First make sure I am writing on the right device. Yes, it is a very old 2GB USB
+stick.</p>
 <pre><code class="language-bash">fdisk -l | grep sdc
 Disco /dev/sdc: 1,9 GiB, 2017984000 bytes, 3941375 setores
 /dev/sdc1   *                0 774143  774144    378M  0 Vazia
@@ -80,5 +83,6 @@ Disco /dev/sdc: 1,9 GiB, 2017984000 bytes, 3941375 setores
         });
       });
     </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

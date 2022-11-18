@@ -7,8 +7,8 @@
     <meta name="description" content="Filtered by vim">
     <title>TIL - vim</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -23,7 +23,7 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
-    <div class="max-w-prose mx-auto py-4">
+    <div class="prose mx-auto py-4 px-4">
       <form id="search" method="get" action="/search.html">
         <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
         <div class="relative">
@@ -38,8 +38,8 @@
       </form>
     </div>
     <main class="bg-black text-slate-100 min-h-screen">
-      <div class="bg-slate-900 container mx-auto py-4">
-        <div class="px-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
+        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
             <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
             </svg><span>Back to TILs</span></a>
@@ -47,16 +47,16 @@
         <h1 class="px-4">Today I Learned / vim</h1>
         <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-vimscript.html" title="Vimscript">
-              <h3>Vimscript</h3>
-              <p class="text-slate-400">2022-11-12</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/vimscript.html">vimscript</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
           <div class="grid-item-with-gradient"><a href="/til/vim-terminal.html" title="vim terminal command">
               <h3>vim terminal command</h3>
               <p class="text-slate-400">2022-11-12</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/terminal.html">terminal</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-vimscript.html" title="Vimscript">
+              <h3>Vimscript</h3>
+              <p class="text-slate-400">2022-11-12</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/vimscript.html">vimscript</a>
               </div></a></div>
           <!-- unless page.draft && false-->
           <div class="grid-item-with-gradient"><a href="/til/vim-utf-character.html" title="How to type Unicode in Vim">
@@ -119,104 +119,8 @@
               <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/macro.html">macro</a>
               </div></a></div>
           <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-formatar-xml.html" title="Formatar XML no vim">
-              <h3>Formatar XML no vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-fast-search-vim.html" title="Fast Search in Vim">
-              <h3>Fast Search in Vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-single-instance.html" title="VIM single instance">
-              <h3>VIM single instance</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-webvim.html" title="Webvim">
-              <h3>Webvim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-substituicao-de-texto-avancada.html" title="Substituição de texto avançada no Vim">
-              <h3>Substituição de texto avançada no Vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-abolish.html" title="Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case">
-              <h3>Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-run-tests.html" title="Run Tests in Vim">
-              <h3>Run Tests in Vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-with-python.html" title="Vim com python habilitado">
-              <h3>Vim com python habilitado</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-argdo.html" title="Vim args, argdo">
-              <h3>Vim args, argdo</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/args.html">args</a><a class="tag" href="/til/tag/argdo.html">argdo</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-rails.html" title="Vim com rails">
-              <h3>Vim com rails</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-spell-checking.html" title="Vim Spell Checking">
-              <h3>Vim Spell Checking</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-special-auto-complete.html" title="Auto completar especial no Vim">
-              <h3>Auto completar especial no Vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-inserir-caracteres-repetidos.html" title="Como repetir texto no vim">
-              <h3>Como repetir texto no vim</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-slow.html" title="Vim lento">
-              <h3>Vim lento</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-compilar-vim-8.html" title="Compilar Vim 8">
-              <h3>Compilar Vim 8</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-awesome.html" title="Vim awesome">
-              <h3>Vim awesome</h3>
-              <p class="text-slate-400">2018-11-19</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-formatar-json.html" title="Formatar JSON no Vim">
-              <h3>Formatar JSON no Vim</h3>
+          <div class="grid-item-with-gradient"><a href="/til/vim-livro-noob-gratis.html" title="vim-livro-noob-gratis.md">
+              <h3>vim-livro-noob-gratis.md</h3>
               <p class="text-slate-400">2018-11-19</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
               </div></a></div>
@@ -227,8 +131,104 @@
               <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
               </div></a></div>
           <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/vim-livro-noob-gratis.html" title="vim-livro-noob-gratis.md">
-              <h3>vim-livro-noob-gratis.md</h3>
+          <div class="grid-item-with-gradient"><a href="/til/vim-formatar-json.html" title="Formatar JSON no Vim">
+              <h3>Formatar JSON no Vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-awesome.html" title="Vim awesome">
+              <h3>Vim awesome</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-compilar-vim-8.html" title="Compilar Vim 8">
+              <h3>Compilar Vim 8</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-slow.html" title="Vim lento">
+              <h3>Vim lento</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-inserir-caracteres-repetidos.html" title="Como repetir texto no vim">
+              <h3>Como repetir texto no vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-special-auto-complete.html" title="Auto completar especial no Vim">
+              <h3>Auto completar especial no Vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-spell-checking.html" title="Vim Spell Checking">
+              <h3>Vim Spell Checking</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-rails.html" title="Vim com rails">
+              <h3>Vim com rails</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-argdo.html" title="Vim args, argdo">
+              <h3>Vim args, argdo</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a><a class="tag" href="/til/tag/args.html">args</a><a class="tag" href="/til/tag/argdo.html">argdo</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-with-python.html" title="Vim com python habilitado">
+              <h3>Vim com python habilitado</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-run-tests.html" title="Run Tests in Vim">
+              <h3>Run Tests in Vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-abolish.html" title="Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case">
+              <h3>Vim plugin coersion: snake_case, MixedCase, camelCase, UPPER_CASE, dash-case, dot.case, space case, Title Case</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-substituicao-de-texto-avancada.html" title="Substituição de texto avançada no Vim">
+              <h3>Substituição de texto avançada no Vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-webvim.html" title="Webvim">
+              <h3>Webvim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-single-instance.html" title="VIM single instance">
+              <h3>VIM single instance</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-fast-search-vim.html" title="Fast Search in Vim">
+              <h3>Fast Search in Vim</h3>
+              <p class="text-slate-400">2018-11-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
+              </div></a></div>
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/vim-formatar-xml.html" title="Formatar XML no vim">
+              <h3>Formatar XML no vim</h3>
               <p class="text-slate-400">2018-11-19</p>
               <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/vim.html">vim</a>
               </div></a></div>

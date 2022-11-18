@@ -7,8 +7,8 @@
     <meta name="description" content="Description not defined">
     <title>CORBA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/languages/cpp.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -23,7 +23,7 @@
         <div class="flex mr-2 items-center md:hidden"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)"> &#x2630; </a></div>
       </div>
     </nav>
-    <div class="max-w-prose mx-auto py-4">
+    <div class="prose mx-auto py-4 px-4">
       <form id="search" method="get" action="/search.html">
         <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
         <div class="relative">
@@ -38,7 +38,7 @@
       </form>
     </div>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="text-slate-400 block cursor-pointer hover:text-slate-200" href="/tils.html">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
@@ -616,14 +616,18 @@ omniidl -bdump   Data.idl
 <h4 id="gerando-python" tabindex="-1">Gerando Python</h4>
 <pre><code class="language-bash">omniidl -bpython Data.idl
 </code></pre>
-<p>os arquivos abaixo são criados:</p>
+<p>Os arquivos abaixo são criados:</p>
 <ul>
 <li><code>Data_idl.py</code></li>
 <li><code>Data__POA/__init__.py</code></li>
 <li><code>Data/__init__.py</code></li>
 </ul>
-<p {%="" FIXME="" %="">{{% FIXME %}}
-Descrever os arquivos <strong>gerados</strong> em <code>python</code>.</p>
+<div role="alert">
+  <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">FIXME</div>
+  <div class="border border-t-0 border-red-400 rounded-b px-4 py-3">
+<p>Descrever os arquivos <strong>gerados</strong> em <code>python</code>.</p>
+  </div>
+</div>
 <h4 id="gerando-c%2B%2B" tabindex="-1">Gerando C++</h4>
 <p>Ao executar o seguinte comando:</p>
 <pre><code class="language-bash">omniidl -bcxx Data.idl
@@ -641,7 +645,7 @@ Descrever os arquivos <strong>gerados</strong> em <code>python</code>.</p>
 <li>classe <code>POA_Service!</code> - a classe esqueleto para o servidor</li>
 </ul>
 <h5 id="data.hh" tabindex="-1">Data.hh</h5>
-<pre><code linenostart="85" class="language-c++">  // interface ServiceA
+<pre><code show-line-numbers="" data-ln-start-from="85" class="language-c++">  // interface ServiceA
   class ServiceA {
   public:
     // Declarations for this interface type.
@@ -691,44 +695,44 @@ int main( int argc, char **argv )
 {
   try {
 </code></pre>
-<pre><code linenostart="17" class="language-c++">    // (1) Iniciar o ORB
+<pre><code show-line-numbers="" data-ln-start-from="17" class="language-c++">    // (1) Iniciar o ORB
     CORBA::ORB_var orb = CORBA::ORB_init( argc, argv );
 </code></pre>
-<pre><code linenostart="19" class="language-c++">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
+<pre><code show-line-numbers="" data-ln-start-from="19" class="language-c++">    // (2) Obter a referência para o POA raiz para registra-se para ficar disponível para os clientes
     CORBA::Object_var       obj  = orb-&gt;resolve_initial_references( &quot;RootPOA&quot; );
     PortableServer::POA_var _poa = PortableServer::POA::_narrow( obj.in() );
 </code></pre>
-<pre><code linenostart="22" class="language-c++">    // As operações definidas na interface são invocadas pelo objeto de referência.
+<pre><code show-line-numbers="" data-ln-start-from="22" class="language-c++">    // As operações definidas na interface são invocadas pelo objeto de referência.
     // Um instância de CRequestSocketStream_i é iniciada
     PortableServer::Servant_var&lt;CServiceA_i&gt; myRequestServiceA = new CServiceA_i();
 </code></pre>
-<pre><code linenostart="25" class="language-c++">    // o servidor e objetos é ativado no RootPOA
+<pre><code show-line-numbers="" data-ln-start-from="25" class="language-c++">    // o servidor e objetos é ativado no RootPOA
     PortableServer::ObjectId_var myRequestServiceA_oid = _poa-&gt;activate_object( myRequestServiceA );
 </code></pre>
-<pre><code linenostart="27" class="language-c++">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
+<pre><code show-line-numbers="" data-ln-start-from="27" class="language-c++">    // Obtêm o objeto de referência do servidor e registra no servidor de nome
     CORBA::Object_var SA_obj = myRequestServiceA-&gt;_this();
 </code></pre>
-<pre><code linenostart="29" class="language-c++">    // Obtêm uma referência para o objeto e imprime seu IOR como string
+<pre><code show-line-numbers="" data-ln-start-from="29" class="language-c++">    // Obtêm uma referência para o objeto e imprime seu IOR como string
     CORBA::String_var sior( orb-&gt;object_to_string( SA_obj.in() ) );
     cerr &lt;&lt; &quot;'&quot; &lt;&lt; (char *)sior &lt;&lt; &quot;'&quot; &lt;&lt; endl;
 </code></pre>
 <p {%="" note="" %="">{{% note %}}
 Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.</p>
-<pre><code linenostart="32" class="language-c++">    // (3) Vincular com o serviço de nomes
+<pre><code show-line-numbers="" data-ln-start-from="32" class="language-c++">    // (3) Vincular com o serviço de nomes
     // o serviço é definido pela diretiva InitRef e pelo identificador
     // &quot;OmniNameService&quot; no arquivo omniORB.cfg
     CORBA::Object_var obj1 = orb-&gt;resolve_initial_references( &quot;OmniNameService&quot; );
     assert( !CORBA::is_nil( obj1.in() ) );
 </code></pre>
-<pre><code linenostart="37" class="language-c++">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
+<pre><code show-line-numbers="" data-ln-start-from="37" class="language-c++">    CosNaming::NamingContext_var nc = CosNaming::NamingContext::_narrow( obj1.in() );
     assert( !CORBA::is_nil( nc.in() ) );
 </code></pre>
-<pre><code linenostart="39" class="language-c++">    CosNaming::Name name;
+<pre><code show-line-numbers="" data-ln-start-from="39" class="language-c++">    CosNaming::Name name;
     name.length( 1 );
     name[0].id = CORBA::string_dup( &quot;DataServiceName1&quot; );
     nc-&gt;rebind( name, SA_obj.in() );
 </code></pre>
-<pre><code linenostart="43" class="language-c++">    //========================================================================
+<pre><code show-line-numbers="" data-ln-start-from="43" class="language-c++">    //========================================================================
     myRequestServiceA-&gt;_remove_ref();
     //
     PortableServer::POAManager_var pmgr = _poa-&gt;the_POAManager();
@@ -744,7 +748,7 @@ Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <
   }
 </code></pre>
 <p>Tratar as exceções:</p>
-<pre><code linenostart="57" class="language-c++">  catch( CORBA::TRANSIENT &amp; ) {
+<pre><code show-line-numbers="" data-ln-start-from="57" class="language-c++">  catch( CORBA::TRANSIENT &amp; ) {
     cerr &lt;&lt; &quot;Caught system exception TRANSIENT -- unable to contact the server.&quot; &lt;&lt; endl;
   }
   catch( CORBA::OBJECT_NOT_EXIST &amp; ) {
@@ -1066,10 +1070,17 @@ clean:
     </footer>
     <script>
       //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
       document.addEventListener('DOMContentLoaded', (event) => {
         document.querySelectorAll('pre code').forEach((el) => {
           hljs.highlightElement(el);
         });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
       });
     </script>
     <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>

@@ -558,8 +558,15 @@ vida do serviço</li>
 <p>Incluir no arquivo <code>/etc/omniORB.cfg</code> a seguinte linha:</p>
 <pre><code class="language-text">InitRef = OmniNameService=corbaname::localhost
 </code></pre>
-<p {%="" note="" %="">{{% note %}}
-O nome <strong>OmniNameService</strong> deve ser conhecido pelo <strong>servidor</strong> e pelo <strong>cliente</strong>.</p>
+<div role="alert" class="my-4">
+  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">👇</span>
+    <span>Note</span>
+  </div>
+  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
+<p>O nome <strong>OmniNameService</strong> deve ser conhecido pelo <strong>servidor</strong> e pelo <strong>cliente</strong>.</p>
+  </div>
+</div>
 <p>Para iniciar o servidor de nomes do <strong>OmniORB</strong> use:</p>
 <pre><code class="language-bash">omniNames -start
 </code></pre>
@@ -622,27 +629,47 @@ omniidl -bdump   Data.idl
 <li><code>Data__POA/__init__.py</code></li>
 <li><code>Data/__init__.py</code></li>
 </ul>
-<div role="alert">
-  <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">FIXME</div>
-  <div class="border border-t-0 border-red-400 rounded-b px-4 py-3">
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☹</span>
+    <span>FIXME</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
 <p>Descrever os arquivos <strong>gerados</strong> em <code>python</code>.</p>
   </div>
 </div>
-<div role="alert">
-  <div class="bg-yellow-500 text-white font-bold rounded-t px-4 py-2">Warning</div>
-  <div class="border border-t-0 border-yellow-400 rounded-b px-4 py-3">
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
 <p>lorem ipsum</p>
   </div>
 </div>
-<div role="alert">
-  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">Tip</div>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
 <p>lorem ipsum</p>
   </div>
 </div>
-<div role="alert">
-  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">Info</div>
+<div role="alert" class="my-4">
+  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☕</span>
+    <span>Information</span>
+  </div>
   <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
+  </div>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">👇</span>
+    <span>Note</span>
+  </div>
+  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
 <p>lorem ipsum</p>
   </div>
 </div>
@@ -734,8 +761,15 @@ int main( int argc, char **argv )
     CORBA::String_var sior( orb-&gt;object_to_string( SA_obj.in() ) );
     cerr &lt;&lt; &quot;'&quot; &lt;&lt; (char *)sior &lt;&lt; &quot;'&quot; &lt;&lt; endl;
 </code></pre>
-<p {%="" note="" %="">{{% note %}}
-Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.</p>
+<div role="alert" class="my-4">
+  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">👇</span>
+    <span>Note</span>
+  </div>
+  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
+<p>Aqui você deve utilizar o mesmo nome do servidor de nomes definido no arquivo <code>/etc/omniORB.cfg</code>.</p>
+  </div>
+</div>
 <pre><code show-line-numbers="" data-ln-start-from="32" class="language-c++">    // (3) Vincular com o serviço de nomes
     // o serviço é definido pela diretiva InitRef e pelo identificador
     // &quot;OmniNameService&quot; no arquivo omniORB.cfg
@@ -853,7 +887,7 @@ CORBA::Boolean CallServiceARoutineB(
 }
 </code></pre>
 <h2 id="cliente-corba" tabindex="-1">Cliente CORBA</h2>
-<p>{{&lt; img src=“/img/corba-client.webp” alt=“Cliente CORBA”&gt;}}</p>
+<p><img src="/img/corba-client.webp" alt="Cliente CORBA"></p>
 <h3 id="client.cc" tabindex="-1"><a href="http://Client.cc">Client.cc</a></h3>
 <pre><code class="language-c++">// Client.cc
 #include &quot;CRequestServiceA.hh&quot;

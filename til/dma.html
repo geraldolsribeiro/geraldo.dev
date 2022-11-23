@@ -55,7 +55,7 @@
         <h1>DMA Direct Memory Access</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/dma.html">dma</a><a class="tag" href="/til/tag/memory.html">memory</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#dma-channels">DMA Channels</a></li><li><a href="#steps-in-dma-transfer">Steps in DMA Transfer</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#dma-channels">DMA Channels</a></li><li><a href="#steps-in-dma-transfer">Steps in DMA Transfer</a></li><li><a href="#operation-modes">Operation modes</a></li><li><a href="#references">References</a></li></ul></div></p>
 <p>DMA (Direct memory access) is an alternative method of communication to I/O
 ports that permits the device to transfer data directly, without the CPU’s
 attention. The system can request that the data be fetched into a particular
@@ -70,6 +70,21 @@ out what DMA channels your system uses, you can use the <code>cat /proc/dma</cod
 4: cascade
 </code></pre>
 <p>As you can see from the output above, the DMA channels 2 and 4 are in use.</p>
+<blockquote>
+<p><a href="https://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/Nao-entendi-a-saida-do-~cat-proc-dma">https://www.vivaolinux.com.br/topico/Iniciantes-no-Linux/Nao-entendi-a-saida-do-~cat-proc-dma</a></p>
+<blockquote>
+<p>Os DMA’s são canais de acesso a memória sem intervenção do processador. São
+praticamente um legado do ISA. Existem 8 canais de DMA que foram implementados
+ao longo da história. O canal 4, especificamente, funciona com 16 bits e está
+praticamente relacionado ao DMA1 e ao DMA2. A cascata(cascade) se remete ao
+mecanismo do canal. Esse mecanismo é que permite que um canal DMA solicite
+o bus. Uma vez o dispositivo conectado, ele é responsável pela alocação da
+informação de endereçamento no bus em vez do DMA. É usado na implementação do
+“Bus Mastering”. Quando um canal DMA em modo cascade recebe o controle do bus,
+ele não aloca endereços nem sinais I/O de controle no bus, como geralmente
+ocorre.</p>
+</blockquote>
+</blockquote>
 <div role="alert" class="my-4">
   <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
     <span class="text-2xl">☢</span>
@@ -89,11 +104,32 @@ out what DMA channels your system uses, you can use the <code>cat /proc/dma</cod
   </div>
 </div>
 <h2 id="steps-in-dma-transfer" tabindex="-1">Steps in DMA Transfer</h2>
-<p>slide 11</p>
+<p>FIXME slide 11</p>
+<h2 id="operation-modes" tabindex="-1">Operation modes</h2>
+<h3 id="burst-mode" tabindex="-1">Burst Mode</h3>
+<p>Neste modo, o periférico que recebe acesso ao barramento irá transferir as
+informações necessárias de uma única vez, para então liberar as pistas para
+a CPU novamente. Ainda que permita que o processo de transferência atinja altas
+velocidades, a desvantagem desse modo é que o processador deixa de trabalhar
+até que o envio seja concluído.</p>
+<h3 id="cycle-stealing" tabindex="-1">Cycle Stealing</h3>
+<p>No “roubo de ciclo”, em tradução livre, a transferência de dados é realizado
+lentamente, aguardando a conclusão de cada ciclo de processamento da CPU.
+Basicamente, o DMAC solicita acesso ao barramento para o processador e, após
+concedido, um byte de informação é transferido. O controle das pistas é então
+devolvido à CPU, e uma nova solicitação é realizada a cada ciclo, até que todos
+os dados sejam enviados.</p>
+<h3 id="transparent-mode" tabindex="-1">Transparent Mode</h3>
+<p>Similar ao Burst Mode, o Transparent Mode dá acesso total do barramento ao
+periférico que enviará ou receberá informações. No entanto, há uma diferença
+importante: a CPU continuará operando normalmente, em tarefas que não exijam
+acesso ao barramento. O controle das pistas retorna ao processador assim que
+a transferência dos dados é finalizada.</p>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://geek-university.com/dma-direct-memory-access/">DMA (Direct Memory Access)</a></li>
 <li><a href="https://www.slideshare.net/pradeep_tewani/linux-dma-engine-249984016">Linux DMA engine</a></li>
+<li><a href="https://canaltech.com.br/hardware/o-que-e-dma-direct-memory-acess-202990/">O que é DMA — Direct Memory Access?</a></li>
 </ul>
 
       </main>

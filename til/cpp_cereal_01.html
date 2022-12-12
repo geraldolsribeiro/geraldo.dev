@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>cereal - A C++11 library for serialization - 01</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>cereal - A C++11 library for serialization - 01</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/cpp.html">cpp</a><a class="tag" href="/til/tag/serialization.html">serialization</a><a class="tag" href="/til/tag/cereal.html">cereal</a>
+        </div><p><strong>cereal</strong> is a header-only C++11 serialization library. cereal
+takes arbitrary data types and reversibly turns them into
+different representations, such as compact binary encodings, XML,
+or JSON. cereal was designed to be fast, light-weight, and easy to
+extend - it has no external dependencies and can be easily bundled
+with other code or used standalone.</p>
+<pre><code class="language-cpp">// Escolha um deles
+#include &lt;cereal/archives/binary.hpp&gt;
+#include &lt;cereal/archives/json.hpp&gt;
+#include &lt;cereal/archives/portable_binary.hpp&gt;
+#include &lt;cereal/archives/xml.hpp&gt;
+
+#include &lt;cereal/types/memory.hpp&gt;
+#include &lt;cereal/types/unordered_map.hpp&gt;
+#include &lt;fstream&gt;
+</code></pre>
+<pre><code class="language-cpp">using namespace std;
+
+struct MyRecord {
+  uint8_t x, y;
+  float   z;
+
+  // Informar ao Cereal quais membros serializar
+  template &lt;class Archive&gt;
+  void serialize( Archive &amp;ar )
+  {
+    ar( x, y, z );
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">struct MyRecord2 {
+  uint8_t x, y;
+  float   z;
+
+  // Informar ao Cereal quais membros serializar
+  template &lt;class Archive&gt;
+  void serialize( Archive &amp;ar )
+  {
+    // veja a diferença no json/xml, agora os campos estão nomeados
+    ar( CEREAL_NVP( x ), CEREAL_NVP( y ), CEREAL_NVP( z ) );
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">struct SomeData {
+  int32_t                                        id;
+  shared_ptr&lt;unordered_map&lt;uint32_t, MyRecord&gt;&gt;  data;
+  shared_ptr&lt;unordered_map&lt;uint32_t, MyRecord2&gt;&gt; data2;
+  vector&lt;int&gt;                                    vec;
+
+  template &lt;class Archive&gt;
+  void save( Archive &amp;ar ) const
+  {
+    ar( data, data2 );
+  }
+
+  template &lt;class Archive&gt;
+  void load( Archive &amp;ar )
+  {
+    static int32_t idGen = 0;
+    id                   = idGen++;
+    ar( data, data2 );
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">int main()
+{
+  {
+    ofstream osBin( &quot;output/cereal_01.bin&quot;, ios::binary );
+    ofstream osXml( &quot;output/cereal_01.xml&quot; );
+    ofstream osJson( &quot;output/cereal_01.json&quot; );
+
+    // Cria os arquivos de saída
+    cereal::BinaryOutputArchive archiveBin( osBin );
+    cereal::XMLOutputArchive    archiveXml( osXml );
+    cereal::JSONOutputArchive   archiveJson( osJson );
+
+    SomeData myData01;
+    SomeData myData02;
+
+    MyRecord rec;
+    rec.x = 7;
+    rec.y = 8;
+    rec.z = 9;
+
+    MyRecord2 rec2;
+    rec.x = 72;
+    rec.y = 82;
+    rec.z = 92;
+
+    myData01.data = make_shared&lt;unordered_map&lt;uint32_t, MyRecord&gt;&gt;();
+    myData01.data-&gt;emplace( 1001, rec );
+    myData01.data-&gt;emplace( 1002, rec );
+    myData01.data-&gt;emplace( 1000, rec );
+
+    myData01.data2 = make_shared&lt;unordered_map&lt;uint32_t, MyRecord2&gt;&gt;();
+    myData01.data2-&gt;emplace( 1001, rec2 );
+    myData01.data2-&gt;emplace( 1002, rec2 );
+    myData01.data2-&gt;emplace( 1000, rec2 );
+
+    int x = myData01.data-&gt;at( 1001 ).x;
+    cout &lt;&lt; &quot;OUT data.x: &quot; &lt;&lt; x &lt;&lt; endl;
+
+    myData02.vec = { 10, 20, 30, 40 };
+
+    archiveBin( myData01, myData02 );
+    archiveXml( myData01, myData02 );
+    archiveJson( myData01, myData02 );
+
+    // RAII: Precisa sair do contexto para que os arquivos sejam escritos e fechados.
+  }
+</code></pre>
+<pre><code class="language-cpp">  // Input
+  {
+    ifstream                isBin( &quot;output/cereal_01.xml&quot; );
+    cereal::XMLInputArchive inArchiveBin( isBin );
+
+    SomeData myData01B;
+    SomeData myData02B;
+
+    myData01B.data = make_shared&lt;unordered_map&lt;uint32_t, MyRecord&gt;&gt;();
+    inArchiveBin( myData01B, myData02B );
+
+    int x = myData01B.data-&gt;at( 1001 ).x;
+    cout &lt;&lt; &quot;IN data.x: &quot; &lt;&lt; x &lt;&lt; endl;
+  }
+
+  return 0;
+}
+</code></pre>
+<h2 id="serialized-files" tabindex="-1">Serialized files</h2>
+<h3 id="xml" tabindex="-1">XML</h3>
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+&lt;cereal&gt;
+	&lt;value0&gt;
+		&lt;value0&gt;
+			&lt;ptr_wrapper&gt;
+				&lt;id&gt;2147483649&lt;/id&gt;
+				&lt;data size=&quot;dynamic&quot;&gt;
+					&lt;value0&gt;
+						&lt;key&gt;1000&lt;/key&gt;
+						&lt;value&gt;
+							&lt;value0&gt;72&lt;/value0&gt;
+							&lt;value1&gt;82&lt;/value1&gt;
+							&lt;value2&gt;92&lt;/value2&gt;
+						&lt;/value&gt;
+					&lt;/value0&gt;
+					&lt;value1&gt;
+						&lt;key&gt;1002&lt;/key&gt;
+						&lt;value&gt;
+							&lt;value0&gt;72&lt;/value0&gt;
+							&lt;value1&gt;82&lt;/value1&gt;
+							&lt;value2&gt;92&lt;/value2&gt;
+						&lt;/value&gt;
+					&lt;/value1&gt;
+					&lt;value2&gt;
+						&lt;key&gt;1001&lt;/key&gt;
+						&lt;value&gt;
+							&lt;value0&gt;72&lt;/value0&gt;
+							&lt;value1&gt;82&lt;/value1&gt;
+							&lt;value2&gt;92&lt;/value2&gt;
+						&lt;/value&gt;
+					&lt;/value2&gt;
+				&lt;/data&gt;
+			&lt;/ptr_wrapper&gt;
+		&lt;/value0&gt;
+		&lt;value1&gt;
+			&lt;ptr_wrapper&gt;
+				&lt;id&gt;2147483650&lt;/id&gt;
+				&lt;data size=&quot;dynamic&quot;&gt;
+					&lt;value0&gt;
+						&lt;key&gt;1000&lt;/key&gt;
+						&lt;value&gt;
+							&lt;x&gt;0&lt;/x&gt;
+							&lt;y&gt;0&lt;/y&gt;
+							&lt;z&gt;0&lt;/z&gt;
+						&lt;/value&gt;
+					&lt;/value0&gt;
+					&lt;value1&gt;
+						&lt;key&gt;1002&lt;/key&gt;
+						&lt;value&gt;
+							&lt;x&gt;0&lt;/x&gt;
+							&lt;y&gt;0&lt;/y&gt;
+							&lt;z&gt;0&lt;/z&gt;
+						&lt;/value&gt;
+					&lt;/value1&gt;
+					&lt;value2&gt;
+						&lt;key&gt;1001&lt;/key&gt;
+						&lt;value&gt;
+							&lt;x&gt;0&lt;/x&gt;
+							&lt;y&gt;0&lt;/y&gt;
+							&lt;z&gt;0&lt;/z&gt;
+						&lt;/value&gt;
+					&lt;/value2&gt;
+				&lt;/data&gt;
+			&lt;/ptr_wrapper&gt;
+		&lt;/value1&gt;
+	&lt;/value0&gt;
+	&lt;value1&gt;
+		&lt;value0&gt;
+			&lt;ptr_wrapper&gt;
+				&lt;id&gt;0&lt;/id&gt;
+			&lt;/ptr_wrapper&gt;
+		&lt;/value0&gt;
+		&lt;value1&gt;
+			&lt;ptr_wrapper&gt;
+				&lt;id&gt;0&lt;/id&gt;
+			&lt;/ptr_wrapper&gt;
+		&lt;/value1&gt;
+	&lt;/value1&gt;
+&lt;/cereal&gt;
+
+</code></pre>
+<h3 id="json" tabindex="-1">JSON</h3>
+<pre><code class="language-json">{
+    &quot;value0&quot;: {
+        &quot;value0&quot;: {
+            &quot;ptr_wrapper&quot;: {
+                &quot;id&quot;: 2147483649,
+                &quot;data&quot;: [
+                    {
+                        &quot;key&quot;: 1000,
+                        &quot;value&quot;: {
+                            &quot;value0&quot;: 72,
+                            &quot;value1&quot;: 82,
+                            &quot;value2&quot;: 92.0
+                        }
+                    },
+                    {
+                        &quot;key&quot;: 1002,
+                        &quot;value&quot;: {
+                            &quot;value0&quot;: 72,
+                            &quot;value1&quot;: 82,
+                            &quot;value2&quot;: 92.0
+                        }
+                    },
+                    {
+                        &quot;key&quot;: 1001,
+                        &quot;value&quot;: {
+                            &quot;value0&quot;: 72,
+                            &quot;value1&quot;: 82,
+                            &quot;value2&quot;: 92.0
+                        }
+                    }
+                ]
+            }
+        },
+        &quot;value1&quot;: {
+            &quot;ptr_wrapper&quot;: {
+                &quot;id&quot;: 2147483650,
+                &quot;data&quot;: [
+                    {
+                        &quot;key&quot;: 1000,
+                        &quot;value&quot;: {
+                            &quot;x&quot;: 0,
+                            &quot;y&quot;: 0,
+                            &quot;z&quot;: 0.0
+                        }
+                    },
+                    {
+                        &quot;key&quot;: 1002,
+                        &quot;value&quot;: {
+                            &quot;x&quot;: 0,
+                            &quot;y&quot;: 0,
+                            &quot;z&quot;: 0.0
+                        }
+                    },
+                    {
+                        &quot;key&quot;: 1001,
+                        &quot;value&quot;: {
+                            &quot;x&quot;: 0,
+                            &quot;y&quot;: 0,
+                            &quot;z&quot;: 0.0
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    &quot;value1&quot;: {
+        &quot;value0&quot;: {
+            &quot;ptr_wrapper&quot;: {
+                &quot;id&quot;: 0
+            }
+        },
+        &quot;value1&quot;: {
+            &quot;ptr_wrapper&quot;: {
+                &quot;id&quot;: 0
+            }
+        }
+    }
+}```
+
+</code></pre>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by isc">
-    <title>Certificates - isc</title>
+    <meta name="description" content="Filtered by serialization">
+    <title>TIL - serialization</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -48,9 +48,20 @@
       </form>
     </div>
     <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container mx-auto py-4">
-        <h1 class="px-4">Certificates / isc</h1>
+      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
+        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+            </svg><span>Back to TILs</span></a>
+        </div>
+        <h1 class="px-4">Today I Learned / serialization</h1>
         <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/cpp_cereal_01.html" title="cereal - A C++11 library for serialization - 01">
+              <h3>cereal - A C++11 library for serialization - 01</h3>
+              <p class="text-slate-400">2020-12-19</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/cpp.html">cpp</a><a class="tag" href="/til/tag/serialization.html">serialization</a><a class="tag" href="/til/tag/cereal.html">cereal</a>
+              </div></a></div>
         </div>
       </div>
     </main>

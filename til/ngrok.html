@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description">
-    <title>CSSLP Cert Prep 6 Secure Lifecycle Management</title>
+    <meta name="description" content="Description not defined">
+    <title>ngrok</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -48,29 +48,66 @@
       </form>
     </div>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/certificates.html">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-          </svg><span>Back to certificates</span></a>
-        <h1>CSSLP Cert Prep 6 Secure Lifecycle Management</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/certificate/tag/ISC.html">ISC</a><a class="tag" href="/certificate/tag/CSSLP.html">CSSLP</a><a class="tag" href="/certificate/tag/security.html">security</a><a class="tag" href="/certificate/tag/devsecops.html">devsecops</a>
-        </div>
-        <div class="p-4"><img class="mx-auto" src="/certificate/0ecac6da-large.webp"></div><pre><code>Certificate of Completion
-Congratulations, Geraldo Ribeiro
-
-CSSLP Cert Prep: 6 Secure Lifecycle Management
-Course completed on Dec 10, 2022 at 01:59PM UTC • 1 hour 21 min
-
-By continuing to learn, you have expanded your perspective, sharpened your
-skills, and made yourself even more in demand.
-
-
-                                               LinkedIn Learning
-                                               1000 W Maude Ave
-Head of Content Strategy, Learning             Sunnyvale, CA 94085
-
-Certificate ID: AYs5BIpuCxmaa1_brjiyUuuCRpO8
+          </svg><span>Back to TILs</span></a>
+        <h1>ngrok</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/ngrok.html">ngrok</a>
+        </div><p><strong>ngrok</strong> is a globally distributed reverse proxy fronting your web services
+running in any cloud or private network, or your machine.</p>
+<h2 id="installation" tabindex="-1">Installation</h2>
+<p>From <a href="https://ngrok.com/download">https://ngrok.com/download</a> copy the <code>apt</code> command:</p>
+<pre><code class="language-bash">curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+  | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc &gt;/dev/null \
+  | &amp;&amp; echo &quot;deb https://ngrok-agent.s3.amazonaws.com buster main&quot; \
+  | sudo tee /etc/apt/sources.list.d/ngrok.list \
+  | &amp;&amp; sudo apt update \
+  | &amp;&amp; sudo apt install ngrok
 </code></pre>
+<h2 id="account" tabindex="-1">Account</h2>
+<p>Connecting your account according to <a href="https://dashboard.ngrok.com/get-started/setup">https://dashboard.ngrok.com/get-started/setup</a>:</p>
+<pre><code class="language-bash">ngrok config add-authtoken 2Ip...BYo
+Authtoken saved to configuration file: /home/geraldo/.config/ngrok/ngrok.yml
+</code></pre>
+<h2 id="basic-usage" tabindex="-1">Basic usage</h2>
+<h3 id="serving-a-webpage" tabindex="-1">Serving a webpage</h3>
+<p>Loading server on localhost:</p>
+<pre><code class="language-bash">http-server ./
+Starting up http-server, serving ./
+
+http-server version: 14.0.0
+
+http-server settings: 
+CORS: disabled
+Cache: 3600 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.15.35:8080
+Hit CTRL-C to stop the server
+</code></pre>
+<p>Piping port 8080:</p>
+<pre><code class="language-bash">ngrok http 8080
+
+Session Status  online
+Account         Geraldo Ribeiro (Plan: Free)
+Version         3.1.0
+Region          South America (sa)
+Latency         13ms
+Web Interface   http://127.0.0.1:4040
+Forwarding      https://118c-2804-431-c7db-f2a7-a31-6b93-92ee-3650.sa.ngrok.io -&gt; http://localhost:8080
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://www.linkedin.com/learning/microsoft-teams-bot-development/testing-using-ngrok">Microsoft Teams Bot Development/Testing using ngrok</a></li>
+</ul>
 
       </main>
     </div>
@@ -79,6 +116,21 @@ Certificate ID: AYs5BIpuCxmaa1_brjiyUuuCRpO8
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
     <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

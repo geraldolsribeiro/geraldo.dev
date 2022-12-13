@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Cracking the C++</title>
+    <title>C++ Ranges 01</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,14 +52,18 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Cracking the C++</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a>
-        </div><p>Estudar</p>
-<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
-<ul>
-<li><a href="https://medium.com/c-programming-language/cracking-the-c-interview-part-1-1b01879779e9">Cracking the C++ Interview — Part 1</a></li>
-<li><a href="https://medium.com/c-programming-language/cracking-the-c-interview-part-2-1e35d0e3fa83">Cracking the C++ Interview — Part 2</a></li>
-</ul>
+        <h1>C++ Ranges 01</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/ranges.html">ranges</a><a class="tag" href="/til/tag/iota_view.html">iota_view</a><a class="tag" href="/til/tag/iota.html">iota</a>
+        </div><pre><code class="language-cpp">  for( int i : std::ranges::iota_view{ 1, 10 } ) {
+    std::cout &lt;&lt; i &lt;&lt; ' ';
+  }
+  std::cout &lt;&lt; '\n';
+
+  for( int i : std::views::iota( 1, 10 ) ) {
+    std::cout &lt;&lt; i &lt;&lt; ' ';
+  }
+  std::cout &lt;&lt; '\n';
+</code></pre>
 
       </main>
     </div>

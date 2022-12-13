@@ -62,9 +62,9 @@ they do so at the moment you request an element, not when the
 view is created.</p>
 <pre><code class="language-cpp">  auto v1 = std::views::reverse( vec );
 </code></pre>
-<p>Here <code>v1</code> is a view; creating it neither changes vec, nor does v
-store any elements. The time it takes to construct <code>v1</code> and its
-size in memory is independent of the size of <code>vec</code>.</p>
+<p>Here <code>v1</code> is a view; creating it neither changes vec, nor does
+<code>v1</code> store any elements. The time it takes to construct <code>v1</code>
+and its size in memory is independent of the size of <code>vec</code>.</p>
 <pre><code class="language-cpp">  std::cout &lt;&lt; &quot;v1.begin = &quot; &lt;&lt; *v1.begin() &lt;&lt; '\n';
   std::cout &lt;&lt; &quot;vec.rbegin = &quot; &lt;&lt; *vec.rbegin() &lt;&lt; '\n';
 </code></pre>
@@ -115,8 +115,14 @@ string after dropping the first two.</p>
   std::cout &lt;&lt; &quot;vec[3] = &quot; &lt;&lt; vec[3] &lt;&lt; '\n';
 </code></pre>
 <h2 id="output" tabindex="-1">Output</h2>
-<pre><code class="language-txt">1 2 3 4 5 6 7 8 9 
-1 2 3 4 5 6 7 8 9 
+<pre><code class="language-txt">v1.begin = 6
+vec.rbegin = 6
+v1.begin = 60
+vec.rbegin = 60
+v2.begin() = 4
+v3.begin() = 4
+v3.begin() = 256
+vec[3] = 42
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

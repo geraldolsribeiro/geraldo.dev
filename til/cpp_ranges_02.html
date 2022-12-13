@@ -108,7 +108,15 @@ string after dropping the first two.</p>
   vec[1] = 16;                                         // 2 -&gt; 16
   std::cout &lt;&lt; &quot;v3.begin() = &quot; &lt;&lt; *v3.begin() &lt;&lt; '\n'; // prints 256
 </code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
 <p>Views are not readonly</p>
+  </div>
+</div>
 <pre><code class="language-cpp">  auto v4 = vec | std::views::reverse | std::views::drop( 2 );
 
   *v4.begin() = 42; // now vec == {1, 2, 3, 42, 5, 6 } !!

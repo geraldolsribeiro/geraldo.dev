@@ -72,9 +72,11 @@ Authtoken saved to configuration file: /home/geraldo/.config/ngrok/ngrok.yml
 </code></pre>
 <h2 id="basic-usage" tabindex="-1">Basic usage</h2>
 <h3 id="serving-a-webpage" tabindex="-1">Serving a webpage</h3>
-<p>Loading server on localhost:</p>
+<p>Starting a server on localhost:</p>
 <pre><code class="language-bash">http-server ./
-Starting up http-server, serving ./
+</code></pre>
+<p>Expected output:</p>
+<pre><code>Starting up http-server, serving ./
 
 http-server version: 14.0.0
 
@@ -95,8 +97,8 @@ Hit CTRL-C to stop the server
 </code></pre>
 <p>Piping port 8080:</p>
 <pre><code class="language-bash">ngrok http 8080
-
-Session Status  online
+</code></pre>
+<pre><code>Session Status  online
 Account         Geraldo Ribeiro (Plan: Free)
 Version         3.1.0
 Region          South America (sa)

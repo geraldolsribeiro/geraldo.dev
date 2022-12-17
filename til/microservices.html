@@ -53,7 +53,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Microservices</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/microservice.html">microservice</a><a class="tag" href="/til/tag/C++.html">C++</a>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/microservice.html">microservice</a><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/crow.html">crow</a><a class="tag" href="/til/tag/cpprestsdk.html">cpprestsdk</a><a class="tag" href="/til/tag/httplib.html">httplib</a><a class="tag" href="/til/tag/pistache.html">pistache</a><a class="tag" href="/til/tag/restbed.html">restbed</a><a class="tag" href="/til/tag/restinio.html">restinio</a>
         </div><figure class="flex bg-slate-600 p-4 rounded-xl border-solid border-2 border-slate-400">
   <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
     <g>
@@ -73,6 +73,54 @@ mudança fora dela, o fim está próximo.</p>
     <strong class="text-slate-200">Jack Welch</strong>
   </blockquote>
 </figure>
+<figure>
+  <img src="/til/microservice-architecture-01.webp" alt="Microservice architecture vs monolithic architecture">
+  <figcaption>
+     Microservice architecture vs monolithic architecture
+     <br>
+    <cite>Source: <a href="https://docs.oracle.com/en/solutions/learn-architect-microservice/">https://docs.oracle.com/en/solutions/learn-architect-microservice/</a></cite>
+  </figcaption>
+</figure>
+<ul>
+<li>smart endpoints and dump pipes</li>
+<li>inter process communication
+<ul>
+<li>HTTP (e.g. REST API)</li>
+<li>TCP for binary base protocols</li>
+<li>AMQP (which is also over TCP)</li>
+</ul>
+</li>
+<li>data format
+<ul>
+<li>JSON</li>
+<li>XML</li>
+<li>binary</li>
+</ul>
+</li>
+<li>in many cases, microservices do not require this level of performance,
+especially when the service is required to work based on RESTful APIs.
+<ul>
+<li>use languages that simplify coding (e.g. go or javascript)</li>
+</ul>
+</li>
+<li>in many cases when performance is crucial, using a textual API
+(such as REST) would not be our first choice.
+<ul>
+<li>use C++ binary services (e.g. with a gRPC protocol)</li>
+</ul>
+</li>
+<li>frameworks C++
+<ul>
+<li><a href="https://github.com/microsoft/cpprestsdk">Microsoft C++ REST SDK</a></li>
+<li><a href="https://github.com/CrowCpp/Crow">Crow</a> fork of <a href="https://github.com/ipkn/crow">ipkn/Crow</a></li>
+<li><a href="https://github.com/yhirose/cpp-httplib">httplib</a></li>
+<li><a href="http://pistache.io/">Pistache</a></li>
+<li><a href="https://github.com/Corvusoft/restbed">Restbed</a></li>
+<li><a href="https://stiffstream.com/en/products/restinio.html">Restinio</a></li>
+<li>Other frameworks can be found <a href="https://github.com/mfornos/awesome-microservices#c-1">here</a></li>
+</ul>
+</li>
+</ul>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://www.incredibuild.com/blog/microservices-and-c-exploring-the-combination">Microservices and C++ – Exploring the Combination</a></li>

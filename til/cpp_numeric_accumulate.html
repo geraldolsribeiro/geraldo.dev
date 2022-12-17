@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ Ranges 01</title>
+    <title>C++ accumulate</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,36 +52,140 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ Ranges 01</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/ranges.html">ranges</a><a class="tag" href="/til/tag/views.html">views</a><a class="tag" href="/til/tag/iota_view.html">iota_view</a><a class="tag" href="/til/tag/iota.html">iota</a>
-        </div><pre><code class="language-cpp">  for( int i : std::ranges::iota_view{ 1, 10 } ) {
-    std::cout &lt;&lt; i &lt;&lt; ' ';
+        <h1>C++ accumulate</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/accumulate.html">accumulate</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#folding">Folding</a></li><li><a href="#output">Output</a></li></ul></div></p>
+<h2 id="folding" tabindex="-1">Folding</h2>
+<p>Folding (or reduction) is the process of combining a collection of
+values together to generate a reduced number of results. Most of the
+time, we are speaking about a single result. Folding abstracts the
+process of iterating over structures that are recursive in nature.</p>
+<p>The <code>std::accumulate</code> function is a perfect example of folding
+functionality because it combines values in the collection.  Take a
+look at the following simple example:</p>
+<pre><code class="language-c++">std::vector&lt;double&gt; elems{1.1, 2.2, 3.3, 4.4, 5.5};
+auto sum = std::accumulate(elems.begin(), elems.end(), 0);
+</code></pre>
+<p>The last argument to the function is the accumulator. This is the
+initial value that should be used as the previous value for the
+first element of the collection.</p>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>A better alternative to the <code>std::accumulate</code> function is the
+<code>std::reduce</code> function.  <code>reduce()</code> is similar to <code>accumulate()</code>,
+except it doesn’t keep the order of the operation; that is, it
+doesn’t necessarily process the collection elements sequentially. You
+can pass an execution policy to the <code>std::reduce</code> function and
+change its behavior, say, to processing elements in parallel.</p>
+  </div>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p>Though <code>std::reduce</code> seems faster compared to <code>std::accumulate</code>,
+you should be careful when using it with non-commutative binary
+operations.</p>
+  </div>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☕</span>
+    <span>Information</span>
+  </div>
+  <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
+<p>Folding and recursion go hand in hand. Recursive functions also
+solve a problem by decomposing it into smaller tasks and solving
+them one by one.</p>
+  </div>
+</div>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+struct my_multiplies {
+  constexpr T operator()( const T &amp;lhs, const T &amp;rhs ) const
+  {
+    return lhs * rhs;
   }
-  std::cout &lt;&lt; '\n';
+};
+</code></pre>
+<pre><code class="language-cpp">  vector&lt;int&gt; v{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
-  for( int i : std::views::iota( 1, 10 ) ) {
-    std::cout &lt;&lt; i &lt;&lt; ' ';
-  }
-  std::cout &lt;&lt; '\n';
+  int sum1     = accumulate( v.begin(), v.end(), 0 );
+  int sum2     = accumulate( v.begin(), v.end(), 0, plus&lt;int&gt;() );
+  int product1 = accumulate( v.begin(), v.end(), 1, multiplies&lt;int&gt;() );
+  int product2 = accumulate( v.begin(), v.end(), 1, my_multiplies&lt;int&gt;() );
 
-  std::vector&lt;double&gt; vec{ 1.1, 2.2, 4.3, 5.6, 2.4 };
-  auto                squared = vec | std::ranges::views::transform( []( auto const i ) { return i * i; } );
-  // squared                     = vec | std::range::views::transform( std::sqrt );
-  for( const auto &amp;v : squared ) {
-    std::cout &lt;&lt; v &lt;&lt; '\n';
+  cout &lt;&lt; &quot;sum1: &quot; &lt;&lt; sum1 &lt;&lt; &quot;\nsum2: &quot; &lt;&lt; sum2 &lt;&lt; '\n'
+       &lt;&lt; &quot;product1: &quot; &lt;&lt; product1 &lt;&lt; &quot;\nproduct2: &quot; &lt;&lt; product2 &lt;&lt; '\n';
+
+  auto dash_fold = []( string a, int b ) { return std::move( a ) + '-' + to_string( b ); };
+
+  // Concatena separando por traço
+  // 1-2-3-4-5-6-7-8-9-10
+  string s = accumulate(
+      next( v.begin() ), // pula um elemento
+      v.end(),
+      to_string( v[0] ), // começa com o primeiro elemento
+      dash_fold );
+
+  cout &lt;&lt; &quot;dash-separated string: &quot; &lt;&lt; s &lt;&lt; '\n';
+
+  // Concatena separando por traço (de trás pra frente)
+  // 10-9-8-7-6-5-4-3-2-1
+  string rs = accumulate(
+      next( v.rbegin() ),    // pula um elemento
+      v.rend(),
+      to_string( v.back() ), // começa pelo último
+      dash_fold );
+
+  cout &lt;&lt; &quot;dash-separated string (right-folded): &quot; &lt;&lt; rs &lt;&lt; '\n';
+
+  // twitter @SimonToth83
+  // std::inclusive_scan and std::exclusive_scan scan are std::reduce variants that instead of producing a single value,
+  // emit each partial result. For inclusive_scan the first output value already includes the first input element.
+
+  vector&lt;int&gt; scan1;
+  inclusive_scan( v.begin(), v.end(), back_inserter( scan1 ) );
+  // implicit init == int{} == 0
+  cout &lt;&lt; &quot;scan1: &quot;;
+  for( const auto &amp;i : scan1 ) {
+    cout &lt;&lt; i &lt;&lt; &quot; &quot;;
   }
-  std::cout &lt;&lt; '\n';
+
+  vector&lt;int&gt; scan2;
+  exclusive_scan( v.begin(), v.end(), back_inserter( scan2 ), 100 );
+  // init is mandatory for exclusive_scan
+  cout &lt;&lt; &quot;\nscan2: &quot;;
+  for( const auto &amp;i : scan2 ) {
+    cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+  }
+
+  vector&lt;int&gt; scan3;
+  exclusive_scan( v.begin(), v.end(), back_inserter( scan3 ), 1000, multiplies&lt;&gt;{} );
+  cout &lt;&lt; &quot;\nscan3: &quot;;
+  for( const auto &amp;i : scan3 ) {
+    cout &lt;&lt; i &lt;&lt; &quot; &quot;;
+  }
+
+  cout &lt;&lt; endl;
 
 </code></pre>
 <h2 id="output" tabindex="-1">Output</h2>
-<pre><code class="language-txt">1 2 3 4 5 6 7 8 9 
-1 2 3 4 5 6 7 8 9 
-1.21
-4.84
-18.49
-31.36
-5.76
-
+<pre><code class="language-txt">sum1: 55
+sum2: 55
+product1: 3628800
+product2: 3628800
+dash-separated string: 1-2-3-4-5-6-7-8-9-10
+dash-separated string (right-folded): 10-9-8-7-6-5-4-3-2-1
+scan1: 1 3 6 10 15 21 28 36 45 55 
+scan2: 100 101 103 106 110 115 121 128 136 145 
+scan3: 1000 1000 2000 6000 24000 120000 720000 5040000 40320000 362880000 
 
 </code></pre>
 

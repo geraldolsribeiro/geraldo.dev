@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by javascript">
-    <title>TIL - javascript</title>
+    <meta name="description" content="Description not defined">
+    <title>C++ attributes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -47,52 +47,65 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
-        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
-        </div>
-        <h1 class="px-4">Today I Learned / javascript</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/javascript-error-logging.html" title="Logando erros em javascript">
-              <h3>Logando erros em javascript</h3>
-              <p class="text-slate-400">2020-02-17</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/javascript.html">javascript</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/dropzonejs.html" title="Dropzone">
-              <h3>Dropzone</h3>
-              <p class="text-slate-400">2020-01-14</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/dropzone.html">dropzone</a><a class="tag" href="/til/tag/javascript.html">javascript</a><a class="tag" href="/til/tag/upload.html">upload</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/js-eventos.html" title="Eventos em javascript">
-              <h3>Eventos em javascript</h3>
-              <p class="text-slate-400">2019-12-03</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/javascript.html">javascript</a><a class="tag" href="/til/tag/eventos.html">eventos</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/js-set.html" title="javascript set">
-              <h3>javascript set</h3>
-              <p class="text-slate-400">2019-12-03</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/javascript.html">javascript</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/javascript-console-dir.html" title="Javascript - console.dir">
-              <h3>Javascript - console.dir</h3>
-              <p class="text-slate-400">2019-11-06</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/javascript.html">javascript</a><a class="tag" href="/til/tag/console.html">console</a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ attributes</h1>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/attributes.html">attributes</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#brief">Brief</a></li><li><a href="#attribute-%5B%5Bnodiscard%5D%5D">Attribute [[nodiscard]]</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="brief" tabindex="-1">Brief</h2>
+<ul>
+<li><code>[[noreturn]]</code></li>
+<li><code>[[carries_dependency]]</code></li>
+<li><code>[[assume]]</code></li>
+<li><code>[[nodiscard]]</code></li>
+</ul>
+<h2 id="attribute-%5B%5Bnodiscard%5D%5D" tabindex="-1">Attribute <code>[[nodiscard]]</code></h2>
+<pre><code class="language-cpp">  auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
+  lm();  // would emit a warning
+</code></pre>
+<pre><code>attributes.cpp:27:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+lm();
+~~^~
+</code></pre>
+<pre><code>
+## Output
+
+
+```txt
+
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://www.sandordargo.com/blog/2022/12/14/cpp23-attributes">C++23: attributes</a></li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

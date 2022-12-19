@@ -55,79 +55,28 @@
         <h1>C++ reduce</h1>
         <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/reduce.html">reduce</a><a class="tag" href="/til/tag/accumulate.html">accumulate</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  vector&lt;int&gt; vec{ 0, 1, 2, 3, 4, 5 };
-
-  auto sum0 = accumulate( begin( vec ), end( vec ), 0.0 );        // sequential
-  auto sum1 = reduce( begin( vec ), end( vec ) );                 // sequential
-  auto sum2 = reduce( execution::seq, begin( vec ), end( vec ) ); // sequential
-  auto sum3 = reduce( execution::par, begin( vec ), end( vec ) ); // parallel
-  cout &lt;&lt; &quot;Sum: &quot; &lt;&lt; sum0 &lt;&lt; &quot; &quot; &lt;&lt; sum1 &lt;&lt; &quot; &quot; &lt;&lt; sum2 &lt;&lt; &quot; &quot; &lt;&lt; sum3 &lt;&lt; '\n';
-</code></pre>
-<p>The average time to operate over 10M items normalized by the <code>accumulate</code> time:</p>
-<ul>
-<li><code>accumulate</code>: <strong>100%</strong></li>
-<li><code>reduce par</code>: <strong>37%</strong></li>
-<li><code>reduce seq</code>: <strong>165%</strong></li>
-</ul>
-<pre><code class="language-cpp">  const vector&lt;double&gt; v( 10'000'007, 0.5 );
-  map&lt;string, double&gt;  means;
-
-  cout &lt;&lt; fixed &lt;&lt; setprecision( 1 );
-  const int N = 5;
-  for( auto i = 0; i &lt; N; ++i ) {
-    {
-      const auto                            t1     = chrono::high_resolution_clock::now();
-      const double                          result = accumulate( v.cbegin(), v.cend(), 0.0 );
-      const auto                            t2     = chrono::high_resolution_clock::now();
-      const chrono::duration&lt;double, milli&gt; ms     = t2 - t1;
-      cout &lt;&lt; &quot;std::accumulate result &quot; &lt;&lt; result &lt;&lt; &quot; took &quot; &lt;&lt; ms.count() &lt;&lt; &quot; ms\n&quot;;
-      means[&quot;accumulate&quot;] += ms.count() / N;
-    }
-
-    {
-      const auto                            t1     = chrono::high_resolution_clock::now();
-      const double                          result = reduce( execution::seq, v.cbegin(), v.cend() );
-      const auto                            t2     = chrono::high_resolution_clock::now();
-      const chrono::duration&lt;double, milli&gt; ms     = t2 - t1;
-      cout &lt;&lt; &quot;std::reduce seq result &quot; &lt;&lt; result &lt;&lt; &quot; took &quot; &lt;&lt; ms.count() &lt;&lt; &quot; ms\n&quot;;
-      means[&quot;reduce seq&quot;] += ms.count() / N;
-    }
-
-    {
-      const auto                            t1     = chrono::high_resolution_clock::now();
-      const double                          result = reduce( execution::par, v.cbegin(), v.cend() );
-      const auto                            t2     = chrono::high_resolution_clock::now();
-      const chrono::duration&lt;double, milli&gt; ms     = t2 - t1;
-      cout &lt;&lt; &quot;std::reduce par result &quot; &lt;&lt; result &lt;&lt; &quot; took &quot; &lt;&lt; ms.count() &lt;&lt; &quot; ms\n&quot;;
-      means[&quot;reduce par&quot;] += ms.count() / N;
-    }
-  }
-
-  for( const auto &amp;[key, value] : means ) {
-    cout &lt;&lt; key &lt;&lt; &quot;: &quot; &lt;&lt; value &lt;&lt; &quot;ms\n&quot;;
-  }
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Sum: 15 15 15 15
-std::accumulate result 5000003.5 took 78.9 ms
-std::reduce seq result 5000003.5 took 118.5 ms
-std::reduce par result 5000003.5 took 29.5 ms
-std::accumulate result 5000003.5 took 79.4 ms
-std::reduce seq result 5000003.5 took 117.1 ms
-std::reduce par result 5000003.5 took 29.2 ms
-std::accumulate result 5000003.5 took 83.3 ms
-std::reduce seq result 5000003.5 took 121.3 ms
-std::reduce par result 5000003.5 took 28.8 ms
-std::accumulate result 5000003.5 took 83.8 ms
-std::reduce seq result 5000003.5 took 129.5 ms
-std::reduce par result 5000003.5 took 30.5 ms
-std::accumulate result 5000003.5 took 86.8 ms
-std::reduce seq result 5000003.5 took 121.4 ms
-std::reduce par result 5000003.5 took 29.2 ms
-accumulate: 82.5ms
-reduce par: 29.5ms
-reduce seq: 121.6ms
+<p><div class="table-of-contents"><ul></ul></div></p>
+<pre><code class="language-txt">Sum: 15 15 15
+std::accumulate result 5000003.500000 took 68.499441 ms
+    std::reduce result 5000003.500000 took 22.101522 ms
+std::accumulate result 5000003.500000 took 68.503264 ms
+    std::reduce result 5000003.500000 took 22.637697 ms
+std::accumulate result 5000003.500000 took 73.921647 ms
+    std::reduce result 5000003.500000 took 21.979145 ms
+std::accumulate result 5000003.500000 took 68.212001 ms
+    std::reduce result 5000003.500000 took 21.836526 ms
+std::accumulate result 5000003.500000 took 68.423978 ms
+    std::reduce result 5000003.500000 took 21.901535 ms
+std::accumulate result 5000003.500000 took 68.725932 ms
+    std::reduce result 5000003.500000 took 21.985260 ms
+std::accumulate result 5000003.500000 took 68.189786 ms
+    std::reduce result 5000003.500000 took 22.167274 ms
+std::accumulate result 5000003.500000 took 68.281224 ms
+    std::reduce result 5000003.500000 took 22.175374 ms
+std::accumulate result 5000003.500000 took 68.172154 ms
+    std::reduce result 5000003.500000 took 21.738078 ms
+std::accumulate result 5000003.500000 took 68.243548 ms
+    std::reduce result 5000003.500000 took 22.060540 ms
 
 </code></pre>
 

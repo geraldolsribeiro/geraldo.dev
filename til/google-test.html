@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Escolhendo versões dos pacotes no Debian/Ubuntu</title>
+    <title>Google Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,108 +52,110 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Escolhendo versões dos pacotes no Debian/Ubuntu</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/sysadmin.html">sysadmin</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/ubuntu.html">ubuntu</a><a class="tag no-underline" href="/til/tag/hugo.html">hugo</a><a class="tag no-underline" href="/til/tag/apt.html">apt</a>
-        </div><h2 id="parte-1---regra-geral" tabindex="-1">Parte 1 - Regra geral</h2>
-<p>Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão <code>stable</code> por padrão.</p>
-<p>No arquivo <code>/etc/apt/preferences</code> (que deve estar vazio inicialmente) acrescente as seguintes linhas:</p>
-<pre><code class="language-bash"># Arquivo: /etc/apt/preferences
+        <h1>Google Test</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/TDD.html">TDD</a><a class="tag no-underline" href="/til/tag/google-test.html">google-test</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#makefile">Makefile</a></li><li><a href="#doubles">Doubles</a></li><li><a href="#dummies">Dummies</a></li><li><a href="#fakes">Fakes</a></li><li><a href="#stubs">Stubs</a></li><li><a href="#spies">Spies</a></li><li><a href="#mocks">Mocks</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="makefile" tabindex="-1">Makefile</h2>
+<p>A minimal <code>Makefile</code> to build for <strong>google-test</strong> is shown bellow:</p>
+<pre><code class="language-makefile">LDFLAGS_GTEST+= -lgtest -lgtest_main -lpthread
+LDFLAGS_GMOCK+= -Lgmock -lgmock_main
+LDFLAG+= $(LDFLAGS_GTEST) $(LDFLAGS_GMOCK)
 
-# Todos os pacotes vem do stable por padrão
-Package: *
-Pin: release a=stable
-Pin-Priority: 1001
+all: CheckoutTest
 
-Package: *
-Pin: release a=testing
-Pin-Priority: 650
-
-Package: *
-Pin: release a=unstable
-Pin-Priority: 600
+CheckoutTest: CheckoutTest.cpp Checkout.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 </code></pre>
-<p>O valor acima de 1000 vai forçar os pacotes que foram instalados na mão usando outras versões a voltarem para o <code>stable</code>.</p>
-<p>Agora que já definimos uma REGRA GERAL podemos começar a definir as exceções à regra.</p>
-<h2 id="parte-2---exce%C3%A7%C3%B5es-%C3%A0-regra-geral" tabindex="-1">Parte 2 - Exceções à regra geral</h2>
-<h3 id="por-target" tabindex="-1">Por target</h3>
-<p>Para exemplo vamos escolher o pacote <code>hugo</code> para este post.
-Você pode usar este mesmo procedimento para qualquer pacote.</p>
-<p>Se você acessar <a href="https://packages.debian.org/search?keywords=hugo">https://packages.debian.org/search?keywords=hugo</a> encontrará as seguintes versões:</p>
+<h2 id="doubles" tabindex="-1">Doubles</h2>
+<p>Almost all code that gets implemented will depend (i.e. collaborate) on another
+piece of code in the system.</p>
+<p>Those other pieces of code are oftentimes trying to do things or communicate
+with things that are not available in a unit testing environment or are so slow
+that they would make our unit tests extremely slow.</p>
+<p>Test doubles are the answer to that problem.</p>
+<p>They’re objects created in the tests to replace the real production system
+collaborators.</p>
+<h2 id="dummies" tabindex="-1">Dummies</h2>
+<p>There are many types of test doubles. Dummy objects are the simplest.</p>
+<p>They are simply placeholders that are intended to be passed around but not
+actually called or used in any real way.</p>
+<p>They will often generate exceptions if they are called.</p>
+<pre><code class="language-c++">class MyDummy : public MyInterface {
+  public:
+    void SomeFunction() { throw &quot;I should't be called!&quot;; }
+};
+</code></pre>
+<h2 id="fakes" tabindex="-1">Fakes</h2>
+<p>Fake objects have a different and usually simplified implementation from the
+production collaborator that makes them usable in the test code but not
+suitable for production.</p>
+<pre><code class="language-c++">class MyTestDB : public DBInterface  {
+  public:
+    void pushData(int data) { dataItems.push_back(data); }
+  protected:
+    vector&lt;int&gt; dataItems;
+};
+</code></pre>
+<h2 id="stubs" tabindex="-1">Stubs</h2>
+<p>Stubs provide implementations that do expect to be called but respond with
+basic canned responses.</p>
+<pre><code class="language-c++">class MyStub : public MyInterface {
+  public:
+    int SomeFunction() { return 0; }
+};
+</code></pre>
+<h2 id="spies" tabindex="-1">Spies</h2>
+<p>Spies provide implementations that record the values that are passed into them.
+The tests then can use those recorded values for validating the code on our
+test.</p>
+<pre><code class="language-bash">class MySpy : public MyInterface {
+  public:
+    int savedParam;
+    void SomeFunction( int param ) { savedParam = param; }
+};
+</code></pre>
+<h2 id="mocks" tabindex="-1">Mocks</h2>
+<p>Mock objects are the most sophisticated of all the test doubles. They have
+pre-programmed expectations about the ordering of calls, the number of times
+functions will be called, and the values that will be passed in.</p>
+<p>Mock objects will generate their own exceptions when these pre-programmed
+expectations are not met.</p>
+<pre><code class="language-bash">class MyMock : public MyInterface {
+  public:
+    void SomeFunction( int param ) {
+      if( 1 != param ) {
+        throw &quot;I should't be called!&quot;;
+      }
+    }
+};
+</code></pre>
+<!--
+In this slide, I have a simple example of a dummy object. Its implementation
+throws an exception if it's called, as it never expects to be used. This is
+a simple example of a stub test double. It returns a canned response when its
+one method is called. This is an example of a fake object. It provides
+a working implementation, but the implementation is likely only suitable for
+the test environment and not for production. In this case, it's an in-memory
+database. This is an example of a spy test double. It records the value of the
+parameter that was passed into it in a public member variable. That recorded
+value can then be validated by the unit test. This is a simple example of
+a mock object. This mock object has a built-in expectation that a value of one
+will be passed in for the parameter to the function and will throw an exception
+if that is not the case. Mock frameworks are libraries that provide easy-to-use
+APIs for automatically creating any of these types of test doubles at runtime.
+They provide easy APIs for specifying the mocking expectations in your unit
+tests. They can be much more efficient than implementing your own custom mock
+objects, as creating your own custom mock objects can be time-consuming,
+tedious, and error-prone. Google Mock is a C++ Mocking Framework from Google.
+It comes bundled with Google Test and works well in the Google Test Framework.
+That being said, it can also be used with any other C++ Unit Testing Framework.
+In the next lecture, I'll walk through a simple example using Google Mock.
+-->
+<h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li>stable 0.18.1</li>
-<li>testing 0.55.6</li>
-<li>unstable 0.55.6</li>
+<li>Linkedin Learning Course <a href="https://www.linkedin.com/learning/test-driven-development-in-c-plus-plus/google-test">Test-Driven Development in C++</a></li>
 </ul>
-<div role="alert" class="my-4">
-  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">⚡</span>
-    <span>Tip</span>
-  </div>
-  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>Crie um arquivo dentro do diretório <code>/etc/apt/preferences.d/</code> com o nome do
-pacote que você quer especificar a versão. Pode ser qualquer nome aqui, mas
-usando o nome do pacote fica mais fácil de manter o sistema.</p>
-  </div>
-</div>
-<pre><code class="language-bash"># /etc/apt/preferences.d/hugo
-Package: hugo
-Pin: release a=testing
-Pin-Priority: 1002
-</code></pre>
-<p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p>
-<h3 id="por-origem" tabindex="-1">Por origem</h3>
-<p>Ao instalar o pacote <code>nodejs</code> a versão <code>4.8</code> será instalada pois é a mais recente que está no repositório padrão.</p>
-<pre><code class="language-bash">apt install nodejs
-...
-Obter:1 http://ftp.br.debian.org/debian stretch/main amd64 nodejs amd64 4.8.2~dfsg-1 [3.440 kB]
-...
-</code></pre>
-<p>Para pegar a versão mais rescente do <code>nodejs</code> diretamente do <code>deb.nodesource.com</code> em vez do repositório padrão do Debian use:</p>
-<pre><code class="language-bash"># /etc/apt/preferences.d/nodejs
-Package: *
-Pin: origin deb.nodesource.com
-Pin-Priority: 1001
-</code></pre>
-<p>Então basta executar o comando de instalação novamente para que o pacote seja atualizado para a versão <code>12</code>.</p>
-<pre><code class="language-bash">apt update
-apt install nodejs
-...
-Obter:1 https://deb.nodesource.com/node_12.x stretch/main amd64 nodejs amd64 12.6.0-1nodesource1 [16,9 MB]
-...
-</code></pre>
-<h2 id="parte-3---upgrade%2Fdowngrade" tabindex="-1">Parte 3 - Upgrade/Downgrade</h2>
-<p>Agora que todas as nossas regras já estão definida basta atualizar que os pacotes vão para a versões escolhidas.</p>
-<pre><code class="language-bash">apt-get update
-apt-get upgrade
-apt-get dist-upgrade
-</code></pre>
-<p>Note que alguns pacotes podem sofrer downgrade nesta atualização.</p>
-<p>Só para conferir que a versão escolhida foi realmente instalada:</p>
-<pre><code class="language-text">$ dpkg -l | grep hugo
-ii  hugo 0.55.6+really0.54.0-1 amd64 Fast and flexible Static Site Generator written in Go
-</code></pre>
-<h2 id="entendendo-os-valores-das-prioridades" tabindex="-1">Entendendo os valores das prioridades</h2>
-<h3 id="p-%3E-1000" tabindex="-1">P &gt; 1000</h3>
-<p>Instala mesmo que precise baixar a versão de algum pacote já instalado.
-Somente prioridades acima de 1000 permitem downgrade.</p>
-<h3 id="990-%3C-p-%3C%3D-1000" tabindex="-1">990 &lt; P &lt;= 1000</h3>
-<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).
-Não permite downgrade de pacote instalado.</p>
-<h3 id="500-%3C-p-%3C%3D-990" tabindex="-1">500 &lt; P &lt;= 990</h3>
-<p>Instala somente se uma versão maior estiver disponível no <strong>target release</strong> (Ver variáel APT::Default-Release para detalhes).</p>
-<h3 id="100-%3C-p-%3C%3D-500" tabindex="-1">100 &lt; P &lt;= 500</h3>
-<p>Utilizado como predefinição para os arquivos NotAutomatic e ButAutomaticUpgrades</p>
-<p>Instala a menos que exista uma versão disponível em outra distribuição ou se a versão instalada for mais recente.</p>
-<blockquote>
-<p>causes a version to be installed unless there is a version available
-belonging to some other distribution or the installed version is more recent</p>
-</blockquote>
-<h3 id="0-%3C-p-%3C%3D-100" tabindex="-1">0 &lt; P &lt;= 100</h3>
-<p>Instala somente se não possuir versão instalada do pacote.</p>
-<h3 id="p-%3D%3D-1" tabindex="-1">P == 1</h3>
-<p>Valor padrão para NotAutomatic</p>
-<h3 id="p-%3C-0" tabindex="-1">P &lt; 0</h3>
-<p>Nunca instala o pacote mesmo que o pacote seja recomendado.</p>
 
       </main>
     </div>

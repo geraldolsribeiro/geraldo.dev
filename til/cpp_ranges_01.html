@@ -53,35 +53,31 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ Ranges 01</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/ranges.html">ranges</a><a class="tag" href="/til/tag/views.html">views</a><a class="tag" href="/til/tag/iota_view.html">iota_view</a><a class="tag" href="/til/tag/iota.html">iota</a>
-        </div><pre><code class="language-cpp">  for( int i : std::ranges::iota_view{ 1, 10 } ) {
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ranges.html">ranges</a><a class="tag no-underline" href="/til/tag/views.html">views</a><a class="tag no-underline" href="/til/tag/iota_view.html">iota_view</a><a class="tag no-underline" href="/til/tag/iota.html">iota</a>
+        </div><pre><code class="language-cpp">
+  // loop detect lenght
+  int ints[] = {0, 1, 2, 3, 4, 5};
+  for (const auto i : ints) {
     std::cout &lt;&lt; i &lt;&lt; ' ';
   }
   std::cout &lt;&lt; '\n';
 
-  for( int i : std::views::iota( 1, 10 ) ) {
+  // (4,10] = 4 5 6 7 8 9
+  for (int i : std::ranges::iota_view{4, 10}) {
     std::cout &lt;&lt; i &lt;&lt; ' ';
   }
   std::cout &lt;&lt; '\n';
 
-  std::vector&lt;double&gt; vec{ 1.1, 2.2, 4.3, 5.6, 2.4 };
-  auto                squared = vec | std::ranges::views::transform( []( auto const i ) { return i * i; } );
-  // squared                     = vec | std::range::views::transform( std::sqrt );
-  for( const auto &amp;v : squared ) {
-    std::cout &lt;&lt; v &lt;&lt; '\n';
+  // (5,10] = 5 6 7 8 9
+  for (int i : std::views::iota(5, 10)) {
+    std::cout &lt;&lt; i &lt;&lt; ' ';
   }
   std::cout &lt;&lt; '\n';
-
 </code></pre>
 <h2 id="output" tabindex="-1">Output</h2>
-<pre><code class="language-txt">1 2 3 4 5 6 7 8 9 
-1 2 3 4 5 6 7 8 9 
-1.21
-4.84
-18.49
-31.36
-5.76
-
+<pre><code class="language-txt">0 1 2 3 4 5 
+4 5 6 7 8 9 
+5 6 7 8 9 
 
 </code></pre>
 

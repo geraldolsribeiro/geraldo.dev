@@ -1676,6 +1676,10 @@ video {
   color: rgb(226 232 240 / var(--tw-text-opacity));
 }
 
+.no-underline {
+  text-decoration-line: none;
+}
+
 .underline-offset-8 {
   text-underline-offset: 8px;
 }
@@ -1876,6 +1880,24 @@ svg {
 .hljs-ln-code {
 }
 
+a {
+  text-underline-offset: 0.3rem;
+  /* afasta o underline */
+}
+
+.table-of-contents a {
+  text-decoration-line: none;
+}
+
+.table-of-contents a:hover {
+  text-decoration-line: underline;
+}
+
+.table-of-contents li {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .hover\:bg-blue-800:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(30 64 175 / var(--tw-bg-opacity));
@@ -2026,4 +2048,3 @@ svg {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
-

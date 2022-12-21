@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Extract data using devtools</title>
+    <title>SCRUM</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,58 +52,56 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Extract data using devtools</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/devtools.html">devtools</a><a class="tag no-underline" href="/til/tag/console.html">console</a>
-        </div><div role="alert" class="my-4">
-  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">👇</span>
-    <span>Note</span>
-  </div>
-  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
-<p>Lets consider the page <a href="https://geraldo.dev/certificate/tag/security.html">https://geraldo.dev/certificate/tag/security.html</a> as
-starting point for data extraction.</p>
-  </div>
-</div>
-<p>For example, searching for <strong>H3</strong> tags on devtools console:</p>
-<pre><code class="language-javascript">document.getElementsByTagName(&quot;h3&quot;)
-</code></pre>
-<p>This statement returns:</p>
-<pre><code>HTMLCollection(16) [h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3, h3]
-</code></pre>
+        <h1>SCRUM</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/scrum.html">scrum</a>
+        </div><h2 id="user-stories" tabindex="-1">User Stories</h2>
 <figure>
-  <img class="mx-auto" src="/til/devtools-extract-data-01.webp" alt="HTMLCollection">
+  <img class="mx-auto" src="/til/scrum_user_stories_invest.webp" alt="INVEST">
   <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>HTMLCollection</span>
+     <strong>Fig. 1</strong> - <span>INVEST</span>
   </figcaption>
 </figure>
-<p>The <code>HTMLCollection</code> result is not operable directly by <code>map</code> or <code>forEach</code> functions.</p>
-<p>By using the <strong>spread operator</strong> this collection can be converted to an array
-and the above functions can be called.</p>
-<p>The following commands can be used to get a list of H3 titles:</p>
-<pre><code class="language-javascript">myList=&quot;&quot;;
-[...document.getElementsByTagName(&quot;h3&quot;)].forEach(
-  e =&gt; myList += &quot;* &quot; + e.textContent + '\n'
-);
-copy(myList);
-</code></pre>
-<p>After running the previous snippet the clipboard will contains a text like this:</p>
-<pre><code class="language-markdown">* CSSLP Cert Prep 5 Secure Software Testing
-* ISO 27001 Segurança da Informação
-* Segurança da Informação
-* Desenvolvimento Seguro
-* CSSLP Cert Prep 3 Secure Software Design
-* CSSLP Cert Prep 2 Secure Software Requirements
-* CSSLP Cert Prep The Basics
-* CSSLP Cert Prep 4 Secure Software Implementation
-* Dynamic Application Security Testing DAST
-* DevSecOps SAST and Code Review for DevSecOps
-* Crucial Role of Penetration Testing and Vulnerability Assessments in Cybersecurity
-* TryHackMe Badge webbed
-* Secure Coding in Java
-* certiprof Cyber Security Foundation certiprof
-* Web Security OAuth and OpenID Connect
-* Pen Test Analise e Testes de Vulnerabilidades em Redes Corporativas
-</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/scrum_user_stories_statement.webp" alt="Statement template">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Statement template</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/scrum_user_stories_statement_example.webp" alt="User story example">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>User story example</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/scrum_user_stories_statement_example_non_functional.webp" alt="Non functional story">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>Non functional story</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/scrum_user_stories_acceptance_criteria_example.webp" alt="Acceptance Criteria example">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Acceptance Criteria example</span>
+  </figcaption>
+</figure>
+<h2 id="definition-of-done" tabindex="-1">Definition of done</h2>
+<p>Minimum requirements have been met for <strong>all</strong> stories.</p>
+<figure>
+  <img class="mx-auto" src="/til/scrum_definition_of_done_example.webp" alt="Definition of done example">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Definition of done example</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/scrum_definition_of_done_example_02.webp" alt="Definition of done example">
+  <figcaption class="text-center">
+     <strong>Fig. 7</strong> - <span>Definition of done example</span>
+  </figcaption>
+</figure>
+<!--
+../../static_src/til/scrum_user_stories_statement_example_non_functional.png
+-->
 
       </main>
     </div>

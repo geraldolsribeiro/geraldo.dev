@@ -126,10 +126,20 @@ Pin-Priority: 1002
 <h2 id="dados-de-treinamento" tabindex="-1">Dados de treinamento</h2>
 <p>Vamos utilizar dois grupos de dados, cada um com duas variáveis (x e y).</p>
 <p>Olhando nosso conjunto de dados de cima podemos ver claramente duas curvas, uma para cada conjunto.</p>
-<p><img src="/til/mlpack-foo-1.gif" alt="Grupo de dados de treinamento"></p>
+<figure>
+  <img class="mx-auto" src="/til/mlpack-foo-1.gif" alt="Grupo de dados de treinamento">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Grupo de dados de treinamento</span>
+  </figcaption>
+</figure>
 <p>Para facilitar a visualização, o primeiro grupo está em <em>z=0</em> e o segundo em <em>z=1</em>, conforme pode ser visto na
 animação abaixo. É mais ou menos isso que a rede deverá <em>aprender</em>.</p>
-<p><img src="/til/mlpack-foo-2.gif" alt="Grupo de dados de treinamento"></p>
+<figure>
+  <img class="mx-auto" src="/til/mlpack-foo-2.gif" alt="Grupo de dados de treinamento">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Grupo de dados de treinamento</span>
+  </figcaption>
+</figure>
 <p>O arquivo <code>foo.csv</code> contém as duas curvas com os pontos distribuídos do modo
 aleatório para não favorecer ou influenciar o treinamento. São ao todo 400
 linhas e 3 colunas. As duas primeiras colunas são as <strong>entradas</strong> e a terceira
@@ -176,7 +186,12 @@ registros são entrados por linha e para processamento são tratados em colunas.
   cout &lt;&lt; &quot;Colunas: &quot; &lt;&lt; data.n_cols &lt;&lt; endl; // 400
 </code></pre>
 <p>A matriz de dados foi carregada e precisa ser dividida entre dados de treinamento e dados de teste.</p>
-<p><img src="/til/mlpack-data.svg#center" alt="Dados depois de carregados"></p>
+<figure>
+  <img class="mx-auto" src="/til/mlpack-data.svg#center" alt="Dados depois de carregados">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Dados depois de carregados</span>
+  </figcaption>
+</figure>
 <p>É muito importante que o modelo nunca veja os dados de teste para que se tenha
 uma boa generalização.</p>
 <h3 id="constantes-para-os-%C3%ADndices" tabindex="-1">Constantes para os índices</h3>
@@ -231,7 +246,12 @@ Dados de saída para teste:
    0        1.0000   1.0000   0        0        1.0000   1.0000   0        1.0000   1.0000
 </code></pre>
 <h3 id="construindo-a-rede-neural" tabindex="-1">Construindo a rede neural</h3>
-<p><img src="/til/mlpack-ffn.svg#center" alt="img"></p>
+<figure>
+  <img class="mx-auto" src="/til/mlpack-ffn.svg#center" alt="img">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>img</span>
+  </figcaption>
+</figure>
 <pre><code class="language-c++">  // Feed Forward Network
   // FFN&lt;tipo-de-saída-das-camadas, regra-de-inicialização&gt; model;
   FFN&lt;MeanSquaredError&lt;&gt;, RandomInitialization&gt; model;

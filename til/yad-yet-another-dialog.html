@@ -53,7 +53,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>YAD - Yet Another Dialog</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/console.html">console</a>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/console.html">console</a>
         </div><pre><code class="language-bash">action=$(yad \
     --width 300 --entry --title &quot;System Logout&quot; \
     --image=gnome-shutdown                      \
@@ -90,12 +90,7 @@ esac
 
 eval exec $cmd
 </code></pre>
-<figure>
-  <img class="mx-auto" src="/til/yad-01.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/yad-01.webp" alt="img"></p>
 <pre><code class="language-bash">yad --form                                              \
     --image logo-dicas-l.webp                            \
     --image-on-top                                      \
@@ -109,12 +104,7 @@ eval exec $cmd
     --field &quot;Vou passar a usar o yad:CHK&quot; TRUE          \
     --field &quot;Vou continuar usando zenity:CHK&quot;
 </code></pre>
-<figure>
-  <img class="mx-auto" src="/til/yad-02.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/yad-02.webp" alt="img"></p>
 <ul>
 <li><code>DT</code> abre um calendário</li>
 <li><code>NUM</code> define uma spinbox</li>
@@ -132,12 +122,7 @@ eval exec $cmd
     --no-buttons
 </code></pre>
 <p>Clique em algum ícone para lançar a aplicação</p>
-<figure>
-  <img class="mx-auto" src="/til/yad-03.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 3</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/yad-03.webp" alt="img"></p>
 <pre><code class="language-bash">yad
 exval=$?
 case $exval in

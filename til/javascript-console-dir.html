@@ -53,7 +53,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Javascript - console.dir</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/javascript.html">javascript</a><a class="tag no-underline" href="/til/tag/console.html">console</a>
+        <div class="flex flex-wrap"><a class="tag" href="/til/tag/javascript.html">javascript</a><a class="tag" href="/til/tag/console.html">console</a>
         </div><p>Considere a seguinte página:</p>
 <pre><code class="language-html">&lt;html&gt;
   &lt;head&gt;&lt;/head&gt;
@@ -63,12 +63,7 @@
 &lt;/html&gt;
 </code></pre>
 <p>Que quando aberta no navegador tem a seguinte aparência:</p>
-<figure>
-  <img class="mx-auto" src="/til/javascript-console-dir-00.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/javascript-console-dir-00.webp" alt="img"></p>
 <p>Para obter o elemento do botão poderiamos fazer o seguinte:</p>
 <pre><code class="language-javascript">var btn = document.getElementById( 'clickMe' );
 </code></pre>
@@ -80,19 +75,9 @@
 <p>Ao enviar a variável <code>btn</code> para a função <code>console.dir</code> teremos acesso a todas as propriedades internas do objeto.</p>
 <pre><code class="language-javascript">console.dir( btn )
 </code></pre>
-<figure>
-  <img class="mx-auto" src="/til/javascript-console-dir-01.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/javascript-console-dir-01.webp" alt="img"></p>
 <p>A lista de propriedades é muito longa, abaixo vemos um trecho com as funções que tratam eventos (cliques, drag, change, …)</p>
-<figure>
-  <img class="mx-auto" src="/til/javascript-console-dir-02.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 3</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/javascript-console-dir-02.webp" alt="img"></p>
 <h2 id="adicionado-um-evento-de-clique" tabindex="-1">Adicionado um evento de clique</h2>
 <pre><code class="language-javascript">// Definindo uma função de tratamento
 meuClique = function() { alert('Fui clicado'); }
@@ -103,21 +88,11 @@ btn.addEventListener(&quot;click&quot;, meuClique);
 // Clicar no botão ou executar `btn.click()`
 </code></pre>
 <p>Ao clicar no botão uma janela é exibida:</p>
-<figure>
-  <img class="mx-auto" src="/til/javascript-console-dir-03.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 4</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/javascript-console-dir-03.webp" alt="img"></p>
 <p>Ao usar novamente o comando <code>console.dir( btn )</code> esperava ver no <code>onclick</code>
 alguma informação sobre a função de tratamento, mas estava <code>null</code>.</p>
 <p>Usando a função <code>getEventListeners</code> consegui localizar a função <code>meuClique</code></p>
-<figure>
-  <img class="mx-auto" src="/til/javascript-console-dir-04.webp" alt="img">
-  <figcaption class="text-center">
-     <strong>Fig. 5</strong> - <span>img</span>
-  </figcaption>
-</figure>
+<p><img src="/til/javascript-console-dir-04.webp" alt="img"></p>
 <p><code>$_</code> retorna o valor da última expressão avaliada</p>
 <p><code>$0</code>, <code>$1</code>,<code>$2</code>, <code>$3</code> e <code>$4</code> referenciam os últimos 5 elementos inspecionados</p>
 <p><code>$(selector, [startNode])</code> referencia o primeiro elemento no DOM especificado pelo seletor CSS.</p>

@@ -73,11 +73,26 @@
     std::cout &lt;&lt; i &lt;&lt; ' ';
   }
   std::cout &lt;&lt; '\n';
+
+  std::vector&lt;double&gt; vec{ 1.1, 2.2, 4.3, 5.6, 2.4 };
+  auto                squared = vec | std::ranges::views::transform( []( auto const i ) { return i * i; } );
+  // squared                     = vec | std::range::views::transform( std::sqrt );
+  for( const auto &amp;v : squared ) {
+    std::cout &lt;&lt; v &lt;&lt; '\n';
+  }
+  std::cout &lt;&lt; '\n';
+
 </code></pre>
 <h2 id="output" tabindex="-1">Output</h2>
 <pre><code class="language-txt">0 1 2 3 4 5 
 4 5 6 7 8 9 
 5 6 7 8 9 
+1.21
+4.84
+18.49
+31.36
+5.76
+
 
 </code></pre>
 

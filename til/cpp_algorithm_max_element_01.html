@@ -53,22 +53,47 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ algorithm_max_element_01</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/max_element.html">max_element</a><a class="tag no-underline" href="/til/tag/min_element.html">min_element</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/max_element.html">max_element</a><a class="tag no-underline" href="/til/tag/min_element.html">min_element</a><a class="tag no-underline" href="/til/tag/iter_swap.html">iter_swap</a><a class="tag no-underline" href="/til/tag/swap.html">swap</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  
-  vector&lt;int&gt; vec = { 18, 21, 42, 17, 0, -1, 21, 10, 10 };
+<pre><code class="language-cpp">
+  vector&lt;int&gt; vec = {18, 21, 42, 17, 0, -1, 21, 10, 10};
 
-  auto mx = *max_element(begin(vec),end(vec)); // O(N)
-  auto mn = *min_element(begin(vec),end(vec)); // O(N)
+  auto mx = max_element(begin(vec), end(vec));  // O(N)
+  auto mn = min_element(begin(vec), end(vec));  // O(N)
 
-  cout &lt;&lt; &quot;Max element is &quot; &lt;&lt; mx &lt;&lt; endl;
-  cout &lt;&lt; &quot;Min element is &quot; &lt;&lt; mn &lt;&lt; endl;
-
+  cout &lt;&lt; &quot;Max element is &quot; &lt;&lt; *mx &lt;&lt; endl;
+  cout &lt;&lt; &quot;Min element is &quot; &lt;&lt; *mn &lt;&lt; endl;
+</code></pre>
+<p>Print lambda:</p>
+<pre><code class="language-cpp">  auto print = [](const auto &amp;vec, const string &amp;msg) {
+    for (const auto &amp;e : vec) {
+      cout &lt;&lt; e &lt;&lt; ' ';
+    }
+    cout &lt;&lt; msg &lt;&lt; endl;
+  };
+</code></pre>
+<p>The <code>std::swap()</code> is a built-in function in C++ STL which swaps
+the value of any two variables passed to it as parameters.</p>
+<pre><code class="language-cpp">  print(vec, &quot;original vector&quot;);
+  std::swap(mn, mx);  // swap iterator value, but not its position
+  cout &lt;&lt; &quot;Max element is &quot; &lt;&lt; *mx &lt;&lt; endl;
+  cout &lt;&lt; &quot;Min element is &quot; &lt;&lt; *mn &lt;&lt; endl;
+  print(vec, &quot;after swap&quot;);
+</code></pre>
+<p>The <code>std::iter_swap</code> swaps the values of the elements the given
+iterators are pointing to.</p>
+<pre><code class="language-cpp">  std::iter_swap(mn, mx);
+  print(vec, &quot;after iter_swap&quot;);
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">Max element is 42
 Min element is -1
+18 21 42 17 0 -1 21 10 10 original vector
+Max element is -1
+Min element is 42
+18 21 42 17 0 -1 21 10 10 after swap
+18 21 -1 17 0 42 21 10 10 after iter_swap
 
 </code></pre>
 

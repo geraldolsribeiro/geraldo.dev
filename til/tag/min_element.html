@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Description not defined">
-    <title>C++ metaprogramming</title>
+    <meta name="description" content="Filtered by min_element">
+    <title>TIL - min_element</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -47,118 +47,28 @@
         </div>
       </form>
     </div>
-    <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-          </svg><span>Back to TILs</span></a>
-        <h1>C++ metaprogramming</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/metaprogramming.html">metaprogramming</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#traditional-recursive-factorial">Traditional recursive factorial</a></li><li><a href="#recursive-factorial-using-metaprogramming">Recursive factorial using metaprogramming</a></li><li><a href="#why-metaprogramming">Why metaprogramming</a></li><li><a href="#very-simple-speed-test">Very simple speed test</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<h2 id="traditional-recursive-factorial" tabindex="-1">Traditional recursive factorial</h2>
-<pre><code class="language-cpp">int factorial( int n )
-{
-  if( n &lt;= 1 )
-    return 1;
-  return n * factorial( n - 1 );
-}
-</code></pre>
-<h2 id="recursive-factorial-using-metaprogramming" tabindex="-1">Recursive factorial using metaprogramming</h2>
-<pre><code class="language-cpp">template &lt;int N&gt;
-struct MetaFactorial {
-  enum { value = N * MetaFactorial&lt;N - 1&gt;::value };
-};
-
-template &lt;&gt;
-struct MetaFactorial&lt;0&gt; {
-  enum { value = 1 };
-};
-</code></pre>
-<h2 id="why-metaprogramming" tabindex="-1">Why metaprogramming</h2>
-<p>In the book <strong>Expert C++</strong> <em>Vardan Grigoryan</em> and <em>Shunguang Wu</em> wrote:</p>
-<blockquote>
-<p>Why would we bother to write so much code just for a factorial
-that we wrote in the previous section in fewer than five lines of
-code? The reason is due to its efficiency. While it will take a
-little bit more time to compile the code, it is super efficient
-compared to the normal factorial function (implemented either
-recursively or iteratively). And the reason behind this efficiency is
-the fact that the actual calculation of the factorial is happening
-at compile time. That is, when the executable is run, the results
-are already ready to use. We just used the calculated value when
-we run the program; no calculation happens at runtime. If you’re
-seeing this code for the first time, the following explanation will
-make you fall in love with metaprogramming.</p>
-</blockquote>
-<h2 id="very-simple-speed-test" tabindex="-1">Very simple speed test</h2>
-<pre><code class="language-cpp">  const auto t1_meta = chrono::high_resolution_clock::now();
-
-  res1_meta = MetaFactorial&lt;10&gt;::value;
-  res2_meta = MetaFactorial&lt;11&gt;::value;
-
-  const auto t2_meta = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_meta = t2_meta - t1_meta;
-  cout &lt;&lt; &quot;MetaFactorial&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_meta;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_meta;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_meta.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<pre><code class="language-cpp">  const auto t1_recursive = chrono::high_resolution_clock::now();
-
-  res1_recursive = factorial( 10 );
-  res2_recursive = factorial( 11 );
-
-  const auto t2_recursive = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_recursive = t2_recursive - t1_recursive;
-  cout &lt;&lt; &quot;Recursive&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_recursive;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_recursive;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_recursive.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<p>Then the time consuming ratio between both approaches is about
-3 to 5 times (in my box):</p>
-<pre><code class="language-cpp">  cout &lt;&lt; &quot;Ratio: &quot; &lt;&lt; ns_recursive.count() / ns_meta.count() &lt;&lt; endl;
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">MetaFactorial
-f(10) = 3628800
-f(11) = 39916800
-took 53ns
-
-Recursive
-f(10) = 3628800
-f(11) = 39916800
-took 461ns
-
-Ratio: 8.69811
-
-</code></pre>
-
-      </main>
-    </div>
+    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
+      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
+        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+            </svg><span>Back to TILs</span></a>
+        </div>
+        <h1 class="px-4">Today I Learned / min_element</h1>
+        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <!-- unless page.draft && false-->
+          <div class="grid-item-with-gradient"><a href="/til/cpp_algorithm_max_element_01.html" title="C++ algorithm_max_element_01">
+              <h3>C++ algorithm_max_element_01</h3>
+              <p class="text-slate-400">2022-12-26</p>
+              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/algorithm.html">algorithm</a><a class="tag" href="/til/tag/max_element.html">max_element</a><a class="tag" href="/til/tag/min_element.html">min_element</a>
+              </div></a></div>
+        </div>
+      </div>
+    </main>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
-    <script>
-      //- hljs.highlightAll();
-      //- https://github.com/wcoder/highlightjs-line-numbers.js
-      //- Exemplo de numeracao em corba.md
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
-          hljs.highlightElement(el);
-        });
-      
-        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
-          hljs.lineNumbersBlock(el); // numbering using plugin
-        });
-      
-      });
-    </script>
-    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

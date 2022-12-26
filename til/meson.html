@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ metaprogramming</title>
+    <title>Meson</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,90 +52,63 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ metaprogramming</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/metaprogramming.html">metaprogramming</a>
+        <h1>Meson</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/meson.html">meson</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#traditional-recursive-factorial">Traditional recursive factorial</a></li><li><a href="#recursive-factorial-using-metaprogramming">Recursive factorial using metaprogramming</a></li><li><a href="#why-metaprogramming">Why metaprogramming</a></li><li><a href="#very-simple-speed-test">Very simple speed test</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<h2 id="traditional-recursive-factorial" tabindex="-1">Traditional recursive factorial</h2>
-<pre><code class="language-cpp">int factorial( int n )
-{
-  if( n &lt;= 1 )
-    return 1;
-  return n * factorial( n - 1 );
-}
+<p><div class="table-of-contents"><ul><li><a href="#what-is-meson%3F">What is Meson?</a></li><li><a href="#features">Features</a></li><li><a href="#installation">Installation</a></li><li><a href="#project-initialization">Project initialization</a></li><li><a href="#why-meson-instead-of-gnu%2Fmake">Why Meson instead of GNU/Make</a></li><li><a href="#why-meson-instead-of-autoconf">Why Meson instead of Autoconf</a></li><li><a href="#why-meson-instead-of-cmake">Why Meson instead of CMake</a></li><li><a href="#why-meson-instead-of-maven">Why Meson instead of  Maven</a></li><li><a href="#why-meson-instead-of-gradle">Why Meson instead of Gradle</a></li></ul></div></p>
+<h2 id="what-is-meson%3F" tabindex="-1">What is Meson?</h2>
+<p>The main design point of Meson is that every moment a developer spends writing
+or debugging build definitions is a second wasted. So is every second spent
+waiting for the build system to actually start compiling code.</p>
+<h2 id="features" tabindex="-1">Features</h2>
+<ul>
+<li>multiplatform support for Linux, OSX, Windows, Gcc, Clang, Visual Studio and others</li>
+<li>supported languages include C, C++, Fortran, Java, Rust</li>
+<li>build definitions in a very readable and user friendly non-turing complete DSL</li>
+<li>cross compilation for many operating systems as well as bare metal</li>
+<li>optimized for extremely fast full and incremental builds without sacrificing correctness</li>
+<li>built-in multiplatform dependency provider that works together with distro packages</li>
+<li>fun!</li>
+</ul>
+<h2 id="installation" tabindex="-1">Installation</h2>
+<pre><code class="language-bash">apt install meson ninja-build
 </code></pre>
-<h2 id="recursive-factorial-using-metaprogramming" tabindex="-1">Recursive factorial using metaprogramming</h2>
-<pre><code class="language-cpp">template &lt;int N&gt;
-struct MetaFactorial {
-  enum { value = N * MetaFactorial&lt;N - 1&gt;::value };
-};
-
-template &lt;&gt;
-struct MetaFactorial&lt;0&gt; {
-  enum { value = 1 };
-};
+<h2 id="project-initialization" tabindex="-1">Project initialization</h2>
+<pre><code class="language-bash">mkdir testproject
+meson init --name testproject --build
 </code></pre>
-<h2 id="why-metaprogramming" tabindex="-1">Why metaprogramming</h2>
-<p>In the book <strong>Expert C++</strong> <em>Vardan Grigoryan</em> and <em>Shunguang Wu</em> wrote:</p>
-<blockquote>
-<p>Why would we bother to write so much code just for a factorial
-that we wrote in the previous section in fewer than five lines of
-code? The reason is due to its efficiency. While it will take a
-little bit more time to compile the code, it is super efficient
-compared to the normal factorial function (implemented either
-recursively or iteratively). And the reason behind this efficiency is
-the fact that the actual calculation of the factorial is happening
-at compile time. That is, when the executable is run, the results
-are already ready to use. We just used the calculated value when
-we run the program; no calculation happens at runtime. If you’re
-seeing this code for the first time, the following explanation will
-make you fall in love with metaprogramming.</p>
-</blockquote>
-<h2 id="very-simple-speed-test" tabindex="-1">Very simple speed test</h2>
-<pre><code class="language-cpp">  const auto t1_meta = chrono::high_resolution_clock::now();
-
-  res1_meta = MetaFactorial&lt;10&gt;::value;
-  res2_meta = MetaFactorial&lt;11&gt;::value;
-
-  const auto t2_meta = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_meta = t2_meta - t1_meta;
-  cout &lt;&lt; &quot;MetaFactorial&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_meta;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_meta;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_meta.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<pre><code class="language-cpp">  const auto t1_recursive = chrono::high_resolution_clock::now();
-
-  res1_recursive = factorial( 10 );
-  res2_recursive = factorial( 11 );
-
-  const auto t2_recursive = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_recursive = t2_recursive - t1_recursive;
-  cout &lt;&lt; &quot;Recursive&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_recursive;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_recursive;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_recursive.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<p>Then the time consuming ratio between both approaches is about
-3 to 5 times (in my box):</p>
-<pre><code class="language-cpp">  cout &lt;&lt; &quot;Ratio: &quot; &lt;&lt; ns_recursive.count() / ns_meta.count() &lt;&lt; endl;
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">MetaFactorial
-f(10) = 3628800
-f(11) = 39916800
-took 53ns
-
-Recursive
-f(10) = 3628800
-f(11) = 39916800
-took 461ns
-
-Ratio: 8.69811
-
-</code></pre>
+<h2 id="why-meson-instead-of-gnu%2Fmake" tabindex="-1">Why Meson instead of GNU/Make</h2>
+<p>Make is a tool which controls the generation of executables and other
+non-source files of a program from the program’s source files.</p>
+<p>TBD</p>
+<h2 id="why-meson-instead-of-autoconf" tabindex="-1">Why Meson instead of Autoconf</h2>
+<p>GNU Autoconf is a tool for producing configure scripts for building, installing
+and packaging software on computer systems where a Bourne shell is available.</p>
+<p>TBD</p>
+<h2 id="why-meson-instead-of-cmake" tabindex="-1">Why Meson instead of CMake</h2>
+<p>CMake is a family of tools designed to build, test and package software. CMake
+is used to control the software compilation process using simple platform and
+compiler independent configuration files. CMake generates native makefiles and
+workspaces that can be used in the compiler environment of your choice.</p>
+<p>TBD</p>
+<h2 id="why-meson-instead-of-maven" tabindex="-1">Why Meson instead of  Maven</h2>
+<p>Apache Maven is a Java-based tool for build automation and project management
+(in software development). It is centered around a Project Object Model (POM)
+described in a XML file that describes the project structure and its
+dependencies to other components and libraries.</p>
+<p>TBD</p>
+<h2 id="why-meson-instead-of-gradle" tabindex="-1">Why Meson instead of Gradle</h2>
+<p>Gradle is build automation evolved. Gradle can automate the building, testing,
+publishing, deployment and more of software packages or other types of projects
+such as generated static websites, generated documentation or indeed anything
+else.</p>
+<p>Gradle combines the power and flexibility of Ant with the dependency management
+and conventions of Maven into a more effective way to build. Powered by
+a Groovy DSL and packed with innovation, Gradle provides a declarative way to
+describe all kinds of builds through sensible defaults. Gradle is quickly
+becoming the build system of choice for many open source projects, leading edge
+enterprises and legacy automation challenges.</p>
+<p>TBD</p>
 
       </main>
     </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ metaprogramming</title>
+    <title>SIMD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,90 +52,13 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ metaprogramming</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/metaprogramming.html">metaprogramming</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#traditional-recursive-factorial">Traditional recursive factorial</a></li><li><a href="#recursive-factorial-using-metaprogramming">Recursive factorial using metaprogramming</a></li><li><a href="#why-metaprogramming">Why metaprogramming</a></li><li><a href="#very-simple-speed-test">Very simple speed test</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<h2 id="traditional-recursive-factorial" tabindex="-1">Traditional recursive factorial</h2>
-<pre><code class="language-cpp">int factorial( int n )
-{
-  if( n &lt;= 1 )
-    return 1;
-  return n * factorial( n - 1 );
-}
-</code></pre>
-<h2 id="recursive-factorial-using-metaprogramming" tabindex="-1">Recursive factorial using metaprogramming</h2>
-<pre><code class="language-cpp">template &lt;int N&gt;
-struct MetaFactorial {
-  enum { value = N * MetaFactorial&lt;N - 1&gt;::value };
-};
-
-template &lt;&gt;
-struct MetaFactorial&lt;0&gt; {
-  enum { value = 1 };
-};
-</code></pre>
-<h2 id="why-metaprogramming" tabindex="-1">Why metaprogramming</h2>
-<p>In the book <strong>Expert C++</strong> <em>Vardan Grigoryan</em> and <em>Shunguang Wu</em> wrote:</p>
-<blockquote>
-<p>Why would we bother to write so much code just for a factorial
-that we wrote in the previous section in fewer than five lines of
-code? The reason is due to its efficiency. While it will take a
-little bit more time to compile the code, it is super efficient
-compared to the normal factorial function (implemented either
-recursively or iteratively). And the reason behind this efficiency is
-the fact that the actual calculation of the factorial is happening
-at compile time. That is, when the executable is run, the results
-are already ready to use. We just used the calculated value when
-we run the program; no calculation happens at runtime. If you’re
-seeing this code for the first time, the following explanation will
-make you fall in love with metaprogramming.</p>
-</blockquote>
-<h2 id="very-simple-speed-test" tabindex="-1">Very simple speed test</h2>
-<pre><code class="language-cpp">  const auto t1_meta = chrono::high_resolution_clock::now();
-
-  res1_meta = MetaFactorial&lt;10&gt;::value;
-  res2_meta = MetaFactorial&lt;11&gt;::value;
-
-  const auto t2_meta = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_meta = t2_meta - t1_meta;
-  cout &lt;&lt; &quot;MetaFactorial&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_meta;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_meta;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_meta.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<pre><code class="language-cpp">  const auto t1_recursive = chrono::high_resolution_clock::now();
-
-  res1_recursive = factorial( 10 );
-  res2_recursive = factorial( 11 );
-
-  const auto t2_recursive = chrono::high_resolution_clock::now();
-
-  const chrono::duration&lt;double, nano&gt; ns_recursive = t2_recursive - t1_recursive;
-  cout &lt;&lt; &quot;Recursive&quot;;
-  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_recursive;
-  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_recursive;
-  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_recursive.count() &lt;&lt; &quot;ns\n\n&quot;;
-</code></pre>
-<p>Then the time consuming ratio between both approaches is about
-3 to 5 times (in my box):</p>
-<pre><code class="language-cpp">  cout &lt;&lt; &quot;Ratio: &quot; &lt;&lt; ns_recursive.count() / ns_meta.count() &lt;&lt; endl;
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">MetaFactorial
-f(10) = 3628800
-f(11) = 39916800
-took 53ns
-
-Recursive
-f(10) = 3628800
-f(11) = 39916800
-took 461ns
-
-Ratio: 8.69811
-
-</code></pre>
+        <h1>SIMD</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/SIMD.html">SIMD</a>
+        </div><h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li>VIDEO <a href="https://youtu.be/ddZ4rDQFxxE">Instruções SIMD para comparação (código e apresentação) 1/2 - André Tupinambá</a></li>
+<li>VIDEO <a href="https://youtu.be/CZx3sTN5Z9Q">Instruções SIMD para comparação (código e apresentação) 2/2 - André Tupinambá</a></li>
+</ul>
 
       </main>
     </div>

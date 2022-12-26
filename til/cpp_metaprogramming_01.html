@@ -100,8 +100,10 @@ make you fall in love with metaprogramming.</p>
   const auto t2_meta = chrono::high_resolution_clock::now();
 
   const chrono::duration&lt;double, nano&gt; ns_meta = t2_meta - t1_meta;
-  cout &lt;&lt; &quot;MetaFactorial\nf(10) = &quot; &lt;&lt; res1_meta &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_meta &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_meta.count()
-       &lt;&lt; &quot;ns\n\n&quot;;
+  cout &lt;&lt; &quot;MetaFactorial&quot;;
+  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_meta;
+  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_meta;
+  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_meta.count() &lt;&lt; &quot;ns\n\n&quot;;
 </code></pre>
 <pre><code class="language-cpp">  const auto t1_recursive = chrono::high_resolution_clock::now();
 
@@ -111,24 +113,27 @@ make you fall in love with metaprogramming.</p>
   const auto t2_recursive = chrono::high_resolution_clock::now();
 
   const chrono::duration&lt;double, nano&gt; ns_recursive = t2_recursive - t1_recursive;
-  cout &lt;&lt; &quot;Recusive\nf(10) = &quot; &lt;&lt; res1_recursive &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_recursive &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_recursive.count()
-       &lt;&lt; &quot;ns\n\n&quot;;
+  cout &lt;&lt; &quot;Recursive&quot;;
+  cout &lt;&lt; &quot;\nf(10) = &quot; &lt;&lt; res1_recursive;
+  cout &lt;&lt; &quot;\nf(11) = &quot; &lt;&lt; res2_recursive;
+  cout &lt;&lt; &quot;\ntook &quot; &lt;&lt; ns_recursive.count() &lt;&lt; &quot;ns\n\n&quot;;
 </code></pre>
-<p>Then the time consuming ratio between both approaches is about 5 times:</p>
+<p>Then the time consuming ratio between both approaches is about
+5 times (in my machine):</p>
 <pre><code class="language-cpp">  cout &lt;&lt; &quot;Ratio: &quot; &lt;&lt; ns_recursive.count() / ns_meta.count() &lt;&lt; endl;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">MetaFactorial
 f(10) = 3628800
 f(11) = 39916800
-took 27ns
+took 41ns
 
-Recusive
+Recursive
 f(10) = 3628800
 f(11) = 39916800
-took 118ns
+took 140ns
 
-Ratio: 4.37037
+Ratio: 3.41463
 
 </code></pre>
 

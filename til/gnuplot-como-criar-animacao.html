@@ -53,7 +53,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Criando um gif animado com o gnuplot</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/gnuplot.html">gnuplot</a><a class="tag" href="/til/tag/gif.html">gif</a><a class="tag" href="/til/tag/animação.html">animação</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/gnuplot.html">gnuplot</a><a class="tag no-underline" href="/til/tag/gif.html">gif</a><a class="tag no-underline" href="/til/tag/animação.html">animação</a>
         </div><p>A partir da versão 4.6 do <a href="http://www.gnuplot.info/">gnuplot</a> está bem mais fácil criar uma animação.
 Algumas vezes uma animação deixa as coisas mais fáceis de serem entendidas.</p>
 <p>O segredo está no em configurar a saída para <code>gif animate</code> no comando <code>set term</code>.</p>
@@ -76,7 +76,12 @@ if (i &lt; n) reread
 </code></pre>
 <p>Note que este arquivo irá se recarregar mais 23 vezes através do <code>reread</code> para plotar cada um dos 24 frames da animação.</p>
 <p>Ao executar o script obteremos a seguinte animação:</p>
-<p><img src="/til/animacao_do_seno.webp" alt="img"></p>
+<figure>
+  <img class="mx-auto" src="/til/animacao_do_seno.webp" alt="img">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>img</span>
+  </figcaption>
+</figure>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>
 <li><a href="http://gnuplot-surprising.blogspot.com/2011/09/creating-gif-animation-using-gnuplot.html">Creating gif animation using gnuplot</a></li>

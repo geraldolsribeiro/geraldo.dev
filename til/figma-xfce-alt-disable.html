@@ -53,14 +53,24 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Liberando o alt do xfce para o figma</h1>
-        <div class="flex flex-wrap"><a class="tag" href="/til/tag/xfce.html">xfce</a><a class="tag" href="/til/tag/figma.html">figma</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/xfce.html">xfce</a><a class="tag no-underline" href="/til/tag/figma.html">figma</a>
         </div><h2 id="introdu%C3%A7%C3%A3o" tabindex="-1">Introdução</h2>
 <p>O Figma utiliza a tecla alt para copiar elementos e o xfce4 também utiliza a mesma tecla para mover janelas.</p>
 <h3 id="alterando-comportamento-do-alt-pela-interface-gr%C3%A1fica" tabindex="-1">Alterando comportamento do alt pela interface gráfica</h3>
 <p>Para liberar a tecla <strong>Alt</strong> para uso pelo <strong>Figma</strong> acesse o painel de <strong>Configurações</strong> e depois vá em <strong>Ajustes do gerenciador de janelas</strong>:</p>
-<p><img src="/til/xfce-disable-alt-01.webp" alt="Painel de Configurações"></p>
+<figure>
+  <img class="mx-auto" src="/til/xfce-disable-alt-01.webp" alt="Painel de Configurações">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Painel de Configurações</span>
+  </figcaption>
+</figure>
 <p>Na aba <strong>Acessibilidade</strong> escolha <strong>None</strong> para a tecla de captura de janelas:</p>
-<p><img src="/til/xfce-disable-alt-02.webp" alt="Escolher none para tecla de captura."></p>
+<figure>
+  <img class="mx-auto" src="/til/xfce-disable-alt-02.webp" alt="Escolher none para tecla de captura.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Escolher none para tecla de captura.</span>
+  </figcaption>
+</figure>
 <h3 id="alterando-comportamento-do-alt-pelo-terminal" tabindex="-1">Alterando comportamento do alt pelo terminal</h3>
 <pre><code class="language-bash">xfconf-query -c xfwm4 -p /general/easy_click -s none
 </code></pre>

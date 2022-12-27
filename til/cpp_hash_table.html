@@ -53,9 +53,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ hash table</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash_table.html">hash_table</a><a class="tag no-underline" href="/til/tag/unordered_map.html">unordered_map</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash_table.html">hash_table</a><a class="tag no-underline" href="/til/tag/unordered_map.html">unordered_map</a><a class="tag no-underline" href="/til/tag/map.html">map</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#what-is-a-hash-table%3F">What is a hash table?</a></li><li><a href="#components">Components</a></li><li><a href="#size">Size</a></li><li><a href="#very-simple-hash-table-implementation">Very simple hash table implementation</a></li><li><a href="#c%2B%2B-unordered_map-example">C++ unordered_map example</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#reference">Reference</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#what-is-a-hash-table%3F">What is a hash table?</a></li><li><a href="#components">Components</a></li><li><a href="#unordered_map-vs-map">unordered_map vs map</a></li><li><a href="#advantages-of-bst-over-hash-table">Advantages of BST over Hash Table</a></li><li><a href="#size">Size</a></li><li><a href="#very-simple-hash-table-implementation">Very simple hash table implementation</a></li><li><a href="#c%2B%2B-unordered_map-example">C++ unordered_map example</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#reference">Reference</a></li></ul></div></p>
 <h2 id="what-is-a-hash-table%3F" tabindex="-1">What is a hash table?</h2>
 <p>A Hash Table in C/C++ (Associative array) is a data structure that
 maps keys to values. This uses a hash function to compute indexes
@@ -71,6 +71,67 @@ data structure which implements all these hash table functions.</p>
 <li>A Hash Table Data Structure that supports insert, search and delete
 operations.</li>
 <li>A Data Structure to account for collision of keys</li>
+</ul>
+<h2 id="unordered_map-vs-map" tabindex="-1"><code>unordered_map</code> vs <code>map</code></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Property</th>
+<th style="text-align:left"><code>map</code></th>
+<th style="text-align:left"><code>unordered_map</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Ordering</td>
+<td style="text-align:left">increasing by default</td>
+<td style="text-align:left">no ordering</td>
+</tr>
+<tr>
+<td style="text-align:left">Implementation</td>
+<td style="text-align:left">self balancing BST like Red-Black tree</td>
+<td style="text-align:left">Hash table</td>
+</tr>
+<tr>
+<td style="text-align:left">Search time</td>
+<td style="text-align:left">log(N)</td>
+<td style="text-align:left">O(1) avarage, O(N) worst case</td>
+</tr>
+<tr>
+<td style="text-align:left">Insertion time</td>
+<td style="text-align:left">log(N) + rebalance</td>
+<td style="text-align:left">Same as search</td>
+</tr>
+<tr>
+<td style="text-align:left">Deletion time</td>
+<td style="text-align:left">log(N) + rebalance</td>
+<td style="text-align:left">Same as search</td>
+</tr>
+</tbody>
+</table>
+<h2 id="advantages-of-bst-over-hash-table" tabindex="-1">Advantages of BST over Hash Table</h2>
+<ul>
+<li>We can get all keys in sorted order by just doing Inorder Traversal of BST.
+<ul>
+<li>This is not a natural operation in Hash Tables and requires extra efforts.</li>
+</ul>
+</li>
+<li>Doing order statistics, finding closest lower and greater elements, doing range queries are easy to do with BSTs
+<ul>
+<li>Like sorting, these operations are not a natural operation with Hash Tables.</li>
+</ul>
+</li>
+<li>BSTs are easy to implement compared to hashing</li>
+<li>With BSTs, all operations are garanteed to work in <strong>O(log(N))</strong>
+<ul>
+<li>But with Hashing, Θ(1) is average time and some particular
+operations may be costly i.e, O(n2 ), especially when table
+resizing happens.</li>
+</ul>
+</li>
+<li>In BST we can do range searches efficiently but in Hash Table we
+cannot do range search efficiently.</li>
+<li>BST are memory efficient but Hash table is not.</li>
 </ul>
 <h2 id="size" tabindex="-1">Size</h2>
 <p>The size of our Hash Table and so the number with which we do our
@@ -136,7 +197,7 @@ values in one place like 2 when the numbers are even!</p>
 
 </code></pre>
 <h2 id="c%2B%2B-unordered_map-example" tabindex="-1">C++ unordered_map example</h2>
-<pre><code class="language-cpp">
+<pre><code class="language-cpp">  // Helper function
   auto print_unorderd_map = [](const auto&amp; table) {
     for (const auto&amp; [key, value] : table) {
       cout &lt;&lt; &quot;Key:[&quot; &lt;&lt; key &lt;&lt; &quot;] Value:[&quot; &lt;&lt; value &lt;&lt; &quot;]\n&quot;;
@@ -208,6 +269,7 @@ Key:[BLUE] Value:[#0000FF]
 <h2 id="reference" tabindex="-1">Reference</h2>
 <ul>
 <li><a href="https://www.digitalocean.com/community/tutorials/hash-table-in-c-plus-plus">Hash Table in C/C++ - A Complete Implementation</a></li>
+<li><a href="https://www.geeksforgeeks.org/advantages-of-bst-over-hash-table/">Advantages of BST over Hash Table</a></li>
 </ul>
 
       </main>

@@ -898,8 +898,8 @@ video {
   --tw-prose-invert-code: #fff;
   --tw-prose-invert-pre-code: #d1d5db;
   --tw-prose-invert-pre-bg: rgb(0 0 0 / 50%);
-  --tw-prose-invert-th-borders: #4b5563;
-  --tw-prose-invert-td-borders: #374151;
+  --tw-prose-invert-th-borders: #3b82f6;
+  --tw-prose-invert-td-borders: #334155;
   font-size: 1rem;
   line-height: 1.75;
 }
@@ -1792,12 +1792,20 @@ svg {
 /* markdown-it-table-of-contents */
 
 .table-of-contents {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  li::marker {
-    --tw-text-opacity: 1;
-    color: rgb(251 146 60 / var(--tw-text-opacity));
-  }
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-top-width: 4px;
+  border-bottom-width: 2px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 41 59 / var(--tw-bg-opacity));
+}
+
+.table-of-contents ul *::marker {
+  color: rgb(96 165 250 );
+}
+
+.table-of-contents ul::marker {
+  color: rgb(96 165 250 );
 }
 
 .grid-item-with-gradient {
@@ -1869,6 +1877,14 @@ svg {
 .prose pre code :where(table):not(:where([class~="not-prose"] *)) {
   font-size: inherit;
   margin: 0;
+}
+
+.prose ul *::marker {
+  color: rgb(96 165 250 );
+}
+
+.prose ul::marker {
+  color: rgb(96 165 250 );
 }
 
 .hljs-ln-numbers {

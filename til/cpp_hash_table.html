@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm swap_range</title>
+    <title>C++ hash table</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,38 +52,70 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm swap_range</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/swap_range.html">swap_range</a>
+        <h1>C++ hash table</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash_table.html">hash_table</a><a class="tag no-underline" href="/til/tag/unordered_map.html">unordered_map</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::vector&lt;char&gt; v = {'a', 'b', 'c', 'd', 'e'};
-  std::list&lt;char&gt; l = {'1', '2', '3', '4', '5'};
-
-  auto print = [](auto comment, auto const&amp; seq) {
-    std::cout &lt;&lt; comment;
-    for (const auto&amp; e : seq) {
-      std::cout &lt;&lt; e &lt;&lt; ' ';
-    }
-    std::cout &lt;&lt; '\n';
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#reference">Reference</a></li></ul></div></p>
+<p>A Hash Table in C/C++ (Associative array) is a data structure that
+maps keys to values. This uses a hash function to compute indexes
+for a key.</p>
+<p>Based on the Hash Table index, we can store the value at the
+appropriate location.</p>
+<p>The C++ STL (Standard Template Library) has the <code>unordered_map()</code>
+data structure which implements all these hash table functions.</p>
+<p>Any Hash Table implementation has the following three components:</p>
+<ul>
+<li>A good Hash function to map keys to values</li>
+<li>A Hash Table Data Structure that supports insert, search and delete
+operations.</li>
+<li>A Data Structure to account for collision of keys</li>
+</ul>
+<pre><code class="language-cpp">
+  auto print_table = [](const auto&amp; table) {
+    for (const auto&amp; [key, value] : table) {
+      cout &lt;&lt; &quot;Key:[&quot; &lt;&lt; key &lt;&lt; &quot;] Value:[&quot; &lt;&lt; value &lt;&lt; &quot;]\n&quot;;
+    };
+    cout &lt;&lt; &quot;-----------------\n&quot;;
   };
 
-  print(&quot;Before swap_ranges:\nv: &quot;, v);
-  print(&quot;l: &quot;, l);
+  unordered_map&lt;string, string&gt; colorTable = {
+      {&quot;RED&quot;, &quot;#FF0000&quot;}, {&quot;GREEN&quot;, &quot;#00FF00&quot;}, {&quot;BLUE&quot;, &quot;#0000FF&quot;}};
 
-  std::swap_ranges(v.begin(), v.begin() + 3, l.begin());
+  print_table(colorTable);
 
-  print(&quot;After swap_ranges:\nv: &quot;, v);
-  print(&quot;l: &quot;, l);
+  // Add two new entries to the unordered_map
+  colorTable[&quot;BLACK&quot;] = &quot;#000000&quot;;
+  colorTable[&quot;WHITE&quot;] = &quot;#FFFFFF&quot;;
+
+  print_table(colorTable);
+
+  colorTable.erase(&quot;RED&quot;);
+
+  print_table(colorTable);
+
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Before swap_ranges:
-v: a b c d e 
-l: 1 2 3 4 5 
-After swap_ranges:
-v: 1 2 3 d e 
-l: a b c 4 5 
+<pre><code class="language-txt">Key:[BLUE] Value:[#0000FF]
+Key:[GREEN] Value:[#00FF00]
+Key:[RED] Value:[#FF0000]
+-----------------
+Key:[WHITE] Value:[#FFFFFF]
+Key:[BLACK] Value:[#000000]
+Key:[RED] Value:[#FF0000]
+Key:[GREEN] Value:[#00FF00]
+Key:[BLUE] Value:[#0000FF]
+-----------------
+Key:[WHITE] Value:[#FFFFFF]
+Key:[BLACK] Value:[#000000]
+Key:[GREEN] Value:[#00FF00]
+Key:[BLUE] Value:[#0000FF]
+-----------------
 
 </code></pre>
+<h2 id="reference" tabindex="-1">Reference</h2>
+<ul>
+<li>[Hash Table in C/C++ - A Complete</li>
+</ul>
 
       </main>
     </div>

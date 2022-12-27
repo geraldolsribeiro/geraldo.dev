@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm swap_range</title>
+    <title>C++ hash</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,36 +52,84 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm swap_range</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/swap_range.html">swap_range</a>
+        <h1>C++ hash</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash.html">hash</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::vector&lt;char&gt; v = {'a', 'b', 'c', 'd', 'e'};
-  std::list&lt;char&gt; l = {'1', '2', '3', '4', '5'};
+<p>A basic struct for demonstration purpose:</p>
+<pre><code class="language-cpp">struct S {
+  std::string first_name;
+  std::string last_name;
+};
+bool operator==(const S&amp; lhs, const S&amp; rhs) {
+  return lhs.first_name == rhs.first_name &amp;&amp; lhs.last_name == rhs.last_name;
+}
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>Custom hash can be a standalone function object.</p>
+  </div>
+</div>
+<pre><code class="language-cpp">struct MyHash {
+  std::size_t operator()(S const&amp; s) const noexcept {
+    std::size_t h1 = std::hash&lt;std::string&gt;{}(s.first_name);
+    std::size_t h2 = std::hash&lt;std::string&gt;{}(s.last_name);
+    return h1 ^ (h2 &lt;&lt; 1);  // combine hashes
+  }
+};
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>Custom specialization of std::hash can be injected in namespace std.</p>
+  </div>
+</div>
+<pre><code class="language-cpp">template &lt;&gt;
+struct std::hash&lt;S&gt; {
+  std::size_t operator()(S const&amp; s) const noexcept {
+    std::size_t h1 = std::hash&lt;std::string&gt;{}(s.first_name);
+    std::size_t h2 = std::hash&lt;std::string&gt;{}(s.last_name);
+    return h1 ^ (h2 &lt;&lt; 1);  // combine hashes
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">  // size_t will take 32bits on 32bits systems
+  // size_t will take 64bits on 64bits systems
 
-  auto print = [](auto comment, auto const&amp; seq) {
-    std::cout &lt;&lt; comment;
-    for (const auto&amp; e : seq) {
-      std::cout &lt;&lt; e &lt;&lt; ' ';
-    }
-    std::cout &lt;&lt; '\n';
-  };
+  size_t h1 = hash&lt;string&gt;{}(&quot;Geraldo&quot;);
+  size_t h2 = hash&lt;string&gt;{}(&quot;geraldo&quot;);
+  size_t h3 = h1 ^ (h2 &lt;&lt; 1);
+  size_t h4 = hash&lt;char&gt;{}('\n');
+  size_t h5 = hash&lt;int&gt;{}(10);
+  size_t h6 = hash&lt;long&gt;{}(10);
 
-  print(&quot;Before swap_ranges:\nv: &quot;, v);
-  print(&quot;l: &quot;, l);
-
-  std::swap_ranges(v.begin(), v.begin() + 3, l.begin());
-
-  print(&quot;After swap_ranges:\nv: &quot;, v);
-  print(&quot;l: &quot;, l);
+</code></pre>
+<pre><code class="language-cpp">  S obj = {&quot;Geraldo&quot;, &quot;Ribeiro&quot;};
+  size_t h7 = hash&lt;S&gt;{}(obj);
+</code></pre>
+<pre><code class="language-cpp">  cout &lt;&lt; &quot;h1 = &quot; &lt;&lt; h1 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h2 = &quot; &lt;&lt; h2 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h3 = &quot; &lt;&lt; h3 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h4 = &quot; &lt;&lt; h4 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h5 = &quot; &lt;&lt; h5 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h6 = &quot; &lt;&lt; h6 &lt;&lt; '\n';
+  cout &lt;&lt; &quot;h7 = &quot; &lt;&lt; h7 &lt;&lt; '\n';
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Before swap_ranges:
-v: a b c d e 
-l: 1 2 3 4 5 
-After swap_ranges:
-v: 1 2 3 d e 
-l: a b c 4 5 
+<pre><code class="language-txt">h1 = 16517155802914804667
+h2 = 15968437481030298971
+h3 = 6777401911469705485
+h4 = 10
+h5 = 10
+h6 = 10
+h7 = 7993227047372965953
 
 </code></pre>
 

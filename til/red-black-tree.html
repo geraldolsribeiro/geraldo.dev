@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by ubuntu">
-    <title>TIL - ubuntu</title>
+    <meta name="description" content="Description not defined">
+    <title>Red-Black Tree</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -47,34 +47,93 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
-        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
-        </div>
-        <h1 class="px-4">Today I Learned / ubuntu</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/escolhendo-versoes-dos-pacotes-no-debian-e-ubuntu.html" title="Escolhendo versões dos pacotes no Debian/Ubuntu">
-              <h3>Escolhendo versões dos pacotes no Debian/Ubuntu</h3>
-              <p class="text-slate-400">2019-07-02</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/sysadmin.html">sysadmin</a><a class="tag" href="/til/tag/linux.html">linux</a><a class="tag" href="/til/tag/debian.html">debian</a><a class="tag" href="/til/tag/ubuntu.html">ubuntu</a><a class="tag" href="/til/tag/hugo.html">hugo</a><a class="tag" href="/til/tag/apt.html">apt</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/gerenciador-de-arquivos.html" title="Gerenciador de arquivos">
-              <h3>Gerenciador de arquivos</h3>
-              <p class="text-slate-400">2019-07-02</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/file-manager.html">file-manager</a><a class="tag" href="/til/tag/linux.html">linux</a><a class="tag" href="/til/tag/debian.html">debian</a><a class="tag" href="/til/tag/ubuntu.html">ubuntu</a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>Red-Black Tree</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/red-black-tree.html">red-black-tree</a>
+        </div><h2 id="red-black-tree" tabindex="-1">Red-black tree</h2>
+<ul>
+<li>
+<p>Invented by Rudolf Bayer in 1972</p>
+</li>
+<li>
+<p>A node is either red or black</p>
+</li>
+<li>
+<p>The root and leaves (NIL) are black</p>
+</li>
+<li>
+<p>If a node is red, then its children are black</p>
+</li>
+<li>
+<p>All path from a node to its NIL descendants contains
+the same number of black nodes.</p>
+</li>
+<li>
+<p>Nodes require one storage bit to keep track of color</p>
+</li>
+<li>
+<p>The longest path (root do farthest NIL) is no more
+than twice the length of the shortest path (root to nearest NIL).</p>
+<ul>
+<li>Shortest path: all black nodes</li>
+<li>Longest path: alternating red and black</li>
+</ul>
+</li>
+<li>
+<p>Operations are O(log n) time complexity</p>
+<ul>
+<li>Search</li>
+<li>Insert (require rotation)</li>
+<li>Remove (require rotation)</li>
+</ul>
+</li>
+<li>
+<p>Space complexity are O(n)</p>
+</li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/red_black_tree_rotation_left.webp" alt="Left rotation">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Left rotation</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/red_black_tree_rotation_right.webp" alt="Right rotation">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Right rotation</span>
+  </figcaption>
+</figure>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://youtu.be/MZW8PaZbqX8">INE 5408 - Estruturas de Dados - Aula 6.5. Árvores de Busca Rubro-Negras (Red-Black Trees)</a></li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

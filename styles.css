@@ -1794,6 +1794,10 @@ svg {
 .table-of-contents {
   margin-top: 1rem;
   margin-bottom: 1rem;
+  li::marker {
+    --tw-text-opacity: 1;
+    color: rgb(251 146 60 / var(--tw-text-opacity));
+  }
 }
 
 .grid-item-with-gradient {

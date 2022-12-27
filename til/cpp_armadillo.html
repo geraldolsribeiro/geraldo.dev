@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Algoritmos</title>
+    <title>Álgebra linear com Armadillo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,100 +52,188 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Algoritmos</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithms.html">algorithms</a><a class="tag no-underline" href="/til/tag/count_if.html">count_if</a><a class="tag no-underline" href="/til/tag/for_each.html">for_each</a><a class="tag no-underline" href="/til/tag/max_element.html">max_element</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#c%2B%2B%2Fstl">C++/STL</a></li><li><a href="#estruturas-lineares-de-dados">Estruturas lineares de dados</a></li><li><a href="#algoritmos-b%C3%A1sicos">Algoritmos básicos</a></li><li><a href="#t%C3%A9cnicas-populares">Técnicas populares</a></li><li><a href="#estruturas-n%C3%A3o-lineares-de-dados">Estruturas não lineares de dados</a></li><li><a href="#grafos">Grafos</a></li><li><a href="#%C3%A1rvores-avan%C3%A7adas-e-grafos">Árvores avançadas e grafos</a></li><li><a href="#algoritmos-avan%C3%A7ados-para-string">Algoritmos avançados para String</a></li><li><a href="#matem%C3%A1tica-avan%C3%A7ada">Matemática avançada</a></li><li><a href="#t%C3%B3picos-gerais-avan%C3%A7ados">Tópicos gerais avançados</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
-<p>Algoritmos que todo programador deveria conhecer bem.</p>
-<div role="alert" class="my-4">
-  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">☹</span>
-    <span>FIXME</span>
-  </div>
-  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
-<p>Add description and examples</p>
-  </div>
+        <h1>Álgebra linear com Armadillo</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/armadillo.html">armadillo</a><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/álgebra linear.html">álgebra linear</a>
+        </div><p>Algebra linear com a biblioteca <strong>armadillo</strong>.</p>
+<div>
+$$
+A_{m,n} =
+\begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n} 
+\end{pmatrix}
+$$
 </div>
-<h2 id="c%2B%2B%2Fstl" tabindex="-1">C++/STL</h2>
+<p><strong>Armadillo</strong> é uma biblioteca de álgebra linear para C++ rápida e fácil de usar, com sintaxe parecida com a do <strong>Matlab</strong>.</p>
+<p>Provê suporte para:</p>
 <ul>
-<li><a href="/til/cpp_algorithm_count_if_01.html"><code>count_if</code></a></li>
-<li><a href="/til/cpp_algorithm_for_each.html"><code>for_each</code></a></li>
-<li><a href="/til/cpp_algorithm_max_element_01.html"><code>max_element</code></a></li>
+<li>vetores (tensores de primeira ordem)</li>
+<li>matrizes (tensores de segunda ordem)</li>
+<li>cubos (tensores de terceira ordem)</li>
+<li>matrizes densas e esparsas</li>
+<li>números inteiros, de ponto flutuante e complexos</li>
+<li>decomposição (via LAPACK)</li>
+<li>multi-thread (Intel MKL ou OpenBLAS)</li>
+<li>avaliador de expressão baseado em meta-programação</li>
+<li>paralelização (via OpenMP)</li>
 </ul>
-<h2 id="estruturas-lineares-de-dados" tabindex="-1">Estruturas lineares de dados</h2>
+<p>Principais usos:</p>
 <ul>
-<li><a href="/til/cpp_array.html">Arrays</a></li>
-<li>Linked List - Single and Doubly</li>
-<li>Stack</li>
-<li>Queues</li>
+<li>machine learning</li>
+<li>reconhecimento de padrões</li>
+<li>visão computacional</li>
+<li>processamento de sinais</li>
+<li>bioinformática</li>
+<li>estatística</li>
+<li>finanças</li>
 </ul>
-<h2 id="algoritmos-b%C3%A1sicos" tabindex="-1">Algoritmos básicos</h2>
-<ul>
-<li>Sorting - Merge Sort, Insertion Sort, Quick Sort, Number of inversions</li>
-<li>Matrix Multiplication (just know the algo if not implement it)</li>
-<li>Prime Sieving</li>
-<li>Modular Math including multiplication and division</li>
-<li>Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation</li>
-<li>Fibonacci number with matrix multiplication</li>
-<li>Probability distribution and expected value</li>
-<li>Stats - Mean, Median, Variance, Bayes theorem</li>
-</ul>
-<h2 id="t%C3%A9cnicas-populares" tabindex="-1">Técnicas populares</h2>
-<ul>
-<li>Divide and Conquer - Binary Search, Maximum Subarray</li>
-<li>Greedy Algorithms - Activity Selection, Huffman encoding</li>
-<li>Dynamic Programming - Matrix Chain Multiplication, Knapsack,</li>
-<li>Linear Programming - Variable Maximisation, Linear time sorting</li>
-<li>String Algorithms - Manacher, LCS, Edit Distance</li>
-</ul>
-<h2 id="estruturas-n%C3%A3o-lineares-de-dados" tabindex="-1">Estruturas não lineares de dados</h2>
-<ul>
-<li>Trees - Binary Tree, General Tree, Lowest Common Ancestor</li>
-<li>Binary Search Tree - Inorder Traversal, Level order traversal, finding kth largest element, diameter, depth, number of nodes, etc.</li>
-<li>Heaps - Array Implementation, Heapify, Heap Sort</li>
-<li>Union Find</li>
-<li><a href="/til/cpp_hash_table.html">Hash Table</a> - Linear Probing, Open addressing, Collision avoidance</li>
-</ul>
-<h2 id="grafos" tabindex="-1">Grafos</h2>
-<ul>
-<li>Adjacency List, Adjacency Matrix, Weighted Edge Graphs</li>
-<li>Basic Traversal algos - Breadth First Search, Depth First Search, etc</li>
-<li>Shortest Path Finding Algorithm - Dijkstra, Floyd Warshal, Bellman Ford</li>
-<li>Minimum Spanning Tree - Kruskal’s Algo, Prim’s Algo</li>
-</ul>
-<h2 id="%C3%A1rvores-avan%C3%A7adas-e-grafos" tabindex="-1">Árvores avançadas e grafos</h2>
-<ul>
-<li>Balanced Trees - AVL, Red-Black</li>
-<li>Heavy Light Decomposition, B+ Trees, Quad Tree</li>
-<li>Advance Graph - Min Cut, Max Flow</li>
-<li>Maximum Matching - Hall’s Marriage</li>
-<li>Hamiltonian Cycle</li>
-<li>Edge Graphs / Line Graphs</li>
-<li>Strongly Connected Components</li>
-<li>Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos</li>
-</ul>
-<h2 id="algoritmos-avan%C3%A7ados-para-string" tabindex="-1">Algoritmos avançados para String</h2>
-<ul>
-<li>Knuth Morris Pratt Algorithm</li>
-<li>Rabin Karp Algorithm</li>
-<li>Tries and Compressed Tries</li>
-<li>Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm</li>
-</ul>
-<h2 id="matem%C3%A1tica-avan%C3%A7ada" tabindex="-1">Matemática avançada</h2>
-<ul>
-<li>Fast Fourier Transformation</li>
-<li>Primality Testing</li>
-<li>Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull</li>
-</ul>
-<h2 id="t%C3%B3picos-gerais-avan%C3%A7ados" tabindex="-1">Tópicos gerais avançados</h2>
-<ul>
-<li>Iterating through all combination / permutation</li>
-<li>Bit manipulation</li>
-</ul>
+<h2 id="instala%C3%A7%C3%A3o-no-debian" tabindex="-1">Instalação no Debian</h2>
+<pre><code class="language-bash">apt install libarmadillo-dev
+</code></pre>
+<h2 id="instala%C3%A7%C3%A3o-no-macos" tabindex="-1">Instalação no MacOS</h2>
+<pre><code class="language-bash">brew install armadillo
+</code></pre>
+<h2 id="exemplos-de-uso" tabindex="-1">Exemplos de uso</h2>
+<pre><code class="language-c++">#include &lt;armadillo&gt;
+#include &lt;iostream&gt;
+
+using namespace std;
+using namespace arma;
+
+int main()
+{
+  // inicia o gerador de números aleatórios
+  arma_rng::set_seed_random();
+
+  // Cria uma matriz com dados aleatório com dimensão 2x3
+  auto A = randu( 2, 3 );
+  cout &lt;&lt; A &lt;&lt; endl;
+  //    0.7038   0.6819   0.9555
+  //    0.3804   0.9666   0.9270
+
+  // Transposta
+  cout &lt;&lt; A.t() &lt;&lt; endl;
+  //    0.7526   0.5681
+  //    0.5874   0.9469
+  //    0.3562   0.9346
+
+  // Multiplicação de matrizes
+  cout &lt;&lt; A.t() * A &lt;&lt; endl;
+  //    0.0536   0.2644   0.2534
+  //    0.4731   0.3874   0.9599
+  //    0.1739   0.3313   0.4768
+
+  mat B( 3, 3, fill::randu );
+  cout &lt;&lt; B &lt;&lt; endl;
+  //    0.9563   0.8955   0.0919
+  //    0.3291   0.3086   0.3452
+  //    0.1894   0.9898   0.8642
+
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( B ) &lt;&lt; endl;
+  // Determinante: -0.243228
+
+  auto C = randu( 3, 3 );
+  cout &lt;&lt; C &lt;&lt; endl;
+  //    0.5561   0.6219   0.2147
+  //    0.3105   0.2813   0.9172
+  //    0.3408   0.1925   0.4703
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( C ) &lt;&lt; endl;
+  // Determinante: -0.254525
+
+  mat D = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  cout &lt;&lt; D &lt;&lt; endl;
+  //    1.0000   2.0000   3.0000
+  //    4.0000   5.0000   6.0000
+  //    7.0000   8.0000   9.0000
+  cout &lt;&lt; &quot;Determinante: &quot; &lt;&lt; det( D ) &lt;&lt; endl;
+  // Determinante: 6.66134e-16
+
+  D.row( 0 ) = D.row( 1 ) + D.row( 2 );
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  //  4.0000    5.0000    6.0000
+  //  7.0000    8.0000    9.0000
+
+  D.row( 1 ) = D.row( 1 ) * 5;
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  // 20.0000   25.0000   30.0000
+  //  7.0000    8.0000    9.0000
+  //
+
+  D.row( 2 ).zeros();
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   15.0000
+  // 20.0000   25.0000   30.0000
+  //       0         0         0
+
+  D.col( 2 ) = D.col( 2 ) + 10;
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000   13.0000   25.0000
+  // 20.0000   25.0000   40.0000
+  //       0         0   10.0000
+
+  D = diagmat( D );
+  cout &lt;&lt; D &lt;&lt; endl;
+  // 11.0000         0         0
+  //       0   25.0000         0
+  //       0         0   10.0000
+
+  D.save( &quot;D.bin&quot; );
+
+  D.save( &quot;D.txt&quot;, arma_ascii );
+  // ARMA_MAT_TXT_FN008
+  // 3 3
+  //    1.10000000000000e+01   0.00000000000000e+00   0.00000000000000e+00
+  //    0.00000000000000e+00   2.50000000000000e+01   0.00000000000000e+00
+  //    0.00000000000000e+00   0.00000000000000e+00   1.00000000000000e+01
+
+  auto O = ones( 2, 2 );
+  cout &lt;&lt; O &lt;&lt; endl;
+  // 1.0000   1.0000
+  // 1.0000   1.0000
+
+  auto Z = zeros( 3, 5 );
+  cout &lt;&lt; Z &lt;&lt; endl;
+  // 0        0        0        0        0
+  // 0        0        0        0        0
+  // 0        0        0        0        0
+
+  mat F1, F2;
+  F1.load( &quot;D.bin&quot; );
+  F2.load( &quot;D.txt&quot; );
+  cout &lt;&lt; F1 &lt;&lt; endl;
+  // 11.0000         0         0
+  //       0   25.0000         0
+  //       0         0   10.000
+
+  cout &lt;&lt; F1 - F2 &lt;&lt; endl;
+  // 0        0        0
+  // 0        0        0
+  // 0        0        0
+
+  mat F( 2, 3 );
+  F.fill( 3.14 );
+  cout &lt;&lt; F &lt;&lt; endl;
+  // 3.1400   3.1400   3.1400
+  // 3.1400   3.1400   3.1400
+
+  F = F.ones();
+  F.col( 0 ) *= datum::pi;
+  F.col( 1 ) *= datum::inf;
+  F.col( 2 ) *= datum::nan;
+  cout &lt;&lt; F &lt;&lt; endl;
+  // 3.1416      inf      nan
+  // 3.1416      inf      nan
+
+  return 0;
+}
+</code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>
-<li><a href="https://www.quora.com/What-algorithms-should-I-know-to-become-a-good-programmer/answer/Ashish-Kedia?ch=3&amp;share=ae955848&amp;srid=zRrj">What algorithms should I know to become a good programmer?</a></li>
-<li><a href="https://github.com/AnthonyCalandra/modern-cpp-features/blob/master/README.md">C++20/17/14/11</a></li>
+<li><a href="http://arma.sourceforge.net/">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
 </ul>
 
       </main>

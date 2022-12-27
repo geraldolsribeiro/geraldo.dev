@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Algoritmos</title>
+    <title>Thread em C++</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,100 +52,181 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Algoritmos</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithms.html">algorithms</a><a class="tag no-underline" href="/til/tag/count_if.html">count_if</a><a class="tag no-underline" href="/til/tag/for_each.html">for_each</a><a class="tag no-underline" href="/til/tag/max_element.html">max_element</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#c%2B%2B%2Fstl">C++/STL</a></li><li><a href="#estruturas-lineares-de-dados">Estruturas lineares de dados</a></li><li><a href="#algoritmos-b%C3%A1sicos">Algoritmos básicos</a></li><li><a href="#t%C3%A9cnicas-populares">Técnicas populares</a></li><li><a href="#estruturas-n%C3%A3o-lineares-de-dados">Estruturas não lineares de dados</a></li><li><a href="#grafos">Grafos</a></li><li><a href="#%C3%A1rvores-avan%C3%A7adas-e-grafos">Árvores avançadas e grafos</a></li><li><a href="#algoritmos-avan%C3%A7ados-para-string">Algoritmos avançados para String</a></li><li><a href="#matem%C3%A1tica-avan%C3%A7ada">Matemática avançada</a></li><li><a href="#t%C3%B3picos-gerais-avan%C3%A7ados">Tópicos gerais avançados</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
-<p>Algoritmos que todo programador deveria conhecer bem.</p>
-<div role="alert" class="my-4">
-  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">☹</span>
-    <span>FIXME</span>
-  </div>
-  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
-<p>Add description and examples</p>
-  </div>
-</div>
-<h2 id="c%2B%2B%2Fstl" tabindex="-1">C++/STL</h2>
+        <h1>Thread em C++</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/thread.html">thread</a>
+        </div><h2 id="thread-com-fun%C3%A7%C3%A3o-sem-argumentos" tabindex="-1">Thread com função sem argumentos</h2>
+<pre><code class="language-c++">void foo() {
+  cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+}
+
+void run () {
+  thread t1( foo );
+  // Algum processamento...
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-fun%C3%A7%C3%A3o-passando-par%C3%A2metros-por-valor" tabindex="-1">Thread com função passando parâmetros por valor</h2>
+<pre><code class="language-c++">void fooByRef( int &amp; a ) {
+  while( true ) {
+    cout &lt;&lt; &quot;O valor é &quot; &lt;&lt; a &lt;&lt; endl;
+    this_thread::sleep_for( chrono::milliseconds( 1000 ) );
+  }
+}
+
+void run () {
+  int p = 9;
+  thread t2( fooByRef, std::ref( p ) ); // usar o wrapper ref para não passar por valor
+  // Algum processamento...
+  this_thread::sleep_for( chrono::milliseconds( 5000 ) );
+  p = 30;
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-fun%C3%A7%C3%A3o-passando-par%C3%A2metros-por-refer%C3%AAncia" tabindex="-1">Thread com função passando parâmetros por referência</h2>
+<pre><code class="language-c++">void foo( int a, int b ) {
+}
+
+void run () {
+  int p = 9;
+  int q = 8;
+  thread t1( foo, p, q );
+  // Algum processamento...
+  t1.join();
+}
+</code></pre>
+<h2 id="thread-com-classe-callable" tabindex="-1">Thread com classe callable</h2>
+<pre><code class="language-c++">class CallableClass {
+  public:
+    void operator()() {
+      cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+    }
+};
+
+void run() {
+  CallableClass obj;
+  thread t2( obj );
+  // Algum processamento...
+  t2.join();
+}
+</code></pre>
+<h2 id="thread-com-lambda" tabindex="-1">Thread com lambda</h2>
+<pre><code class="language-c++">// Sintaxe
+// [capture-list]( params ) /*mutable*/ /*constexpr*/ /*exception attribute*/ -&gt; ret { body }
+// [capture-list]( params ) -&gt; ret { body }
+// [capture-list]( params ) { body }
+// [capture-list]{ body }
+
+void run() {
+  thread t3( []{
+    cout &lt;&lt; &quot;Corpo da função: &quot; &lt;&lt; this_thread::get_id() &lt;&lt; endl;
+  } );
+  // Algum processamento...
+  t3.join();
+}
+</code></pre>
+<h2 id="join%2C-detach-e-terminate" tabindex="-1">Join, detach e terminate</h2>
 <ul>
-<li><a href="/til/cpp_algorithm_count_if_01.html"><code>count_if</code></a></li>
-<li><a href="/til/cpp_algorithm_for_each.html"><code>for_each</code></a></li>
-<li><a href="/til/cpp_algorithm_max_element_01.html"><code>max_element</code></a></li>
+<li>Uma thread representa um objeto de execução em nível de hardware e está num estado chamado <em>joinable</em></li>
+<li>A opções no estado <em>joinable</em> são:
+<ul>
+<li><code>join</code> - introduz um ponto de sincronismo e bloqueia a execução</li>
+<li><code>detach</code> - faz a execução continuar em modo independente</li>
 </ul>
-<h2 id="estruturas-lineares-de-dados" tabindex="-1">Estruturas lineares de dados</h2>
-<ul>
-<li><a href="/til/cpp_array.html">Arrays</a></li>
-<li>Linked List - Single and Doubly</li>
-<li>Stack</li>
-<li>Queues</li>
+</li>
+<li>Após esta escolha a thread se torna <em>non joinable</em></li>
+<li>Se esquecer de realizar o join ou detach a função <code>std::terminate</code> será chamada pelo destrutor</li>
+<li>Um programa com <code>std::terminate</code> é considerado não seguro.</li>
 </ul>
-<h2 id="algoritmos-b%C3%A1sicos" tabindex="-1">Algoritmos básicos</h2>
+<h2 id="tratamento-de-exce%C3%A7%C3%A3o" tabindex="-1">Tratamento de exceção</h2>
+<p>Para evitar problemas caso uma exceção for lançada antes do <code>join</code> use
+<strong>RAII - Resource acquisition is initialization</strong>.</p>
+<p>RAII:</p>
 <ul>
-<li>Sorting - Merge Sort, Insertion Sort, Quick Sort, Number of inversions</li>
-<li>Matrix Multiplication (just know the algo if not implement it)</li>
-<li>Prime Sieving</li>
-<li>Modular Math including multiplication and division</li>
-<li>Euclidean Algorithm for GCD, Modular Inverse, Fast Exponentiation</li>
-<li>Fibonacci number with matrix multiplication</li>
-<li>Probability distribution and expected value</li>
-<li>Stats - Mean, Median, Variance, Bayes theorem</li>
+<li><em>Construtor adquire os recursos</em></li>
+<li><em>Destrutor libera os recursos</em></li>
 </ul>
-<h2 id="t%C3%A9cnicas-populares" tabindex="-1">Técnicas populares</h2>
+<p>Exemplo de código com problema:</p>
+<pre><code class="language-c++">void run() {
+  thread t4( foo );
+  throw runtime_error( &quot;Algum erro antes do join/detach&quot; );
+  t4.join(); // esta linha nunca vai ser executada
+}
+</code></pre>
+<p>A classe <code>ThreadGuard</code> fornece um auxiliar para garantir que o <code>join</code> será
+sempre executado quando o objeto sair do contexto.</p>
+<pre><code hl_lines="[6,9]" class="language-c++">class ThreadGuard {
+  thread &amp; mThread;
+
+  public:
+    // garantir que não haverá conversões implícitas
+    explicit ThreadGuard( thread &amp; t ) : mThread( t ) {  }
+
+    // realiza o join pelo destrutor
+    ~ThreadGuard() { if( mThread.joinable() ) { mThread.join(); } }
+
+    // não permite o uso dos contrutores de cópia e atribuição
+    ThreadGuard( const ThreadGuard &amp; ) = delete;
+    ThreadGuard &amp; operator= ( const ThreadGuard &amp; ) = delete;
+};
+
+void run() {
+  thread t4( foo );
+  ThreadGuard tg( t4 ); // quando sair do escopo o join será chamado
+  throw runtime_error( &quot;Este erro não afeta a thread acima&quot; );
+}
+</code></pre>
+<h2 id="transferindo-a-posse-das-threads" tabindex="-1">Transferindo a posse das threads</h2>
+<pre><code class="language-c++">void foo() { }
+void bar() { }
+
+void run() {
+  thread t1( foo );
+  // thread t2 = t1; // Se fizer isso vai gerar erro de compilação
+
+  // usar move para transferir a posse da thread
+  thread t2 = std::move( t1 ); // t1 não é mais dono da thread
+  t1 = thread( bar ); // t1 tem nova thread
+
+  t1.join();
+  t2.join();
+}
+</code></pre>
+<h2 id="thread%3A%3Aget_id()" tabindex="-1">thread::get_id()</h2>
 <ul>
-<li>Divide and Conquer - Binary Search, Maximum Subarray</li>
-<li>Greedy Algorithms - Activity Selection, Huffman encoding</li>
-<li>Dynamic Programming - Matrix Chain Multiplication, Knapsack,</li>
-<li>Linear Programming - Variable Maximisation, Linear time sorting</li>
-<li>String Algorithms - Manacher, LCS, Edit Distance</li>
+<li>retorna um id único para cada thread ativa em execução</li>
+<li>retorna 0 para todas as threads não ativas</li>
 </ul>
-<h2 id="estruturas-n%C3%A3o-lineares-de-dados" tabindex="-1">Estruturas não lineares de dados</h2>
+<pre><code class="language-c++">void run() {
+  thread t1( foo );
+  thread t2( foo );
+  thread t3;
+
+  cout &lt;&lt; t1.get_id() &lt;&lt; endl; // 1234
+  cout &lt;&lt; t2.get_id() &lt;&lt; endl; // 5678
+  cout &lt;&lt; t3.get_id() &lt;&lt; endl; // 0
+
+  t1.join();
+  t2.join();
+
+  cout &lt;&lt; t1.get_id() &lt;&lt; endl; // 0
+  cout &lt;&lt; t2.get_id() &lt;&lt; endl; // 0
+}
+</code></pre>
+<h2 id="sleep_for" tabindex="-1">sleep_for</h2>
+<h2 id="std%3A%3Athis_thread%3A%3Ayield()" tabindex="-1"><code>std::this_thread::yield()</code></h2>
 <ul>
-<li>Trees - Binary Tree, General Tree, Lowest Common Ancestor</li>
-<li>Binary Search Tree - Inorder Traversal, Level order traversal, finding kth largest element, diameter, depth, number of nodes, etc.</li>
-<li>Heaps - Array Implementation, Heapify, Heap Sort</li>
-<li>Union Find</li>
-<li><a href="/til/cpp_hash_table.html">Hash Table</a> - Linear Probing, Open addressing, Collision avoidance</li>
+<li>retorna a fatia de tempo</li>
+<li>reinsere a thread na fila de execução</li>
 </ul>
-<h2 id="grafos" tabindex="-1">Grafos</h2>
+<h2 id="std%3A%3Athread%3A%3Ahardware_concurrency()" tabindex="-1"><code>std::thread::hardware_concurrency()</code></h2>
 <ul>
-<li>Adjacency List, Adjacency Matrix, Weighted Edge Graphs</li>
-<li>Basic Traversal algos - Breadth First Search, Depth First Search, etc</li>
-<li>Shortest Path Finding Algorithm - Dijkstra, Floyd Warshal, Bellman Ford</li>
-<li>Minimum Spanning Tree - Kruskal’s Algo, Prim’s Algo</li>
-</ul>
-<h2 id="%C3%A1rvores-avan%C3%A7adas-e-grafos" tabindex="-1">Árvores avançadas e grafos</h2>
-<ul>
-<li>Balanced Trees - AVL, Red-Black</li>
-<li>Heavy Light Decomposition, B+ Trees, Quad Tree</li>
-<li>Advance Graph - Min Cut, Max Flow</li>
-<li>Maximum Matching - Hall’s Marriage</li>
-<li>Hamiltonian Cycle</li>
-<li>Edge Graphs / Line Graphs</li>
-<li>Strongly Connected Components</li>
-<li>Dominant Sub-Graph, Vertex Cover, Travelling Salesman - Approx algos</li>
-</ul>
-<h2 id="algoritmos-avan%C3%A7ados-para-string" tabindex="-1">Algoritmos avançados para String</h2>
-<ul>
-<li>Knuth Morris Pratt Algorithm</li>
-<li>Rabin Karp Algorithm</li>
-<li>Tries and Compressed Tries</li>
-<li>Prefix Trees, Suffix Trees, Suffix Automation - Ukkonen Algorithm</li>
-</ul>
-<h2 id="matem%C3%A1tica-avan%C3%A7ada" tabindex="-1">Matemática avançada</h2>
-<ul>
-<li>Fast Fourier Transformation</li>
-<li>Primality Testing</li>
-<li>Computational Geometry - Closest point pair, Voronoi diagram, Convex Hull</li>
-</ul>
-<h2 id="t%C3%B3picos-gerais-avan%C3%A7ados" tabindex="-1">Tópicos gerais avançados</h2>
-<ul>
-<li>Iterating through all combination / permutation</li>
-<li>Bit manipulation</li>
+<li>retorna o número de thread concorrentes suportado pela implementação do sistema</li>
+<li>considere este valor apenas como uma dica</li>
+<li>é usualmente o número de cores lógicos</li>
 </ul>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>
-<li><a href="https://www.quora.com/What-algorithms-should-I-know-to-become-a-good-programmer/answer/Ashish-Kedia?ch=3&amp;share=ae955848&amp;srid=zRrj">What algorithms should I know to become a good programmer?</a></li>
-<li><a href="https://github.com/AnthonyCalandra/modern-cpp-features/blob/master/README.md">C++20/17/14/11</a></li>
+<li><a href="https://www.udemy.com/course/modern-cpp-concurrency-in-depth/">Modern C++ Concurrency in Depth</a></li>
 </ul>
 
       </main>

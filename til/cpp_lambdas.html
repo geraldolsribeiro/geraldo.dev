@@ -55,7 +55,41 @@
         <h1>C++ Lambdas</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/lambda.html">lambda</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#lambda-capture">Lambda capture</a></li><li><a href="#polymorphic-lambda">Polymorphic lambda</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#fun%C3%A7%C3%B5es-de-primeira-classe">Funções de primeira classe</a></li><li><a href="#lambdas">Lambdas</a></li><li><a href="#programa%C3%A7%C3%A3o-funcional-com-lambdas">Programação funcional com lambdas</a></li><li><a href="#lambda-capture">Lambda capture</a></li><li><a href="#polymorphic-lambda">Polymorphic lambda</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></div></p>
+<h2 id="fun%C3%A7%C3%B5es-de-primeira-classe" tabindex="-1">Funções de primeira classe</h2>
+<p>Em programação funcional funções são <strong>cidadães de primeira classe</strong>, o que
+significa que elas se comportam com dados e suportam quaisquer operações que
+a linguagem permita.</p>
+<p>Algumas características das funções de primeira classe são:</p>
+<ul>
+<li>atribuir uma função a uma variável</li>
+<li>passar uma função como parâmetro para outra função</li>
+<li>retornar a função como valor de outra função</li>
+<li>armazenar a função em uma estrutura de dados</li>
+</ul>
+<h2 id="lambdas" tabindex="-1">Lambdas</h2>
+<p>Lambdas são funções anônimas (sem um nome) definidas <em>in-place</em>.</p>
+<pre><code class="language-c++">//  1   2                           3                               4
+   [ ] ( ) { std::cout &lt;&lt; &quot;Hello from C++ Lambda!&quot; &lt;&lt; std::endl; } ( );
+</code></pre>
+<p>Vamos ver o que cada grupo significa:</p>
+<ul>
+<li>1 <code>[]</code> <code>lambda introducer</code> ou <code>lambda closure</code></li>
+<li>2 <code>()</code> lista de parâmetros (você pode omitir estes parêntes se a função não receber parâmetros).</li>
+<li>3 <code>{}</code> corpo da função lambda</li>
+<li>4 <code>()</code> executa a função</li>
+</ul>
+<h2 id="programa%C3%A7%C3%A3o-funcional-com-lambdas" tabindex="-1">Programação funcional com lambdas</h2>
+<pre><code class="language-cpp">// f(x,y) = x² + y² + 2xy;
+std::function&lt;int(int,int)&gt; fxsquare = [](int x, int y) -&gt; int {
+  int xsquare = [](int x) -&gt; int { return x * x; }(x);
+  int ysquare = [](int y) -&gt; int { return y * y; }(y);
+  int twoxy   = [](int x, int y) -&gt; int { return 2 * x * y; }(x,y);
+  return xsquare + ysquare + twoxy;
+}
+
+cout &lt;&lt; fxsquare(5,3) &lt;&lt; endl; // 64
+</code></pre>
 <h2 id="lambda-capture" tabindex="-1">Lambda capture</h2>
 <ul>
 <li><code>[var]</code> capture <code>var</code> by value</li>
@@ -108,6 +142,12 @@ value of x1: 168 type of x1: d
 value of x2: 168 type of x2: f
 
 </code></pre>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="/til/cpp-array.html">std::array</a></li>
+<li><a href="https://www.codeproject.com/Articles/1267996/Functional-Programming-in-Cplusplus">Functional Programming in C++</a></li>
+<li><a href="https://medium.com/@angelorubin/javascript-first-class-function-fun%C3%A7%C3%B5es-de-primeira-classe-7ebf63d2c83a">Programação Funcional em Javascript — First-Class Function (Funções de Primeira Classe)</a></li>
+</ul>
 
       </main>
     </div>

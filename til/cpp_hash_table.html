@@ -55,7 +55,8 @@
         <h1>C++ hash table</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash_table.html">hash_table</a><a class="tag no-underline" href="/til/tag/unordered_map.html">unordered_map</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#reference">Reference</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#what-is-a-hash-table%3F">What is a hash table?</a></li><li><a href="#components">Components</a></li><li><a href="#size">Size</a></li><li><a href="#very-simple-hash-table-implementation">Very simple hash table implementation</a></li><li><a href="#c%2B%2B-unordered_map-example">C++ unordered_map example</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#reference">Reference</a></li></ul></div></p>
+<h2 id="what-is-a-hash-table%3F" tabindex="-1">What is a hash table?</h2>
 <p>A Hash Table in C/C++ (Associative array) is a data structure that
 maps keys to values. This uses a hash function to compute indexes
 for a key.</p>
@@ -63,6 +64,7 @@ for a key.</p>
 appropriate location.</p>
 <p>The C++ STL (Standard Template Library) has the <code>unordered_map()</code>
 data structure which implements all these hash table functions.</p>
+<h2 id="components" tabindex="-1">Components</h2>
 <p>Any Hash Table implementation has the following three components:</p>
 <ul>
 <li>A good Hash function to map keys to values</li>
@@ -70,8 +72,72 @@ data structure which implements all these hash table functions.</p>
 operations.</li>
 <li>A Data Structure to account for collision of keys</li>
 </ul>
+<h2 id="size" tabindex="-1">Size</h2>
+<p>The size of our Hash Table and so the number with which we do our
+modulo calculation, should be <strong>a prime number</strong> that is only
+divisible with itself or 1. That way we prevent stacking of many
+values in one place like 2 when the numbers are even!</p>
+<h2 id="very-simple-hash-table-implementation" tabindex="-1">Very simple hash table implementation</h2>
+<pre><code class="language-cpp">class VerySimpleHashTable {
+  // Table: array of list of integer with 7 buckets
+  array&lt;list&lt;int&gt;, 7&gt; mTable{};  // must be a prime number
+  size_t hashFunction(int item) { return item % mTable.size(); }
+
+ public:
+  void insertItem(int item) {
+    auto index = hashFunction(item);
+    auto it = find(mTable[index].begin(), mTable[index].end(), item);
+    if (it == mTable[index].end()) {
+      mTable[index].push_back(item);
+    }
+  }
+
+  void deleteItem(int item) {
+    auto index = hashFunction(item);
+    auto it = find(mTable[index].begin(), mTable[index].end(), item);
+    if (it != mTable[index].end()) {
+      mTable[index].erase(it);
+    }
+  }
+
+  void print() {
+    size_t index = 0;
+    for (const auto&amp; lst : mTable) {
+      cout &lt;&lt; &quot;Bucket &quot; &lt;&lt; index &lt;&lt; &quot;:&quot;;
+      for (const auto&amp; i : lst) {
+        cout &lt;&lt; ' ' &lt;&lt; i;
+      }
+      cout &lt;&lt; '\n';
+      ++index;
+    }
+    cout &lt;&lt; &quot;-----------------\n&quot;;
+  }
+};
+</code></pre>
+<p>Example of use</p>
+<pre><code class="language-cpp">  VerySimpleHashTable simpleTable;
+  simpleTable.print();
+  int element;
+  srand(0);
+  for (int i = 0; i &lt; 50; ++i) {
+    element = rand() % 100;
+    simpleTable.insertItem(element);
+  }
+  simpleTable.print();
+
+  simpleTable.deleteItem(101);
+
+  srand(0);
+  for (int i = 0; i &lt; 45; ++i) {
+    element = rand() % 100;
+    simpleTable.deleteItem(element);
+  }
+  simpleTable.print();
+
+</code></pre>
+<h2 id="c%2B%2B-unordered_map-example" tabindex="-1">C++ unordered_map example</h2>
 <pre><code class="language-cpp">
-  auto print_table = [](const auto&amp; table) {
+  auto print_unorderd_map = [](const auto&amp; table) {
     for (const auto&amp; [key, value] : table) {
       cout &lt;&lt; &quot;Key:[&quot; &lt;&lt; key &lt;&lt; &quot;] Value:[&quot; &lt;&lt; value &lt;&lt; &quot;]\n&quot;;
     };
@@ -81,27 +147,54 @@ operations.</li>
   unordered_map&lt;string, string&gt; colorTable = {
       {&quot;RED&quot;, &quot;#FF0000&quot;}, {&quot;GREEN&quot;, &quot;#00FF00&quot;}, {&quot;BLUE&quot;, &quot;#0000FF&quot;}};
 
-  print_table(colorTable);
+  print_unorderd_map(colorTable);
 
   // Add two new entries to the unordered_map
   colorTable[&quot;BLACK&quot;] = &quot;#000000&quot;;
   colorTable[&quot;WHITE&quot;] = &quot;#FFFFFF&quot;;
 
-  print_table(colorTable);
+  // Replace item
+  colorTable[&quot;RED&quot;] = &quot;#FF6666&quot;;
+
+  print_unorderd_map(colorTable);
 
   colorTable.erase(&quot;RED&quot;);
 
-  print_table(colorTable);
+  print_unorderd_map(colorTable);
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Key:[BLUE] Value:[#0000FF]
+<pre><code class="language-txt">Bucket 0:
+Bucket 1:
+Bucket 2:
+Bucket 3:
+Bucket 4:
+Bucket 5:
+Bucket 6:
+-----------------
+Bucket 0: 77 35 49 21 63 56 42 84 98 70
+Bucket 1: 15 92 36 29 22
+Bucket 2: 86 93 72 30 23 2 58 37
+Bucket 3: 59 73 24
+Bucket 4: 11 67
+Bucket 5: 26 40 68 82 19
+Bucket 6: 83 62 27 90 69
+-----------------
+Bucket 0: 98 70
+Bucket 1:
+Bucket 2: 37
+Bucket 3: 24
+Bucket 4:
+Bucket 5:
+Bucket 6:
+-----------------
+Key:[BLUE] Value:[#0000FF]
 Key:[GREEN] Value:[#00FF00]
 Key:[RED] Value:[#FF0000]
 -----------------
 Key:[WHITE] Value:[#FFFFFF]
 Key:[BLACK] Value:[#000000]
-Key:[RED] Value:[#FF0000]
+Key:[RED] Value:[#FF6666]
 Key:[GREEN] Value:[#00FF00]
 Key:[BLUE] Value:[#0000FF]
 -----------------
@@ -114,7 +207,7 @@ Key:[BLUE] Value:[#0000FF]
 </code></pre>
 <h2 id="reference" tabindex="-1">Reference</h2>
 <ul>
-<li>[Hash Table in C/C++ - A Complete</li>
+<li><a href="https://www.digitalocean.com/community/tutorials/hash-table-in-c-plus-plus">Hash Table in C/C++ - A Complete Implementation</a></li>
 </ul>
 
       </main>

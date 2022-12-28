@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by gif">
-    <title>TIL - gif</title>
+    <meta name="description" content="Description not defined">
+    <title>Using apt from unsigned repository</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -47,28 +47,57 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
-        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
-        </div>
-        <h1 class="px-4">Today I Learned / gif</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/gnuplot-como-criar-animacao.html" title="Criando um gif animado com o gnuplot">
-              <h3>Criando um gif animado com o gnuplot</h3>
-              <p class="text-slate-400">2019-10-28</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/gnuplot.html">gnuplot</a><a class="tag" href="/til/tag/gif.html">gif</a><a class="tag" href="/til/tag/animation.html">animation</a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>Using apt from unsigned repository</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/apt.html">apt</a><a class="tag no-underline" href="/til/tag/gpg.html">gpg</a><a class="tag no-underline" href="/til/tag/dockerfile.html">dockerfile</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#reference">Reference</a></li></ul></div></p>
+<p>To avoid errors on command <code>apt update</code> related to <strong>unsigned</strong> repositories inside <code>Dockerfile</code>
+the option <code>[trusted=yes]</code> was added before repository URL on apt list file.</p>
+<p>I am not convinced about the security is ok.</p>
+<pre><code>$ cat llvm.list 
+deb [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
+deb-src [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
+# 14 
+deb [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main
+deb-src [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-14 main
+# 15 
+deb [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-15 main
+deb-src [trusted=yes] http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-15 main
+
+deb [trusted=yes] http://www.deb-multimedia.org jessie main
+</code></pre>
+<h2 id="reference" tabindex="-1">Reference</h2>
+<ul>
+<li><a href="https://askubuntu.com/questions/732985/force-update-from-unsigned-repository">Force update from unsigned repository</a></li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
       </div>
     </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

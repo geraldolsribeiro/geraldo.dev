@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ protobuf</title>
+    <title>C++ big endian vs little endian</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,60 +52,92 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ protobuf</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/protobuf_01.html">protobuf_01</a>
+        <h1>C++ big endian vs little endian</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/big-endian.html">big-endian</a><a class="tag no-underline" href="/til/tag/little-endian.html">little-endian</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#prototype">Prototype</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<h2 id="prototype" tabindex="-1">Prototype</h2>
-<pre><code class="language-c++">syntax = &quot;proto2&quot;;
-message Sensor {
-  required string name = 1;
-  required double temperature = 2;
-  required int32 humidity = 3;
+<p><div class="table-of-contents"><ul><li><a href="#byte-significant">Byte significant</a></li><li><a href="#how-to-detect-endianness-in-c">How to detect endianness in C</a></li><li><a href="#how-to-detect-endianness-in-c%2B%2B">How to detect endianness in C++</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
+<h2 id="byte-significant" tabindex="-1">Byte significant</h2>
+<ul>
+<li>LSB - Less significant byte
+<ul>
+<li>Any change to will cause a small change in this number</li>
+</ul>
+</li>
+<li>MSB - Most significant byte
+<ul>
+<li>Any change to will cause a huge change in this number</li>
+</ul>
+</li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/big-endian-vs-little-endian-01.webp" alt="Big Endian vs Little Endian">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Big Endian vs Little Endian</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">  // uint32_t value = 1958516461;
+  uint32_t value = 0x01234567;
+  cout &lt;&lt; fmt::format(&quot;Value printed in hex:  {:08x}&quot;, value);
+</code></pre>
+<p>Any object in C++ can be reinterpreted as an array of bytes. If you
+want to actually make a copy of the bytes into a separate array,
+you can use <code>std::copy</code>:</p>
+<pre><code class="language-cpp">  unsigned char bytes[sizeof value];
+  std::copy(
+      static_cast&lt;const unsigned char *&gt;(static_cast&lt;const void *&gt;(&amp;value)),
+      static_cast&lt;const unsigned char *&gt;(static_cast&lt;const void *&gt;(&amp;value)) +
+          sizeof value,
+      bytes);
 
-  enum SwitchLevel {
-    CLOSED = 0;
-    OPEN = 1;
+  // Print
+  cout &lt;&lt; &quot;\nBytes in memory (1): &quot;;
+  for (const auto &amp;byte : bytes) {
+    cout &lt;&lt; fmt::format(&quot;{:02x} &quot;, byte);
   }
-  required SwitchLevel door = 5;
-}
+
+  // Print
+  cout &lt;&lt; &quot;\nBytes in memory (2): &quot; &lt;&lt; hex;
+  copy(begin(bytes), end(bytes), std::ostream_iterator&lt;int&gt;(cout, &quot; &quot;));
+
+When above program is run on little endian machine, gives “67
+  //-- When above program is run on little endian machine, gives “67
+45 23 01” as output, while if it is run on big endian machine,
+  //-- 45 23 01” as output, while if it is run on big endian machine,
+gives “01 23 45 67” as output.
+  //-- gives “01 23 45 67” as output.
 
 </code></pre>
-<h2 id="makefile" tabindex="-1">Makefile</h2>
-<pre><code class="language-Makefile">GRPC_CPP_PLUGIN = grpc_cpp_plugin
-GRPC_CPP_PLUGIN_PATH ?= `which $(GRPC_CPP_PLUGIN)`
-%.grpc.pb.cc: %.proto
-	protoc --grpc_out=. --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $&lt;
-
-%.pb.cc: %.proto
-	protoc --cpp_out=. $&lt;
+<h2 id="how-to-detect-endianness-in-c" tabindex="-1">How to detect endianness in C</h2>
+<pre><code class="language-cpp">  {
+    unsigned int i = 1;
+    // i: 01 00 00 00 on little endian machines
+    // i: 00 00 00 01 on big endian machines
+    // c: ^^
+    char *c = (char *)&amp;i;
+    if (*c) {
+      cout &lt;&lt; &quot;\nlittle-endian&quot;;
+    } else {
+      cout &lt;&lt; &quot;\nbig-endian&quot;;
+    }
+    // This code is contributed by rathbhupendra
+  }
 </code></pre>
-<p>Fill the object parameters.</p>
-<pre><code class="language-cpp">  Sensor sensor;
-  sensor.set_name(&quot;Laboratory&quot;);
-  sensor.set_temperature(23.4);
-  sensor.set_humidity(68);
-  sensor.set_door(Sensor_SwitchLevel_OPEN);
-</code></pre>
-<p>Serialize to a file</p>
-<pre><code class="language-cpp">  ofstream ofs(&quot;sensor.data&quot;, std::ios_base::out | std::ios_base::binary);
-  sensor.SerializeToOstream(&amp;ofs);
-  ofs.close();
-</code></pre>
-<p>Parse parameters from file</p>
-<pre><code class="language-cpp">  Sensor sensor2;
-  ifstream ifs(&quot;sensor.data&quot;, ios_base::in | ios_base::binary);
-  sensor2.ParseFromIstream(&amp;ifs);
-
-  cout &lt;&lt; &quot;Temperature: &quot; &lt;&lt; sensor2.temperature() &lt;&lt; endl;
-  cout &lt;&lt; &quot;Humidity: &quot; &lt;&lt; sensor2.humidity() &lt;&lt; endl;
-  cout &lt;&lt; &quot;Door: &quot; &lt;&lt; sensor2.door() &lt;&lt; endl;
+<h2 id="how-to-detect-endianness-in-c%2B%2B" tabindex="-1">How to detect endianness in C++</h2>
+<pre><code class="language-cpp">  // #include &lt;bit&gt;
+  if constexpr (std::endian::native == std::endian::big) {
+    std::cout &lt;&lt; &quot;\nbig-endian&quot;;
+  } else if constexpr (std::endian::native == std::endian::little) {
+    std::cout &lt;&lt; &quot;\nlittle-endian&quot;;
+  } else {
+    std::cout &lt;&lt; &quot;\nmixed-endian&quot;;
+  }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Temperature: 23.4
-Humidity: 68
-Door: 1
-
+<pre><code class="language-txt">Value printed in hex:  01234567
+Bytes in memory (1): 67 45 23 01 
+Bytes in memory (2): 67 45 23 1 
+little-endian
+little-endian
 </code></pre>
 
       </main>

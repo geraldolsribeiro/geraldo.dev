@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>C++ cast</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ cast</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/cast.html">cast</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#convers%C3%A3o-de-tipos">Conversão de tipos</a><ul><li><a href="#convers%C3%A3o-est%C3%A1tica">Conversão estática</a></li><li><a href="#convers%C3%A3o-din%C3%A2mica">Conversão dinâmica</a></li><li><a href="#convers%C3%A3o-de-const%C3%A2ncia">Conversão de constância</a></li><li><a href="#convers%C3%A3o-por-reinterpreta%C3%A7%C3%A3o">conversão por reinterpretação</a></li><li><a href="#quando-usar-static_cast%3F">Quando usar static_cast?</a></li><li><a href="#quando-usar-dynamic_cast%3F">Quando usar dynamic_cast?</a></li><li><a href="#quando-usar-const_cast%3F">Quando usar const_cast?</a></li><li><a href="#quando-usar-reinterpret_cast%3F">Quando usar reinterpret_cast?</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#refer%C3%AAncias">Referências</a></li></ul></li></ul></div></p>
+<h1 id="convers%C3%A3o-de-tipos" tabindex="-1">Conversão de tipos</h1>
+<p>O C++ é uma linguagem dita strictly typed, termo geralmente traduzido como
+fortemente tipada, isto significa que o tipo das variáveis é sempre certo
+e as operações devem ser definidas para tipos específicos. Gerar um objeto
+de um tipo através de uma expressão de outro tipo envolve uma conversão, ou
+casting.</p>
+<h2 id="convers%C3%A3o-est%C3%A1tica" tabindex="-1">Conversão estática</h2>
+<p><code>static_cast&lt;novo_tipo&gt;( expressão );</code></p>
+<p>Esta é a conversão mais comum. É dita estática pois sua validade
+é <strong>analisada durante a compilação</strong>, as principais possibilidades são:</p>
+<ul>
+<li>Conversão implícita entre os tipos (como float pra int).</li>
+<li>Chamar um construtor do novo_tipo através do resultado da expressão.</li>
+<li>Usar operador de conversão definido pelo usuário do resultado da
+expressão para o novo_tipo.</li>
+<li>Converter ponteiros entre hierarquia de classes, desde que as classes
+não sejam virtuais. (<code>static_cast</code> não verifica a validade da conversão
+durante a execução.)</li>
+<li>Converter ponteiros void* para qualquer outro tipo de ponteiro.
+(resultado indefinido se o alinhamento do ponteiro não for correto.)</li>
+</ul>
+<h2 id="convers%C3%A3o-din%C3%A2mica" tabindex="-1">Conversão dinâmica</h2>
+<p><code>dynamic_cast&lt;novo_tipo&gt;( expressão );</code></p>
+<p>Esta conversão é especial para referências ou ponteiros de objetos
+polimórficos (classes contendo funções virtuais). É dita dinâmica pois
+verifica durante a execução do programa se a conversão é válida quando
+descendo na hierarquia das classes. Em principal:</p>
+<ul>
+<li>Ao converter ponteiros <em>pra cima</em> na hierarquia (<code>expressão</code> é derivada
+de <code>novo_tipo</code>), comporta-se como uma conversão implícita.</li>
+<li>Ao converter ponteiros <em>pra baixo</em> na hierarquia, (<code>expressão</code> é base
+de <code>novo_tipo</code>), verifica se <code>expressão</code> originalmente referia-se a um
+ponteiro para <code>novo_tipo</code> e, se sim, retorna o ponteiro ajustado. Caso
+a verificação falhe, retorna <code>nullptr</code>.</li>
+<li>Conversão entre referências é semelhante, mas gera exceção
+<code>std::bad_cast</code> em caso de falha.</li>
+</ul>
+<h2 id="convers%C3%A3o-de-const%C3%A2ncia" tabindex="-1">Conversão de constância</h2>
+<p><code>const_cast&lt;novo_tipo&gt;(expressão);</code></p>
+<ul>
+<li>Esta conversão tem a única função de adicionar ou remover a propriedade
+<code>const</code>.</li>
+<li>Qualquer conversão pode gerar uma referência ou ponteiro para um
+objeto para que este seja tratado como constante, mas apenas <code>const_cast</code>
+pode gerar uma nova referência ou ponteiro para um objeto constante para
+que este seja tratado como modificável (<em>não-constante</em>).</li>
+<li>Esta conversão não gera nenhuma instrução, é apenas uma diretiva para
+o compilador.</li>
+</ul>
+<h2 id="convers%C3%A3o-por-reinterpreta%C3%A7%C3%A3o" tabindex="-1">conversão por reinterpretação</h2>
+<p><code>reinterpret_cast&lt;novo_tipo&gt;(expressão);</code></p>
+<p>Esta conversão é que mais se distancia da característica <em>fortemente
+tipada</em> da linguagem C++, pois comanda o compilador a reinterpretar
+o resultado da <code>expressão</code> como se fosse do <code>novo_tipo</code>, em geral sem
+realizar nenhuma operação nem verificação sobre os valores sendo
+convertidos. A grosso modo, <code>reinterpret_cast</code> é forma de dizer ao
+compilador: <em>“Confie em mim, esses números que estou lhe passando são o que
+digo serem”</em> . Seus principais usos são:</p>
+<ul>
+<li>Converter ponteiro ou referência para qualquer tipo de objeto para
+ponteiro ou referência para qualquer outro tipo de objeto.</li>
+<li>Converter um ponteiro para um número inteiro.</li>
+<li>Converter um número inteiro para ponteiro.</li>
+</ul>
+<h2 id="quando-usar-static_cast%3F" tabindex="-1">Quando usar <code>static_cast</code>?</h2>
+<p>Procure usar a conversão que melhor expressa suas intenções. Como apenas
+a definição de cada tipo de conversão pode não ser muito elucidativa,
+seguem exemplos de cada uma:</p>
+<pre><code class="language-c++">int   i = 5;
+float x = i; //conversão implícita
+float y = static_cast&lt;float&gt;(i); //conversão explícita
+</code></pre>
+<p>As conversões implícitas facilitam lidar com variáveis numéricas
+e locais, mas é recomendado sempre explicitar a conversão quando exportando
+a variável para alguma função. No exemplo abaixo, o resultado com e sem
+o <code>cast</code> é o mesmo (logo depois apontarei um possível problema):</p>
+<pre><code class="language-c++">int f(int x) { return x*2; }
+
+float x = 1.f;
+std::cout &lt;&lt; &quot;Sem cast : &quot; &lt;&lt; f(x)                   &lt;&lt; std::endl; // Sem cast : 2
+std::cout &lt;&lt; &quot;Com cast : &quot; &lt;&lt; f(static_cast&lt;int&gt;(x)) &lt;&lt; std::endl; // Com cast : 2
+</code></pre>
+<p>Agora, digamos que seja introduzida uma nova função, sem alterar as partes
+existentes do código anterior:</p>
+<pre><code class="language-c++">int f(double x) { return x*5; }
+
+float x = 1.f;
+std::cout &lt;&lt; &quot;Sem cast : &quot; &lt;&lt; f(x)                   &lt;&lt; std::endl; // Sem cast : 5
+std::cout &lt;&lt; &quot;Com cast : &quot; &lt;&lt; f(static_cast&lt;int&gt;(x)) &lt;&lt; std::endl; // Com cast : 2
+</code></pre>
+<p>O motivo disso é que a conversão implícita de <code>float</code> para <code>double</code>
+é preferida ao invés da conversão implícita de <code>float</code> para <code>int</code>.</p>
+<p>Embora requerida em alguns casos (como convertendo ponteiros <code>void*</code>
+para outros tipos) <code>static_cast</code> tem uma função que pende mais para boa
+organização e manutenção do código.</p>
+<h2 id="quando-usar-dynamic_cast%3F" tabindex="-1">Quando usar <code>dynamic_cast</code>?</h2>
+<p><code>dynamic_cast</code> é a forma de verificar em tempo de execução se o tipo de
+objeto polimórfico passado é de um determinado tipo (para isso o programa faz
+uso de RTTI, omitirei detalhes). Em um exemplo simplificado, imagine uma
+classe base com dois tipos de derivadas:</p>
+<pre><code class="language-cpp">struct Base {
+  virtual ~Base(){};
+};
+
+struct DerivadaA : public Base {
+};
+
+struct DerivadaB : public Base {
+};
+</code></pre>
+<p>Digamos então que temos uma função que deve lidar com objetos do tipo</p>
+<pre><code class="language-c++">  void f(Base* ponteiro_base)
+</code></pre>
+<p>Mas em algum momento a execução deve ser diferente se o objeto passado for
+<code>DerivadaA</code> ou <code>DerivadaB</code>. Como <code>dynamic_cast</code> retorna <code>nullptr</code> em caso de
+falha, podemos fazer o seguinte:</p>
+<pre><code class="language-cpp">void f( Base *ponteiro_base )
+{
+  // tenta cast para ponteiro do tipo DerivadaA
+  DerivadaA *objA = dynamic_cast&lt;DerivadaA *&gt;( ponteiro_base );
+  if( objA != nullptr ) {
+    std::cout &lt;&lt; &quot;Objeto do tipo A&quot; &lt;&lt; std::endl;
+    return;
+  }
+
+  // tenta cast para ponteiro do tipo DerivadaB
+  DerivadaB *objB = dynamic_cast&lt;DerivadaB *&gt;( ponteiro_base );
+  if( objB != nullptr ) {
+    std::cout &lt;&lt; &quot;Objeto do tipo B&quot; &lt;&lt; std::endl;
+    return;
+  }
+}
+
+int main()
+{
+  DerivadaA A;
+  DerivadaB B;
+  Base *    ponteiro_base;
+
+  ponteiro_base = &amp;A;
+  f( ponteiro_base );
+  ponteiro_base = &amp;B;
+  f( ponteiro_base );
+}
+</code></pre>
+<h2 id="quando-usar-const_cast%3F" tabindex="-1">Quando usar <code>const_cast</code>?</h2>
+<p>Remover a propriedade <code>const</code> de um objeto é necessidade rara,
+e modificar um objeto declarado <code>const</code> resulta em comportamento indefinido
+do programa, então cabe ao programador usar de forma coesa essa conversão.</p>
+<p>Um exemplo ilustrativo: Quando deseja-se retornar uma referência a um
+membro de uma classe (os famosos <code>setters</code> e <code>getters</code>):</p>
+<pre><code class="language-cpp">class ClasseX {
+  int X;
+
+public:
+  // retorna referência a membro da classe
+  int &amp;getRefX()
+  {
+    return X;
+  };
+};
+</code></pre>
+<p>Como a função não altera o estado da classe, posso querer marcá-la
+<code>const</code>:</p>
+<pre><code class="language-c++">int&amp; getRefX() const
+</code></pre>
+<p>Mas daí o código não compila (a assinatura <code>const</code> da função torna seus
+membros <code>const</code> dentro desta)…</p>
+<p><code>error: binding 'const int' to reference of type 'int&amp;' discards qualifiers</code></p>
+<p><code>const_cast</code> pode ser usado para retornar a referência não-constante:</p>
+<pre><code class="language-c++">      //retorna referência a membro da classe
+      int&amp; getRefX()
+      {
+          //(algum comentário explicando o const_cast)
+          return const_cast&lt;int&amp;&gt;(X);
+      };
+</code></pre>
+<p><code>const_cast</code> deve ser usado com muito cuidado, pois alterar o valor de
+uma variável originalmente constante torna o programa mal formado
+(undefined behaviour). No exemplo acima, se algum objeto da classe
+<code>ClasseX</code> fosse originalmente constante, a função ainda funcionaria neste,
+mas o valor de <code>X</code> não deveria ser modificado através da referência
+retornada.</p>
+<h2 id="quando-usar-reinterpret_cast%3F" tabindex="-1">Quando usar <code>reinterpret_cast</code>?</h2>
+<p>O <code>reinterpret_cast</code> afasta-se da noção de objetos e aproxima-se da
+noção de bits (informação).</p>
+<p>Por exemplo, digamos que você esteja programando um microcontrolador
+e no manual deste diz que a placa de som lê as informações a partir do
+endereço <code>33</code> na memória:</p>
+<pre><code class="language-cpp">// endereço obtido do manual do microchip
+static const int ADDR_PLACA_DE_SOM = 33;
+</code></pre>
+<p>Para escrever informações nesta área da memória, você precisa converter
+esta posição para um ponteiro, com <code>reinterpret_cast</code> você pode fazê-lo:</p>
+<pre><code class="language-cpp">// cria ponteiro para inteiros na posição dita pelo manual
+int *som_pt = reinterpret_cast&lt;int *&gt;( ADDR_PLACA_DE_SOM );
+</code></pre>
+<p>Note que a conversão é bem livre, você pode criar um ponteiro para
+qualquer tipo de dado:</p>
+<pre><code class="language-cpp">// cria ponteiro para chars na posição dita pelo manual
+char* som_pt_2 = reinterpret_cast&lt;char*&gt;(ADDR_PLACA_DE_SOM);
+</code></pre>
+<p>C++ também suporta o <em>cast</em> no estilo da linguagem C, como ele
+é interpretado pelo compilador?</p>
+<p>As <em>conversões no estilo-C</em> são do tipo:</p>
+<p><code>(novo_tipo)(expressão)</code></p>
+<p>Um exemplo:</p>
+<pre><code class="language-c++">  //gera um inteiro através do float 3.14
+  (int)(3.14f)
+</code></pre>
+<p>Este tipo de conversão está presente no C++ principalmente por questões
+de compatibilidade com a linguagem C.</p>
+<p>O compilador tenta a seguinte ordem de conversões quando um <em>cast no
+estilo-C</em> é utilizado:</p>
+<ol>
+<li><code>const_cast</code>.</li>
+<li><code>static_cast</code>, ignorando acesso restrito caso usado em hierarquias de classes.</li>
+<li><code>static_cast</code> seguido de <code>const_cast</code></li>
+<li><code>reinterpret_cast</code></li>
+<li><code>reinterpret_cast</code> seguido de <code>const_cast</code></li>
+</ol>
+<p>Ou seja, o compilador tenta <strong>quase tudo</strong> para gerar um objeto do novo
+tipo, inclusive removendo <code>const</code>. Esse tipo de conversão pode gerar
+conversões indesejadas (até o <em>não orientado a objetos</em>
+<code>reinterpret_cast</code>!) que escondem bugs propagáveis pela lógica do programa.</p>
+<p>Esta resposta é uma simplificação. Reitero que compreender bem
+a conversão de objetos indica boa compreensão do paradigma de orientação
+a objetos. As principais referências foram:</p>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">Objeto do tipo A
+Objeto do tipo B
+
+</code></pre>
+<h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
+<ul>
+<li><a href="http://coliru.stacked-crooked.com/a/03ad0d5c840a0409">Exemplo</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/language/static_cast">static_cast</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/language/dynamic_cast">dynamic_cast</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/language/const_cast">const_cast</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/language/reinterpret_cast">reinterpret_cast</a></li>
+<li><a href="http://en.cppreference.com/w/cpp/language/explicit_cast">Explicit type conversion</a></li>
+<li><a href="https://pt.stackoverflow.com/questions/185272/convers%C3%A3o-em-c-qual-a-diferen%C3%A7a-entre-static-cast-dynamic-cast-const-cast-e">Conversão em C++: Qual a diferença
+entre static_cast, dynamic_cast, const_cast e
+reinterpret_cast?</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

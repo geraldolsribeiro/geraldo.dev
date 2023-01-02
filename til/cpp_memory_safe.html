@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>LaTeX Tikz</title>
+    <title>Writing memory safe C++</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,68 +52,103 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>LaTeX Tikz</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/LaTeX.html">LaTeX</a><a class="tag no-underline" href="/til/tag/TikZ.html">TikZ</a>
+        <h1>Writing memory safe C++</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/memory-safe.html">memory-safe</a><a class="tag no-underline" href="/til/tag/std::shared_ptr.html">std::shared_ptr</a><a class="tag no-underline" href="/til/tag/std::unique_ptr.html">std::unique_ptr</a><a class="tag no-underline" href="/til/tag/std::make_shared.html">std::make_shared</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="editors-and-converters" tabindex="-1">Editors and converters</h2>
-<pre><code class="language-bash">$ apt-cache search tikz editor
-ktikz - editor para a linguagem de desenho TikZ - versão KDE
-qtikz - editor for the TikZ drawing language - Qt version
-prerex - course prerequisite chart editor for LaTeX/TikZ
-texlive-pictures - TeX Live: Graphics, pictures, diagrams
-texlive-latex-extra - TeX Live: LaTeX additional packages
-tikzit - visual PGF/TikZ graph editor
+<p><div class="table-of-contents"><ul><li><a href="#raii-%E2%80%94-resource-acquisition-is-initialisatio">RAII — Resource Acquisition Is Initialisatio</a></li><li><a href="#smart-pointers">Smart pointers</a></li><li><a href="#avoid-using-dynamic-memory-and-heap">Avoid using dynamic memory and heap</a></li><li><a href="#rule-of-zero">Rule of Zero</a></li><li><a href="#rule-of-five">Rule of Five</a></li><li><a href="#rule-of-three">Rule of Three</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p>A base class for our experiments:</p>
+<pre><code class="language-cpp">class MyClass {
+ public:
+  MyClass(const std::string &amp;tag) : mTag(tag) {
+    fmt::print(&quot;{} - ✅ MyClass constructor was called\n&quot;, mTag);
+  }
+  ~MyClass() { fmt::print(&quot;{} - ❌ MyClass destructor was called\n&quot;, mTag); }
 
-$ apt-cache search pdf2svg
-pdf2svg - converte documentos PDF para arquivos SVG (um por página)
+ private:
+  std::string mTag;  // helps to identify the output line
+};
 </code></pre>
-<h2 id="line-thickness" tabindex="-1">Line thickness</h2>
-<figure>
-  <img class="mx-auto" src="/til/tikz_line_thicknes.webp" alt="Line thickness">
-  <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>Line thickness</span>
-  </figcaption>
+<h2 id="raii-%E2%80%94-resource-acquisition-is-initialisatio" tabindex="-1">RAII — Resource Acquisition Is Initialisatio</h2>
+<p>RAII is a bad name for the concept.</p>
+<figure class="flex bg-slate-600 p-4 rounded-xl border-solid border-2 border-slate-400">
+  <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
+    <g>
+      <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643
+      c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455
+      c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44
+      C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186
+      c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023
+      c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605
+      v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455
+      c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path>
+    </g>
+  </svg>
+  <blockquote class="border-0">
+    <p class="text-2xl">The best example of why I shouldn't be in marketing...
+I didn't have a good day when I named that</p>
+    <strong class="text-slate-200">Bjarne Stroustrup (2012)</strong>
+  </blockquote>
 </figure>
-<h2 id="example---linked-list" tabindex="-1">Example - Linked list</h2>
-<pre><code class="language-latex">\documentclass{article}
-\usepackage{tikz}
-\usetikzlibrary{calc,shapes.multipart,chains,arrows}
-
-\begin{document}
-
-\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
-    draw, rectangle split horizontal}, &gt;=stealth, start chain]
-
-  \node[list,on chain] (A) {12};
-  \node[list,on chain] (B) {99};
-  \node[list,on chain] (C) {37};
-  \node[on chain,draw,inner sep=6pt] (D) {};
-  \draw (D.north east) -- (D.south west);
-  \draw (D.north west) -- (D.south east);
-  \draw[*-&gt;] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
-  \draw[*-&gt;] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
-  \draw[*-&gt;] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
-\end{tikzpicture}
-
-\end{document}
+<p>A better name is probably:</p>
+<ul>
+<li>Constructor Acquires, Destructor Releases</li>
+<li>Scope Based Resource Management</li>
+</ul>
+<pre><code class="language-cpp">void raii() {
+  MyClass m0(&quot;raii 00&quot;);
+  { MyClass m(&quot;raii 01&quot;); }
+  {
+    auto m = new MyClass(&quot;raii 02&quot;);
+    delete m;
+  }
+  { std::unique_ptr&lt;MyClass&gt; m(new MyClass(&quot;raii 03&quot;)); }
+  { std::shared_ptr&lt;MyClass&gt; m(new MyClass(&quot;raii 04&quot;)); }
+  {
+    auto m = std::make_shared&lt;MyClass&gt;(&quot;raii 05&quot;);
+    auto m2 = m;
+  }
+  {
+    auto m = std::make_unique&lt;MyClass&gt;(&quot;raii 06&quot;);
+    fmt::print(&quot;raii 06 auto m2 = std::move(m);\n&quot;);
+    auto m2 = std::move(m);
+    fmt::print(&quot;raii 06 m  is nullptr -&gt; {}\n&quot;, m == nullptr);
+    fmt::print(&quot;raii 06 m2 is nullptr -&gt; {}\n&quot;, m2 == nullptr);
+  }
+  // m0 will be freed here
+}
 </code></pre>
-<figure>
-  <img class="mx-auto" src="/til/tikz_linked_list.webp" alt="Linked list">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Linked list</span>
-  </figcaption>
-</figure>
+<h2 id="smart-pointers" tabindex="-1">Smart pointers</h2>
+<h2 id="avoid-using-dynamic-memory-and-heap" tabindex="-1">Avoid using dynamic memory and heap</h2>
+<h2 id="rule-of-zero" tabindex="-1">Rule of Zero</h2>
+<h2 id="rule-of-five" tabindex="-1">Rule of Five</h2>
+<h2 id="rule-of-three" tabindex="-1">Rule of Three</h2>
+<p>If you implement a copy constructor, assignment operator, or
+destructor, you should implement the others, as well</p>
+<pre><code class="language-cpp">  raii();
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">raii 00 - ✅ MyClass constructor was called
+raii 01 - ✅ MyClass constructor was called
+raii 01 - ❌ MyClass destructor was called
+raii 02 - ✅ MyClass constructor was called
+raii 02 - ❌ MyClass destructor was called
+raii 03 - ✅ MyClass constructor was called
+raii 03 - ❌ MyClass destructor was called
+raii 04 - ✅ MyClass constructor was called
+raii 04 - ❌ MyClass destructor was called
+raii 05 - ✅ MyClass constructor was called
+raii 05 - ❌ MyClass destructor was called
+raii 06 - ✅ MyClass constructor was called
+raii 06 auto m2 = std::move(m);
+raii 06 m  is nullptr -&gt; true
+raii 06 m2 is nullptr -&gt; false
+raii 06 - ❌ MyClass destructor was called
+raii 00 - ❌ MyClass destructor was called
+
+</code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://tikz.net/">tikz.net</a></li>
-<li><a href="https://latexdraw.com/how-the-inner-separation-for-nodes-works-and-how-to-use-it-part-2/">How the inner separation for nodes works and how to use it: Part 2</a></li>
-<li><a href="https://latexdraw.com/exploring-tikz-arrows/">TikZ arrows</a></li>
-<li><a href="https://latexdraw.com/blog/">TikZBlog</a></li>
-<li><a href="https://latexdraw.com/drawing-neural-networks-in-tikz-short-guide/">Drawing Neural Networks in TikZ: Short Guide</a></li>
-<li>Github <a href="https://github.com/MartinThoma/LaTeX-examples">Examples for the usage of LaTeX</a></li>
-<li>Github <a href="https://github.com/walmes/Tikz">Galley of Tikz drawings</a></li>
-<li><a href="https://tex.stackexchange.com/questions/19286/how-should-i-draw-a-singly-double-linked-list">How should I draw a singly/double linked list?</a></li>
+<li>[5 techniques for writing memory safe</li>
 </ul>
 
       </main>

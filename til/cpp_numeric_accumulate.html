@@ -76,12 +76,6 @@ first element of the collection.</p>
     <span>Tip</span>
   </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>A better alternative to the <code>std::accumulate</code> function is the
-<code>std::reduce</code> function.  <code>reduce()</code> is similar to <code>accumulate()</code>,
-except it doesn’t keep the order of the operation; that is, it
-doesn’t necessarily process the collection elements sequentially. You
-can pass an execution policy to the <code>std::reduce</code> function and
-change its behavior, say, to processing elements in parallel.</p>
   </div>
 </div>
 <div role="alert" class="my-4">
@@ -90,9 +84,6 @@ change its behavior, say, to processing elements in parallel.</p>
     <span>Warning</span>
   </div>
   <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
-<p>Though <code>std::reduce</code> seems faster compared to <code>std::accumulate</code>,
-you should be careful when using it with non-commutative binary
-operations.</p>
   </div>
 </div>
 <div role="alert" class="my-4">
@@ -101,9 +92,6 @@ operations.</p>
     <span>Information</span>
   </div>
   <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
-<p>Folding and recursion go hand in hand. Recursive functions also
-solve a problem by decomposing it into smaller tasks and solving
-them one by one.</p>
   </div>
 </div>
 <pre><code class="language-cpp">template &lt;typename T&gt;

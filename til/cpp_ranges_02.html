@@ -97,7 +97,6 @@ string after dropping the first two.</p>
     <span>Tip</span>
   </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p><code>vec | foo | bar(3) | baz(7)</code> is equivalent to <code>baz(bar(foo(vec), 3), 7)</code></p>
   </div>
 </div>
 <pre><code class="language-cpp">  auto v3 = vec //
@@ -114,7 +113,6 @@ string after dropping the first two.</p>
     <span>Warning</span>
   </div>
   <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
-<p>Views are not readonly</p>
   </div>
 </div>
 <pre><code class="language-cpp">  auto v4 = vec | std::views::reverse | std::views::drop( 2 );

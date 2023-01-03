@@ -71,7 +71,6 @@ bool operator==(const S&amp; lhs, const S&amp; rhs) {
     <span>Tip</span>
   </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>Custom hash can be a standalone function object.</p>
   </div>
 </div>
 <pre><code class="language-cpp">struct MyHash {
@@ -88,7 +87,6 @@ bool operator==(const S&amp; lhs, const S&amp; rhs) {
     <span>Tip</span>
   </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>Custom specialization of std::hash can be injected in namespace std.</p>
   </div>
 </div>
 <pre><code class="language-cpp">template &lt;&gt;

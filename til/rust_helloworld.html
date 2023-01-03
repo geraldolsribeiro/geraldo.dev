@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ helloworld</title>
+    <title>Rust helloworld</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,8 +52,8 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ helloworld</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/helloworld.html">helloworld</a>
+        <h1>Rust helloworld</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/rust.html">rust</a><a class="tag no-underline" href="/til/tag/helloworld.html">helloworld</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#installation-on-debian-11">Installation on Debian 11</a></li><li><a href="#install-code-formatter">Install code formatter</a></li><li><a href="#format-code">Format code</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="installation-on-debian-11" tabindex="-1">Installation on Debian 11</h2>
@@ -82,13 +82,15 @@ echo &quot;fn     main() {}&quot; | rustfmt
     // x = 20; // compilation error because x is immutable
 
     let mut y = 10;
-    y = 20; // ok
+    println!(&quot;x: {} y: {}&quot;, x, y);
 
+    y = 20; // ok
     println!(&quot;x: {} y: {}&quot;, x, y);
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">Hello, rust!
+x: 10 y: 10
 x: 10 y: 20
 
 </code></pre>

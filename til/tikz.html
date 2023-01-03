@@ -6,8 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
     <title>LaTeX Tikz</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/monokai.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/monokai.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/latex.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -55,9 +56,9 @@
         <h1>LaTeX Tikz</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/LaTeX.html">LaTeX</a><a class="tag no-underline" href="/til/tag/TikZ.html">TikZ</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#relative-positioning">Relative positioning</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="editors-and-converters" tabindex="-1">Editors and converters</h2>
-<pre><code class="language-bash">$ apt-cache search tikz editor
+<pre><code class="language-plaintext">$ apt-cache search tikz editor
 ktikz - editor para a linguagem de desenho TikZ - versão KDE
 qtikz - editor for the TikZ drawing language - Qt version
 prerex - course prerequisite chart editor for LaTeX/TikZ
@@ -75,6 +76,40 @@ pdf2svg - converte documentos PDF para arquivos SVG (um por página)
      <strong>Fig. 1</strong> - <span>Line thickness</span>
   </figcaption>
 </figure>
+<figure>
+  <img class="mx-auto" src="/til/tikz_thickness.svg" alt="Line thickness">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Line thickness</span>
+  </figcaption>
+</figure>
+<h2 id="relative-positioning" tabindex="-1">Relative positioning</h2>
+<p>The <code>positioning</code> library allows you to place nodes at a specified direction and
+distance from other nodes. To load the library, include in your preamble:</p>
+<figure>
+  <img class="mx-auto" src="/til/tikz_positioning.svg" alt="Positioning">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Positioning</span>
+  </figcaption>
+</figure>
+<pre><code class="language-latex">﻿\usetikzlibrary{backgrounds}
+\usetikzlibrary{positioning}
+
+\begin{tikzpicture}[
+background rectangle/.append style={draw=blue!30, fill=blue!5},
+show background rectangle,
+]
+\draw[help lines] (-2,-2) grid (2,2);
+\node (0) {origin};
+\node[right=of 0] {right};
+\node[below right=of 0] {below right};
+\node[below=of 0] {below};
+\node[below left=of 0] {below left};
+\node[left=of 0] {left};
+\node[above left=of 0] {above left};
+\node[above=of 0] {above};
+\node[above right=of 0] {above right};
+\end{tikzpicture}
+</code></pre>
 <h2 id="example---linked-list" tabindex="-1">Example - Linked list</h2>
 <pre><code class="language-latex">\documentclass{article}
 \usepackage{tikz}
@@ -101,7 +136,7 @@ pdf2svg - converte documentos PDF para arquivos SVG (um por página)
 <figure>
   <img class="mx-auto" src="/til/tikz_linked_list.webp" alt="Linked list">
   <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Linked list</span>
+     <strong>Fig. 4</strong> - <span>Linked list</span>
   </figcaption>
 </figure>
 <h2 id="references" tabindex="-1">References</h2>
@@ -114,6 +149,7 @@ pdf2svg - converte documentos PDF para arquivos SVG (um por página)
 <li>Github <a href="https://github.com/MartinThoma/LaTeX-examples">Examples for the usage of LaTeX</a></li>
 <li>Github <a href="https://github.com/walmes/Tikz">Galley of Tikz drawings</a></li>
 <li><a href="https://tex.stackexchange.com/questions/19286/how-should-i-draw-a-singly-double-linked-list">How should I draw a singly/double linked list?</a></li>
+<li><a href="https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/">crash course to tikz [2 · positioning]</a></li>
 </ul>
 
       </main>

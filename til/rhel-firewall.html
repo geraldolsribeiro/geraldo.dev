@@ -85,6 +85,13 @@
     <span>Tip</span>
   </div>
   <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>It is possible, especially on remote systems, that an incorrect setting results
+in a user locking themselves out of a machine. To prevent such situations, use
+the <code>--timeout</code> option. After a specified amount of time, any change reverts to
+its previous state. Using this options excludes the <code>--permanent</code> option.</p>
+<p>For example, to add the SSH service for 15 minutes:</p>
+<pre><code class="language-bash">firewall-cmd --add-service=ssh --timeout 15m
+</code></pre>
   </div>
 </div>
 <h2 id="references" tabindex="-1">References</h2>

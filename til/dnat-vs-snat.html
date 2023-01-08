@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>LaTeX Tikz</title>
+    <title>DNAT vs SNAT</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/latex.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -53,163 +52,15 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>LaTeX Tikz</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/LaTeX.html">LaTeX</a><a class="tag no-underline" href="/til/tag/TikZ.html">TikZ</a>
+        <h1>DNAT vs SNAT</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/DNAT.html">DNAT</a><a class="tag no-underline" href="/til/tag/SNAT.html">SNAT</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#relative-positioning">Relative positioning</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#circle">Circle</a></li><li><a href="#package-intersections">Package intersections</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="editors-and-converters" tabindex="-1">Editors and converters</h2>
-<pre><code class="language-plaintext">$ apt-cache search tikz editor
-ktikz - editor para a linguagem de desenho TikZ - versão KDE
-qtikz - editor for the TikZ drawing language - Qt version
-prerex - course prerequisite chart editor for LaTeX/TikZ
-texlive-pictures - TeX Live: Graphics, pictures, diagrams
-texlive-latex-extra - TeX Live: LaTeX additional packages
-tikzit - visual PGF/TikZ graph editor
-
-$ apt-cache search pdf2svg
-pdf2svg - converte documentos PDF para arquivos SVG (um por página)
-</code></pre>
-<h2 id="line-thickness" tabindex="-1">Line thickness</h2>
-<figure>
-  <img class="mx-auto" src="/til/tikz_line_thicknes.webp" alt="Line thickness">
-  <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>Line thickness</span>
-  </figcaption>
-</figure>
-<figure>
-  <img class="mx-auto" src="/til/tikz_thickness.svg" alt="Line thickness">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Line thickness</span>
-  </figcaption>
-</figure>
-<h2 id="relative-positioning" tabindex="-1">Relative positioning</h2>
-<p>The <code>positioning</code> library allows you to place nodes at a specified direction and
-distance from other nodes. To load the library, include in your preamble:</p>
-<figure>
-  <img class="mx-auto" src="/til/tikz_positioning.svg" alt="Positioning">
-  <figcaption class="text-center">
-     <strong>Fig. 3</strong> - <span>Positioning</span>
-  </figcaption>
-</figure>
-<pre><code class="language-latex">﻿\usetikzlibrary{backgrounds}
-\usetikzlibrary{positioning}
-
-\begin{tikzpicture}[
-background rectangle/.append style={draw=cyan, fill=white},
-show background rectangle,
-text=cyan,
-]
-\draw[help lines] (-2,-2) grid (2,2);
-\node [red] (0) {$\bullet$};
-\node{origin};
-\node[right=of 0] {right};
-\node[below right=of 0] {below right};
-\node[below=of 0] {below};
-\node[below left=of 0] {below left};
-\node[left=of 0] {left};
-\node[above left=of 0] {above left};
-\node[above=of 0] {above};
-\node[above right=of 0] {above right};
-\end{tikzpicture}
-</code></pre>
-<h2 id="example---linked-list" tabindex="-1">Example - Linked list</h2>
-<pre><code class="language-latex">\documentclass{article}
-\usepackage{tikz}
-\usetikzlibrary{calc,shapes.multipart,chains,arrows}
-
-\begin{document}
-
-\begin{tikzpicture}[list/.style={rectangle split, rectangle split parts=2,
-    draw, rectangle split horizontal}, &gt;=stealth, start chain]
-
-  \node[list,on chain] (A) {12};
-  \node[list,on chain] (B) {99};
-  \node[list,on chain] (C) {37};
-  \node[on chain,draw,inner sep=6pt] (D) {};
-  \draw (D.north east) -- (D.south west);
-  \draw (D.north west) -- (D.south east);
-  \draw[*-&gt;] let \p1 = (A.two), \p2 = (A.center) in (\x1,\y2) -- (B);
-  \draw[*-&gt;] let \p1 = (B.two), \p2 = (B.center) in (\x1,\y2) -- (C);
-  \draw[*-&gt;] let \p1 = (C.two), \p2 = (C.center) in (\x1,\y2) -- (D);
-\end{tikzpicture}
-
-\end{document}
-</code></pre>
-<figure>
-  <img class="mx-auto" src="/til/tikz_linked_list.svg" alt="Linked list">
-  <figcaption class="text-center">
-     <strong>Fig. 4</strong> - <span>Linked list</span>
-  </figcaption>
-</figure>
-<h2 id="circle" tabindex="-1">Circle</h2>
-<figure>
-  <img class="mx-auto" src="/til/tikz_tut_circle.svg" alt="Circle">
-  <figcaption class="text-center">
-     <strong>Fig. 5</strong> - <span>Circle</span>
-  </figcaption>
-</figure>
-<pre><code class="language-latex">﻿\usetikzlibrary{backgrounds}
-
-\begin{tikzpicture}[
-scale=2,
-background rectangle/.append style={draw=cyan, fill=white},
-show background rectangle,
-draw=cyan,
-text=cyan,
-]
-
-\draw [thick] (0,0) circle (1);
-\draw [dashed] (0,0) -- (0,1);
-\draw [dotted] (0,0) -- (1,0);
-\draw (0,0) node[below]{$O$} ;
-\draw (1,0) node[right]{$A$} ;
-\draw (0,1) node[above]{$B$} ;
-\draw [dashdotdotted, thick] (0.9,0) arc (0:90:0.9);
-\draw (0,0) node {$\bullet$};
-
-\end{tikzpicture}
-</code></pre>
-<h2 id="package-intersections" tabindex="-1">Package intersections</h2>
-<figure>
-  <img class="mx-auto" src="/til/tikz_intersections.svg" alt="Intersections">
-  <figcaption class="text-center">
-     <strong>Fig. 6</strong> - <span>Intersections</span>
-  </figcaption>
-</figure>
-<pre><code class="language-latex">﻿\usetikzlibrary{intersections}
-\usetikzlibrary{backgrounds}
-
-\begin{tikzpicture}[
-background rectangle/.style={draw=cyan, fill=white},
-show background rectangle,
-]
-    % Draw to path and give a name to them
-    \draw [red, thin, name path={red line}] (0,0) -- (4,3);
-    \draw [cyan, name path={blue curve}] (1,-0.5) to[out=80, in=100] (3,2);
-    % use the intersections on a path to giv them coordinates
-    % and draw a line between them
-    \draw [green, thick, name intersections={of=red line and blue curve, 
-           by={first intersect, second intersect}}]
-       (first intersect) -- (second intersect);
-    % one can use the coordinates furtheron
-    \node [above] at (first intersect) {A};
-    \node [below] at (second intersect) {B};
-\end{tikzpicture}
-
-</code></pre>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://tikz.net/">tikz.net</a></li>
-<li><a href="https://latexdraw.com/how-the-inner-separation-for-nodes-works-and-how-to-use-it-part-2/">How the inner separation for nodes works and how to use it: Part 2</a></li>
-<li><a href="https://latexdraw.com/exploring-tikz-arrows/">TikZ arrows</a></li>
-<li><a href="https://latexdraw.com/blog/">TikZBlog</a></li>
-<li><a href="https://latexdraw.com/drawing-neural-networks-in-tikz-short-guide/">Drawing Neural Networks in TikZ: Short Guide</a></li>
-<li><a href="https://tex.stackexchange.com/questions/19286/how-should-i-draw-a-singly-double-linked-list">How should I draw a singly/double linked list?</a></li>
-<li><a href="https://github.com/mcnees/LaTeX-Graph-Paper">LaTeX Graph Paper</a></li>
-<li><a href="https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/">crash course to tikz [2 · positioning]</a></li>
-<li>Github <a href="https://github.com/maphy-psd/awesome-TikZ">awesome-TikZ</a></li>
-<li>Github <a href="https://github.com/MartinThoma/LaTeX-examples">Examples for the usage of LaTeX</a></li>
-<li>Github <a href="https://github.com/walmes/Tikz">Galley of Tikz drawings</a></li>
+<li><a href="https://acervolima.com/diferenca-entre-snat-e-dnat/">DIFERENÇA ENTRE SNAT E DNAT</a></li>
+<li><a href="https://learn.microsoft.com/pt-br/azure/load-balancer/load-balancer-outbound-connections">Use a SNAT (Conversão de Endereços de Rede de Origem) para conexões de saída</a></li>
 </ul>
 
       </main>

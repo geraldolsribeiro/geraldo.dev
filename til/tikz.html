@@ -56,7 +56,7 @@
         <h1>LaTeX Tikz</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/LaTeX.html">LaTeX</a><a class="tag no-underline" href="/til/tag/TikZ.html">TikZ</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#relative-positioning">Relative positioning</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#editors-and-converters">Editors and converters</a></li><li><a href="#line-thickness">Line thickness</a></li><li><a href="#relative-positioning">Relative positioning</a></li><li><a href="#example---linked-list">Example - Linked list</a></li><li><a href="#circle">Circle</a></li><li><a href="#package-intersections">Package intersections</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="editors-and-converters" tabindex="-1">Editors and converters</h2>
 <pre><code class="language-plaintext">$ apt-cache search tikz editor
 ktikz - editor para a linguagem de desenho TikZ - versão KDE
@@ -95,11 +95,13 @@ distance from other nodes. To load the library, include in your preamble:</p>
 \usetikzlibrary{positioning}
 
 \begin{tikzpicture}[
-background rectangle/.append style={draw=blue!30, fill=blue!5},
+background rectangle/.append style={draw=cyan, fill=white},
 show background rectangle,
+text=cyan,
 ]
 \draw[help lines] (-2,-2) grid (2,2);
-\node (0) {origin};
+\node [red] (0) {$\bullet$};
+\node{origin};
 \node[right=of 0] {right};
 \node[below right=of 0] {below right};
 \node[below=of 0] {below};
@@ -134,11 +136,67 @@ show background rectangle,
 \end{document}
 </code></pre>
 <figure>
-  <img class="mx-auto" src="/til/tikz_linked_list.webp" alt="Linked list">
+  <img class="mx-auto" src="/til/tikz_linked_list.svg" alt="Linked list">
   <figcaption class="text-center">
      <strong>Fig. 4</strong> - <span>Linked list</span>
   </figcaption>
 </figure>
+<h2 id="circle" tabindex="-1">Circle</h2>
+<figure>
+  <img class="mx-auto" src="/til/tikz_tut_circle.svg" alt="Circle">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Circle</span>
+  </figcaption>
+</figure>
+<pre><code class="language-latex">﻿\usetikzlibrary{backgrounds}
+
+\begin{tikzpicture}[
+scale=2,
+background rectangle/.append style={draw=cyan, fill=white},
+show background rectangle,
+draw=cyan,
+text=cyan,
+]
+
+\draw [thick] (0,0) circle (1);
+\draw [dashed] (0,0) -- (0,1);
+\draw [dotted] (0,0) -- (1,0);
+\draw (0,0) node[below]{$O$} ;
+\draw (1,0) node[right]{$A$} ;
+\draw (0,1) node[above]{$B$} ;
+\draw [dashdotdotted, thick] (0.9,0) arc (0:90:0.9);
+\draw (0,0) node {$\bullet$};
+
+\end{tikzpicture}
+</code></pre>
+<h2 id="package-intersections" tabindex="-1">Package intersections</h2>
+<figure>
+  <img class="mx-auto" src="/til/tikz_intersections.svg" alt="Intersections">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Intersections</span>
+  </figcaption>
+</figure>
+<pre><code class="language-latex">﻿\usetikzlibrary{intersections}
+\usetikzlibrary{backgrounds}
+
+\begin{tikzpicture}[
+background rectangle/.style={draw=cyan, fill=white},
+show background rectangle,
+]
+    % Draw to path and give a name to them
+    \draw [red, thin, name path={red line}] (0,0) -- (4,3);
+    \draw [cyan, name path={blue curve}] (1,-0.5) to[out=80, in=100] (3,2);
+    % use the intersections on a path to giv them coordinates
+    % and draw a line between them
+    \draw [green, thick, name intersections={of=red line and blue curve, 
+           by={first intersect, second intersect}}]
+       (first intersect) -- (second intersect);
+    % one can use the coordinates furtheron
+    \node [above] at (first intersect) {A};
+    \node [below] at (second intersect) {B};
+\end{tikzpicture}
+
+</code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://tikz.net/">tikz.net</a></li>
@@ -146,10 +204,12 @@ show background rectangle,
 <li><a href="https://latexdraw.com/exploring-tikz-arrows/">TikZ arrows</a></li>
 <li><a href="https://latexdraw.com/blog/">TikZBlog</a></li>
 <li><a href="https://latexdraw.com/drawing-neural-networks-in-tikz-short-guide/">Drawing Neural Networks in TikZ: Short Guide</a></li>
+<li><a href="https://tex.stackexchange.com/questions/19286/how-should-i-draw-a-singly-double-linked-list">How should I draw a singly/double linked list?</a></li>
+<li><a href="https://github.com/mcnees/LaTeX-Graph-Paper">LaTeX Graph Paper</a></li>
+<li><a href="https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/">crash course to tikz [2 · positioning]</a></li>
+<li>Github <a href="https://github.com/maphy-psd/awesome-TikZ">awesome-TikZ</a></li>
 <li>Github <a href="https://github.com/MartinThoma/LaTeX-examples">Examples for the usage of LaTeX</a></li>
 <li>Github <a href="https://github.com/walmes/Tikz">Galley of Tikz drawings</a></li>
-<li><a href="https://tex.stackexchange.com/questions/19286/how-should-i-draw-a-singly-double-linked-list">How should I draw a singly/double linked list?</a></li>
-<li><a href="https://rmwu.github.io/tutorial/latex/2019/11/21/positioning/">crash course to tikz [2 · positioning]</a></li>
 </ul>
 
       </main>

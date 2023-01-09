@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ exception — 01</title>
+    <title>c++ salary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -52,54 +52,30 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ exception — 01</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::exception.html">std::exception</a><a class="tag no-underline" href="/til/tag/std::runtime_error.html">std::runtime_error</a>
+        <h1>c++ salary</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/salary.html">salary</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#strong-and-weak-exception-guarantee">Strong and weak exception guarantee</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="strong-and-weak-exception-guarantee" tabindex="-1">Strong and weak exception guarantee</h2>
-<p>When writing any C++ code, we have essentially four options regarding
-exceptions:</p>
-<ul>
-<li>we can completely ignore exceptions (no exception guarantee)</li>
-<li>we can guarantee that our code does not throw exceptions (noexcept)</li>
-<li>we can guarantee that if our code throws, it doesn’t violate any invariants
-(weak exception guarantee)</li>
-<li>we can guarantee that if our code throws, the state doesn’t change (strong
-exception guarantee)</li>
-</ul>
-<p>The strong exception guarantee is effectively transactional. Either the
-operation succeeds, or nothing changes.</p>
-<p>The weak exception guarantee permits partial changes (that do not violate
-invariants).</p>
-<p>This topic is complex, and was divided into several parts.</p>
-<ul>
-<li><a href="/til/cpp_exception_01.html">01 - Default exception handling</a></li>
-<li><a href="/til/cpp_exception_02.html">Exception 02</a></li>
-<li><a href="/til/cpp_exception_03.html">Exception 03</a></li>
-</ul>
-<pre><code class="language-cpp">#include &lt;fmt/core.h&gt;
-
-#include &lt;stdexcept&gt;
-
-void error_maker() { throw std::runtime_error(&quot;This is a runtime error.&quot;); }
-
-int main() {
-  try {
-    error_maker();
-  } catch (std::exception&amp; e) {
-    fmt::print(&quot;Failed: {}\n&quot;, e.what());
-  }
-  return 0;
-}
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Failed: This is a runtime error.
-
-</code></pre>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<figure>
+  <img src="/til/cpp_salary_entry.webp" alt="Average Experienced C++ Developer Salary">
+  <figcaption>
+     Average Experienced C++ Developer Salary
+     <br>
+    <cite>Source: <a href="https://www.payscale.com/research/US/Job=C%2B%2B_Developer/Salary/a1318960/Entry-Level">https://www.payscale.com/research/US/Job=C%2B%2B_Developer/Salary/a1318960/Entry-Level</a></cite>
+  </figcaption>
+</figure>
+<figure>
+  <img src="/til/cpp_salary_experienced.webp" alt="Average Experienced C++ Developer Salary">
+  <figcaption>
+     Average Experienced C++ Developer Salary
+     <br>
+    <cite>Source: <a href="https://www.payscale.com/research/US/Job=C%2B%2B_Developer/Salary/9514e6d8/Experienced">https://www.payscale.com/research/US/Job=C%2B%2B_Developer/Salary/9514e6d8/Experienced</a></cite>
+  </figcaption>
+</figure>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://simontoth.substack.com/p/daily-bite-of-c-error-handling">Daily bit(e) of C++ | Error
-handling</a></li>
+<li><a href="https://devskiller.com/c-plus-plus-developer-salary/">Complete C++ developer salary data</a></li>
 </ul>
 
       </main>

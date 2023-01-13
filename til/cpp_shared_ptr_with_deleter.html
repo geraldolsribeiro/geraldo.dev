@@ -53,22 +53,22 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ shared_ptr with custom deleter</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::shared_ptr.html">std::shared_ptr</a><a class="tag no-underline" href="/til/tag/custom-deleter.html">custom-deleter</a><a class="tag no-underline" href="/til/tag/popen.html">popen</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::shared_ptr.html">std::shared_ptr</a><a class="tag no-underline" href="/til/tag/custom-deleter.html">custom-deleter</a><a class="tag no-underline" href="/til/tag/popen.html">popen</a><a class="tag no-underline" href="/til/tag/memory-safe.html">memory-safe</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#context-block-1">Context block 1</a></li><li><a href="#context-block-2">Context block 2</a></li><li><a href="#context-block-3">Context block 3</a></li><li><a href="#context-block-4">Context block 4</a></li><li><a href="#context-block-5">Context block 5</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <p>The purpose of <code>Foo</code> class is to trace the constructor and destructor
 calls.</p>
 <pre><code class="language-cpp">struct Foo {
   int id{0};
-  Foo(int i = 0) : id{i} { std::cout &lt;&lt; &quot;Foo::Foo(&quot; &lt;&lt; i &lt;&lt; &quot;)\n&quot;; }
-  ~Foo() { std::cout &lt;&lt; &quot;Foo::~Foo(), id=&quot; &lt;&lt; id &lt;&lt; '\n'; }
+  Foo(int i = 0) : id{i} { std::cout &lt;&lt; &quot;✅ Foo::Foo(&quot; &lt;&lt; i &lt;&lt; &quot;)\n&quot;; }
+  ~Foo() { std::cout &lt;&lt; &quot;❌ Foo::~Foo(), id=&quot; &lt;&lt; id &lt;&lt; '\n'; }
 };
 </code></pre>
 <p>The <code>DeleterFunctor</code> is a custom functor that will be used to
 release the objects when it goes out of context.</p>
 <pre><code class="language-cpp">struct DeleterFunctor {
   void operator()(Foo* p) const {
-    std::cout &lt;&lt; &quot;Call delete from function object. Foo::id=&quot; &lt;&lt; p-&gt;id &lt;&lt; '\n';
+    std::cout &lt;&lt; &quot;❌ Call delete from function object. Foo::id=&quot; &lt;&lt; p-&gt;id &lt;&lt; '\n';
     delete p;
   }
 };
@@ -76,7 +76,7 @@ release the objects when it goes out of context.</p>
 <p>This function wrap a POSIX <code>fclose</code> function call. It is used for
 trace purpose only.</p>
 <pre><code class="language-cpp">int myfclose(FILE* stream) {
-  std::cout &lt;&lt; &quot;myfclose called\n&quot;;
+  std::cout &lt;&lt; &quot;❌ myfclose called\n&quot;;
   return fclose(stream);
 }
 </code></pre>
@@ -195,7 +195,7 @@ sh1 == nullptr
 ==&gt; Context block 1 is going out of context here
 
 2) constructor with object
-Foo::Foo(10)
+✅ Foo::Foo(10)
 sh2.id = 10
 sh2.use_count(): 1
 sh3.id = 10
@@ -203,25 +203,25 @@ sh2.use_count(): 2
 sh3.use_count(): 2
 sh3.id = 123
 ==&gt; Context block 2 is going out of context here
-Foo::~Foo(), id=123
+❌ Foo::~Foo(), id=123
 
 3) constructor with object and deleter
-Foo::Foo(11)
-Foo::Foo(12)
+✅ Foo::Foo(11)
+✅ Foo::Foo(12)
 ==&gt; Context block 3 is going out of context here
 Call delete from lambda... p-&gt;id=12
-Foo::~Foo(), id=12
-Call delete from function object. Foo::id=11
-Foo::~Foo(), id=11
+❌ Foo::~Foo(), id=12
+❌ Call delete from function object. Foo::id=11
+❌ Foo::~Foo(), id=11
 
 4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 5484 jan 13 11:21 shared_ptr_with_deleter.cpp
+ls result: -rw-r--r-- 1 geraldo geraldo 5521 jan 13 11:28 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 
 5) constructor with pipe object and deleter (POSIX)
 ==&gt; Context block 4 is going out of context here
-myfclose called
+❌ myfclose called
 
 </code></pre>
 <p>Content of <code>/tmp/test1.txt</code></p>

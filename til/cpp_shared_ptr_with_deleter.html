@@ -94,7 +94,7 @@ trace purpose only.</p>
   }
 </code></pre>
 <p>Output of context block 1</p>
-<pre><code>1) constructor with no managed object
+<pre><code class="language-txt">1) constructor with no managed object
 sh1 == nullptr
 ==&gt; Context block 1 is going out of context here
 </code></pre>
@@ -115,7 +115,7 @@ sh1 == nullptr
   }
 </code></pre>
 <p>Output of context block 2</p>
-<pre><code>2) constructor with object
+<pre><code class="language-txt">2) constructor with object
 ✅ Foo::Foo(10)
 sh2.id = 10
 sh2.use_count(): 1
@@ -138,7 +138,7 @@ sh3.id = 123
   }
 </code></pre>
 <p>Output of context block 3</p>
-<pre><code>3) constructor with object and deleter
+<pre><code class="language-txt">3) constructor with object and deleter
 ✅ Foo::Foo(11)
 ✅ Foo::Foo(12)
 ==&gt; Context block 3 is going out of context here
@@ -169,9 +169,8 @@ Call delete from lambda... p-&gt;id=12
   }
 </code></pre>
 <p>Output of context block 4</p>
-<pre><code>4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 5521 jan 13 11:28
-shared_ptr_with_deleter.cpp
+<pre><code class="language-txt">4) constructor with pipe object and deleter (POSIX)
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:03 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 </code></pre>
@@ -187,8 +186,8 @@ shared_ptr_with_deleter.cpp
   }
 </code></pre>
 <p>Output of context block 5</p>
-<pre><code>5) constructor with pipe object and deleter (POSIX)
-==&gt; Context block 4 is going out of context here
+<pre><code class="language-txt">5) constructor with pipe object and deleter (POSIX)
+==&gt; Context block 5 is going out of context here
 ❌ myfclose called
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
@@ -217,7 +216,7 @@ Call delete from lambda... p-&gt;id=12
 ❌ Foo::~Foo(), id=11
 
 4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 5574 jan 13 11:35 shared_ptr_with_deleter.cpp
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:03 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 

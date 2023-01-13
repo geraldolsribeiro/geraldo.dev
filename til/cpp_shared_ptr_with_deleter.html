@@ -92,6 +92,11 @@ trace purpose only.</p>
     std::cout &lt;&lt; &quot;==&gt; Context block 1 is going out of context here\n&quot;;
   }
 </code></pre>
+<p>Output of context block 1</p>
+<pre><code>1) constructor with no managed object
+sh1 == nullptr
+==&gt; Context block 1 is going out of context here
+</code></pre>
 <h2 id="context-block-2" tabindex="-1">Context block 2</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n2) constructor with object\n&quot;;
@@ -108,6 +113,18 @@ trace purpose only.</p>
     std::cout &lt;&lt; &quot;==&gt; Context block 2 is going out of context here\n&quot;;
   }
 </code></pre>
+<p>Output of context block 2</p>
+<pre><code>2) constructor with object
+Foo::Foo(10)
+sh2.id = 10
+sh2.use_count(): 1
+sh3.id = 10
+sh2.use_count(): 2
+sh3.use_count(): 2
+sh3.id = 123
+==&gt; Context block 2 is going out of context here
+Foo::~Foo(), id=123
+</code></pre>
 <h2 id="context-block-3" tabindex="-1">Context block 3</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n3) constructor with object and deleter\n&quot;;
@@ -118,6 +135,16 @@ trace purpose only.</p>
     });
     std::cout &lt;&lt; &quot;==&gt; Context block 3 is going out of context here\n&quot;;
   }
+</code></pre>
+<p>Output of context block 3</p>
+<pre><code>3) constructor with object and deleter
+Foo::Foo(11)
+Foo::Foo(12)
+==&gt; Context block 3 is going out of context here
+Call delete from lambda... p-&gt;id=12
+Foo::~Foo(), id=12
+Call delete from function object. Foo::id=11
+Foo::~Foo(), id=11
 </code></pre>
 <h2 id="context-block-4" tabindex="-1">Context block 4</h2>
 <pre><code class="language-cpp">  {
@@ -140,6 +167,12 @@ trace purpose only.</p>
     std::cout &lt;&lt; &quot;==&gt; Context block 4 is going out of context here\n&quot;;
   }
 </code></pre>
+<p>Output of context block 4</p>
+<pre><code>4) constructor with pipe object and deleter (POSIX)
+ls result: -rw-r--r-- 1 geraldo geraldo 4036 jan 13 11:05
+shared_ptr_with_deleter.cpp
+==&gt; Context block 4 is going out of context here
+</code></pre>
 <h2 id="context-block-5" tabindex="-1">Context block 5</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n5) constructor with pipe object and deleter (POSIX)\n&quot;;
@@ -150,6 +183,11 @@ trace purpose only.</p>
     fwrite(s.c_str(), s.size(), 1, file2.get());
     std::cout &lt;&lt; &quot;==&gt; Context block 4 is going out of context here\n&quot;;
   }
+</code></pre>
+<p>Output of context block 5</p>
+<pre><code>5) constructor with pipe object and deleter (POSIX)
+==&gt; Context block 4 is going out of context here
+myfclose called
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">1) constructor with no managed object
@@ -177,7 +215,7 @@ Call delete from function object. Foo::id=11
 Foo::~Foo(), id=11
 
 4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 4036 jan 13 11:05 shared_ptr_with_deleter.cpp
+ls result: -rw-r--r-- 1 geraldo geraldo 5484 jan 13 11:21 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 
@@ -186,17 +224,16 @@ ls result: -rw-r--r-- 1 geraldo geraldo 4036 jan 13 11:05 shared_ptr_with_delete
 myfclose called
 
 </code></pre>
-<p>/tmp/test1.txt</p>
+<p>Content of <code>/tmp/test1.txt</code></p>
 <pre><code class="language-txt">Some text
 </code></pre>
-<p>/tmp/test1.txt</p>
+<p>Content of <code>/tmp/test2.txt</code></p>
 <pre><code class="language-txt">Some text
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/memory/shared_ptr/shared_ptr">cppreference
+shared_ptr</a></li>
 </ul>
 
       </main>

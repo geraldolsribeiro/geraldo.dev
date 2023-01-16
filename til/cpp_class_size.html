@@ -55,15 +55,34 @@
         <h1>C++ class size</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/class-size.html">class-size</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#helpers">Helpers</a></li><li><a href="#empty-class%2Fstruct">Empty class/struct</a></li><li><a href="#union">Union</a></li><li><a href="#member-size-aligment">Member size aligment</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="helpers" tabindex="-1">Helpers</h2>
 <p>The helper macro <code>PRINT_SIZE_OF</code> is used to display the size of a
 type or object and check its size.</p>
-<pre><code class="language-cpp">#define PRINT_SIZE_OF(type, size)                                      \
-  std::cout &lt;&lt; std::setw(70) &lt;&lt; &quot;sizeof(&quot; #type &quot;) = &quot; &lt;&lt; sizeof(type) \
-            &lt;&lt; std::endl;                                              \
-  static_assert(sizeof(type) == size,                                  \
+<pre><code class="language-cpp">#define PRINT_SIZE_OF(type, size)                                     \
+  cout &lt;&lt; setw(70) &lt;&lt; &quot;sizeof(&quot; #type &quot;) = &quot; &lt;&lt; sizeof(type) &lt;&lt; endl; \
+  static_assert(sizeof(type) == size,                                 \
                 &quot;The size of &quot; #type &quot; should be equal to &quot; #type);
 </code></pre>
+<p>The standard <strong>new</strong> operator is overrided to print the amount of memory
+allocated on each call.</p>
+<pre><code class="language-cpp">bool is_new_print_enabled = false;
+void* operator new(size_t size) {
+  if (is_new_print_enabled) {
+    cout &lt;&lt; &quot;Allocating &quot; &lt;&lt; size &lt;&lt; &quot; bytes\n&quot;;
+  }
+  return malloc(size);
+}
+</code></pre>
+<p>The standard <strong>delete</strong> operator is overrided to show when it is called.</p>
+<pre><code class="language-cpp">void operator delete(void* memory) {
+  if (is_new_print_enabled) {
+    cout &lt;&lt; &quot;Deallocating memory from &quot; &lt;&lt; memory &lt;&lt; &quot;\n&quot;;
+  }
+  free(memory);
+}
+</code></pre>
+<h2 id="empty-class%2Fstruct" tabindex="-1">Empty class/struct</h2>
 <p>Empty <code>class/struct</code> must require <strong>ONE</strong> byte of memory to make
 then distinguishable.</p>
 <pre><code class="language-cpp">  struct EmptyStruct {};
@@ -99,6 +118,7 @@ then distinguishable.</p>
   };
   PRINT_SIZE_OF(EmptyClassWithDefaultConstructorAndVirtualDestructor, 8)
 </code></pre>
+<h2 id="union" tabindex="-1">Union</h2>
 <pre><code class="language-cpp">  typedef union {
     char a;
     int b;
@@ -106,17 +126,27 @@ then distinguishable.</p>
   PRINT_SIZE_OF(a_union_t, 4)
 </code></pre>
 <figure>
-  <img class="mx-auto" src="/til/cpp_a_union_t.svg" alt="pikchr">
+  <img class="mx-auto" src="/til/cpp_a_union_t.svg" alt="Memory usage by a_union_t.">
   <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>pikchr</span>
+     <strong>Fig. 1</strong> - <span>Memory usage by a_union_t.</span>
   </figcaption>
 </figure>
+<h2 id="member-size-aligment" tabindex="-1">Member size aligment</h2>
 <pre><code class="language-cpp">  typedef struct {
     char a;
     int b;
   } b_struct_t;
   PRINT_SIZE_OF(b_struct_t, 8)
+
+  cout &lt;&lt; &quot;Offset of b_struct_t::a &quot; &lt;&lt; offsetof(b_struct_t, a) &lt;&lt; endl;  // 0
+  cout &lt;&lt; &quot;Offset of b_struct_t::b &quot; &lt;&lt; offsetof(b_struct_t, b) &lt;&lt; endl;  // 4
 </code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_b_struct_t.svg" alt="Memory usage by b_struct_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Memory usage by b_struct_t.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-cpp">  class c_class {
    public:
     char a;
@@ -124,6 +154,12 @@ then distinguishable.</p>
   };
   PRINT_SIZE_OF(c_class, 8)
 </code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_c_class_t.svg" alt="Memory usage by c_class_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Memory usage by c_class_t.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-cpp">  class d_class {
     char a;
     int b;
@@ -139,35 +175,125 @@ then distinguishable.</p>
   PRINT_SIZE_OF(e_class, 8)
 </code></pre>
 <pre><code class="language-cpp">  class f_class {
-    char a;
-    int b;
-    float c;
+   public:
+    char a;   // 4
+    int b;    // 4
+    float c;  // 4
     ~f_class(){};
   };
   PRINT_SIZE_OF(f_class, 12)
+
+  is_new_print_enabled = true;
+  {
+    auto f_class_obj_1 = new f_class;             // Allocating 12 bytes
+    auto f_class_obj_2 = make_unique&lt;f_class&gt;();  // Allocating 12 bytes
+    auto f_class_obj_3 = make_shared&lt;f_class&gt;();  // Allocating 32 bytes
+
+    cout &lt;&lt; &quot;Offset of f_class::a &quot; &lt;&lt; offsetof(f_class, a) &lt;&lt; endl;  // 0
+    cout &lt;&lt; &quot;Offset of f_class::b &quot; &lt;&lt; offsetof(f_class, b) &lt;&lt; endl;  // 4
+    cout &lt;&lt; &quot;Offset of f_class::c &quot; &lt;&lt; offsetof(f_class, c) &lt;&lt; endl;  // 8
+
+    delete f_class_obj_1;
+  }
+  is_new_print_enabled = false;
 </code></pre>
-<pre><code>
+<figure>
+  <img class="mx-auto" src="/til/cpp_f_class_t.svg" alt="Memory usage by f_class_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>Memory usage by f_class_t.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">  class g_class {
+   public:
+    char a;
+    int b;
+    float c;
+    double d;
+    char e;
+    char f;
+    ~g_class(){};
+  };
+  PRINT_SIZE_OF(g_class, 32)
 
-## Possible output
-
-
-```txt
-                                                sizeof(EmptyStruct) = 1
+  cout &lt;&lt; &quot;Offset of g_class::a &quot; &lt;&lt; offsetof(g_class, a) &lt;&lt; endl;  // 0
+  cout &lt;&lt; &quot;Offset of g_class::b &quot; &lt;&lt; offsetof(g_class, b) &lt;&lt; endl;  // 4
+  cout &lt;&lt; &quot;Offset of g_class::c &quot; &lt;&lt; offsetof(g_class, c) &lt;&lt; endl;  // 8
+  cout &lt;&lt; &quot;Offset of g_class::d &quot; &lt;&lt; offsetof(g_class, d) &lt;&lt; endl;  // 16
+  cout &lt;&lt; &quot;Offset of g_class::e &quot; &lt;&lt; offsetof(g_class, e) &lt;&lt; endl;  // 24
+  cout &lt;&lt; &quot;Offset of g_class::f &quot; &lt;&lt; offsetof(g_class, f) &lt;&lt; endl;  // 25
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_g_class_t.svg" alt="Memory usage by g_class_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Memory usage by g_class_t.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">  class g2_class {
+   public:
+    char a;
+    char e;
+    char f;
+    int b;
+    float c;
+    double d;
+    ~g2_class(){};
+  };
+  PRINT_SIZE_OF(g2_class, 24)
+  cout &lt;&lt; &quot;Offset of g2_class::a &quot; &lt;&lt; offsetof(g2_class, a) &lt;&lt; endl;  // 0
+  cout &lt;&lt; &quot;Offset of g2_class::b &quot; &lt;&lt; offsetof(g2_class, b) &lt;&lt; endl;  // 4
+  cout &lt;&lt; &quot;Offset of g2_class::c &quot; &lt;&lt; offsetof(g2_class, c) &lt;&lt; endl;  // 8
+  cout &lt;&lt; &quot;Offset of g2_class::d &quot; &lt;&lt; offsetof(g2_class, d) &lt;&lt; endl;  // 16
+  cout &lt;&lt; &quot;Offset of g2_class::e &quot; &lt;&lt; offsetof(g2_class, e) &lt;&lt; endl;  // 24
+  cout &lt;&lt; &quot;Offset of g2_class::f &quot; &lt;&lt; offsetof(g2_class, f) &lt;&lt; endl;  // 25
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_g2_class_t.svg" alt="Memory usage by g2_class_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Memory usage by g2_class_t.</span>
+  </figcaption>
+</figure>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">                                                sizeof(EmptyStruct) = 1
                                                  sizeof(EmptyClass) = 1
                            sizeof(EmptyClassWithDefaultConstructor) = 1
               sizeof(EmptyClassWithDefaultConstructorAndDestructor) = 1
        sizeof(EmptyClassWithDefaultConstructorAndVirtualDestructor) = 8
                                                   sizeof(a_union_t) = 4
                                                  sizeof(b_struct_t) = 8
+Offset of b_struct_t::a 0
+Offset of b_struct_t::b 4
                                                     sizeof(c_class) = 8
                                                     sizeof(d_class) = 16
                                                     sizeof(e_class) = 8
                                                     sizeof(f_class) = 12
+Allocating 12 bytes
+Allocating 12 bytes
+Allocating 32 bytes
+Offset of f_class::a 0
+Offset of f_class::b 4
+Offset of f_class::c 8
+Deallocating memory from 0x55c489b3b110
+Deallocating memory from 0x55c489b3aa50
+Deallocating memory from 0x55c489b3b130
+                                                    sizeof(g_class) = 32
+Offset of g_class::a 0
+Offset of g_class::b 4
+Offset of g_class::c 8
+Offset of g_class::d 16
+Offset of g_class::e 24
+Offset of g_class::f 25
+                                                   sizeof(g2_class) = 24
+Offset of g2_class::a 0
+Offset of g2_class::b 4
+Offset of g2_class::c 8
+Offset of g2_class::d 16
+Offset of g2_class::e 1
+Offset of g2_class::f 2
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="link">title</a></li>
+<li>[Track MEMORY ALLOCATIONS the Easy Way in</li>
 <li><a href="link">title</a></li>
 <li><a href="link">title</a></li>
 </ul>

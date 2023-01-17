@@ -53,16 +53,54 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ class size</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/class-size.html">class-size</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/class-size.html">class-size</a><a class="tag no-underline" href="/til/tag/data-alignment.html">data-alignment</a><a class="tag no-underline" href="/til/tag/alignas.html">alignas</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#helpers">Helpers</a></li><li><a href="#empty-class%2Fstruct">Empty class/struct</a></li><li><a href="#union">Union</a></li><li><a href="#member-size-aligment">Member size aligment</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#data-alignment">Data alignment</a></li><li><a href="#helpers">Helpers</a></li><li><a href="#empty-class%2Fstruct-%E2%80%94-size%3A-1%2C-align%3A-1">Empty class/struct — size: 1, align: 1</a></li><li><a href="#union-%E2%80%94-many-attributes-on-same-memory-location">Union — many attributes on same memory location</a></li><li><a href="#default-member-size-alignment">Default member size alignment</a></li><li><a href="#force-alignment">Force alignment</a></li><li><a href="#memory-allocation">Memory Allocation</a></li><li><a href="#virtual-table">Virtual table</a></li><li><a href="#virtual-destructor">Virtual destructor</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>Data alignment is a key feature in computing on modern computer
+hardware. The CPU reads and writes to memory most efficiently
+when the data is naturally aligned, which generally means that
+the data’s memory address is a multiple of the data size. For
+instance, in a 32-bit architecture, the data may be aligned if the
+data is stored in four consecutive bytes and the first byte lies
+on a 4-byte boundary.</p>
+<p>In addition to the performance, data alignment is also the assumption
+of many programming languages. Even though the programming languages
+try to take care of data alignment for us as much as possible, some
+low-level programming languages can have misaligned data access
+while the behavior is undefined.</p>
+<h2 id="data-alignment" tabindex="-1">Data alignment</h2>
+<p>A memory address <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.197ex" height="1.02ex" role="img" focusable="false" viewBox="0 -441 529 451" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></mjx-assistive-mml></mjx-container> is said to be <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte aligned when <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.023ex;" xmlns="http://www.w3.org/2000/svg" width="1.197ex" height="1.02ex" role="img" focusable="false" viewBox="0 -441 529 451" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math></mjx-assistive-mml></mjx-container> is a
+multiple of <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> (where <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> is a power of 2).</p>
+<p>Suppose we have a piece of <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container>-byte data and a <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte aligned
+address. If <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container> is not divisible by <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>, the <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container>-byte data will be
+padded to</p>
+<mjx-container class="MathJax" jax="SVG" display="true" style="direction: ltr; display: block; text-align: center; margin: 1em 0; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -2.148ex;" xmlns="http://www.w3.org/2000/svg" width="13.64ex" height="5.428ex" role="img" focusable="false" viewBox="0 -1449.5 6028.9 2399" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mrow"><g data-mml-node="mo" transform="translate(0 -0.5)"><path data-c="230A" d="M246 -949V1450H308V-887H571V-949H246Z" style="stroke-width: 3;"/></g><g data-mml-node="mfrac" transform="translate(583,0)"><g data-mml-node="mrow" transform="translate(220,676)"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(1100.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mi" transform="translate(2100.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(2922.7,0)"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(3922.9,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g><g data-mml-node="mi" transform="translate(2131.4,-686)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g><rect width="4622.9" height="60" x="120" y="220"/></g><g data-mml-node="mo" transform="translate(5445.9,0) translate(0 -0.5)"><path data-c="230B" d="M274 -887V1450H336V-949H11V-887H274Z" style="stroke-width: 3;"/></g></g></g></g></svg><mjx-assistive-mml unselectable="on" display="block" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; overflow: hidden; width: 100%;"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow data-mjx-texclass="INNER"><mo data-mjx-texclass="OPEN">⌊</mo><mfrac><mrow><mi>m</mi><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mi>n</mi></mfrac><mo data-mjx-texclass="CLOSE">⌋</mo></mrow></math></mjx-assistive-mml></mjx-container><p>byte data.</p>
+<p>Accessing <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="6.223ex" height="1.927ex" role="img" focusable="false" viewBox="0 -694 2750.7 851.8" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z" style="stroke-width: 3;"/></g><g data-mml-node="mi" transform="translate(554,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g><g data-mml-node="mo" transform="translate(1250.5,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(2250.7,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>k</mi><mi>n</mi></msub><mo>+</mo><mn>1</mn></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="6.223ex" height="1.927ex" role="img" focusable="false" viewBox="0 -694 2750.7 851.8" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z" style="stroke-width: 3;"/></g><g data-mml-node="mi" transform="translate(554,-150) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g><g data-mml-node="mo" transform="translate(1250.5,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(2250.7,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>k</mi><mi>n</mi></msub><mo>+</mo><mn>2</mn></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: 0.43ex;" xmlns="http://www.w3.org/2000/svg" width="2.652ex" height="0.271ex" role="img" focusable="false" viewBox="0 -310 1172 120" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="22EF" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>⋯</mo></math></mjx-assistive-mml></mjx-container>, <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="8.193ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3621.4 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mi" transform="translate(389,0)"><path data-c="1D458" d="M121 647Q121 657 125 670T137 683Q138 683 209 688T282 694Q294 694 294 686Q294 679 244 477Q194 279 194 272Q213 282 223 291Q247 309 292 354T362 415Q402 442 438 442Q468 442 485 423T503 369Q503 344 496 327T477 302T456 291T438 288Q418 288 406 299T394 328Q394 353 410 369T442 390L458 393Q446 405 434 405H430Q398 402 367 380T294 316T228 255Q230 254 243 252T267 246T293 238T320 224T342 206T359 180T365 147Q365 130 360 106T354 66Q354 26 381 26Q429 26 459 145Q461 153 479 153H483Q499 153 499 144Q499 139 496 130Q455 -11 378 -11Q333 -11 305 15T277 90Q277 108 280 121T283 145Q283 167 269 183T234 206T200 217T182 220H180Q168 178 159 139T145 81T136 44T129 20T122 7T111 -2Q98 -11 83 -11Q66 -11 57 -1T48 16Q48 26 85 176T158 471L195 616Q196 629 188 632T149 637H144Q134 637 131 637T124 640T121 647Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(1132.2,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z" style="stroke-width: 3;"/></g><g data-mml-node="mn" transform="translate(2132.4,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" style="stroke-width: 3;"/></g><g data-mml-node="mo" transform="translate(2632.4,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z" style="stroke-width: 3;"/></g><g data-mml-node="mi" transform="translate(3021.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mi>n</mi></math></mjx-assistive-mml></mjx-container> bytes byte data
+all have the same latency, because the CPU reads data from memory
+<mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte a time and those data will usually be cached in CPU. That
+is to say, if the data storing on <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte aligned address whose
+storage size <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math></mjx-assistive-mml></mjx-container> is not a multiple of the <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>, some of the memory
+access bandwidth is wasted.</p>
+<p>A memory access is said to be aligned when the data being
+accessed is <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container> bytes long and the datum address is <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte
+aligned. When a memory access is not aligned, it is said to be
+misaligned. Note that by definition one-byte memory accesses
+are always aligned. Theoretically, it is possible to access on a
+<mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>-byte data on a memory address which is not a multiple of <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.357ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 600 453" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi></math></mjx-assistive-mml></mjx-container>,
+with much more memory access bandwidth wasted.</p>
+<p>However, because C and C++ standards assumed aligned memory access,
+accessing a misaligned address might result in undefined behaviors.</p>
 <h2 id="helpers" tabindex="-1">Helpers</h2>
-<p>The helper macro <code>PRINT_SIZE_OF</code> is used to display the size of a
-type or object and check its size.</p>
-<pre><code class="language-cpp">#define PRINT_SIZE_OF(type, size)                                     \
-  cout &lt;&lt; setw(70) &lt;&lt; &quot;sizeof(&quot; #type &quot;) = &quot; &lt;&lt; sizeof(type) &lt;&lt; endl; \
-  static_assert(sizeof(type) == size,                                 \
-                &quot;The size of &quot; #type &quot; should be equal to &quot; #type);
+<p>The helper macro <code>CHECK_SIZE_AND_ALIGNMENT</code> is used to display the
+size of a type or object and check its size and alignment.</p>
+<pre><code class="language-cpp">#define CHECK_SIZE_AND_ALIGNMENT(type, size, alignment)                       \
+  cout &lt;&lt; setw(70) &lt;&lt; &quot;sizeof(&quot; #type &quot;) = &quot; &lt;&lt; sizeof(type) &lt;&lt; &quot; | &quot;         \
+       &lt;&lt; alignment &lt;&lt; endl;                                                  \
+  static_assert(sizeof(type) == size,                                         \
+                &quot;The size of &quot; #type &quot; should be equal to &quot; #size);           \
+  static_assert(alignof(type) == alignment, &quot;The align requirement of &quot; #type \
+                                            &quot; should be equal to &quot; #alignment)
 </code></pre>
 <p>The standard <strong>new</strong> operator is overrided to print the amount of memory
 allocated on each call.</p>
@@ -75,68 +113,87 @@ void* operator new(size_t size) {
 }
 </code></pre>
 <p>The standard <strong>delete</strong> operator is overrided to show when it is called.</p>
-<pre><code class="language-cpp">void operator delete(void* memory) {
-  if (is_new_print_enabled) {
-    cout &lt;&lt; &quot;Deallocating memory from &quot; &lt;&lt; memory &lt;&lt; &quot;\n&quot;;
-  }
-  free(memory);
-}
+<pre><code class="language-cpp">// void operator delete(void* memory) {
+//   if (is_new_print_enabled) {
+//     cout &lt;&lt; &quot;Deallocating memory from &quot; &lt;&lt; memory &lt;&lt; &quot;\n&quot;;
+//   }
+//   free(memory);
+// }
 </code></pre>
-<h2 id="empty-class%2Fstruct" tabindex="-1">Empty class/struct</h2>
+<h2 id="empty-class%2Fstruct-%E2%80%94-size%3A-1%2C-align%3A-1" tabindex="-1">Empty class/struct — size: 1, align: 1</h2>
 <p>Empty <code>class/struct</code> must require <strong>ONE</strong> byte of memory to make
 then distinguishable.</p>
 <pre><code class="language-cpp">  struct EmptyStruct {};
-  PRINT_SIZE_OF(EmptyStruct, 1)
+  CHECK_SIZE_AND_ALIGNMENT(EmptyStruct, 1, 1);
   static_assert(sizeof(EmptyStruct) == 1,
                 &quot;The size of an empty struct should be equal to 1&quot;);
 </code></pre>
 <pre><code class="language-cpp">  class EmptyClass {};
-  PRINT_SIZE_OF(EmptyClass, 1)
+  CHECK_SIZE_AND_ALIGNMENT(EmptyClass, 1, 1);
   static_assert(sizeof(EmptyStruct) == 1,
                 &quot;The size of an empty class should be equal to 1&quot;);
-  EmptyClass a, b;
-  static_assert(&amp;a != &amp;b,
+  EmptyClass ea, eb;
+  static_assert(&amp;ea != &amp;eb,
                 &quot;The address of two empty class should be distinguishable&quot;);
 </code></pre>
 <pre><code class="language-cpp">  class EmptyClassWithDefaultConstructor {
    public:
     EmptyClassWithDefaultConstructor() = default;
   };
-  PRINT_SIZE_OF(EmptyClassWithDefaultConstructor, 1)
+  CHECK_SIZE_AND_ALIGNMENT(EmptyClassWithDefaultConstructor, 1, 1);
 </code></pre>
 <pre><code class="language-cpp">  class EmptyClassWithDefaultConstructorAndDestructor {
    public:
     EmptyClassWithDefaultConstructorAndDestructor() = default;
     ~EmptyClassWithDefaultConstructorAndDestructor() = default;
   };
-  PRINT_SIZE_OF(EmptyClassWithDefaultConstructorAndDestructor, 1)
+  CHECK_SIZE_AND_ALIGNMENT(EmptyClassWithDefaultConstructorAndDestructor, 1, 1);
 </code></pre>
 <pre><code class="language-cpp">  class EmptyClassWithDefaultConstructorAndVirtualDestructor {
    public:
     EmptyClassWithDefaultConstructorAndVirtualDestructor() = default;
     virtual ~EmptyClassWithDefaultConstructorAndVirtualDestructor() = default;
   };
-  PRINT_SIZE_OF(EmptyClassWithDefaultConstructorAndVirtualDestructor, 8)
+  CHECK_SIZE_AND_ALIGNMENT(EmptyClassWithDefaultConstructorAndVirtualDestructor,
+                           8, 8);
 </code></pre>
-<h2 id="union" tabindex="-1">Union</h2>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>If there are at least one virtual function the 8 bytes of the
+virtual table will be prepended into the class.</p>
+  </div>
+</div>
+<figure>
+  <img class="mx-auto" src="/til/cpp_empty_class_virtual.svg" alt="Memory usage by EmptyClassWithDefaultConstructorAndVirtualDestructor.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Memory usage by EmptyClassWithDefaultConstructorAndVirtualDestructor.</span>
+  </figcaption>
+</figure>
+<h2 id="union-%E2%80%94-many-attributes-on-same-memory-location" tabindex="-1">Union — many attributes on same memory location</h2>
 <pre><code class="language-cpp">  typedef union {
     char a;
     int b;
   } a_union_t;
-  PRINT_SIZE_OF(a_union_t, 4)
+  CHECK_SIZE_AND_ALIGNMENT(a_union_t, 4, 4);
+  cout &lt;&lt; &quot;Offset of a_union_t::a &quot; &lt;&lt; offsetof(a_union_t, a) &lt;&lt; endl;  // 0
+  cout &lt;&lt; &quot;Offset of a_union_t::b &quot; &lt;&lt; offsetof(a_union_t, b) &lt;&lt; endl;  // 0
 </code></pre>
 <figure>
   <img class="mx-auto" src="/til/cpp_a_union_t.svg" alt="Memory usage by a_union_t.">
   <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>Memory usage by a_union_t.</span>
+     <strong>Fig. 2</strong> - <span>Memory usage by a_union_t.</span>
   </figcaption>
 </figure>
-<h2 id="member-size-aligment" tabindex="-1">Member size aligment</h2>
+<h2 id="default-member-size-alignment" tabindex="-1">Default member size alignment</h2>
 <pre><code class="language-cpp">  typedef struct {
     char a;
     int b;
   } b_struct_t;
-  PRINT_SIZE_OF(b_struct_t, 8)
+  CHECK_SIZE_AND_ALIGNMENT(b_struct_t, 8, 4);
 
   cout &lt;&lt; &quot;Offset of b_struct_t::a &quot; &lt;&lt; offsetof(b_struct_t, a) &lt;&lt; endl;  // 0
   cout &lt;&lt; &quot;Offset of b_struct_t::b &quot; &lt;&lt; offsetof(b_struct_t, b) &lt;&lt; endl;  // 4
@@ -144,36 +201,95 @@ then distinguishable.</p>
 <figure>
   <img class="mx-auto" src="/til/cpp_b_struct_t.svg" alt="Memory usage by b_struct_t.">
   <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Memory usage by b_struct_t.</span>
+     <strong>Fig. 3</strong> - <span>Memory usage by b_struct_t.</span>
   </figcaption>
 </figure>
 <pre><code class="language-cpp">  class c_class {
    public:
     char a;
     int b;
+    int f1() { return 1; }
+    int f2() { return 2; }
+    int f3() { return 3; }
+    int f4() { return 4; }
   };
-  PRINT_SIZE_OF(c_class, 8)
+  CHECK_SIZE_AND_ALIGNMENT(c_class, 8, 4);
+  cout &lt;&lt; &quot;Offset of c_class::a &quot; &lt;&lt; offsetof(c_class, a) &lt;&lt; endl;  // 0
+  cout &lt;&lt; &quot;Offset of c_class::b &quot; &lt;&lt; offsetof(c_class, b) &lt;&lt; endl;  // 4
 </code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>Functions does not changes the class size.</p>
+  </div>
+</div>
 <figure>
-  <img class="mx-auto" src="/til/cpp_c_class_t.svg" alt="Memory usage by c_class_t.">
+  <img class="mx-auto" src="/til/cpp_c_class.svg" alt="Memory usage by c_class.">
   <figcaption class="text-center">
-     <strong>Fig. 3</strong> - <span>Memory usage by c_class_t.</span>
+     <strong>Fig. 4</strong> - <span>Memory usage by c_class.</span>
   </figcaption>
 </figure>
 <pre><code class="language-cpp">  class d_class {
+   public:
     char a;
     int b;
     virtual ~d_class(){};
   };
-  PRINT_SIZE_OF(d_class, 16)
+  CHECK_SIZE_AND_ALIGNMENT(d_class, 16, 8);
+  // warning: offset of on non-standard-layout type 'd_class'
+  // [-Winvalid-offsetof]
+  // cout &lt;&lt; &quot;Offset of d_class::a &quot; &lt;&lt; offsetof(d_class, a) &lt;&lt; endl;  // ?
+  // cout &lt;&lt; &quot;Offset of d_class::b &quot; &lt;&lt; offsetof(d_class, b) &lt;&lt; endl;  // ?
+  //
+  // *** Dumping AST Record Layout
+  //          0 | class d_class
+  //          0 |   (d_class vtable pointer)
+  //          8 |   char a
+  //         12 |   int b
+  //            | [sizeof=16, dsize=16, align=8,
+  //            |  nvsize=16, nvalign=8]
 </code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>The <code>virtual</code> keyword include a virtual table attribute.</p>
+  </div>
+</div>
+<figure>
+  <img class="mx-auto" src="/til/cpp_d_class.svg" alt="Memory usage by d_class.">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Memory usage by d_class.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-cpp">  class e_class {
+   public:
     char a;
     int b;
     ~e_class(){};
   };
-  PRINT_SIZE_OF(e_class, 8)
+  CHECK_SIZE_AND_ALIGNMENT(e_class, 8, 4);
+  cout &lt;&lt; &quot;Offset of e_class::a &quot; &lt;&lt; offsetof(e_class, a) &lt;&lt; endl;  // ?
+  cout &lt;&lt; &quot;Offset of e_class::b &quot; &lt;&lt; offsetof(e_class, b) &lt;&lt; endl;  // ?
+  //
+  // *** Dumping AST Record Layout
+  //          0 | class e_class
+  //          0 |   char a
+  //          4 |   int b
+  //            | [sizeof=8, dsize=8, align=4,
+  //            |  nvsize=8, nvalign=4]
 </code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_e_class.svg" alt="Memory usage by e_class.">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Memory usage by e_class.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-cpp">  class f_class {
    public:
     char a;   // 4
@@ -181,7 +297,7 @@ then distinguishable.</p>
     float c;  // 4
     ~f_class(){};
   };
-  PRINT_SIZE_OF(f_class, 12)
+  CHECK_SIZE_AND_ALIGNMENT(f_class, 12, 4);
 
   is_new_print_enabled = true;
   {
@@ -198,9 +314,9 @@ then distinguishable.</p>
   is_new_print_enabled = false;
 </code></pre>
 <figure>
-  <img class="mx-auto" src="/til/cpp_f_class_t.svg" alt="Memory usage by f_class_t.">
+  <img class="mx-auto" src="/til/cpp_f_class.svg" alt="Memory usage by f_class.">
   <figcaption class="text-center">
-     <strong>Fig. 4</strong> - <span>Memory usage by f_class_t.</span>
+     <strong>Fig. 7</strong> - <span>Memory usage by f_class.</span>
   </figcaption>
 </figure>
 <pre><code class="language-cpp">  class g_class {
@@ -213,7 +329,7 @@ then distinguishable.</p>
     char f;
     ~g_class(){};
   };
-  PRINT_SIZE_OF(g_class, 32)
+  CHECK_SIZE_AND_ALIGNMENT(g_class, 32, 8);
 
   cout &lt;&lt; &quot;Offset of g_class::a &quot; &lt;&lt; offsetof(g_class, a) &lt;&lt; endl;  // 0
   cout &lt;&lt; &quot;Offset of g_class::b &quot; &lt;&lt; offsetof(g_class, b) &lt;&lt; endl;  // 4
@@ -223,11 +339,20 @@ then distinguishable.</p>
   cout &lt;&lt; &quot;Offset of g_class::f &quot; &lt;&lt; offsetof(g_class, f) &lt;&lt; endl;  // 25
 </code></pre>
 <figure>
-  <img class="mx-auto" src="/til/cpp_g_class_t.svg" alt="Memory usage by g_class_t.">
+  <img class="mx-auto" src="/til/cpp_g_class.svg" alt="Memory usage by g_class.">
   <figcaption class="text-center">
-     <strong>Fig. 5</strong> - <span>Memory usage by g_class_t.</span>
+     <strong>Fig. 8</strong> - <span>Memory usage by g_class.</span>
   </figcaption>
 </figure>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>Is possible to save memory by reorder the attributes on class.</p>
+  </div>
+</div>
 <pre><code class="language-cpp">  class g2_class {
    public:
     char a;
@@ -238,64 +363,212 @@ then distinguishable.</p>
     double d;
     ~g2_class(){};
   };
-  PRINT_SIZE_OF(g2_class, 24)
+  CHECK_SIZE_AND_ALIGNMENT(g2_class, 24, 8);
   cout &lt;&lt; &quot;Offset of g2_class::a &quot; &lt;&lt; offsetof(g2_class, a) &lt;&lt; endl;  // 0
   cout &lt;&lt; &quot;Offset of g2_class::b &quot; &lt;&lt; offsetof(g2_class, b) &lt;&lt; endl;  // 4
   cout &lt;&lt; &quot;Offset of g2_class::c &quot; &lt;&lt; offsetof(g2_class, c) &lt;&lt; endl;  // 8
   cout &lt;&lt; &quot;Offset of g2_class::d &quot; &lt;&lt; offsetof(g2_class, d) &lt;&lt; endl;  // 16
-  cout &lt;&lt; &quot;Offset of g2_class::e &quot; &lt;&lt; offsetof(g2_class, e) &lt;&lt; endl;  // 24
-  cout &lt;&lt; &quot;Offset of g2_class::f &quot; &lt;&lt; offsetof(g2_class, f) &lt;&lt; endl;  // 25
+  cout &lt;&lt; &quot;Offset of g2_class::e &quot; &lt;&lt; offsetof(g2_class, e) &lt;&lt; endl;  // 1
+  cout &lt;&lt; &quot;Offset of g2_class::f &quot; &lt;&lt; offsetof(g2_class, f) &lt;&lt; endl;  // 2
 </code></pre>
 <figure>
-  <img class="mx-auto" src="/til/cpp_g2_class_t.svg" alt="Memory usage by g2_class_t.">
+  <img class="mx-auto" src="/til/cpp_g2_class.svg" alt="Memory usage by g2_class.">
   <figcaption class="text-center">
-     <strong>Fig. 6</strong> - <span>Memory usage by g2_class_t.</span>
+     <strong>Fig. 9</strong> - <span>Memory usage by g2_class.</span>
   </figcaption>
 </figure>
+<h2 id="force-alignment" tabindex="-1">Force alignment</h2>
+<pre><code class="language-cpp">  struct float4_4_t {
+    float data[4];
+  };
+  CHECK_SIZE_AND_ALIGNMENT(float4_4_t, 16, 4);
+  float4_4_t f4;
+  for (int i = 0; i &lt; 4; ++i) {
+    cout &lt;&lt; &quot;Offset float4_4_t[&quot; &lt;&lt; i
+         &lt;&lt; &quot;] = &quot; &lt;&lt; long(&amp;f4.data[i]) - long(&amp;f4) &lt;&lt; endl;
+  }
+  // Offset float4_4_t[0] = 0
+  // Offset float4_4_t[1] = 4
+  // Offset float4_4_t[2] = 8
+  // Offset float4_4_t[3] = 12
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_float4_4_t.svg" alt="Memory usage by float4_4_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 10</strong> - <span>Memory usage by float4_4_t.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">  // Every object of type float4_32_t will be aligned to 32-byte boundary.
+  // Might be useful for SIMD instructions.
+  struct alignas(32) float4_32_t {
+    float data[4];
+  };
+  CHECK_SIZE_AND_ALIGNMENT(float4_32_t, 32, 32);
+  float4_32_t f32;
+  for (int i = 0; i &lt; 4; ++i) {
+    cout &lt;&lt; &quot;Offset float4_32_t[&quot; &lt;&lt; i
+         &lt;&lt; &quot;] = &quot; &lt;&lt; long(&amp;f32.data[i]) - long(&amp;f32) &lt;&lt; endl;
+  }
+  // Offset float4_32_t[0] = 0
+  // Offset float4_32_t[1] = 4
+  // Offset float4_32_t[2] = 8
+  // Offset float4_32_t[3] = 12
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_float4_32_t.svg" alt="Memory usage by float4_32_t.">
+  <figcaption class="text-center">
+     <strong>Fig. 11</strong> - <span>Memory usage by float4_32_t.</span>
+  </figcaption>
+</figure>
+<h2 id="memory-allocation" tabindex="-1">Memory Allocation</h2>
+<p>According to the [GNU</p>
+<p>the address of a block returned by malloc or realloc in GNU systems
+is always a multiple of eight (or sixteen on 64-bit systems). The
+default memory address alignment of array is determined by the
+alignment requirement of the element.</p>
+<p>It is possible to use custom data alignment for allocated static
+memory and dynamic memory. <code>alignas(T)</code> can be used to specify the
+byte alignment of an static array and aligned_alloc can be used
+to specify the byte alignment of a buffer on dynamic memory.</p>
+<pre><code class="language-cpp">  struct S1 {
+    unsigned char buf1[sizeof(int) / sizeof(char)];
+  };
+  CHECK_SIZE_AND_ALIGNMENT(S1, 4, 1);
+  struct S2 {
+    alignas(int) unsigned char buf2[sizeof(int) / sizeof(char)];
+  };
+  CHECK_SIZE_AND_ALIGNMENT(S2, 4, 4);
+</code></pre>
+<h2 id="virtual-table" tabindex="-1">Virtual table</h2>
+<p>For every class that contains virtual functions, the compiler
+constructs a virtual table, a.k.a vtable. The vtable contains
+an entry for each virtual function accessible by the class and
+stores a pointer to its definition. Only the most specific function
+definition callable by the class is stored in the vtable. Entries
+in the vtable can point to either functions declared in the class
+itself, or virtual functions inherited from a base class.</p>
+<pre><code class="language-cpp">  class B {
+   public:
+    B() { puts(&quot;This is B's constructor&quot;); }
+    virtual ~B() { puts(&quot;This is B's destructor&quot;); }
+    virtual void bar() { puts(&quot;This is B's implementation of bar&quot;); }
+    virtual void qux() { puts(&quot;This is B's implementation of qux&quot;); }
+  };
+
+  class C : public B {
+   public:
+    C() { puts(&quot;This is C's constructor&quot;); }
+    virtual ~C() { puts(&quot;This is C's destructor&quot;); }
+    void bar() override { puts(&quot;This is C's implementation of bar&quot;); }
+  };
+
+  B* b = new C();
+  b-&gt;bar();
+  delete b;
+
+  // This is B's constructor
+  // This is C's constructor
+  // This is C's implementation of bar
+  // This is C's destructor
+  // This is B's destructor
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_virtual_table_BC.svg" alt="Virtual table example.">
+  <figcaption class="text-center">
+     <strong>Fig. 12</strong> - <span>Virtual table example.</span>
+  </figcaption>
+</figure>
+<p>Note that the vpointer is just another class member added by the
+compiler and increases the size of every object that has a vtable
+by sizeof(vpointer).</p>
+<p>Hopefully you have grasped how dynamic function dispatch can be
+implemented by using vtables: when a call to a virtual function on
+an object is performed, the vpointer of the object is used to find
+the corresponding vtable of the class. Next, the function name is
+used as index to the vtable to find the correct (most specific)
+routine to be executed.</p>
+<h2 id="virtual-destructor" tabindex="-1">Virtual destructor</h2>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>By now it should also be clear why it is always a good idea
+to make destructors of base classes virtual. Since derived
+classes are often handled via base class references, declaring a
+non-virtual destructor will be dispatched statically, obfuscating
+the destructor of the derived class.</p>
+  </div>
+</div>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">                                                sizeof(EmptyStruct) = 1
-                                                 sizeof(EmptyClass) = 1
-                           sizeof(EmptyClassWithDefaultConstructor) = 1
-              sizeof(EmptyClassWithDefaultConstructorAndDestructor) = 1
-       sizeof(EmptyClassWithDefaultConstructorAndVirtualDestructor) = 8
-                                                  sizeof(a_union_t) = 4
-                                                 sizeof(b_struct_t) = 8
+<pre><code class="language-txt">                                                sizeof(EmptyStruct) = 1 | 1
+                                                 sizeof(EmptyClass) = 1 | 1
+                           sizeof(EmptyClassWithDefaultConstructor) = 1 | 1
+              sizeof(EmptyClassWithDefaultConstructorAndDestructor) = 1 | 1
+       sizeof(EmptyClassWithDefaultConstructorAndVirtualDestructor) = 8 | 8
+                                                  sizeof(a_union_t) = 4 | 4
+Offset of a_union_t::a 0
+Offset of a_union_t::b 0
+                                                 sizeof(b_struct_t) = 8 | 4
 Offset of b_struct_t::a 0
 Offset of b_struct_t::b 4
-                                                    sizeof(c_class) = 8
-                                                    sizeof(d_class) = 16
-                                                    sizeof(e_class) = 8
-                                                    sizeof(f_class) = 12
+                                                    sizeof(c_class) = 8 | 4
+Offset of c_class::a 0
+Offset of c_class::b 4
+                                                    sizeof(d_class) = 16 | 8
+                                                    sizeof(e_class) = 8 | 4
+Offset of e_class::a 0
+Offset of e_class::b 4
+                                                    sizeof(f_class) = 12 | 4
 Allocating 12 bytes
 Allocating 12 bytes
 Allocating 32 bytes
 Offset of f_class::a 0
 Offset of f_class::b 4
 Offset of f_class::c 8
-Deallocating memory from 0x55c489b3b110
-Deallocating memory from 0x55c489b3aa50
-Deallocating memory from 0x55c489b3b130
-                                                    sizeof(g_class) = 32
+                                                    sizeof(g_class) = 32 | 8
 Offset of g_class::a 0
 Offset of g_class::b 4
 Offset of g_class::c 8
 Offset of g_class::d 16
 Offset of g_class::e 24
 Offset of g_class::f 25
-                                                   sizeof(g2_class) = 24
+                                                   sizeof(g2_class) = 24 | 8
 Offset of g2_class::a 0
 Offset of g2_class::b 4
 Offset of g2_class::c 8
 Offset of g2_class::d 16
 Offset of g2_class::e 1
 Offset of g2_class::f 2
+                                                 sizeof(float4_4_t) = 16 | 4
+Offset float4_4_t[0] = 0
+Offset float4_4_t[1] = 4
+Offset float4_4_t[2] = 8
+Offset float4_4_t[3] = 12
+                                                sizeof(float4_32_t) = 32 | 32
+Offset float4_32_t[0] = 0
+Offset float4_32_t[1] = 4
+Offset float4_32_t[2] = 8
+Offset float4_32_t[3] = 12
+                                                         sizeof(S1) = 4 | 1
+                                                         sizeof(S2) = 4 | 4
+This is B's constructor
+This is C's constructor
+This is C's implementation of bar
+This is C's destructor
+This is B's destructor
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li>[Track MEMORY ALLOCATIONS the Easy Way in</li>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
+<li><a href="https://youtu.be/sLlGEUO_EGE">Track MEMORY ALLOCATIONS the Easy Way in
+C++</a></li>
+<li><a href="https://youtu.be/hS7kPtVB1vI">Classes part 18 - Understanding the vtable (Popular interview question)
+Modern Cpp Series</a></li>
+<li><a href="https://leimao.github.io/blog/CPP-Data-Alignment/">C++ Data Alignment</a></li>
+<li><a href="https://pabloariasal.github.io/2017/06/10/understanding-virtual-tables/">Understandig Virtual Tables in
+C++</a></li>
 </ul>
 
       </main>

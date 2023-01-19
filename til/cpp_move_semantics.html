@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by hashids">
-    <title>TIL - hashids</title>
+    <meta name="description" content="Description not defined">
+    <title>C++ move_semantics</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
@@ -47,30 +47,183 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
-        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
-        </div>
-        <h1 class="px-4">Today I Learned / hashids</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/cpp_hashids.html" title="hashid — Generate short unique ids from integers">
-              <h3>hashid — Generate short unique ids from integers</h3>
-              <p class="text-slate-400">2022-12-30</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/hashids.html">hashids</a><a class="tag" href="/til/tag/guid.html">guid</a><a class="tag" href="/til/tag/uuid.html">uuid</a>
-              </div></a></div>
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/cpp_hashids_01.html" title="hashid — Generate short unique ids from integers">
-              <h3>hashid — Generate short unique ids from integers</h3>
-              <p class="text-slate-400">2022-12-30</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/C++.html">C++</a><a class="tag" href="/til/tag/hashids.html">hashids</a><a class="tag" href="/til/tag/guid.html">guid</a><a class="tag" href="/til/tag/uuid.html">uuid</a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ move_semantics</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/move_semantics.html">move_semantics</a><a class="tag no-underline" href="/til/tag/std::move.html">std::move</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">  string s1{&quot;Content of s1 variable&quot;};
+  string s2{&quot;Content of s2 variable&quot;};
+  string s3{&quot;Content of s3 variable&quot;};
+
+  auto prints = [&amp;](const string &amp;title) {
+    cout &lt;&lt; '\n' &lt;&lt; title &lt;&lt; '\n';
+    cout &lt;&lt; &quot;s1: &quot; &lt;&lt; s1 &lt;&lt; '\n';
+    cout &lt;&lt; &quot;s2: &quot; &lt;&lt; s2 &lt;&lt; '\n';
+    cout &lt;&lt; &quot;s3: &quot; &lt;&lt; s3 &lt;&lt; endl;
+  };
+
+  prints(&quot;Initial state&quot;);
+  s1 = s2;
+  prints(&quot;s1 = s2&quot;);
+
+  s1 = std::move(s3);
+  prints(&quot;s1 = std::move(s3)&quot;);
+
+  // equivalent to move assigment
+  s1 = static_cast&lt;string &amp;&amp;&gt;(s2);
+  prints(&quot;s1 = static_cast&lt;string&amp;&amp;&gt;(s2)&quot;);
+</code></pre>
+<pre><code class="language-cpp">  class Data {
+   private:
+    // a raw pointer to my data
+    int *data;
+    string trackId;
+
+   public:
+    Data(int d, string tId) {
+      data = new int;  // heap allocation
+      *data = d;
+      trackId = tId;
+      fmt::print(&quot;Data Constructor {} {}\n&quot;, *data, trackId);
+    }
+
+    ~Data() {
+      if (data != nullptr) {
+        fmt::print(&quot;Data Destructor {} {}\n&quot;, *data, trackId);
+        delete data;
+      } else {
+        fmt::print(&quot;Data Destructor nullptr&quot;);
+      }
+    }
+
+    // unnecessary copy and inefficiently memory management
+    Data(const Data &amp;source) : Data{*source.data, &quot;copy-constructor&quot;} {
+      fmt::print(&quot;Data Copy Constructor {} {}\n&quot;, *data, trackId);
+    }
+  };
+</code></pre>
+<pre><code class="language-cpp">  {
+    puts(&quot;================&quot;);
+    vector&lt;Data&gt; myData;
+    puts(&quot;myData.push_back(Data{10,\&quot;push-back\&quot;});&quot;);
+    myData.push_back(Data{10, &quot;push-back&quot;});
+
+    puts(&quot;myData.push_back(Data{20,\&quot;push-back\&quot;});&quot;);
+    myData.push_back(Data{20, &quot;push-back&quot;});
+
+    puts(&quot;Out of scope&quot;);
+  }
+</code></pre>
+<pre><code class="language-cpp">  class DataWithMove {
+   private:
+    // a raw pointer to my data
+    int *data;
+    string trackId;
+
+   public:
+    DataWithMove(int d, string tId) {
+      data = new int;  // heap allocation
+      *data = d;
+      trackId = tId;
+      fmt::print(&quot;DataWithMove Constructor {} {}\n&quot;, *data, trackId);
+    }
+
+    ~DataWithMove() {
+      if (data != nullptr) {
+        fmt::print(&quot;DataWithMove Destructor {} {}\n&quot;, *data, trackId);
+        delete data;
+      } else {
+        fmt::print(&quot;DataWithMove Destructor nullptr\n&quot;);
+      }
+    }
+
+    DataWithMove(const DataWithMove &amp;source)
+        : DataWithMove{*source.data, &quot;copy-constructor&quot;} {
+      fmt::print(&quot;DataWithMove Copy Constructor {} {}\n&quot;, *data, trackId);
+    }
+
+    DataWithMove(DataWithMove &amp;&amp;source)
+        : data{source.data}, trackId{&quot;move-constructor&quot;} {
+      source.data = nullptr;
+      fmt::print(&quot;DataWithMove Move constructor {}\n&quot;, *data);
+    }
+  };
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">
+Initial state
+s1: Content of s1 variable
+s2: Content of s2 variable
+s3: Content of s3 variable
+
+s1 = s2
+s1: Content of s2 variable
+s2: Content of s2 variable
+s3: Content of s3 variable
+
+s1 = std::move(s3)
+s1: Content of s3 variable
+s2: Content of s2 variable
+s3: 
+
+s1 = static_cast&lt;string&amp;&amp;&gt;(s2)
+s1: Content of s2 variable
+s2: 
+s3: 
+================
+myData.push_back(Data{10,&quot;push-back&quot;});
+Data Constructor 10 push-back
+Data Constructor 10 copy-constructor
+Data Copy Constructor 10 copy-constructor
+Data Destructor 10 push-back
+myData.push_back(Data{20,&quot;push-back&quot;});
+Data Constructor 20 push-back
+Data Constructor 20 copy-constructor
+Data Copy Constructor 20 copy-constructor
+Data Constructor 10 copy-constructor
+Data Copy Constructor 10 copy-constructor
+Data Destructor 10 copy-constructor
+Data Destructor 20 push-back
+Out of scope
+Data Destructor 10 copy-constructor
+Data Destructor 20 copy-constructor
+================
+myData.push_back(DataWithMove{10,&quot;push-back&quot;});
+DataWithMove Constructor 10 push-back
+DataWithMove Move constructor 10
+DataWithMove Destructor nullptr
+myData.push_back(DataWithMove{20,&quot;push-back&quot;});
+DataWithMove Constructor 20 push-back
+DataWithMove Move constructor 20
+DataWithMove Constructor 10 copy-constructor
+DataWithMove Copy Constructor 10 copy-constructor
+DataWithMove Destructor 10 move-constructor
+DataWithMove Destructor nullptr
+Out of scope
+DataWithMove Destructor 10 copy-constructor
+DataWithMove Destructor 20 move-constructor
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li>
+<p>[Introduction to std::move in C++ | Modern Cpp</p>
+</li>
+<li>
+<p><a href="link">title</a></p>
+</li>
+<li>
+<p><a href="link">title</a></p>
+</li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
@@ -91,5 +244,6 @@
       
       });
     </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

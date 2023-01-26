@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://geraldo.dev/til/qemu_windows_guest.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/build2.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2023-01-25_linkedin_Time_Series_Data_Collection_Using_Telegraf.html</loc>
   </url>
   <url>

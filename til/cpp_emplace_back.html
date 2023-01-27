@@ -73,6 +73,11 @@
 we need to build an object straight inside the container, we should
 use emplace back() since it will directly generate an object within
 the container, eliminating the need for a move/copy ().</p>
+<pre><code class="language-cpp">struct Test {
+  int a, b;
+  Test(int x, int y) : a(x), b(y) {}
+};
+</code></pre>
 <pre><code class="language-cpp">  std::vector&lt;Test&gt; v1;
   std::vector&lt;Test&gt; v2;
   auto start = std::chrono::high_resolution_clock::now();
@@ -100,8 +105,8 @@ the container, eliminating the need for a move/copy ().</p>
   return 0;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">push_back took 71397 microseconds
-emplace_back took 34311 microseconds
+<pre><code class="language-txt">push_back took 71977 microseconds
+emplace_back took 30963 microseconds
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

@@ -59,17 +59,27 @@
   <img class="mx-auto" src="/work_in_progress.webp" alt="Work in progress">
 </div>
 <p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#image-disk-creation">Image disk creation</a></li><li><a href="#release-mouse">Release mouse</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#qemu-vs-kvm">QEMU vs KVM</a></li><li><a href="#image-disk-creation">Image disk creation</a></li><li><a href="#release-mouse-grabbed-by-qemu">Release mouse grabbed by QEMU</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
+<h2 id="qemu-vs-kvm" tabindex="-1">QEMU vs KVM</h2>
+<ul>
+<li><code>QEMU</code> is a type 2 hypervisor that runs within user space and performs
+virtual hardware emulation</li>
+<li><code>KVM</code> is a type 1 hypervisor that runs in kernel space, that allows a user
+space program access to the hardware virtualization features of various
+processors.</li>
+</ul>
 <h2 id="image-disk-creation" tabindex="-1">Image disk creation</h2>
 <pre><code class="language-bash">qemu-img create -f qcow2 WindowsVM.img 25G
 </code></pre>
-<h2 id="release-mouse" tabindex="-1">Release mouse</h2>
+<h2 id="release-mouse-grabbed-by-qemu" tabindex="-1">Release mouse grabbed by QEMU</h2>
 <pre><code class="language-bash">Ctrl+Alt+g
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li>gentoo <a href="https://wiki.gentoo.org/wiki/QEMU/Windows_guest">QEMU/Windows guest</a></li>
+<li><a href="https://github.com/sej7278/virt-installs">libvirt scripts for various operating systems (KVM instead of QEMU)</a></li>
+<li><a href="https://terminalroot.com.br/2021/02/como-instalar-o-qemu-kvm-no-linux-mint-ubuntu-e-outras-distros.html">Como instalar o QEMU/KVM no Linux Mint, Ubuntu e outras Distros</a></li>
 </ul>
 
       </main>

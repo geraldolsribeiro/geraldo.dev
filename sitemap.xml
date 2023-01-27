@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://geraldo.dev/til/swig.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/dijkstra.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/qemu_windows_guest.html</loc>
   </url>
   <url>
@@ -548,6 +554,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2021-09-14_linkedin_Choosing_a_CrossPlatform_Development_Tool.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_dp_creational_builder_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2021-09-12_linkedin_Design_Patterns_Creational.html</loc>

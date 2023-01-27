@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Using powershell on linux</title>
+    <title>C++ Design Pattern Creational builder 01</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,58 +53,255 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Using powershell on linux</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/powershell.html">powershell</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
+        <h1>C++ Design Pattern Creational builder 01</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/design-pattern.html">design-pattern</a><a class="tag no-underline" href="/til/tag/creational.html">creational</a><a class="tag no-underline" href="/til/tag/builder.html">builder</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#installation-%E2%80%94-github">Installation — github</a></li><li><a href="#installation-%E2%80%94-debian">Installation — Debian</a></li><li><a href="#how-to-run">How to run</a></li><li><a href="#finding-modules">Finding Modules</a></li><li><a href="#installing-modules">Installing modules</a></li><li><a href="#importing-modules">Importing modules</a></li><li><a href="#installing-stable-version">Installing Stable version</a></li></ul></div></p>
-<h2 id="installation-%E2%80%94-github" tabindex="-1">Installation — github</h2>
-<p>Download latest version of install package from
-<a href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a>.</p>
-<p>For <strong>Debian</strong> like distribution use <code>dpkg -i</code> to install:</p>
-<pre><code class="language-bash">dpkg -i /tmp/powershell-preview_7.4.0-preview.1-1.deb_amd64.deb 
-</code></pre>
-<h2 id="installation-%E2%80%94-debian" tabindex="-1">Installation — Debian</h2>
-<pre><code class="language-bash">sudo apt update  &amp;&amp; sudo apt install -y curl gnupg apt-transport-https
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo sh -c 'echo &quot;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main&quot; &gt; /etc/apt/sources.list.d/microsoft.list'
-sudo apt update &amp;&amp; sudo apt install -y powershell
-</code></pre>
-<h2 id="how-to-run" tabindex="-1">How to run</h2>
-<p>To launch <strong>PowerShell</strong> use the command <code>pwsh-preview</code>, <code>powershell</code> or <code>pwsh</code>
-depending on version you have installed:</p>
-<pre><code class="language-bash">$ pwsh-preview 
-PowerShell 7.4.0-preview.1
-PS /home/geraldo&gt; 
-</code></pre>
-<h2 id="finding-modules" tabindex="-1">Finding Modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Find-Module *sharepoint*
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// Person.h
+// ----------------------------------------------------------------------
+class PersonBuilder;
 
-Version              Name                                Repository           Description
--------              ----                                ----------           -----------
-16.0.23109.12000     Microsoft.Online.SharePoint.PowerS… PSGallery            Microsoft SharePoint Online Services Module for Windows PowerShell
-3.29.2101.0          SharePointPnPPowerShellOnline       PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint Online
-5.3.0                SharePointDSC                       PSGallery            This DSC module is used to deploy and configure SharePoint Server 2013, 2016 and 2019, and co…
-0.12.0.0             xSharePoint                         PSGallery            This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide ra…
-3.29.2101.0          SharePointPnPPowerShell2016         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2016
-3.29.2101.0          SharePointPnPPowerShell2013         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2013
-3.29.2101.0          SharePointPnPPowerShell2019         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2019
-1.0.0.98             RED-SharePoint                      PSGallery            SharePoint PowerShell Module, Codename: RED
-1.0.7                SharePointOnline.CSOM               PSGallery            This module allows the usage oft the SharePoint Online Client Side Object Model (CSOM) librar…
-2.1.0                SCOrchDev-SharePoint                PSGallery            Integration to SharePoint lists using their REST interface
-1.2.0                SharePoint.Password.Manager         PSGallery            Update SharePoint service account password and Workflow service account password
-...
-</code></pre>
-<h2 id="installing-modules" tabindex="-1">Installing modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Install-Module SharePointPnPPowerShellOnline
+class Person {
+  // address
+  string street_address, post_code, city;
 
-PS /home/geraldo&gt; Get-InstalledModule
+  // employment
+  string company_name, position;
+  int    annual_income = 0;
+
+  Person()
+  {
+    TRACE;
+  }
+
+public:
+  ~Person()
+  {
+    TRACE;
+  }
+
+  static PersonBuilder create();
+
+  // clang-format off
+  Person( Person &amp;&amp;other ) :
+    street_address {move( other.street_address )},
+    post_code      {move( other.post_code )},
+    city           {move( other.city )},
+    company_name   {move( other.company_name )},
+    position       {move( other.position )},
+    annual_income  {other.annual_income}
+  {
+    TRACE;
+  }
+  // clang-format on
+
+  Person &amp;operator=( Person &amp;&amp;other )
+  {
+    TRACE;
+    if( this == &amp;other )
+      return *this;
+    street_address = move( other.street_address );
+    post_code      = move( other.post_code );
+    city           = move( other.city );
+    company_name   = move( other.company_name );
+    position       = move( other.position );
+    annual_income  = other.annual_income;
+    return *this;
+  }
+
+  friend std::ostream &amp;operator&lt;&lt;( std::ostream &amp;os, const Person &amp;obj )
+  {
+    TRACE;
+    // clang-format off
+    return os 
+      &lt;&lt; &quot;street_address: &quot; &lt;&lt; obj.street_address
+      &lt;&lt; &quot; post_code: &quot;     &lt;&lt; obj.post_code
+      &lt;&lt; &quot; city: &quot;          &lt;&lt; obj.city
+      &lt;&lt; &quot; company_name: &quot;  &lt;&lt; obj.company_name
+      &lt;&lt; &quot; position: &quot;      &lt;&lt; obj.position
+      &lt;&lt; &quot; annual_income: &quot; &lt;&lt; obj.annual_income;
+    // clang-format on
+  }
+
+  friend class PersonBuilder;
+  friend class PersonAddressBuilder;
+  friend class PersonJobBuilder;
+};
 </code></pre>
-<h2 id="importing-modules" tabindex="-1">Importing modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Import-Module -DisableNameChecking SharePointPnPPowerShellOnline
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// PersonBuilder.h
+// ----------------------------------------------------------------------
+class PersonAddressBuilder;
+class PersonJobBuilder;
+
+class PersonBuilderBase {
+protected:
+  Person &amp;person;
+  explicit PersonBuilderBase( Person &amp;person ) : person{person}
+  {
+    TRACE;
+  }
+
+public:
+  operator Person() const
+  {
+    TRACE;
+    return std::move( person );
+  }
+
+  // builder facets
+
+  PersonAddressBuilder lives() const;
+  PersonJobBuilder     works() const;
+};
+
+class PersonBuilder : public PersonBuilderBase {
+  Person p;
+
+public:
+  PersonBuilder() : PersonBuilderBase{p}
+  {
+    TRACE;
+  }
+};
 </code></pre>
-<h2 id="installing-stable-version" tabindex="-1">Installing Stable version</h2>
-<pre><code class="language-bash">dpkg -i /tmp/powershell_7.2.9-1.deb_amd64.deb
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// Person.cpp
+// ----------------------------------------------------------------------
+PersonBuilder Person::create()
+{
+  TRACE;
+  return PersonBuilder{};
+}
 </code></pre>
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// PersonAddressBuilder.h
+// ----------------------------------------------------------------------
+class PersonAddressBuilder : public PersonBuilderBase {
+  typedef PersonAddressBuilder Self;
+
+public:
+  explicit PersonAddressBuilder( Person &amp;person ) : PersonBuilderBase{person}
+  {
+    TRACE;
+  }
+
+  Self &amp;at( const string &amp;street_address )
+  {
+    TRACE;
+    person.street_address = street_address;
+    return *this;
+  }
+
+  Self &amp;with_postcode( const string &amp;post_code )
+  {
+    TRACE;
+    person.post_code = post_code;
+    return *this;
+  }
+
+  Self &amp;in( const string &amp;city )
+  {
+    TRACE;
+    person.city = city;
+    return *this;
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// PersonJobBuilder.h
+// ----------------------------------------------------------------------
+class PersonJobBuilder : public PersonBuilderBase {
+  typedef PersonJobBuilder Self;
+
+public:
+  explicit PersonJobBuilder( Person &amp;person ) : PersonBuilderBase{person}
+  {
+    TRACE;
+  }
+
+  Self &amp;at( const string &amp;company_name )
+  {
+    TRACE;
+    person.company_name = company_name;
+    return *this;
+  }
+
+  Self &amp;as_a( const string &amp;position )
+  {
+    TRACE;
+    person.position = position;
+    return *this;
+  }
+
+  Self &amp;earning( int annual_income )
+  {
+    TRACE;
+    person.annual_income = annual_income;
+    return *this;
+  }
+};
+</code></pre>
+<pre><code class="language-cpp">// ----------------------------------------------------------------------
+// PersonBuilder.cpp
+// ----------------------------------------------------------------------
+PersonAddressBuilder PersonBuilderBase::lives() const
+{
+  TRACE;
+  return PersonAddressBuilder{person};
+}
+
+PersonJobBuilder PersonBuilderBase::works() const
+{
+  TRACE;
+  return PersonJobBuilder{person};
+}
+</code></pre>
+<pre><code class="language-cpp">  Person p = Person::create()
+    .lives()
+      .at(&quot;123 London Road&quot;)
+      .with_postcode(&quot;SW1 1GB&quot;)
+      .in(&quot;London&quot;)
+    .works()
+      .at(&quot;PragmaSoft&quot;)
+      .as_a(&quot;Consultant&quot;)
+      .earning(10e6);
+  cout &lt;&lt; &quot;--------------&quot; &lt;&lt; endl;
+  cout &lt;&lt; p &lt;&lt; endl;
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">static PersonBuilder Person::create()
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+Person::Person()
+PersonBuilder::PersonBuilder()
+PersonAddressBuilder PersonBuilderBase::lives() const
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+PersonAddressBuilder::PersonAddressBuilder(Person &amp;)
+Self &amp;PersonAddressBuilder::at(const string &amp;)
+Self &amp;PersonAddressBuilder::with_postcode(const string &amp;)
+Self &amp;PersonAddressBuilder::in(const string &amp;)
+PersonJobBuilder PersonBuilderBase::works() const
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+PersonJobBuilder::PersonJobBuilder(Person &amp;)
+Self &amp;PersonJobBuilder::at(const string &amp;)
+Self &amp;PersonJobBuilder::as_a(const string &amp;)
+Self &amp;PersonJobBuilder::earning(int)
+Person PersonBuilderBase::operator Person() const
+Person::Person(Person &amp;&amp;)
+Person::~Person()
+--------------
+std::ostream &amp;operator&lt;&lt;(std::ostream &amp;, const Person &amp;)
+street_address: 123 London Road post_code: SW1 1GB city: London company_name: PragmaSoft position: Consultant annual_income: 10000000
+Person::~Person()
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

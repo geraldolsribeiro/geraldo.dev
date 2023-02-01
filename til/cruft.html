@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Cruft</title>
+    <title>Cruft — Cleaning Filesystem</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,19 +53,34 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Cruft</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/cruft.html">cruft</a>
-        </div><p>cruft is a useful tool exactly for this purpose: it makes a comparison between a file system and the database of installed Debian packages. In addition to listing unknown files it also lists files which are missing but should be there.</p>
-<p>I use it routinely together with debsums when I need to start system administration or upgrade work on machine which I did not take care of earlier. This allows me to spot any local modifications and installations and plan for them, instead of the customer telling me after an upgrade that their software does not work any more.</p>
+        <h1>Cruft — Cleaning Filesystem</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/cruft.html">cruft</a><a class="tag no-underline" href="/til/tag/debsums.html">debsums</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p><strong>cruft</strong> is a useful tool exactly for this purpose: it makes a comparison between
+a file system and the database of installed Debian packages. In addition to
+listing unknown files it also lists files which are missing but should be
+there.</p>
+<p>I use it routinely together with <strong>debsums</strong> when I need to start system
+administration or upgrade work on machine which I did not take care of earlier.
+This allows me to spot any local modifications and installations and plan for
+them, instead of the customer telling me after an upgrade that their software
+does not work any more.</p>
 <p>Install:</p>
-<p>apt-get install cruft
-List all “cruft” but ignore the named directories:</p>
-<p>cruft --ignore “/dev /proc /sys /root /home /tmp”
-More information:</p>
-<p>man cruft
-zless /usr/share/doc/cruft/README.gz</p>
+<pre><code class="language-bash">apt-get install cruft
+</code></pre>
+<p>List all “cruft” but ignore the named directories:</p>
+<pre><code class="language-bash">cruft --ignore &quot;/dev /proc /sys /root /home /tmp&quot;
+</code></pre>
+<p>More information:</p>
+<pre><code class="language-bash">man cruft
+zless /usr/share/doc/cruft/README.gz
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://unix.stackexchange.com/questions/18038/how-to-list-files-and-folders-that-are-not-maintained-by-any-deb-package">How to list files and folders that are not maintained by any DEB package</a></li>
+<li><a href="https://raphaelhertzog.com/2011/02/28/debian-cleanup-tip-5-identify-cruft-that-can-be-removed-from-your-debian-system/">Debian Cleanup Tip #5: identify cruft that can be removed from your Debian system</a></li>
 </ul>
 
       </main>

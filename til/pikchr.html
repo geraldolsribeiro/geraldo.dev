@@ -56,7 +56,7 @@
         <h1>pikchr</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#macro">Macro</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>Online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
 <h2 id="sample" tabindex="-1">Sample</h2>
@@ -69,11 +69,43 @@
   </figcaption>
 </figure>
 <p>The figure above was generaed by the following code:</p>
-<pre><code class="language-txt">arrow right 200% &quot;Markdown&quot; &quot;Source&quot;
+<pre><code class="language-txt">topmargin += 1mm
+margin = 5mm
+arrow right 200% &quot;Markdown&quot; &quot;Source&quot;
 box rad 10px &quot;Markdown&quot; &quot;Formatter&quot; &quot;(markdown.c)&quot; fit
 arrow right 200% &quot;HTML+SVG&quot; &quot;Output&quot;
 arrow &lt;-&gt; down 70% from last box.s
 box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
+# Created by md2pug
+</code></pre>
+<h2 id="macro" tabindex="-1">Macro</h2>
+<ul>
+<li><a href="https://pikchr.org/home/forumpost/83e98ec009">https://pikchr.org/home/forumpost/83e98ec009</a></li>
+<li>Once created, a macro cannot be redefined. If you attempt to redefine a macro
+by providing a second “define” statement with the same macro name, the macro
+name will be replaced by the previous macro body definition during lexical
+analysis, likely resulting in a syntax error.</li>
+</ul>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-2">
+    <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 2</strong> — <span>Pikchr macro flag</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">CP: dot invisible;
+
+define flag { 
+    line go 1.5 heading $flagAngle \
+    then go 0.5 heading $flagAngle + 110 \
+    then go 0.5 heading $flagAngle + 250;
+    move to CP;
+}
+margin = 10mm;
+$flagAngle = 00;  flag;
+$flagAngle = 30;  flag;
+$flagAngle = 60;  flag;
 # Created by md2pug
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

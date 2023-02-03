@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Mosquitto</title>
+    <title>gunslinger</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,72 +53,30 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Mosquitto</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/mosquitto.html">mosquitto</a><a class="tag no-underline" href="/til/tag/mqtt.html">mqtt</a>
-        </div><h2 id="introduction" tabindex="-1">Introduction</h2>
+        <h1>gunslinger</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/gunslinger.html">gunslinger</a><a class="tag no-underline" href="/til/tag/game.html">game</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#free-game-assets">Free Game Assets</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☹</span>
+    <span>FIXME</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
+<p>TBD</p>
+  </div>
+</div>
+<h2 id="free-game-assets" tabindex="-1">Free Game Assets</h2>
 <ul>
-<li>MQTT is a very lightweight messaging protocol</li>
-<li>Specifically designed for machine-to-machine telemetry</li>
-<li>The MQTT protocol is based on a TCP connection.</li>
-<li>IBM Watson uses MQTT to allow it to communicate with devices.</li>
+<li><a href="https://kenney.nl/">kenney.nl</a></li>
 </ul>
-<h2 id="pros" tabindex="-1">Pros</h2>
-<ul>
-<li>Lightweight and efficient—which means it’s optimal for small bandwidth environments such as microcontrollers</li>
-<li>Bi-directional communications</li>
-<li>Messages are encrypted using TLS</li>
-<li>Offers support for unreliable networks using persistent sessions</li>
-</ul>
-<h2 id="cons" tabindex="-1">Cons</h2>
-<ul>
-<li>Doesn’t support video streaming</li>
-<li>Messages are transmitted asynchronously</li>
-<li>Can experience issues with latency and speed.</li>
-</ul>
-<h2 id="install-server" tabindex="-1">Install server</h2>
-<pre><code class="language-bash">sudo apt-get install mosquitto -y
-</code></pre>
-<h2 id="install-client" tabindex="-1">Install client</h2>
-<pre><code class="language-bash">sudo apt-get install mosquitto mosquitto-clients -y
-</code></pre>
-<h2 id="subscribe-a-topic" tabindex="-1">Subscribe a topic</h2>
-<pre><code class="language-bash">mosquitto_sub -t &quot;test_topic&quot;
-</code></pre>
-<h2 id="publish-on-topic" tabindex="-1">Publish on topic</h2>
-<pre><code class="language-bash">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
-</code></pre>
-<h2 id="testing-the-communication" tabindex="-1">Testing the communication</h2>
-<p><img src="/til/mosquitto_hello_01.webp" alt="Communication testing"></p>
-<p>Producer:</p>
-<pre><code class="language-bash">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
-for i in {1..10}; do mosquitto_pub -t &quot;test_topic&quot; -m &quot;I=$i&quot;; done
-</code></pre>
-<p>Consumer:</p>
-<pre><code class="language-bash">mosquitto_sub -t &quot;test_topic&quot;
-HELLO WORLD!
-I=1
-I=2
-I=3
-I=4
-I=5
-I=6
-I=7
-I=8
-I=9
-I=10
-</code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://www.cometchat.com/blog/popular-chat-and-instant-messaging-protocols">8 Most Popular Instant Messaging &amp; Chat Protocols</a></li>
-<li><a href="https://www.cometchat.com/blog/everything-about-mqtt-protocol-message-queue-telemetry-transport">Everything About MQTT Protocol — Message Queue Telemetry Transport</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04">How to Install and Secure the Mosquitto MQTT Messaging Broker on Ubuntu 16.04</a></li>
-<li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-debian-8">How to Install and Secure the Mosquitto MQTT Messaging Broker on Debian 8</a></li>
-<li><a href="https://www.disk91.com/2013/technology/programming/mosquitto-c-sample-code-to-publish-message/">Mosquitto C++ sample code to publish message</a></li>
-<li><a href="https://github.com/eclipse/paho.mqtt.cpp">Eclipse Paho MQTT C++ Client Library</a></li>
-<li><a href="https://github.com/eclipse/paho.mqtt.cpp/tree/master/src/samples">https://github.com/eclipse/paho.mqtt.cpp/tree/master/src/samples</a></li>
-<li><a href="https://stackoverflow.com/questions/37956152/libmosquittopp-sample-client-hangs-on-loop-stop-method">libmosquittopp - sample client hangs on loop_stop() method</a></li>
-<li><a href="https://medium.com/tht-things-hackers-team/instalar-mqtt-broker-no-linux-debian-ubuntu-f8861da70ef6">https://medium.com/tht-things-hackers-team/instalar-mqtt-broker-no-linux-debian-ubuntu-f8861da70ef6</a></li>
-<li><a href="https://android.developreference.com/article/16161720/libmosquittopp+-+sample+client+hangs+on+loop_stop()+method">https://android.developreference.com/article/16161720/libmosquittopp+-+sample+client+hangs+on+loop_stop()+method</a></li>
+<li><a href="https://www.youtube.com/watch?v=NFS4tb4GwdU">Como Fazer ENGINES &amp; JOGOS em C++! (Framework ÓTIMO!)</a></li>
+<li><a href="https://github.com/MrFrenik/gunslinger">C99, header-only framework for games and multimedia applications</a></li>
+<li><a href="https://youtu.be/UngotkZa3sM">Gunslinger: C / Opengl Dev Stream - Header Only Game Engine (GFX)</a></li>
+<li><a href="https://youtu.be/-_HxKDNuCqA">Header-Only Game Framework in C | Game Engineering</a></li>
 </ul>
 
       </main>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm count_if</title>
+    <title>C++ heap vs stack</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,19 +53,112 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm count_if</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/std::count_if.html">std::count_if</a>
+        <h1>C++ heap vs stack</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/stack.html">stack</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::array&lt;int, 4&gt; arr{ 1, 2, 3, 4 };
+<p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h1 id="memory-structure" tabindex="-1">Memory structure</h1>
+<figure>
+  <img class="mx-auto" src="/til/cpp_heap_vs_stack_01.svg" alt="Memory structure.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Memory structure.</span>
+  </figcaption>
+</figure>
+<h1 id="stack-vs-heap-pros-and-cons" tabindex="-1">Stack vs Heap Pros and Cons</h1>
+<h2 id="stack" tabindex="-1">Stack</h2>
+<ul>
+<li>very fast access</li>
+<li>don’t have to explicitly de-allocate variables</li>
+<li>space is managed efficiently by CPU, memory will not become fragmented</li>
+<li>local variables only</li>
+<li>limit on stack size (OS-dependent)</li>
+<li>variables cannot be resized</li>
+</ul>
+<h2 id="heap" tabindex="-1">Heap</h2>
+<ul>
+<li>variables can be accessed globally</li>
+<li>no limit on memory size</li>
+<li>(relatively) slower access</li>
+<li>no guaranteed efficient use of space, memory may become fragmented over</li>
+<li>you must manage memory (you’re in charge of allocating and freeing</li>
+<li>variables can be resized using realloc()</li>
+</ul>
+<h1 id="dynamic-memory-allocation-in-c" tabindex="-1">Dynamic Memory Allocation in C</h1>
+<p>C provides the following functions to allocate memory at runtime:</p>
+<ul>
+<li><code>malloc</code>: allocates raw memory on the heap</li>
+<li><code>calloc</code>: allocates raw memory and initializes to zero</li>
+<li><code>realloc</code>: can change the size of memory block</li>
+<li><code>free</code>: releases the memory allocated by other functions</li>
+</ul>
+<pre><code class="language-cpp">  int a1;  // stack
+  int a2;  // stack
+  int a3;  // stack
+  int a4;  // stack
 
-  auto res = std::count_if( arr.cbegin(), arr.cend(), []( int x ) { return x == 3; } );
-  std::cout &lt;&lt; &quot;There are &quot; &lt;&lt; res &lt;&lt; &quot; number of elements equal to 3&quot; &lt;&lt; std::endl;
+  int *p1 = new int[5];  // heap
+  int *p2 = new int[4];  // heap
+  int *p3 = new int[3];  // heap
+  int *p4 = new int[2];  // heap
+  int *p5 = new int[1];  // heap; until p5 takes the next 32 bytes block
+  int *p6 = new int[7];  // heap; long jump here!!!
+
+  cout &lt;&lt; &amp;a1 &lt;&lt; &quot; stack a1\n&quot;;
+  cout &lt;&lt; &amp;a2 &lt;&lt; &quot; stack a2: &quot; &lt;&lt; long(&amp;a2) - long(&amp;a1) &lt;&lt; &quot; bytes from a1\n&quot;;
+  cout &lt;&lt; &amp;a3 &lt;&lt; &quot; stack a3: &quot; &lt;&lt; long(&amp;a3) - long(&amp;a2) &lt;&lt; &quot; bytes from a2\n&quot;;
+  cout &lt;&lt; &amp;a4 &lt;&lt; &quot; stack a4: &quot; &lt;&lt; long(&amp;a4) - long(&amp;a3) &lt;&lt; &quot; bytes from a3\n&quot;;
+
+  cout &lt;&lt; p1 &lt;&lt; &quot; heap p1\n&quot;;
+  cout &lt;&lt; &amp;p1[0] &lt;&lt; &quot; heap p1[0]\n&quot;;
+  cout &lt;&lt; &amp;p1[1] &lt;&lt; &quot; heap p1[1]\n&quot;;
+  cout &lt;&lt; &amp;p1[2] &lt;&lt; &quot; heap p1[2]\n&quot;;
+  cout &lt;&lt; &amp;p1[3] &lt;&lt; &quot; heap p1[3]\n&quot;;
+  cout &lt;&lt; &amp;p1[4] &lt;&lt; &quot; heap p1[4]\n&quot;;
+  cout &lt;&lt; p2 &lt;&lt; &quot; heap p2: &quot; &lt;&lt; long(p2) - long(p1) &lt;&lt; &quot; bytes from p1\n&quot;;
+  cout &lt;&lt; &amp;p2[0] &lt;&lt; &quot; heap p2[0]\n&quot;;
+  cout &lt;&lt; &amp;p2[1] &lt;&lt; &quot; heap p2[1]\n&quot;;
+  cout &lt;&lt; &amp;p2[2] &lt;&lt; &quot; heap p2[2]\n&quot;;
+  cout &lt;&lt; &amp;p2[3] &lt;&lt; &quot; heap p2[3]\n&quot;;
+  cout &lt;&lt; p3 &lt;&lt; &quot; heap p3: &quot; &lt;&lt; long(p3) - long(p2) &lt;&lt; &quot; bytes from p2\n&quot;;
+  cout &lt;&lt; p4 &lt;&lt; &quot; heap p4: &quot; &lt;&lt; long(p4) - long(p3) &lt;&lt; &quot; bytes from p3\n&quot;;
+  cout &lt;&lt; p5 &lt;&lt; &quot; heap p5: &quot; &lt;&lt; long(p5) - long(p4) &lt;&lt; &quot; bytes from p4\n&quot;;
+  cout &lt;&lt; p6 &lt;&lt; &quot; heap p6: &quot; &lt;&lt; long(p6) - long(p5) &lt;&lt; &quot; bytes from p5\n&quot;;
+
+  delete[] p1;
+  delete[] p2;
+  delete[] p3;
+  delete[] p4;
+  delete[] p5;
+  delete[] p6;
 </code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">There are 1 number of elements equal to 3
+<h1 id="possible-output" tabindex="-1">Possible output</h1>
+<pre><code class="language-txt">0x7ffe31baa3dc stack a1
+0x7ffe31baa3d8 stack a2: -4 bytes from a1
+0x7ffe31baa3d4 stack a3: -4 bytes from a2
+0x7ffe31baa3d0 stack a4: -4 bytes from a3
+0x55e635f5e110 heap p1
+0x55e635f5e110 heap p1[0]
+0x55e635f5e114 heap p1[1]
+0x55e635f5e118 heap p1[2]
+0x55e635f5e11c heap p1[3]
+0x55e635f5e120 heap p1[4]
+0x55e635f5e130 heap p2: 32 bytes from p1
+0x55e635f5e130 heap p2[0]
+0x55e635f5e134 heap p2[1]
+0x55e635f5e138 heap p2[2]
+0x55e635f5e13c heap p2[3]
+0x55e635f5e150 heap p3: 32 bytes from p2
+0x55e635f5e170 heap p4: 32 bytes from p3
+0x55e635f5e190 heap p5: 32 bytes from p4
+0x55e635f5da50 heap p6: -1856 bytes from p5
 
 </code></pre>
+<h1 id="references" tabindex="-1">References</h1>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

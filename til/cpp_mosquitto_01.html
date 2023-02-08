@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm count_if</title>
+    <title>C++ mosquitto_01</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,19 +53,174 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm count_if</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/std::count_if.html">std::count_if</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::array&lt;int, 4&gt; arr{ 1, 2, 3, 4 };
+        <h1>C++ mosquitto_01</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/mosquitto.html">mosquitto</a><a class="tag no-underline" href="/til/tag/libpaho-mqtt-dev.html">libpaho-mqtt-dev</a>
+        </div><table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>paho-mqtt3a</td>
+<td>asynchronous, no encryption</td>
+</tr>
+<tr>
+<td>paho-mqtt3as</td>
+<td>asynchronous with SSL/TLS support</td>
+</tr>
+<tr>
+<td>paho-mqtt3c</td>
+<td>synchronous, no encryption</td>
+</tr>
+<tr>
+<td>paho-mqtt3cs</td>
+<td>synchronous with SSL/TLS support</td>
+</tr>
+<tr>
+<td>paho-mqtt3a-static</td>
+<td>asynchronous, no encryption, static linkage</td>
+</tr>
+<tr>
+<td>paho-mqtt3as-static</td>
+<td>asynchronous with SSL/TLS support, static linkage</td>
+</tr>
+<tr>
+<td>paho-mqtt3c-static</td>
+<td>synchronous, no encryption, static linkage</td>
+</tr>
+<tr>
+<td>paho-mqtt3cs-static</td>
+<td>synchronous with SSL/TLS support, static linkage</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-cpp">void publishMessages() {
+  int rc;
+  struct mosquitto *mosq;
 
-  auto res = std::count_if( arr.cbegin(), arr.cend(), []( int x ) { return x == 3; } );
-  std::cout &lt;&lt; &quot;There are &quot; &lt;&lt; res &lt;&lt; &quot; number of elements equal to 3&quot; &lt;&lt; std::endl;
+  this_thread::sleep_for(chrono::seconds(1));
+
+  // called on subscribeTopic function
+  // mosquitto_lib_init();
+
+  mosq = mosquitto_new(&quot;publisher-test&quot;, true, NULL);
+
+  rc = mosquitto_connect(mosq, &quot;localhost&quot;, 1883, 60);
+  if (rc != 0) {
+    fmt::print(&quot;PUB: Client could not connect to broker! Error Code: {}\n&quot;, rc);
+    mosquitto_destroy(mosq);
+    return;
+  }
+  fmt::print(&quot;PUB: We are now connected to the broker!\n&quot;);
+
+  for (int i = 0; i &lt; 5; ++i) {
+    auto msg = fmt::format(&quot;Hello from C++ #{}&quot;, i);
+    fmt::print(&quot;PUB: mosquitto_publish #{}\n&quot;, i);
+    mosquitto_publish(mosq, NULL, test_topic, msg.size(), msg.data(), 0, false);
+    this_thread::sleep_for(chrono::seconds(1));
+  }
+
+  this_thread::sleep_for(chrono::seconds(2));
+  fmt::print(&quot;PUB: mosquitto_disconnect\n&quot;);
+  mosquitto_disconnect(mosq);
+  fmt::print(&quot;PUB: mosquitto_destroy\n&quot;);
+  mosquitto_destroy(mosq);
+  // mosquitto_lib_cleanup();
+}
 </code></pre>
+<pre><code class="language-cpp">void SubOnConnect(struct mosquitto *mosq, void *obj, int rc) {
+  fmt::print(&quot;SUB: OnConnect: ID: {} RC: {}\n&quot;, *(int *)obj, rc);
+  if (rc) {
+    fmt::print(&quot;SUB: OnConnect: Error with result code:&quot;, rc);
+    exit(-1);
+  }
+  mosquitto_subscribe(mosq, NULL, test_topic, 0);
+}
+
+void SubOnMessage(struct mosquitto *mosq, void *obj,
+               const struct mosquitto_message *msg) {
+  fmt::print(&quot;SUB: OnMessage: New message with topic {}: {}\n&quot;, msg-&gt;topic,
+             (char *)msg-&gt;payload);
+}
+</code></pre>
+<pre><code class="language-cpp">void subscribeTopic() {
+  int rc, id = 12;
+
+  mosquitto_lib_init();
+
+  struct mosquitto *mosq;
+
+  mosq = mosquitto_new(&quot;subscribe-test&quot;, true, &amp;id);
+  mosquitto_connect_callback_set(mosq, SubOnConnect);
+  mosquitto_message_callback_set(mosq, SubOnMessage);
+
+  rc = mosquitto_connect(mosq, &quot;localhost&quot;, 1883, 10);
+  if (rc) {
+    fmt::print(&quot;Could not connect to Broker with return code {}\n&quot;, rc);
+    return;
+  }
+
+  fmt::print(&quot;SUB: mosquitto_loop_start\n&quot;);
+  mosquitto_loop_start(mosq);
+
+  fmt::print(&quot;SUB: sleep for 6s\n&quot;);
+  this_thread::sleep_for(chrono::seconds(6));
+
+  fmt::print(&quot;SUB: mosquitto_loop_stop\n&quot;);
+  mosquitto_loop_stop(mosq, true);
+
+  fmt::print(&quot;SUB: mosquitto_disconnect\n&quot;);
+  mosquitto_disconnect(mosq);
+
+  fmt::print(&quot;SUB: mosquitto_destroy\n&quot;);
+  mosquitto_destroy(mosq);
+
+  fmt::print(&quot;SUB: mosquitto_lib_cleanup\n&quot;);
+  mosquitto_lib_cleanup();
+}
+</code></pre>
+<pre><code class="language-cpp">
+  thread tSub(subscribeTopic);
+  thread tPub(publishMessages);
+
+  tSub.join();
+  tPub.join();
+
+</code></pre>
+<p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">There are 1 number of elements equal to 3
+<pre><code class="language-txt">SUB: mosquitto_loop_start
+SUB: sleep for 6s
+SUB: OnConnect: ID: 12 RC: 0
+PUB: We are now connected to the broker!
+PUB: mosquitto_publish #0
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #0
+PUB: mosquitto_publish #1
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #1
+PUB: mosquitto_publish #2
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #2
+PUB: mosquitto_publish #3
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #3
+PUB: mosquitto_publish #4
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #4
+SUB: mosquitto_loop_stop
+SUB: mosquitto_disconnect
+SUB: mosquitto_destroy
+SUB: mosquitto_lib_cleanup
+PUB: mosquitto_disconnect
+PUB: mosquitto_destroy
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

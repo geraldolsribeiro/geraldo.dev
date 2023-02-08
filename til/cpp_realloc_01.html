@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm count_if</title>
+    <title>C++ realloc_01</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,19 +53,100 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm count_if</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/std::count_if.html">std::count_if</a>
+        <h1>C++ realloc_01</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/realloc_01.html">realloc_01</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::array&lt;int, 4&gt; arr{ 1, 2, 3, 4 };
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">
+  int *ptr1 = nullptr;
+  int *ptr2 = nullptr;
 
-  auto res = std::count_if( arr.cbegin(), arr.cend(), []( int x ) { return x == 3; } );
-  std::cout &lt;&lt; &quot;There are &quot; &lt;&lt; res &lt;&lt; &quot; number of elements equal to 3&quot; &lt;&lt; std::endl;
+  auto printPointers = [&amp;](int sz, string title) {
+    fmt::print(&quot;\n{:14} ptr1|{:14} ptr2|{}\n&quot;, static_cast&lt;void *&gt;(ptr1),
+               static_cast&lt;void *&gt;(ptr2), title);
+    for (int i = 0; i &lt; sz; ++i) {
+      fmt::print(&quot;{},&quot;, ptr2[i]);
+    }
+  };
+
+  printPointers(0, &quot;Initial null&quot;);
+
+  ptr2 = (int *)realloc(ptr1, sizeof(int));
+  printPointers(1, &quot;First realloc (non initilized value on memory)&quot;);
+
+  // Realloc will copy the previous memory content
+  for (auto i = 1; i &lt;= 64; ++i) {
+    ptr2 = (int *)realloc(ptr1, i * sizeof(int));
+    if (ptr2) {
+      ptr1 = ptr2;
+      ptr2[i - 1] = (i - 1) % 10;  // initilize the i-th position
+      if (i % 4 == 0) {
+        printPointers(i, fmt::format(&quot;Realloc {} x sizeof(int)&quot;, i));
+      }
+    } else {
+      fmt::print(&quot;Failure on realloc\n&quot;);
+      break;
+    }
+  }
+
+  free(ptr2);
+  // the pointer address remains the same
+  // the content is destroyed
+  printPointers(4, &quot;After free ptr2&quot; );
+
+  ptr1 = ptr2 = nullptr;
+  printPointers(0, &quot;After nullptr attribution&quot; );
+
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">There are 1 number of elements equal to 3
+<pre><code class="language-txt">
+           0x0 ptr1|           0x0 ptr2|Initial null
+
+           0x0 ptr1|0x55d52e7ac110 ptr2|First realloc (non initilized value on memory)
+779796784,
+0x55d52e7ac130 ptr1|0x55d52e7ac130 ptr2|Realloc 4 x sizeof(int)
+0,1,2,3,
+0x55d52e7a3960 ptr1|0x55d52e7a3960 ptr2|Realloc 8 x sizeof(int)
+0,1,2,3,4,5,6,7,
+0x55d52e7ab9d0 ptr1|0x55d52e7ab9d0 ptr2|Realloc 12 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,
+0x55d52e7ab9d0 ptr1|0x55d52e7ab9d0 ptr2|Realloc 16 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55d52e7ac050 ptr1|0x55d52e7ac050 ptr2|Realloc 20 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55d52e7ac050 ptr1|0x55d52e7ac050 ptr2|Realloc 24 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 28 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 32 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 36 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 40 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 44 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 48 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 52 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 56 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 60 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|Realloc 64 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55d52e7acc00 ptr1|0x55d52e7acc00 ptr2|After free ptr2
+779657152,21973,774123536,21973,
+           0x0 ptr1|           0x0 ptr2|After nullptr attribution
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

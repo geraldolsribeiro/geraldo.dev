@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ algorithm count_if</title>
+    <title>C++ debugging with GDB</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,19 +53,202 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ algorithm count_if</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/algorithm.html">algorithm</a><a class="tag no-underline" href="/til/tag/std::count_if.html">std::count_if</a>
+        <h1>C++ debugging with GDB</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<pre><code class="language-cpp">  std::array&lt;int, 4&gt; arr{ 1, 2, 3, 4 };
+<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="breakpoint" tabindex="-1">Breakpoint</h2>
+<ul>
+<li><code>[b]reak function_name</code></li>
+<li><code>[b]reak filename:line</code></li>
+<li><code>[b]reak *memory address</code></li>
+</ul>
+<h2 id="running" tabindex="-1">Running</h2>
+<p>Use the command <code>run</code> to start the program execution.</p>
+<pre><code>$ gdb bin/gdb_test_01
+Reading symbols from bin/gdb_test_01...
+(No debugging symbols found in bin/gdb_test_01)
+(gdb) break my_func_01(int, float) 
+Breakpoint 1 at 0x3a74
+(gdb) run
+Starting program: /data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
+[New Thread 0x7fffd889d700 (LWP 194516)]
+[New Thread 0x7fffd809c700 (LWP 194517)]
+[New Thread 0x7fffc789b700 (LWP 194518)]
+[New Thread 0x7fffc709a700 (LWP 194519)]
+[New Thread 0x7fffb6899700 (LWP 194520)]
+[New Thread 0x7fffae098700 (LWP 194521)]
+[New Thread 0x7fffa5897700 (LWP 194522)]
 
-  auto res = std::count_if( arr.cbegin(), arr.cend(), []( int x ) { return x == 3; } );
-  std::cout &lt;&lt; &quot;There are &quot; &lt;&lt; res &lt;&lt; &quot; number of elements equal to 3&quot; &lt;&lt; std::endl;
+Thread 1 &quot;gdb_test_01&quot; hit Breakpoint 1, 0x0000555555557a74 in my_func_01(int, float) ()
+(gdb) cont
+Continuing.
+s = 10 + 3.141492 = 13.141492
+[Thread 0x7fffa5897700 (LWP 194522) exited]
+[Thread 0x7fffae098700 (LWP 194521) exited]
+[Thread 0x7fffb6899700 (LWP 194520) exited]
+[Thread 0x7fffc709a700 (LWP 194519) exited]
+[Thread 0x7fffc789b700 (LWP 194518) exited]
+[Thread 0x7fffd809c700 (LWP 194517) exited]
+[Thread 0x7fffd889d700 (LWP 194516) exited]
+[Inferior 1 (process 194512) exited normally]
+(gdb) 
+</code></pre>
+<h2 id="disassembly" tabindex="-1">Disassembly</h2>
+<p>If you do not have access to the source code of a function and wish
+to set a breakpoint on a particular instruction, call <code>disassemble function_name</code> (where <code>function_name</code> is the name of the procedure);
+this command will allow you to see the memory address of each
+instruction.</p>
+<p>For the following code:</p>
+<pre><code class="language-c++">int my_func_02(int x) {
+  return x + 42;
+}
+</code></pre>
+<p>We can get something like:</p>
+<pre><code>(gdb) disassemble my_func_02(int) 
+Dump of assembler code for function _Z10my_func_02i:
+   0x0000000000003d60 &lt;+0&gt;:	push   %rbp
+   0x0000000000003d61 &lt;+1&gt;:	mov    %rsp,%rbp
+   0x0000000000003d64 &lt;+4&gt;:	mov    %edi,-0x4(%rbp)
+   0x0000000000003d67 &lt;+7&gt;:	mov    -0x4(%rbp),%eax
+   0x0000000000003d6a &lt;+10&gt;:	add    $0x2a,%eax         ; 0x2a = 42
+   0x0000000000003d6d &lt;+13&gt;:	pop    %rbp
+   0x0000000000003d6e &lt;+14&gt;:	ret    
+End of assembler dump.
+</code></pre>
+<h2 id="breakpoint-condition" tabindex="-1">Breakpoint condition</h2>
+<ul>
+<li><code>[condition] &lt;breakpoint #&gt; &lt;condition&gt;</code></li>
+</ul>
+<p>Updates the breakpoint indicated by the given number so that
+execution of the program stops at that point only if condition
+is true.  condition is expressed in C syntax, and can only use
+variables and functions that are available in the scope of the
+breakpoint location.</p>
+<p>Create the breakpoint #1 at line 112</p>
+<pre><code>(gdb) list
+104	}
+105	
+106	int my_func_02(int x) {
+107	  return x + 42;
+108	}
+109	
+110	void loop() {
+111	  for( int i=0; i&lt;10; i++) {
+112	    fmt::print(&quot;i = {}\n&quot;, i);
+113	  }
+(gdb) break 112
+Breakpoint 1 at 0x3d92: file gdb_test_01.cpp, line 112.
+</code></pre>
+<p>Update the breakpoint #1 condition</p>
+<pre><code>(gdb) condition 1 i == 7
+</code></pre>
+<p>Run the program, and the breakpoint only will be actioned for <code>i == 7</code></p>
+<pre><code>(gdb) run
+Starting program: /data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
+[New Thread 0x7fffd889c700 (LWP 490606)]
+[New Thread 0x7fffd809b700 (LWP 490607)]
+[New Thread 0x7fffcf89a700 (LWP 490608)]
+[New Thread 0x7fffbf099700 (LWP 490609)]
+[New Thread 0x7fffb6898700 (LWP 490610)]
+[New Thread 0x7fffae097700 (LWP 490611)]
+[New Thread 0x7fffa5896700 (LWP 490612)]
+s = 10 + 3.141492 = 13.141492
+i = 0
+i = 1
+i = 2
+i = 3
+i = 4
+i = 5
+i = 6
+
+Thread 1 &quot;gdb_test_01&quot; hit Breakpoint 1, loop () at gdb_test_01.cpp:112
+112	    fmt::print(&quot;i = {}\n&quot;, i);
+</code></pre>
+<p>Check backtrace</p>
+<pre><code>(gdb) backtrace 
+#0  loop() () at gdb_test_01.cpp:112
+#1  0x0000555555557edc in main(int, char**) (argc=1, argv=0x7fffffffe3b8) at gdb_test_01.cpp:121
+</code></pre>
+<p>Continue the execution as well</p>
+<pre><code>(gdb) continue
+Continuing.
+i = 7
+i = 8
+i = 9
+[Thread 0x7fffa5896700 (LWP 490612) exited]
+[Thread 0x7fffae097700 (LWP 490611) exited]
+[Thread 0x7fffb6898700 (LWP 490610) exited]
+[Thread 0x7fffbf099700 (LWP 490609) exited]
+[Thread 0x7fffcf89a700 (LWP 490608) exited]
+[Thread 0x7fffd809b700 (LWP 490607) exited]
+[Thread 0x7fffd889c700 (LWP 490606) exited]
+[Inferior 1 (process 490602) exited normally]
+(gdb)
+</code></pre>
+<h2 id="tui-enable" tabindex="-1">TUI enable</h2>
+<ul>
+<li><code>tui enable</code></li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/cpp_gdb_tui_01.webp" alt="Text user interface">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Text user interface</span>
+  </figcaption>
+</figure>
+<h2 id="finishing" tabindex="-1">Finishing</h2>
+<ul>
+<li><code>kill</code> stop debugging session</li>
+<li><code>quit</code> stop gdb</li>
+</ul>
+<h2 id="example-code" tabindex="-1">Example code</h2>
+<pre><code class="language-cpp">void my_func_01(int a, float pi) {
+  auto s = fmt::format( &quot;{} + {} = {}&quot;, a, pi, a+pi);
+  fmt::print(&quot;s = {}\n&quot;, s);
+}
+
+int my_func_02(int x) {
+  return x + 42;
+}
+
+void loop() {
+  for( int i=0; i&lt;10; i++) {
+    fmt::print(&quot;i = {}\n&quot;, i);
+  }
+}
+
+int main( [[maybe_unused]] int argc, [[maybe_unused]] char **argv )
+{
+  int a = 10;
+  float pi = 3.141492;
+  my_func_01(a, pi);
+  loop();
+  return 0;
+}
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">There are 1 number of elements equal to 3
+<pre><code class="language-txt">s = 10 + 3.141492 = 13.141492
+i = 0
+i = 1
+i = 2
+i = 3
+i = 4
+i = 5
+i = 6
+i = 7
+i = 8
+i = 9
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://www.maketecheasier.com/debug-program-using-gdb-linux/">How to Debug a C or C++ Program on Linux Using gdb</a></li>
+<li><a href="https://www.xmodulo.com/debug-program-nemiver-debugger.html">How to debug a C/C++ program with Nemiver debugger</a></li>
+</ul>
 
       </main>
     </div>

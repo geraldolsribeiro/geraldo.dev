@@ -1746,6 +1746,10 @@ video {
   transition-duration: 300ms;
 }
 
+.\[monitor\:\/\/\/var\/log\] {
+  monitor: ///var/log;
+}
+
 h1, h2, h3 {
   text-align: center;
   font-weight: 600;

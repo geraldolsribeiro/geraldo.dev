@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://geraldo.dev/til/varicad-thread-metric.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/splunk.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_tasks_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_realloc_01.html</loc>
   </url>
   <url>
@@ -20,6 +29,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/mermaid.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2023-02-01_akamai_proteção_para_bancos_e_fintechs.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2023-02-01_linkedin_Scrum_The_Basics_PMI.html</loc>

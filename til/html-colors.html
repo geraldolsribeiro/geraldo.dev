@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Description not defined">
+    <title>html-colors</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>html-colors</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/t1.html">t1</a><a class="tag no-underline" href="/til/tag/t2.html">t2</a><a class="tag no-underline" href="/til/tag/t3.html">t3</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#red">Red</a></li><li><a href="#pink">Pink</a></li><li><a href="#orange">Orange</a></li><li><a href="#orange-1">Orange</a></li><li><a href="#purple">Purple</a></li><li><a href="#green">Green</a></li><li><a href="#blue">Blue</a></li><li><a href="#brown">Brown</a></li><li><a href="#white">White</a></li><li><a href="#gray">Gray</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>Modern browsers support 140 named colors, which are listed below. Use them in
+your HTML and CSS by name, Hex color code or RGB value.</p>
+<h2 id="red" tabindex="-1">Red</h2>
+<ul>
+<li>
+<div style="color:IndianRed">&#9632;</div> `IndianRed` `##CD5C5C` `rgb(205, 92, 92)`
+</li>
+<li>
+<div style="color:LightCoral">&#9632;</div> `LightCoral` `##F08080` `rgb(240, 128, 128)`
+</li>
+<li>
+<div style="color:Salmon">&#9632;</div> `Salmon` `##FA8072` `rgb(250, 128, 114)`
+</li>
+<li>
+<div style="color:DarkSalmon">&#9632;</div> `DarkSalmon` `##E9967A` `rgb(233, 150, 122)`
+</li>
+<li>
+<div style="color:LightSalmon">&#9632;</div> `LightSalmon` `##FFA07A` `rgb(255, 160, 122)`
+</li>
+<li>
+<div style="color:Crimson">&#9632;</div> `Crimson` `##DC143C` `rgb(220, 20, 60)`
+</li>
+<li>
+<div style="color:Red">&#9632;</div> `Red` `##FF0000` `rgb(255, 0, 0)`
+</li>
+<li>
+<div style="color:FireBrick">&#9632;</div> `FireBrick` `##B22222` `rgb(178, 34, 34)`
+</li>
+<li>
+<div style="color:DarkRed">&#9632;</div> `DarkRed` `##8B0000` `rgb(139, 0, 0)`
+</li>
+</ul>
+<h2 id="pink" tabindex="-1">Pink</h2>
+<ul>
+<li>
+<div style="color:Pink">&#9632;</div> `Pink` `##FFC0CB` `rgb(255, 192, 203)`
+</li>
+<li>
+<div style="color:LightPink">&#9632;</div> `LightPink` `##FFB6C1` `rgb(255, 182, 193)`
+</li>
+<li>
+<div style="color:HotPink">&#9632;</div> `HotPink` `##FF69B4` `rgb(255, 105, 180)`
+</li>
+<li>
+<div style="color:DeepPink">&#9632;</div> `DeepPink` `##FF1493` `rgb(255, 20, 147)`
+</li>
+<li>
+<div style="color:MediumVioletRed">&#9632;</div> `MediumVioletRed` `##C71585` `rgb(199, 21, 133)`
+</li>
+<li>
+<div style="color:PaleVioletRed">&#9632;</div> `PaleVioletRed` `##DB7093` `rgb(219, 112, 147)`
+</li>
+</ul>
+<h2 id="orange" tabindex="-1">Orange</h2>
+<ul>
+<li>
+<div style="color:LightSalmon">&#9632;</div> `LightSalmon` `##FFA07A` `rgb(255, 160, 122)`
+</li>
+<li>
+<div style="color:Coral">&#9632;</div> `Coral` `##FF7F50` `rgb(255, 127, 80)`
+</li>
+<li>
+<div style="color:Tomato">&#9632;</div> `Tomato` `##FF6347` `rgb(255, 99, 71)`
+</li>
+<li>
+<div style="color:OrangeRed">&#9632;</div> `OrangeRed` `##FF4500` `rgb(255, 69, 0)`
+</li>
+<li>
+<div style="color:DarkOrange">&#9632;</div> `DarkOrange` `##FF8C00` `rgb(255, 140, 0)`
+</li>
+<li>
+<div style="color:Orange">&#9632;</div> `Orange` `##FFA500` `rgb(255, 165, 0)`
+</li>
+</ul>
+<h2 id="orange-1" tabindex="-1">Orange</h2>
+<ul>
+<li>
+<div style="color:Gold">&#9632;</div> `Gold` `##FFD700` `rgb(255, 215, 0)`
+</li>
+<li>
+<div style="color:Yellow">&#9632;</div> `Yellow` `##FFFF00` `rgb(255, 255, 0)`
+</li>
+<li>
+<div style="color:LightYellow">&#9632;</div> `LightYellow` `##FFFFE0` `rgb(255, 255, 224)`
+</li>
+<li>
+<div style="color:LemonChiffon">&#9632;</div> `LemonChiffon` `##FFFACD` `rgb(255, 250, 205)`
+</li>
+<li>
+<div style="color:LightGoldenrodYellow">&#9632;</div> `LightGoldenrodYellow` `##FAFAD2` `rgb(250, 250, 210)`
+</li>
+<li>
+<div style="color:PapayaWhip">&#9632;</div> `PapayaWhip` `##FFEFD5` `rgb(255, 239, 213)`
+</li>
+<li>
+<div style="color:Moccasin">&#9632;</div> `Moccasin` `##FFE4B5` `rgb(255, 228, 181)`
+</li>
+<li>
+<div style="color:PeachPuff">&#9632;</div> `PeachPuff` `##FFDAB9` `rgb(255, 218, 185)`
+</li>
+<li>
+<div style="color:PaleGoldenrod">&#9632;</div> `PaleGoldenrod` `##EEE8AA` `rgb(238, 232, 170)`
+</li>
+<li>
+<div style="color:Khaki">&#9632;</div> `Khaki` `##F0E68C` `rgb(240, 230, 140)`
+</li>
+<li>
+<div style="color:DarkKhaki">&#9632;</div> `DarkKhaki` `##BDB76B` `rgb(189, 183, 107)`
+</li>
+</ul>
+<h2 id="purple" tabindex="-1">Purple</h2>
+<ul>
+<li>
+<div style="color:Lavender">&#9632;</div> `Lavender` `##E6E6FA` `rgb(230, 230, 250)`
+</li>
+<li>
+<div style="color:Thistle">&#9632;</div> `Thistle` `##D8BFD8` `rgb(216, 191, 216)`
+</li>
+<li>
+<div style="color:Plum">&#9632;</div> `Plum` `##DDA0DD` `rgb(221, 160, 221)`
+</li>
+<li>
+<div style="color:Violet">&#9632;</div> `Violet` `##EE82EE` `rgb(238, 130, 238)`
+</li>
+<li>
+<div style="color:Orchid">&#9632;</div> `Orchid` `##DA70D6` `rgb(218, 112, 214)`
+</li>
+<li>
+<div style="color:Fuchsia">&#9632;</div> `Fuchsia` `##FF00FF` `rgb(255, 0, 255)`
+</li>
+<li>
+<div style="color:Magenta">&#9632;</div> `Magenta` `##FF00FF` `rgb(255, 0, 255)`
+</li>
+<li>
+<div style="color:MediumOrchid">&#9632;</div> `MediumOrchid` `##BA55D3` `rgb(186, 85, 211)`
+</li>
+<li>
+<div style="color:MediumPurple">&#9632;</div> `MediumPurple` `##9370DB` `rgb(147, 112, 219)`
+</li>
+<li>
+<div style="color:RebeccaPurple">&#9632;</div> `RebeccaPurple` `##663399` `rgb(102, 51, 153)`
+</li>
+<li>
+<div style="color:BlueViolet">&#9632;</div> `BlueViolet` `##8A2BE2` `rgb(138, 43, 226)`
+</li>
+<li>
+<div style="color:DarkViolet">&#9632;</div> `DarkViolet` `##9400D3` `rgb(148, 0, 211)`
+</li>
+<li>
+<div style="color:DarkOrchid">&#9632;</div> `DarkOrchid` `##9932CC` `rgb(153, 50, 204)`
+</li>
+<li>
+<div style="color:DarkMagenta">&#9632;</div> `DarkMagenta` `##8B008B` `rgb(139, 0, 139)`
+</li>
+<li>
+<div style="color:Purple">&#9632;</div> `Purple` `##800080` `rgb(128, 0, 128)`
+</li>
+<li>
+<div style="color:Indigo">&#9632;</div> `Indigo` `##4B0082` `rgb(75, 0, 130)`
+</li>
+<li>
+<div style="color:SlateBlue">&#9632;</div> `SlateBlue` `##6A5ACD` `rgb(106, 90, 205)`
+</li>
+<li>
+<div style="color:DarkSlateBlue">&#9632;</div> `DarkSlateBlue` `##483D8B` `rgb(72, 61, 139)`
+</li>
+<li>
+<div style="color:MediumSlateBlue">&#9632;</div> `MediumSlateBlue` `##7B68EE` `rgb(123, 104, 238)`
+</li>
+</ul>
+<h2 id="green" tabindex="-1">Green</h2>
+<ul>
+<li>
+<div style="color:GreenYellow">&#9632;</div> `GreenYellow` `##ADFF2F` `rgb(173, 255, 47)`
+</li>
+<li>
+<div style="color:Chartreuse">&#9632;</div> `Chartreuse` `##7FFF00` `rgb(127, 255, 0)`
+</li>
+<li>
+<div style="color:LawnGreen">&#9632;</div> `LawnGreen` `##7CFC00` `rgb(124, 252, 0)`
+</li>
+<li>
+<div style="color:Lime">&#9632;</div> `Lime` `##00FF00` `rgb(0, 255, 0)`
+</li>
+<li>
+<div style="color:LimeGreen">&#9632;</div> `LimeGreen` `##32CD32` `rgb(50, 205, 50)`
+</li>
+<li>
+<div style="color:PaleGreen">&#9632;</div> `PaleGreen` `##98FB98` `rgb(152, 251, 152)`
+</li>
+<li>
+<div style="color:LightGreen">&#9632;</div> `LightGreen` `##90EE90` `rgb(144, 238, 144)`
+</li>
+<li>
+<div style="color:MediumSpringGreen">&#9632;</div> `MediumSpringGreen` `##00FA9A` `rgb(0, 250, 154)`
+</li>
+<li>
+<div style="color:SpringGreen">&#9632;</div> `SpringGreen` `##00FF7F` `rgb(0, 255, 127)`
+</li>
+<li>
+<div style="color:MediumSeaGreen">&#9632;</div> `MediumSeaGreen` `##3CB371` `rgb(60, 179, 113)`
+</li>
+<li>
+<div style="color:SeaGreen">&#9632;</div> `SeaGreen` `##2E8B57` `rgb(46, 139, 87)`
+</li>
+<li>
+<div style="color:ForestGreen">&#9632;</div> `ForestGreen` `##228B22` `rgb(34, 139, 34)`
+</li>
+<li>
+<div style="color:Green">&#9632;</div> `Green` `##008000` `rgb(0, 128, 0)`
+</li>
+<li>
+<div style="color:DarkGreen">&#9632;</div> `DarkGreen` `##006400` `rgb(0, 100, 0)`
+</li>
+<li>
+<div style="color:YellowGreen">&#9632;</div> `YellowGreen` `##9ACD32` `rgb(154, 205, 50)`
+</li>
+<li>
+<div style="color:OliveDrab">&#9632;</div> `OliveDrab` `##6B8E23` `rgb(107, 142, 35)`
+</li>
+<li>
+<div style="color:Olive">&#9632;</div> `Olive` `##808000` `rgb(128, 128, 0)`
+</li>
+<li>
+<div style="color:DarkOliveGreen">&#9632;</div> `DarkOliveGreen` `##556B2F` `rgb(85, 107, 47)`
+</li>
+<li>
+<div style="color:MediumAquamarine">&#9632;</div> `MediumAquamarine` `##66CDAA` `rgb(102, 205, 170)`
+</li>
+<li>
+<div style="color:DarkSeaGreen">&#9632;</div> `DarkSeaGreen` `##8FBC8B` `rgb(143, 188, 139)`
+</li>
+<li>
+<div style="color:LightSeaGreen">&#9632;</div> `LightSeaGreen` `##20B2AA` `rgb(32, 178, 170)`
+</li>
+<li>
+<div style="color:DarkCyan">&#9632;</div> `DarkCyan` `##008B8B` `rgb(0, 139, 139)`
+</li>
+<li>
+<div style="color:Teal">&#9632;</div> `Teal` `##008080` `rgb(0, 128, 128)`
+</li>
+</ul>
+<h2 id="blue" tabindex="-1">Blue</h2>
+<ul>
+<li>
+<div style="color:Aqua">&#9632;</div> `Aqua` `##00FFFF` `rgb(0, 255, 255)`
+</li>
+<li>
+<div style="color:Cyan">&#9632;</div> `Cyan` `##00FFFF` `rgb(0, 255, 255)`
+</li>
+<li>
+<div style="color:LightCyan">&#9632;</div> `LightCyan` `##E0FFFF` `rgb(224, 255, 255)`
+</li>
+<li>
+<div style="color:PaleTurquoise">&#9632;</div> `PaleTurquoise` `##AFEEEE` `rgb(175, 238, 238)`
+</li>
+<li>
+<div style="color:Aquamarine">&#9632;</div> `Aquamarine` `##7FFFD4` `rgb(127, 255, 212)`
+</li>
+<li>
+<div style="color:Turquoise">&#9632;</div> `Turquoise` `##40E0D0` `rgb(64, 224, 208)`
+</li>
+<li>
+<div style="color:MediumTurquoise">&#9632;</div> `MediumTurquoise` `##48D1CC` `rgb(72, 209, 204)`
+</li>
+<li>
+<div style="color:DarkTurquoise">&#9632;</div> `DarkTurquoise` `##00CED1` `rgb(0, 206, 209)`
+</li>
+<li>
+<div style="color:CadetBlue">&#9632;</div> `CadetBlue` `##5F9EA0` `rgb(95, 158, 160)`
+</li>
+<li>
+<div style="color:SteelBlue">&#9632;</div> `SteelBlue` `##4682B4` `rgb(70, 130, 180)`
+</li>
+<li>
+<div style="color:LightSteelBlue">&#9632;</div> `LightSteelBlue` `##B0C4DE` `rgb(176, 196, 222)`
+</li>
+<li>
+<div style="color:PowderBlue">&#9632;</div> `PowderBlue` `##B0E0E6` `rgb(176, 224, 230)`
+</li>
+<li>
+<div style="color:LightBlue">&#9632;</div> `LightBlue` `##ADD8E6` `rgb(173, 216, 230)`
+</li>
+<li>
+<div style="color:SkyBlue">&#9632;</div> `SkyBlue` `##87CEEB` `rgb(135, 206, 235)`
+</li>
+<li>
+<div style="color:LightSkyBlue">&#9632;</div> `LightSkyBlue` `##87CEFA` `rgb(135, 206, 250)`
+</li>
+<li>
+<div style="color:DeepSkyBlue">&#9632;</div> `DeepSkyBlue` `##00BFFF` `rgb(0, 191, 255)`
+</li>
+<li>
+<div style="color:DodgerBlue">&#9632;</div> `DodgerBlue` `##1E90FF` `rgb(30, 144, 255)`
+</li>
+<li>
+<div style="color:CornflowerBlue">&#9632;</div> `CornflowerBlue` `##6495ED` `rgb(100, 149, 237)`
+</li>
+<li>
+<div style="color:MediumSlateBlue">&#9632;</div> `MediumSlateBlue` `##7B68EE` `rgb(123, 104, 238)`
+</li>
+<li>
+<div style="color:RoyalBlue">&#9632;</div> `RoyalBlue` `##4169E1` `rgb(65, 105, 225)`
+</li>
+<li>
+<div style="color:Blue">&#9632;</div> `Blue` `##0000FF` `rgb(0, 0, 255)`
+</li>
+<li>
+<div style="color:MediumBlue">&#9632;</div> `MediumBlue` `##0000CD` `rgb(0, 0, 205)`
+</li>
+<li>
+<div style="color:DarkBlue">&#9632;</div> `DarkBlue` `##00008B` `rgb(0, 0, 139)`
+</li>
+<li>
+<div style="color:Navy">&#9632;</div> `Navy` `##000080` `rgb(0, 0, 128)`
+</li>
+<li>
+<div style="color:MidnightBlue">&#9632;</div> `MidnightBlue` `##191970` `rgb(25, 25, 112)`
+</li>
+</ul>
+<h2 id="brown" tabindex="-1">Brown</h2>
+<ul>
+<li>
+<div style="color:Cornsilk">&#9632;</div> `Cornsilk` `##FFF8DC` `rgb(255, 248, 220)`
+</li>
+<li>
+<div style="color:BlanchedAlmond">&#9632;</div> `BlanchedAlmond` `##FFEBCD` `rgb(255, 235, 205)`
+</li>
+<li>
+<div style="color:Bisque">&#9632;</div> `Bisque` `##FFE4C4` `rgb(255, 228, 196)`
+</li>
+<li>
+<div style="color:NavajoWhite">&#9632;</div> `NavajoWhite` `##FFDEAD` `rgb(255, 222, 173)`
+</li>
+<li>
+<div style="color:Wheat">&#9632;</div> `Wheat` `##F5DEB3` `rgb(245, 222, 179)`
+</li>
+<li>
+<div style="color:BurlyWood">&#9632;</div> `BurlyWood` `##DEB887` `rgb(222, 184, 135)`
+</li>
+<li>
+<div style="color:Tan">&#9632;</div> `Tan` `##D2B48C` `rgb(210, 180, 140)`
+</li>
+<li>
+<div style="color:RosyBrown">&#9632;</div> `RosyBrown` `##BC8F8F` `rgb(188, 143, 143)`
+</li>
+<li>
+<div style="color:SandyBrown">&#9632;</div> `SandyBrown` `##F4A460` `rgb(244, 164, 96)`
+</li>
+<li>
+<div style="color:Goldenrod">&#9632;</div> `Goldenrod` `##DAA520` `rgb(218, 165, 32)`
+</li>
+<li>
+<div style="color:DarkGoldenrod">&#9632;</div> `DarkGoldenrod` `##B8860B` `rgb(184, 134, 11)`
+</li>
+<li>
+<div style="color:Peru">&#9632;</div> `Peru` `##CD853F` `rgb(205, 133, 63)`
+</li>
+<li>
+<div style="color:Chocolate">&#9632;</div> `Chocolate` `##D2691E` `rgb(210, 105, 30)`
+</li>
+<li>
+<div style="color:SaddleBrown">&#9632;</div> `SaddleBrown` `##8B4513` `rgb(139, 69, 19)`
+</li>
+<li>
+<div style="color:Sienna">&#9632;</div> `Sienna` `##A0522D` `rgb(160, 82, 45)`
+</li>
+<li>
+<div style="color:Brown">&#9632;</div> `Brown` `##A52A2A` `rgb(165, 42, 42)`
+</li>
+<li>
+<div style="color:Maroon">&#9632;</div> `Maroon` `##800000` `rgb(128, 0, 0)`
+</li>
+</ul>
+<h2 id="white" tabindex="-1">White</h2>
+<ul>
+<li>
+<div style="color:White">&#9632;</div> `White` `##FFFFFF` `rgb(255, 255, 255)`
+</li>
+<li>
+<div style="color:Snow">&#9632;</div> `Snow` `##FFFAFA` `rgb(255, 250, 250)`
+</li>
+<li>
+<div style="color:HoneyDew">&#9632;</div> `HoneyDew` `##F0FFF0` `rgb(240, 255, 240)`
+</li>
+<li>
+<div style="color:MintCream">&#9632;</div> `MintCream` `##F5FFFA` `rgb(245, 255, 250)`
+</li>
+<li>
+<div style="color:Azure">&#9632;</div> `Azure` `##F0FFFF` `rgb(240, 255, 255)`
+</li>
+<li>
+<div style="color:AliceBlue">&#9632;</div> `AliceBlue` `##F0F8FF` `rgb(240, 248, 255)`
+</li>
+<li>
+<div style="color:GhostWhite">&#9632;</div> `GhostWhite` `##F8F8FF` `rgb(248, 248, 255)`
+</li>
+<li>
+<div style="color:WhiteSmoke">&#9632;</div> `WhiteSmoke` `##F5F5F5` `rgb(245, 245, 245)`
+</li>
+<li>
+<div style="color:SeaShell">&#9632;</div> `SeaShell` `##FFF5EE` `rgb(255, 245, 238)`
+</li>
+<li>
+<div style="color:Beige">&#9632;</div> `Beige` `##F5F5DC` `rgb(245, 245, 220)`
+</li>
+<li>
+<div style="color:OldLace">&#9632;</div> `OldLace` `##FDF5E6` `rgb(253, 245, 230)`
+</li>
+<li>
+<div style="color:FloralWhite">&#9632;</div> `FloralWhite` `##FFFAF0` `rgb(255, 250, 240)`
+</li>
+<li>
+<div style="color:Ivory">&#9632;</div> `Ivory` `##FFFFF0` `rgb(255, 255, 240)`
+</li>
+<li>
+<div style="color:AntiqueWhite">&#9632;</div> `AntiqueWhite` `##FAEBD7` `rgb(250, 235, 215)`
+</li>
+<li>
+<div style="color:Linen">&#9632;</div> `Linen` `##FAF0E6` `rgb(250, 240, 230)`
+</li>
+<li>
+<div style="color:LavenderBlush">&#9632;</div> `LavenderBlush` `##FFF0F5` `rgb(255, 240, 245)`
+</li>
+<li>
+<div style="color:MistyRose">&#9632;</div> `MistyRose` `##FFE4E1` `rgb(255, 228, 225)`
+</li>
+</ul>
+<h2 id="gray" tabindex="-1">Gray</h2>
+<ul>
+<li>
+<div style="color:Gainsboro">&#9632;</div> `Gainsboro` `##DCDCDC` `rgb(220, 220, 220)`
+</li>
+<li>
+<div style="color:LightGray">&#9632;</div> `LightGray` `##D3D3D3` `rgb(211, 211, 211)`
+</li>
+<li>
+<div style="color:Silver">&#9632;</div> `Silver` `##C0C0C0` `rgb(192, 192, 192)`
+</li>
+<li>
+<div style="color:DarkGray">&#9632;</div> `DarkGray` `##A9A9A9` `rgb(169, 169, 169)`
+</li>
+<li>
+<div style="color:Gray">&#9632;</div> `Gray` `##808080` `rgb(128, 128, 128)`
+</li>
+<li>
+<div style="color:DimGray">&#9632;</div> `DimGray` `##696969` `rgb(105, 105, 105)`
+</li>
+<li>
+<div style="color:LightSlateGray">&#9632;</div> `LightSlateGray` `##778899` `rgb(119, 136, 153)`
+</li>
+<li>
+<div style="color:SlateGray">&#9632;</div> `SlateGray` `##708090` `rgb(112, 128, 144)`
+</li>
+<li>
+<div style="color:DarkSlateGray">&#9632;</div> `DarkSlateGray` `##2F4F4F` `rgb(47, 79, 79)`
+</li>
+<li>
+<div style="color:Black">&#9632;</div> `Black` `##000000` `rgb(0, 0, 0)`
+</li>
+</ul>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://htmlcolorcodes.com/color-names/">Color names</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

@@ -9,6 +9,8 @@
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/powershell.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/bash.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/styles.css">
@@ -55,56 +57,120 @@
           </svg><span>Back to TILs</span></a>
         <h1>Using powershell on linux</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/powershell.html">powershell</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#installation-%E2%80%94-github">Installation — github</a></li><li><a href="#installation-%E2%80%94-debian">Installation — Debian</a></li><li><a href="#how-to-run">How to run</a></li><li><a href="#finding-modules">Finding Modules</a></li><li><a href="#installing-modules">Installing modules</a></li><li><a href="#importing-modules">Importing modules</a></li><li><a href="#installing-stable-version">Installing Stable version</a></li></ul></div></p>
-<h2 id="installation-%E2%80%94-github" tabindex="-1">Installation — github</h2>
+        </div>
+        <p>Date: 2022-12-23 / Last modified: 2023-02-13 </p><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#installation-%E2%80%94-github-%E2%80%94-latest">Installation — github — latest</a></li><li><a href="#installation-%E2%80%94-github-%E2%80%94-stable-version">Installation — github — stable version</a></li><li><a href="#installation-%E2%80%94-debian-repository">Installation — Debian repository</a></li><li><a href="#how-to-run">How to run</a></li><li><a href="#finding-modules">Finding Modules</a></li><li><a href="#installing-modules">Installing modules</a></li><li><a href="#importing-modules">Importing modules</a></li><li><a href="#powershell-ise">Powershell ISE</a></li><li><a href="#basic-commands">Basic commands</a></li><li><a href="#get-command">Get-Command</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="installation-%E2%80%94-github-%E2%80%94-latest" tabindex="-1">Installation — github — latest</h2>
 <p>Download latest version of install package from
 <a href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a>.</p>
 <p>For <strong>Debian</strong> like distribution use <code>dpkg -i</code> to install:</p>
 <pre><code class="language-bash">dpkg -i /tmp/powershell-preview_7.4.0-preview.1-1.deb_amd64.deb 
 </code></pre>
-<h2 id="installation-%E2%80%94-debian" tabindex="-1">Installation — Debian</h2>
-<pre><code class="language-bash">sudo apt update  &amp;&amp; sudo apt install -y curl gnupg apt-transport-https
+<h2 id="installation-%E2%80%94-github-%E2%80%94-stable-version" tabindex="-1">Installation — github — stable version</h2>
+<p>Download stable version of install package from
+<a href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a>.</p>
+<p>For <strong>Debian</strong> like distribution use <code>dpkg -i</code> to install:</p>
+<pre><code class="language-bash">dpkg -i /tmp/powershell_7.2.9-1.deb_amd64.deb
+</code></pre>
+<h2 id="installation-%E2%80%94-debian-repository" tabindex="-1">Installation — Debian repository</h2>
+<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install -y curl gnupg apt-transport-https
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo sh -c 'echo &quot;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main&quot; &gt; /etc/apt/sources.list.d/microsoft.list'
+sudo sh -c 'echo &quot;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main&quot; \
+  &gt; /etc/apt/sources.list.d/microsoft.list'
 sudo apt update &amp;&amp; sudo apt install -y powershell
 </code></pre>
 <h2 id="how-to-run" tabindex="-1">How to run</h2>
 <p>To launch <strong>PowerShell</strong> use the command <code>pwsh-preview</code>, <code>powershell</code> or <code>pwsh</code>
 depending on version you have installed:</p>
+<p>Preview version:</p>
 <pre><code class="language-bash">$ pwsh-preview 
 PowerShell 7.4.0-preview.1
 PS /home/geraldo&gt; 
 </code></pre>
+<p>Stable version:</p>
+<pre><code class="language-bash">$ pwsh
+PowerShell 7.2.9
+PS /home/geraldo&gt;
+</code></pre>
 <h2 id="finding-modules" tabindex="-1">Finding Modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Find-Module *sharepoint*
+<pre><code class="language-powershell">PS /home/geraldo&gt; Find-Module *sharepoint*
 
-Version              Name                                Repository           Description
--------              ----                                ----------           -----------
-16.0.23109.12000     Microsoft.Online.SharePoint.PowerS… PSGallery            Microsoft SharePoint Online Services Module for Windows PowerShell
-3.29.2101.0          SharePointPnPPowerShellOnline       PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint Online
-5.3.0                SharePointDSC                       PSGallery            This DSC module is used to deploy and configure SharePoint Server 2013, 2016 and 2019, and co…
-0.12.0.0             xSharePoint                         PSGallery            This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide ra…
-3.29.2101.0          SharePointPnPPowerShell2016         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2016
-3.29.2101.0          SharePointPnPPowerShell2013         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2013
-3.29.2101.0          SharePointPnPPowerShell2019         PSGallery            Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2019
-1.0.0.98             RED-SharePoint                      PSGallery            SharePoint PowerShell Module, Codename: RED
-1.0.7                SharePointOnline.CSOM               PSGallery            This module allows the usage oft the SharePoint Online Client Side Object Model (CSOM) librar…
-2.1.0                SCOrchDev-SharePoint                PSGallery            Integration to SharePoint lists using their REST interface
-1.2.0                SharePoint.Password.Manager         PSGallery            Update SharePoint service account password and Workflow service account password
+Version          Name                                Repository  Description
+-------          ----                                ----------  -----------
+16.0.23109.12000 Microsoft.Online.SharePoint.PowerS… PSGallery   Microsoft SharePoint Online Services Module for Windows PowerShell
+3.29.2101.0      SharePointPnPPowerShellOnline       PSGallery   Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint Online
+5.3.0            SharePointDSC                       PSGallery   This DSC module is used to deploy and configure SharePoint Server 2013, 2016 and 2019, and co…
+0.12.0.0         xSharePoint                         PSGallery   This DSC module is used to deploy and configure SharePoint Server 2013, and convers a wide ra…
+3.29.2101.0      SharePointPnPPowerShell2016         PSGallery   Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2016
+3.29.2101.0      SharePointPnPPowerShell2013         PSGallery   Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2013
+3.29.2101.0      SharePointPnPPowerShell2019         PSGallery   Microsoft 365 Patterns and Practices PowerShell Cmdlets for SharePoint 2019
+1.0.0.98         RED-SharePoint                      PSGallery   SharePoint PowerShell Module, Codename: RED
+1.0.7            SharePointOnline.CSOM               PSGallery   This module allows the usage oft the SharePoint Online Client Side Object Model (CSOM) librar…
+2.1.0            SCOrchDev-SharePoint                PSGallery   Integration to SharePoint lists using their REST interface
+1.2.0            SharePoint.Password.Manager         PSGallery   Update SharePoint service account password and Workflow service account password
 ...
 </code></pre>
 <h2 id="installing-modules" tabindex="-1">Installing modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Install-Module SharePointPnPPowerShellOnline
+<pre><code class="language-powershell">PS /home/geraldo&gt; Install-Module SharePointPnPPowerShellOnline
 
 PS /home/geraldo&gt; Get-InstalledModule
 </code></pre>
 <h2 id="importing-modules" tabindex="-1">Importing modules</h2>
-<pre><code class="language-bash">PS /home/geraldo&gt; Import-Module -DisableNameChecking SharePointPnPPowerShellOnline
+<pre><code class="language-powershell">PS /home/geraldo&gt; Import-Module -DisableNameChecking SharePointPnPPowerShellOnline
 </code></pre>
-<h2 id="installing-stable-version" tabindex="-1">Installing Stable version</h2>
-<pre><code class="language-bash">dpkg -i /tmp/powershell_7.2.9-1.deb_amd64.deb
+<h2 id="powershell-ise" tabindex="-1">Powershell ISE</h2>
+<ul>
+<li><strong>ISE</strong> — Integrated Scripting environment</li>
+<li>Is a host application that assists us to create a script, and to run, test, or debug a command or script.</li>
+<li>It can extend the scripting capabilities and provides a Windows-oriented graphical user interface(GUI) where users can run various commands.</li>
+<li>Provides numerous features such as saves time, improves debugging and testing, etc.</li>
+</ul>
+<h2 id="basic-commands" tabindex="-1">Basic commands</h2>
+<table>
+<thead>
+<tr>
+<th>CMD</th>
+<th>Powershell</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dir</code></td>
+<td><code>Get-Children</code></td>
+<td>List files and folders</td>
+</tr>
+<tr>
+<td><code>pwd</code></td>
+<td><code>Get-Location</code></td>
+<td>Current folder</td>
+</tr>
+<tr>
+<td><code>echo</code></td>
+<td><code>Write-Output</code></td>
+<td>print text on screen</td>
+</tr>
+<tr>
+<td><code>cls</code></td>
+<td><code>Clean-Host</code></td>
+<td>Clear screen</td>
+</tr>
+<tr>
+<td><code>cd</code></td>
+<td><code>Set-Location</code></td>
+<td>Change directory</td>
+</tr>
+</tbody>
+</table>
+<h2 id="get-command" tabindex="-1">Get-Command</h2>
+<p>List all <em>command</em>, <em>cmdlet</em>, <em>aliases</em>, <em>function</em>, <em>workflow</em>, <em>filter</em>, and
+<em>application</em> installed on host.</p>
+<pre><code class="language-powershell">Get-Command -Name &quot;*pattern*&quot;
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://linuxhint.com/powershell-ise/">What is PowerShell ISE(Integrated Scripting Environment)?</a></li>
+</ul>
 
       </main>
     </div>

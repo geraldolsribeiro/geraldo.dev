@@ -55,7 +55,8 @@
           </svg><span>Back to TILs</span></a>
         <h1>git - como manter somente os n últimos commits</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
-        </div><p>Não estou certo de cut -c3-</p>
+        </div>
+        <p>Date: 2020-01-07 / Last modified: 2022-10-10 </p><p>Não estou certo de cut -c3-</p>
 <pre><code class="language-bash">git config --global alias.rebase-last-five '!b=&quot;$(git branch --no-color | cut -c3-)&quot;; \
 h=&quot;$(git rev-parse $b)&quot; ; \
 echo &quot;Current branch: $b $h&quot; ; \

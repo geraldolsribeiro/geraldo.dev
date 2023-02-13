@@ -96,7 +96,8 @@ box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
      <strong>Fig. 2</strong> — <span>Filled polygon</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">text &quot;Start here&quot; 
+<pre><code class="language-txt">margin = 5mm;
+text &quot;Start here&quot; 
 dot color green width 200%
 # heading zero == north
 line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
@@ -113,10 +114,51 @@ line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
 <pre><code class="language-txt">A: (  0, sqrt(3/4))
 B: (  0.5, 0)
 C: ( -0.5, 0)
+margin = 5mm;
 line from A to B then to C then to A # fill Brow # 💩 WITHOUT CLOSE IGNORED FILL
 circle rad 0.1 at A fill Aqua
 circle rad 0.1 at B fill blue
 circle rad 0.1 at C fill green
+# Extracted by md2pug
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>The <code>then</code> keyword continue positioning without drawing a line.</p>
+  </div>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>The <code>close</code> keyword changes the last line <code>end</code> position.</p>
+  </div>
+</div>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-4">
+    <img class="mx-auto my-2" src="/til/pikchr_arrow.svg" alt="Arrow">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 4</strong> — <span>Arrow</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">margin = 10mm;
+dot color blue
+line right 2cm then down .5cm then up 1cm right 1cm \
+   then up 1cm left 1cm then down .5cm then left 2cm \
+   close &quot;with 'close'&quot;
+dot color red at last line.end
+
+move to 2.5cm south of last line.start
+line right 2cm then down .5cm then up 1cm right 1cm \
+   then up 1cm left 1cm then down .5cm then left 2cm \
+   then down 1cm &quot;without 'close'&quot;
+dot color red at last line.end
 # Extracted by md2pug
 </code></pre>
 <h2 id="macro" tabindex="-1">Macro</h2>
@@ -134,11 +176,11 @@ analysis, likely resulting in a syntax error.</p>
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-4">
+  <a name="fig-5">
     <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 4</strong> — <span>Pikchr macro flag</span>
+     <strong>Fig. 5</strong> — <span>Pikchr macro flag</span>
   </figcaption>
 </figure>
 <pre><code class="language-txt">CP: dot invisible;
@@ -153,6 +195,36 @@ margin = 10mm;
 $flagAngle = 00; $color=red;   flag;
 $flagAngle = 30; $color=blue;  flag;
 $flagAngle = 60; $color=green; flag;
+# Extracted by md2pug
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>When parameters are present, they are substituted in the macro body in place of <code>$1</code>, <code>$2</code>, …, <code>$9</code> in the macro body.</p>
+  </div>
+</div>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-6">
+    <img class="mx-auto my-2" src="/til/pikchr_macro_with_parameter.svg" alt="Pikchr macro with parameters">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 6</strong> — <span>Pikchr macro with parameters</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">define mybox {
+move right 10mm;
+dot color blue;  
+box width $1 height $2 radius 2mm color $3;
+box $4 width ($1-3mm) height ($2-3mm) at last box radius 1mm;
+box width ($1-6mm) height ($2-6mm) at last box;
+}
+margin = 10mm
+mybox(3cm, 4cm, red, &quot;text1&quot;)
+mybox(2cm, 1cm, blue, &quot;text2&quot;)
+mybox(4cm,4cm, yellow, &quot;text3&quot;)
 # Extracted by md2pug
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

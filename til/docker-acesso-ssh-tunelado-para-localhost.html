@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>Acessar uma aplicação rodando em 'localhost' remoto via túnel SSH</title>
+    <title>SSH Tunnel — How to access an application running on remote localhost</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,8 +53,8 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Acessar uma aplicação rodando em 'localhost' remoto via túnel SSH</h1>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/docker.html">docker</a><a class="tag no-underline" href="/til/tag/ssh.html">ssh</a><a class="tag no-underline" href="/til/tag/tunnel.html">tunnel</a><a class="tag no-underline" href="/til/tag/xdg-open.html">xdg-open</a>
+        <h1>SSH Tunnel — How to access an application running on remote localhost</h1>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/ssh.html">ssh</a><a class="tag no-underline" href="/til/tag/tunnel.html">tunnel</a><a class="tag no-underline" href="/til/tag/docker.html">docker</a><a class="tag no-underline" href="/til/tag/xdg-open.html">xdg-open</a>
         </div><p>Para acessar uma interface de administração que só está disponível para localhost remotamente
 você pode usar uma conexão SSH através de um túnel.</p>
 <pre><code class="language-bash"># Iniciar um tunel para redirecionamento de porta
@@ -71,10 +71,10 @@ kill $(lsof -t -i @localhost:8080 -sTCP:listen)
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
-    <img class="mx-auto my-2" src="/til/ssh_tunnel_01.svg" alt="SSH Tunnel 01">
+    <img class="mx-auto my-2" src="/til/ssh_tunnel_01.svg" alt="SSH Tunne — localhost <-> localhost">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 1</strong> — <span>SSH Tunnel 01</span>
+     <strong>Fig. 1</strong> — <span>SSH Tunne — localhost <-> localhost</span>
   </figcaption>
 </figure>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>

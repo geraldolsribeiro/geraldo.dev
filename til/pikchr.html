@@ -56,16 +56,16 @@
         <h1>pikchr</h1>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven.html">text-driven</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#macro">Macro</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>Online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
 <h2 id="sample" tabindex="-1">Sample</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
-    <img class="mx-auto my-2" src="/til/pikchr_sample.svg" alt="Pikchr sample 01">
+    <img class="mx-auto my-2" src="/til/pikchr_sample.svg" alt="Pikchr sample from official documentation.">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 1</strong> — <span>Pikchr sample 01</span>
+     <strong>Fig. 1</strong> — <span>Pikchr sample from official documentation.</span>
   </figcaption>
 </figure>
 <p>The figure above was generaed by the following code:</p>
@@ -78,20 +78,67 @@ arrow &lt;-&gt; down 70% from last box.s
 box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
 # Extracted by md2pug
 </code></pre>
-<h2 id="macro" tabindex="-1">Macro</h2>
-<ul>
-<li><a href="https://pikchr.org/home/forumpost/83e98ec009">https://pikchr.org/home/forumpost/83e98ec009</a></li>
-<li>Once created, a macro cannot be redefined. If you attempt to redefine a macro
-by providing a second “define” statement with the same macro name, the macro
-name will be replaced by the previous macro body definition during lexical
-analysis, likely resulting in a syntax error.</li>
-</ul>
+<h2 id="filled-polygon" tabindex="-1">Filled Polygon</h2>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>The keyword <code>close</code> converts the line into a polygon.</p>
+  </div>
+</div>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-2">
+    <img class="mx-auto my-2" src="/til/pikchr_polygon.svg" alt="Filled polygon">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 2</strong> — <span>Filled polygon</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">text &quot;Start here&quot; 
+dot color green width 200%
+# heading zero == north
+line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
+# Extracted by md2pug
+</code></pre>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-3">
+    <img class="mx-auto my-2" src="/til/pikchr_triangle.svg" alt="Filled polygon fail">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 3</strong> — <span>Filled polygon fail</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">A: (  0, sqrt(3/4))
+B: (  0.5, 0)
+C: ( -0.5, 0)
+line from A to B then to C then to A # fill Brow # 💩 WITHOUT CLOSE IGNORED FILL
+circle rad 0.1 at A fill Aqua
+circle rad 0.1 at B fill blue
+circle rad 0.1 at C fill green
+# Extracted by md2pug
+</code></pre>
+<h2 id="macro" tabindex="-1">Macro</h2>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p><a href="https://pikchr.org/home/forumpost/83e98ec009">https://pikchr.org/home/forumpost/83e98ec009</a>:
+Once created, a macro cannot be redefined. If you attempt to redefine a macro
+by providing a second “define” statement with the same macro name, the macro
+name will be replaced by the previous macro body definition during lexical
+analysis, likely resulting in a syntax error.</p>
+  </div>
+</div>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-4">
     <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 2</strong> — <span>Pikchr macro flag</span>
+     <strong>Fig. 4</strong> — <span>Pikchr macro flag</span>
   </figcaption>
 </figure>
 <pre><code class="language-txt">CP: dot invisible;
@@ -99,27 +146,20 @@ analysis, likely resulting in a syntax error.</li>
 define flag { 
     line go 1.5 heading $flagAngle \
     then go 0.5 heading $flagAngle + 110 \
-    then go 0.5 heading $flagAngle + 250;
+    then go 0.5 heading $flagAngle + 250 color $color;
     move to CP;
 }
 margin = 10mm;
-$flagAngle = 00;  flag;
-$flagAngle = 30;  flag;
-$flagAngle = 60;  flag;
+$flagAngle = 00; $color=red;   flag;
+$flagAngle = 30; $color=blue;  flag;
+$flagAngle = 60; $color=green; flag;
 # Extracted by md2pug
 </code></pre>
-<figure class="bg-slate-800 text-center py-4">
-  <a name="fig-3">
-    <img class="mx-auto my-2" src="/til/pikchr_triangle.svg" alt="Pikchr triagle">
-  </a>
-  <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 3</strong> — <span>Pikchr triagle</span>
-  </figcaption>
-</figure>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://pikchr.org/home/doc/trunk/doc/userman.md">Pikchr User Manual</a></li>
 <li><a href="https://janert.me/guides/praise-of-pic/">In Praise of Pic (and pikchr)</a></li>
+<li><a href="https://geraldo.dev/til/html-colors.html">HTML colors</a></li>
 </ul>
 
       </main>

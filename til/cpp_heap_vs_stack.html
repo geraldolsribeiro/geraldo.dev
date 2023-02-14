@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ heap vs stack</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-02-08 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-02-14 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/stack.html">stack</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a><ul><li><a href="#memory-allocation">Memory Allocation</a></li></ul></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h1 id="memory-structure" tabindex="-1">Memory structure</h1>
 <figure>
   <img class="mx-auto" src="/til/cpp_heap_vs_stack_01.svg" alt="Memory structure.">
@@ -80,8 +80,10 @@
 <li>variables can be accessed globally</li>
 <li>no limit on memory size</li>
 <li>(relatively) slower access</li>
-<li>no guaranteed efficient use of space, memory may become fragmented over</li>
-<li>you must manage memory (you’re in charge of allocating and freeing</li>
+<li>no guaranteed efficient use of space, memory may become fragmented over
+time as blocks of memory are allocated, then freed</li>
+<li>you must manage memory (you’re in charge of allocating and freeing
+variables)</li>
 <li>variables can be resized using realloc()</li>
 </ul>
 <h1 id="dynamic-memory-allocation-in-c" tabindex="-1">Dynamic Memory Allocation in C</h1>
@@ -92,6 +94,13 @@
 <li><code>realloc</code>: can change the size of memory block</li>
 <li><code>free</code>: releases the memory allocated by other functions</li>
 </ul>
+<h2 id="memory-allocation" tabindex="-1">Memory Allocation</h2>
+<figure>
+  <img class="mx-auto" src="/til/cpp_heap_vs_stack_memory_allocation.svg" alt="Memory allocation.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Memory allocation.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-cpp">  int a1;  // stack
   int a2;  // stack
   int a3;  // stack
@@ -131,32 +140,42 @@
   delete[] p4;
   delete[] p5;
   delete[] p6;
+
+  int *c1 = static_cast&lt;int *&gt;(calloc(100, sizeof(int)));  // heap
+  // the pointer itself is allocated on the stack
+  // the dynamic memeory is allocated on the heap
+  cout &lt;&lt; &quot;Size of pointer int*: &quot; &lt;&lt; sizeof(int *) &lt;&lt; &quot;\n&quot;;
+  cout &lt;&lt; &quot;Size of c1: &quot; &lt;&lt; 100 * sizeof(int) &lt;&lt; &quot;\n&quot;;
+
+  free(c1);
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">0x7ffe31baa3dc stack a1
-0x7ffe31baa3d8 stack a2: -4 bytes from a1
-0x7ffe31baa3d4 stack a3: -4 bytes from a2
-0x7ffe31baa3d0 stack a4: -4 bytes from a3
-0x55e635f5e110 heap p1
-0x55e635f5e110 heap p1[0]
-0x55e635f5e114 heap p1[1]
-0x55e635f5e118 heap p1[2]
-0x55e635f5e11c heap p1[3]
-0x55e635f5e120 heap p1[4]
-0x55e635f5e130 heap p2: 32 bytes from p1
-0x55e635f5e130 heap p2[0]
-0x55e635f5e134 heap p2[1]
-0x55e635f5e138 heap p2[2]
-0x55e635f5e13c heap p2[3]
-0x55e635f5e150 heap p3: 32 bytes from p2
-0x55e635f5e170 heap p4: 32 bytes from p3
-0x55e635f5e190 heap p5: 32 bytes from p4
-0x55e635f5da50 heap p6: -1856 bytes from p5
+<pre><code class="language-txt">0x7fff6bb2f52c stack a1
+0x7fff6bb2f528 stack a2: -4 bytes from a1
+0x7fff6bb2f524 stack a3: -4 bytes from a2
+0x7fff6bb2f520 stack a4: -4 bytes from a3
+0x564e0845f9a0 heap p1
+0x564e0845f9a0 heap p1[0]
+0x564e0845f9a4 heap p1[1]
+0x564e0845f9a8 heap p1[2]
+0x564e0845f9ac heap p1[3]
+0x564e0845f9b0 heap p1[4]
+0x564e0845f9c0 heap p2: 32 bytes from p1
+0x564e0845f9c0 heap p2[0]
+0x564e0845f9c4 heap p2[1]
+0x564e0845f9c8 heap p2[2]
+0x564e0845f9cc heap p2[3]
+0x564e0845f9e0 heap p3: 32 bytes from p2
+0x564e0845fa00 heap p4: 32 bytes from p3
+0x564e0845fa20 heap p5: 32 bytes from p4
+0x564e0845f2e0 heap p6: -1856 bytes from p5
+Size of pointer int*: 8
+Size of c1: 400
 
 </code></pre>
 <h1 id="references" tabindex="-1">References</h1>
 <ul>
-<li><a href="link">title</a></li>
+<li><a href="https://stackoverflow.com/questions/1518711/how-does-free-know-how-much-to-free">How does free know how much to free?</a></li>
 <li><a href="link">title</a></li>
 <li><a href="link">title</a></li>
 </ul>

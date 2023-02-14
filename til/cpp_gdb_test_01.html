@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ debugging with GDB</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-08 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-14 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="breakpoint" tabindex="-1">Breakpoint</h2>
 <ul>
 <li><code>[b]reak function_name</code></li>
@@ -108,7 +108,7 @@ instruction.</p>
 }
 </code></pre>
 <p>We can get something like:</p>
-<pre><code>(gdb) disassemble my_func_02(int) 
+<pre><code>(gdb) disassemble my_func_02(int)
 Dump of assembler code for function _Z10my_func_02i:
    0x0000000000003d60 &lt;+0&gt;:	push   %rbp
    0x0000000000003d61 &lt;+1&gt;:	mov    %rsp,%rbp
@@ -116,7 +116,7 @@ Dump of assembler code for function _Z10my_func_02i:
    0x0000000000003d67 &lt;+7&gt;:	mov    -0x4(%rbp),%eax
    0x0000000000003d6a &lt;+10&gt;:	add    $0x2a,%eax         ; 0x2a = 42
    0x0000000000003d6d &lt;+13&gt;:	pop    %rbp
-   0x0000000000003d6e &lt;+14&gt;:	ret    
+   0x0000000000003d6e &lt;+14&gt;:	ret
 End of assembler dump.
 </code></pre>
 <h2 id="breakpoint-condition" tabindex="-1">Breakpoint condition</h2>
@@ -131,11 +131,11 @@ breakpoint location.</p>
 <p>Create the breakpoint #1 at line 112</p>
 <pre><code>(gdb) list
 104	}
-105	
+105
 106	int my_func_02(int x) {
 107	  return x + 42;
 108	}
-109	
+109
 110	void loop() {
 111	  for( int i=0; i&lt;10; i++) {
 112	    fmt::print(&quot;i = {}\n&quot;, i);
@@ -148,7 +148,7 @@ Breakpoint 1 at 0x3d92: file gdb_test_01.cpp, line 112.
 </code></pre>
 <p>Run the program, and the breakpoint only will be actioned for <code>i == 7</code></p>
 <pre><code>(gdb) run
-Starting program: /data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01 
+Starting program:
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
 [New Thread 0x7fffd889c700 (LWP 490606)]
@@ -208,28 +208,62 @@ i = 9
 </ul>
 <h2 id="example-code" tabindex="-1">Example code</h2>
 <pre><code class="language-cpp">void my_func_01(int a, float pi) {
-  auto s = fmt::format( &quot;{} + {} = {}&quot;, a, pi, a+pi);
+  auto s = fmt::format(&quot;{} + {} = {}&quot;, a, pi, a + pi);
   fmt::print(&quot;s = {}\n&quot;, s);
 }
 
-int my_func_02(int x) {
-  return x + 42;
-}
+int my_func_02(int x) { return x + 42; }
 
 void loop() {
-  for( int i=0; i&lt;10; i++) {
+  for (int i = 0; i &lt; 10; i++) {
     fmt::print(&quot;i = {}\n&quot;, i);
   }
 }
 
-int main( [[maybe_unused]] int argc, [[maybe_unused]] char **argv )
-{
+int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
   int a = 10;
   float pi = 3.141492;
   my_func_01(a, pi);
   loop();
   return 0;
 }
+</code></pre>
+<h2 id="scripting" tabindex="-1">Scripting</h2>
+<ul>
+<li>By default during the startup, GDB executes the file <code>.gdbinit</code>.</li>
+<li>Use <code>--command=&lt;filename&gt;</code> to specify a script</li>
+</ul>
+<pre><code>set pagination off
+set logging file gdb.output
+set logging on
+
+set $var = 0 # yes, you can declare variables ...
+
+break function1 if param1 == 32
+    command 1
+    print param2
+    print param3-&gt;member1
+    continue
+end
+
+break file.c:142 if x &gt; 4
+    command 2
+    print y
+    call checker_function
+    continue
+end
+
+break function2 if $var++ &lt; 3
+    command 3
+    print $var
+    backtrace full
+    continue
+end
+
+run
+
+set logging off
+quit
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">s = 10 + 3.141492 = 13.141492
@@ -247,8 +281,11 @@ i = 9
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://www.maketecheasier.com/debug-program-using-gdb-linux/">How to Debug a C or C++ Program on Linux Using gdb</a></li>
-<li><a href="https://www.xmodulo.com/debug-program-nemiver-debugger.html">How to debug a C/C++ program with Nemiver debugger</a></li>
+<li><a href="https://www.maketecheasier.com/debug-program-using-gdb-linux/">How to Debug a C or C++ Program on Linux Using
+gdb</a></li>
+<li><a href="https://www.xmodulo.com/debug-program-nemiver-debugger.html">How to debug a C/C++ program with Nemiver
+debugger</a></li>
+<li><a href="https://sdimitro.github.io/post/scripting-gdb/">Scripting GDB</a></li>
 </ul>
 
       </main>

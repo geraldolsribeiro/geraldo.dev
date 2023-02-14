@@ -1633,6 +1633,10 @@ video {
   text-transform: lowercase;
 }
 
+.tracking-wide {
+  letter-spacing: 0.025em;
+}
+
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1896,6 +1900,7 @@ svg {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 600;
+  letter-spacing: 0.1em;
   --tw-text-opacity: 1;
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }

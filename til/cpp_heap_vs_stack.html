@@ -57,7 +57,7 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-02-14 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/stack.html">stack</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a><ul><li><a href="#memory-allocation">Memory Allocation</a></li></ul></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a><ul><li><a href="#memory-allocation">Memory Allocation</a></li><li><a href="#example-of-use">Example of use</a></li></ul></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h1 id="memory-structure" tabindex="-1">Memory structure</h1>
 <figure>
   <img class="mx-auto" src="/til/cpp_heap_vs_stack_01.svg" alt="Memory structure.">
@@ -101,6 +101,8 @@ variables)</li>
      <strong>Fig. 2</strong> - <span>Memory allocation.</span>
   </figcaption>
 </figure>
+<p>@endpikchr</p>
+<h2 id="example-of-use" tabindex="-1">Example of use</h2>
 <pre><code class="language-cpp">  int a1;  // stack
   int a2;  // stack
   int a3;  // stack
@@ -141,43 +143,93 @@ variables)</li>
   delete[] p5;
   delete[] p6;
 
-  int *c1 = static_cast&lt;int *&gt;(calloc(100, sizeof(int)));  // heap
-  // the pointer itself is allocated on the stack
-  // the dynamic memeory is allocated on the heap
-  cout &lt;&lt; &quot;Size of pointer int*: &quot; &lt;&lt; sizeof(int *) &lt;&lt; &quot;\n&quot;;
-  cout &lt;&lt; &quot;Size of c1: &quot; &lt;&lt; 100 * sizeof(int) &lt;&lt; &quot;\n&quot;;
+  // The pointer itself is allocated on the stack
+  // The dynamic memeory is allocated on the heap
+  // Typical metadata = size &amp; allocation status
+  // If the size is aligned to &gt; 2 bytes,
+  // can use bottom bit of size for allocated bit;
+  auto printHeader = [](auto size) {
+    int *ptr = static_cast&lt;int *&gt;(calloc(size, sizeof(int)));  // heap
+    size_t * headerBytePtr = (size_t *)ptr;
+    headerBytePtr--;
+    fmt::print(&quot;{:16b} {:6d} {:6d} {:6d}\n&quot;, *headerBytePtr, *headerBytePtr, size * sizeof(int), size);
+    free(ptr);
+  };
 
-  free(c1);
+  fmt::print(&quot;sizeof(size_t) = {} bytes\n&quot;, sizeof(size_t));
+  for (int i = 1; i &lt;= 32; ++i) {
+    printHeader(i);
+  }
+  printHeader(100);
+  printHeader(200);
+  printHeader(1000);
+  printHeader(10000);
+
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">0x7ffc3ddf5c2c stack a1
-0x7ffc3ddf5c28 stack a2: -4 bytes from a1
-0x7ffc3ddf5c24 stack a3: -4 bytes from a2
-0x7ffc3ddf5c20 stack a4: -4 bytes from a3
-0x55839a3539a0 heap p1
-0x55839a3539a0 heap p1[0]
-0x55839a3539a4 heap p1[1]
-0x55839a3539a8 heap p1[2]
-0x55839a3539ac heap p1[3]
-0x55839a3539b0 heap p1[4]
-0x55839a3539c0 heap p2: 32 bytes from p1
-0x55839a3539c0 heap p2[0]
-0x55839a3539c4 heap p2[1]
-0x55839a3539c8 heap p2[2]
-0x55839a3539cc heap p2[3]
-0x55839a3539e0 heap p3: 32 bytes from p2
-0x55839a353a00 heap p4: 32 bytes from p3
-0x55839a353a20 heap p5: 32 bytes from p4
-0x55839a3532e0 heap p6: -1856 bytes from p5
-Size of pointer int*: 8
-Size of c1: 400
+<pre><code class="language-txt">0x7ffea4d6fefc stack a1
+0x7ffea4d6fef8 stack a2: -4 bytes from a1
+0x7ffea4d6fef4 stack a3: -4 bytes from a2
+0x7ffea4d6fef0 stack a4: -4 bytes from a3
+0x561539a559a0 heap p1
+0x561539a559a0 heap p1[0]
+0x561539a559a4 heap p1[1]
+0x561539a559a8 heap p1[2]
+0x561539a559ac heap p1[3]
+0x561539a559b0 heap p1[4]
+0x561539a559c0 heap p2: 32 bytes from p1
+0x561539a559c0 heap p2[0]
+0x561539a559c4 heap p2[1]
+0x561539a559c8 heap p2[2]
+0x561539a559cc heap p2[3]
+0x561539a559e0 heap p3: 32 bytes from p2
+0x561539a55a00 heap p4: 32 bytes from p3
+0x561539a55a20 heap p5: 32 bytes from p4
+0x561539a552e0 heap p6: -1856 bytes from p5
+sizeof(size_t) = 8 bytes
+          100001     33      4      1
+          100001     33      8      2
+          100001     33     12      3
+          100001     33     16      4
+          100001     33     20      5
+          100001     33     24      6
+          110001     49     28      7
+          110001     49     32      8
+          110001     49     36      9
+          110001     49     40     10
+         1010001     81     44     11
+         1000001     65     48     12
+         1000001     65     52     13
+         1000001     65     56     14
+         1010001     81     60     15
+         1010001     81     64     16
+         1010001     81     68     17
+         1010001     81     72     18
+         1100001     97     76     19
+         1100001     97     80     20
+         1100001     97     84     21
+         1100001     97     88     22
+         1110001    113     92     23
+         1110001    113     96     24
+         1110001    113    100     25
+         1110001    113    104     26
+        10000001    129    108     27
+        10000001    129    112     28
+        10000001    129    116     29
+        10000001    129    120     30
+        10010001    145    124     31
+        10010001    145    128     32
+       110100001    417    400    100
+      1100110001    817    800    200
+    111110110001   4017   4000   1000
+1001110001010001  40017  40000  10000
 
 </code></pre>
 <h1 id="references" tabindex="-1">References</h1>
 <ul>
-<li>[How does free know how much to</li>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
+<li><a href="https://stackoverflow.com/questions/1518711/how-does-free-know-how-much-to-free">How does free know how much to free?</a></li>
+<li><a href="https://moss.cs.iit.edu/cs351/slides/slides-malloc.pdf">Implementing malloc CS 351: Systems Programming</a></li>
+<li><a href="https://moss.cs.iit.edu/cs351/">CS 351: Systems Programming</a></li>
 </ul>
 
       </main>

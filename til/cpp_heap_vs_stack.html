@@ -96,9 +96,15 @@ variables)</li>
 </ul>
 <h2 id="memory-allocation" tabindex="-1">Memory Allocation</h2>
 <figure>
-  <img class="mx-auto" src="/til/cpp_heap_vs_stack_memory_allocation.svg" alt="Memory allocation.">
+  <img class="mx-auto" src="/til/cpp_heap_vs_stack_memory_allocation_01.svg" alt="Memory allocation.">
   <figcaption class="text-center">
      <strong>Fig. 2</strong> - <span>Memory allocation.</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/cpp_heap_vs_stack_memory_allocation_02.svg" alt="Memory allocation.">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Memory allocation.</span>
   </figcaption>
 </figure>
 <p>@endpikchr</p>
@@ -167,25 +173,25 @@ variables)</li>
 
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">0x7ffea4d6fefc stack a1
-0x7ffea4d6fef8 stack a2: -4 bytes from a1
-0x7ffea4d6fef4 stack a3: -4 bytes from a2
-0x7ffea4d6fef0 stack a4: -4 bytes from a3
-0x561539a559a0 heap p1
-0x561539a559a0 heap p1[0]
-0x561539a559a4 heap p1[1]
-0x561539a559a8 heap p1[2]
-0x561539a559ac heap p1[3]
-0x561539a559b0 heap p1[4]
-0x561539a559c0 heap p2: 32 bytes from p1
-0x561539a559c0 heap p2[0]
-0x561539a559c4 heap p2[1]
-0x561539a559c8 heap p2[2]
-0x561539a559cc heap p2[3]
-0x561539a559e0 heap p3: 32 bytes from p2
-0x561539a55a00 heap p4: 32 bytes from p3
-0x561539a55a20 heap p5: 32 bytes from p4
-0x561539a552e0 heap p6: -1856 bytes from p5
+<pre><code class="language-txt">0x7ffe5140fe6c stack a1
+0x7ffe5140fe68 stack a2: -4 bytes from a1
+0x7ffe5140fe64 stack a3: -4 bytes from a2
+0x7ffe5140fe60 stack a4: -4 bytes from a3
+0x55f3868109a0 heap p1
+0x55f3868109a0 heap p1[0]
+0x55f3868109a4 heap p1[1]
+0x55f3868109a8 heap p1[2]
+0x55f3868109ac heap p1[3]
+0x55f3868109b0 heap p1[4]
+0x55f3868109c0 heap p2: 32 bytes from p1
+0x55f3868109c0 heap p2[0]
+0x55f3868109c4 heap p2[1]
+0x55f3868109c8 heap p2[2]
+0x55f3868109cc heap p2[3]
+0x55f3868109e0 heap p3: 32 bytes from p2
+0x55f386810a00 heap p4: 32 bytes from p3
+0x55f386810a20 heap p5: 32 bytes from p4
+0x55f3868102e0 heap p6: -1856 bytes from p5
 sizeof(size_t) = 8 bytes
           100001     33      4      1
           100001     33      8      2

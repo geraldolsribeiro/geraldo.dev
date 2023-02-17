@@ -1829,8 +1829,45 @@ pre {
 }
 
 pre code {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Terminal */
+
+/* slate-700: #334155 */
+
+/* slate-300: #cbd5e1 */
+
+pre:has(> code.language-shell) {
+  color: #cbd5e1;
+  border: 1px solid #334155;
+  border-top: 32px solid #334155;
+  padding: 0px;
+}
+
+pre > code.language-shell {
+}
+
+/* pre:has(> code.language-shell):before { */
+
+/*   content: "Terminal"; */
+
+/*   position: relative; */
+
+/*   text-align: center; */
+
+/*   top: 0; */
+
+/*   left: 50%; */
+
+/*   transform: translate(-50%, -50%); */
+
+/* } */
+
+pre > code.language-shell {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 code {

@@ -54,26 +54,26 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Gerenciamento de memória swap</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-12-02</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-12-02</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/swap.html">swap</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><h2 id="configura%C3%A7%C3%A3o-atual" tabindex="-1">Configuração atual</h2>
-<pre><code class="language-bash">swapon --show
+<pre><code class="language-shell">swapon --show
 </code></pre>
 <p>A saída do comando acima, se tiver swap configurado, será parecido com:</p>
-<pre><code class="language-bash">NAME      TYPE      SIZE USED PRIO
+<pre><code class="language-shell">NAME      TYPE      SIZE USED PRIO
 /dev/sda5 partition 2,9G   1G   -2
 </code></pre>
 <p>Neste caso uma partição foi utilizada para swap.</p>
 <p>Outro modo de verificar o swap é:</p>
-<pre><code class="language-bash">free -h
+<pre><code class="language-shell">free -h
 </code></pre>
 <p>Na ausência o valor é informado como zero.</p>
-<pre><code class="language-bash">Mem:          996Mi       262Mi        79Mi        40Mi       654Mi       514Mi
+<pre><code class="language-shell">Mem:          996Mi       262Mi        79Mi        40Mi       654Mi       514Mi
 Swap:            0B          0B          0B
 </code></pre>
 <h2 id="verificar-se-existe-espa%C3%A7o-dispon%C3%ADvel-para-cria%C3%A7%C3%A3o" tabindex="-1">Verificar se existe espaço disponível para criação</h2>
 <p>Antes de criar o swap é necessário garantir que existe espaço em disco.</p>
-<pre><code class="language-bash">$ df -ah
+<pre><code class="language-shell">$ df -ah
 </code></pre>
 <p>Saída</p>
 <pre><code>Filesystem      Size  Used Avail Use% Mounted on
@@ -90,10 +90,10 @@ tmpfs           499M     0  499M   0% /sys/fs/cgroup
 </code></pre>
 <h2 id="cria%C3%A7%C3%A3o-do-arquivo-de-swap" tabindex="-1">Criação do arquivo de swap</h2>
 <p>Como a memória do sistema é de 1GB vamos criar um arquivo de swap com 2GB no raiz.</p>
-<pre><code class="language-bash">fallocate -l 2G /swapfile
+<pre><code class="language-shell">fallocate -l 2G /swapfile
 </code></pre>
 <p>O acesso deve ser somente do root:</p>
-<pre><code class="language-bash">chown root.root /swapfile
+<pre><code class="language-shell">chown root.root /swapfile
 chmod 600 /swapfile
 ls -lh /swapfile
 </code></pre>
@@ -101,20 +101,20 @@ ls -lh /swapfile
 <pre><code>-rw------- 1 root root 2.0G Aug 10 09:45 /swapfile
 </code></pre>
 <p>Com as permissões corretas podemos continuar marcando o espaço como swap:</p>
-<pre><code class="language-bash">mkswap /swapfile
+<pre><code class="language-shell">mkswap /swapfile
 </code></pre>
 <pre><code>Setting up swapspace version 1, size = 2 GiB (2147479552 bytes)
 no label, UUID=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 </code></pre>
 <h2 id="ativando-o-swap" tabindex="-1">Ativando o swap</h2>
 <p>Depois de marcado podemos disponibilizar o swap para o sistema.</p>
-<pre><code class="language-bash">swapon /swapfile
+<pre><code class="language-shell">swapon /swapfile
 </code></pre>
 <pre><code>NAME      TYPE SIZE USED PRIO
 /swapfile file   2G   0B   -1
 </code></pre>
 <p>Vamos verificar como os comando que já vimos anteriormente:</p>
-<pre><code class="language-bash">$ swapon --show
+<pre><code class="language-shell">$ swapon --show
 NAME      TYPE SIZE USED PRIO
 /swapfile file   2G   0B   -1
 
@@ -125,10 +125,10 @@ Swap:         2.0Gi          0B       2.0Gi
 </code></pre>
 <h2 id="tornando-o-swap-permanente" tabindex="-1">Tornando o swap permanente</h2>
 <p>Primeiramente faremos um backup do arquivo fstab</p>
-<pre><code class="language-bash">cp /etc/fstab /etc/fstab.bak
+<pre><code class="language-shell">cp /etc/fstab /etc/fstab.bak
 </code></pre>
 <p>Agora vamos acrescentar uma linha no final do fstab</p>
-<pre><code class="language-bash">echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
+<pre><code class="language-shell">echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab
 </code></pre>
 <h2 id="ajustes-finos" tabindex="-1">Ajustes finos</h2>
 <h3 id="swappiness" tabindex="-1">Swappiness</h3>
@@ -140,29 +140,29 @@ Swap:         2.0Gi          0B       2.0Gi
 <li>server: 10</li>
 </ul>
 <p>Para verificar a configuração atual use:</p>
-<pre><code class="language-bash">cat /proc/sys/vm/swappiness
+<pre><code class="language-shell">cat /proc/sys/vm/swappiness
 </code></pre>
 <p>Para definir o valor 10 use:</p>
-<pre><code class="language-bash">sysctl vm.swappiness=10
+<pre><code class="language-shell">sysctl vm.swappiness=10
 </code></pre>
 <p>Para deixar permanente a configuração:</p>
-<pre><code class="language-bash">cp /etc/sysctl.conf /etc/sysctl.conf.bak
+<pre><code class="language-shell">cp /etc/sysctl.conf /etc/sysctl.conf.bak
 echo 'vm.swappiness=10' | tee -a /etc/sysctl.conf
 </code></pre>
 <h3 id="cache-pressure" tabindex="-1">Cache pressure</h3>
 <p>Usado para realizar cache de informações de <code>inode</code> e <code>dentry</code> possibilitando reduzir o custo de acessar esta informações frequentemente.</p>
 <p>Para verificar o valor atual use:</p>
-<pre><code class="language-bash">cat /proc/sys/vm/vfs_cache_pressure
+<pre><code class="language-shell">cat /proc/sys/vm/vfs_cache_pressure
 </code></pre>
 <p>Saída</p>
 <pre><code>100
 </code></pre>
 <p>Da maneira como está agora o sistema removerá as informações sobre <code>inode</code> muito rapidamente.
 Vamos adotar uma configuração mais conservativa utilizando o valor 50.</p>
-<pre><code class="language-bash">sysctl vm.vfs_cache_pressure=50
+<pre><code class="language-shell">sysctl vm.vfs_cache_pressure=50
 </code></pre>
 <p>Para deixar permanente a configuração</p>
-<pre><code class="language-bash">echo 'vm.vfs_cache_pressure=50' | tee -a /etc/sysctl.conf
+<pre><code class="language-shell">echo 'vm.vfs_cache_pressure=50' | tee -a /etc/sysctl.conf
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

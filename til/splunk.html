@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>splunk</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-08</b>Last modified: <b class="ml-2">2023-02-14 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-08</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/splunk.html">splunk</a><a class="tag no-underline" href="/til/tag/siem.html">siem</a><a class="tag no-underline" href="/til/tag/soar.html">soar</a><a class="tag no-underline" href="/til/tag/security.html">security</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#manual-security-incident-management">Manual security incident Management</a></li><li><a href="#siem-%E2%80%94-security-information-and-event-management">SIEM — Security Information and Event Management</a></li><li><a href="#soar-%E2%80%94-security-orchestration%2C-automation%2C-and-response">SOAR — Security Orchestration, Automation, and Response</a></li><li><a href="#splunk-use-cases">Splunk Use Cases</a></li><li><a href="#splunk-licenses">Splunk Licenses</a></li><li><a href="#splunk-enterprise">Splunk Enterprise</a></li><li><a href="#splunk-cloud-platform">Splunk Cloud Platform</a></li><li><a href="#splunk-components">Splunk Components</a></li><li><a href="#splunk-forwarders">Splunk Forwarders</a></li><li><a href="#search-head">Search head</a></li><li><a href="#splunk-enterprise-installation">Splunk Enterprise Installation</a></li><li><a href="#splunk-forwarders-installation">Splunk Forwarders Installation</a></li><li><a href="#splunk-data-sources">Splunk Data Sources</a></li><li><a href="#forwarders-and-indexing">Forwarders and Indexing</a></li><li><a href="#splunk-enterprise-vs.-splunk-cloud">Splunk Enterprise vs. Splunk Cloud</a></li><li><a href="#ssl">SSL</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -174,38 +174,38 @@
 </figure>
 <h2 id="splunk-enterprise-installation" tabindex="-1">Splunk Enterprise Installation</h2>
 <p>Download</p>
-<pre><code class="language-bash">wget -O splunk-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb \
+<pre><code class="language-shell">wget -O splunk-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb \
 &quot;https://download.splunk.com/products/splunk/releases/9.0.3/linux/splunk-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb&quot;
 </code></pre>
 <p>Install</p>
-<pre><code class="language-bash">dpkg -i splunk-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb
+<pre><code class="language-shell">dpkg -i splunk-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb
 dpkg --status splunk
 </code></pre>
 <p>Start</p>
-<pre><code class="language-bash">/opt/splunk/bin/splunk start --accept-license
+<pre><code class="language-shell">/opt/splunk/bin/splunk start --accept-license
 </code></pre>
 <p>Accept the EULA, and Configure Splunk to start at boot time</p>
-<pre><code class="language-bash">/opt/splunk/bin/splunk enable boot-start  
+<pre><code class="language-shell">/opt/splunk/bin/splunk enable boot-start  
 Init script installed at /etc/init.d/splunk.  
 Init script is configured to run at boot.
 </code></pre>
 <h2 id="splunk-forwarders-installation" tabindex="-1">Splunk Forwarders Installation</h2>
 <p>Download</p>
-<pre><code class="language-bash">wget -O splunkforwarder-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb \
+<pre><code class="language-shell">wget -O splunkforwarder-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb \
 &quot;https://download.splunk.com/products/universalforwarder/releases/9.0.3/linux/splunkforwarder-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb&quot;
 </code></pre>
 <p>Install</p>
-<pre><code class="language-bash">dpkg -i splunkforwarder-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb
+<pre><code class="language-shell">dpkg -i splunkforwarder-9.0.3-dd0128b1f8cd-linux-2.6-amd64.deb
 </code></pre>
 <p>Start</p>
-<pre><code class="language-bash">/opt/splunkforwarder/bin/splunk start --accept-license
+<pre><code class="language-shell">/opt/splunkforwarder/bin/splunk start --accept-license
 </code></pre>
 <p>Add</p>
-<pre><code class="language-bash">/opt/splunkforwarder/bin/splunk add forward-server 134.209.212.195:9997
+<pre><code class="language-shell">/opt/splunkforwarder/bin/splunk add forward-server 134.209.212.195:9997
 /opt/splunkforwarder/bin/splunk add monitor /var/log/
 </code></pre>
 <p>Configure</p>
-<pre><code class="language-bash">vi /opt/splunkforwarder/etc/apps/search/local/inputs.conf
+<pre><code class="language-shell">vi /opt/splunkforwarder/etc/apps/search/local/inputs.conf
 
 [monitor:///var/log]
 disabled = false
@@ -213,7 +213,7 @@ index = linux_universal_forwarder
 host = linux_golf
 </code></pre>
 <p>Restart</p>
-<pre><code class="language-bash">/opt/splunkforwarder/bin/splunk restart
+<pre><code class="language-shell">/opt/splunkforwarder/bin/splunk restart
 </code></pre>
 <h2 id="splunk-data-sources" tabindex="-1">Splunk Data Sources</h2>
 <ul>

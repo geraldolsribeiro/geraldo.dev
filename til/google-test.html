@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Google Test</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-20</b>Last modified: <b class="ml-2">2022-12-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-20</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/TDD.html">TDD</a><a class="tag no-underline" href="/til/tag/google-test.html">google-test</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#makefile">Makefile</a></li><li><a href="#doubles">Doubles</a></li><li><a href="#dummies">Dummies</a></li><li><a href="#fakes">Fakes</a></li><li><a href="#stubs">Stubs</a></li><li><a href="#spies">Spies</a></li><li><a href="#mocks">Mocks</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -111,7 +111,7 @@ basic canned responses.</p>
 <p>Spies provide implementations that record the values that are passed into them.
 The tests then can use those recorded values for validating the code on our
 test.</p>
-<pre><code class="language-bash">class MySpy : public MyInterface {
+<pre><code class="language-shell">class MySpy : public MyInterface {
   public:
     int savedParam;
     void SomeFunction( int param ) { savedParam = param; }
@@ -123,7 +123,7 @@ pre-programmed expectations about the ordering of calls, the number of times
 functions will be called, and the values that will be passed in.</p>
 <p>Mock objects will generate their own exceptions when these pre-programmed
 expectations are not met.</p>
-<pre><code class="language-bash">class MyMock : public MyInterface {
+<pre><code class="language-shell">class MyMock : public MyInterface {
   public:
     void SomeFunction( int param ) {
       if( 1 != param ) {

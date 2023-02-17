@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>The network ip command</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-09-19</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-09-19</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/network.html">network</a><a class="tag no-underline" href="/til/tag/ip.html">ip</a><a class="tag no-underline" href="/til/tag/route.html">route</a>
         </div><h2 id="route" tabindex="-1">Route</h2>
-<pre><code class="language-bash">$ ip route
+<pre><code class="language-shell">$ ip route
 default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600 
 
 10.181.29.0/24   dev lxdbr0  proto kernel scope link src 10.181.29.1   linkdown 
@@ -68,7 +68,7 @@ DESTINATION     |INTERFACE  |PROTOCOL    |          |SOURCE           |
 </code></pre>
 <p>After launching 5 lxc containers we can realize that each one use an specific
 virtual interface.</p>
-<pre><code class="language-bash">$ ip route
+<pre><code class="language-shell">$ ip route
 default dev vethb1efb2e9 scope link 
 default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600 
 10.181.29.0/24   dev lxdbr0 proto kernel scope link src 10.181.29.1 
@@ -83,7 +83,7 @@ default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600
 </code></pre>
 <p>After reconfiguring lxc bridge <code>lxdbr0</code> to use the address <code>10.11.12.254</code> we
 get and inconsistent routing table.</p>
-<pre><code class="language-bash">$ ip route 
+<pre><code class="language-shell">$ ip route 
 default dev veth36479aca scope link 
 default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600 
 10.11.12.0/24    dev lxdbr0 proto kernel scope link src 10.11.12.254 
@@ -99,11 +99,11 @@ default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600
 <p>Another problem is the default gateway was replaced by a virtual interface and
 my host can’t resolve any internet address. To solve this issue I set the
 correct gateway again.</p>
-<pre><code class="language-bash">ip route del default
+<pre><code class="language-shell">ip route del default
 route add default gw 192.168.15.1 dev wlp3s0
 </code></pre>
 <p>Then setting the containers to use the bridge</p>
-<pre><code class="language-bash">$ ip route
+<pre><code class="language-shell">$ ip route
 default via 192.168.15.1 dev wlp3s0 
 default via 192.168.15.1 dev wlp3s0 proto dhcp metric 600 
 10.11.12.0/24 dev lxdbr0 proto kernel scope link src 10.11.12.254 

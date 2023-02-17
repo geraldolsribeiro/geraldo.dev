@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Formatando o código automaticamente antes do commit</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-21</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-21</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a><a class="tag no-underline" href="/til/tag/gitattributes.html">gitattributes</a><a class="tag no-underline" href="/til/tag/format.html">format</a>
         </div><p>Escrever um arquivo <code>.gitattributes</code> contendo:</p>
 <pre><code class="language-text">*.java filter=clang-format-java
 </code></pre>
 <p>Acrescentar os operações <code>clean</code> e <code>smudge</code></p>
-<pre><code class="language-bash">git config --global filter.clang-format-java.clean 'clang-format -assume-filename=test.java'
+<pre><code class="language-shell">git config --global filter.clang-format-java.clean 'clang-format -assume-filename=test.java'
 git config --global filter.clang-format-java.smudge cat
 </code></pre>
 <ul>

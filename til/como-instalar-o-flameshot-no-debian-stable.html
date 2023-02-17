@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Como instalar o flameshot no Debian stretch</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-04-26</b>Last modified: <b class="ml-2">2022-12-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-04-26</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/backports.html">backports</a><a class="tag no-underline" href="/til/tag/flameshot.html">flameshot</a><a class="tag no-underline" href="/til/tag/screenshot.html">screenshot</a><a class="tag no-underline" href="/til/tag/annotation.html">annotation</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><p>O <code>flameshot</code> é um excelente utilitário para tirar screenshots e já realizar as anotações no mesmo momento.</p>
 <p>{{&lt; img src=“<a href="https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif">https://github.com/lupoDharkael/flameshot/raw/master/img/preview/animatedUsage.gif</a>” alt=“Demonstração de uso do flameshot” &gt;}}</p>
@@ -71,14 +71,14 @@
 a versão nova do Debian ser lançada é preciso utilizar a versão do
 <code>stretch-backports</code>.</p>
 <p>Primeiramente vamos acrescentar o repositório backports:</p>
-<pre><code class="language-bash">echo &quot;deb http://deb.debian.org/debian stretch-backports main&quot; \
+<pre><code class="language-shell">echo &quot;deb http://deb.debian.org/debian stretch-backports main&quot; \
      &gt;&gt; /etc/apt/sources.list.d/backports.list
 </code></pre>
 <p>Atualizar a lista de pacotes disponíveis:</p>
-<pre><code class="language-bash">apt update
+<pre><code class="language-shell">apt update
 </code></pre>
 <p>Instalar usando a opção <code>-t stretch-backports</code> para indicar que deve ser utilizado o repositório backports:</p>
-<pre><code class="language-bash">apt install -t stretch-backports flameshot
+<pre><code class="language-shell">apt install -t stretch-backports flameshot
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

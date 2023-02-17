@@ -54,14 +54,14 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Como realizar o checkout somente da última versão</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-13</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-13</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a><a class="tag no-underline" href="/til/tag/checkout.html">checkout</a><a class="tag no-underline" href="/til/tag/depth.html">depth</a>
         </div><p>Muitas vezes não precisamos baixar todo o histórico de commits de um projeto.
 Principalmente quando estamos usando bibliotecas de terceiros.</p>
 <p>Para indicar o número máximo de commits a ser baixado use a opção <code>--depth</code>,
 adicionalmente você pode indicar de qual o branch deve ser baixado.</p>
 <p>Exemplo de uso retirado do site do mongodb:</p>
-<pre><code class="language-bash">git clone https://github.com/mongodb/mongo-cxx-driver.git \
+<pre><code class="language-shell">git clone https://github.com/mongodb/mongo-cxx-driver.git \
     --branch releases/stable \
     --depth 1
 </code></pre>

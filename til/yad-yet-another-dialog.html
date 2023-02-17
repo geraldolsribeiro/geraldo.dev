@@ -54,9 +54,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>YAD - Yet Another Dialog</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-23</b>Last modified: <b class="ml-2">2023-01-24 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-23</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/yad.html">yad</a><a class="tag no-underline" href="/til/tag/zenity.html">zenity</a><a class="tag no-underline" href="/til/tag/tui.html">tui</a><a class="tag no-underline" href="/til/tag/dialog.html">dialog</a>
-        </div><pre><code class="language-bash">action=$(yad \
+        </div><pre><code class="language-shell">action=$(yad \
     --width 300 --entry --title &quot;System Logout&quot; \
     --image=gnome-shutdown                      \
     --button=&quot;_Switch User:2&quot;                   \
@@ -98,7 +98,7 @@ eval exec $cmd
      <strong>Fig. 1</strong> - <span>img</span>
   </figcaption>
 </figure>
-<pre><code class="language-bash">yad --form                                              \
+<pre><code class="language-shell">yad --form                                              \
     --image logo-dicas-l.webp                            \
     --image-on-top                                      \
     --title &quot;Dicas-L/Livra-TE ensino profissional&quot;      \
@@ -128,7 +128,7 @@ eval exec $cmd
 </li>
 </ul>
 <p>Lançador de aplicações</p>
-<pre><code class="language-bash">yad --icons                            \
+<pre><code class="language-shell">yad --icons                            \
     --read-dir=/usr/share/applications \
     --width 670 --height 400           \
     --no-buttons
@@ -140,7 +140,7 @@ eval exec $cmd
      <strong>Fig. 3</strong> - <span>img</span>
   </figcaption>
 </figure>
-<pre><code class="language-bash">yad
+<pre><code class="language-shell">yad
 exval=$?
 case $exval in
    1) echo &quot;You pressed Cancel&quot;;;
@@ -148,7 +148,7 @@ case $exval in
    252) echo &quot;You pressed ESCAPE key or closed the window.&quot;;;
 esac
 </code></pre>
-<pre><code class="language-bash"># Collect the YAD options
+<pre><code class="language-shell"># Collect the YAD options
 cmd=$(
     yad --center --borders=20
     --title=&quot;YAD Custom Dialog Buttons&quot;

@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Como trocar o nome do servidor sem reiniciar</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2017-10-22T11:21:50-02:00</b>Last modified: <b class="ml-2">2022-12-20 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2017-10-22T11:21:50-02:00</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/sysadmin.html">sysadmin</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/hostname.html">hostname</a>
         </div><p>Como um <strong>Administrador de Sistemas</strong>, as vezes, você precisa alterar
 o nome da máquina. Seja porque digitou o nome errado durante a
@@ -69,7 +69,7 @@ derivadas do <a href="https://www.debian.org">Debian</a>, tais como
 a máquina terá outro nome.</p>
 <p>Uma opção bem simples de edição, já que o conteúdo deste arquivo é somente uma
 palavra, é enviar através do comando <code>echo</code> o novo nome para o arquivo <code>/etc/hostname</code>:</p>
-<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /etc/hostname
+<pre><code class="language-shell">echo &quot;novo-nome&quot; &gt; /etc/hostname
 </code></pre>
 <p><strong>Para o próximo boot está tudo OK!</strong></p>
 <p>Se verificarmos a configuração a com o comando <code>hostname</code> veremos que ainda
@@ -79,14 +79,14 @@ serviços agora para fazer o reboot, então precisamos alterar o <em>kernel</em>
 simple editar variáveis do <em>kernel</em>. Ele expõe muitas de suas configurações
 através de um <em>sistema de arquivos</em> montado em <code>/proc/sys/kernel</code>. Vamos usar
 o mesmo comando <code>echo</code> para alterar o arquivo <code>/proc/sys/kernel/hostname</code>.</p>
-<pre><code class="language-bash">echo &quot;novo-nome&quot; &gt; /proc/sys/kernel/hostname
+<pre><code class="language-shell">echo &quot;novo-nome&quot; &gt; /proc/sys/kernel/hostname
 </code></pre>
 <p>Agora se lançarmos o comando <code>hostname</code> novamente veremos o novo nome e sem que seja
 preciso reiniciar a máquina.</p>
 <p>Verifique se no arquivo <code>/etc/hosts</code> não existe nenhuma menção ao antigo nome,
 se existir atualize este arquivo. Para atualizar o <code>/etc/hosts</code> pela linha de
 comando faça o seguinte:</p>
-<pre><code class="language-bash">sed -i &quot;s/antigo-nome/novo-nome/g&quot; /etc/hosts
+<pre><code class="language-shell">sed -i &quot;s/antigo-nome/novo-nome/g&quot; /etc/hosts
 </code></pre>
 <p>O <code>sed</code> é um editor de fluxo de texto que utiliza expressões regulares para editar textos de forma automatizada.
 Uma explicação muito breve sobre o comando acima:</p>

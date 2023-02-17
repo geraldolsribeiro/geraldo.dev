@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Feed Forward Neural Network no Debian com mlpack</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-04-29</b>Last modified: <b class="ml-2">2022-12-20 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-04-29</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/ffn.html">ffn</a><a class="tag no-underline" href="/til/tag/neural-network.html">neural-network</a><a class="tag no-underline" href="/til/tag/mlpack.html">mlpack</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/apt.html">apt</a><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/cpp.html">cpp</a><a class="tag no-underline" href="/til/tag/armadillo.html">armadillo</a>
         </div><p>Este artigo mostra como criar uma rede neural simples no
 <a href="https://www.debian.org/releases/stable/">Debian stable</a> utilizando a
@@ -123,7 +123,7 @@ Pin-Priority: 1002
 <p>O arquivo <code>/etc/apt/preferences.d/mlpack</code> poderia ter qualquer nome, mas é conveniente usar algo descritivo.</p>
 <p>E para desfazer a pinagem basta remover o arquivo.</p>
 <p>Então é só proceder a instalação normal com o <code>apt</code> como de costume:</p>
-<pre><code class="language-bash">apt install libmlpack-dev
+<pre><code class="language-shell">apt install libmlpack-dev
 </code></pre>
 <h2 id="dados-de-treinamento" tabindex="-1">Dados de treinamento</h2>
 <p>Vamos utilizar dois grupos de dados, cada um com duas variáveis (x e y).</p>
@@ -330,7 +330,7 @@ Classificação correta:
 <p>O código fonte completo pode ser encontrado no
 <a href="https://github.com/geraldolsribeiro/mlpack-tutorials/tree/master/ffn">github</a>.</p>
 <p>Para baixar e compilar o fonte deste artigo utilize:</p>
-<pre><code class="language-bash">git clone https://github.com/geraldolsribeiro/mlpack-tutorials/
+<pre><code class="language-shell">git clone https://github.com/geraldolsribeiro/mlpack-tutorials/
 cd mlpack-tutorials/ffn
 make
 </code></pre>

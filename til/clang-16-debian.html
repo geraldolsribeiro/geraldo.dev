@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>How to install clang 16 on debian</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-13</b>Last modified: <b class="ml-2">2022-12-16 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-13</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/clang.html">clang</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a>
         </div><p>Install key:</p>
-<pre><code class="language-bash">wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
+<pre><code class="language-shell">wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key|sudo apt-key add -
 </code></pre>
 <p>Create source list file:</p>
-<pre><code class="language-bash">cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/llvm.list
+<pre><code class="language-shell">cat &lt;&lt;EOF &gt; /etc/apt/sources.list.d/llvm.list
 deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
 deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye main
 # 14 
@@ -75,7 +75,7 @@ deb-src http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-16 main
 EOF
 </code></pre>
 <p>Update package list and install</p>
-<pre><code class="language-bash">apt update
+<pre><code class="language-shell">apt update
 apt-get install \
   clang-16 \
   clang-tools-16 \
@@ -89,7 +89,7 @@ apt-get install \
   clang-tidy-16
 </code></pre>
 <p>To upgrade to the last version:</p>
-<pre><code class="language-bash">apt-get install clang lld 
+<pre><code class="language-shell">apt-get install clang lld 
 </code></pre>
 
       </main>

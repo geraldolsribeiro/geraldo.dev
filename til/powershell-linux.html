@@ -56,7 +56,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Using powershell on linux</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-23</b>Last modified: <b class="ml-2">2023-02-13 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-23</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/powershell.html">powershell</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#installation-%E2%80%94-github-%E2%80%94-latest">Installation — github — latest</a></li><li><a href="#installation-%E2%80%94-github-%E2%80%94-stable-version">Installation — github — stable version</a></li><li><a href="#installation-%E2%80%94-debian-repository">Installation — Debian repository</a></li><li><a href="#how-to-run">How to run</a></li><li><a href="#finding-modules">Finding Modules</a></li><li><a href="#installing-modules">Installing modules</a></li><li><a href="#importing-modules">Importing modules</a></li><li><a href="#powershell-ise">Powershell ISE</a></li><li><a href="#basic-commands">Basic commands</a></li><li><a href="#get-command">Get-Command</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -64,16 +64,16 @@
 <p>Download latest version of install package from
 <a href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a>.</p>
 <p>For <strong>Debian</strong> like distribution use <code>dpkg -i</code> to install:</p>
-<pre><code class="language-bash">dpkg -i /tmp/powershell-preview_7.4.0-preview.1-1.deb_amd64.deb 
+<pre><code class="language-shell">dpkg -i /tmp/powershell-preview_7.4.0-preview.1-1.deb_amd64.deb 
 </code></pre>
 <h2 id="installation-%E2%80%94-github-%E2%80%94-stable-version" tabindex="-1">Installation — github — stable version</h2>
 <p>Download stable version of install package from
 <a href="https://github.com/PowerShell/PowerShell/releases">https://github.com/PowerShell/PowerShell/releases</a>.</p>
 <p>For <strong>Debian</strong> like distribution use <code>dpkg -i</code> to install:</p>
-<pre><code class="language-bash">dpkg -i /tmp/powershell_7.2.9-1.deb_amd64.deb
+<pre><code class="language-shell">dpkg -i /tmp/powershell_7.2.9-1.deb_amd64.deb
 </code></pre>
 <h2 id="installation-%E2%80%94-debian-repository" tabindex="-1">Installation — Debian repository</h2>
-<pre><code class="language-bash">sudo apt update &amp;&amp; sudo apt install -y curl gnupg apt-transport-https
+<pre><code class="language-shell">sudo apt update &amp;&amp; sudo apt install -y curl gnupg apt-transport-https
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 sudo sh -c 'echo &quot;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main&quot; \
   &gt; /etc/apt/sources.list.d/microsoft.list'
@@ -83,12 +83,12 @@ sudo apt update &amp;&amp; sudo apt install -y powershell
 <p>To launch <strong>PowerShell</strong> use the command <code>pwsh-preview</code>, <code>powershell</code> or <code>pwsh</code>
 depending on version you have installed:</p>
 <p>Preview version:</p>
-<pre><code class="language-bash">$ pwsh-preview 
+<pre><code class="language-shell">$ pwsh-preview 
 PowerShell 7.4.0-preview.1
 PS /home/geraldo&gt; 
 </code></pre>
 <p>Stable version:</p>
-<pre><code class="language-bash">$ pwsh
+<pre><code class="language-shell">$ pwsh
 PowerShell 7.2.9
 PS /home/geraldo&gt;
 </code></pre>

@@ -54,20 +54,20 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Importando arquivos do SolidWorks para o VariCAD</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-03-17</b>Last modified: <b class="ml-2">2022-12-20 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-03-17</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/varicad.html">varicad</a><a class="tag no-underline" href="/til/tag/step.html">step</a><a class="tag no-underline" href="/til/tag/cadexchanger.html">cadexchanger</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><p>Extrai o conversor cadexchanger</p>
-<pre><code class="language-bash">cd /tmp/work
+<pre><code class="language-shell">cd /tmp/work
 unzip cadexchanger_3.7.1_build12316_lin64.zip
 </code></pre>
 <p>Renomeia a extensão dos arquivos do SolidWorks para minúscula pois o cadexchanger não reconhece.</p>
-<pre><code class="language-bash">sudo apt-install rename
+<pre><code class="language-shell">sudo apt-install rename
 cd /tmp/work
 rename &quot;s/SLDPRT/sldprt/&quot; *
 rename &quot;s/SLDPRT/sldprt/&quot; *
 rename &quot;s/SLDDRW/slddrw/&quot; *
 </code></pre>
-<pre><code class="language-bash">/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh
+<pre><code class="language-shell">/tmp/work/cadexchanger_3.7.1_build12316_lin64/bin/ExchangerGui.sh
 </code></pre>
 <h2 id="diret%C3%B3rios-criados" tabindex="-1">Diretórios criados</h2>
 <ul>

@@ -54,24 +54,24 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Grafana --- Reset da senha do admin</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-03</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-03</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/grafana.html">grafana</a><a class="tag no-underline" href="/til/tag/docker.html">docker</a>
         </div><p>Iniciar os containers</p>
-<pre><code class="language-bash">cd /opt/docker/docker-compose-influxdb-grafana
+<pre><code class="language-shell">cd /opt/docker/docker-compose-influxdb-grafana
 docker-compose up -d
 </code></pre>
 <p>Localizar o id do container do ‘/run.sh’</p>
-<pre><code class="language-bash">docker ps -a
+<pre><code class="language-shell">docker ps -a
 CONTAINER ID IMAGE                  COMMAND                  CREATED       ...
 265059f8820a grafana/grafana:latest &quot;/run.sh&quot;                6 seconds ago ...
 637c3d25845f chronograf:latest      &quot;/entrypoint.sh chro…&quot;   6 seconds ago ...
 21b3a8d77cae influxdb:latest        &quot;/entrypoint.sh infl…&quot;   7 seconds ago ...
 </code></pre>
 <p>Abrir um shell no container do <code>run.sh</code> (<code>265059f8820a</code>)</p>
-<pre><code class="language-bash">docker exec -ti 265059f8820a bash
+<pre><code class="language-shell">docker exec -ti 265059f8820a bash
 </code></pre>
 <p>Trocar a senha usando o <code>grafana-cli</code></p>
-<pre><code class="language-bash">   
+<pre><code class="language-shell">   
 bash-5.0$ grafana-cli admin reset-admin-password aqui-vai-a-nova-senha
 INFO[01-03|16:34:42] Connecting to DB      logger=sqlstore dbtype=sqlite3
 INFO[01-03|16:34:42] Starting DB migration logger=migrator

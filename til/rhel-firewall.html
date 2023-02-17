@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>RHEL firewall</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-15</b>Last modified: <b class="ml-2">2023-01-03 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-15</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/RHEL.html">RHEL</a><a class="tag no-underline" href="/til/tag/firewall.html">firewall</a><a class="tag no-underline" href="/til/tag/firewall-cmd.html">firewall-cmd</a>
         </div><p><strong>firewalld</strong> is the default firewall on <a href="https://www.redhat.com">Red Hat Enterprise Linux</a>.</p>
 <p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#list">List</a></li><li><a href="#allow">Allow</a></li><li><a href="#deny">Deny</a></li><li><a href="#timeout">Timeout</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="list" tabindex="-1">List</h2>
-<pre><code class="language-bash">firewall-cmd --list-all
+<pre><code class="language-shell">firewall-cmd --list-all
 </code></pre>
 <p>Possible output:</p>
 <pre><code class="language-plaintext">public (active)
@@ -92,7 +92,7 @@ in a user locking themselves out of a machine. To prevent such situations, use
 the <code>--timeout</code> option. After a specified amount of time, any change reverts to
 its previous state. Using this options excludes the <code>--permanent</code> option.</p>
 <p>For example, to add the SSH service for 15 minutes:</p>
-<pre><code class="language-bash">firewall-cmd --add-service=ssh --timeout 15m
+<pre><code class="language-shell">firewall-cmd --add-service=ssh --timeout 15m
 </code></pre>
   </div>
 </div>

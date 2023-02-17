@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Otimizando código com clang-tidy</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-13</b>Last modified: <b class="ml-2">2022-12-16 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-13</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/clang-tidy.html">clang-tidy</a>
         </div><h2 id="instala%C3%A7%C3%A3o" tabindex="-1">Instalação</h2>
-<pre><code class="language-bash">apt-get install clang-tidy
+<pre><code class="language-shell">apt-get install clang-tidy
 </code></pre>
 <h2 id="verificadores-dispon%C3%ADveis" tabindex="-1">Verificadores disponíveis</h2>
-<pre><code class="language-bash">clang-tidy --list-checks -checks='*' | grep &quot;modernize&quot;
+<pre><code class="language-shell">clang-tidy --list-checks -checks='*' | grep &quot;modernize&quot;
     modernize-avoid-bind
     modernize-deprecated-headers
     modernize-loop-convert
@@ -88,7 +88,7 @@
     modernize-use-using
 </code></pre>
 <h2 id="uso" tabindex="-1">Uso</h2>
-<pre><code class="language-bash">clang-tidy -checks='modernize-use-override' -fix test.cpp -- -std=c++11
+<pre><code class="language-shell">clang-tidy -checks='modernize-use-override' -fix test.cpp -- -std=c++11
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

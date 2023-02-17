@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>git undo add</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-11</b>Last modified: <b class="ml-2">2023-01-11 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-11</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a><a class="tag no-underline" href="/til/tag/git-restore.html">git-restore</a><a class="tag no-underline" href="/til/tag/git-add.html">git-add</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -67,13 +67,13 @@ answer the question of how to undo adding a change to the staging area,
 after having used git add before.</p>
 <p>Luckily, there’s a simple way of undoing a git add: you can simply use the git
 restore --staged command on the affected file:</p>
-<pre><code class="language-bash">$ git restore --staged index.html
+<pre><code class="language-shell">$ git restore --staged index.html
 </code></pre>
 <p>This will remove the file from Git’s staging area, making sure it is NOT part
 of the next commit.</p>
 <p>If, at the same time, you also want to <strong>discard any local changes</strong> in this
 file, you can simply omit the --staged flag:</p>
-<pre><code class="language-bash">$ git restore index.html
+<pre><code class="language-shell">$ git restore index.html
 </code></pre>
 <div role="alert" class="my-4">
   <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">

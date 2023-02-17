@@ -54,12 +54,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>git - como limpar submódulos</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-07</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-07</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
-        </div><pre><code class="language-bash">git submodule foreach --recursive git clean -xfd
+        </div><pre><code class="language-shell">git submodule foreach --recursive git clean -xfd
 </code></pre>
 <p>Para dar reset no repositório e seus submódulos use:</p>
-<pre><code class="language-bash">git clean -xfd
+<pre><code class="language-shell">git clean -xfd
 git submodule foreach --recursive git clean -xfd
 git reset --hard
 git submodule foreach --recursive git reset --hard

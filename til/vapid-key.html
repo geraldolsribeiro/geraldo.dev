@@ -54,12 +54,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Criando VAPID key</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-03-21</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-03-21</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/web.html">web</a>
         </div><p>VAPID (Voluntary Application Server Identification)
 é o novo meio de receber e enviar notificações push através da web.</p>
 <h2 id="cria%C3%A7%C3%A3o-usando-openssl" tabindex="-1">Criação usando openssl</h2>
-<pre><code class="language-bash">mkdir -p certs
+<pre><code class="language-shell">mkdir -p certs
 openssl ecparam -name prime256v1 -genkey -noout -out certs/vapid_private.pem
 openssl ec -in certs/vapid_private.pem -pubout  -out certs/vapid_public.pem
 openssl ec -in certs/vapid_private.pem -outform DER \
@@ -70,7 +70,7 @@ openssl ec -in certs/vapid_private.pem -pubout -outform DER \
   &gt; certs/public_key.txt
 </code></pre>
 <h2 id="cria%C3%A7%C3%A3o-usando-web-push" tabindex="-1">Criação usando web-push</h2>
-<pre><code class="language-bash">npm install -g web-push
+<pre><code class="language-shell">npm install -g web-push
 web-push generate-vapid-keys
 </code></pre>
 <h2 id="push-services" tabindex="-1">Push services</h2>
@@ -124,7 +124,7 @@ curl_close( $ch );
 
 echo $result;
 </code></pre>
-<pre><code class="language-bash">ensure connection is secured, so CURLOPT_SSL_VERIFYPEER should be set to true
+<pre><code class="language-shell">ensure connection is secured, so CURLOPT_SSL_VERIFYPEER should be set to true
 </code></pre>
 <h2 id="envio-via-php-para-ios" tabindex="-1">Envio via PHP para IOS</h2>
 <pre><code class="language-php">&lt;?php

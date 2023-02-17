@@ -54,11 +54,11 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Exibindo problemas de formatação com git diff</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-07</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-07</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a><a class="tag no-underline" href="/til/tag/diff.html">diff</a>
         </div><h2 id="sem-espa%C3%A7os-no-final-da-linha-ou-final-do-arquivo" tabindex="-1">Sem espaços no final da linha ou final do arquivo</h2>
 <p>O comando abaixo adiciona uma marcação no <code>git diff</code> no terminal ou no <code>git gui</code>.</p>
-<pre><code class="language-bash">git config --global core.whitespace 'blank-at-eol,blank-at-eof'
+<pre><code class="language-shell">git config --global core.whitespace 'blank-at-eol,blank-at-eof'
 </code></pre>
 <p>Após rodar o comando acima o arquivo <code>~/.gitconfig</code> é alterado para conter as seguintes linhas:</p>
 <pre><code class="language-ini">[core]
@@ -81,7 +81,7 @@
 </figure>
 <h3 id="listando-as-linhas-com-problemas" tabindex="-1">Listando as linhas com problemas</h3>
 <p>Para ver só as linhas com problema use <code>git diff --check</code>:</p>
-<pre><code class="language-bash">git diff --check
+<pre><code class="language-shell">git diff --check
 README.md:11: trailing whitespace.
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>

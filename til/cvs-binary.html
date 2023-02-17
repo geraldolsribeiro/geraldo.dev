@@ -54,17 +54,17 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>CVS - controlando arquivos binários</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-27</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-27</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/cvs.html">cvs</a>
         </div><ol>
 <li>Obter uma cópia do <code>CVSROOT</code></li>
 </ol>
-<pre><code class="language-bash">cvs co CVSROOT
+<pre><code class="language-shell">cvs co CVSROOT
 </code></pre>
 <ol start="2">
 <li>Editar o <code>CVSROOT/cvswrappers</code> para indicar as extensões binárias.</li>
 </ol>
-<pre><code class="language-bash">*.GIF   -k 'b' -m 'COPY'
+<pre><code class="language-shell">*.GIF   -k 'b' -m 'COPY'
 *.JPG   -k 'b' -m 'COPY'
 *.avi   -k 'b' -m 'COPY'
 *.bin   -k 'b' -m 'COPY'
@@ -72,7 +72,7 @@
 <ol start="3">
 <li>Comitar as mudanças</li>
 </ol>
-<pre><code class="language-bash">cvs commit -m&quot;added common binary files&quot;
+<pre><code class="language-shell">cvs commit -m&quot;added common binary files&quot;
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

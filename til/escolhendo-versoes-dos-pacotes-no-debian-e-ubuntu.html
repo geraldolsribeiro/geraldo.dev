@@ -54,12 +54,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Escolhendo versões dos pacotes no Debian/Ubuntu</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-02</b>Last modified: <b class="ml-2">2022-12-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-02</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/sysadmin.html">sysadmin</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/ubuntu.html">ubuntu</a><a class="tag no-underline" href="/til/tag/hugo.html">hugo</a><a class="tag no-underline" href="/til/tag/apt.html">apt</a>
         </div><h2 id="parte-1---regra-geral" tabindex="-1">Parte 1 - Regra geral</h2>
 <p>Antes de começar a escolher versões vamos estabelecer que todos os pacotes usarão a versão <code>stable</code> por padrão.</p>
 <p>No arquivo <code>/etc/apt/preferences</code> (que deve estar vazio inicialmente) acrescente as seguintes linhas:</p>
-<pre><code class="language-bash"># Arquivo: /etc/apt/preferences
+<pre><code class="language-shell"># Arquivo: /etc/apt/preferences
 
 # Todos os pacotes vem do stable por padrão
 Package: *
@@ -97,7 +97,7 @@ pacote que você quer especificar a versão. Pode ser qualquer nome aqui, mas
 usando o nome do pacote fica mais fácil de manter o sistema.</p>
   </div>
 </div>
-<pre><code class="language-bash"># /etc/apt/preferences.d/hugo
+<pre><code class="language-shell"># /etc/apt/preferences.d/hugo
 Package: hugo
 Pin: release a=testing
 Pin-Priority: 1002
@@ -105,19 +105,19 @@ Pin-Priority: 1002
 <p>Observe que a prioridade precisa ser maior que a prioridade da regra padrão para funcionar.</p>
 <h3 id="por-origem" tabindex="-1">Por origem</h3>
 <p>Ao instalar o pacote <code>nodejs</code> a versão <code>4.8</code> será instalada pois é a mais recente que está no repositório padrão.</p>
-<pre><code class="language-bash">apt install nodejs
+<pre><code class="language-shell">apt install nodejs
 ...
 Obter:1 http://ftp.br.debian.org/debian stretch/main amd64 nodejs amd64 4.8.2~dfsg-1 [3.440 kB]
 ...
 </code></pre>
 <p>Para pegar a versão mais rescente do <code>nodejs</code> diretamente do <code>deb.nodesource.com</code> em vez do repositório padrão do Debian use:</p>
-<pre><code class="language-bash"># /etc/apt/preferences.d/nodejs
+<pre><code class="language-shell"># /etc/apt/preferences.d/nodejs
 Package: *
 Pin: origin deb.nodesource.com
 Pin-Priority: 1001
 </code></pre>
 <p>Então basta executar o comando de instalação novamente para que o pacote seja atualizado para a versão <code>12</code>.</p>
-<pre><code class="language-bash">apt update
+<pre><code class="language-shell">apt update
 apt install nodejs
 ...
 Obter:1 https://deb.nodesource.com/node_12.x stretch/main amd64 nodejs amd64 12.6.0-1nodesource1 [16,9 MB]
@@ -125,7 +125,7 @@ Obter:1 https://deb.nodesource.com/node_12.x stretch/main amd64 nodejs amd64 12.
 </code></pre>
 <h2 id="parte-3---upgrade%2Fdowngrade" tabindex="-1">Parte 3 - Upgrade/Downgrade</h2>
 <p>Agora que todas as nossas regras já estão definida basta atualizar que os pacotes vão para a versões escolhidas.</p>
-<pre><code class="language-bash">apt-get update
+<pre><code class="language-shell">apt-get update
 apt-get upgrade
 apt-get dist-upgrade
 </code></pre>

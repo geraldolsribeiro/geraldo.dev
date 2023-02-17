@@ -54,9 +54,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Editando arquivos com ex / vim</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-09-15</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-09-15</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/ex.html">ex</a><a class="tag no-underline" href="/til/tag/vim.html">vim</a><a class="tag no-underline" href="/til/tag/bash.html">bash</a>
-        </div><pre><code class="language-bash">ex foo.txt &lt;&lt;-EOF
+        </div><pre><code class="language-shell">ex foo.txt &lt;&lt;-EOF
   g/^\s*$/d
   %s/^/[/
   %s/\(.*\)\(\s\+\)\(.*\)/\3\2\1
@@ -70,7 +70,7 @@ EOF
 <li>acrescente <code>-V1</code> para saída mais verbosa</li>
 </ul>
 <p>Exemplo uma linha:</p>
-<pre><code class="language-bash">ex +&quot;g/^\s*$/d&quot; +&quot;%s/^/[/&quot; +&quot;%s/design/test/&quot; -cwq foo.txt
+<pre><code class="language-shell">ex +&quot;g/^\s*$/d&quot; +&quot;%s/^/[/&quot; +&quot;%s/design/test/&quot; -cwq foo.txt
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

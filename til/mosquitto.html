@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Mosquitto</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-29</b>Last modified: <b class="ml-2">2023-02-03 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-29</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/mosquitto.html">mosquitto</a><a class="tag no-underline" href="/til/tag/mqtt.html">mqtt</a>
         </div><h2 id="introduction" tabindex="-1">Introduction</h2>
 <ul>
@@ -77,25 +77,25 @@
 <li>Can experience issues with latency and speed.</li>
 </ul>
 <h2 id="install-server" tabindex="-1">Install server</h2>
-<pre><code class="language-bash">sudo apt-get install mosquitto
+<pre><code class="language-shell">sudo apt-get install mosquitto
 </code></pre>
 <h2 id="install-client" tabindex="-1">Install client</h2>
-<pre><code class="language-bash">sudo apt-get install mosquitto mosquitto-clients
+<pre><code class="language-shell">sudo apt-get install mosquitto mosquitto-clients
 </code></pre>
 <h2 id="subscribe-a-topic" tabindex="-1">Subscribe a topic</h2>
-<pre><code class="language-bash">mosquitto_sub -t &quot;test_topic&quot;
+<pre><code class="language-shell">mosquitto_sub -t &quot;test_topic&quot;
 </code></pre>
 <h2 id="publish-on-topic" tabindex="-1">Publish on topic</h2>
-<pre><code class="language-bash">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
+<pre><code class="language-shell">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
 </code></pre>
 <h2 id="testing-the-communication" tabindex="-1">Testing the communication</h2>
 <p><img src="/til/mosquitto_hello_01.webp" alt="Communication testing"></p>
 <p>Producer:</p>
-<pre><code class="language-bash">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
+<pre><code class="language-shell">mosquitto_pub -t &quot;test_topic&quot; -m &quot;HELLO WORLD!&quot;
 for i in {1..10}; do mosquitto_pub -t &quot;test_topic&quot; -m &quot;I=$i&quot;; done
 </code></pre>
 <p>Consumer:</p>
-<pre><code class="language-bash">mosquitto_sub -t &quot;test_topic&quot;
+<pre><code class="language-shell">mosquitto_sub -t &quot;test_topic&quot;
 HELLO WORLD!
 I=1
 I=2
@@ -109,7 +109,7 @@ I=9
 I=10
 </code></pre>
 <h2 id="c%2B%2B-and-c-library" tabindex="-1">C++ and C library</h2>
-<pre><code class="language-bash">sudo apt install libmosquitto-dev
+<pre><code class="language-shell">sudo apt install libmosquitto-dev
 or 
 sudo apt install libpaho-mqtt-dev
 </code></pre>

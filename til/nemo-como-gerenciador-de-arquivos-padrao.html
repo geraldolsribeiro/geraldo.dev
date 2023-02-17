@@ -54,18 +54,18 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Nemo como Gerenciador De Arquivos Padrão</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-23T10:33:17-03:00</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-23T10:33:17-03:00</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/file-manager.html">file-manager</a><a class="tag no-underline" href="/til/tag/nemo.html">nemo</a><a class="tag no-underline" href="/til/tag/nautilus.html">nautilus</a><a class="tag no-underline" href="/til/tag/gnome.html">gnome</a><a class="tag no-underline" href="/til/tag/xfce.html">xfce</a>
         </div><h2 id="trocando-o-nautilus-pelo-nemo-no-gnome" tabindex="-1">Trocando o Nautilus pelo Nemo no GNOME</h2>
-<pre><code class="language-bash">xdg-mime default \
+<pre><code class="language-shell">xdg-mime default \
   nemo.desktop inode/directory \
   application/x-gnome-saved-search
 </code></pre>
 <h3 id="desabilitando-o-nautilus" tabindex="-1">Desabilitando o Nautilus</h3>
-<pre><code class="language-bash">gsettings set org.gnome.desktop.background show-desktop-icons false
+<pre><code class="language-shell">gsettings set org.gnome.desktop.background show-desktop-icons false
 </code></pre>
 <h3 id="habilitando-o-nemo" tabindex="-1">Habilitando o Nemo</h3>
-<pre><code class="language-bash">gsettings set org.nemo.desktop show-desktop-icons true
+<pre><code class="language-shell">gsettings set org.nemo.desktop show-desktop-icons true
 </code></pre>
 <h2 id="trocando-o-thunar-pelo-nemo-no-xfce" tabindex="-1">Trocando o Thunar pelo Nemo no XFCE</h2>
 <p>Em <strong>Configurações</strong> acesse <strong>Aplicativos preferidos</strong></p>
@@ -83,17 +83,17 @@
   </figcaption>
 </figure>
 <h2 id="testando" tabindex="-1">Testando</h2>
-<pre><code class="language-bash">xdg-open $HOME
+<pre><code class="language-shell">xdg-open $HOME
 </code></pre>
 <h2 id="configurando-o-terminal" tabindex="-1">Configurando o terminal</h2>
 <h3 id="usar-o-xfce4-terminal-no-nemo" tabindex="-1">Usar o <code>xfce4-terminal</code> no nemo</h3>
-<pre><code class="language-bash">gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+<pre><code class="language-shell">gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
 </code></pre>
 <h3 id="usar-o-gnome-shell-no-nemo" tabindex="-1">Usar o <code>gnome-shell</code> no nemo</h3>
-<pre><code class="language-bash">gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-shell
+<pre><code class="language-shell">gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-shell
 </code></pre>
 <h3 id="usar-o-gnome-terminal-no-nemo" tabindex="-1">Usar o <code>gnome-terminal</code> no nemo</h3>
-<pre><code class="language-bash">gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-terminal
+<pre><code class="language-shell">gsettings set org.cinnamon.desktop.default-applications.terminal exec gnome-terminal
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

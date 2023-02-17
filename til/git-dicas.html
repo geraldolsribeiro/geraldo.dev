@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>git - dicas</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-12-08</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-12-08</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
         </div><h2 id="diferen%C3%A7a-entre-dois-branches-%E2%80%93-somente-nomes-de-arquivos" tabindex="-1">Diferença entre dois branches – somente nomes de arquivos</h2>
-<pre><code class="language-bash">git diff --name-only branch-1 branch-2
+<pre><code class="language-shell">git diff --name-only branch-1 branch-2
 </code></pre>
 <p>Status:</p>
 <ul>
@@ -67,19 +67,19 @@
 </ul>
 <p>Filtrando por estes códigos de status temos as próximas dicas.</p>
 <h2 id="listar-somente-os-arquivos-modificados-entre-dois-branches" tabindex="-1">Listar somente os arquivos modificados entre dois branches</h2>
-<pre><code class="language-bash">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^M\s\+//p&quot;
+<pre><code class="language-shell">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^M\s\+//p&quot;
 </code></pre>
 <ul>
 <li>filtra somente as linhas que começam com <code>M</code> de modificado.</li>
 </ul>
 <h2 id="listar-somente-os-arquivos-adicionados-entre-dois-branches" tabindex="-1">Listar somente os arquivos adicionados entre dois branches</h2>
-<pre><code class="language-bash">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^A\s\+//p&quot;
+<pre><code class="language-shell">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^A\s\+//p&quot;
 </code></pre>
 <ul>
 <li>filtra somente as linhas que começam com <code>A</code> de adicionado</li>
 </ul>
 <h2 id="listar-somente-os-arquivos-removidos-entre-dois-branches" tabindex="-1">Listar somente os arquivos removidos entre dois branches</h2>
-<pre><code class="language-bash">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^D\s\+//p&quot;
+<pre><code class="language-shell">git diff --name-status branch-1 branch-2 | sed -n &quot;s/^D\s\+//p&quot;
 </code></pre>
 <ul>
 <li>filtra somente as linhas que começam com <code>D</code> de deletados</li>

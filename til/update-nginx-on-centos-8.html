@@ -54,18 +54,18 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Update Nginx to the latest stable version on CentOS 8</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-10-27</b>Last modified: <b class="ml-2">2022-10-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-10-27</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/nginx.html">nginx</a><a class="tag no-underline" href="/til/tag/centos.html">centos</a>
         </div><p>To address the security issue
 <a href="https://nvd.nist.gov/vuln/detail/cve-2019-20372">CVE-2019-20372</a> I needed to
 update the Nginx version to the current stable.</p>
 <p>Remove the old nginx:</p>
-<pre><code class="language-bash">sudo systemctl stop nginx
+<pre><code class="language-shell">sudo systemctl stop nginx
 sudo dnf remove nginx
 sudo dnf install dnf-utils
 </code></pre>
 <p>Create the repo file:</p>
-<pre><code class="language-bash">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/nginx.repo
+<pre><code class="language-shell">cat &lt;&lt;EOF &gt; /etc/yum.repos.d/nginx.repo
 [nginx-stable]
 name=nginx stable repo
 baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
@@ -84,7 +84,7 @@ module_hotfixes=true
 EOF
 </code></pre>
 <p>Install and enable the nginx again.</p>
-<pre><code class="language-bash">sudo yum-config-manager --enable nginx-mainline
+<pre><code class="language-shell">sudo yum-config-manager --enable nginx-mainline
 sudo dnf install nginx
 sudo systemctl start nginx
 sudo systemctl start nginx

@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>DMA Direct Memory Access</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-11-19</b>Last modified: <b class="ml-2">2022-12-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-11-19</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/dma.html">dma</a><a class="tag no-underline" href="/til/tag/memory.html">memory</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#dma-channels">DMA Channels</a></li><li><a href="#steps-in-dma-transfer">Steps in DMA Transfer</a></li><li><a href="#operation-modes">Operation modes</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -67,7 +67,7 @@ performance.</p>
 <h2 id="dma-channels" tabindex="-1">DMA Channels</h2>
 <p>To support DMA, the x86 architecture implements several DMA channels. To find
 out what DMA channels your system uses, you can use the <code>cat /proc/dma</code> command:</p>
-<pre><code class="language-bash">cat /proc/dma
+<pre><code class="language-shell">cat /proc/dma
 2: floppy
 4: cascade
 </code></pre>

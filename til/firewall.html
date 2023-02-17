@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Configurando um firewall no Debian</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-17</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-11-17</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/firewall.html">firewall</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><h2 id="instala%C3%A7%C3%A3o" tabindex="-1">Instalação</h2>
-<pre><code class="language-bash">apt install ufw
+<pre><code class="language-shell">apt install ufw
 </code></pre>
 <h2 id="status" tabindex="-1">Status</h2>
-<pre><code class="language-bash">ufw status verbose
+<pre><code class="language-shell">ufw status verbose
 </code></pre>
 <p>Depois de configurado alguns serviços a saída do comando pode ser similar a:</p>
 <pre><code>ufw status
@@ -76,45 +76,45 @@ OpenSSH (v6)               ALLOW       Anywhere (v6)
 443/tcp (v6)               ALLOW       Anywhere (v6)
 </code></pre>
 <h2 id="listando-aplica%C3%A7%C3%B5es" tabindex="-1">Listando aplicações</h2>
-<pre><code class="language-bash">ufw app list
+<pre><code class="language-shell">ufw app list
 ufw app info OpenSSH
 </code></pre>
 <h2 id="liberando-algumas-aplica%C3%A7%C3%B5es" tabindex="-1">Liberando algumas aplicações</h2>
-<pre><code class="language-bash">ufw allow OpenSSH
+<pre><code class="language-shell">ufw allow OpenSSH
 ufw allow http
 ufw allow https
 </code></pre>
 <h2 id="habilitando-o-firewall" tabindex="-1">Habilitando o firewall</h2>
-<pre><code class="language-bash">ufw enable
+<pre><code class="language-shell">ufw enable
 </code></pre>
 <h2 id="liberando-uma-porta-espec%C3%ADfica" tabindex="-1">Liberando uma porta específica</h2>
-<pre><code class="language-bash">ufw allow 8080/tcp
+<pre><code class="language-shell">ufw allow 8080/tcp
 </code></pre>
 <h2 id="liberando-um-range-de-portas" tabindex="-1">Liberando um range de portas</h2>
-<pre><code class="language-bash">ufw allow 7100:7200/tcp
+<pre><code class="language-shell">ufw allow 7100:7200/tcp
 ufw allow 7100:7200/udp
 </code></pre>
 <h2 id="liberando-acesso-a-um-ip-espec%C3%ADfico" tabindex="-1">Liberando acesso a um IP específico</h2>
 <p>Cuidado: Este comando libera todas as portas para o IP especificado!</p>
-<pre><code class="language-bash">ufw allow from 64.63.62.61
+<pre><code class="language-shell">ufw allow from 64.63.62.61
 </code></pre>
 <h2 id="liberando-acesso-a-uma-porta-para-a-um-ip-espec%C3%ADfico" tabindex="-1">Liberando acesso a uma porta para a um IP específico</h2>
-<pre><code class="language-bash">ufw allow from 64.63.62.61 to any port 22
+<pre><code class="language-shell">ufw allow from 64.63.62.61 to any port 22
 </code></pre>
 <h2 id="liberando-acesso-a-uma-subrede" tabindex="-1">Liberando acesso a uma subrede</h2>
 <p>Neste exemplo os IPs <code>192.168.1.1</code> até <code>192.168.1.254</code> podem acessar a porta <code>3306</code> (MySQL).</p>
-<pre><code class="language-bash">ufw allow from 192.168.1.0/24 to any port 3306
+<pre><code class="language-shell">ufw allow from 192.168.1.0/24 to any port 3306
 </code></pre>
 <h2 id="proibindo-conex%C3%B5es" tabindex="-1">Proibindo conexões</h2>
 <p>Bloqueando todo o acesso de faixa de IPs <code>23.24.25.0/24</code></p>
-<pre><code class="language-bash">ufw deny from 23.24.25.0/24
+<pre><code class="language-shell">ufw deny from 23.24.25.0/24
 </code></pre>
 <p>Bloqueando somente alguns serviços:</p>
-<pre><code class="language-bash">ufw deny from 23.24.25.0/24 to any port 80
+<pre><code class="language-shell">ufw deny from 23.24.25.0/24 to any port 80
 ufw deny from 23.24.25.0/24 to any port 443
 </code></pre>
 <h2 id="removendo-regras" tabindex="-1">Removendo regras</h2>
-<pre><code class="language-bash">ufw status numbered
+<pre><code class="language-shell">ufw status numbered
 </code></pre>
 <p>Poderia ter uma saída similar a:</p>
 <pre><code class="language-text">Status: active
@@ -128,11 +128,11 @@ ufw deny from 23.24.25.0/24 to any port 443
 [ 6] 443/tcp (v6)               ALLOW IN    Anywhere (v6)
 </code></pre>
 <p>Dá para usar o número da regra para removê-la ou então a porta diretamente:</p>
-<pre><code class="language-bash">ufw delete 2
+<pre><code class="language-shell">ufw delete 2
 ufw delete allow 8069
 </code></pre>
 <h2 id="desabilitando-o-firewall" tabindex="-1">Desabilitando o firewall</h2>
-<pre><code class="language-bash">ufw disable
+<pre><code class="language-shell">ufw disable
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

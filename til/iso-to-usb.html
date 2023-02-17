@@ -54,19 +54,19 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>How to create a bootable pendrive from ISO image</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-10-26</b>Last modified: <b class="ml-2">2022-10-28 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-10-26</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/iso.html">iso</a><a class="tag no-underline" href="/til/tag/dd.html">dd</a><a class="tag no-underline" href="/til/tag/boot.html">boot</a>
         </div><p>To install a fresh version of the Debian I need to prepare a bootable USB
 stick.</p>
 <p>First make sure I am writing on the right device. Yes, it is a very old 2GB USB
 stick.</p>
-<pre><code class="language-bash">fdisk -l | grep sdc
+<pre><code class="language-shell">fdisk -l | grep sdc
 Disco /dev/sdc: 1,9 GiB, 2017984000 bytes, 3941375 setores
 /dev/sdc1   *                0 774143  774144    378M  0 Vazia
 /dev/sdc2                 4060   9243    5184    2,5M ef EFI (FAT-12/16/32)
 </code></pre>
 <p>Then transfer the ISO image bit by bit to the USB stick:</p>
-<pre><code class="language-bash">dd \ 
+<pre><code class="language-shell">dd \ 
   bs=4M \
   if=debian-live-11.5.0-amd64-standard.iso \
   of=/dev/sdc \

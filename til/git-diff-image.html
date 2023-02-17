@@ -54,25 +54,25 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Git - diff de imagens</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-05-19</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-05-19</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
         </div><h2 id="dizer-ao-git-que-imagem-%C3%A9-imagem" tabindex="-1">Dizer ao git que imagem é imagem</h2>
 <p>Primeiro é necessário informar ao <code>git</code> para tratar imagens de um modo especial.
 Isso pode ser feito globalmente ou por projeto.</p>
 <p>O comando abaixo diz ao <code>git</code> que algumas extensões são imagens.</p>
-<pre><code class="language-bash">git config --global core.attributesfile '~/.gitattributes'
+<pre><code class="language-shell">git config --global core.attributesfile '~/.gitattributes'
 </code></pre>
-<pre><code class="language-bash">cat ~/.gitattributes
+<pre><code class="language-shell">cat ~/.gitattributes
 *.gif diff=image
 *.jpg diff=image
 *.png diff=image
 </code></pre>
 <h2 id="dizer-ao-git-como-fazer-o-diff" tabindex="-1">Dizer ao git como fazer o diff</h2>
 <p>O comando abaixo diz ao <code>git</code> qual programa executar para fazer o diff da imagem.</p>
-<pre><code class="language-bash">git config --global diff.image.command '~/bin/git-imgdiff'
+<pre><code class="language-shell">git config --global diff.image.command '~/bin/git-imgdiff'
 </code></pre>
 <h2 id="o-programa-de-diff" tabindex="-1">O programa de diff</h2>
-<pre><code class="language-bash">cat &lt;&lt; 'EOF' &gt; ~/bin/git-imgdiff
+<pre><code class="language-shell">cat &lt;&lt; 'EOF' &gt; ~/bin/git-imgdiff
 #!/bin/sh
 # Descomente o modo que desejar
 

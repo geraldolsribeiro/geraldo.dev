@@ -54,13 +54,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>ngrok</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-12</b>Last modified: <b class="ml-2">2022-12-13 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-12</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/ngrok.html">ngrok</a>
         </div><p><strong>ngrok</strong> is a globally distributed reverse proxy fronting your web services
 running in any cloud or private network, or your machine.</p>
 <h2 id="installation" tabindex="-1">Installation</h2>
 <p>From <a href="https://ngrok.com/download">https://ngrok.com/download</a> copy the <code>apt</code> command:</p>
-<pre><code class="language-bash">curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+<pre><code class="language-shell">curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
   | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc &gt;/dev/null \
   | &amp;&amp; echo &quot;deb https://ngrok-agent.s3.amazonaws.com buster main&quot; \
   | sudo tee /etc/apt/sources.list.d/ngrok.list \
@@ -69,13 +69,13 @@ running in any cloud or private network, or your machine.</p>
 </code></pre>
 <h2 id="account" tabindex="-1">Account</h2>
 <p>Connecting your account according to <a href="https://dashboard.ngrok.com/get-started/setup">https://dashboard.ngrok.com/get-started/setup</a>:</p>
-<pre><code class="language-bash">ngrok config add-authtoken 2Ip...BYo
+<pre><code class="language-shell">ngrok config add-authtoken 2Ip...BYo
 Authtoken saved to configuration file: /home/geraldo/.config/ngrok/ngrok.yml
 </code></pre>
 <h2 id="basic-usage" tabindex="-1">Basic usage</h2>
 <h3 id="serving-a-webpage" tabindex="-1">Serving a webpage</h3>
 <p>Starting a server on localhost:</p>
-<pre><code class="language-bash">http-server ./
+<pre><code class="language-shell">http-server ./
 </code></pre>
 <p>Expected output:</p>
 <pre><code>Starting up http-server, serving ./
@@ -98,7 +98,7 @@ Available on:
 Hit CTRL-C to stop the server
 </code></pre>
 <p>Piping port 8080:</p>
-<pre><code class="language-bash">ngrok http 8080
+<pre><code class="language-shell">ngrok http 8080
 </code></pre>
 <pre><code>Session Status  online
 Account         Geraldo Ribeiro (Plan: Free)

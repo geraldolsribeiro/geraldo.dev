@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>QEMU — Windows guest</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-26</b>Last modified: <b class="ml-2">2023-01-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-26</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/qemu.html">qemu</a><a class="tag no-underline" href="/til/tag/windows.html">windows</a>
         </div><div role="alert" class="my-4">
   <img class="mx-auto" src="/work_in_progress.webp" alt="Work in progress">
@@ -71,10 +71,10 @@ space program access to the hardware virtualization features of various
 processors.</li>
 </ul>
 <h2 id="image-disk-creation" tabindex="-1">Image disk creation</h2>
-<pre><code class="language-bash">qemu-img create -f qcow2 WindowsVM.img 25G
+<pre><code class="language-shell">qemu-img create -f qcow2 WindowsVM.img 25G
 </code></pre>
 <h2 id="release-mouse-grabbed-by-qemu" tabindex="-1">Release mouse grabbed by QEMU</h2>
-<pre><code class="language-bash">Ctrl+Alt+g
+<pre><code class="language-shell">Ctrl+Alt+g
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

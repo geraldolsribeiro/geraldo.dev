@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>git diff para odt</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-08-20</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-08-20</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
         </div><p>Instalar as dependências:</p>
-<pre><code class="language-bash">apt install odt2txt
+<pre><code class="language-shell">apt install odt2txt
 </code></pre>
 <p>Acrescentar o mapeamento das extensões no <code>.gitattributes</code> que serão conhecidas por <code>odf</code>:</p>
 <pre><code>*.ods diff=odf
@@ -69,7 +69,7 @@
 *.odp difftool=odf
 </code></pre>
 <p>Definir qual ferramenta será usada para conversão de texto para o tipo <code>odf</code>.</p>
-<pre><code class="language-bash">git config diff.odf.textconv odt2txt
+<pre><code class="language-shell">git config diff.odf.textconv odt2txt
 </code></pre>
 <h2 id="refer%C3%AAncias" tabindex="-1">Referências</h2>
 <ul>

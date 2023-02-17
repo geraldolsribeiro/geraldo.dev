@@ -54,9 +54,9 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>git log</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-11</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-06-11</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
-        </div><pre><code class="language-bash">$ git log --pretty=format:&quot;%h - %an, %ar : %s&quot;
+        </div><pre><code class="language-shell">$ git log --pretty=format:&quot;%h - %an, %ar : %s&quot;
 7e3b253 - Geraldo Ribeiro, 4 days ago : git diff
 8ec026a - Geraldo Ribeiro, 4 days ago : git
 b341291 - Geraldo Luis Da Silva Ribeiro, 3 weeks ago : Mode de exibição com 1 ou 3 imagens
@@ -71,7 +71,7 @@ ce29e4f - Geraldo Ribeiro, 8 weeks ago : keycloak
 f18e6d2 - Geraldo Ribeiro, 3 months ago : Descrição
 d9bb267 - Geraldo Ribeiro, 3 months ago : Refactoração
 </code></pre>
-<pre><code class="language-bash">$ git log --all --graph --decorate --oneline --abbrev-commit
+<pre><code class="language-shell">$ git log --all --graph --decorate --oneline --abbrev-commit
 * 7e3b253 (HEAD -&gt; master, origin/master, origin/HEAD) git diff
 * 8ec026a git
 * b341291 Mode de exibição com 1 ou 3 imagens
@@ -87,7 +87,7 @@ d9bb267 - Geraldo Ribeiro, 3 months ago : Refactoração
 * d9bb267 Refactoração
 </code></pre>
 <p><code>--all</code> lista commit de todos os branches</p>
-<pre><code class="language-bash">$ git log --oneline --all
+<pre><code class="language-shell">$ git log --oneline --all
 7e3b253 (HEAD -&gt; master, origin/master, origin/HEAD) git diff
 8ec026a git
 b341291 Mode de exibição com 1 ou 3 imagens

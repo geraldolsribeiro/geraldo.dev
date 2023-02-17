@@ -54,18 +54,18 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Como instalar o tema de ícones Papirus no Debian</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2017-10-24</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2017-10-24</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/icons.html">icons</a><a class="tag no-underline" href="/til/tag/papirus.html">papirus</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a>
         </div><p>O pacote <code>papirus-icon-theme</code> está no <code>Debian Sid</code>. Para instalar na versão <code>stable</code> basta
 criar um arquivo <code>papirus-icon-theme.list</code> contendo o endereço do repositório:</p>
-<pre><code class="language-bash">echo &quot;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&quot; \ 
+<pre><code class="language-shell">echo &quot;deb http://ppa.launchpad.net/papirus/papirus/ubuntu xenial main&quot; \ 
   &gt; /etc/apt/sources.list.d/papirus-icon-theme.list
 </code></pre>
 <p>Adicionar a chave</p>
-<pre><code class="language-bash">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F
+<pre><code class="language-shell">apt-key adv --recv-keys --keyserver keyserver.ubuntu.com E58A9D36647CAE7F
 </code></pre>
 <p>Instalar</p>
-<pre><code class="language-bash">apt-get update
+<pre><code class="language-shell">apt-get update
 apt-get install papirus-icon-theme
 </code></pre>
 <p>Pronto, agora é só selecionar o tema <code>papirus</code> na configuração do seu ambiente.</p>

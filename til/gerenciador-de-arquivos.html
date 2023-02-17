@@ -54,15 +54,15 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Gerenciador de arquivos</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-02</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-07-02</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/file-manager.html">file-manager</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/debian.html">debian</a><a class="tag no-underline" href="/til/tag/ubuntu.html">ubuntu</a>
         </div><p>O gerenciador de arquivos pode fazer muito mais do que simplesmente copiar, colar e renomear arquivos.</p>
 <p>Você já conhece o <strong>Nemo</strong>, um fork do <strong>GNOME Files</strong>?</p>
 <h2 id="instalando-o-nemo" tabindex="-1">Instalando o nemo</h2>
-<pre><code class="language-bash">apt install nemo
+<pre><code class="language-shell">apt install nemo
 </code></pre>
 <h2 id="nemo-como-gerenciador-padr%C3%A3o" tabindex="-1">Nemo como gerenciador padrão</h2>
-<pre><code class="language-bash">xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+<pre><code class="language-shell">xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 </code></pre>
 <h2 id="criando-novas-fun%C3%A7%C3%B5es" tabindex="-1">Criando novas funções</h2>
 <p>O arquivo <a href="https://github.com/linuxmint/nemo/blob/master/files/usr/share/nemo/actions/sample.nemo_action">/usr/share/nemo/actions/sample.nemo_action</a> contém um exemplo de script para criação de comandos.</p>
@@ -73,7 +73,7 @@
 </ul>
 <p>Nota: os arquivos precisam ter a extensão <code>.nemo_action</code>.</p>
 <p>Exemplo: <code>clamscan.nemo_action</code></p>
-<pre><code class="language-bash">[Nemo Action]
+<pre><code class="language-shell">[Nemo Action]
 Name=Clam Scan
 Comment=Clam Scan
 Exec=gnome-terminal -x sh -c &quot;clamscan -r %F | less&quot;
@@ -82,7 +82,7 @@ Selection=Any
 Extensions=dir;exe;dll;zip;gz;7z;rar;
 </code></pre>
 <p>Exemplo: <code>archive.nemo_action</code></p>
-<pre><code class="language-bash">[Nemo Action]
+<pre><code class="language-shell">[Nemo Action]
 Active=true
 Name=Archive %N
 Comment=Archiving %N will add .archive to the object.

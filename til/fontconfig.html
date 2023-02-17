@@ -54,14 +54,14 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Fontconfig - escondendo fontes</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-04-27</b>Last modified: <b class="ml-2">2022-10-10 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-04-27</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/font.html">font</a><a class="tag no-underline" href="/til/tag/fontconfig.html">fontconfig</a>
         </div><p>Após a instalação do LaTeX muitas fontes matemáticas e algumas muito estranhas
 ficaram sendo listadas no inkscape, libreoffice, …</p>
 <p>É possível especificar quais fontes devem ser listadas pelos programas através
 do arquivo <code>~/.config/fontconfig/fonts.conf</code>.</p>
 <p>Para obter o caminho das fontes para remoção use <code>fc-list | grep -i &quot;parte do nome da fonte&quot;</code>.</p>
-<pre><code class="language-bash">$ fc-list | grep -i &quot;noto&quot;
+<pre><code class="language-shell">$ fc-list | grep -i &quot;noto&quot;
 /home/geraldo/.fonts/Noto/Noto-Mono-for-Powerline.ttf: Noto Mono for Powerline:style=Regular
 /usr/share/fonts/truetype/noto/NotoSans-Bold.ttf: Noto Sans:style=Bold
 /usr/share/fonts/truetype/noto/NotoSans-Italic.ttf: Noto Sans:style=Italic

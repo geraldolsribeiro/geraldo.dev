@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>nginx content_by_lua_block</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-19</b>Last modified: <b class="ml-2">2023-01-24 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-19</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/nginx.html">nginx</a><a class="tag no-underline" href="/til/tag/content_by_lua_block.html">content_by_lua_block</a><a class="tag no-underline" href="/til/tag/lua.html">lua</a><a class="tag no-underline" href="/til/tag/ufw.html">ufw</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#block-ip-who-access-specific-url">Block IP who access specific URL</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -70,7 +70,7 @@ to hack or are searching for unprotected information.</p>
 <p>This post is incomplete!</p>
   </div>
 </div>
-<pre><code class="language-bash">awk '($9 ~ /404/)' /var/log/nginx/access.log | awk '{print $1, $7}' | sort -u
+<pre><code class="language-shell">awk '($9 ~ /404/)' /var/log/nginx/access.log | awk '{print $1, $7}' | sort -u
 </code></pre>
 <p>Fragment of listing from command above:</p>
 <pre><code>18.202.222.57 //.git/objects/8a/09b213b634828b8d961c413adc6b07db6398a4

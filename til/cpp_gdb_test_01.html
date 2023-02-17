@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ debugging with GDB</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-14 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-16 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="breakpoint" tabindex="-1">Breakpoint</h2>
 <ul>
 <li><code>[b]reak function_name</code></li>
@@ -69,9 +69,13 @@
 <pre><code>$ gdb bin/gdb_test_01
 Reading symbols from bin/gdb_test_01...
 (No debugging symbols found in bin/gdb_test_01)
-(gdb) break my_func_01(int, float) 
+</code></pre>
+<p>Create breakpoint at function  <code>my_func_01</code>:</p>
+<pre><code>(gdb) break my_func_01(int, float) 
 Breakpoint 1 at 0x3a74
-(gdb) run
+</code></pre>
+<p>Execute the program with breakpoint</p>
+<pre><code>(gdb) run
 Starting program: /data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01 
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
@@ -84,7 +88,9 @@ Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&qu
 [New Thread 0x7fffa5897700 (LWP 194522)]
 
 Thread 1 &quot;gdb_test_01&quot; hit Breakpoint 1, 0x0000555555557a74 in my_func_01(int, float) ()
-(gdb) cont
+</code></pre>
+<p>Continue execution after breakpoint</p>
+<pre><code>(gdb) cont
 Continuing.
 s = 10 + 3.141492 = 13.141492
 [Thread 0x7fffa5897700 (LWP 194522) exited]
@@ -96,28 +102,6 @@ s = 10 + 3.141492 = 13.141492
 [Thread 0x7fffd889d700 (LWP 194516) exited]
 [Inferior 1 (process 194512) exited normally]
 (gdb) 
-</code></pre>
-<h2 id="disassembly" tabindex="-1">Disassembly</h2>
-<p>If you do not have access to the source code of a function and wish
-to set a breakpoint on a particular instruction, call <code>disassemble function_name</code> (where <code>function_name</code> is the name of the procedure);
-this command will allow you to see the memory address of each
-instruction.</p>
-<p>For the following code:</p>
-<pre><code class="language-c++">int my_func_02(int x) {
-  return x + 42;
-}
-</code></pre>
-<p>We can get something like:</p>
-<pre><code>(gdb) disassemble my_func_02(int)
-Dump of assembler code for function _Z10my_func_02i:
-   0x0000000000003d60 &lt;+0&gt;:	push   %rbp
-   0x0000000000003d61 &lt;+1&gt;:	mov    %rsp,%rbp
-   0x0000000000003d64 &lt;+4&gt;:	mov    %edi,-0x4(%rbp)
-   0x0000000000003d67 &lt;+7&gt;:	mov    -0x4(%rbp),%eax
-   0x0000000000003d6a &lt;+10&gt;:	add    $0x2a,%eax         ; 0x2a = 42
-   0x0000000000003d6d &lt;+13&gt;:	pop    %rbp
-   0x0000000000003d6e &lt;+14&gt;:	ret
-End of assembler dump.
 </code></pre>
 <h2 id="breakpoint-condition" tabindex="-1">Breakpoint condition</h2>
 <ul>
@@ -149,6 +133,7 @@ Breakpoint 1 at 0x3d92: file gdb_test_01.cpp, line 112.
 <p>Run the program, and the breakpoint only will be actioned for <code>i == 7</code></p>
 <pre><code>(gdb) run
 Starting program:
+/data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
 [New Thread 0x7fffd889c700 (LWP 490606)]
@@ -191,6 +176,28 @@ i = 9
 [Inferior 1 (process 490602) exited normally]
 (gdb)
 </code></pre>
+<h2 id="disassembly" tabindex="-1">Disassembly</h2>
+<p>If you do not have access to the source code of a function and wish
+to set a breakpoint on a particular instruction, call <code>disassemble function_name</code> (where <code>function_name</code> is the name of the procedure);
+this command will allow you to see the memory address of each
+instruction.</p>
+<p>For the following code:</p>
+<pre><code class="language-c++">int my_func_02(int x) {
+  return x + 42;
+}
+</code></pre>
+<p>We can get something like:</p>
+<pre><code>(gdb) disassemble my_func_02(int)
+Dump of assembler code for function _Z10my_func_02i:
+   0x0000000000003d60 &lt;+0&gt;:	push   %rbp
+   0x0000000000003d61 &lt;+1&gt;:	mov    %rsp,%rbp
+   0x0000000000003d64 &lt;+4&gt;:	mov    %edi,-0x4(%rbp)
+   0x0000000000003d67 &lt;+7&gt;:	mov    -0x4(%rbp),%eax
+   0x0000000000003d6a &lt;+10&gt;:	add    $0x2a,%eax         ; 0x2a = 42
+   0x0000000000003d6d &lt;+13&gt;:	pop    %rbp
+   0x0000000000003d6e &lt;+14&gt;:	ret
+End of assembler dump.
+</code></pre>
 <h2 id="tui-enable" tabindex="-1">TUI enable</h2>
 <ul>
 <li><code>tui enable</code></li>
@@ -201,6 +208,38 @@ i = 9
      <strong>Fig. 1</strong> - <span>Text user interface</span>
   </figcaption>
 </figure>
+<h2 id="displaying-informations" tabindex="-1">Displaying informations</h2>
+<pre><code>(gdb) help p
+print, inspect, p
+Print value of expression EXP.
+Usage: print [[OPTION]... --] [/FMT] [EXP]
+</code></pre>
+<p>FMT:</p>
+<ul>
+<li>o(octal)</li>
+<li>x(hex)</li>
+<li>d(decimal)</li>
+<li>u(unsigned decimal)</li>
+<li>t(binary)</li>
+<li>f(float)</li>
+<li>a(address)</li>
+<li>i(instruction)</li>
+<li>c(char)</li>
+<li>s(string)</li>
+<li>z(hex, zero padded on the left)</li>
+</ul>
+<h3 id="print-in-binary-format" tabindex="-1">Print in binary format</h3>
+<pre><code>(gdb) p /t 1024
+$1 = 10000000000
+(gdb) p /t 7
+$2 = 111
+</code></pre>
+<h3 id="print-in-hex-format" tabindex="-1">Print in hex format</h3>
+<pre><code>(gdb) p /x 1024
+$1 = 0x400
+(gdb) p /x 7
+$2 = 0x7
+</code></pre>
 <h2 id="finishing" tabindex="-1">Finishing</h2>
 <ul>
 <li><code>kill</code> stop debugging session</li>

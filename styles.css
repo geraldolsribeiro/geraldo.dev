@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.6 | MIT License | https://tailwindcss.com
+! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -1220,6 +1220,10 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
+}
+
+.w-0 {
+  width: 0px;
 }
 
 .w-12 {

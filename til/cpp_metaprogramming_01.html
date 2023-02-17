@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ metaprogramming</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-26</b>Last modified: <b class="ml-2">2023-02-08 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-26</b>Last modified: <b class="ml-2">2023-02-16 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/metaprogramming.html">metaprogramming</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#traditional-recursive-factorial">Traditional recursive factorial</a></li><li><a href="#recursive-factorial-using-metaprogramming">Recursive factorial using metaprogramming</a></li><li><a href="#why-metaprogramming">Why metaprogramming</a></li><li><a href="#very-simple-speed-test">Very simple speed test</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#traditional-recursive-factorial">Traditional recursive factorial</a></li><li><a href="#recursive-factorial-using-metaprogramming">Recursive factorial using metaprogramming</a></li><li><a href="#why-metaprogramming%3F">Why metaprogramming?</a></li><li><a href="#very-simple-speed-test">Very simple speed test</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
 <h2 id="traditional-recursive-factorial" tabindex="-1">Traditional recursive factorial</h2>
 <pre><code class="language-cpp">int factorial( int n )
 {
@@ -77,7 +77,7 @@ struct MetaFactorial&lt;0&gt; {
   enum { value = 1 };
 };
 </code></pre>
-<h2 id="why-metaprogramming" tabindex="-1">Why metaprogramming</h2>
+<h2 id="why-metaprogramming%3F" tabindex="-1">Why metaprogramming?</h2>
 <p>In the book <strong>Expert C++</strong> <em>Vardan Grigoryan</em> and <em>Shunguang Wu</em> wrote:</p>
 <blockquote>
 <p>Why would we bother to write so much code just for a factorial
@@ -128,14 +128,14 @@ make you fall in love with metaprogramming.</p>
 <pre><code class="language-txt">MetaFactorial
 f(10) = 3628800
 f(11) = 39916800
-took 59ns
+took 108ns
 
 Recursive
 f(10) = 3628800
 f(11) = 39916800
-took 383ns
+took 457ns
 
-Ratio: 6.49153
+Ratio: 4.23148
 
 </code></pre>
 

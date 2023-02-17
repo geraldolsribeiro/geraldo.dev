@@ -84,23 +84,71 @@ the value computation of the right and left operands, and before the
 value computation of the assignment expression. The right operand
 is sequenced before the left operand.</li>
 </ul>
-<pre><code class="language-cpp">void weeds01() {
+<pre><code class="language-cpp">void ___(auto text) { std::cout &lt;&lt; &quot;\n--- [&quot; &lt;&lt; text &lt;&lt; &quot;]&quot; &lt;&lt; std::endl; }
+
+void weeds01() {
   auto print_one = [](auto t) {
     std::cout &lt;&lt; t &lt;&lt; std::endl;
     return std::type_identity&lt;void&gt;{};
   };
 
+  ___(&quot;print_one(hello) , print_one(world)&quot;);
   print_one(&quot;hello&quot;), print_one(&quot;world&quot;);  // hello world
-  std::cout &lt;&lt; &quot;---&quot;&lt;&lt; std::endl;
+  ___(&quot;print_one(hello) = print_one(world)&quot;);
   print_one(&quot;hello&quot;) = print_one(&quot;world&quot;);  // world hello
+
+  auto fold_print_assign_right = [&amp;](auto... vals) { (print_one(vals) = ...); };
+  auto fold_print_assign_left = [&amp;](auto... vals) { (... = print_one(vals)); };
+
+  ___(&quot;fold_print_assign_right(1,2,3,4)&quot;);
+  fold_print_assign_right(1, 2, 3, 4);  // 4 3 2 1
+
+  ___(&quot;fold_print_assign_left(1,2,3,4)&quot;);
+  fold_print_assign_left(1, 2, 3, 4);  //  4 3 2 1
+
+  auto fold_print_comma_right = [&amp;](auto... vals) { (print_one(vals), ...); };
+  auto fold_print_comma_left = [&amp;](auto... vals) { (..., print_one(vals)); };
+
+  ___(&quot;fold_print_comma_right(1,2,3,4)&quot;);
+  fold_print_comma_right(1, 2, 3, 4);  // 4 3 2 1
+
+  ___(&quot;fold_print_comma_left(1,2,3,4)&quot;);
+  fold_print_comma_left(1, 2, 3, 4);  //  4 3 2 1
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">hello
+<pre><code class="language-txt">
+--- [print_one(hello) , print_one(world)]
+hello
 world
----
+
+--- [print_one(hello) = print_one(world)]
 world
 hello
+
+--- [fold_print_assign_right(1,2,3,4)]
+4
+3
+2
+1
+
+--- [fold_print_assign_left(1,2,3,4)]
+4
+3
+2
+1
+
+--- [fold_print_comma_right(1,2,3,4)]
+1
+2
+3
+4
+
+--- [fold_print_comma_left(1,2,3,4)]
+1
+2
+3
+4
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ weeds</title>
+    <title>C++ solid</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,108 +53,147 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ weeds</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-17</b>Last modified: <b class="ml-2">2023-02-18 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/weeds.html">weeds</a>
+        <h1>C++ solid</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-18</b>Last modified: <b class="ml-2">2023-02-19 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/solid.html">solid</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#operator-order-of-evaluation">Operator Order of Evaluation</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="introduction" tabindex="-1">Introduction</h2>
-<div role="alert" class="my-4">
-  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">☢</span>
-    <span>Warning</span>
-  </div>
-  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
-<p>Don’t use in production</p>
-  </div>
-</div>
-<h2 id="operator-order-of-evaluation" tabindex="-1">Operator Order of Evaluation</h2>
+<p><div class="table-of-contents"><ul><li><a href="#solid-principles">SOLID Principles</a></li><li><a href="#single-responsibility-principle">Single Responsibility Principle</a></li><li><a href="#open-closed-principle">Open-Closed Principle</a></li><li><a href="#liskov-substitution-principle">Liskov-Substitution Principle</a></li><li><a href="#interface-segregation-principle">Interface Segregation Principle</a></li><li><a href="#dependency-inversion-principle">Dependency Inversion Principle</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="solid-principles" tabindex="-1">SOLID Principles</h2>
 <ul>
-<li><code>[intro.execution]/10</code> &quot;Except where noted, evaluations of operands
-of individual operators and of subexpressions of individual
-expressions are unsequenced. The value computations of the operands
-of an operator are sequenced before the value computation of the
-result of the operator.’;</li>
-<li><code>[expr.comma]/1</code> &quot;A pair of expressions separated by a comma is
-evaluated left-to-right; the left expression is a discarded-value
-expression. The left expression is sequenced before the right
-expression</li>
-<li><code>[expr.ass]/1</code> “In all cases, the assignment is sequenced after
-the value computation of the right and left operands, and before the
-value computation of the assignment expression. The right operand
-is sequenced before the left operand.</li>
+<li>Single Responsibility Principle</li>
+<li>Open Closed Principle</li>
+<li>Liskov Substitution Principle</li>
+<li>Interface Segregation Principle</li>
+<li>Dependency Inversion Principle</li>
 </ul>
-<pre><code class="language-cpp">void ___(auto text) { std::cout &lt;&lt; &quot;\n--- [&quot; &lt;&lt; text &lt;&lt; &quot;]&quot; &lt;&lt; std::endl; }
+<h2 id="single-responsibility-principle" tabindex="-1">Single Responsibility Principle</h2>
+<p>A class should have only one reason to change</p>
+<ul>
+<li>Should have only one responsibility</li>
+<li>Classes with multiple responsibilities break when changed</li>
+<li>Put each responsibility in a separate class</li>
+</ul>
+<p>Before:</p>
+<pre><code class="language-c++">class Notes {
+ public:
+  void Add() {}
+  void Remove() {}
+  void Display() {}
+};
+</code></pre>
+<p>After</p>
+<pre><code class="language-c++">class Notes {
+ public:
+  void Add() {}
+  void Remove() {}
+};
+</code></pre>
+<p>Trasfer the responsability to display Notes to view class</p>
+<pre><code class="language-c++">class View {
+ public:
+  void Display(Notes *notes) {
+     // implementation
+  }
+};
+</code></pre>
+<h2 id="open-closed-principle" tabindex="-1">Open-Closed Principle</h2>
+<p>Modules should be open for extension but closed for modification</p>
+<ul>
+<li>Modification to existing code leads to bugs and causes the software to</li>
+<li>it should be possible to change behavior of existing code without</li>
+<li>it the behavior should be changed by adding new code</li>
+<li>Cornerstone of good design</li>
+<li>Use design patterns</li>
+</ul>
+<p>This principle explains why we should write software in such a
+way that its behavior can be modified in future without changing
+existing code.</p>
+<h2 id="liskov-substitution-principle" tabindex="-1">Liskov-Substitution Principle</h2>
+<p>Subtypes must be substitutable for their base types</p>
+<ul>
+<li>Applies to inheritance relationship</li>
+<li>The inheritance relationship should be based on behavior</li>
+<li>A subclass must have all the behaviors of its base type &amp; must not remove</li>
+<li>This allows a subclass to replace its base type in code</li>
+<li>New subclasses can be added without modifying existing code</li>
+</ul>
+<p>Learn how inheritance should be used correctly through the Liskov</p>
+<h2 id="interface-segregation-principle" tabindex="-1">Interface Segregation Principle</h2>
+<p>Clients should not be forced to depend on methods they do not use</p>
+<ul>
+<li>An interface with too many methods will be complex to use (called fat</li>
+<li>Some clients may not use all the methods
+<ul>
+<li>But will be forced to depend on them</li>
+</ul>
+</li>
+<li>Separate the interface and put methods based on the client usage</li>
+</ul>
+<p>This principle deals with fat interfaces.</p>
+<p>Before:</p>
+<pre><code class="language-c++">struct IFile {
+  virtual void Read() = 0;
+  virtual void Write() = 0;
+  virtual ~IFile() = default;
+};
+</code></pre>
+<p>After:</p>
+<pre><code class="language-c++">struct IRead {
+  virtual void Read() = 0;
+  virtual ~IRead() = default;
+};
+</code></pre>
+<pre><code class="language-c++">struct IWrite {
+  virtual void Write() = 0;
+  virtual ~IWrite() = default;
+};
+</code></pre>
+<h2 id="dependency-inversion-principle" tabindex="-1">Dependency Inversion Principle</h2>
+<p>Abstractions should not depend on details. Details should depend on</p>
+<ul>
+<li>Abstraction means an interface and details mean classes</li>
+<li>Using a concrete class directly creates a dependency</li>
+<li>Software becomes difficult to modify</li>
+<li>Invert the dependency by using an interface rather a concrete class</li>
+</ul>
+<p>A very important principle that forms the flexible structure of all class</p>
+<p>Before:</p>
+<pre><code class="language-c++">class ImageReader {
+ public:
+  virtual void Decode() = 0;
+  virtual ~ImageReader() = default;
+};
+</code></pre>
+<pre><code class="language-c++">class BitmapReader : public ImageReader {
+ public:
+  void Decode();
+};
+</code></pre>
+<pre><code class="language-c++">class ImageViewer {
+  BitmapReader *m_Reader{}; // depends on concrete class
 
-void weeds01() {
-  auto print_one = [](auto t) {
-    std::cout &lt;&lt; t &lt;&lt; std::endl;
-    return std::type_identity&lt;void&gt;{};
-  };
+ public:
+  void Display() {}
+};
+</code></pre>
+<p>After</p>
+<pre><code class="language-c++">class ImageViewer {
+  ImageReader *m_Reader{}; // depends on interface
 
-  ___(&quot;print_one(hello) , print_one(world)&quot;);
-  print_one(&quot;hello&quot;), print_one(&quot;world&quot;);  // hello world
-  ___(&quot;print_one(hello) = print_one(world)&quot;);
-  print_one(&quot;hello&quot;) = print_one(&quot;world&quot;);  // world hello
-
-  auto fold_print_assign_right = [&amp;](auto... vals) { (print_one(vals) = ...); };
-  auto fold_print_assign_left = [&amp;](auto... vals) { (... = print_one(vals)); };
-
-  ___(&quot;fold_print_assign_right(1,2,3,4)&quot;);
-  fold_print_assign_right(1, 2, 3, 4);  // 4 3 2 1
-
-  ___(&quot;fold_print_assign_left(1,2,3,4)&quot;);
-  fold_print_assign_left(1, 2, 3, 4);  //  4 3 2 1
-
-  auto fold_print_comma_right = [&amp;](auto... vals) { (print_one(vals), ...); };
-  auto fold_print_comma_left = [&amp;](auto... vals) { (..., print_one(vals)); };
-
-  ___(&quot;fold_print_comma_right(1,2,3,4)&quot;);
-  fold_print_comma_right(1, 2, 3, 4);  // 4 3 2 1
-
-  ___(&quot;fold_print_comma_left(1,2,3,4)&quot;);
-  fold_print_comma_left(1, 2, 3, 4);  //  4 3 2 1
-}
+ public:
+  void Display() {}
+};
+</code></pre>
+<pre><code class="language-cpp">
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">
---- [print_one(hello) , print_one(world)]
-hello
-world
-
---- [print_one(hello) = print_one(world)]
-world
-hello
-
---- [fold_print_assign_right(1,2,3,4)]
-4
-3
-2
-1
-
---- [fold_print_assign_left(1,2,3,4)]
-4
-3
-2
-1
-
---- [fold_print_comma_right(1,2,3,4)]
-1
-2
-3
-4
-
---- [fold_print_comma_left(1,2,3,4)]
-1
-2
-3
-4
-
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://www.youtube.com/watch?v=15etE6WcvBY">Why You Should Write Code That You Should Never Write - Daisy
-Hollman - CppCon 2021</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
 </ul>
 
       </main>

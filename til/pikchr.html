@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>pikchr</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-15</b>Last modified: <b class="ml-2">2023-02-15 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-15</b>Last modified: <b class="ml-2">2023-02-19 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven.html">text-driven</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>Online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
 <h2 id="sample" tabindex="-1">Sample</h2>
@@ -228,12 +228,38 @@ mybox(2cm, 1cm, blue, &quot;text2&quot;)
 mybox(4cm,4cm, yellow, &quot;text3&quot;)
 # Extracted by md2pug
 </code></pre>
+<h2 id="utf-8-characters" tabindex="-1">UTF-8 characters</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-7">
+    <img class="mx-auto my-2" src="/til/pikchr_utf_8_character.svg" alt="Pikchr UTF-8 character">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 7</strong> — <span>Pikchr UTF-8 character</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">margin = 1cm
+P1: (0,0)
+P2: (4cm,3cm)
+P3: (4cm,0)
+line from P1 to P2 to P3 close dashed thin thin fill purple
+line invisible from P1 to P2 &quot;☕☕&quot; above aligned big
+line invisible from P2 to P3 &quot; ✍&quot; ljust big
+line invisible from P1 to P3 &quot;🍕&quot; below big
+dot at P1 fill red
+dot at P2 fill blue
+dot at P3 fill green
+box with .sw at (-1cm,-1cm) width 6cm height 5cm thin color brown radius 2mm
+move to (0cm,3cm)
+Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨🟩🟪🟫&quot; &quot;🛑🔶🔷🔸🔹🔺🔻&quot;
+# Extracted by md2pug
+</code></pre>
+<h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-8">
     <img class="mx-auto my-2" src="/til/pikchr_tailscale_diagram.svg" alt="Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 7</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
+     <strong>Fig. 8</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
   </figcaption>
 </figure>
 <pre><code class="language-txt">topmargin = 1
@@ -329,7 +355,7 @@ line up 0.15 right 0.15 down 0.15 left 0.15 down 0.15 right 0.15 up 0.15 left 0.
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

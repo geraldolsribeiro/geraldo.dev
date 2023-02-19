@@ -342,11 +342,27 @@ arrow from 1st circle to 3rd circle chop color purple
   </figcaption>
 </figure>
 <pre><code class="language-txt">margin =  1cm
-box width 1cm height 1cm
-arrow right from 0 &lt;last box.ne, last box.se&gt; color red
-arrow right from 1/3 of the way between last box.ne and last box.se color orange
-arrow right from 2/3 &lt;last box.ne, last box.se&gt; color blue
-arrow right from 1 &lt;last box.ne, last box.se&gt; color green
+box width 1cm height 3cm
+arrow right from 0 &lt;last box.ne, last box.se&gt; color red &quot;0&quot; small small above
+arrow right from 1/3 of the way between last box.ne and last box.se color orange &quot;1/3&quot; small small above
+arrow right from 2/3 &lt;last box.ne, last box.se&gt; color blue &quot;2/3&quot; small small above
+arrow right from 1 &lt;last box.ne, last box.se&gt; color green &quot;1&quot; small small above
+#
+P1: (3cm,-15mm)
+P2: (4cm,1.5cm)
+P3: (8cm,-15mm)
+P4: (4.5cm,1.5cm)
+#
+dot at P1 &quot;P1&quot; below rjust
+dot at P2 &quot;P2&quot; above rjust
+dot at P3 &quot;P3&quot; below ljust
+dot at P4 &quot;P4&quot; above ljust
+#
+L1: line from P1 to P2
+L2: line from P3 to P4
+#
+arrow from 1/3 &lt;P1, P2&gt; to 1/3 &lt;P3, P4&gt; color blue
+arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">

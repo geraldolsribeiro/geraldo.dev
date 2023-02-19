@@ -280,13 +280,90 @@ Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨�
      <strong>Fig. 8</strong> — <span>Trigonometric functions</span>
   </figcaption>
 </figure>
-<h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
+<pre><code class="language-txt">pi = 3.141592  # define a constant
+a = sin(pi)    # 0
+b = cos(pi)    # 1
+c = abs(-pi)   # 3.141592
+d = int(pi)    # 3
+e = sqrt(25)   # 5
+#
+define trigCircle {
+  circle radius 1 color gray
+  arrow from (0,-1.2) to (0,1.2) color gray
+  arrow from (-1.2,0) to (1.2,0) color gray
+}
+#
+define angHor  {
+  arrow from (0,0) to (sin((90-$1)*pi/180),cos((90-$1)*pi/180)) color purple
+  text $2 color purple
+}
+#
+define angVert {
+  arrow from (0,0) to (sin($1*pi/180),cos($1*pi/180)) color green thin thin
+  text $2 above rjust color green
+}
+#
+trigCircle
+angHor( 30, &quot;30⁰ = 60 from N&quot; )
+angHor( 20, &quot;20⁰ = 70 from N&quot; )
+angHor( 10, &quot;10⁰ = 80 from N&quot; )
+angVert( 10, &quot;10⁰&quot; )
+angVert( 20, &quot;20⁰&quot; )
+angVert( 30, &quot;30⁰&quot; )
+angVert( 40, &quot;40⁰&quot; )
+angVert( 50, &quot;50⁰&quot; )
+#
+arrow from (0,0) to (b,a) &quot;Pi&quot; above color red thick thick
+# Extracted by md2pug
+</code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-9">
+    <img class="mx-auto my-2" src="/til/pikchr_circle_chop.svg" alt="Pikchr circle chop">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 9</strong> — <span>Pikchr circle chop</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">circlerad = 3mm;
+circle &quot;a&quot; color brown
+circle &quot;b&quot; at 1st circle + (-0.4, -0.6) color green
+circle &quot;c&quot; at 1st circle + (0.4, -0.6) color cyan
+arrow from 1st circle to 2nd circle chop color purple
+arrow from 1st circle to 3rd circle chop color purple
+# Extracted by md2pug
+</code></pre>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-10">
+    <img class="mx-auto my-2" src="/til/pikchr_path_division.svg" alt="Pikchr path division">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 10</strong> — <span>Pikchr path division</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">box width 1cm height 1cm
+arrow right from 1/3 of the way between last box.ne and last box.se color blue
+arrow right from 2/3 &lt;last box.ne, last box.se&gt; color red
+# Extracted by md2pug
+</code></pre>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-11">
+    <img class="mx-auto my-2" src="/til/pikchr_spline.svg" alt="Pikchr spline">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 11</strong> — <span>Pikchr spline</span>
+  </figcaption>
+</figure>
+<pre><code class="language-txt">line dashed right 1 then down .5 left 1 then right 1 thin thin
+spline from start of last line right 1 then down .5 left 1 then right 1 color orange
+# Extracted by md2pug
+</code></pre>
+<h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-12">
     <img class="mx-auto my-2" src="/til/pikchr_tailscale_diagram.svg" alt="Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 9</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
+     <strong>Fig. 12</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
   </figcaption>
 </figure>
 <pre><code class="language-txt">topmargin = 1

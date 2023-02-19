@@ -70,7 +70,7 @@
   </figcaption>
 </figure>
 <p>The figure above was generaed by the following code:</p>
-<pre><code class="language-txt">topmargin += 1mm
+<pre><code class="language-shell">topmargin += 1mm
 margin = 5mm
 arrow right 200% &quot;Markdown&quot; &quot;Source&quot;
 box rad 10px &quot;Markdown&quot; &quot;Formatter&quot; &quot;(markdown.c)&quot; fit
@@ -97,7 +97,7 @@ box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
      <strong>Fig. 2</strong> — <span>Filled polygon</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">margin = 5mm;
+<pre><code class="language-shell">margin = 5mm;
 text &quot;Start here&quot; 
 dot color green width 200%
 # heading zero == north
@@ -112,7 +112,7 @@ line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
      <strong>Fig. 3</strong> — <span>Filled polygon fail</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">A: (  0, sqrt(3/4))
+<pre><code class="language-shell">A: (  0, sqrt(3/4))
 B: (  0.5, 0)
 C: ( -0.5, 0)
 margin = 5mm;
@@ -148,7 +148,7 @@ circle rad 0.1 at C fill green
      <strong>Fig. 4</strong> — <span>Arrow</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">margin = 10mm;
+<pre><code class="language-shell">margin = 10mm;
 dot color blue
 line right 2cm then down .5cm then up 1cm right 1cm \
    then up 1cm left 1cm then down .5cm then left 2cm \
@@ -184,7 +184,7 @@ analysis, likely resulting in a syntax error.</p>
      <strong>Fig. 5</strong> — <span>Pikchr macro flag</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">CP: dot invisible;
+<pre><code class="language-shell">CP: dot invisible;
 
 define flag { 
     line go 1.5 heading $flagAngle \
@@ -215,7 +215,7 @@ $flagAngle = 60; $color=green; flag;
      <strong>Fig. 6</strong> — <span>Pikchr macro with parameters</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">define mybox {
+<pre><code class="language-shell">define mybox {
 move right 10mm;
 dot color blue;  
 box width $1 height $2 radius 2mm color $3;
@@ -237,7 +237,7 @@ mybox(4cm,4cm, yellow, &quot;text3&quot;)
      <strong>Fig. 7</strong> — <span>Pikchr UTF-8 character</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">margin = 1cm
+<pre><code class="language-shell">margin = 1cm
 P1: (0,0)
 P2: (4cm,3cm)
 P3: (4cm,0)
@@ -280,7 +280,7 @@ Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨�
      <strong>Fig. 8</strong> — <span>Trigonometric functions</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">pi = 3.141592  # define a constant
+<pre><code class="language-shell">pi = 3.141592  # define a constant
 a = sin(pi)    # 0
 b = cos(pi)    # 1
 c = abs(-pi)   # 3.141592
@@ -324,7 +324,7 @@ arrow from (0,0) to (b,a) &quot;Pi&quot; above color red thick thick
      <strong>Fig. 9</strong> — <span>Pikchr circle chop</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">margin =  1cm
+<pre><code class="language-shell">margin =  1cm
 circlerad = 3mm
 circle &quot;a&quot; color brown
 circle &quot;b&quot; at 1st circle + (-0.4, -0.6) color green
@@ -341,7 +341,7 @@ arrow from 1st circle to 3rd circle chop color purple
      <strong>Fig. 10</strong> — <span>Pikchr path division</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">margin =  1cm
+<pre><code class="language-shell">margin = 1cm
 box width 1cm height 3cm
 arrow right from 0 &lt;last box.ne, last box.se&gt; color red &quot;0&quot; small small above
 arrow right from 1/3 of the way between last box.ne and last box.se color orange &quot;1/3&quot; small small above
@@ -373,7 +373,8 @@ arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
      <strong>Fig. 11</strong> — <span>Pikchr spline</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">line dashed right 1 then down .5 left 1 then right 1 thin thin
+<pre><code class="language-shell">margin = 1cm
+line dashed right 1 then down .5 left 1 then right 1 thin thin
 spline from start of last line right 1 then down .5 left 1 then right 1 color orange
 # Extracted by md2pug
 </code></pre>
@@ -386,7 +387,7 @@ spline from start of last line right 1 then down .5 left 1 then right 1 color or
      <strong>Fig. 12</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
   </figcaption>
 </figure>
-<pre><code class="language-txt">topmargin = 1
+<pre><code class="language-shell">topmargin = 1
 fontscale = 3
 color = 0xc65835 # Orange
 #

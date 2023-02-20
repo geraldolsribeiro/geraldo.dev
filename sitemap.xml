@@ -1063,6 +1063,9 @@
     <loc>https://geraldo.dev/til/tag/hacking.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/prefix_and_postfix.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/std::make_shared.html</loc>
   </url>
   <url>
@@ -1205,6 +1208,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/network.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/solid.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/mapproxy.html</loc>
@@ -1411,6 +1417,9 @@
     <loc>https://geraldo.dev/til/tag/ASan.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/min.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/argdo.html</loc>
   </url>
   <url>
@@ -1421,6 +1430,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/ubuntu.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/max.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/rapoo.html</loc>
@@ -1558,10 +1570,16 @@
     <loc>https://geraldo.dev/til/tag/metric.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/wandbox.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/Djinni.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/iso.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/coliru.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/OpenDDS.html</loc>
@@ -1610,6 +1628,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/optimization.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/godbolt.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/gcal.html</loc>
@@ -1831,6 +1852,9 @@
     <loc>https://geraldo.dev/til/tag/IntelMQ.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/online-compiler.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/red-black-tree.html</loc>
   </url>
   <url>
@@ -1958,6 +1982,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/clang-tidy.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/lowest.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/views-reverse.html</loc>
@@ -2192,6 +2219,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/accumulate.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::numeric_limits.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/TDD.html</loc>

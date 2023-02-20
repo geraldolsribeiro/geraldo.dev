@@ -57,7 +57,7 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-20</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/min.html">min</a><a class="tag no-underline" href="/til/tag/max.html">max</a><a class="tag no-underline" href="/til/tag/lowest.html">lowest</a><a class="tag no-underline" href="/til/tag/std::numeric_limits.html">std::numeric_limits</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#weird-integral-types">Weird integral types</a></li><li><a href="#type-limits">Type limits</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#weird-integral-types">Weird integral types</a></li><li><a href="#type-limits">Type limits</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="weird-integral-types" tabindex="-1">Weird integral types</h2>
 <div role="alert" class="my-4">
   <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
@@ -133,21 +133,9 @@ operations.</p>
   print_prop(double, radix);
   print_prop(double, digits10);
   // print_prop(double, round_style);
-  // }}}
-}
-
-int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
-  convertionToInt();
-  printLimits();
-  return 0;
-}
-
-## Possible output
-//-- ## Possible output
-
-
-```txt
-sizeof(   var1   ) = 2 | value = 10
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">sizeof(   var1   ) = 2 | value = 10
 sizeof(   var2   ) = 2 | value = 20
 sizeof(   var3   ) = 1 | value = (
 sizeof(   var4   ) = 1 | value = 2
@@ -179,12 +167,8 @@ double        |      digits10      |    15
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
-<p>//-- ## References</p>
-<p>// clang-format off</p>
 <ul>
-<li><a href="https://en.cppreference.com/w/cpp/types/numeric_limits">C++ Numeric limits</a>
-//-- * <a href="https://en.cppreference.com/w/cpp/types/numeric_limits">C++ Numeric limits</a>
-// clang-format on</li>
+<li><a href="https://en.cppreference.com/w/cpp/types/numeric_limits">C++ Numeric limits</a></li>
 </ul>
 
       </main>

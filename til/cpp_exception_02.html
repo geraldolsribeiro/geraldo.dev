@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ exception — 02</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2023-02-16 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::exception.html">std::exception</a><a class="tag no-underline" href="/til/tag/std::runtime_error.html">std::runtime_error</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#strong-and-weak-exception-guarantee">Strong and weak exception guarantee</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -98,23 +98,153 @@ int main() {
 }
 </code></pre>
 <p>Compilation warning:</p>
-<pre><code class="language-txt">exception_02.cpp:5:3: warning: 'uh_oh' has a non-throwing exception specification but can still throw [-Wexceptions]
-  throw 1;
-  ^
-exception_02.cpp:3:6: note: function declared non-throwing here
-void uh_oh() noexcept {
-     ^       ~~~~~~~~
-1 warning generated.
+<pre><code class="language-txt">-Wall
+-Wextra
+-o
+bin/exception_02
+-L/opt/intmain/dev/linux/usr/lib/
+-lbotan-2
+-lmemcached
+-lboost_system
+-lboost_filesystem
+-lX11
+-lopencv_stitching
+-lopencv_alphamat
+-lopencv_aruco
+-lopencv_bgsegm
+-lopencv_bioinspired
+-lopencv_ccalib
+-lopencv_dnn_objdetect
+-lopencv_dnn_superres
+-lopencv_dpm
+-lopencv_face
+-lopencv_freetype
+-lopencv_fuzzy
+-lopencv_hdf
+-lopencv_hfs
+-lopencv_img_hash
+-lopencv_intensity_transform
+-lopencv_line_descriptor
+-lopencv_mcc
+-lopencv_quality
+-lopencv_rapid
+-lopencv_reg
+-lopencv_rgbd
+-lopencv_saliency
+-lopencv_shape
+-lopencv_stereo
+-lopencv_structured_light
+-lopencv_phase_unwrapping
+-lopencv_superres
+-lopencv_optflow
+-lopencv_surface_matching
+-lopencv_tracking
+-lopencv_highgui
+-lopencv_datasets
+-lopencv_text
+-lopencv_plot
+-lopencv_ml
+-lopencv_videostab
+-lopencv_videoio
+-lopencv_viz
+-lopencv_ximgproc
+-lopencv_video
+-lopencv_dnn
+-lopencv_xobjdetect
+-lopencv_objdetect
+-lopencv_calib3d
+-lopencv_imgcodecs
+-lopencv_features2d
+-lopencv_flann
+-lopencv_xphoto
+-lopencv_photo
+-lopencv_imgproc
+-lopencv_core
+-ltermbox
+-larmadillo
+-lgumbo
+-L/opt/intmain/dev/linux/usr/lib
+-lfltk
+-lm
+-lX11
+-lXext
+-lpthread
+-lXinerama
+-lXfixes
+-lXcursor
+-lXft
+-lXrender
+-lm
+-lfontconfig
+-ldl
+-ltbb
+-lIce
+-lpthread
+-lrocksdb
+-larchive
+-lzmq
+-lyaml-cpp
+-lfmt
+-lmosquitto
+-pthread
+-I/usr/include/webkitgtk-4.0
+-I/usr/include/gtk-3.0
+-I/usr/include/at-spi2-atk/2.0
+-I/usr/include/at-spi-2.0
+-I/usr/include/dbus-1.0
+-I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
+-I/usr/include/gtk-3.0
+-I/usr/include/gio-unix-2.0
+-I/usr/include/cairo
+-I/usr/include/pango-1.0
+-I/usr/include/fribidi
+-I/usr/include/harfbuzz
+-I/usr/include/atk-1.0
+-I/usr/include/cairo
+-I/usr/include/pixman-1
+-I/usr/include/uuid
+-I/usr/include/freetype2
+-I/usr/include/libpng16
+-I/usr/include/gdk-pixbuf-2.0
+-I/usr/include/libsoup-2.4
+-I/usr/include/libxml2
+-I/usr/include/libmount
+-I/usr/include/blkid
+-I/usr/include/webkitgtk-4.0
+-I/usr/include/glib-2.0
+-I/usr/lib/x86_64-linux-gnu/glib-2.0/include
+-lwebkit2gtk-4.0
+-lgtk-3
+-lgdk-3
+-lpangocairo-1.0
+-lpango-1.0
+-lharfbuzz
+-latk-1.0
+-lcairo-gobject
+-lcairo
+-lgdk_pixbuf-2.0
+-lsoup-2.4
+-lgio-2.0
+-ljavascriptcoregtk-4.0
+-lgobject-2.0
+-lglib-2.0
+-lglut
+-lGLU
+-lGL
+-lm
+-lprotoc
+-lprotobuf
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <p>stdout:</p>
-<pre><code class="language-txt">
+<pre><code class="language-txt">on
+bin/exception_02
+execution &gt;&gt; output/exception_02.txt.err
+
 </code></pre>
 <p>stderr:</p>
-<pre><code class="language-txt">terminate called after throwing an instance of 'int'
-Makefile: Failure on bin/exception_02 execution
-
+<pre><code class="language-txt">
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
@@ -126,7 +256,7 @@ handling</a></li>
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

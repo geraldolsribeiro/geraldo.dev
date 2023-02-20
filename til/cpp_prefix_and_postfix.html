@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ hash</title>
+    <title>C++ prefix and postfix</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,83 +53,48 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ hash</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-27</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hash.html">hash</a>
+        <h1>C++ prefix and postfix</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-20</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/prefix_and_postfix.html">prefix_and_postfix</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<p>A basic struct for demonstration purpose:</p>
-<pre><code class="language-cpp">struct S {
-  std::string first_name;
-  std::string last_name;
-};
-bool operator==(const S&amp; lhs, const S&amp; rhs) {
-  return lhs.first_name == rhs.first_name &amp;&amp; lhs.last_name == rhs.last_name;
-}
-</code></pre>
-<div role="alert" class="my-4">
-  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">⚡</span>
-    <span>Tip</span>
-  </div>
-  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>Custom hash can be a standalone function object.</p>
-  </div>
-</div>
-<pre><code class="language-cpp">struct MyHash {
-  std::size_t operator()(S const&amp; s) const noexcept {
-    std::size_t h1 = std::hash&lt;std::string&gt;{}(s.first_name);
-    std::size_t h2 = std::hash&lt;std::string&gt;{}(s.last_name);
-    return h1 ^ (h2 &lt;&lt; 1);  // combine hashes
-  }
-};
-</code></pre>
-<div role="alert" class="my-4">
-  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
-    <span class="text-2xl">⚡</span>
-    <span>Tip</span>
-  </div>
-  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
-<p>Custom specialization of std::hash can be injected in namespace std.</p>
-  </div>
-</div>
-<pre><code class="language-cpp">template &lt;&gt;
-struct std::hash&lt;S&gt; {
-  std::size_t operator()(S const&amp; s) const noexcept {
-    std::size_t h1 = std::hash&lt;std::string&gt;{}(s.first_name);
-    std::size_t h2 = std::hash&lt;std::string&gt;{}(s.last_name);
-    return h1 ^ (h2 &lt;&lt; 1);  // combine hashes
-  }
-};
-</code></pre>
-<pre><code class="language-cpp">  // size_t will take 32bits on 32bits systems
-  // size_t will take 64bits on 64bits systems
-
-  size_t h1 = hash&lt;string&gt;{}(&quot;Geraldo&quot;);
-  size_t h2 = hash&lt;string&gt;{}(&quot;geraldo&quot;);
-  size_t h3 = h1 ^ (h2 &lt;&lt; 1);
-  size_t h4 = hash&lt;char&gt;{}('\n');
-  size_t h5 = hash&lt;int&gt;{}(10);
-  size_t h6 = hash&lt;long&gt;{}(10);
-
-</code></pre>
-<pre><code class="language-cpp">  S obj = {&quot;Geraldo&quot;, &quot;Ribeiro&quot;};
-  size_t h7 = hash&lt;S&gt;{}(obj);
-</code></pre>
-<pre><code class="language-cpp">  cout &lt;&lt; &quot;h1 = &quot; &lt;&lt; h1 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h2 = &quot; &lt;&lt; h2 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h3 = &quot; &lt;&lt; h3 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h4 = &quot; &lt;&lt; h4 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h5 = &quot; &lt;&lt; h5 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h6 = &quot; &lt;&lt; h6 &lt;&lt; '\n';
-  cout &lt;&lt; &quot;h7 = &quot; &lt;&lt; h7 &lt;&lt; '\n';
+<p><div class="table-of-contents"><ul><li><a href="#suffix%2Fpostfix-increment-and-decrement">Suffix/postfix increment and decrement</a></li><li><a href="#prefix-increment-and-decrement">Prefix increment and decrement</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="suffix%2Fpostfix-increment-and-decrement" tabindex="-1">Suffix/postfix increment and decrement</h2>
+<ul>
+<li><code>a++</code>, <code>a--</code></li>
+<li>associativity: left to right</li>
+<li>precedence 2</li>
+</ul>
+<h2 id="prefix-increment-and-decrement" tabindex="-1">Prefix increment and decrement</h2>
+<ul>
+<li><code>++a</code>, <code>--a</code></li>
+<li>associativity: right to left</li>
+<li>precedence 3</li>
+</ul>
+<pre><code class="language-cpp">  int N{5};
+  fmt::print(&quot;N++: {}   N: {}\n&quot;, N++, N);
+  N = 5;  // reset;
+  fmt::print(&quot;++N: {}   N: {}\n&quot;, ++N, N);
+  N = 5;  // reset;
+  fmt::print(&quot;N--: {}   N: {}\n&quot;, N--, N);
+  N = 5;  // reset;
+  fmt::print(&quot;--N: {}   N: {}\n&quot;, --N, N);
+  N = 5;  // reset;
+  fmt::print(&quot;++--N: {}   N: {}\n&quot;, ++--N, N);
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/functional_hash
-execution &gt;&gt; output/functional_hash.txt.err
+<pre><code class="language-txt">N++: 5   N: 6
+++N: 6   N: 6
+N--: 5   N: 4
+--N: 4   N: 4
+++--N: 5   N: 5
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

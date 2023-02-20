@@ -445,6 +445,9 @@
     <loc>https://geraldo.dev/til/xmake.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/online-compilers.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/git-diff-image.html</loc>
   </url>
   <url>
@@ -662,6 +665,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/pagmo.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_prefix_and_postfix.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/eclipse-plugin.html</loc>
@@ -2333,6 +2339,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/swap.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_limits.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/vim-single-instance.html</loc>

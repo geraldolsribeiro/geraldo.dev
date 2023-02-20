@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ move_semantics</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2023-02-16 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/move_semantics.html">move_semantics</a><a class="tag no-underline" href="/til/tag/std::move.html">std::move</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -157,58 +157,9 @@
   };
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">
-Initial state
-s1: Content of s1 variable
-s2: Content of s2 variable
-s3: Content of s3 variable
-
-s1 = s2
-s1: Content of s2 variable
-s2: Content of s2 variable
-s3: Content of s3 variable
-
-s1 = std::move(s3)
-s1: Content of s3 variable
-s2: Content of s2 variable
-s3: 
-
-s1 = static_cast&lt;string&amp;&amp;&gt;(s2)
-s1: Content of s2 variable
-s2: 
-s3: 
-================
-myData.push_back(Data{10,&quot;push-back&quot;});
-Data Constructor 10 push-back
-Data Constructor 10 copy-constructor
-Data Copy Constructor 10 copy-constructor
-Data Destructor 10 push-back
-myData.push_back(Data{20,&quot;push-back&quot;});
-Data Constructor 20 push-back
-Data Constructor 20 copy-constructor
-Data Copy Constructor 20 copy-constructor
-Data Constructor 10 copy-constructor
-Data Copy Constructor 10 copy-constructor
-Data Destructor 10 copy-constructor
-Data Destructor 20 push-back
-Out of scope
-Data Destructor 10 copy-constructor
-Data Destructor 20 copy-constructor
-================
-myData.push_back(DataWithMove{10,&quot;push-back&quot;});
-DataWithMove Constructor 10 push-back
-DataWithMove Move constructor 10
-DataWithMove Destructor nullptr
-myData.push_back(DataWithMove{20,&quot;push-back&quot;});
-DataWithMove Constructor 20 push-back
-DataWithMove Move constructor 20
-DataWithMove Constructor 10 copy-constructor
-DataWithMove Copy Constructor 10 copy-constructor
-DataWithMove Destructor 10 move-constructor
-DataWithMove Destructor nullptr
-Out of scope
-DataWithMove Destructor 10 copy-constructor
-DataWithMove Destructor 20 move-constructor
+<pre><code class="language-txt">on
+bin/move_semantics
+execution &gt;&gt; output/move_semantics.txt.err
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
@@ -228,7 +179,7 @@ DataWithMove Destructor 20 move-constructor
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

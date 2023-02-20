@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ debugging with GDB</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-18 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -306,17 +306,9 @@ set logging off
 quit
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">s = 10 + 3.141492 = 13.141492
-i = 0
-i = 1
-i = 2
-i = 3
-i = 4
-i = 5
-i = 6
-i = 7
-i = 8
-i = 9
+<pre><code class="language-txt">on
+bin/gdb_test_01
+execution &gt;&gt; output/gdb_test_01.txt.err
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

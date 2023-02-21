@@ -96,9 +96,9 @@ trace purpose only.</p>
   }
 </code></pre>
 <p>Output of context block 1</p>
-<pre><code class="language-txt">on
-bin/shared_ptr_with_deleter
-execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
+<pre><code class="language-txt">1) constructor with no managed object
+sh1 == nullptr
+==&gt; Context block 1 is going out of context here
 </code></pre>
 <h2 id="context-block-2" tabindex="-1">Context block 2</h2>
 <pre><code class="language-cpp">  {
@@ -117,7 +117,17 @@ execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
   }
 </code></pre>
 <p>Output of context block 2</p>
-<pre><code class="language-txt"></code></pre>
+<pre><code class="language-txt">2) constructor with object
+✅ Foo::Foo(10)
+sh2.id = 10
+sh2.use_count(): 1
+sh3.id = 10
+sh2.use_count(): 2
+sh3.use_count(): 2
+sh3.id = 123
+==&gt; Context block 2 is going out of context here
+❌ Foo::~Foo(), id=123
+</code></pre>
 <h2 id="context-block-3" tabindex="-1">Context block 3</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n3) constructor with object and deleter\n&quot;;
@@ -130,7 +140,15 @@ execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
   }
 </code></pre>
 <p>Output of context block 3</p>
-<pre><code class="language-txt"></code></pre>
+<pre><code class="language-txt">3) constructor with object and deleter
+✅ Foo::Foo(11)
+✅ Foo::Foo(12)
+==&gt; Context block 3 is going out of context here
+Call delete from lambda... p-&gt;id=12
+❌ Foo::~Foo(), id=12
+❌ Call delete from function object. Foo::id=11
+❌ Foo::~Foo(), id=11
+</code></pre>
 <h2 id="context-block-4" tabindex="-1">Context block 4</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n4) constructor with pipe object and deleter (POSIX)\n&quot;;
@@ -153,7 +171,11 @@ execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
   }
 </code></pre>
 <p>Output of context block 4</p>
-<pre><code class="language-txt"></code></pre>
+<pre><code class="language-txt">4) constructor with pipe object and deleter (POSIX)
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:04 shared_ptr_with_deleter.cpp
+
+==&gt; Context block 4 is going out of context here
+</code></pre>
 <h2 id="context-block-5" tabindex="-1">Context block 5</h2>
 <pre><code class="language-cpp">  {
     std::cout &lt;&lt; &quot;\n5) constructor with pipe object and deleter (POSIX)\n&quot;;
@@ -166,18 +188,50 @@ execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
   }
 </code></pre>
 <p>Output of context block 5</p>
-<pre><code class="language-txt"></code></pre>
+<pre><code class="language-txt">5) constructor with pipe object and deleter (POSIX)
+==&gt; Context block 5 is going out of context here
+❌ myfclose called
+</code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/shared_ptr_with_deleter
-execution &gt;&gt; output/shared_ptr_with_deleter.txt.err
+<pre><code class="language-txt">1) constructor with no managed object
+sh1 == nullptr
+==&gt; Context block 1 is going out of context here
+
+2) constructor with object
+✅ Foo::Foo(10)
+sh2.id = 10
+sh2.use_count(): 1
+sh3.id = 10
+sh2.use_count(): 2
+sh3.use_count(): 2
+sh3.id = 123
+==&gt; Context block 2 is going out of context here
+❌ Foo::~Foo(), id=123
+
+3) constructor with object and deleter
+✅ Foo::Foo(11)
+✅ Foo::Foo(12)
+==&gt; Context block 3 is going out of context here
+Call delete from lambda... p-&gt;id=12
+❌ Foo::~Foo(), id=12
+❌ Call delete from function object. Foo::id=11
+❌ Foo::~Foo(), id=11
+
+4) constructor with pipe object and deleter (POSIX)
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:04 shared_ptr_with_deleter.cpp
+
+==&gt; Context block 4 is going out of context here
+
+5) constructor with pipe object and deleter (POSIX)
+==&gt; Context block 5 is going out of context here
+❌ myfclose called
 
 </code></pre>
 <p>Content of <code>/tmp/test1.txt</code></p>
-<pre><code class="language-txt">File /tmp/test1.txt not found
+<pre><code class="language-txt">Some text
 </code></pre>
 <p>Content of <code>/tmp/test2.txt</code></p>
-<pre><code class="language-txt">File /tmp/test2.txt not found
+<pre><code class="language-txt">Some text
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

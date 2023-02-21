@@ -100,9 +100,46 @@
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/realloc_01
-execution &gt;&gt; output/realloc_01.txt.err
+<pre><code class="language-txt">
+           0x0 ptr1|           0x0 ptr2|Initial null
+
+           0x0 ptr1|0x55e965caf9a0 ptr2|First realloc (non initilized value on memory)
+1707801024,
+0x55e965caf9c0 ptr1|0x55e965caf9c0 ptr2|Realloc 4 x sizeof(int)
+0,1,2,3,
+0x55e965cb3860 ptr1|0x55e965cb3860 ptr2|Realloc 8 x sizeof(int)
+0,1,2,3,4,5,6,7,
+0x55e965caf260 ptr1|0x55e965caf260 ptr2|Realloc 12 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,
+0x55e965caf260 ptr1|0x55e965caf260 ptr2|Realloc 16 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55e965caf8e0 ptr1|0x55e965caf8e0 ptr2|Realloc 20 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55e965caf8e0 ptr1|0x55e965caf8e0 ptr2|Realloc 24 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 28 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 32 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 36 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 40 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 44 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 48 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 52 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 56 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 60 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|Realloc 64 x sizeof(int)
+0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
+0x55e965cb0070 ptr1|0x55e965cb0070 ptr2|After free ptr2
+1707661392,21993,1702170640,21993,
+           0x0 ptr1|           0x0 ptr2|After nullptr attribution
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

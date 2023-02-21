@@ -222,10 +222,58 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/handling_error_on_new
-execution &gt;&gt; output/handling_error_on_new.txt.err
-
+<pre><code class="language-txt">0: #1 Allocating 10000000000 bytes...
+Exception #1: std::bad_alloc0: #2 Allocating 10000000000 bytes...
+#2 Failure to allocate memory
+Exception #2: NewHandler exception
+#2 Failure to allocate memory
+#3 Failure to allocate memory
+Placement new
+Value of ptr = 3
+Address of ptr = 0x7ffcd6263cec
+Address of buf = 0x7ffcd6263cec
+Reporter Constructor: 42
+Reporter Destructor 42
+Reporter Constructor: 11
+Reporter Constructor: 12
+Reporter Constructor: 13
+Reporter Constructor: 14
+Reporter Constructor: 15
+Reporter Constructor: 0
+Reporter Constructor: 0
+Reporter Constructor: 0
+Reporter Constructor: 0
+Reporter Constructor: 0
+Reporter Constructor: 20
+Reporter assigment operator 20
+Reporter Destructor 20
+Reporter Constructor: 21
+Reporter assigment operator 21
+Reporter Destructor 21
+Reporter Constructor: 22
+Reporter assigment operator 22
+Reporter Destructor 22
+Reporter Constructor: 23
+Reporter assigment operator 23
+Reporter Destructor 23
+Reporter Constructor: 24
+Reporter assigment operator 24
+Reporter Destructor 24
+Reporter Constructor: 30
+Reporter Constructor: 31
+Reporter Constructor: 32
+Reporter Constructor: 33
+Reporter Constructor: 34
+Reporter Destructor 30
+Reporter Destructor 31
+Reporter Destructor 32
+Reporter Destructor 33
+Reporter Destructor 34
+Reporter Destructor 15
+Reporter Destructor 14
+Reporter Destructor 13
+Reporter Destructor 12
+Reporter Destructor 11
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

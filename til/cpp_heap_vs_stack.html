@@ -185,9 +185,62 @@ variables)</li>
 
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">on
-bin/heap_vs_stack
-execution &gt;&gt; output/heap_vs_stack.txt.err
+<pre><code class="language-txt">0x7fff662c02bc stack a1
+0x7fff662c02b8 stack a2: -4 bytes from a1
+0x7fff662c02b4 stack a3: -4 bytes from a2
+0x7fff662c02b0 stack a4: -4 bytes from a3
+0x55fb1a2fd9a0 heap p1
+0x55fb1a2fd9a0 heap p1[0]
+0x55fb1a2fd9a4 heap p1[1]
+0x55fb1a2fd9a8 heap p1[2]
+0x55fb1a2fd9ac heap p1[3]
+0x55fb1a2fd9b0 heap p1[4]
+0x55fb1a2fd9c0 heap p2: 32 bytes from p1
+0x55fb1a2fd9c0 heap p2[0]
+0x55fb1a2fd9c4 heap p2[1]
+0x55fb1a2fd9c8 heap p2[2]
+0x55fb1a2fd9cc heap p2[3]
+0x55fb1a2fd9e0 heap p3: 32 bytes from p2
+0x55fb1a2fda00 heap p4: 32 bytes from p3
+0x55fb1a2fda20 heap p5: 32 bytes from p4
+0x55fb1a2fd2e0 heap p6: -1856 bytes from p5
+sizeof(size_t) = 8 bytes
+          100001     33      4      1
+          100001     33      8      2
+          100001     33     12      3
+          100001     33     16      4
+          100001     33     20      5
+          100001     33     24      6
+          110001     49     28      7
+          110001     49     32      8
+          110001     49     36      9
+          110001     49     40     10
+         1010001     81     44     11
+         1000001     65     48     12
+         1000001     65     52     13
+         1000001     65     56     14
+         1010001     81     60     15
+         1010001     81     64     16
+         1010001     81     68     17
+         1010001     81     72     18
+         1100001     97     76     19
+         1100001     97     80     20
+         1100001     97     84     21
+         1100001     97     88     22
+         1110001    113     92     23
+         1110001    113     96     24
+         1110001    113    100     25
+         1110001    113    104     26
+        10000001    129    108     27
+        10000001    129    112     28
+        10000001    129    116     29
+        10000001    129    120     30
+        10010001    145    124     31
+        10010001    145    128     32
+       110100001    417    400    100
+      1100110001    817    800    200
+    111110110001   4017   4000   1000
+1001110001010001  40017  40000  10000
 
 </code></pre>
 <h1 id="references" tabindex="-1">References</h1>

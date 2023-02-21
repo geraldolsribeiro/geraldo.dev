@@ -67,12 +67,16 @@
   <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
 <p>Integral types less than 4 bytes in size don’t support arithmetic
 operations.</p>
-  </div>
-</div>
 <ul>
-<li><code>char</code>: 1 byte</li>
-<li><code>short int</code>: 2 bytes</li>
+<li>
+<p><code>char</code>: 1 byte</p>
+</li>
+<li>
+<p><code>short int</code>: 2 bytes</p>
+</div>
+</li>
 </ul>
+</div>
 <pre><code class="language-cpp">  short int var1{10};  // 2 bytes
   short int var2{20};
   char var3{40};  // 1 byte
@@ -80,6 +84,8 @@ operations.</p>
 
   auto result1 = var1 + var2;  // 🔴 Implicit conversion to int
   auto result2 = var3 + var4;  // 🔴 Implicit conversion to int
+  auto result3 = var1 &gt;&gt; 1;
+  auto result4 = var3 &lt;&lt; 1;
 
 #define printSizeOf(var) \
   fmt::print(&quot;sizeof({:^10}) = {} | value = {}\n&quot;, #var, sizeof(var), var);
@@ -90,6 +96,8 @@ operations.</p>
   printSizeOf(var4);  // ascii 50 -&gt; 2
   printSizeOf(result1);
   printSizeOf(result2);
+  printSizeOf(result3);
+  printSizeOf(result4);
 </code></pre>
 <h2 id="type-limits" tabindex="-1">Type limits</h2>
 <pre><code class="language-cpp">  // max:    maximum positive value
@@ -141,6 +149,8 @@ sizeof(   var3   ) = 1 | value = (
 sizeof(   var4   ) = 1 | value = 2
 sizeof( result1  ) = 4 | value = 30
 sizeof( result2  ) = 4 | value = 90
+sizeof( result3  ) = 4 | value = 5
+sizeof( result4  ) = 4 | value = 80
 
 
      TYPE     |SZ|          LOWEST           |            MIN            |                        MAX

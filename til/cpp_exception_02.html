@@ -98,153 +98,23 @@ int main() {
 }
 </code></pre>
 <p>Compilation warning:</p>
-<pre><code class="language-txt">-Wall
--Wextra
--o
-bin/exception_02
--L/opt/intmain/dev/linux/usr/lib/
--lbotan-2
--lmemcached
--lboost_system
--lboost_filesystem
--lX11
--lopencv_stitching
--lopencv_alphamat
--lopencv_aruco
--lopencv_bgsegm
--lopencv_bioinspired
--lopencv_ccalib
--lopencv_dnn_objdetect
--lopencv_dnn_superres
--lopencv_dpm
--lopencv_face
--lopencv_freetype
--lopencv_fuzzy
--lopencv_hdf
--lopencv_hfs
--lopencv_img_hash
--lopencv_intensity_transform
--lopencv_line_descriptor
--lopencv_mcc
--lopencv_quality
--lopencv_rapid
--lopencv_reg
--lopencv_rgbd
--lopencv_saliency
--lopencv_shape
--lopencv_stereo
--lopencv_structured_light
--lopencv_phase_unwrapping
--lopencv_superres
--lopencv_optflow
--lopencv_surface_matching
--lopencv_tracking
--lopencv_highgui
--lopencv_datasets
--lopencv_text
--lopencv_plot
--lopencv_ml
--lopencv_videostab
--lopencv_videoio
--lopencv_viz
--lopencv_ximgproc
--lopencv_video
--lopencv_dnn
--lopencv_xobjdetect
--lopencv_objdetect
--lopencv_calib3d
--lopencv_imgcodecs
--lopencv_features2d
--lopencv_flann
--lopencv_xphoto
--lopencv_photo
--lopencv_imgproc
--lopencv_core
--ltermbox
--larmadillo
--lgumbo
--L/opt/intmain/dev/linux/usr/lib
--lfltk
--lm
--lX11
--lXext
--lpthread
--lXinerama
--lXfixes
--lXcursor
--lXft
--lXrender
--lm
--lfontconfig
--ldl
--ltbb
--lIce
--lpthread
--lrocksdb
--larchive
--lzmq
--lyaml-cpp
--lfmt
--lmosquitto
--pthread
--I/usr/include/webkitgtk-4.0
--I/usr/include/gtk-3.0
--I/usr/include/at-spi2-atk/2.0
--I/usr/include/at-spi-2.0
--I/usr/include/dbus-1.0
--I/usr/lib/x86_64-linux-gnu/dbus-1.0/include
--I/usr/include/gtk-3.0
--I/usr/include/gio-unix-2.0
--I/usr/include/cairo
--I/usr/include/pango-1.0
--I/usr/include/fribidi
--I/usr/include/harfbuzz
--I/usr/include/atk-1.0
--I/usr/include/cairo
--I/usr/include/pixman-1
--I/usr/include/uuid
--I/usr/include/freetype2
--I/usr/include/libpng16
--I/usr/include/gdk-pixbuf-2.0
--I/usr/include/libsoup-2.4
--I/usr/include/libxml2
--I/usr/include/libmount
--I/usr/include/blkid
--I/usr/include/webkitgtk-4.0
--I/usr/include/glib-2.0
--I/usr/lib/x86_64-linux-gnu/glib-2.0/include
--lwebkit2gtk-4.0
--lgtk-3
--lgdk-3
--lpangocairo-1.0
--lpango-1.0
--lharfbuzz
--latk-1.0
--lcairo-gobject
--lcairo
--lgdk_pixbuf-2.0
--lsoup-2.4
--lgio-2.0
--ljavascriptcoregtk-4.0
--lgobject-2.0
--lglib-2.0
--lglut
--lGLU
--lGL
--lm
--lprotoc
--lprotobuf
+<pre><code class="language-txt">exception_02.cpp:5:3: warning: 'uh_oh' has a non-throwing exception specification but can still throw [-Wexceptions]
+  throw 1;
+  ^
+exception_02.cpp:3:6: note: function declared non-throwing here
+void uh_oh() noexcept {
+     ^       ~~~~~~~~
+1 warning generated.
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <p>stdout:</p>
-<pre><code class="language-txt">on
-bin/exception_02
-execution &gt;&gt; output/exception_02.txt.err
-
+<pre><code class="language-txt">
 </code></pre>
 <p>stderr:</p>
-<pre><code class="language-txt">
+<pre><code class="language-txt">terminate called after throwing an instance of 'int'
+Makefile: Failure on bin/exception_02 execution
+
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

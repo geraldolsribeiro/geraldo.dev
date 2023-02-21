@@ -163,6 +163,9 @@
     <loc>https://geraldo.dev/til/escolher-o-terminal-padrao.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_bitwise_operator.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/nginx_content_by_lua_block.html</loc>
   </url>
   <url>
@@ -200,6 +203,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/build2.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_bitshift.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/vim-abolish.html</loc>
@@ -880,6 +886,9 @@
     <loc>https://geraldo.dev/til/cpp_exception_02.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_static_cast.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/debug.html</loc>
   </url>
   <url>
@@ -956,6 +965,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/annotation.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/bitwise_operator.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/testlink.html</loc>
@@ -1219,6 +1231,9 @@
     <loc>https://geraldo.dev/til/tag/audacity.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/bitshift.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/xorg.html</loc>
   </url>
   <url>
@@ -1298,6 +1313,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/beep.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/static_cast.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/algorithms.html</loc>

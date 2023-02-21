@@ -504,9 +504,62 @@ the destructor of the derived class.</p>
   </div>
 </div>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/class_size
-execution &gt;&gt; output/class_size.txt.err
+<pre><code class="language-txt">                                                sizeof(EmptyStruct) = 1 | 1
+                                                 sizeof(EmptyClass) = 1 | 1
+                           sizeof(EmptyClassWithDefaultConstructor) = 1 | 1
+              sizeof(EmptyClassWithDefaultConstructorAndDestructor) = 1 | 1
+       sizeof(EmptyClassWithDefaultConstructorAndVirtualDestructor) = 8 | 8
+                                                  sizeof(a_union_t) = 4 | 4
+Offset of a_union_t::a 0
+Offset of a_union_t::b 0
+                                                 sizeof(b_struct_t) = 8 | 4
+Offset of b_struct_t::a 0
+Offset of b_struct_t::b 4
+                                                    sizeof(c_class) = 8 | 4
+Offset of c_class::a 0
+Offset of c_class::b 4
+                                                    sizeof(d_class) = 16 | 8
+                                                    sizeof(e_class) = 8 | 4
+Offset of e_class::a 0
+Offset of e_class::b 4
+                                                    sizeof(f_class) = 12 | 4
+Allocating 12 bytes
+Allocating 12 bytes
+Allocating 32 bytes
+Offset of f_class::a 0
+Offset of f_class::b 4
+Offset of f_class::c 8
+                                                    sizeof(g_class) = 32 | 8
+Offset of g_class::a 0
+Offset of g_class::b 4
+Offset of g_class::c 8
+Offset of g_class::d 16
+Offset of g_class::e 24
+Offset of g_class::f 25
+                                                   sizeof(g2_class) = 24 | 8
+Offset of g2_class::a 0
+Offset of g2_class::b 4
+Offset of g2_class::c 8
+Offset of g2_class::d 16
+Offset of g2_class::e 1
+Offset of g2_class::f 2
+                                                 sizeof(float4_4_t) = 16 | 4
+Offset float4_4_t[0] = 0
+Offset float4_4_t[1] = 4
+Offset float4_4_t[2] = 8
+Offset float4_4_t[3] = 12
+                                                sizeof(float4_32_t) = 32 | 32
+Offset float4_32_t[0] = 0
+Offset float4_32_t[1] = 4
+Offset float4_32_t[2] = 8
+Offset float4_32_t[3] = 12
+                                                         sizeof(S1) = 4 | 1
+                                                         sizeof(S2) = 4 | 4
+This is B's constructor
+This is C's constructor
+This is C's implementation of bar
+This is C's destructor
+This is B's destructor
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

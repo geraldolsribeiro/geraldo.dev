@@ -117,9 +117,38 @@ void weeds01() {
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/weeds
-execution &gt;&gt; output/weeds.txt.err
+<pre><code class="language-txt">
+--- [print_one(hello) , print_one(world)]
+hello
+world
+
+--- [print_one(hello) = print_one(world)]
+world
+hello
+
+--- [fold_print_assign_right(1,2,3,4)]
+4
+3
+2
+1
+
+--- [fold_print_assign_left(1,2,3,4)]
+4
+3
+2
+1
+
+--- [fold_print_comma_right(1,2,3,4)]
+1
+2
+3
+4
+
+--- [fold_print_comma_left(1,2,3,4)]
+1
+2
+3
+4
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

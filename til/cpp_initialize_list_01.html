@@ -99,9 +99,18 @@ struct B {
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/initialize_list_01
-execution &gt;&gt; output/initialize_list_01.txt.err
+<pre><code class="language-txt">A a1;       A()
+A a2{};     A()
+A a3{1};    A( initializer_list&lt;int&gt; )
+A a4{1, 2}; A( initializer_list&lt;int&gt; )
+A a5();     
+B b1;       B()
+B b2{};     B()
+B b3{1};    B( int )
+C( initializer_list&lt;int&gt; )
+xi = 10
+xi = 20
+xi = 30
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

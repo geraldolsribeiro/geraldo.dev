@@ -157,9 +157,58 @@
   };
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/move_semantics
-execution &gt;&gt; output/move_semantics.txt.err
+<pre><code class="language-txt">
+Initial state
+s1: Content of s1 variable
+s2: Content of s2 variable
+s3: Content of s3 variable
+
+s1 = s2
+s1: Content of s2 variable
+s2: Content of s2 variable
+s3: Content of s3 variable
+
+s1 = std::move(s3)
+s1: Content of s3 variable
+s2: Content of s2 variable
+s3: 
+
+s1 = static_cast&lt;string&amp;&amp;&gt;(s2)
+s1: Content of s2 variable
+s2: 
+s3: 
+================
+myData.push_back(Data{10,&quot;push-back&quot;});
+Data Constructor 10 push-back
+Data Constructor 10 copy-constructor
+Data Copy Constructor 10 copy-constructor
+Data Destructor 10 push-back
+myData.push_back(Data{20,&quot;push-back&quot;});
+Data Constructor 20 push-back
+Data Constructor 20 copy-constructor
+Data Copy Constructor 20 copy-constructor
+Data Constructor 10 copy-constructor
+Data Copy Constructor 10 copy-constructor
+Data Destructor 10 copy-constructor
+Data Destructor 20 push-back
+Out of scope
+Data Destructor 10 copy-constructor
+Data Destructor 20 copy-constructor
+================
+myData.push_back(DataWithMove{10,&quot;push-back&quot;});
+DataWithMove Constructor 10 push-back
+DataWithMove Move constructor 10
+DataWithMove Destructor nullptr
+myData.push_back(DataWithMove{20,&quot;push-back&quot;});
+DataWithMove Constructor 20 push-back
+DataWithMove Move constructor 20
+DataWithMove Constructor 10 copy-constructor
+DataWithMove Copy Constructor 10 copy-constructor
+DataWithMove Destructor 10 move-constructor
+DataWithMove Destructor nullptr
+Out of scope
+DataWithMove Destructor 10 copy-constructor
+DataWithMove Destructor 20 move-constructor
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

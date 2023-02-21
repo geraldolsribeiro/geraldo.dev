@@ -245,9 +245,29 @@ PersonJobBuilder PersonBuilderBase::works() const {
   cout &lt;&lt; p &lt;&lt; endl;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/dp_creational_builder_01
-execution &gt;&gt; output/dp_creational_builder_01.txt.err
+<pre><code class="language-txt">static PersonBuilder Person::create()
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+Person::Person()
+PersonBuilder::PersonBuilder()
+PersonAddressBuilder PersonBuilderBase::lives() const
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+PersonAddressBuilder::PersonAddressBuilder(Person &amp;)
+Self &amp;PersonAddressBuilder::at(const string &amp;)
+Self &amp;PersonAddressBuilder::with_postcode(const string &amp;)
+Self &amp;PersonAddressBuilder::in(const string &amp;)
+PersonJobBuilder PersonBuilderBase::works() const
+PersonBuilderBase::PersonBuilderBase(Person &amp;)
+PersonJobBuilder::PersonJobBuilder(Person &amp;)
+Self &amp;PersonJobBuilder::at(const string &amp;)
+Self &amp;PersonJobBuilder::as_a(const string &amp;)
+Self &amp;PersonJobBuilder::earning(int)
+Person PersonBuilderBase::operator Person() const
+Person::Person(Person &amp;&amp;)
+Person::~Person()
+--------------
+std::ostream &amp;operator&lt;&lt;(std::ostream &amp;, const Person &amp;)
+street_address: 123 London Road post_code: SW1 1GB city: London company_name: PragmaSoft position: Consultant annual_income: 10000000
+Person::~Person()
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

@@ -137,9 +137,23 @@ destructor, you should implement the others, as well</p>
 <pre><code class="language-cpp">  raii();
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/memory_safe
-execution &gt;&gt; output/memory_safe.txt.err
+<pre><code class="language-txt">raii 00 - ✅ MyClass constructor was called
+raii 01 - ✅ MyClass constructor was called
+raii 01 - ❌ MyClass destructor was called
+raii 02 - ✅ MyClass constructor was called
+raii 02 - ❌ MyClass destructor was called
+raii 03 - ✅ MyClass constructor was called
+raii 03 - ❌ MyClass destructor was called
+raii 04 - ✅ MyClass constructor was called
+raii 04 - ❌ MyClass destructor was called
+raii 05 - ✅ MyClass constructor was called
+raii 05 - ❌ MyClass destructor was called
+raii 06 - ✅ MyClass constructor was called
+raii 06 auto m2 = std::move(m);
+raii 06 m  is nullptr -&gt; true
+raii 06 m2 is nullptr -&gt; false
+raii 06 - ❌ MyClass destructor was called
+raii 00 - ❌ MyClass destructor was called
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

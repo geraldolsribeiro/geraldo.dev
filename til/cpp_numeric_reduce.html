@@ -116,9 +116,26 @@ operations.</p>
   }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/numeric_reduce
-execution &gt;&gt; output/numeric_reduce.txt.err
+<pre><code class="language-txt">Sum: 15 15 15 15
+std::accumulate result 5000003.5 took 80.6 ms
+std::reduce seq result 5000003.5 took 115.2 ms
+std::reduce par result 5000003.5 took 24.2 ms
+std::accumulate result 5000003.5 took 75.1 ms
+std::reduce seq result 5000003.5 took 115.3 ms
+std::reduce par result 5000003.5 took 24.1 ms
+std::accumulate result 5000003.5 took 74.5 ms
+std::reduce seq result 5000003.5 took 115.3 ms
+std::reduce par result 5000003.5 took 24.3 ms
+std::accumulate result 5000003.5 took 75.4 ms
+std::reduce seq result 5000003.5 took 115.9 ms
+std::reduce par result 5000003.5 took 24.2 ms
+std::accumulate result 5000003.5 took 75.0 ms
+std::reduce seq result 5000003.5 took 115.4 ms
+std::reduce par result 5000003.5 took 24.2 ms
+Average time to operate over 10M items:
+accumulate: 76.1ms
+reduce par: 24.2ms
+reduce seq: 115.4ms
 
 </code></pre>
 

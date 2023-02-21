@@ -194,9 +194,26 @@ void SubOnMessage(struct mosquitto *mosq, void *obj,
 <p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/mosquitto_01
-execution &gt;&gt; output/mosquitto_01.txt.err
+<pre><code class="language-txt">SUB: mosquitto_loop_start
+SUB: sleep for 6s
+SUB: OnConnect: ID: 12 RC: 0
+PUB: We are now connected to the broker!
+PUB: mosquitto_publish #0
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #0
+PUB: mosquitto_publish #1
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #1
+PUB: mosquitto_publish #2
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #2
+PUB: mosquitto_publish #3
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #3
+PUB: mosquitto_publish #4
+SUB: OnMessage: New message with topic test_topic: Hello from C++ #4
+SUB: mosquitto_loop_stop
+SUB: mosquitto_disconnect
+SUB: mosquitto_destroy
+SUB: mosquitto_lib_cleanup
+PUB: mosquitto_disconnect
+PUB: mosquitto_destroy
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

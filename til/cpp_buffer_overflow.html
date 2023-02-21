@@ -79,9 +79,14 @@
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">on
-bin/buffer_overflow
-execution &gt;&gt; output/buffer_overflow.txt.err
+<pre><code class="language-txt">var1 address: 0x7ffdfcb0b02c
+var2 address: 0x7ffdfcb0b028
+var3 address: 0x7ffdfcb0b024
+var1: ''  var2: ''  var3: ''
+Input -&gt; var2
+var1: '56789'  var2: '123456789'  var3: ''
+Input -&gt; var1
+var1: ''  var2: '1234'  var3: ''
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

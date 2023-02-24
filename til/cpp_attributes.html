@@ -54,43 +54,158 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ attributes</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/attributes.html">attributes</a>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2023-02-22 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/attributes.html">attributes</a><a class="tag no-underline" href="/til/tag/nodiscard.html">nodiscard</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#brief">Brief</a></li><li><a href="#attribute-%5B%5Bnodiscard%5D%5D">Attribute [[nodiscard]]</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#brief">Brief</a></li><li><a href="#attribute-%5B%5Bnodiscard%5D%5D">Attribute [[nodiscard]]</a></li><li><a href="#noexcept">noexcept</a></li><li><a href="#error-output">Error output</a></li><li><a href="#compilation-output">Compilation output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="brief" tabindex="-1">Brief</h2>
 <ul>
+<li><code>[[nodiscard]]</code></li>
 <li><code>[[noreturn]]</code></li>
 <li><code>[[carries_dependency]]</code></li>
 <li><code>[[assume]]</code></li>
-<li><code>[[nodiscard]]</code></li>
+<li><code>noexcept</code></li>
 </ul>
 <h2 id="attribute-%5B%5Bnodiscard%5D%5D" tabindex="-1">Attribute <code>[[nodiscard]]</code></h2>
-<pre><code class="language-cpp">  auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
+<ul>
+<li>Used to indicate when it is an error to ignore a return value from a
+function</li>
+<li>Can be applied to constructors as of C++20</li>
+<li>Can have a message to explain the error
+<ul>
+<li><code>[[nodiscard(&quot;Lock objects should never be discarted&quot;)]]</code></li>
+</ul>
+</li>
+<li>Should be used extensively.</li>
+<li>Any non-mutating (getter/accessor/{eonse) function should be
+`[[nodiscard]]</li>
+<li><code>cos()</code></li>
+<li><code>vector::insert()</code>: Return an iterator that points to the first of the
+newly inserted elements.</li>
+<li>Can be checked / enforced with static analysis</li>
+</ul>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p><code>filename.cpp:46:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]</code></p>
+  </div>
+</div>
+<h3 id="function" tabindex="-1">Function</h3>
+<pre><code class="language-cpp">[[nodiscard]] int get_zero() { return 0; }
+
+[[nodiscard(&quot;Some custom message&quot;)]] int get_one() { return 1; }
+
+[[nodiscard(&quot;XXX find me XXX on warning messages&quot;)]] int unused_function() {
+  return -1;
+}
+
+void testFunction() {
+  fmt::print(stderr, &quot;testFunction()\n&quot;);
+  get_zero();
+  get_one();
+}
+</code></pre>
+<h3 id="types" tabindex="-1">Types</h3>
+<pre><code class="language-cpp">struct [[nodiscard]] ErrorType {};
+ErrorType get_two() { return {}; }
+
+void testType() {
+  fmt::print(stderr, &quot;testType()\n&quot;);
+  get_two();
+}
+</code></pre>
+<h3 id="lambda" tabindex="-1">Lambda</h3>
+<pre><code class="language-cpp">void testLambda() {
+  fmt::print(stderr, &quot;testLambda()\n&quot;);
+  auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
   lm();  // would emit a warning
+}
 </code></pre>
-<pre><code>attributes.cpp:27:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
-lm();
-~~^~
+<h3 id="constructor" tabindex="-1">Constructor</h3>
+<pre><code class="language-cpp">struct FDHolder {
+  [[nodiscard]] FDHolder(int FD){};
+  FDHolder(){};
+};
+
+void testConstructor() {
+  fmt::print(stderr, &quot;testConstructor()\n&quot;);
+  FDHolder{42};    // warning
+  FDHolder h{42};  // constructed object not discarded, no warning
+  FDHolder{};      // defalt constructed, no warning
+}
 </code></pre>
-<pre><code>
-## Output
+<h2 id="noexcept" tabindex="-1"><code>noexcept</code></h2>
+<p><code>noexcept</code> notifies the user (and compiler) that a function may not
+throw an exception. If an exception is thrown from that function,
+<code>terminate</code> MUST be called.</p>
+<pre><code class="language-cpp">void testNoExcept() noexcept {
+  fmt::print(stderr, &quot;testNoExcept()\n&quot;);
+  // required to terminate the program
+  throw 42;
+}
+</code></pre>
+<pre><code class="language-cpp">  try {
+    testFunction();
+    testLambda();
+    testConstructor();
+    testNoExcept();  // terminate is called here
+    testFunction();  // never called
+  } catch (...) {
+    // catch is irrelevant, `terminate` is called
+  }
+  fmt::print(stderr, &quot;End of program\n&quot;);
+</code></pre>
+<h2 id="error-output" tabindex="-1">Error output</h2>
+<pre><code class="language-txt">/bin/bash: linha 1: ./bin/attributes: Permissão negada
 
-
-```txt
-
+</code></pre>
+<h2 id="compilation-output" tabindex="-1">Compilation output</h2>
+<pre><code class="language-txt">attributes.cpp:62:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  get_zero();
+  ^~~~~~~~
+attributes.cpp:63:3: warning: ignoring return value of function declared with 'nodiscard' attribute: Some custom message [-Wunused-result]
+  get_one();
+  ^~~~~~~
+attributes.cpp:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  get_two();
+  ^~~~~~~
+attributes.cpp:84:16: warning: an attribute specifier sequence in this position is a C++2b extension [-Wc++2b-extensions]
+  auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
+               ^
+attributes.cpp:85:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+  lm();  // would emit a warning
+  ~~^~
+attributes.cpp:93:30: warning: unused parameter 'FD' [-Wunused-parameter]
+  [[nodiscard]] FDHolder(int FD){};
+                             ^
+attributes.cpp:99:3: warning: ignoring temporary created by a constructor declared with 'nodiscard' attribute [-Wunused-value]
+  FDHolder{42};    // warning
+  ^~~~~~~~~~~~
+attributes.cpp:115:3: warning: 'testNoExcept' has a non-throwing exception specification but can still throw [-Wexceptions]
+  throw 42;
+  ^
+attributes.cpp:112:6: note: function declared non-throwing here
+void testNoExcept() noexcept {
+     ^              ~~~~~~~~
+8 warnings generated.
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://www.sandordargo.com/blog/2022/12/14/cpp23-attributes">C++23: attributes</a></li>
+<li><a href="https://www.sandordargo.com/blog/2022/12/14/cpp23-attributes">C++23:
+attributes</a></li>
+<li><a href="https://www.youtube.com/watch?v=zL-vn_pGGgY">Back to Basics: C++ API Design - Jason Turner - CppCon
+2022</a></li>
 </ul>
 
       </main>
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

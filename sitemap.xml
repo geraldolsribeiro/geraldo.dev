@@ -184,6 +184,9 @@
     <loc>https://geraldo.dev/til/vpn-linux.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/onedrive.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/mlpack-macos.html</loc>
   </url>
   <url>
@@ -197,6 +200,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/app-djinni.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/xargs.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_sort.html</loc>
@@ -290,6 +296,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_libevent.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_short_circuit.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/xml.html</loc>
@@ -574,6 +583,9 @@
     <loc>https://geraldo.dev/til/rust_helloworld.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_type_promotion.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/certbot-hooks.html</loc>
   </url>
   <url>
@@ -806,6 +818,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/sbe.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_variable_lifetime.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_memory_safe.html</loc>
@@ -1063,6 +1078,9 @@
     <loc>https://geraldo.dev/til/tag/scrum.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/sharepoint.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/vimscript.html</loc>
   </url>
   <url>
@@ -1121,6 +1139,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/email.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/onedrive.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/inotify-tools.html</loc>
@@ -1193,6 +1214,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/ngrok.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/variable_lifetime.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/count_if.html</loc>
@@ -1597,6 +1621,9 @@
     <loc>https://geraldo.dev/til/tag/iso.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/nodiscard.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/coliru.html</loc>
   </url>
   <url>
@@ -1676,6 +1703,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/hugo.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/if.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/xdg-mime.html</loc>
@@ -2077,6 +2107,9 @@
     <loc>https://geraldo.dev/til/tag/sed.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/initializer.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/gdb.html</loc>
   </url>
   <url>
@@ -2114,6 +2147,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/swtbot.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/type_promotion.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/youtube.html</loc>
@@ -2171,6 +2207,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/metaprogramming.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/short_circuit.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/switch.html</loc>
@@ -2429,6 +2468,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/google-search-inurl.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_if_with_initializer.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/english-phonetics.html</loc>

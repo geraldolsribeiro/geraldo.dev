@@ -54,10 +54,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ debugging with GDB</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-20 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-25 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a><a class="tag no-underline" href="/til/tag/rr.html">rr</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#watchpoint">Watchpoint</a></li><li><a href="#time-travel-(rr-record-and-replay)">Time travel (rr record and replay)</a></li><li><a href="#multiprocess-debugging">Multiprocess debugging</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="breakpoint" tabindex="-1">Breakpoint</h2>
 <ul>
 <li><code>[b]reak function_name</code></li>
@@ -176,6 +176,27 @@ i = 9
 [Inferior 1 (process 490602) exited normally]
 (gdb)
 </code></pre>
+<h2 id="watchpoint" tabindex="-1">Watchpoint</h2>
+<ul>
+<li><a href="https://undo.io/resources/gdb-watchpoint/watchpoints-more-than-watch-and-continue/">Watchpoints - more than watch and
+continue</a></li>
+</ul>
+<h2 id="time-travel-(rr-record-and-replay)" tabindex="-1">Time travel (rr record and replay)</h2>
+<pre><code class="language-shell">$ sudo apt install rr
+</code></pre>
+<pre><code class="language-shell">$ sudo rr record -n ./prog args
+</code></pre>
+<pre><code class="language-shell">$ sudo rr replay   # last
+$ sudo rr replay /path/to/file
+</code></pre>
+<ul>
+<li><a href="https://undo.io/resources/gdb-watchpoint/time-travel-debugging-rr-debugger/">Time travel debugging with rr
+debugger</a></li>
+</ul>
+<h2 id="multiprocess-debugging" tabindex="-1">Multiprocess debugging</h2>
+<ul>
+<li><a href="https://undo.io/resources/gdb-watchpoint/multiprocess-debugging-gdb/">Multiprocess debugging in GDB</a></li>
+</ul>
 <h2 id="disassembly" tabindex="-1">Disassembly</h2>
 <p>If you do not have access to the source code of a function and wish
 to set a breakpoint on a particular instruction, call <code>disassemble function_name</code> (where <code>function_name</code> is the name of the procedure);
@@ -247,23 +268,29 @@ $2 = 0x7
 <li><code>quit</code> stop gdb</li>
 </ul>
 <h2 id="example-code" tabindex="-1">Example code</h2>
-<pre><code class="language-cpp">void my_func_01(int a, float pi) {
-  auto s = fmt::format(&quot;{} + {} = {}&quot;, a, pi, a + pi);
-  fmt::print(&quot;s = {}\n&quot;, s);
+<pre><code class="language-cpp">void my_func_01( int a, float pi )
+{
+  auto s = fmt::format( &quot;{} + {} = {}&quot;, a, pi, a + pi );
+  fmt::print( &quot;s = {}\n&quot;, s );
 }
 
-int my_func_02(int x) { return x + 42; }
+int my_func_02( int x )
+{
+  return x + 42;
+}
 
-void loop() {
-  for (int i = 0; i &lt; 10; i++) {
-    fmt::print(&quot;i = {}\n&quot;, i);
+void loop()
+{
+  for( int i = 0; i &lt; 10; i++ ) {
+    fmt::print( &quot;i = {}\n&quot;, i );
   }
 }
 
-int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
-  int a = 10;
+int main( [[maybe_unused]] int argc, [[maybe_unused]] char **argv )
+{
+  int   a  = 10;
   float pi = 3.141492;
-  my_func_01(a, pi);
+  my_func_01( a, pi );
   loop();
   return 0;
 }
@@ -332,7 +359,7 @@ debugger</a></li>
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

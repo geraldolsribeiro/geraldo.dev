@@ -54,7 +54,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ debugging with GDB</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-25 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2023-02-26 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/nemiver.html">nemiver</a><a class="tag no-underline" href="/til/tag/ddd.html">ddd</a><a class="tag no-underline" href="/til/tag/rr.html">rr</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#watchpoint">Watchpoint</a></li><li><a href="#time-travel-(rr-record-and-replay)">Time travel (rr record and replay)</a></li><li><a href="#multiprocess-debugging">Multiprocess debugging</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -71,11 +71,11 @@
 <pre><code class="language-shell">$ gdb -tui bin/gdb_test_01
 </code></pre>
 <p>Create breakpoint at function  <code>my_func_01</code>:</p>
-<pre><code class="language-shell">(gdb) break my_func_01(int, float) 
+<pre><code class="language-c++">(gdb) break my_func_01(int, float) 
 Breakpoint 1 at 0x3a74
 </code></pre>
 <p>Execute the program with breakpoint</p>
-<pre><code class="language-shell">(gdb) run
+<pre><code class="language-c++">(gdb) run
 Starting program: /data/home/geraldo/git/Intmain/language_cpp/bin/gdb_test_01 
 [Thread debugging using libthread_db enabled]
 Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&quot;.
@@ -90,7 +90,7 @@ Using host libthread_db library &quot;/lib/x86_64-linux-gnu/libthread_db.so.1&qu
 Thread 1 &quot;gdb_test_01&quot; hit Breakpoint 1, 0x0000555555557a74 in my_func_01(int, float) ()
 </code></pre>
 <p>Continue execution after breakpoint</p>
-<pre><code class="language-shell">(gdb) cont
+<pre><code class="language-c++">(gdb) cont
 Continuing.
 s = 10 + 3.141492 = 13.141492
 [Thread 0x7fffa5897700 (LWP 194522) exited]

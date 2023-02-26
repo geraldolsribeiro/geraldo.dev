@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Description not defined">
-    <title>C++ GDB pretty print</title>
+    <title>C++ gdb user defined commands</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -53,141 +53,218 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ GDB pretty print</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-25</b>Last modified: <b class="ml-2">2023-02-26 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/pretty-print.html">pretty-print</a>
+        <h1>C++ gdb user defined commands</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-26</b>Last modified: <b class="ml-2">2023-02-26 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/user-defined-command.html">user-defined-command</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#pretty-printer-introduction">Pretty-Printer Introduction</a></li><li><a href="#gdb-commands">GDB commands</a></li><li><a href="#gdb-output">GDB output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="pretty-printer-introduction" tabindex="-1">Pretty-Printer Introduction</h2>
-<p>Here is how a C++ <code>std::string</code> looks without a pretty-printer:</p>
-<pre><code class="language-c++">(gdb) print s
-$1 = {
-  static npos = 4294967295, 
-  _M_dataplus = {
-    &lt;std::allocator&lt;char&gt;&gt; = {
-      &lt;__gnu_cxx::new_allocator&lt;char&gt;&gt; = {
-        &lt;No data fields&gt;}, &lt;No data fields&gt;
-      },
-    members of std::basic_string&lt;char, std::char_traits&lt;char&gt;,
-      std::allocator&lt;char&gt; &gt;::_Alloc_hider:
-    _M_p = 0x804a014 &quot;abcd&quot;
-  }
-}
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#example-of-user-defined-command">Example of user-defined command</a></li><li><a href="#gdb-commands">GDB commands</a></li><li><a href="#gdb-output">GDB output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>Often it is tedious to debug complex data structures. Debugging a
+linked list often requires printing a node by dereferencing the
+pointer to its struct, then accessing the next node and doing
+the same to it. This can become tedious and messy, resulting in
+commands like:</p>
+<pre><code class="language-shell">(gdb) print *(curr)
+(gdb) print *(curr-&gt;next)
+(gdb) print *(curr-&gt;next-&gt;next)
+...
 </code></pre>
-<p>With a pretty-printer for <code>std::string</code> only the contents are printed:</p>
-<pre><code class="language-c++">(gdb) print s
-$2 = &quot;abcd&quot;
+<p>However, a command to print out a linked list can be created and
+placed inside the <code>.gdbinit</code> file.</p>
+<h3 id="define-a-command" tabindex="-1">Define a command</h3>
+<p>You can create a user defined command in the .gdbinit file:</p>
+<pre><code class="language-shell">define &lt;command&gt;
+    &lt;code&gt;
+end
 </code></pre>
-<pre><code class="language-cpp">#include &lt;stdlib.h&gt;
+<h3 id="document-a-command" tabindex="-1">Document a command</h3>
+<p>You can document a command in the .gdbinit file:</p>
+<pre><code class="language-shell">document &lt;command&gt;
+    &lt;information about the command&gt;
+end
+</code></pre>
+<p>This information appears when the help feature is used:</p>
+<pre><code class="language-shell">(gdb) help &lt;command&gt;
+&lt;information about the command&gt;
+</code></pre>
+<h3 id="command-parameters" tabindex="-1">Command parameters</h3>
+<p>When a user defined command is called in GBD, arguments can be passed in:</p>
+<pre><code class="language-shell">(gdb) &lt;command&gt; &lt;arg0&gt; &lt;arg1&gt; &lt;arg2&gt; ...
+</code></pre>
+<p>The number of arguments, and the arguments themselves can be
+referenced inside the command definition using the following
+variables:</p>
+<pre><code class="language-shell">$argc
+$arg0
+$arg1
+$arg2
+...
+</code></pre>
+<h2 id="example-of-user-defined-command" tabindex="-1">Example of user-defined command</h2>
+<p>To create a user-defined command, we use the GDB command <code>define</code>, and
+give it a command name, which in our example is <code>bugreport</code> followed
+by a set of GDB commands that you want to execute or capture the
+output from.</p>
+<pre><code class="language-shell">(gdb) define bugreport
+&gt; set pagination off
+&gt; thread apply all backtrace full
+&gt; shell uname -a
+&gt; end
+(gdb)
+</code></pre>
+<p>To save the output to a file:</p>
+<pre><code class="language-shell">(gdb) define bugreport
+&gt; set pagination off
+&gt; set logging file /tmp/bugreport.txt
+&gt; set logging on
+&gt; thread apply all backtrace full
+&gt; shell uname -a
+&gt; set logging off
+&gt; end
+(gdb)
+</code></pre>
+<p>Run it and display the file contents.</p>
+<pre><code class="language-shell">(gdb) bugreport
+(gdb) shell cat /tmp/bugreport.txt
+</code></pre>
+<pre><code class="language-cpp">struct node {
+  int          data;
+  struct node *next;
+};
 
-typedef struct {
-  const char *first_name;
-  const char *last_name;
-  struct {
-    int day;
-    int month;
-    int year;
-  } dob;
-  char *comments;
-} student;
-
-student students[]
-    = { [0] = { .first_name = &quot;Fred&quot;, .last_name = &quot;Smith&quot;, .dob = { 1, 1, 1970 } },
-        [1]
-        = { .first_name = &quot;Sarah&quot;,
-            .last_name  = &quot;G0T0&quot;,
-            .dob        = { 1, 1, 2002 },
-            .comments   = &quot;Lorem ipsum enchanta constrata&quot; } };
+struct node *create_node( int data );
+struct node *create_list( int length );
+void         print_list( struct node *list );
 
 int main( void )
 {
-  students[1].comments     = (char *) malloc( 128 );
-  students[1].comments[51] = 'X';
+  struct node *list1 = create_list( 7 );
+  print_list( list1 );
+
   return 0;
+}
+
+struct node *create_node( int data )
+{
+  struct node *newNode = (struct node *)malloc( sizeof( struct node ) );
+  assert( newNode != NULL );
+  newNode-&gt;data = data;
+  newNode-&gt;next = NULL;
+  return newNode;
+}
+
+struct node *create_list( int length )
+{
+  struct node *head = NULL;
+  if( length &gt; 0 ) {
+    head              = create_node( 0 );
+    int          i    = 1;
+    struct node *curr = head;
+    while( i &lt; length ) {
+      curr-&gt;next = create_node( i );
+      curr       = curr-&gt;next;
+      i++;
+    }
+  }
+  return head;
+}
+
+void print_list( struct node *list )
+{
+  struct node *curr = list;
+
+  while( curr != NULL ) {
+    printf( &quot;%d-&gt;&quot;, curr-&gt;data );
+    curr = curr-&gt;next;
+  }
+  printf( &quot;X\n&quot; );
 }
 </code></pre>
 <h2 id="gdb-commands" tabindex="-1">GDB commands</h2>
 <pre><code class="language-bash">set verbose off
 set pagination off
 
+define p_generic_list
+  set var $n = $arg0
+  while $n
+    print *($n)
+    set var $n = $n-&gt;next
+  end
+end
+
+document p_generic_list
+        p_generic_list LIST_HEAD_POINTER
+        Print all the fields of the nodes in the linked list pointed to by LIST_HEAD_POINTER. Assumes there is a next field in the struct.
+end
+
+define indentby
+    printf &quot;\n&quot;
+    set $i_$arg0 = $arg0
+    while $i_$arg0 &gt; 10
+        set $i_$arg0 = $i_$arg0 - 1
+        printf &quot;%c&quot;, ' '
+    end
+end
+
 start
 
-set logging file output/gdb_pretty_print.gdb
+set logging file output/gdb_user_defined_commands.gdb
 set logging overwrite on
 set logging on
 
-echo print students with pretty off\n
-set print pretty off
-print students
+# struct node *list1 = create_list( 7 );
+next
+p_generic_list list1
 
-echo print students with pretty on\n
-set print pretty on
-print students
-
-echo Printing and watching elements of arrays\n
-# 10 character max width
-print -elements 10 -- students[1].comments
-# All character
-print -elements unlimited -- students[1].comments
-print students[1].comments[5]@10
+# print_list( list1 );
 next
 
-print students[1].comments[50]@4
-watch students[1].comments[50]@4
 continue
-
-set logging off
 quit
 
-#  vim: ft=gdb
+# vim: ft=gdb
 
 </code></pre>
 <h2 id="gdb-output" tabindex="-1">GDB output</h2>
-<pre><code class="language-shell">print students with pretty off
-$1 = {{first_name = 0x555555556004 &quot;Fred&quot;, last_name = 0x555555556009 &quot;Smith&quot;, dob = {day = 1, month = 1, year = 1970}, comments = 0x0}, {first_name = 0x55555555600f &quot;Sarah&quot;, last_name = 0x555555556015 &quot;G0T0&quot;, dob = {day = 1, month = 1, year = 2002}, comments = 0x55555555601a &quot;Lorem ipsum enchanta constrata&quot;}}
-print students with pretty on
-$2 = {{
-    first_name = 0x555555556004 &quot;Fred&quot;,
-    last_name = 0x555555556009 &quot;Smith&quot;,
-    dob = {
-      day = 1,
-      month = 1,
-      year = 1970
-    },
-    comments = 0x0
-  }, {
-    first_name = 0x55555555600f &quot;Sarah&quot;,
-    last_name = 0x555555556015 &quot;G0T0&quot;,
-    dob = {
-      day = 1,
-      month = 1,
-      year = 2002
-    },
-    comments = 0x55555555601a &quot;Lorem ipsum enchanta constrata&quot;
-  }}
-Printing and watching elements of arrays
-$3 = 0x55555555601a &quot;Lorem ipsu&quot;...
-$4 = 0x55555555601a &quot;Lorem ipsum enchanta constrata&quot;
-$5 = &quot; ipsum enc&quot;
-66	  students[1].comments[51] = 'X';
-$6 = &quot;\000\000\000&quot;
-Hardware watchpoint 2: students[1].comments[50]@4
-
-Hardware watchpoint 2: students[1].comments[50]@4
-
-Old value = &quot;\000\000\000&quot;
-New value = &quot;\000X\000&quot;
-main () at gdb_pretty_print.cpp:67
-67	  return 0;
+<pre><code class="language-shell">142	  print_list( list1 );
+$1 = {
+  data = 0,
+  next = 0x555555ab2540
+}
+$2 = {
+  data = 1,
+  next = 0x555555ab2560
+}
+$3 = {
+  data = 2,
+  next = 0x555555ab2580
+}
+$4 = {
+  data = 3,
+  next = 0x555555ab25a0
+}
+$5 = {
+  data = 4,
+  next = 0x555555ab25c0
+}
+$6 = {
+  data = 5,
+  next = 0x555555ab25e0
+}
+$7 = {
+  data = 6,
+  next = 0x0
+}
+144	  return 0;
+[Inferior 1 (process 22514) exited normally]
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://sourceware.org/gdb/onlinedocs/gdb/index.html">Debugging with GDB</a></li>
-<li><a href="https://undo.io/resources/gdb-watchpoint/save-time-debugging-gdb-pretty-printing/">Save time debugging in GDB with pretty printing</a></li>
-<li><a href="https://undo.io/resources/gdb-watchpoint/debugging-pretty-printers-gdb-part2/">Debugging with pretty printers in GDB - part 2</a></li>
-<li><a href="https://undo.io/resources/gdb-watchpoint/debugging-pretty-printers-gdb-part3/">Debugging with pretty printers in GDB - part 3</a></li>
-<li><a href="https://sourceware.org/gdb/onlinedocs/gdb/Pretty_002dPrinter-Example.html">10.10.2 Pretty-Printer Example</a></li>
+<li>[How to Work with User-Defined Commands in
+GDB?(<a href="https://undo.io/resources/gdb-watchpoint/how-work-user-defined-commands-gdb/">https://undo.io/resources/gdb-watchpoint/how-work-user-defined-commands-gdb/</a></li>
+<li><a href="https://www.cse.unsw.edu.au/~learn/debugging/modules/gdb_init_file/">GDB - Init File</a></li>
+<li><a href="link">title</a></li>
 </ul>
 
       </main>

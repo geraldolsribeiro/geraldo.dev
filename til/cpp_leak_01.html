@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Description not defined">
+    <meta name="description" content="How to detect C/C++ memory leak">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
     <title>How to detect C/C++ memory leak</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
@@ -54,7 +55,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>How to detect C/C++ memory leak</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2023-02-25 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2023-02-27 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/memory-leak.html">memory-leak</a><a class="tag no-underline" href="/til/tag/AddressSanitizer.html">AddressSanitizer</a><a class="tag no-underline" href="/til/tag/ASan.html">ASan</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#compiler-version">Compiler version</a></li><li><a href="#instrumentation-cost">Instrumentation cost</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#buggy-c%2B%2B-source-code">Buggy C++ source code</a></li><li><a href="#main-function">Main function</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -132,27 +133,27 @@ The value of ptr is 42 0x602000000110
 The value of ptr is 42 0x602000000130
 
 =================================================================
-==1300029==ERROR: LeakSanitizer: detected memory leaks
+==585988==ERROR: LeakSanitizer: detected memory leaks
 
 Direct leak of 40 byte(s) in 10 object(s) allocated from:
-    #0 0x564ed6d172cd in operator new(unsigned long) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf22cd) (BuildId: 0f76f7362ad09ad38732166ec5197e59afebe25e)
-    #1 0x564ed6d198ad in leak() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:101:14
-    #2 0x7fa6c4e5cd09 in __libc_start_main csu/../csu/libc-start.c:308:16
+    #0 0x557bebe2a2cd in operator new(unsigned long) (/data/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf22cd) (BuildId: 3e263b3d3c2cae40b579f430e10909bf651536d0)
+    #1 0x557bebe2c8ad in leak() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:101:14
+    #2 0x7f8eff535d09 in __libc_start_main csu/../csu/libc-start.c:308:16
 
 SUMMARY: AddressSanitizer: 40 byte(s) leaked in 10 allocation(s).
 
 </code></pre>
 <h4 id="non-instrumented-possible-output" tabindex="-1">Non instrumented possible output</h4>
-<pre><code class="language-txt">The value of ptr is 42 0x55b52d32beb0
-The value of ptr is 42 0x55b52d32cee0
-The value of ptr is 42 0x55b52d32cf00
-The value of ptr is 42 0x55b52d32cf20
-The value of ptr is 42 0x55b52d32cf40
-The value of ptr is 42 0x55b52d32cf60
-The value of ptr is 42 0x55b52d32cf80
-The value of ptr is 42 0x55b52d32cfa0
-The value of ptr is 42 0x55b52d32cfc0
-The value of ptr is 42 0x55b52d32cfe0
+<pre><code class="language-txt">The value of ptr is 42 0x55bd3882eeb0
+The value of ptr is 42 0x55bd3882fee0
+The value of ptr is 42 0x55bd3882ff00
+The value of ptr is 42 0x55bd3882ff20
+The value of ptr is 42 0x55bd3882ff40
+The value of ptr is 42 0x55bd3882ff60
+The value of ptr is 42 0x55bd3882ff80
+The value of ptr is 42 0x55bd3882ffa0
+The value of ptr is 42 0x55bd3882ffc0
+The value of ptr is 42 0x55bd3882ffe0
 
 </code></pre>
 <h3 id="heap-use-after-free" tabindex="-1">Heap use after free</h3>
@@ -165,23 +166,23 @@ void heapUseAfterFree() {
 </code></pre>
 <h4 id="instrumented-possible-output-1" tabindex="-1">Instrumented possible output</h4>
 <pre><code class="language-txt">=================================================================
-==1300033==ERROR: AddressSanitizer: heap-use-after-free on address 0x6140000000e8 at pc 0x5589c9604c1b bp 0x7fff59364490 sp 0x7fff59364488
+==585992==ERROR: AddressSanitizer: heap-use-after-free on address 0x6140000000e8 at pc 0x55f2f0f87c1b bp 0x7fff39d7e950 sp 0x7fff39d7e948
 READ of size 4 at 0x6140000000e8 thread T0
-    #0 0x5589c9604c1a in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:203:38
-    #1 0x5589c9605040 in main /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:231:7
-    #2 0x7fa2efc0cd09 in __libc_start_main csu/../csu/libc-start.c:308:16
-    #3 0x5589c952f3f9 in _start (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x1f3f9) (BuildId: 0f76f7362ad09ad38732166ec5197e59afebe25e)
+    #0 0x55f2f0f87c1a in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:203:38
+    #1 0x55f2f0f88040 in main /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:231:7
+    #2 0x7f3e55bfcd09 in __libc_start_main csu/../csu/libc-start.c:308:16
+    #3 0x55f2f0eb23f9 in _start (/data/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x1f3f9) (BuildId: 3e263b3d3c2cae40b579f430e10909bf651536d0)
 
 0x6140000000e8 is located 168 bytes inside of 400-byte region [0x614000000040,0x6140000001d0)
 freed by thread T0 here:
-    #0 0x5589c9602c2d in operator delete[](void*) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf2c2d) (BuildId: 0f76f7362ad09ad38732166ec5197e59afebe25e)
-    #1 0x5589c9604ac8 in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:202:3
-    #2 0x7fa2efc0cd09 in __libc_start_main csu/../csu/libc-start.c:308:16
+    #0 0x55f2f0f85c2d in operator delete[](void*) (/data/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf2c2d) (BuildId: 3e263b3d3c2cae40b579f430e10909bf651536d0)
+    #1 0x55f2f0f87ac8 in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:202:3
+    #2 0x7f3e55bfcd09 in __libc_start_main csu/../csu/libc-start.c:308:16
 
 previously allocated by thread T0 here:
-    #0 0x5589c96023dd in operator new[](unsigned long) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf23dd) (BuildId: 0f76f7362ad09ad38732166ec5197e59afebe25e)
-    #1 0x5589c9604abd in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:201:16
-    #2 0x7fa2efc0cd09 in __libc_start_main csu/../csu/libc-start.c:308:16
+    #0 0x55f2f0f853dd in operator new[](unsigned long) (/data/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0xf23dd) (BuildId: 3e263b3d3c2cae40b579f430e10909bf651536d0)
+    #1 0x55f2f0f87abd in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:201:16
+    #2 0x7f3e55bfcd09 in __libc_start_main csu/../csu/libc-start.c:308:16
 
 SUMMARY: AddressSanitizer: heap-use-after-free /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:203:38 in heapUseAfterFree()
 Shadow bytes around the buggy address:
@@ -215,7 +216,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==1300033==ABORTING
+==585992==ABORTING
 
 </code></pre>
 <h4 id="non-instrumented-possible-output-1" tabindex="-1">Non instrumented possible output</h4>
@@ -250,7 +251,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

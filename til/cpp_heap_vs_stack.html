@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Description not defined">
+    <meta name="description" content="C++ heap vs stack">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
     <title>C++ heap vs stack</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
@@ -54,7 +55,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ heap vs stack</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-02-25 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-02-27 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/stack.html">stack</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#memory-structure">Memory structure</a></li><li><a href="#stack-vs-heap-pros-and-cons">Stack vs Heap Pros and Cons</a><ul><li><a href="#stack">Stack</a></li><li><a href="#heap">Heap</a></li></ul></li><li><a href="#dynamic-memory-allocation-in-c">Dynamic Memory Allocation in C</a><ul><li><a href="#memory-allocation">Memory Allocation</a></li><li><a href="#example-of-use">Example of use</a></li></ul></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -185,25 +186,25 @@ variables)</li>
 
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">0x7ffe1e46a9dc stack a1
-0x7ffe1e46a9d8 stack a2: -4 bytes from a1
-0x7ffe1e46a9d4 stack a3: -4 bytes from a2
-0x7ffe1e46a9d0 stack a4: -4 bytes from a3
-0x5630f5092520 heap p1
-0x5630f5092520 heap p1[0]
-0x5630f5092524 heap p1[1]
-0x5630f5092528 heap p1[2]
-0x5630f509252c heap p1[3]
-0x5630f5092530 heap p1[4]
-0x5630f5092540 heap p2: 32 bytes from p1
-0x5630f5092540 heap p2[0]
-0x5630f5092544 heap p2[1]
-0x5630f5092548 heap p2[2]
-0x5630f509254c heap p2[3]
-0x5630f5092560 heap p3: 32 bytes from p2
-0x5630f5092580 heap p4: 32 bytes from p3
-0x5630f50925a0 heap p5: 32 bytes from p4
-0x5630f5091e60 heap p6: -1856 bytes from p5
+<pre><code class="language-txt">0x7ffde84964ec stack a1
+0x7ffde84964e8 stack a2: -4 bytes from a1
+0x7ffde84964e4 stack a3: -4 bytes from a2
+0x7ffde84964e0 stack a4: -4 bytes from a3
+0x564ca91d79a0 heap p1
+0x564ca91d79a0 heap p1[0]
+0x564ca91d79a4 heap p1[1]
+0x564ca91d79a8 heap p1[2]
+0x564ca91d79ac heap p1[3]
+0x564ca91d79b0 heap p1[4]
+0x564ca91d79c0 heap p2: 32 bytes from p1
+0x564ca91d79c0 heap p2[0]
+0x564ca91d79c4 heap p2[1]
+0x564ca91d79c8 heap p2[2]
+0x564ca91d79cc heap p2[3]
+0x564ca91d79e0 heap p3: 32 bytes from p2
+0x564ca91d7a00 heap p4: 32 bytes from p3
+0x564ca91d7a20 heap p5: 32 bytes from p4
+0x564ca91d72e0 heap p6: -1856 bytes from p5
 sizeof(size_t) = 8 bytes
           100001     33      4      1
           100001     33      8      2
@@ -254,7 +255,7 @@ sizeof(size_t) = 8 bytes
     </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-10"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
       </div>
     </footer>
     <script>

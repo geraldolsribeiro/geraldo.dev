@@ -56,14 +56,81 @@
           </svg><span>Back to TILs</span></a>
         <h1>C++ Concepts</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-09-20</b>Last modified: <b class="ml-2">2023-02-28 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/concepts.html">concepts</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/concepts.html">concepts</a><a class="tag no-underline" href="/til/tag/requires.html">requires</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#syntax-1">Syntax 1</a></li><li><a href="#syntax-2">Syntax 2</a></li><li><a href="#syntax-3">Syntax 3</a></li><li><a href="#syntax-4">Syntax 4</a></li><li><a href="#custom-concepts">Custom concepts</a></li><li><a href="#nested-requirement">Nested requirement</a></li><li><a href="#compound-requirement">Compound requirement</a></li><li><a href="#references">References</a></li></ul></div></p>
 <ul>
 <li>C++ 20</li>
 <li>A mechanism to place constraints on your template type parameters.</li>
 </ul>
 <p>An alternative to static asserts and type traits</p>
+<h2 id="syntax-1" tabindex="-1">Syntax 1</h2>
+<ul>
+<li>the <code>requires</code> keyword is used to specify the concept</li>
+</ul>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+  requires std::integral&lt;T&gt;  // &lt;---
+T addA(T a, T b) {
+  return a + b;
+}
+
+template &lt;typename T&gt;
+  requires std::is_integral_v&lt;T&gt;  // Using a type trait
+T addB(T a, T b) {
+  return a + b;
+}
+</code></pre>
+<h2 id="syntax-2" tabindex="-1">Syntax 2</h2>
+<pre><code class="language-cpp">template &lt;std::integral T&gt;
+T addC(T a, T b) {
+  return a + b;
+}
+</code></pre>
+<h2 id="syntax-3" tabindex="-1">Syntax 3</h2>
+<pre><code class="language-cpp">auto addD(std::integral auto a, std::integral auto b) { return a + b; }
+</code></pre>
+<h2 id="syntax-4" tabindex="-1">Syntax 4</h2>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+T addE(T a, T b)
+  requires std::integral&lt;T&gt;
+{
+  return a + b;
+}
+</code></pre>
+<h2 id="custom-concepts" tabindex="-1">Custom concepts</h2>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept MyIntegral = std::is_integral_v&lt;T&gt;;
+
+template &lt;typename T&gt;
+concept Multipliable = requires(T a, T b) {
+  a *b;  // Just makes sure the syntax is valid
+};
+
+template &lt;typename T&gt;
+concept Incrementable = requires(T a) {
+  a += 1;
+  ++a;
+  a++;
+};
+</code></pre>
+<h2 id="nested-requirement" tabindex="-1">Nested requirement</h2>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept TinyType = requires(T t) {
+  sizeof(T) &lt;= 4;  // Simple requirement : Only checks syntax
+
+  // Nested requirement: checks the if the expression is true
+  requires sizeof(T) &lt;= 4;
+};
+</code></pre>
+<h2 id="compound-requirement" tabindex="-1">Compound requirement</h2>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept Addable = requires(T a, T b) {
+  // noexcept is optional
+  { a + b } noexcept -&gt; std::convertible_to&lt;int&gt;;  // Compound requirement
+  // Checks if a + b is valid syntax, doesn't throw expetions(optional),
+  // and the result //is convertible to int(optional)
+};
+</code></pre>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 void print_number(T n) {
   static_assert(std::is_integral&lt;T&gt;::value,
@@ -80,7 +147,6 @@ T f(T i) {
   static_assert(std::is_integral&lt;T&gt;::value, &quot;Integral required.&quot;);
   return i;
 }
-
 #define SHOW(...) \
   std::cout &lt;&lt; std::setw(29) &lt;&lt; #__VA_ARGS__ &lt;&lt; &quot; == &quot; &lt;&lt; __VA_ARGS__ &lt;&lt; '\n'
 

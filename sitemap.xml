@@ -295,6 +295,9 @@
     <loc>https://geraldo.dev/til/dropzonejs.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/digital-communication-block-diagram.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/como-limpar-o-audio-com-o-audacity.html</loc>
   </url>
   <url>
@@ -352,6 +355,9 @@
     <loc>https://geraldo.dev/til/git-checkout-somente-da-ultima-versao.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/hf-vhf-uhf.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_big-endian-vs-little-endian.html</loc>
   </url>
   <url>
@@ -407,6 +413,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/xml-tinyxml2.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/stock-image-source.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/firewall.html</loc>
@@ -649,6 +658,9 @@
     <loc>https://geraldo.dev/til/meilisearch.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/self-education.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/vim-compilar-vim-8.html</loc>
   </url>
   <url>
@@ -802,6 +814,9 @@
     <loc>https://geraldo.dev/til/git-auto-formatart-antes-do-commit.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/inter-process-communication.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/pdfjs.html</loc>
   </url>
   <url>
@@ -928,6 +943,9 @@
     <loc>https://geraldo.dev/til/tag/function-point.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/HF.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/ssh.html</loc>
   </url>
   <url>
@@ -962,6 +980,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/debsums.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/IPC.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/css.html</loc>
@@ -1123,6 +1144,9 @@
     <loc>https://geraldo.dev/til/tag/std::make_shared.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/pipe.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/bash.html</loc>
   </url>
   <url>
@@ -1180,6 +1204,9 @@
     <loc>https://geraldo.dev/til/tag/eclipse.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/nappy.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/autocomplete.html</loc>
   </url>
   <url>
@@ -1217,6 +1244,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/weeds.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/UHF.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/ex.html</loc>
@@ -1309,6 +1339,9 @@
     <loc>https://geraldo.dev/til/tag/MIPS.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/ranges_03.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/emoji.html</loc>
   </url>
   <url>
@@ -1331,6 +1364,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/linux.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/shared-memory.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/CNAB.html</loc>
@@ -1381,6 +1417,9 @@
     <loc>https://geraldo.dev/til/tag/ctime.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/socket.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/DNAT.html</loc>
   </url>
   <url>
@@ -1409,6 +1448,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/fltk.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/image.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/inxi.html</loc>
@@ -1448,6 +1490,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/spread-operator.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/VHF.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/dialog.html</loc>
@@ -1678,6 +1723,9 @@
     <loc>https://geraldo.dev/til/tag/corba.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/wideband.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/hash.html</loc>
   </url>
   <url>
@@ -1685,6 +1733,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/otimização.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/requires.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/plantuml.html</loc>
@@ -1742,6 +1793,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/gitmoji.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/self-education.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/certbot.html</loc>
@@ -2011,6 +2065,9 @@
     <loc>https://geraldo.dev/til/tag/fail2ban.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/inter-process-communication.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/tasks.html</loc>
   </url>
   <url>
@@ -2230,6 +2287,9 @@
     <loc>https://geraldo.dev/til/tag/std::max_element.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/communication.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/kali.html</loc>
   </url>
   <url>
@@ -2287,6 +2347,9 @@
     <loc>https://geraldo.dev/til/tag/conky.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/narrowband.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/vpn.html</loc>
   </url>
   <url>
@@ -2312,6 +2375,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/gnuplot.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/broadband.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/term.html</loc>
@@ -2452,6 +2518,9 @@
     <loc>https://geraldo.dev/til/vim-terminal.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_ranges_03.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/trader-simbolos.html</loc>
   </url>
   <url>
@@ -2480,6 +2549,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_heap_vs_stack.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/broadband-wideband-narrowband.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/meson.html</loc>

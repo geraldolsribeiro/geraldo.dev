@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Each operational frequency comes with its own advantages and disadvantages. But overall, VHF radios are better for outdoor use in large areas, and UHF radios are better for indoor or outdoor settings that are in close proximity.">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>HF — VHF — UHF</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>HF — VHF — UHF</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-01 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/HF.html">HF</a><a class="tag no-underline" href="/til/tag/VHF.html">VHF</a><a class="tag no-underline" href="/til/tag/UHF.html">UHF</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#uhf-%E2%80%94-ultra-high-frequency">UHF — Ultra High Frequency</a></li><li><a href="#vhf-%E2%80%94-very-high-frequency">VHF — Very high frequency</a></li><li><a href="#hf-%E2%80%94-high-frequency">HF — High frequency</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>Each operational frequency comes with its own advantages and disadvantages.
+But overall, VHF radios are better for outdoor use in large areas,
+and UHF radios are better for indoor or outdoor settings that are in close proximity.</p>
+<h2 id="uhf-%E2%80%94-ultra-high-frequency" tabindex="-1">UHF — Ultra High Frequency</h2>
+<ul>
+<li>Between 300 MHz and 3 GHz</li>
+<li>UHF radio waves propagate mainly by line of sight</li>
+<li>They are blocked by hills and large buildings although the transmission through building walls is strong enough for indoor reception</li>
+<li>They are used for:
+<ul>
+<li>television broadcasting</li>
+<li>cell phones</li>
+<li>satellite communication including GPS</li>
+<li>personal radio services including Wi-Fi and Bluetooth</li>
+<li>walkie-talkies</li>
+<li>cordless phones</li>
+</ul>
+</li>
+<li>The IEEE defines the UHF radar band as frequencies between 300 MHz and 1 GHz.</li>
+<li>Two other IEEE radar bands overlap the ITU UHF band:
+<ul>
+<li>the L band between 1 and 2 GHz</li>
+<li>the S band between 2 and 4 GHz</li>
+</ul>
+</li>
+<li>One of the biggest pros of UHF radios is that they do a much better job of penetrating barriers in urban locations, like concrete, steel, and wood.</li>
+<li>So this kind of radio is best suited for use indoors, including buildings with multiple floors, in industries such as:
+<ul>
+<li>manufacturing</li>
+<li>distribution</li>
+<li>education</li>
+<li>retail</li>
+<li>hospitality</li>
+<li>healthcare</li>
+</ul>
+</li>
+<li>They also work well for businesses that function in both indoor and outdoor settings, where there are a lot of surrounding buildings.</li>
+</ul>
+<h2 id="vhf-%E2%80%94-very-high-frequency" tabindex="-1">VHF — Very high frequency</h2>
+<ul>
+<li>From 30 MHz to 300 MHz</li>
+<li>Frequencies immediately below VHF are denoted high frequency (HF)</li>
+<li>The next higher frequencies are known as ultra high frequency (UHF)</li>
+<li>Common uses for VHF are:
+<ul>
+<li>FM radio broadcasting</li>
+<li>television broadcasting</li>
+<li>two way land mobile radio systems (emergency, business, private use and military)</li>
+<li>long range data communication up to several tens of kilometers with radio modems</li>
+<li>amateur radio</li>
+<li>marine communications</li>
+</ul>
+</li>
+<li>Air traffic control communications and air navigation systems (e.g. VOR, DME
+&amp; ILS) work at distances of 100 kilometers or more to aircraft at cruising
+altitude.</li>
+<li>VHF was used for analog television stations in the US, and continues to be
+used for digital television.</li>
+<li>VHF band was an early choice for manpack radios used by ground troops to
+communicate within a local eight kilometer (five mile) area or so.</li>
+<li>Unlike HF, VHF transmissions lack the ability to utilize the Ionosphere and are limited to line-of-sight (LOS) communication</li>
+<li>This reduces radio emission clutter throughout an extended battlefield and limits the vulnerability to unfriendly interception.</li>
+</ul>
+<h2 id="hf-%E2%80%94-high-frequency" tabindex="-1">HF — High frequency</h2>
+<ul>
+<li>Between 1.6 MHz and 30 MHz</li>
+<li>The HF band is a major part of the shortwave band of frequencies</li>
+<li>Communication at these frequencies is often called shortwave radio</li>
+<li>Because radio waves in this band can be reflected back to Earth by the
+ionosphere layer in the atmosphere – a method known as “skip” or “skywave”
+propagation – these frequencies are suitable for long-distance communication
+across intercontinental distances.</li>
+<li>SSB — Single Side Band, a layer of ionization gases that resides between 100
+and 700 km above the Earth surface.</li>
+<li>The band is used by international shortwave broadcasting stations (2.310
+<ul>
+<li>25.820 MHz), aviation communication, government time stations, weather
+stations, amateur radio and citizens band services, among other uses.</li>
+</ul>
+</li>
+<li>Is vital for base stations communicating with each other over vast distances</li>
+<li>Is useful for linking remote regions to the outside world, as HF radio
+communications is not reliant on conventional communications infrastructure.</li>
+<li>STANAG 4539(QAM)
+<ul>
+<li>coded data rates from 75 to 9600 bps</li>
+<li>uncoded data rate of 12k8 bps</li>
+</ul>
+</li>
+<li>STANAG 4285(PSK)</li>
+<li>STANAG 4415(PSK NATO robust)</li>
+<li>MIL-STD-188-110B(QAM)</li>
+<li>STANAG 4529 (NB PSK)</li>
+<li>MIL-STD-188-110A (PSK)</li>
+<li>MIL-STD-188-110B Appendix F (QAM, ISB)</li>
+</ul>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="http://m.hqtsolutions.com/news-information/difference-between-uhf-vhf-hf-and-gmrs-frs.html">What is the Difference Between UHF &amp; VHF &amp; HF and GMRS
+&amp; FRS?</a></li>
+<li><a href="https://www.barrettcommunications.com.au/vhf_overview/">VHF RADIO OVERVIEW</a></li>
+<li><a href="https://www.rapidm.com/standard-hf-waveform-performances/">Standard HF Waveform Performances</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

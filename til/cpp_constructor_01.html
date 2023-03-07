@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="git - update everything">
+    <meta name="description" content="C++ constructor_01">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>git - update everything</title>
+    <title>C++ constructor_01</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -54,16 +54,57 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>git - update everything</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-09-10</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/git.html">git</a>
-        </div><p>How to update all branches?</p>
-<pre><code class="language-shell">git remote update
-# or
-git fetch --all
-
-git pull --all
+        <h1>C++ constructor_01</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-02-25</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/constructor.html">constructor</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">class A {
+public:
+  A()
+  {
+  }
+  int i; // not initialized
+  int j = 5;
+};
 </code></pre>
+<pre><code class="language-cpp">class B {
+public:
+  B() = default;
+  int i; // will be initialized with 0
+  int j; // will be initialized with 0
+};
+</code></pre>
+<pre><code class="language-cpp">int main( [[maybe_unused]] int argc, [[maybe_unused]] char **argv )
+{
+  for( int i = 0; i &lt; 5; ++i ) {
+    A *pa = new A();
+    B *pb = new B();
+    cout &lt;&lt; &quot;A.i = &quot; &lt;&lt; pa-&gt;i &lt;&lt; &quot; A.j = &quot; &lt;&lt; pa-&gt;j &lt;&lt; &quot; without default constructor&quot; &lt;&lt; endl;
+    cout &lt;&lt; &quot;B.i = &quot; &lt;&lt; pb-&gt;i &lt;&lt; &quot; B.j = &quot; &lt;&lt; pb-&gt;j &lt;&lt; &quot; with default constructor&quot; &lt;&lt; endl;
+    delete pa;
+    delete pb;
+  }
+  return 0;
+}
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">A.i = 1915020608 A.j = 5 without default constructor
+B.i = 0 B.j = 0 with default constructor
+A.i = 1915020576 A.j = 5 without default constructor
+B.i = 0 B.j = 0 with default constructor
+A.i = 1915020608 A.j = 5 without default constructor
+B.i = 0 B.j = 0 with default constructor
+A.i = 1915020576 A.j = 5 without default constructor
+B.i = 0 B.j = 0 with default constructor
+A.i = 1915020608 A.j = 5 without default constructor
+B.i = 0 B.j = 0 with default constructor
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/13576055/how-is-default-different-from-for-default-constructor-and-destructor">How is “=default” different from “{}” for default constructor and destructor?</a></li>
+</ul>
 
       </main>
     </div>

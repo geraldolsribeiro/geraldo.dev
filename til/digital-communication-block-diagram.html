@@ -55,10 +55,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Digital Communication Block Diagram</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-02 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/communication.html">communication</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#source-encoder">Source Encoder</a></li><li><a href="#channel-encoder">Channel Encoder</a></li><li><a href="#digital-modulator">Digital Modulator</a></li><li><a href="#channel">Channel</a></li><li><a href="#digital-demodulator">Digital Demodulator</a></li><li><a href="#channel-decoder">Channel Decoder</a></li><li><a href="#source-decoder">Source Decoder</a></li><li><a href="#output-transducer">Output Transducer</a></li><li><a href="#output-signal">Output Signal</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
@@ -74,9 +74,54 @@
      <strong>Fig. 2</strong> - <span>Digital Communication Block Diagram</span>
   </figcaption>
 </figure>
+<h2 id="source-encoder" tabindex="-1">Source Encoder</h2>
+<p>The source encoder compresses the data into minimum number of bits.
+This process helps in effective utilization of the bandwidth. It removes the
+redundant bits unnecessary excess bits, i.e., zeroes.</p>
+<h2 id="channel-encoder" tabindex="-1">Channel Encoder</h2>
+<p>The channel encoder, does the coding for error correction. During the
+transmission of the signal, due to the noise in the channel, the signal may get
+altered and hence to avoid this, the channel encoder adds some redundant bits
+to the transmitted data. These are the error correcting bits.</p>
+<h2 id="digital-modulator" tabindex="-1">Digital Modulator</h2>
+<p>The signal to be transmitted is modulated here by a carrier. The signal is also
+converted to analog from the digital sequence, in order to make it travel
+through the channel or medium.</p>
+<h2 id="channel" tabindex="-1">Channel</h2>
+<p>The channel or a medium, allows the analog signal to transmit from the
+transmitter end to the receiver end.</p>
+<h2 id="digital-demodulator" tabindex="-1">Digital Demodulator</h2>
+<p>This is the first step at the receiver end. The received signal is demodulated
+as well as converted again from analog to digital. The signal gets
+reconstructed here.</p>
+<h2 id="channel-decoder" tabindex="-1">Channel Decoder</h2>
+<p>The channel decoder, after detecting the sequence, does some error corrections.
+The distortions which might occur during the transmission, are corrected by
+adding some redundant bits. This addition of bits helps in the complete
+recovery of the original signal.</p>
+<h2 id="source-decoder" tabindex="-1">Source Decoder</h2>
+<p>The resultant signal is once again digitized by sampling and quantizing so that
+the pure digital output is obtained without the loss of information. The source
+decoder recreates the source output.</p>
+<h2 id="output-transducer" tabindex="-1">Output Transducer</h2>
+<p>This is the last block which converts the signal into the original physical
+form, which was at the input of the transmitter. It converts the electrical
+signal into physical output (Example: loud speaker).</p>
+<h2 id="output-signal" tabindex="-1">Output Signal</h2>
+<p>This is the output which is produced after the whole process. Example − The
+sound signal received.</p>
+<p>PCM</p>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-3">
+    <img class="mx-auto my-2" src="/til/digital-communication-pcm-01.svg" alt="PCM">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 3</strong> — <span>PCM</span>
+  </figcaption>
+</figure>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href=""></a></li>
+<li><a href="https://www.tutorialspoint.com/digital_communication/digital_communication_quick_guide.htm">Digital Communication - Quick Guide</a></li>
 </ul>
 
       </main>

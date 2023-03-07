@@ -55,10 +55,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ Concepts</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-09-20</b>Last modified: <b class="ml-2">2023-02-28 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-09-20</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/concepts.html">concepts</a><a class="tag no-underline" href="/til/tag/requires.html">requires</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#syntax-1">Syntax 1</a></li><li><a href="#syntax-2">Syntax 2</a></li><li><a href="#syntax-3">Syntax 3</a></li><li><a href="#syntax-4">Syntax 4</a></li><li><a href="#custom-concepts">Custom concepts</a></li><li><a href="#nested-requirement">Nested requirement</a></li><li><a href="#compound-requirement">Compound requirement</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#syntax-1">Syntax 1</a></li><li><a href="#syntax-2">Syntax 2</a></li><li><a href="#syntax-3">Syntax 3</a></li><li><a href="#syntax-4">Syntax 4</a></li><li><a href="#building-your-own-concept">Building your own concept</a></li><li><a href="#nested-requirement">Nested requirement</a></li><li><a href="#combining-requirement">Combining requirement</a></li><li><a href="#concepts-and-auto">Concepts and auto</a></li><li><a href="#references">References</a></li></ul></div></p>
 <ul>
 <li>C++ 20</li>
 <li>A mechanism to place constraints on your template type parameters.</li>
@@ -69,72 +69,97 @@
 <li>the <code>requires</code> keyword is used to specify the concept</li>
 </ul>
 <pre><code class="language-cpp">template &lt;typename T&gt;
-  requires std::integral&lt;T&gt;  // &lt;---
-T addA(T a, T b) {
+  requires std::integral&lt;T&gt; // &lt;---
+T addA( T a, T b )
+{
   return a + b;
 }
 
 template &lt;typename T&gt;
-  requires std::is_integral_v&lt;T&gt;  // Using a type trait
-T addB(T a, T b) {
+  requires std::is_integral_v&lt;T&gt; // Using a type trait
+T addB( T a, T b )
+{
   return a + b;
 }
 </code></pre>
 <h2 id="syntax-2" tabindex="-1">Syntax 2</h2>
 <pre><code class="language-cpp">template &lt;std::integral T&gt;
-T addC(T a, T b) {
+T addC( T a, T b )
+{
   return a + b;
 }
 </code></pre>
 <h2 id="syntax-3" tabindex="-1">Syntax 3</h2>
-<pre><code class="language-cpp">auto addD(std::integral auto a, std::integral auto b) { return a + b; }
+<pre><code class="language-cpp">auto addD( std::integral auto a, std::integral auto b )
+{
+  return a + b;
+}
 </code></pre>
 <h2 id="syntax-4" tabindex="-1">Syntax 4</h2>
 <pre><code class="language-cpp">template &lt;typename T&gt;
-T addE(T a, T b)
+T addE( T a, T b )
   requires std::integral&lt;T&gt;
 {
   return a + b;
 }
 </code></pre>
-<h2 id="custom-concepts" tabindex="-1">Custom concepts</h2>
+<h2 id="building-your-own-concept" tabindex="-1">Building your own concept</h2>
 <pre><code class="language-cpp">template &lt;typename T&gt;
 concept MyIntegral = std::is_integral_v&lt;T&gt;;
-
-template &lt;typename T&gt;
-concept Multipliable = requires(T a, T b) {
-  a *b;  // Just makes sure the syntax is valid
+</code></pre>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept Multipliable = requires( T a, T b ) {
+  a *b; // Just makes sure the syntax is valid
 };
-
-template &lt;typename T&gt;
-concept Incrementable = requires(T a) {
+</code></pre>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept Incrementable = requires( T a ) {
   a += 1;
   ++a;
   a++;
 };
 </code></pre>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+concept Addable = requires( T a, T b ) {
+  // noexcept is optional
+  {
+    a + b
+  } noexcept -&gt; std::convertible_to&lt;int&gt;; // Compound requirement
+  // Checks if a + b is valid syntax, does not throw exceptions(optional),
+  // and the result is convertible to int(optional)
+};
+</code></pre>
 <h2 id="nested-requirement" tabindex="-1">Nested requirement</h2>
 <pre><code class="language-cpp">template &lt;typename T&gt;
-concept TinyType = requires(T t) {
-  sizeof(T) &lt;= 4;  // Simple requirement : Only checks syntax
+concept TinyType = requires( T t ) {
+  sizeof( T ) &lt;= 4; // Simple requirement : Only checks syntax
 
   // Nested requirement: checks the if the expression is true
-  requires sizeof(T) &lt;= 4;
+  requires sizeof( T ) &lt;= 4;
 };
 </code></pre>
-<h2 id="compound-requirement" tabindex="-1">Compound requirement</h2>
+<h2 id="combining-requirement" tabindex="-1">Combining requirement</h2>
+<h3 id="conjunction-%26%26" tabindex="-1">Conjunction &amp;&amp;</h3>
 <pre><code class="language-cpp">template &lt;typename T&gt;
-concept Addable = requires(T a, T b) {
-  // noexcept is optional
-  { a + b } noexcept -&gt; std::convertible_to&lt;int&gt;;  // Compound requirement
-  // Checks if a + b is valid syntax, doesn't throw expetions(optional),
-  // and the result //is convertible to int(optional)
-};
+  requires std::integral&lt;T&gt; &amp;&amp; TinyType&lt;T&gt;
+T addF( T a, T b )
+{
+  return a + b;
+}
 </code></pre>
+<h3 id="disjunction-%7C%7C" tabindex="-1">Disjunction ||</h3>
 <pre><code class="language-cpp">template &lt;typename T&gt;
-void print_number(T n) {
-  static_assert(std::is_integral&lt;T&gt;::value,
-                &quot;Must pass in an integral argument&quot;);
+  requires std::integral&lt;T&gt; || std::floating_point&lt;T&gt;
+T addG( T a, T b )
+{
+  return a + b;
+}
+</code></pre>
+<h2 id="concepts-and-auto" tabindex="-1">Concepts and auto</h2>
+<pre><code class="language-cpp">template &lt;typename T&gt;
+void print_number( T n )
+{
+  static_assert( std::is_integral&lt;T&gt;::value, &quot;Must pass in an integral argument&quot; );
   std::cout &lt;&lt; &quot;n: &quot; &lt;&lt; n &lt;&lt; std::endl;
 }
 </code></pre>
@@ -143,25 +168,26 @@ void print_number(T n) {
 enum E : int {};
 
 template &lt;class T&gt;
-T f(T i) {
-  static_assert(std::is_integral&lt;T&gt;::value, &quot;Integral required.&quot;);
+T f( T i )
+{
+  static_assert( std::is_integral&lt;T&gt;::value, &quot;Integral required.&quot; );
   return i;
 }
-#define SHOW(...) \
-  std::cout &lt;&lt; std::setw(29) &lt;&lt; #__VA_ARGS__ &lt;&lt; &quot; == &quot; &lt;&lt; __VA_ARGS__ &lt;&lt; '\n'
+#define SHOW( ... ) std::cout &lt;&lt; std::setw( 29 ) &lt;&lt; #__VA_ARGS__ &lt;&lt; &quot; == &quot; &lt;&lt; __VA_ARGS__ &lt;&lt; '\n'
 
-int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
+int main( [[maybe_unused]] int argc, [[maybe_unused]] char **argv )
+{
 
 ```cpp
   std::cout &lt;&lt; std::boolalpha;
 
-  SHOW(std::is_integral&lt;A&gt;::value);
-  SHOW(std::is_integral_v&lt;E&gt;);
-  SHOW(std::is_integral_v&lt;float&gt;);
-  SHOW(std::is_integral_v&lt;int&gt;);
-  SHOW(std::is_integral_v&lt;const int&gt;);
-  SHOW(std::is_integral_v&lt;bool&gt;);
-  SHOW(f(123));
+  SHOW( std::is_integral&lt;A&gt;::value );
+  SHOW( std::is_integral_v&lt;E&gt; );
+  SHOW( std::is_integral_v&lt;float&gt; );
+  SHOW( std::is_integral_v&lt;int&gt; );
+  SHOW( std::is_integral_v&lt;const int&gt; );
+  SHOW( std::is_integral_v&lt;bool&gt; );
+  SHOW( f( 123 ) );
 
   // clang-format off
   //    std::is_integral&lt;A&gt;::value == false
@@ -186,7 +212,7 @@ int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
       std::is_integral_v&lt;int&gt; == true
 std::is_integral_v&lt;const int&gt; == true
      std::is_integral_v&lt;bool&gt; == true
-                       f(123) == 123
+                     f( 123 ) == 123
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

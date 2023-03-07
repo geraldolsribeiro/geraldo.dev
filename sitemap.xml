@@ -1018,6 +1018,9 @@
     <loc>https://geraldo.dev/til/tag/BST.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/constructor.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/firewall-cmd.html</loc>
   </url>
   <url>
@@ -1345,9 +1348,6 @@
     <loc>https://geraldo.dev/til/tag/MIPS.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/ranges_03.html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/emoji.html</loc>
   </url>
   <url>
@@ -1544,6 +1544,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/pentest.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/Abu-Dhabi.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/english.html</loc>
@@ -1787,6 +1790,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/for_each.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::for_each.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/rust.html</loc>
@@ -2315,6 +2321,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/golang.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/parallel.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/trick.html</loc>

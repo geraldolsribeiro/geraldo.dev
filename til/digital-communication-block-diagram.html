@@ -55,21 +55,21 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Digital Communication Block Diagram</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-05 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/communication.html">communication</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#source-encoder">Source Encoder</a></li><li><a href="#channel-encoder">Channel Encoder</a></li><li><a href="#digital-modulator">Digital Modulator</a></li><li><a href="#channel">Channel</a></li><li><a href="#digital-demodulator">Digital Demodulator</a></li><li><a href="#channel-decoder">Channel Decoder</a></li><li><a href="#source-decoder">Source Decoder</a></li><li><a href="#output-transducer">Output Transducer</a></li><li><a href="#output-signal">Output Signal</a></li><li><a href="#pcm">PCM</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#source-encoder">Source Encoder</a></li><li><a href="#channel-encoder">Channel Encoder</a></li><li><a href="#digital-modulator">Digital Modulator</a></li><li><a href="#channel">Channel</a></li><li><a href="#digital-demodulator">Digital Demodulator</a></li><li><a href="#channel-decoder">Channel Decoder</a></li><li><a href="#source-decoder">Source Decoder</a></li><li><a href="#output-transducer">Output Transducer</a></li><li><a href="#output-signal">Output Signal</a></li><li><a href="#fm-%E2%80%94-frequency-modulation">FM — Frequency Modulation</a></li><li><a href="#pcm-%E2%80%94-pulse-code-modulation">PCM — Pulse Code Modulation</a></li><li><a href="#low-pass-filter">Low Pass Filter</a></li><li><a href="#sampler">Sampler</a></li><li><a href="#quantizer">Quantizer</a></li><li><a href="#encoder">Encoder</a></li><li><a href="#regenerative-repeater">Regenerative Repeater</a></li><li><a href="#decoder">Decoder</a></li><li><a href="#reconstruction-filter">Reconstruction Filter</a></li><li><a href="#broadband%2C-wideband-and-narrowband">Broadband, wideband and narrowband</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
-    <img class="mx-auto my-2" src="/til/digital-communication-block-diagram-01.svg" alt="Digital Communication Block Diagram">
+    <img class="mx-auto my-2" src="/til/digital_communication_block_diagram_01.svg" alt="Digital Communication Block Diagram">
   </a>
   <figcaption class="text-center text-lg font-bold">
      <strong>Fig. 1</strong> — <span>Digital Communication Block Diagram</span>
   </figcaption>
 </figure>
 <figure>
-  <img class="mx-auto" src="/til/digital-communication-block-diagram-00.webp" alt="Digital Communication Block Diagram">
+  <img class="mx-auto" src="/til/digital_communication_block_diagram_00.webp" alt="Digital Communication Block Diagram">
   <figcaption class="text-center">
      <strong>Fig. 2</strong> - <span>Digital Communication Block Diagram</span>
   </figcaption>
@@ -110,18 +110,187 @@ signal into physical output (Example: loud speaker).</p>
 <h2 id="output-signal" tabindex="-1">Output Signal</h2>
 <p>This is the output which is produced after the whole process. Example − The
 sound signal received.</p>
-<h2 id="pcm" tabindex="-1">PCM</h2>
-<figure class="bg-slate-800 text-center py-4">
-  <a name="fig-3">
-    <img class="mx-auto my-2" src="/til/digital-communication-pcm-01.svg" alt="PCM">
-  </a>
-  <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 3</strong> — <span>PCM</span>
+<h2 id="fm-%E2%80%94-frequency-modulation" tabindex="-1">FM — Frequency Modulation</h2>
+<ul>
+<li>High frequency = high energy</li>
+<li>Less power required for transmission</li>
+<li>Unaffected by interference/noise</li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/digital_communication_fm_encoding.webp" alt="FM Enconding">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>FM Enconding</span>
   </figcaption>
 </figure>
+<figure>
+  <img class="mx-auto" src="/til/digital_communication_pulse_width_modulation.webp" alt="Pulse Width Modulation">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>Pulse Width Modulation</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/digital_communication_pulse_position_modulation.webp" alt="Pulse Position Modulation">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Pulse Position Modulation</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/digital_communication_pulse_width_vs_position_modulation.webp" alt="Pulse Width vs Position Modulation">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Pulse Width vs Position Modulation</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/digital_communication_pulse_amplitude_modulation.webp" alt="Pulse Amplitude Modulation">
+  <figcaption class="text-center">
+     <strong>Fig. 7</strong> - <span>Pulse Amplitude Modulation</span>
+  </figcaption>
+</figure>
+<h2 id="pcm-%E2%80%94-pulse-code-modulation" tabindex="-1">PCM — Pulse Code Modulation</h2>
+<ul>
+<li>Commonly used</li>
+<li>Easy to understand</li>
+<li>Antecedent to all other methods</li>
+<li>Lossless encoding</li>
+</ul>
+<p>Instead of a pulse train, PCM produces a series of numbers or digits, and hence
+this process is called as <strong>digital</strong>.</p>
+<p>Each one of these digits, though in binary code, represent the approximate
+amplitude of the signal sample at that instant.</p>
+<p>In Pulse Code Modulation, the message signal is represented by a sequence of coded pulses.
+This message signal is achieved by representing the signal in discrete form in both time and amplitude.</p>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-8">
+    <img class="mx-auto my-2" src="/til/digital_communication_pcm_01.svg" alt="PCM">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 8</strong> — <span>PCM</span>
+  </figcaption>
+</figure>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-9">
+    <img class="mx-auto my-2" src="/til/digital_communication_pcm_output_signal.svg" alt="PCM Output Signal">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 9</strong> — <span>PCM Output Signal</span>
+  </figcaption>
+</figure>
+<h3 id="pcm-encoding" tabindex="-1">PCM Encoding</h3>
+<ul>
+<li>Companding PCM</li>
+<li>Differential PCM</li>
+<li>Adaptive Differential PCM</li>
+<li>Linear Predictive PCM</li>
+<li>Delta Modulation</li>
+<li>Modified Discrete Cosine Transform</li>
+</ul>
+<h3 id="basic-elements-of-pcm" tabindex="-1">Basic Elements of PCM</h3>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-10">
+    <img class="mx-auto my-2" src="/til/digital_communication_pcm_02.svg" alt="Basic Elements of PCM">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 10</strong> — <span>Basic Elements of PCM</span>
+  </figcaption>
+</figure>
+<h2 id="low-pass-filter" tabindex="-1">Low Pass Filter</h2>
+<p>This filter eliminates the high frequency components present in the input
+analog signal which is greater than the highest frequency of the message
+signal, to avoid aliasing of the message signal.</p>
+<h2 id="sampler" tabindex="-1">Sampler</h2>
+<ul>
+<li>p.e. 44.1kHz at 1 second</li>
+</ul>
+<p>This is the technique which helps to collect the sample data at instantaneous
+values of message signal, so as to reconstruct the original signal. The
+sampling rate must be greater than twice the highest frequency component W of
+the message signal, in accordance with the sampling theorem.</p>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>The typical human speech is represented by a simple 1200 Hz tone, which is represented by a sine wave.</p>
+  </div>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☕</span>
+    <span>Nyquist</span>
+  </div>
+  <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
+<p>If a and-limited signal is sampled at regular intervals of time and at a rate equal to or higher
+than twice (2x) the highest significant signal frequency, then the sample contains all
+the information of the original signal.</p>
+<p>The original signal may then be reconstructed by use of a low-pass filter.</p>
+  </div>
+</div>
+<p>Based on Nyquist sampling theorem, we can derive that the nominal <strong>4 kHz voice channel</strong>
+can be reconstructed by a sampling rate of 8000 times per second (4000 x 2).</p>
+<p>This means that a sample is taken every 125 μsec, or 1 second/8000.</p>
+<h2 id="quantizer" tabindex="-1">Quantizer</h2>
+<ul>
+<li>p.e. 16bits (65.536 levels)</li>
+</ul>
+<p>Quantizing is a process of reducing the excessive bits and confining the data.
+The sampled output when given to Quantizer, reduces the redundant bits and
+compresses the value.</p>
+<p>The exact sample value is replaced by the closest value
+allowed. The infinite number of levels is transformed into a finite
+number of levels.</p>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-11">
+    <img class="mx-auto my-2" src="/til/digital_communication_pcm_quantizer_00.svg" alt="PCM Quantizer">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 11</strong> — <span>PCM Quantizer</span>
+  </figcaption>
+</figure>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-12">
+    <img class="mx-auto my-2" src="/til/digital_communication_pcm_quantizer_01.svg" alt="PCM Quantizer">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 12</strong> — <span>PCM Quantizer</span>
+  </figcaption>
+</figure>
+<ul>
+<li>p.e. 44.1k samples x 16bits = 705.6kbps for a single audio channel</li>
+<li>sample rate x bit depth x number of channels = bandwidth of multichannel audio</li>
+</ul>
+<h2 id="encoder" tabindex="-1">Encoder</h2>
+<ul>
+<li>The digitization of analog signal is done by the encoder.</li>
+<li>It designates each quantized level by a binary code.</li>
+<li>The sampling done here is the sample-and-hold process.</li>
+<li>Encoding minimizes the bandwidth used.</li>
+</ul>
+<h2 id="regenerative-repeater" tabindex="-1">Regenerative Repeater</h2>
+<p>This section increases the signal strength. The output of the channel also has
+one regenerative repeater circuit, to compensate the signal loss and
+reconstruct the signal, and also to increase its strength.</p>
+<h2 id="decoder" tabindex="-1">Decoder</h2>
+<p>The decoder circuit decodes the pulse coded waveform to reproduce the original
+signal. This circuit acts as the demodulator.</p>
+<h2 id="reconstruction-filter" tabindex="-1">Reconstruction Filter</h2>
+<p>After the digital-to-analog conversion is done by the regenerative circuit and
+the decoder, a low-pass filter is employed, called as the reconstruction filter
+to get back the original signal.</p>
+<p>Hence, the Pulse Code Modulator circuit digitizes the given analog signal,
+codes it and samples it, and then transmits it in an analog form. This whole
+process is repeated in a reverse pattern to obtain the original signal.</p>
+<h2 id="broadband%2C-wideband-and-narrowband" tabindex="-1">Broadband, wideband and narrowband</h2>
+<ul>
+<li><a href="/til/broadband-wideband-narrowband.html">Broadband — Wideband — Narrowband</a></li>
+</ul>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://www.tutorialspoint.com/digital_communication/digital_communication_quick_guide.htm">Digital Communication - Quick Guide</a></li>
+<li><a href="https://www.site.uottawa.ca/~sloyka/elg3175/Lec_11_ELG3175.pdf">Lecture 11, ELG3175: Introduction to Communication Systems</a></li>
+<li>Stanford <a href="https://web.stanford.edu/class/ee179/lectures/notes13.pdf">Lecture 13: Pulse Code Modulation</a></li>
+<li><a href="https://www.fiberoptics4sale.com/blogs/archive-posts/95045126-what-is-pulse-code-modulation-pcm">WHAT IS PULSE CODE MODULATION (PCM)?</a></li>
+<li>Video <a href="https://www.youtube.com/watch?v=wn71QBApCRg">10. Pulse Code Modulation - Digital Audio Fundamentals</a></li>
 </ul>
 
       </main>

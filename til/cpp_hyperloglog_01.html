@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="C++ hyperloglog_01">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>C++ hyperloglog_01</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ hyperloglog_01</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-09</b>Last modified: <b class="ml-2">2023-03-10 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hyperloglog_01.html">hyperloglog_01</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#precision">Precision</a></li><li><a href="#memory-usage">Memory usage</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>The main idea behind HyperLogLog algorithm is to estimate the
+number of distinct elements in a large set using a small amount of
+memory. The algorithm achieves this by using a probabilistic data
+structure that is designed to approximate the number of distinct
+elements with high accuracy and low memory usage.</p>
+<p>The algorithm works by assigning each element in the set to a hash
+value, which is then used to determine the index of a register in
+a table of fixed size. The registers are initialized to zero, and
+for each element, the algorithm computes a “rank” value based on
+the hash value. The rank is defined as the position of the leftmost
+non-zero bit in the binary representation of the hash value.</p>
+<p>The algorithm maintains a set of counters, one for each register
+in the table. For each element, the algorithm updates the counter
+corresponding to the register index with the maximum rank value seen
+so far. After processing all elements in the set, the algorithm uses
+the counter values to estimate the number of distinct elements in
+the set.</p>
+<p>The key insight of HyperLogLog algorithm is that the distribution
+of rank values for a large set of elements can be approximated by a
+power-law distribution, which has a characteristic shape that depends
+only on the size of the set and not on the specific elements in the
+set. This property enables the algorithm to estimate the number of
+distinct elements with high accuracy by only storing a small number
+of counter values.</p>
+<p>To improve the accuracy of the algorithm, HyperLogLog uses a
+technique called “bias correction” that corrects for a systematic
+bias introduced by the probabilistic data structure. The bias
+correction involves applying a correction factor to the estimated
+cardinality that depends on the precision of the algorithm.</p>
+<p>Overall, HyperLogLog algorithm provides a highly efficient and
+scalable method for estimating the number of distinct elements in
+large datasets, making it a popular tool in big data analytics and
+database systems.</p>
+<h2 id="precision" tabindex="-1">Precision</h2>
+<p>In HyperLogLog, the precision is determined by the number of
+bits used to represent the registers. Specifically, the number of
+registers used is equal to 2^precision. The higher the precision,
+the more accurate the estimate of the number of distinct elements in
+the set will be, but also the more memory the algorithm will consume.</p>
+<p>In the C++ implementation I provided, the precision is passed as an
+argument to the constructor of the HyperLogLog class. For example,
+if you create a HyperLogLog object with precision 10, it will use
+1024 registers (2^10) to estimate the number of distinct elements
+in the set.</p>
+<p>The choice of precision depends on the trade-off between accuracy
+and memory usage. In practice, a precision of 10-12 is often
+used, which provides a reasonable estimate with a moderate memory
+overhead. However, the optimal precision may vary depending on the
+specific application and the size of the set being estimated.</p>
+<h2 id="memory-usage" tabindex="-1">Memory usage</h2>
+<p>The table below shows the approximate memory usage in bytes for a
+HyperLogLog data structure with different numbers of bits:</p>
+<table>
+<thead>
+<tr>
+<th>Precision (bits)</th>
+<th>Number of Registers</th>
+<th>Memory Usage (bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4</td>
+<td>16</td>
+<td>64</td>
+</tr>
+<tr>
+<td>5</td>
+<td>32</td>
+<td>128</td>
+</tr>
+<tr>
+<td>6</td>
+<td>64</td>
+<td>256</td>
+</tr>
+<tr>
+<td>7</td>
+<td>128</td>
+<td>512</td>
+</tr>
+<tr>
+<td>8</td>
+<td>256</td>
+<td>1024</td>
+</tr>
+<tr>
+<td>9</td>
+<td>512</td>
+<td>2048</td>
+</tr>
+<tr>
+<td>10</td>
+<td>1024</td>
+<td>4096</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2048</td>
+<td>8192</td>
+</tr>
+<tr>
+<td>12</td>
+<td>4096</td>
+<td>16384</td>
+</tr>
+<tr>
+<td>13</td>
+<td>8192</td>
+<td>32768</td>
+</tr>
+<tr>
+<td>14</td>
+<td>16384</td>
+<td>65536</td>
+</tr>
+<tr>
+<td>15</td>
+<td>32768</td>
+<td>131072</td>
+</tr>
+</tbody>
+</table>
+<p>Note that these numbers are approximate and may vary depending on
+the specific implementation of the HyperLogLog algorithm and the
+memory allocation behavior of the operating system. Additionally,
+the memory usage of a HyperLogLog data structure may also depend
+on the specific dataset being analyzed and the accuracy required
+for the estimation.</p>
+<pre><code class="language-cpp">class HyperLogLog {
+public:
+  HyperLogLog( uint8_t precision ) : precision( precision ), size( 1 &lt;&lt; precision )
+  {
+    M = new uint8_t[size];
+    std::memset( M, 0, size * sizeof( uint8_t ) );
+    alpha = get_alpha( precision );
+  }
+
+  ~HyperLogLog()
+  {
+    delete[] M;
+  }
+
+  void add( uint64_t value )
+  {
+    uint32_t hash  = murmurhash( value );
+    uint32_t index = hash &gt;&gt; ( 32 - precision );
+    uint8_t  rho   = count_leading_zeros( hash &lt;&lt; precision ) + 1;
+    if( rho &gt; M[index] ) {
+      M[index] = rho;
+    }
+  }
+
+  uint64_t count() const
+  {
+    double Z = 0;
+    for( uint32_t i = 0; i &lt; size; i++ ) {
+      Z += 1.0 / ( 1 &lt;&lt; M[i] );
+    }
+    double estimate = alpha * size * size / Z;
+    if( estimate &lt;= 2.5 * size ) {
+      uint32_t zeros = 0;
+      for( uint32_t i = 0; i &lt; size; i++ ) {
+        if( M[i] == 0 ) {
+          zeros++;
+        }
+      }
+      if( zeros != 0 ) {
+        estimate = size * std::log( (double)size / zeros );
+      }
+    }
+    else if( estimate &gt; 1.0 / 30.0 * std::pow( 2, 32 ) ) {
+      estimate = -std::pow( 2, 32 ) * std::log( 1 - estimate / std::pow( 2, 32 ) );
+    }
+    return static_cast&lt;uint64_t&gt;( estimate );
+  }
+
+private:
+  uint8_t  precision;
+  uint32_t size;
+  uint8_t *M;
+  double   alpha;
+
+  uint32_t murmurhash( uint64_t value ) const
+  {
+    uint32_t seed = 0x9747b28c;
+    uint32_t m    = 0x5bd1e995;
+    uint32_t h    = seed ^ sizeof( value );
+    uint32_t k    = value;
+    k *= m;
+    k ^= k &gt;&gt; 24;
+    k *= m;
+    h *= m;
+    h ^= k;
+    h *= m;
+    h ^= h &gt;&gt; 13;
+    h *= m;
+    h ^= h &gt;&gt; 15;
+    return h;
+  }
+
+  uint8_t count_leading_zeros( uint32_t x ) const
+  {
+    uint8_t n = 1;
+    if( ( x &gt;&gt; 16 ) == 0 ) {
+      n += 16;
+      x &lt;&lt;= 16;
+    }
+    if( ( x &gt;&gt; 24 ) == 0 ) {
+      n += 8;
+      x &lt;&lt;= 8;
+    }
+    if( ( x &gt;&gt; 28 ) == 0 ) {
+      n += 4;
+      x &lt;&lt;= 4;
+    }
+    if( ( x &gt;&gt; 30 ) == 0 ) {
+      n += 2;
+      x &lt;&lt;= 2;
+    }
+    n -= x &gt;&gt; 31;
+    return n;
+  }
+
+  double get_alpha( uint8_t precision ) const
+  {
+    switch( precision ) {
+    case 4:
+      return 0.673;
+    case 5:
+      return 0.697;
+    case 6:
+      return 0.709;
+    default:
+      return 0.721;
+    }
+  }
+};
+</code></pre>
+<p>In this example, we create a HyperLogLog object with precision 10,
+which means it has 1024 registers. We then generate a set of 1
+million random integers and add them to both the std::unordered_set
+and the HyperLogLog. Finally, we print out the actual size of the
+set and the estimated size of the set using the count method of
+the HyperLogLog object.</p>
+<p>Note that the actual size of the set is not known, so we cannot
+compare the estimate to the true value. However, in practice,
+HyperLogLog has been shown to produce accurate estimates with a
+low memory footprint.</p>
+<pre><code class="language-cpp">int main()
+{
+  HyperLogLog                  hll( 10 ); // Create a HyperLogLog with precision 10 (1024 registers)
+  std::unordered_set&lt;uint64_t&gt; set;
+  for( int i = 0; i &lt; 1000000; i++ ) {
+    uint64_t value = rand();
+    set.insert( value );
+    hll.add( value );
+  }
+  std::cout &lt;&lt; &quot;Actual set size: &quot; &lt;&lt; set.size() &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;Estimated set size: &quot; &lt;&lt; hll.count() &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">Actual set size: 999778
+Estimated set size: 1055671
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

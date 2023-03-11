@@ -1646,6 +1646,10 @@ video {
   text-transform: lowercase;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .tracking-wide {
   letter-spacing: 0.025em;
 }
@@ -2039,6 +2043,10 @@ a {
   line-height: 0.5;
   font-size: 300%;
   vertical-align:middle;
+}
+
+.MathJax {
+  color: #82aaff;
 }
 
 .hover\:bg-blue-300:hover {

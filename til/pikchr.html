@@ -58,9 +58,15 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-15</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven.html">text-driven</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#trigonometric-functions">Trigonometric functions</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#ark">Ark</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#trigonometric-functions">Trigonometric functions</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
-<p>Online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
+<p><strong>Pikchr</strong> (pronounced like “picture”) is a PIC-like markup language for
+diagrams in technical documentation. Pikchr is designed to be embedded in
+<a href="https://spec.commonmark.org/0.29/#fenced-code-blocks">fenced code blocks</a> of
+Markdown (or in similar mechanisms in other markup languages) to provide
+a convenient means of showing diagrams.</p>
+<p>A fork of pikchr can be found on <a href="https://github.com/geraldolsribeiro/pikchr">https://github.com/geraldolsribeiro/pikchr</a>.</p>
+<p>An online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
 <h2 id="sample" tabindex="-1">Sample</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
@@ -80,6 +86,49 @@ arrow &lt;-&gt; down 70% from last box.s
 box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
 # Extracted by md2pug
 </code></pre>
+<h2 id="ark" tabindex="-1">Ark</h2>
+<p>This is my attempt to provide a more precise <code>arc</code> command.</p>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-2">
+    <img class="mx-auto my-2" src="/til/pikchr_ark.svg" alt="Ark">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 2</strong> — <span>Ark</span>
+  </figcaption>
+</figure>
+<pre><code class="language-shell">margin = 0.1
+// Axis
+line from 0,0 to 0,2 color purple
+line from 0,0 to 2,0 color purple
+// Approximate circle with 4 arcs
+arcrad = 2
+arc to 0,2 color red
+arc to -2,0 color green
+arc to 0,-2 color orange
+arc to 2,0 color blue
+// Macro ark(radius, startAngle, endAngle)
+define ark {
+  ArkCenter: text
+  $arkNumberOfSegments = 5
+  $arkSegmentAngle = ($3-$2)/$arkNumberOfSegments
+  ArkP1: line invisible from ArkCenter go $1 heading $2
+  ArkP2: line invisible from ArkCenter go $1 heading $2+1*$arkSegmentAngle
+  ArkP3: line invisible from ArkCenter go $1 heading $2+2*$arkSegmentAngle
+  ArkP4: line invisible from ArkCenter go $1 heading $2+3*$arkSegmentAngle
+  ArkP5: line invisible from ArkCenter go $1 heading $2+4*$arkSegmentAngle
+  ArkP6:line invisible from ArkCenter go $1 heading $3
+  spline from ArkP1.end to ArkP2.end to ArkP3.end to ArkP4.end to ArkP5.end to ArkP6.end $4
+  move to ArkCenter
+}
+// Sample
+move to 0,0
+ark(0.9, 0, 90, color red)
+ark(0.8, 0, 90)
+ark(0.7, 0, 90, dashed color green -&gt;)
+ark(0.6,45,90, &lt;-&gt; thin)
+ark(1.5,30,60)
+# Extracted by md2pug
+</code></pre>
 <h2 id="filled-polygon" tabindex="-1">Filled Polygon</h2>
 <div role="alert" class="my-4">
   <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
@@ -91,11 +140,11 @@ box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-2">
+  <a name="fig-3">
     <img class="mx-auto my-2" src="/til/pikchr_polygon.svg" alt="Filled polygon">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 2</strong> — <span>Filled polygon</span>
+     <strong>Fig. 3</strong> — <span>Filled polygon</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 5mm;
@@ -106,11 +155,11 @@ line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-3">
+  <a name="fig-4">
     <img class="mx-auto my-2" src="/til/pikchr_triangle.svg" alt="Filled polygon fail">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 3</strong> — <span>Filled polygon fail</span>
+     <strong>Fig. 4</strong> — <span>Filled polygon fail</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">A: (  0, sqrt(3/4))
@@ -142,11 +191,11 @@ circle rad 0.1 at C fill green
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-4">
+  <a name="fig-5">
     <img class="mx-auto my-2" src="/til/pikchr_arrow.svg" alt="Arrow">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 4</strong> — <span>Arrow</span>
+     <strong>Fig. 5</strong> — <span>Arrow</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 10mm;
@@ -178,11 +227,11 @@ analysis, likely resulting in a syntax error.</p>
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-5">
+  <a name="fig-6">
     <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 5</strong> — <span>Pikchr macro flag</span>
+     <strong>Fig. 6</strong> — <span>Pikchr macro flag</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">CP: dot invisible;
@@ -209,11 +258,11 @@ $flagAngle = 60; $color=green; flag;
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-6">
+  <a name="fig-7">
     <img class="mx-auto my-2" src="/til/pikchr_macro_with_parameter.svg" alt="Pikchr macro with parameters">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 6</strong> — <span>Pikchr macro with parameters</span>
+     <strong>Fig. 7</strong> — <span>Pikchr macro with parameters</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">define mybox {
@@ -231,11 +280,11 @@ mybox(4cm,4cm, yellow, &quot;text3&quot;)
 </code></pre>
 <h2 id="utf-8-characters" tabindex="-1">UTF-8 characters</h2>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-7">
+  <a name="fig-8">
     <img class="mx-auto my-2" src="/til/pikchr_utf_8_character.svg" alt="Pikchr UTF-8 character">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 7</strong> — <span>Pikchr UTF-8 character</span>
+     <strong>Fig. 8</strong> — <span>Pikchr UTF-8 character</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -274,11 +323,11 @@ Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨�
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-8">
+  <a name="fig-9">
     <img class="mx-auto my-2" src="/til/pikchr_trig.svg" alt="Trigonometric functions">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 8</strong> — <span>Trigonometric functions</span>
+     <strong>Fig. 9</strong> — <span>Trigonometric functions</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">pi = 3.141592  # define a constant
@@ -318,11 +367,11 @@ arrow from (0,0) to (b,a) &quot;Pi&quot; above color red thick thick
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-9">
+  <a name="fig-10">
     <img class="mx-auto my-2" src="/til/pikchr_circle_chop.svg" alt="Pikchr circle chop">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 9</strong> — <span>Pikchr circle chop</span>
+     <strong>Fig. 10</strong> — <span>Pikchr circle chop</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin =  1cm
@@ -335,11 +384,11 @@ arrow from 1st circle to 3rd circle chop color purple
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-10">
+  <a name="fig-11">
     <img class="mx-auto my-2" src="/til/pikchr_path_division.svg" alt="Pikchr path division">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 10</strong> — <span>Pikchr path division</span>
+     <strong>Fig. 11</strong> — <span>Pikchr path division</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -367,11 +416,11 @@ arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-11">
+  <a name="fig-12">
     <img class="mx-auto my-2" src="/til/pikchr_spline.svg" alt="Pikchr spline">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 11</strong> — <span>Pikchr spline</span>
+     <strong>Fig. 12</strong> — <span>Pikchr spline</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -380,11 +429,11 @@ spline from start of last line right 1 then down .5 left 1 then right 1 color or
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-12">
+  <a name="fig-13">
     <img class="mx-auto my-2" src="/til/pikchr_block.svg" alt="Pikchr block">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 12</strong> — <span>Pikchr block</span>
+     <strong>Fig. 13</strong> — <span>Pikchr block</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">box &quot;1&quot; width 4cm height 4mm
@@ -409,11 +458,11 @@ box with .sw at A.sw - (5mm,5mm) width (A.width + 10mm) height (A.height + 10mm)
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-13">
+  <a name="fig-14">
     <img class="mx-auto my-2" src="/til/pikchr_sub_block.svg" alt="Pikchr sub-block">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 13</strong> — <span>Pikchr sub-block</span>
+     <strong>Fig. 14</strong> — <span>Pikchr sub-block</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -456,11 +505,11 @@ arrow &lt;-&gt; from X.Z.A to X.W.A color blue chop
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-14">
+  <a name="fig-15">
     <img class="mx-auto my-2" src="/til/pikchr_arc.svg" alt="Pikchr arc">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 14</strong> — <span>Pikchr arc</span>
+     <strong>Fig. 15</strong> — <span>Pikchr arc</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">define r { line 50%; arc; line; arc cw; line; arc cw; line; arc; line 50% }
@@ -480,11 +529,11 @@ spline -&gt; from (0,0) then to (4,2) then to (8,0)
 </code></pre>
 <h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-15">
+  <a name="fig-16">
     <img class="mx-auto my-2" src="/til/pikchr_tailscale_diagram.svg" alt="Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/">
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 15</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
+     <strong>Fig. 16</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">topmargin = 1

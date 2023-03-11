@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ hyperloglog_01">
+    <meta name="description" content="C++ — hyperloglog">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ hyperloglog_01</title>
+    <title>C++ — hyperloglog</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -54,12 +54,22 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ hyperloglog_01</h1>
+        <h1>C++ — hyperloglog</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-09</b>Last modified: <b class="ml-2">2023-03-10 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/hyperloglog_01.html">hyperloglog_01</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#precision">Precision</a></li><li><a href="#memory-usage">Memory usage</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
+<!-- [embed youtube video] -->
+<div class="aspect-w-16 aspect-h-9 relative overflow-hidden max-w-full w-full" style="padding-bottom: 56.25%">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/2PlrMCiUN_s"
+    title="The Algorithm with the Best Name - HyperLogLog Explained"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!-- [/embed youtube video] -->
 <p>The main idea behind HyperLogLog algorithm is to estimate the
 number of distinct elements in a large set using a small amount of
 memory. The algorithm achieves this by using a probabilistic data
@@ -190,65 +200,57 @@ the memory usage of a HyperLogLog data structure may also depend
 on the specific dataset being analyzed and the accuracy required
 for the estimation.</p>
 <pre><code class="language-cpp">class HyperLogLog {
-public:
-  HyperLogLog( uint8_t precision ) : precision( precision ), size( 1 &lt;&lt; precision )
-  {
+ public:
+  HyperLogLog(uint8_t precision) : precision(precision), size(1 &lt;&lt; precision) {
     M = new uint8_t[size];
-    std::memset( M, 0, size * sizeof( uint8_t ) );
-    alpha = get_alpha( precision );
+    std::memset(M, 0, size * sizeof(uint8_t));
+    alpha = get_alpha(precision);
   }
 
-  ~HyperLogLog()
-  {
-    delete[] M;
-  }
+  ~HyperLogLog() { delete[] M; }
 
-  void add( uint64_t value )
-  {
-    uint32_t hash  = murmurhash( value );
-    uint32_t index = hash &gt;&gt; ( 32 - precision );
-    uint8_t  rho   = count_leading_zeros( hash &lt;&lt; precision ) + 1;
-    if( rho &gt; M[index] ) {
+  void add(uint64_t value) {
+    uint32_t hash = murmurhash(value);
+    uint32_t index = hash &gt;&gt; (32 - precision);
+    uint8_t rho = count_leading_zeros(hash &lt;&lt; precision) + 1;
+    if (rho &gt; M[index]) {
       M[index] = rho;
     }
   }
 
-  uint64_t count() const
-  {
+  uint64_t count() const {
     double Z = 0;
-    for( uint32_t i = 0; i &lt; size; i++ ) {
-      Z += 1.0 / ( 1 &lt;&lt; M[i] );
+    for (uint32_t i = 0; i &lt; size; i++) {
+      Z += 1.0 / (1 &lt;&lt; M[i]);
     }
     double estimate = alpha * size * size / Z;
-    if( estimate &lt;= 2.5 * size ) {
+    if (estimate &lt;= 2.5 * size) {
       uint32_t zeros = 0;
-      for( uint32_t i = 0; i &lt; size; i++ ) {
-        if( M[i] == 0 ) {
+      for (uint32_t i = 0; i &lt; size; i++) {
+        if (M[i] == 0) {
           zeros++;
         }
       }
-      if( zeros != 0 ) {
-        estimate = size * std::log( (double)size / zeros );
+      if (zeros != 0) {
+        estimate = size * std::log((double)size / zeros);
       }
+    } else if (estimate &gt; 1.0 / 30.0 * std::pow(2, 32)) {
+      estimate = -std::pow(2, 32) * std::log(1 - estimate / std::pow(2, 32));
     }
-    else if( estimate &gt; 1.0 / 30.0 * std::pow( 2, 32 ) ) {
-      estimate = -std::pow( 2, 32 ) * std::log( 1 - estimate / std::pow( 2, 32 ) );
-    }
-    return static_cast&lt;uint64_t&gt;( estimate );
+    return static_cast&lt;uint64_t&gt;(estimate);
   }
 
-private:
-  uint8_t  precision;
+ private:
+  uint8_t precision;
   uint32_t size;
   uint8_t *M;
-  double   alpha;
+  double alpha;
 
-  uint32_t murmurhash( uint64_t value ) const
-  {
+  uint32_t murmurhash(uint64_t value) const {
     uint32_t seed = 0x9747b28c;
-    uint32_t m    = 0x5bd1e995;
-    uint32_t h    = seed ^ sizeof( value );
-    uint32_t k    = value;
+    uint32_t m = 0x5bd1e995;
+    uint32_t h = seed ^ sizeof(value);
+    uint32_t k = value;
     k *= m;
     k ^= k &gt;&gt; 24;
     k *= m;
@@ -261,22 +263,21 @@ private:
     return h;
   }
 
-  uint8_t count_leading_zeros( uint32_t x ) const
-  {
+  uint8_t count_leading_zeros(uint32_t x) const {
     uint8_t n = 1;
-    if( ( x &gt;&gt; 16 ) == 0 ) {
+    if ((x &gt;&gt; 16) == 0) {
       n += 16;
       x &lt;&lt;= 16;
     }
-    if( ( x &gt;&gt; 24 ) == 0 ) {
+    if ((x &gt;&gt; 24) == 0) {
       n += 8;
       x &lt;&lt;= 8;
     }
-    if( ( x &gt;&gt; 28 ) == 0 ) {
+    if ((x &gt;&gt; 28) == 0) {
       n += 4;
       x &lt;&lt;= 4;
     }
-    if( ( x &gt;&gt; 30 ) == 0 ) {
+    if ((x &gt;&gt; 30) == 0) {
       n += 2;
       x &lt;&lt;= 2;
     }
@@ -284,17 +285,16 @@ private:
     return n;
   }
 
-  double get_alpha( uint8_t precision ) const
-  {
-    switch( precision ) {
-    case 4:
-      return 0.673;
-    case 5:
-      return 0.697;
-    case 6:
-      return 0.709;
-    default:
-      return 0.721;
+  double get_alpha(uint8_t precision) const {
+    switch (precision) {
+      case 4:
+        return 0.673;
+      case 5:
+        return 0.697;
+      case 6:
+        return 0.709;
+      default:
+        return 0.721;
     }
   }
 };
@@ -309,23 +309,29 @@ the HyperLogLog object.</p>
 compare the estimate to the true value. However, in practice,
 HyperLogLog has been shown to produce accurate estimates with a
 low memory footprint.</p>
-<pre><code class="language-cpp">int main()
-{
-  HyperLogLog                  hll( 10 ); // Create a HyperLogLog with precision 10 (1024 registers)
+<pre><code class="language-cpp">
+#include &lt;cmath&gt;
+
+int main() {
+  HyperLogLog hll(
+      10);  // Create a HyperLogLog with precision 10 (1024 registers)
   std::unordered_set&lt;uint64_t&gt; set;
-  for( int i = 0; i &lt; 1000000; i++ ) {
+  for (int i = 0; i &lt; 1000000; i++) {
     uint64_t value = rand();
-    set.insert( value );
-    hll.add( value );
+    set.insert(value);
+    hll.add(value);
   }
   std::cout &lt;&lt; &quot;Actual set size: &quot; &lt;&lt; set.size() &lt;&lt; std::endl;
   std::cout &lt;&lt; &quot;Estimated set size: &quot; &lt;&lt; hll.count() &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;Error: &quot; &lt;&lt; (set.size() - hll.count()) / (0.01 * set.size())
+            &lt;&lt; &quot;%&quot; &lt;&lt; std::endl;
   return 0;
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Actual set size: 999778
-Estimated set size: 1055671
+<pre><code class="language-txt">Actual set size: 999781
+Estimated set size: 1000543
+Error: 1.84508e+15%
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

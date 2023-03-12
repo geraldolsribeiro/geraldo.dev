@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ Ranges 01">
+    <meta name="description" content="C++ Ranges — Part 1">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ Ranges 01</title>
+    <title>C++ Ranges — Part 1</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -54,48 +54,163 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ Ranges 01</h1>
+        <h1>C++ Ranges — Part 1</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-13</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ranges.html">ranges</a><a class="tag no-underline" href="/til/tag/views.html">views</a><a class="tag no-underline" href="/til/tag/iota_view.html">iota_view</a><a class="tag no-underline" href="/til/tag/iota.html">iota</a>
-        </div><pre><code class="language-cpp">
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ranges.html">ranges</a><a class="tag no-underline" href="/til/tag/views.html">views</a><a class="tag no-underline" href="/til/tag/iota_view.html">iota_view</a><a class="tag no-underline" href="/til/tag/iota.html">iota</a><a class="tag no-underline" href="/til/tag/sort.html">sort</a><a class="tag no-underline" href="/til/tag/all_of].html">all_of]</a><a class="tag no-underline" href="/til/tag/any_of.html">any_of</a><a class="tag no-underline" href="/til/tag/none_of.html">none_of</a>
+        </div><h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>C++ ranges and views are both library features introduced in C++20
+that provide a way to work with sequences of values, such as arrays
+or containers, in a more expressive and composable way. Here are
+some of the key differences between ranges and views:</p>
+<ul>
+<li><strong>Definition:</strong> Ranges are a set of library concepts and utilities
+that define a uniform way to access and manipulate sequences
+of elements, while views are objects that represent a specific
+subset or transformation of a range.</li>
+<li><strong>Composition:</strong> Ranges are designed to be composable, meaning that they
+can be combined using various operations such as filtering, mapping,
+and slicing, to create new ranges. Views are similarly composable,
+but they always operate on an existing range and produce a new view.</li>
+<li><strong>Eager vs Lazy evaluation:</strong> Ranges use eager evaluation,
+which means that the entire sequence is computed upfront when
+the range is constructed, whereas views use lazy evaluation,
+which means that the computation is deferred until the values
+are actually accessed.</li>
+<li><strong>Mutability:</strong> Ranges can be either mutable or immutable,
+depending on the type of range and the underlying container. Views,
+on the other hand, are always read-only, and cannot modify the
+underlying range.</li>
+<li><strong>Syntax:</strong> Ranges use a set of standardized library concepts
+and utilities, such as <code>std::ranges::range</code>, <code>std::ranges::view</code>,
+and <code>std::ranges::action</code>, to define and manipulate ranges. Views
+use a similar set of concepts and utilities, such as
+<code>std::ranges::view_interface</code>, <code>std::ranges::filter_view</code>, and
+<code>std::ranges::transform_view</code>, to define and manipulate views.</li>
+</ul>
+<p>In summary, ranges provide a uniform way to access and manipulate
+sequences of elements, while views provide a composable and lazy
+way to create subsets or transformations of ranges. Both ranges
+and views can be useful in different contexts, depending on the
+requirements of the program or algorithm being implemented.</p>
+<h2 id="range-algorithm" tabindex="-1">Range Algorithm</h2>
+<ul>
+<li>Legacy algorithm work on iterator pairs</li>
+<li>Range algorithm work on containers directly</li>
+<li>C++ 11
+<ul>
+<li><code>all_of</code></li>
+<li><code>any_of</code></li>
+<li><code>none_of</code></li>
+</ul>
+</li>
+<li>C++ 20
+<ul>
+<li><code>ranges::all_of</code></li>
+<li><code>ranges::any_of</code></li>
+<li><code>ranges::none_of</code></li>
+<li><code>ranges::sort</code></li>
+<li><code>ranges::find_if</code></li>
+<li><code>ranges::copy</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="example-of-legacy-algorithm" tabindex="-1">Example of legacy algorithm</h3>
+<pre><code class="language-cpp">void exampleLegacyAlgorithm() {
+  int collection[]{2, 6, 8, 40, 64, 70};
+  if (std::all_of(std::begin(collection), std::end(collection),
+                  [](int i) { return i % 2 == 0; })) {
+    std::cout &lt;&lt; &quot;(std::all_of) : All numbers in collection are even&quot;
+              &lt;&lt; std::endl;
+  } else {
+    std::cout &lt;&lt; &quot;(std::all_of) : Not all numbers in collection are even&quot;
+              &lt;&lt; std::endl;
+  }
+}
+</code></pre>
+<h3 id="example-of-range-algorithm" tabindex="-1">Example of range algorithm</h3>
+<pre><code class="language-cpp">void exampleRangeAlgorithm() {
+  std::vector&lt;int&gt; collection{2, 6, 8, 40, 64, 70};
+  auto result =
+      std::ranges::all_of(collection, [](int i) { return i % 2 == 0; });
+  if (result) {
+    std::cout &lt;&lt; &quot;All numbers in collection are even&quot; &lt;&lt; std::endl;
+  } else {
+    std::cout &lt;&lt; &quot;Not all numbers in collection are even&quot; &lt;&lt; std::endl;
+  }
+}
+</code></pre>
+<pre><code class="language-cpp">
+  auto printContainer = [](const auto label, const auto &amp;container) {
+    fmt::print(&quot;{:30}: &quot;, label);
+    for (const auto &amp;i : container) {
+      fmt::print(&quot;{} &quot;, i);
+    }
+    fmt::print(&quot;\n&quot;);
+  };
+
+  exampleLegacyAlgorithm();
+  exampleRangeAlgorithm();
+
   // loop detect length
   int ints[] = {0, 1, 2, 3, 4, 5};
-  for (const auto i : ints) {
-    std::cout &lt;&lt; i &lt;&lt; ' ';
+  for ([[maybe_unused]] const auto i : ints) {
   }
-  std::cout &lt;&lt; '\n';
+  printContainer(&quot;ints&quot;, ints);
 
   // (4,10] = 4 5 6 7 8 9
-  for (int i : std::ranges::iota_view{4, 10}) {
-    std::cout &lt;&lt; i &lt;&lt; ' ';
+  for ([[maybe_unused]] int i : std::ranges::iota_view{4, 10}) {
   }
-  std::cout &lt;&lt; '\n';
+  printContainer(&quot;iota_view{4,10}&quot;, std::ranges::iota_view{4, 10});
 
   // (5,10] = 5 6 7 8 9
-  for (int i : std::views::iota(5, 10)) {
-    std::cout &lt;&lt; i &lt;&lt; ' ';
+  for ([[maybe_unused]] int i : std::views::iota(5, 10)) {
   }
-  std::cout &lt;&lt; '\n';
+  printContainer(&quot;views::iota(5, 10)&quot;, std::views::iota(5, 10));
 
-  std::vector&lt;double&gt; vec{ 1.1, 2.2, 4.3, 5.6, 2.4 };
-  auto                squared = vec | std::ranges::views::transform( []( auto const i ) { return i * i; } );
-  // squared                     = vec | std::range::views::transform( std::sqrt );
-  for( const auto &amp;v : squared ) {
-    std::cout &lt;&lt; v &lt;&lt; '\n';
+  std::vector&lt;double&gt; vec{1.1, 2.2, 4.3, 5.6, 2.4};
+  auto squared1 =
+      vec | std::ranges::views::transform([](auto const i) { return i * i; });
+  // auto squared2 = vec | std::ranges::views::transform(std::sqrt);
+  printContainer(&quot;squared1&quot;, squared1);
+
+  // Operate directly on container
+  std::vector&lt;int&gt; ns{3, 1, 2};
+  printContainer(&quot;ns initial&quot;, ns);
+  std::ranges::for_each(ns, [](int &amp;n) { n *= 5; });
+  printContainer(&quot;ns for_each n *= 5&quot;, ns);
+  std::ranges::sort(ns);
+  printContainer(&quot;ns sort&quot;, ns);
+  std::ranges::sort(ns.begin(), ns.end());  // BAD
+  printContainer(&quot;ns sort BAD&quot;, ns);
+
+  // std::ranges::find_if
+  std::vector&lt;int&gt; collection{2, 6, 8, 40, 64, 70};
+  auto posMod10 =
+      std::ranges::find_if(collection, [](auto &amp;i) { return i % 10 == 0; });
+  if (posMod10 != std::end(collection)) {
+    fmt::print(&quot;Collection contains at least one multiple of 10\n&quot;);
+  } else {
+    fmt::print(&quot;Collection does not contains any multiple of 10\n&quot;);
   }
-  std::cout &lt;&lt; '\n';
 
+  // std::ranges::copy
+  std::cout &lt;&lt; &quot;ranges::copy &quot;;
+  std::ranges::copy(collection, std::ostream_iterator&lt;int&gt;(std::cout, &quot; }sep{ &quot;));
+  std::cout &lt;&lt; &quot;\n&quot;;
 </code></pre>
 <h2 id="output" tabindex="-1">Output</h2>
-<pre><code class="language-txt">0 1 2 3 4 5 
-4 5 6 7 8 9 
-5 6 7 8 9 
-1.21
-4.84
-18.49
-31.36
-5.76
-
+<pre><code class="language-txt">(std::all_of) : All numbers in collection are even
+All numbers in collection are even
+ints                          : 0 1 2 3 4 5 
+iota_view{4,10}               : 4 5 6 7 8 9 
+views::iota(5, 10)            : 5 6 7 8 9 
+squared1                      : 1.2100000000000002 4.840000000000001 18.49 31.359999999999996 5.76 
+ns initial                    : 3 1 2 
+ns for_each n *= 5            : 15 5 10 
+ns sort                       : 5 10 15 
+ns sort BAD                   : 5 10 15 
+Collection contains at least one multiple of 10
+ranges::copy 2 }sep{ 6 }sep{ 8 }sep{ 40 }sep{ 64 }sep{ 70 }sep{ 
 
 </code></pre>
 

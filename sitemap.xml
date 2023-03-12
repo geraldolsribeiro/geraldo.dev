@@ -265,6 +265,9 @@
     <loc>https://geraldo.dev/til/mapproxy.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_ranges_05.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/vim-slow.html</loc>
   </url>
   <url>
@@ -1087,6 +1090,9 @@
     <loc>https://geraldo.dev/til/tag/siem.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/ranges_05.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/data-alignment.html</loc>
   </url>
   <url>
@@ -1366,6 +1372,9 @@
     <loc>https://geraldo.dev/til/tag/bitshift.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/any_of.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/xorg.html</loc>
   </url>
   <url>
@@ -1400,9 +1409,6 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/figma.html</loc>
-  </url>
-  <url>
-    <loc>https://geraldo.dev/til/tag/complex - fft.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/step.html</loc>
@@ -2194,6 +2200,9 @@
     <loc>https://geraldo.dev/til/tag/webserver.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/all_of].html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/vim-plugin.html</loc>
   </url>
   <url>
@@ -2440,6 +2449,9 @@
     <loc>https://geraldo.dev/til/tag/narrowband.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/fft.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/vpn.html</loc>
   </url>
   <url>
@@ -2498,6 +2510,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/accumulate.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/none_of.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/std::numeric_limits.html</loc>
@@ -3447,3 +3462,475 @@
   <url>
     <loc>https://geraldo.dev/certificate/tag/combustion.html</loc>
   </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/17025.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/git.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/owasp.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/firewall.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/ISC.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/virtualbox.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/zaproxy.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/uncertainty.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/modefrontier.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/bots-connectors.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/iso-27001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/dark-web.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/pentest.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/cypress.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/responsive-design.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/vim.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/ubuntu.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/digitalocean.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/microservice.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/rest.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/money.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/nvidia.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/framework.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/crowcpp.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/refactoring.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/devsecops.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/pro-engineer.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/tor.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/docker.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/container.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/fintech.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/neural-network.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/27001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/iso.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/owasp-zap.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/machine-learning.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/perl.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/governança-corporativa.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/CSSLP.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/investing.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/optimization.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/redis.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/development.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/memory-leak.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/html.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/java.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/rxjs.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/respeito.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/anchore.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/uml.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/leadership.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/ptc.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/measurement.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/wsl.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/firewalld.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/telegraf.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/sga.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/dast.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/microsoft-teams.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/5S.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/typewriting.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/iso-9001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/influxdb.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/process.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/artificial-intelligence.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/iso-14001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/seo.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/mechanic.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/lxc.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/windows.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/iso-17025.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/ddd.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/engine.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/python.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/quality.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/aws.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/lambda.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/security.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/powerpoint.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/webserver.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/vue.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/office.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/mapping.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/go.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/smart-pointer.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/lgpd.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/sell.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/ergonomia.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/proxmox.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/C.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/bank.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/soft-skill.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/facebook.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/gpu.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/system-engineering.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/testing.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/9001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/rabbitmq.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/conduta.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/flows.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/design-thinking.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/vmware.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/javascript.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/unit-test.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/cloud.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/microsoft.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/gmock.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/adobe-illustrator.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/zeromq.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/TDD.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/microsoft-365.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/csharp.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/pdca.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/code-review.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/marketing.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/junit.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-12-20_linkedin_Test_Driven_Development_in_C++.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2023-02-01_linkedin_Scrum_The_Basics_PMI.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-10-19_stefanini_ORIENTAÇÃO_PARA_RESULTADOS.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-09-12_linkedin_C++_Design_Patterns_Behavioral.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-09-16_stefanini_Paradigmas_de_Linguagem_de_Programação.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-02-26_stefanini_Resiliência.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-07-20_linkedin_Dynamic_Application_Security_Testing_DAST.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2008-09-06_TempoReal_Nagios.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-05-15_linkedin_Fundamentos_de_Comunicação.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-11-11_linkedin_Learning_JUnit_5.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-07-25_linkedin_CSSLP_Cert_Prep_2_Secure_Software_Requirements.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2023-01-24_linkedin_Introduction_to_InfluxDB.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-10-19_stefanini_INTRODUÇÃO_AO_SCRUM.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-09-28_linkedin_Gulp.js_Web_Project_Workflows.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-06-14_linkedin_AWS_for_Developers_PayPal_Payment_Processing_with_Lambdas.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-10-19_stefanini_AGILE_2.0.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-12-06_linkedin_Desenvolvendo_sua_Filosofia_de_Liderança.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-05-12_linkedin_End-to-End_JavaScript_Testing_with_Cypress.io.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-12-15_linkedin_O_Poder_do_Coaching_no_Desenvolvimento_dos_Colaboradores.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-12-15_linkedin_Como_Dar_Feedback_aos_Funcionários.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-05-13_linkedin_Como_Conciliar_o_Trabalho_Remoto_com_a_Vida_Familiar_em_Tempos_de_Crise.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/1997-09-15_INPE_5Ss_uma_opção_para_o_desenvolvimento_profissional.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2006-05-04_INPE_LIT_Cálculo_de_Incerteza_de_Medições.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2023-02-01_akamai_proteção_para_bancos_e_fintechs.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-04-16_stefanini_INSTITUCIONAL_STEFANINI.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-05-23_linkedin_Flutter_Part_04_Building_an_App_with_State_br.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-10-20_stefanini_POWERPOINT_2013-CURSO_INTERMEDIÁRIO.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2002-10-15_ENCIT_Combustão_Básica.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2016-05-01_mectron_OOD_Object_Oriented_Design_UML.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-12-16_linkedin_Introducing_Functional_Programming_in_CPP.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-06-27_linkedin_Advanced_SEO_Search_Factors.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-06-02_linkedin_Learning_Vue.js.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-05-29_stefanini_Technical_Meeting_Stefanini.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-04-16_stefanini_influencia_e_negociação.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-11-28_linkedin_Construindo_Confiança_en.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2020-12-31_linkedin_Agile_at_Work_Building_Your_Agile_Team.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2021-01-29_linkedin_Microservices_Asynchronous_Messaging.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-06-23_linkedin_HTML_Metadata_in_the_Head.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2022-08-31_stefanini_Golang_para_Web.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificates.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/tils.html</loc>
+  </url>
+</urlset>

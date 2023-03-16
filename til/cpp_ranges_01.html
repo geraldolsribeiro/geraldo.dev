@@ -56,7 +56,7 @@
           </svg><span>Back to TILs</span></a>
         <h1>C++ Ranges — Part 1</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-13</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ranges.html">ranges</a><a class="tag no-underline" href="/til/tag/views.html">views</a><a class="tag no-underline" href="/til/tag/iota_view.html">iota_view</a><a class="tag no-underline" href="/til/tag/iota.html">iota</a><a class="tag no-underline" href="/til/tag/sort.html">sort</a><a class="tag no-underline" href="/til/tag/all_of].html">all_of]</a><a class="tag no-underline" href="/til/tag/any_of.html">any_of</a><a class="tag no-underline" href="/til/tag/none_of.html">none_of</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ranges.html">ranges</a><a class="tag no-underline" href="/til/tag/views.html">views</a><a class="tag no-underline" href="/til/tag/iota_view.html">iota_view</a><a class="tag no-underline" href="/til/tag/iota.html">iota</a><a class="tag no-underline" href="/til/tag/sort.html">sort</a><a class="tag no-underline" href="/til/tag/all_of.html">all_of</a><a class="tag no-underline" href="/til/tag/any_of.html">any_of</a><a class="tag no-underline" href="/til/tag/none_of.html">none_of</a>
         </div><h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>C++ ranges and views are both library features introduced in C++20
 that provide a way to work with sequences of values, such as arrays
@@ -92,6 +92,14 @@ sequences of elements, while views provide a composable and lazy
 way to create subsets or transformations of ranges. Both ranges
 and views can be useful in different contexts, depending on the
 requirements of the program or algorithm being implemented.</p>
+<h2 id="views" tabindex="-1">Views</h2>
+<ul>
+<li>A view is a non owning range</li>
+<li>It’s like a window we can set up to view some real data without
+setting up the infrastructure to store data</li>
+<li>Views are cheap to copy and pass around as function parameters
+by design.</li>
+</ul>
 <h2 id="range-algorithm" tabindex="-1">Range Algorithm</h2>
 <ul>
 <li>Legacy algorithm work on iterator pairs</li>
@@ -115,6 +123,7 @@ requirements of the program or algorithm being implemented.</p>
 </li>
 </ul>
 <h3 id="example-of-legacy-algorithm" tabindex="-1">Example of legacy algorithm</h3>
+<p>The operations are made by using iterators.</p>
 <pre><code class="language-cpp">void exampleLegacyAlgorithm() {
   int collection[]{2, 6, 8, 40, 64, 70};
   if (std::all_of(std::begin(collection), std::end(collection),
@@ -128,6 +137,7 @@ requirements of the program or algorithm being implemented.</p>
 }
 </code></pre>
 <h3 id="example-of-range-algorithm" tabindex="-1">Example of range algorithm</h3>
+<p>The operations are performed directly on collection.</p>
 <pre><code class="language-cpp">void exampleRangeAlgorithm() {
   std::vector&lt;int&gt; collection{2, 6, 8, 40, 64, 70};
   auto result =
@@ -139,41 +149,145 @@ requirements of the program or algorithm being implemented.</p>
   }
 }
 </code></pre>
-<pre><code class="language-cpp">
-  auto printContainer = [](const auto label, const auto &amp;container) {
+<h2 id="struct-to-exemplify-a-more-complex-data-type" tabindex="-1">Struct to exemplify a more complex data type</h2>
+<pre><code class="language-cpp">struct Student {
+  friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;out, const Student &amp;s) {
+    out &lt;&lt; &quot;Student [ name: &quot; &lt;&lt; s.m_name &lt;&lt; &quot;, age: &quot; &lt;&lt; s.m_age &lt;&lt; &quot;]&quot;;
+    return out;
+  }
+
+  auto operator&lt;=&gt;(const Student &amp;s) const = default;
+  std::string m_name;
+  unsigned int m_age;
+};
+</code></pre>
+<p>Specialized printing data type</p>
+<pre><code class="language-cpp">template &lt;&gt;
+struct fmt::formatter&lt;Student&gt; {
+  // parse is a no-op as we do not need any format specifiers
+  constexpr auto parse(format_parse_context &amp;ctx) { return ctx.begin(); }
+
+  // format function for Student
+  template &lt;typename FormatContext&gt;
+  auto format(const Student &amp;s, FormatContext &amp;ctx) {
+    return format_to(ctx.out(), &quot;{{ name: '{}', age: {} }}&quot;, s.m_name, s.m_age);
+  }
+};
+</code></pre>
+<h2 id="utility-to-print-all-collection-elements" tabindex="-1">Utility to print all collection elements</h2>
+<pre><code class="language-cpp">  auto printContainer = [](const auto label, const auto &amp;container) {
     fmt::print(&quot;{:30}: &quot;, label);
     for (const auto &amp;i : container) {
       fmt::print(&quot;{} &quot;, i);
     }
     fmt::print(&quot;\n&quot;);
   };
-
-  exampleLegacyAlgorithm();
+</code></pre>
+<h2 id="utility-to-print-all-view-elements" tabindex="-1">Utility to print all view elements</h2>
+<pre><code class="language-cpp">  auto printView = [](const auto label, auto view) {
+    fmt::print(&quot;{:30}: &quot;, label);
+    for (auto i : view) {  // Computation happens here.
+      fmt::print(&quot;{} &quot;, i);
+    }
+    fmt::print(&quot;\n&quot;);
+  };
+</code></pre>
+<h2 id="utilities-to-be-used-as-filter" tabindex="-1">Utilities to be used as filter</h2>
+<pre><code class="language-cpp">  auto even = [](int i) { return i % 2 == 0; };
+  auto odd = [](int i) { return i % 2 == 1; };
+  auto square = [](int i) { return i * i; };
+</code></pre>
+<h2 id="range-and-view-examples-of-use" tabindex="-1">Range and view examples of use</h2>
+<pre><code class="language-cpp">  exampleLegacyAlgorithm();
   exampleRangeAlgorithm();
-
-  // loop detect length
-  int ints[] = {0, 1, 2, 3, 4, 5};
+</code></pre>
+<p>Loop detect array length</p>
+<pre><code class="language-cpp">  int ints[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
   for ([[maybe_unused]] const auto i : ints) {
   }
   printContainer(&quot;ints&quot;, ints);
-
-  // (4,10] = 4 5 6 7 8 9
+</code></pre>
+<pre><code class="language-cpp">  // (4,10] = 4 5 6 7 8 9
   for ([[maybe_unused]] int i : std::ranges::iota_view{4, 10}) {
   }
   printContainer(&quot;iota_view{4,10}&quot;, std::ranges::iota_view{4, 10});
-
-  // (5,10] = 5 6 7 8 9
+</code></pre>
+<pre><code class="language-cpp">  // (5,10] = 5 6 7 8 9
   for ([[maybe_unused]] int i : std::views::iota(5, 10)) {
   }
   printContainer(&quot;views::iota(5, 10)&quot;, std::views::iota(5, 10));
+</code></pre>
+<ul>
+<li><code>std::ranges::filter_view</code></li>
+<li><code>std::views::filter</code></li>
+<li><code>std::ranges::transform_view</code></li>
+<li><code>std::views::transform</code></li>
+</ul>
+<p>Both std::ranges::transform_view and std::views::transform provide
+a way to lazily apply a transformation to elements of a range, and
+they have similar syntax and functionality. However, there are some
+differences in their use cases and performance characteristics.</p>
+<p>std::ranges::transform_view is part of the Ranges library
+introduced in C++20 and is designed to work with ranges that
+support the Ranges API. It provides a range view that applies a
+transformation function to each element of a range, producing
+a new range with the transformed elements. It can be used in
+conjunction with other Ranges library components to perform
+complex operations on ranges.</p>
+<p>std::views::transform is part of the C++20 Standard Library’s
+view facilities and works with any range, not just those that
+support the Ranges API. It provides a range adapter that applies
+a transformation function to each element of a range, producing
+a new range with the transformed elements. It is simpler to use
+than std::ranges::transform_view and does not require the use of
+the Ranges library components.</p>
+<p>In terms of performance, there is likely to be little difference
+between the two algorithms, as they both use lazy evaluation and
+avoid copying or transforming the range elements until they are
+actually needed. However, the use of the Ranges library components
+by std::ranges::transform_view may provide some optimization
+opportunities in certain cases.</p>
+<p>Ultimately, the choice between std::ranges::transform_view and
+std::views::transform will depend on the specific requirements
+of your use case. If you are working with ranges that support the
+Ranges API, std::ranges::transform_view may be the better choice
+as it provides a more integrated solution. If you are working
+with ranges that do not support the Ranges API or you want a
+simpler solution, std::views::transform may be the better choice.</p>
+<pre><code class="language-cpp">  std::vector&lt;int&gt; vint{1, 2, 3, 4, 5, 6, 7, 8, 9};
+  printContainer(&quot;vint data&quot;, vint);
+  std::ranges::filter_view viewEven =
+      std::ranges::filter_view(vint, even);  // No computation performed here!
+  // Computation happens in the print function
+  printView(&quot;filter_view even&quot;, viewEven);
+  // Computation on the fly
+  printView(&quot;filter_view odd&quot;, std::ranges::filter_view(vint, odd));
+  fmt::print(&quot;Transform: &quot;);
+  for (int i :
+       vint | std::views::filter(even) | std::views::transform(square)) {
+    fmt::print(&quot;{} &quot;, i);
+  }
+  fmt::print(&quot;\n&quot;);
 
-  std::vector&lt;double&gt; vec{1.1, 2.2, 4.3, 5.6, 2.4};
+  auto vi = vint | std::views::filter(even);
+  std::ranges::transform_view v_transformed =
+      std::ranges::transform_view(vi, [](int i) { return i * 10; });
+  printView(&quot;transform_view&quot;, v_transformed);
+</code></pre>
+<ul>
+<li><code>std::ranges::views::transform</code></li>
+</ul>
+<pre><code class="language-cpp">  std::vector&lt;double&gt; vec{1.1, 2.2, 4.3, 5.6, 2.4};
   auto squared1 =
       vec | std::ranges::views::transform([](auto const i) { return i * i; });
   // auto squared2 = vec | std::ranges::views::transform(std::sqrt);
   printContainer(&quot;squared1&quot;, squared1);
-
-  // Operate directly on container
+</code></pre>
+<ul>
+<li><code>std::ranges::for_each</code></li>
+<li><code>std::ranges::sort</code></li>
+</ul>
+<pre><code class="language-cpp">  // Operate directly on container
   std::vector&lt;int&gt; ns{3, 1, 2};
   printContainer(&quot;ns initial&quot;, ns);
   std::ranges::for_each(ns, [](int &amp;n) { n *= 5; });
@@ -182,9 +296,11 @@ requirements of the program or algorithm being implemented.</p>
   printContainer(&quot;ns sort&quot;, ns);
   std::ranges::sort(ns.begin(), ns.end());  // BAD
   printContainer(&quot;ns sort BAD&quot;, ns);
-
-  // std::ranges::find_if
-  std::vector&lt;int&gt; collection{2, 6, 8, 40, 64, 70};
+</code></pre>
+<ul>
+<li><code>std::ranges::find_if</code></li>
+</ul>
+<pre><code class="language-cpp">  std::vector&lt;int&gt; collection{2, 6, 8, 40, 64, 70};
   auto posMod10 =
       std::ranges::find_if(collection, [](auto &amp;i) { return i % 10 == 0; });
   if (posMod10 != std::end(collection)) {
@@ -192,18 +308,83 @@ requirements of the program or algorithm being implemented.</p>
   } else {
     fmt::print(&quot;Collection does not contains any multiple of 10\n&quot;);
   }
-
-  // std::ranges::copy
+</code></pre>
+<ul>
+<li><code>std::ranges::copy</code></li>
+</ul>
+<pre><code class="language-cpp">  // std::ranges::copy
   std::cout &lt;&lt; &quot;ranges::copy &quot;;
-  std::ranges::copy(collection, std::ostream_iterator&lt;int&gt;(std::cout, &quot; }sep{ &quot;));
+  std::ranges::copy(collection,
+                    std::ostream_iterator&lt;int&gt;(std::cout, &quot; }sep{ &quot;));
   std::cout &lt;&lt; &quot;\n&quot;;
 </code></pre>
-<h2 id="output" tabindex="-1">Output</h2>
+<ul>
+<li><code>std::ranges::take_view</code></li>
+<li><code>std::ranges::take_while_view</code></li>
+<li><code>std::ranges::drop_view</code></li>
+<li><code>std::ranges::drop_while_view</code></li>
+</ul>
+<pre><code class="language-cpp">  std::vector&lt;int&gt; v2 = {1, 11, 23, 131, 2, 3, 4, 5, 6, 7, 8, 9};
+  printContainer(&quot;v2&quot;, v2);
+
+  // 1 11 23 131 2
+  std::ranges::take_view v_taken_5 = std::ranges::take_view(v2, 5);
+  printView(&quot;take_view 5 elements&quot;, v_taken_5);
+
+  // 3 4 5 6 7 8 9
+  std::ranges::drop_view v_drop_5 = std::ranges::drop_view(v2, 5);
+  printView(&quot;drop_view 5 elements&quot;, v_drop_5);
+
+  // 1 11 23 131
+  // number 2 (first not odd) will stop taking
+  std::ranges::take_while_view v_taken_while =
+      std::ranges::take_while_view(v2, odd);
+  printView(&quot;take_while_view odd&quot;, v_taken_while);
+
+  // 2 3 4 5 6 7 8 9
+  std::ranges::drop_while_view v_drop_while =
+      std::ranges::drop_while_view(v2, odd);
+  printView(&quot;drop_while_view odd&quot;, v_drop_while);
+</code></pre>
+<pre><code class="language-cpp">  using pair = std::pair&lt;int, std::string&gt;;
+  std::vector&lt;pair&gt; numbers{{1, &quot;one&quot;}, {2, &quot;two&quot;}, {3, &quot;tree&quot;}};
+
+  auto k_view = std::views::keys(numbers);    // 1 2 3
+  auto v_view = std::views::values(numbers);  // one two tree
+
+  printView(&quot;k_view&quot;, k_view);
+  printView(&quot;v_view&quot;, v_view);
+</code></pre>
+<pre><code class="language-cpp">  std::vector&lt;Student&gt; class_room{
+      {&quot;Mike&quot;, 12}, {&quot;John&quot;, 17}, {&quot;Drake&quot;, 14}, {&quot;Mary&quot;, 16}};
+
+  std::cout &lt;&lt; &quot;Students original order:\n&quot;;
+  for (auto &amp;s : class_room) {
+    std::cout &lt;&lt; s &lt;&lt; std::endl;
+  }
+
+  std::cout &lt;&lt; &quot;Students ordered by age:\n&quot;;
+  std::ranges::sort(class_room, std::less&lt;&gt;{}, &amp;Student::m_age);
+  for (auto &amp;s : class_room) {
+    std::cout &lt;&lt; s &lt;&lt; std::endl;
+  }
+
+  printView(&quot;Student under 15&quot;,
+            std::views::take_while(
+                class_room, [](const Student &amp;s) { return s.m_age &lt; 15; }));
+
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">(std::all_of) : All numbers in collection are even
 All numbers in collection are even
-ints                          : 0 1 2 3 4 5 
+ints                          : 0 1 2 3 4 5 6 7 8 9 
 iota_view{4,10}               : 4 5 6 7 8 9 
 views::iota(5, 10)            : 5 6 7 8 9 
+vint data                     : 1 2 3 4 5 6 7 8 9 
+filter_view even              : 2 4 6 8 
+filter_view odd               : 1 3 5 7 9 
+Transform: 4 16 36 64 
+transform_view                : 20 40 60 80 
 squared1                      : 1.2100000000000002 4.840000000000001 18.49 31.359999999999996 5.76 
 ns initial                    : 3 1 2 
 ns for_each n *= 5            : 15 5 10 
@@ -211,6 +392,24 @@ ns sort                       : 5 10 15
 ns sort BAD                   : 5 10 15 
 Collection contains at least one multiple of 10
 ranges::copy 2 }sep{ 6 }sep{ 8 }sep{ 40 }sep{ 64 }sep{ 70 }sep{ 
+v2                            : 1 11 23 131 2 3 4 5 6 7 8 9 
+take_view 5 elements          : 1 11 23 131 2 
+drop_view 5 elements          : 3 4 5 6 7 8 9 
+take_while_view odd           : 1 11 23 131 
+drop_while_view odd           : 2 3 4 5 6 7 8 9 
+k_view                        : 1 2 3 
+v_view                        : one two tree 
+Students original order:
+Student [ name: Mike, age: 12]
+Student [ name: John, age: 17]
+Student [ name: Drake, age: 14]
+Student [ name: Mary, age: 16]
+Students ordered by age:
+Student [ name: Mike, age: 12]
+Student [ name: Drake, age: 14]
+Student [ name: Mary, age: 16]
+Student [ name: John, age: 17]
+Student under 15              : { name: 'Mike', age: 12 } { name: 'Drake', age: 14 } 
 
 </code></pre>
 

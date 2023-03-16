@@ -16,6 +16,9 @@
     <loc>https://geraldo.dev/til/varicad-importando-do-solidworks.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_aliasing_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/sca-corba.html</loc>
   </url>
   <url>
@@ -712,6 +715,9 @@
     <loc>https://geraldo.dev/til/cpp_ranges_02.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/hardware_hacking_tutorial.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/microservices.html</loc>
   </url>
   <url>
@@ -779,6 +785,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/elemar-jr.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_fltk_02.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/mktemp.html</loc>
@@ -854,6 +863,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_iota.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_atomic_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/vim-formatar-xml.html</loc>
@@ -1001,6 +1013,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/creational.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/all_of.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/template.html</loc>
@@ -1378,13 +1393,13 @@
     <loc>https://geraldo.dev/til/tag/xorg.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/fftw_01.html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/popen.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/metatrader.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/atomic.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/tunnel.html</loc>
@@ -1957,6 +1972,12 @@
     <loc>https://geraldo.dev/til/tag/attributes.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/fftw.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/aliasing_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/browser.html</loc>
   </url>
   <url>
@@ -2200,9 +2221,6 @@
     <loc>https://geraldo.dev/til/tag/webserver.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/all_of].html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/vim-plugin.html</loc>
   </url>
   <url>
@@ -2399,6 +2417,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/Algorítimos.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/fltk_02.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/golang.html</loc>

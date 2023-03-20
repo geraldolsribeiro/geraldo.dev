@@ -157,10 +157,16 @@
     <loc>https://geraldo.dev/til/scrum.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_fltk_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/vim-clipboard.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/pentest-ssh.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_fltk_05.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/socialsizeio.html</loc>
@@ -329,6 +335,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/ensmallen.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_fltk_03.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/powershell-linux.html</loc>
@@ -760,6 +769,9 @@
     <loc>https://geraldo.dev/til/cpp_templates_04.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_fltk_04.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/nemo-como-gerenciador-de-arquivos-padrao.html</loc>
   </url>
   <url>
@@ -1112,6 +1124,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/utf.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/libsigcplusplus.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/locker.html</loc>
@@ -2594,6 +2609,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/vim-special-auto-complete.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_libsigcplusplus_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/micro.html</loc>

@@ -72,10 +72,10 @@ class PersonBuilder;
 
 class Person {
   // address
-  string street_address, post_code, city;
+  std::string street_address, post_code, city;
 
   // employment
-  string company_name, position;
+  std::string company_name, position;
   int annual_income = 0;
 
   Person() { TRACE; }
@@ -87,11 +87,11 @@ class Person {
 
   // clang-format off
   Person( Person &amp;&amp;other ) :
-    street_address { move( other.street_address ) },
-    post_code      { move( other.post_code ) },
-    city           { move( other.city ) },
-    company_name   { move( other.company_name ) },
-    position       { move( other.position ) },
+    street_address { std::move( other.street_address ) },
+    post_code      { std::move( other.post_code ) },
+    city           { std::move( other.city ) },
+    company_name   { std::move( other.company_name ) },
+    position       { std::move( other.position ) },
     annual_income  { other.annual_income }
   {
     TRACE;
@@ -101,11 +101,11 @@ class Person {
   Person &amp;operator=(Person &amp;&amp;other) {
     TRACE;
     if (this == &amp;other) return *this;
-    street_address = move(other.street_address);
-    post_code = move(other.post_code);
-    city = move(other.city);
-    company_name = move(other.company_name);
-    position = move(other.position);
+    street_address = std::move(other.street_address);
+    post_code = std::move(other.post_code);
+    city = std::move(other.city);
+    company_name = std::move(other.company_name);
+    position = std::move(other.position);
     annual_income = other.annual_income;
     return *this;
   }
@@ -177,19 +177,19 @@ class PersonAddressBuilder : public PersonBuilderBase {
     TRACE;
   }
 
-  Self &amp;at(const string &amp;street_address) {
+  Self &amp;at(const std::string &amp;street_address) {
     TRACE;
     person.street_address = street_address;
     return *this;
   }
 
-  Self &amp;with_postcode(const string &amp;post_code) {
+  Self &amp;with_postcode(const std::string &amp;post_code) {
     TRACE;
     person.post_code = post_code;
     return *this;
   }
 
-  Self &amp;in(const string &amp;city) {
+  Self &amp;in(const std::string &amp;city) {
     TRACE;
     person.city = city;
     return *this;
@@ -207,13 +207,13 @@ class PersonJobBuilder : public PersonBuilderBase {
     TRACE;
   }
 
-  Self &amp;at(const string &amp;company_name) {
+  Self &amp;at(const std::string &amp;company_name) {
     TRACE;
     person.company_name = company_name;
     return *this;
   }
 
-  Self &amp;as_a(const string &amp;position) {
+  Self &amp;as_a(const std::string &amp;position) {
     TRACE;
     person.position = position;
     return *this;
@@ -248,8 +248,8 @@ PersonJobBuilder PersonBuilderBase::works() const {
       .at(&quot;PragmaSoft&quot;)
       .as_a(&quot;Consultant&quot;)
       .earning(10e6);
-  cout &lt;&lt; &quot;--------------&quot; &lt;&lt; endl;
-  cout &lt;&lt; p &lt;&lt; endl;
+  std::cout &lt;&lt; &quot;--------------&quot; &lt;&lt; std::endl;
+  std::cout &lt;&lt; p &lt;&lt; std::endl;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">static PersonBuilder Person::create()
@@ -259,14 +259,14 @@ PersonBuilder::PersonBuilder()
 PersonAddressBuilder PersonBuilderBase::lives() const
 PersonBuilderBase::PersonBuilderBase(Person &amp;)
 PersonAddressBuilder::PersonAddressBuilder(Person &amp;)
-Self &amp;PersonAddressBuilder::at(const string &amp;)
-Self &amp;PersonAddressBuilder::with_postcode(const string &amp;)
-Self &amp;PersonAddressBuilder::in(const string &amp;)
+Self &amp;PersonAddressBuilder::at(const std::string &amp;)
+Self &amp;PersonAddressBuilder::with_postcode(const std::string &amp;)
+Self &amp;PersonAddressBuilder::in(const std::string &amp;)
 PersonJobBuilder PersonBuilderBase::works() const
 PersonBuilderBase::PersonBuilderBase(Person &amp;)
 PersonJobBuilder::PersonJobBuilder(Person &amp;)
-Self &amp;PersonJobBuilder::at(const string &amp;)
-Self &amp;PersonJobBuilder::as_a(const string &amp;)
+Self &amp;PersonJobBuilder::at(const std::string &amp;)
+Self &amp;PersonJobBuilder::as_a(const std::string &amp;)
 Self &amp;PersonJobBuilder::earning(int)
 Person PersonBuilderBase::operator Person() const
 Person::Person(Person &amp;&amp;)

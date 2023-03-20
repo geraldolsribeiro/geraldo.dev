@@ -65,8 +65,107 @@
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<figure>
+  <img class="mx-auto" src="/til/cpp_fltk_03_01.webp" alt="Window example.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Window example.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">#include &lt;FL/Enumerations.H&gt;
+#include &lt;FL/Fl.H&gt;
+#include &lt;FL/Fl_Box.H&gt;
+#include &lt;FL/Fl_Button.H&gt;
+#include &lt;FL/Fl_Window.H&gt;
+#include &lt;FL/fl_draw.H&gt;
+
+#include &lt;functional&gt;
+#include &lt;iostream&gt;
+
+#define WIDTH 600
+#define HEIGHT 400
+#define BLUE fl_rgb_color(0x42, 0xA5, 0xF5)
+#define SEL_BLUE fl_rgb_color(0x21, 0x96, 0xF3)
+#define GRAY fl_rgb_color(0x75, 0x75, 0x75)
+#define LIGHT_GRAY fl_rgb_color(211, 211, 211)
+
+using cb_t = std::function&lt;void(Fl_Widget *)&gt;;
+
+class MyBox : public Fl_Box {
+ public:
+  MyBox(int x, int y, int w, int h, const char *title = NULL)
+      : Fl_Box(x, y, w, h, title) {}
+  virtual void draw() override {
+    fl_rectf(0, h(), w(), 3, LIGHT_GRAY);
+    Fl_Box::draw();
+  }
+};
+
+template &lt;typename T&gt;
+class WidgetWrapper : public T {
+  cb_t func_ = NULL;
+
+ public:
+  WidgetWrapper(int x, int y, int w, int h, const char *title = NULL)
+      : T(x, y, w, h, title) {}
+  void set_cb(cb_t &amp;&amp;func) {
+    func_ = func;
+    auto cb = [](Fl_Widget *w, void *data) {
+      auto fn = *static_cast&lt;cb_t *&gt;(data);
+      fn(w);
+    };
+    this-&gt;callback(cb, &amp;func_);
+  }
+};
+
+int main() {
+  auto win = new Fl_Window(WIDTH, HEIGHT, &quot;Flutter-like&quot;);
+  auto bar = new WidgetWrapper&lt;MyBox&gt;(0, 0, WIDTH, 60, &quot;    FLTK APP&quot;);
+  bar-&gt;align(FL_ALIGN_LEFT | FL_ALIGN_INSIDE);
+  auto txt = new WidgetWrapper&lt;Fl_Box&gt;(
+      250, 180, 100, 40, &quot;You have pushed the button this many times:&quot;);
+  auto count = new WidgetWrapper&lt;Fl_Box&gt;(txt-&gt;x(), txt-&gt;y() + 40, 100, 40, &quot;0&quot;);
+  auto but = new WidgetWrapper&lt;Fl_Button&gt;(WIDTH - 100, HEIGHT - 100, 60, 60,
+                                          &quot;@+6plus&quot;);
+  win-&gt;end();
+  win-&gt;show();
+
+  // theming
+  Fl::background(255, 255, 255);
+  Fl::visible_focus(false);
+
+  bar-&gt;box(FL_FLAT_BOX);
+  bar-&gt;labelsize(22);
+  bar-&gt;labelcolor(FL_WHITE);
+  bar-&gt;color(BLUE);
+
+  txt-&gt;labelsize(18);
+  txt-&gt;labelfont(FL_TIMES);
+
+  count-&gt;labelsize(36);
+  count-&gt;labelcolor(GRAY);
+
+  but-&gt;color(BLUE);
+  but-&gt;selection_color(SEL_BLUE);
+  but-&gt;labelcolor(FL_WHITE);
+  but-&gt;box(FL_OFLAT_BOX);
+  // end theming
+
+  but-&gt;set_cb([=]([[maybe_unused]] Fl_Widget *b) {
+    std::cout &lt;&lt; &quot;Lambda callback called&quot; &lt;&lt; std::endl;
+    auto label = atoi(count-&gt;label());
+    label += 1;
+    char buf[12];
+    (void)snprintf(buf, 12, &quot;%d&quot;, label);
+    count-&gt;copy_label(buf);
+  });
+
+  return Fl::run();
+}
+</code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">FLTK
+<pre><code class="language-txt">Lambda callback called
+Lambda callback called
+Lambda callback called
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

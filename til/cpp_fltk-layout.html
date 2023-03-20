@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ - Gerenciando layout em FLTK</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-08</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-01-08</b>Last modified: <b class="ml-2">2023-03-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/fltk.html">fltk</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -195,10 +195,20 @@ int main(int argc, char **argv) {
 <p>Ao ser executada a aplicação <code>./01</code> notamos que o redimensionamento está desabilitado, pois
 temos na janela principal somente os botões de <em>enrolar</em>, <em>minimizar</em> e <em>fechar</em>
 habilitados.</p>
-<p>{{% img src=“/img/fltk-01-01.webp” alt=“Aplicação 01 sem possibilidade de redimensionamento.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-01-01.webp" alt="Aplicação 01 sem possibilidade de redimensionamento.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Aplicação 01 sem possibilidade de redimensionamento.</span>
+  </figcaption>
+</figure>
 <h2 id="aplica%C3%A7%C3%A3o-02" tabindex="-1">Aplicação 02</h2>
 <p>A aplicação 02 é uma cópia da 01 com redimensionamento (<code>resizable</code>) habilitado na janela principal.</p>
-<p>{{% img src=“/img/fltk-02-00.webp” alt=“Ativando redimensionamento na aplicação 02.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-02-00.webp" alt="Ativando redimensionamento na aplicação 02.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Ativando redimensionamento na aplicação 02.</span>
+  </figcaption>
+</figure>
 <p>Podemos ver pelo <code>diff</code> abaixo que apenas o flag <code>resizable</code> foi adicionado e o título da janela foi alterado para <code>02</code>.</p>
 <pre><code class="language-diff">diff 01.fl 02.fl
 8,9c8,9
@@ -209,14 +219,34 @@ habilitados.</p>
 &gt;     xywh {122 262 420 180} type Double resizable visible
 </code></pre>
 <p>Note que agora o botão de <em>maximizar</em> é adicionado:</p>
-<p>{{% img src=“/img/fltk-02-01.webp” alt=“Aplicação 02 em tamanho inicial.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-02-01.webp" alt="Aplicação 02 em tamanho inicial.">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Aplicação 02 em tamanho inicial.</span>
+  </figcaption>
+</figure>
 <p>E podemos redimensionar a janela horizontalmente e verticalmente:</p>
-<p>{{% img src=“/img/fltk-02-02.webp” alt=“Aplicação 02 redimensionada horizontalmente.” %}}</p>
-<p>{{% img src=“/img/fltk-02-03.webp” alt=“Aplicação 02 redimensionada verticalmente.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-02-02.webp" alt="Aplicação 02 redimensionada horizontalmente.">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>Aplicação 02 redimensionada horizontalmente.</span>
+  </figcaption>
+</figure>
+<figure>
+  <img class="mx-auto" src="/til/fltk-02-03.webp" alt="Aplicação 02 redimensionada verticalmente.">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Aplicação 02 redimensionada verticalmente.</span>
+  </figcaption>
+</figure>
 <p>Note que todos os 9 botões são redimensionados da mesma forma.</p>
 <h2 id="aplica%C3%A7%C3%A3o-03" tabindex="-1">Aplicação 03</h2>
 <p>A aplicação 03 é uma cópia da 02 com redimensionamento habilitado no botão 5.</p>
-<p>{{% img src=“/img/fltk-03-00.webp” alt=“Ativando o redimensionamento para o botão 05 na aplicação 03.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-03-00.webp" alt="Ativando o redimensionamento para o botão 05 na aplicação 03.">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Ativando o redimensionamento para o botão 05 na aplicação 03.</span>
+  </figcaption>
+</figure>
 <pre><code class="language-diff">8c8
 &lt;     label 02 open selected
 ---
@@ -227,17 +257,33 @@ habilitados.</p>
 &gt;       xywh {140 60 140 60} resizable
 
 </code></pre>
-<p>{{% img src=“/img/fltk-03-01.webp” alt=“Aplicação 03 em tamanho inicial.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-03-01.webp" alt="Aplicação 03 em tamanho inicial.">
+  <figcaption class="text-center">
+     <strong>Fig. 7</strong> - <span>Aplicação 03 em tamanho inicial.</span>
+  </figcaption>
+</figure>
 <p>Ao redimensionar a janela podemos notar alguns comportamentos:</p>
-<ul {%="" img="" src="/img/fltk-03-02.webp" alt="Aplicação 03 redimensionada." %="">
+<ul>
 <li>os botões 1, 3, 7 e 9 (diagonais de 5) permanecem com suas dimensões originais</li>
 <li>os botões 2 e 8 (acima e abaixo de 5) são redimensionados horizontalmente acompanhando o tamanho 5.</li>
 <li>os botões 4 e 6 (à direita e à esquerda de 5) são redimensionados verticalmente acompanhando o tamanho 5.</li>
 <li>comportamento válido quando se tem somente um widget marcado como <code>resizable</code>.</li>
 </ul>
+<figure>
+  <img class="mx-auto" src="/til/fltk-03-02.webp" alt="Aplicação 03 redimensionada.">
+  <figcaption class="text-center">
+     <strong>Fig. 8</strong> - <span>Aplicação 03 redimensionada.</span>
+  </figcaption>
+</figure>
 <h2 id="aplica%C3%A7%C3%A3o-04" tabindex="-1">Aplicação 04</h2>
 <p>A aplicação 04 é uma cópia da 02 com redimensionamento habilitado no botão 9.</p>
-<p>{{% img src=“/img/fltk-04-01.webp” alt=“Aplicação 04 redimensionada.” %}}</p>
+<figure>
+  <img class="mx-auto" src="/til/fltk-04-01.webp" alt="Aplicação 04 redimensionada.">
+  <figcaption class="text-center">
+     <strong>Fig. 9</strong> - <span>Aplicação 04 redimensionada.</span>
+  </figcaption>
+</figure>
 <p>Observe que o mesmo comportamento geral é aplicado:</p>
 <ul>
 <li>diagonais são mantidas</li>

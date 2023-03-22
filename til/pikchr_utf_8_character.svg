@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 457.863 401.17"><path d="m118 282 227-170v170Z" style="fill:#7f3f7f;stroke-width:.969624;stroke-linejoin:round;stroke:#fff;stroke-dasharray:7.2,7.2"/><text x="232" y="184" text-anchor="middle" fill="#FFF" font-size="125%" transform="rotate(-36.87 232 197)" dominant-baseline="central">☕☕</text><text x="345" y="197" fill="#FFF" font-size="125%" dominant-baseline="central"> ✍</text><text x="232" y="294" text-anchor="middle" fill="#FFF" font-size="125%" dominant-baseline="central">🍕</text><circle cx="118" cy="282" r="2.16" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><circle cx="345" cy="112" r="2.16" style="fill:#7f7fff;stroke-width:2.16;stroke:#7f7fff"/><circle cx="345" cy="282" r="2.16" style="fill:#7fff7f;stroke-width:2.16;stroke:#7fff7f"/><path d="M70 342h317a11 11 0 0 0 12-12V70a11 11 0 0 0-12-12H70a11 11 0 0 0-12 12v260a11 11 0 0 0 12 12Z" style="fill:none;stroke-width:1.4472;stroke:#ff7f7f"/><text x="164" y="92" text-anchor="middle" fill="#FFF" dominant-baseline="central">🔵🔴🟠🟡🟢🟣🟤</text><text x="164" y="112" text-anchor="middle" fill="#FFF" dominant-baseline="central">🟦🟥🟧🟨🟩🟪🟫</text><text x="164" y="132" text-anchor="middle" fill="#FFF" dominant-baseline="central">🛑🔶🔷🔸🔹🔺🔻</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 457.863 401.17">
+<path d="M118,282L345,112L345,282Z"  style="fill:rgb(127,63,127);stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(255,255,255);stroke-dasharray:7.2,7.2;" />
+<text x="232" y="184" text-anchor="middle" fill="rgb(255,255,255)" font-size="125%" transform="rotate(-36.86989765 232,197)" dominant-baseline="central">☕☕</text>
+<text x="345" y="197" text-anchor="start" fill="rgb(255,255,255)" font-size="125%" dominant-baseline="central"> ✍</text>
+<text x="232" y="294" text-anchor="middle" fill="rgb(255,255,255)" font-size="125%" dominant-baseline="central">🍕</text>
+<circle cx="118" cy="282" r="2.16" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<circle cx="345" cy="112" r="2.16" style="fill:rgb(127,127,255);stroke-width:2.16;stroke:rgb(127,127,255);" />
+<circle cx="345" cy="282" r="2.16" style="fill:rgb(127,255,127);stroke-width:2.16;stroke:rgb(127,255,127);" />
+<path d="M70,342L387,342A11 11 0 0 0 399 330L399,70A11 11 0 0 0 387 58L70,58A11 11 0 0 0 58 70L58,330A11 11 0 0 0 70 342Z"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,127,127);" />
+<text x="164" y="92" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">🔵🔴🟠🟡🟢🟣🟤</text>
+<text x="164" y="112" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">🟦🟥🟧🟨🟩🟪🟫</text>
+<text x="164" y="132" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">🛑🔶🔷🔸🔹🔺🔻</text>
+</svg>
+

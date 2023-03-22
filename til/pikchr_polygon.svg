@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 446.836 241.172"><text x="73" y="200" text-anchor="middle" fill="#FFF" dominant-baseline="central">Start here</text><circle cx="121" cy="200" r="2.16" style="fill:#7fff7f;stroke-width:2.16;stroke:#7fff7f"/><path d="M121 200 416 30v170Z" style="fill:#5f157f;stroke-width:.969624;stroke-linejoin:round;stroke:#fff"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 446.836 241.172">
+<text x="73" y="200" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Start here</text>
+<circle cx="121" cy="200" r="2.16" style="fill:rgb(127,255,127);stroke-width:2.16;stroke:rgb(127,255,127);" />
+<path d="M121,200L416,30L416,200Z"  style="fill:rgb(95,21,127);stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+</svg>
+

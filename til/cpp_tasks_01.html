@@ -65,9 +65,39 @@
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">#include &lt;fmt/core.h&gt;
+
+#include &lt;chrono&gt;
+#include &lt;future&gt;
+#include &lt;iostream&gt;
+#include &lt;thread&gt;
+#include &lt;vector&gt;
+
+int main() {
+  std::cout &lt;&lt; &quot;Main thread id: &quot; &lt;&lt; std::this_thread::get_id() &lt;&lt; std::endl;
+  std::vector&lt;std::future&lt;int&gt;&gt; futures;
+
+  auto beg = std::chrono::high_resolution_clock::now();
+
+  for (int i = 0; i &lt; 1000; ++i) {
+    auto fut = std::async([i] {
+      std::this_thread::sleep_for(std::chrono::seconds(1));
+      return i;
+    });
+    futures.push_back(std::move(fut));
+  }
+  std::for_each(futures.begin(), futures.end(),
+                [](std::future&lt;int&gt;&amp; fut) { fut.wait(); });
+
+  auto end = std::chrono::high_resolution_clock::now();
+  auto duration = duration_cast&lt;std::chrono::milliseconds&gt;(end - beg);
+  std::cout &lt;&lt; &quot;Total duration for 1000 tasks of 1s: &quot; &lt;&lt; duration.count()
+            &lt;&lt; &quot;ms&quot; &lt;&lt; std::endl;
+}
+</code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Main thread id: 139817475101376
-Total duration for 1000 tasks of 1s: 1085ms
+<pre><code class="language-txt">Main thread id: 139668431610560
+Total duration for 1000 tasks of 1s: 1092ms
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

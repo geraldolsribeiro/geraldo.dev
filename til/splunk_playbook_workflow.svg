@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 423.829 496.131"><path d="M58 98h284V58H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="200" y="78" text-anchor="middle" fill="#FFF" dominant-baseline="central">Endpoint malware alert</text><path style="fill:#fff" d="m200 134-4-11h8z"/><path d="M200 98v30M58 174h284v-40H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="200" y="154" text-anchor="middle" fill="#FFF" dominant-baseline="central">Retrieve malware file hash</text><path style="fill:#fff" d="m200 210-4-12h8z"/><path d="M200 174v30" style="fill:none;stroke-width:2.16;stroke:#fff"/><path d="M58 249h284v-39H58Z" style="fill:#7f7f00;stroke-width:2.16;stroke:#fff"/><text x="200" y="230" text-anchor="middle" fill="#FFF" dominant-baseline="central">Compare hash to known malware</text><path style="fill:#fff" d="m200 321-4-11h8z"/><path d="M200 249v67" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="200" y="285" fill="#FFF" dominant-baseline="central"> known hash yes/no</text><path d="M58 361h284v-40H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="200" y="341" text-anchor="middle" fill="#FFF" dominant-baseline="central">Sandbox affected device</text><path style="fill:#fff" d="m200 397-4-11h8z"/><path d="M200 361v30" style="fill:none;stroke-width:2.16;stroke:#fff"/><path d="M58 437h284v-40H58Z" style="fill:#3f7f3f;stroke-width:2.16;stroke:#fff"/><text x="200" y="417" text-anchor="middle" fill="#FFF" dominant-baseline="central">Remove malware</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 423.829 496.131">
+<path d="M58,98L342,98L342,58L58,58Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="78" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Endpoint malware alert</text>
+<polygon points="200,134 196,123 204,123" style="fill:rgb(255,255,255)"/>
+<path d="M200,98L200,128"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,174L342,174L342,134L58,134Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="154" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Retrieve malware file hash</text>
+<polygon points="200,210 196,198 204,198" style="fill:rgb(255,255,255)"/>
+<path d="M200,174L200,204"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,249L342,249L342,210L58,210Z"  style="fill:rgb(127,127,0);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="230" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Compare hash to known malware</text>
+<polygon points="200,321 196,310 204,310" style="fill:rgb(255,255,255)"/>
+<path d="M200,249L200,316"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="285" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central"> known hash yes/no</text>
+<path d="M58,361L342,361L342,321L58,321Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="341" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Sandbox affected device</text>
+<polygon points="200,397 196,386 204,386" style="fill:rgb(255,255,255)"/>
+<path d="M200,361L200,391"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,437L342,437L342,397L58,397Z"  style="fill:rgb(63,127,63);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="200" y="417" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Remove malware</text>
+</svg>
+

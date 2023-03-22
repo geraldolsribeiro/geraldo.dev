@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 233.813 214.521"><path d="m116 44 72 125H44l72-125" style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:#fff"/><circle cx="116" cy="44" r="14.4" style="fill:#007f7f;stroke-width:2.16;stroke:#fff"/><circle cx="188" cy="169" r="14.4" style="fill:#00007f;stroke-width:2.16;stroke:#fff"/><circle cx="44" cy="169" r="14.4" style="fill:#3f7f3f;stroke-width:2.16;stroke:#fff"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 233.813 214.521">
+<path d="M116,44L188,169L44,169L116,44"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<circle cx="116" cy="44" r="14.4"  style="fill:rgb(0,127,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="188" cy="169" r="14.4"  style="fill:rgb(0,0,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="44" cy="169" r="14.4"  style="fill:rgb(63,127,63);stroke-width:2.16;stroke:rgb(255,255,255);" />
+</svg>
+

@@ -59,19 +59,27 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-15</b>Last modified: <b class="ml-2">2023-03-11 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven.html">text-driven</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#ark">Ark</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#trigonometric-functions">Trigonometric functions</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#image">Image</a></li><li><a href="#link">Link</a></li><li><a href="#link-with-image">Link with image</a></li><li><a href="#ark">Ark</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#trigonometric-functions">Trigonometric functions</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p><strong>Pikchr</strong> (pronounced like “picture”) is a PIC-like markup language for
 diagrams in technical documentation. Pikchr is designed to be embedded in
 <a href="https://spec.commonmark.org/0.29/#fenced-code-blocks">fenced code blocks</a> of
 Markdown (or in similar mechanisms in other markup languages) to provide
 a convenient means of showing diagrams.</p>
-<p>A fork of pikchr can be found on <a href="https://github.com/geraldolsribeiro/pikchr">https://github.com/geraldolsribeiro/pikchr</a>.</p>
-<p>An online editor on <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a></p>
+<p>A <strong>pikchr fork</strong> with some new objects can be found at
+<a href="https://github.com/geraldolsribeiro/pikchr">https://github.com/geraldolsribeiro/pikchr</a>:</p>
+<ul>
+<li><code>image</code>: incorporate external files into diagram.</li>
+<li><code>link</code>: create a box with hyperlink to an URL</li>
+</ul>
+<p>A online editor at <a href="https://pikchr.org/home/pikchrshow">https://pikchr.org/home/pikchrshow</a>.</p>
 <h2 id="sample" tabindex="-1">Sample</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
-    <img class="mx-auto my-2" src="/til/pikchr_sample.svg" alt="Pikchr sample from official documentation.">
+    <object class="mx-auto my-2" data="/til/pikchr_sample.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_sample.svg" alt="Pikchr sample from official documentation.">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
      <strong>Fig. 1</strong> — <span>Pikchr sample from official documentation.</span>
@@ -87,14 +95,81 @@ arrow &lt;-&gt; down 70% from last box.s
 box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
 # Extracted by md2pug
 </code></pre>
+<h2 id="image" tabindex="-1">Image</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-2">
+    <object class="mx-auto my-2" data="/til/pikchr_image.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_image.svg" alt="Image object.">
+    </object>
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 2</strong> — <span>Image object.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-shell">FF: image &quot;/icon/firefox.svg&quot; width 1 height 1
+arrow
+image &quot;/icon/chrome.svg&quot; width 1 height 1
+arrow
+image &quot;/icon/brave.svg&quot; width 1 height 1
+down
+arrow down then right until even with FF then up
+# Extracted by md2pug
+</code></pre>
+<h2 id="link" tabindex="-1">Link</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-3">
+    <object class="mx-auto my-2" data="/til/pikchr_link.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_link.svg" alt="Link object.">
+    </object>
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 3</strong> — <span>Link object.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-shell">box width 1 height 1
+link &quot;id1&quot; &quot;Google&quot; &quot;https://google.com&quot; width 64px height 64px 
+box width 1 height 1
+link &quot;id2&quot; &quot;Disney&quot; &quot;https://disney.com&quot; width 32px height 32px
+box width 1 height 1
+link &quot;id3&quot; &quot;Amazon&quot; &quot;https://amazon.com&quot; width 1 height 1 fill blue
+box width 1 height 1
+link &quot;id4&quot; &quot;Geraldo&quot; &quot;https://geraldo.dev&quot;
+# Extracted by md2pug
+</code></pre>
+<h2 id="link-with-image" tabindex="-1">Link with image</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-4">
+    <object class="mx-auto my-2" data="/til/pikchr_link_02.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_link_02.svg" alt="Link object with image object">
+    </object>
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 4</strong> — <span>Link object with image object</span>
+  </figcaption>
+</figure>
+<pre><code class="language-shell">FF: image &quot;/icon/firefox.svg&quot; &quot;https://www.mozilla.org/firefox/&quot; width 1 height 1
+arrow
+image &quot;/icon/chrome.svg&quot; &quot;https://www.google.com/chrome/&quot; width 1 height 1
+arrow
+image &quot;/icon/brave.svg&quot; &quot;https://brave.com/&quot; width 1 height 1
+down
+arrow down then right until even with FF then up
+# Extracted by md2pug
+</code></pre>
 <h2 id="ark" tabindex="-1">Ark</h2>
 <p>This is my attempt to provide a more precise <code>arc</code> command.</p>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-2">
-    <img class="mx-auto my-2" src="/til/pikchr_ark.svg" alt="Ark">
+  <a name="fig-5">
+    <object class="mx-auto my-2" data="/til/pikchr_ark.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_ark.svg" alt="Ark">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 2</strong> — <span>Ark</span>
+     <strong>Fig. 5</strong> — <span>Ark</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 0.1
@@ -141,11 +216,14 @@ ark(1.5,30,60)
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-3">
-    <img class="mx-auto my-2" src="/til/pikchr_polygon.svg" alt="Filled polygon">
+  <a name="fig-6">
+    <object class="mx-auto my-2" data="/til/pikchr_polygon.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_polygon.svg" alt="Filled polygon">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 3</strong> — <span>Filled polygon</span>
+     <strong>Fig. 6</strong> — <span>Filled polygon</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 5mm;
@@ -156,11 +234,14 @@ line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-4">
-    <img class="mx-auto my-2" src="/til/pikchr_triangle.svg" alt="Filled polygon fail">
+  <a name="fig-7">
+    <object class="mx-auto my-2" data="/til/pikchr_triangle.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_triangle.svg" alt="Filled polygon fail">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 4</strong> — <span>Filled polygon fail</span>
+     <strong>Fig. 7</strong> — <span>Filled polygon fail</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">A: (  0, sqrt(3/4))
@@ -192,11 +273,14 @@ circle rad 0.1 at C fill green
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-5">
-    <img class="mx-auto my-2" src="/til/pikchr_arrow.svg" alt="Arrow">
+  <a name="fig-8">
+    <object class="mx-auto my-2" data="/til/pikchr_arrow.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_arrow.svg" alt="Arrow">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 5</strong> — <span>Arrow</span>
+     <strong>Fig. 8</strong> — <span>Arrow</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 10mm;
@@ -228,11 +312,14 @@ analysis, likely resulting in a syntax error.</p>
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-6">
-    <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
+  <a name="fig-9">
+    <object class="mx-auto my-2" data="/til/pikchr_macro_flag.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_macro_flag.svg" alt="Pikchr macro flag">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 6</strong> — <span>Pikchr macro flag</span>
+     <strong>Fig. 9</strong> — <span>Pikchr macro flag</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">CP: dot invisible;
@@ -259,11 +346,14 @@ $flagAngle = 60; $color=green; flag;
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-7">
-    <img class="mx-auto my-2" src="/til/pikchr_macro_with_parameter.svg" alt="Pikchr macro with parameters">
+  <a name="fig-10">
+    <object class="mx-auto my-2" data="/til/pikchr_macro_with_parameter.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_macro_with_parameter.svg" alt="Pikchr macro with parameters">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 7</strong> — <span>Pikchr macro with parameters</span>
+     <strong>Fig. 10</strong> — <span>Pikchr macro with parameters</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">define mybox {
@@ -281,11 +371,14 @@ mybox(4cm,4cm, yellow, &quot;text3&quot;)
 </code></pre>
 <h2 id="utf-8-characters" tabindex="-1">UTF-8 characters</h2>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-8">
-    <img class="mx-auto my-2" src="/til/pikchr_utf_8_character.svg" alt="Pikchr UTF-8 character">
+  <a name="fig-11">
+    <object class="mx-auto my-2" data="/til/pikchr_utf_8_character.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_utf_8_character.svg" alt="Pikchr UTF-8 character">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 8</strong> — <span>Pikchr UTF-8 character</span>
+     <strong>Fig. 11</strong> — <span>Pikchr UTF-8 character</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -324,11 +417,14 @@ Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨�
   </div>
 </div>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-9">
-    <img class="mx-auto my-2" src="/til/pikchr_trig.svg" alt="Trigonometric functions">
+  <a name="fig-12">
+    <object class="mx-auto my-2" data="/til/pikchr_trig.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_trig.svg" alt="Trigonometric functions">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 9</strong> — <span>Trigonometric functions</span>
+     <strong>Fig. 12</strong> — <span>Trigonometric functions</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">pi = 3.141592  # define a constant
@@ -368,11 +464,14 @@ arrow from (0,0) to (b,a) &quot;Pi&quot; above color red thick thick
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-10">
-    <img class="mx-auto my-2" src="/til/pikchr_circle_chop.svg" alt="Pikchr circle chop">
+  <a name="fig-13">
+    <object class="mx-auto my-2" data="/til/pikchr_circle_chop.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_circle_chop.svg" alt="Pikchr circle chop">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 10</strong> — <span>Pikchr circle chop</span>
+     <strong>Fig. 13</strong> — <span>Pikchr circle chop</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin =  1cm
@@ -385,11 +484,14 @@ arrow from 1st circle to 3rd circle chop color purple
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-11">
-    <img class="mx-auto my-2" src="/til/pikchr_path_division.svg" alt="Pikchr path division">
+  <a name="fig-14">
+    <object class="mx-auto my-2" data="/til/pikchr_path_division.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_path_division.svg" alt="Pikchr path division">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 11</strong> — <span>Pikchr path division</span>
+     <strong>Fig. 14</strong> — <span>Pikchr path division</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -417,11 +519,14 @@ arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-12">
-    <img class="mx-auto my-2" src="/til/pikchr_spline.svg" alt="Pikchr spline">
+  <a name="fig-15">
+    <object class="mx-auto my-2" data="/til/pikchr_spline.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_spline.svg" alt="Pikchr spline">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 12</strong> — <span>Pikchr spline</span>
+     <strong>Fig. 15</strong> — <span>Pikchr spline</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -430,11 +535,14 @@ spline from start of last line right 1 then down .5 left 1 then right 1 color or
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-13">
-    <img class="mx-auto my-2" src="/til/pikchr_block.svg" alt="Pikchr block">
+  <a name="fig-16">
+    <object class="mx-auto my-2" data="/til/pikchr_block.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_block.svg" alt="Pikchr block">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 13</strong> — <span>Pikchr block</span>
+     <strong>Fig. 16</strong> — <span>Pikchr block</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">box &quot;1&quot; width 4cm height 4mm
@@ -459,11 +567,14 @@ box with .sw at A.sw - (5mm,5mm) width (A.width + 10mm) height (A.height + 10mm)
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-14">
-    <img class="mx-auto my-2" src="/til/pikchr_sub_block.svg" alt="Pikchr sub-block">
+  <a name="fig-17">
+    <object class="mx-auto my-2" data="/til/pikchr_sub_block.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_sub_block.svg" alt="Pikchr sub-block">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 14</strong> — <span>Pikchr sub-block</span>
+     <strong>Fig. 17</strong> — <span>Pikchr sub-block</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">margin = 1cm
@@ -506,11 +617,14 @@ arrow &lt;-&gt; from X.Z.A to X.W.A color blue chop
 # Extracted by md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-15">
-    <img class="mx-auto my-2" src="/til/pikchr_arc.svg" alt="Pikchr arc">
+  <a name="fig-18">
+    <object class="mx-auto my-2" data="/til/pikchr_arc.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_arc.svg" alt="Pikchr arc">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 15</strong> — <span>Pikchr arc</span>
+     <strong>Fig. 18</strong> — <span>Pikchr arc</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">define r { line 50%; arc; line; arc cw; line; arc cw; line; arc; line 50% }
@@ -530,11 +644,14 @@ spline -&gt; from (0,0) then to (4,2) then to (8,0)
 </code></pre>
 <h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
 <figure class="bg-slate-800 text-center py-4">
-  <a name="fig-16">
-    <img class="mx-auto my-2" src="/til/pikchr_tailscale_diagram.svg" alt="Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/">
+  <a name="fig-19">
+    <object class="mx-auto my-2" data="/til/pikchr_tailscale_diagram.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/pikchr_tailscale_diagram.svg" alt="Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/">
+    </object>
   </a>
   <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 16</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
+     <strong>Fig. 19</strong> — <span>Pikchr tailscale diagram. Adapted from https://zellyn.com/2022/02/tailscale-diagram-in-pikchr/</span>
   </figcaption>
 </figure>
 <pre><code class="language-shell">topmargin = 1

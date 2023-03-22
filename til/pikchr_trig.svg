@@ -1,1 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 466.504 354.24"><circle cx="174" cy="179" r="144" style="fill:none;stroke-width:2.16;stroke:#7f7f7f"/><path style="fill:#7f7f7f" d="m174 6 5 12h-9z"/><path d="M174 352V12" style="fill:none;stroke-width:2.16;stroke:#7f7f7f"/><path style="fill:#7f7f7f" d="m347 179-11 4v-9z"/><path d="M2 179h340" style="fill:none;stroke-width:2.16;stroke:#7f7f7f"/><path style="fill:#ff7fff" d="m299 107-8 9-4-7z"/><path d="m174 179 120-69" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="376" y="107" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">30⁰ = 60 from N</text><path style="fill:#ff7fff" d="m310 130-10 8-3-9z"/><path d="m174 179 130-48" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="386" y="130" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">20⁰ = 70 from N</text><path style="fill:#ff7fff" d="m316 154-10 6-2-8z"/><path d="m174 179 137-24" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="154" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">10⁰ = 80 from N</text><path style="fill:#7fff7f" d="m199 37 1 5h-3z"/><path d="m174 179 25-139" style="fill:none;stroke-width:.969624;stroke:#7fff7f"/><text x="221" y="27" text-anchor="end" fill="#7FFF7F" dominant-baseline="central">10⁰</text><path style="fill:#7fff7f" d="M224 43v6l-4-1z"/><path d="m174 179 49-133" style="fill:none;stroke-width:.969624;stroke:#7fff7f"/><text x="246" y="33" text-anchor="end" fill="#7FFF7F" dominant-baseline="central">20⁰</text><path style="fill:#7fff7f" d="M246 54v6l-4-2z"/><path d="m174 179 71-123" style="fill:none;stroke-width:.969624;stroke:#7fff7f"/><text x="268" y="44" text-anchor="end" fill="#7FFF7F" dominant-baseline="central">30⁰</text><path style="fill:#7fff7f" d="m267 68-2 6-3-3z"/><path d="m174 179 91-109" style="fill:none;stroke-width:.969624;stroke:#7fff7f"/><text x="289" y="58" text-anchor="end" fill="#7FFF7F" dominant-baseline="central">40⁰</text><path style="fill:#7fff7f" d="m285 86-3 5-2-3z"/><path d="m174 179 109-91" style="fill:none;stroke-width:.969624;stroke:#7fff7f"/><text x="307" y="76" text-anchor="end" fill="#7FFF7F" dominant-baseline="central">50⁰</text><path style="fill:#ff7f7f" d="m30 179 26-10v19z"/><path d="M174 179H43" style="fill:none;stroke-width:4.86;stroke:#ff7f7f"/><text x="102" y="165" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Pi</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 466.504 354.24">
+<circle cx="174" cy="179" r="144"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,127);" />
+<polygon points="174,6 179,18 170,18" style="fill:rgb(127,127,127)"/>
+<path d="M174,352L174,12"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,127);" />
+<polygon points="347,179 336,183 336,174" style="fill:rgb(127,127,127)"/>
+<path d="M2,179L342,179"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,127);" />
+<polygon points="299,107 291,116 287,109" style="fill:rgb(255,127,255)"/>
+<path d="M174,179L294,110"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="376" y="107" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">30⁰ = 60 from N</text>
+<polygon points="310,130 300,138 297,129" style="fill:rgb(255,127,255)"/>
+<path d="M174,179L304,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="386" y="130" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">20⁰ = 70 from N</text>
+<polygon points="316,154 306,160 304,152" style="fill:rgb(255,127,255)"/>
+<path d="M174,179L311,155"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="154" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">10⁰ = 80 from N</text>
+<polygon points="199,37 200,42 197,42" style="fill:rgb(127,255,127)"/>
+<path d="M174,179L199,40"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,127);" />
+<text x="221" y="27" text-anchor="end" fill="rgb(127,255,127)" dominant-baseline="central">10⁰</text>
+<polygon points="224,43 224,49 220,48" style="fill:rgb(127,255,127)"/>
+<path d="M174,179L223,46"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,127);" />
+<text x="246" y="33" text-anchor="end" fill="rgb(127,255,127)" dominant-baseline="central">20⁰</text>
+<polygon points="246,54 246,60 242,58" style="fill:rgb(127,255,127)"/>
+<path d="M174,179L245,56"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,127);" />
+<text x="268" y="44" text-anchor="end" fill="rgb(127,255,127)" dominant-baseline="central">30⁰</text>
+<polygon points="267,68 265,74 262,71" style="fill:rgb(127,255,127)"/>
+<path d="M174,179L265,70"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,127);" />
+<text x="289" y="58" text-anchor="end" fill="rgb(127,255,127)" dominant-baseline="central">40⁰</text>
+<polygon points="285,86 282,91 280,88" style="fill:rgb(127,255,127)"/>
+<path d="M174,179L283,88"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,127);" />
+<text x="307" y="76" text-anchor="end" fill="rgb(127,255,127)" dominant-baseline="central">50⁰</text>
+<polygon points="30,179 56,169 56,188" style="fill:rgb(255,127,127)"/>
+<path d="M174,179L43,179"  style="fill:none;stroke-width:4.86;stroke:rgb(255,127,127);" />
+<text x="102" y="165" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Pi</text>
+</svg>
+

@@ -1,0 +1,18 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 646.906 220.32">
+<a href="https://www.mozilla.org/firefox/" target="_blank" pointer-events="visiblePainted">
+<image href="/icon/firefox.svg" x="63" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+</a>
+<polygon points="279,74 268,78 268,69" style="fill:rgb(255,255,255)"/>
+<path d="M207,74L274,74"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://www.google.com/chrome/" target="_blank" pointer-events="visiblePainted">
+<image href="/icon/chrome.svg" x="279" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+</a>
+<polygon points="495,74 484,78 484,69" style="fill:rgb(255,255,255)"/>
+<path d="M423,74L490,74"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://brave.com/" target="_blank" pointer-events="visiblePainted">
+<image href="/icon/brave.svg" x="495" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+</a>
+<polygon points="135,146 140,157 131,157" style="fill:rgb(255,255,255)"/>
+<path d="M567,146L567,218L135,218L135,151"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+</svg>
+

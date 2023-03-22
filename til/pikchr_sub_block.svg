@@ -1,1 +1,37 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 675.916 276.231"><path d="M120 98h29V70h-29Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><path d="M120 126h29V98h-29Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><path d="M120 155h29v-29h-29Z" style="fill:none;stroke-width:2.16;stroke:#7f7fff"/><path d="M276 155h114v-29H276Z" style="fill:none;stroke-width:2.16;stroke:#ffd17f"/><text x="333" y="141" text-anchor="middle" fill="#FFD17F" dominant-baseline="central">X.Z.A</text><path d="M276 121h114V92H276Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="333" y="107" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">X.Z.B</text><path d="M276 87h114V58H276Z" style="fill:none;stroke-width:2.16;stroke:#ffd17f"/><text x="333" y="73" text-anchor="middle" fill="#FFD17F" dominant-baseline="central">X.Z.C</text><path d="M503 87h114V58H503Z" style="fill:none;stroke-width:2.16;stroke:#ffd17f"/><text x="560" y="73" text-anchor="middle" fill="#FFD17F" dominant-baseline="central">X.W.A</text><path d="M503 121h114V92H503Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="560" y="107" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">X.W.B</text><path d="M503 155h114v-29H503Z" style="fill:none;stroke-width:2.16;stroke:#ffd17f"/><text x="560" y="141" text-anchor="middle" fill="#FFD17F" dominant-baseline="central">X.W.C</text><path style="fill:#fff" d="m207 84-12 4v-8z"/><path d="M135 84h66" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="171" y="72" text-anchor="middle" fill="#FFF" dominant-baseline="central">R</text><path style="fill:#fff" d="m63 112 11-4v9z"/><path d="M135 112H68" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="99" y="101" text-anchor="middle" fill="#FFF" dominant-baseline="central">G</text><path style="fill:#fff" d="m135 213-5-12h9z"/><path d="M135 141v66" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="135" y="177" fill="#FFF" dominant-baseline="central"> B</text><path style="fill:#ff7fff" d="m276 141-11 4v-9z"/><path d="M149 141h122" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><path style="fill:#ff7fff" d="m276 73-9 8-3-8z"/><path d="m149 126 122-51" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><path style="fill:#fff" d="m390 107 11-5v9z"/><path d="M390 73h28v34h-22" style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:#fff"/><path d="m333 73 227 68" style="fill:none;stroke-width:.969624;stroke:#fff;stroke-dasharray:2.1,7.2"/><path style="fill:#7f7fff" d="m390 126 9-7 3 8zM503 87l-9 8-3-9z"/><path d="m395 124 103-35" style="fill:none;stroke-width:2.16;stroke:#7f7fff"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 675.916 276.231">
+<path d="M120,98L149,98L149,70L120,70Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M120,126L149,126L149,98L120,98Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<path d="M120,155L149,155L149,126L120,126Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);" />
+<path d="M276,155L390,155L390,126L276,126Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);" />
+<text x="333" y="141" text-anchor="middle" fill="rgb(255,209,127)" dominant-baseline="central">X.Z.A</text>
+<path d="M276,121L390,121L390,92L276,92Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="333" y="107" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">X.Z.B</text>
+<path d="M276,87L390,87L390,58L276,58Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);" />
+<text x="333" y="73" text-anchor="middle" fill="rgb(255,209,127)" dominant-baseline="central">X.Z.C</text>
+<path d="M503,87L617,87L617,58L503,58Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);" />
+<text x="560" y="73" text-anchor="middle" fill="rgb(255,209,127)" dominant-baseline="central">X.W.A</text>
+<path d="M503,121L617,121L617,92L503,92Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="560" y="107" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">X.W.B</text>
+<path d="M503,155L617,155L617,126L503,126Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);" />
+<text x="560" y="141" text-anchor="middle" fill="rgb(255,209,127)" dominant-baseline="central">X.W.C</text>
+<polygon points="207,84 195,88 195,80" style="fill:rgb(255,255,255)"/>
+<path d="M135,84L201,84"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="171" y="72" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">R</text>
+<polygon points="63,112 74,108 74,117" style="fill:rgb(255,255,255)"/>
+<path d="M135,112L68,112"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="99" y="101" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">G</text>
+<polygon points="135,213 130,201 139,201" style="fill:rgb(255,255,255)"/>
+<path d="M135,141L135,207"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="135" y="177" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central"> B</text>
+<polygon points="276,141 265,145 265,136" style="fill:rgb(255,127,255)"/>
+<path d="M149,141L271,141"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<polygon points="276,73 267,81 264,73" style="fill:rgb(255,127,255)"/>
+<path d="M149,126L271,75"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<polygon points="390,107 401,102 401,111" style="fill:rgb(255,255,255)"/>
+<path d="M390,73L418,73L418,107L396,107"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<path d="M333,73L560,141"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<polygon points="390,126 399,119 402,127" style="fill:rgb(127,127,255)"/>
+<polygon points="503,87 494,95 491,86" style="fill:rgb(127,127,255)"/>
+<path d="M395,124L498,89"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);" />
+</svg>
+

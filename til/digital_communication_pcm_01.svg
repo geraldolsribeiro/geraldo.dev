@@ -1,1 +1,107 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 1315.27 389.8"><path style="fill:#ffff7f" d="m1248 211-12 4v-8z"/><path d="M197 211h1045" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="1275" y="221" text-anchor="middle" fill="#FFF" dominant-baseline="central">Time</text><path style="fill:#ffff7f" d="m211 38 4 12h-8z"/><path d="M211 355V44" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="260" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">Amplitude</text><path d="m211 211 18-18q18-18 36-34 18-17 36-32 18-14 36-26 18-11 36-19t36-11q18-4 36-3t36 7q18 5 36 15 18 9 36 22t36 28q18 16 36 33l36 36q18 18 36 35 18 18 36 33 18 16 36 30 18 13 36 23t36 16q18 6 36 7 18 2 36-1t36-10q18-7 36-18t36-26q18-14 36-30l36-34 36-36q18-18 36-35l18-17" style="fill:none;stroke-width:3.24;stroke:#7fff7f"/><path style="fill:#7fff7f" d="m553 112 5-11 6 6z"/><path d="m557 108 53-53" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="610" y="34" text-anchor="middle" fill="#7FFF7F" font-size="156.25%" dominant-baseline="central">Analog Signal</text><path style="fill:#ff7f7f" d="m646 188 5-11 6 6z"/><path d="m650 184 53-53" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="703" y="110" text-anchor="middle" fill="#FF7F7F" font-size="156.25%" dominant-baseline="central">Sampled</text><path d="M211 211" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="211" cy="211" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M247 211v-36" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="247" cy="175" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><text x="247" y="160" text-anchor="middle" fill="#FFF" dominant-baseline="central">a1</text><path d="M283 211v-69" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="283" cy="142" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M319 211v-98" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="319" cy="113" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M355 211V90" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="355" cy="90" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M391 211V74" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="391" cy="74" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M427 211V67" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="427" cy="67" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M463 211V69" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="463" cy="69" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M499 211V80" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="499" cy="80" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M535 211V99" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="535" cy="99" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M571 211v-86" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="571" cy="125" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M607 211v-55" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="607" cy="156" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M643 211v-20" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="643" cy="191" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M679 211v16" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="679" cy="227" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M715 211v51" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="715" cy="262" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M751 211v82" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="751" cy="293" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M787 211v109" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="787" cy="320" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M823 211v129" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="823" cy="340" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M859 211v141" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="859" cy="352" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M895 211v144" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="895" cy="355" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M931 211v138" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="931" cy="349" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M967 211v124" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="967" cy="335" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1003 211v102" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1003" cy="313" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1039 211v73" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1039" cy="284" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1075 211v40" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1075" cy="251" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1111 211v5" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1111" cy="216" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1147 211v-31" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1147" cy="180" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M1183 211v-65" style="fill:none;stroke-width:.969624;stroke:#7fffff;stroke-dasharray:7.2,7.2"/><circle cx="1183" cy="146" r="3.24" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M211 355h-11M211 341h-11M211 326h-11M211 312h-11M211 297h-11M211 283h-17M211 269h-11M211 254h-11M211 240h-11M211 225h-11M211 67h-11M211 81h-11M211 96h-11M211 110h-11M211 125h-11M211 139h-17M211 153h-11M211 168h-11M211 182h-11M211 197h-11" style="fill:none;stroke-width:1.4472;stroke:#fff"/><text x="247" y="221" text-anchor="middle" fill="#FFF" dominant-baseline="central">t1</text><text x="283" y="221" text-anchor="middle" fill="#FFF" dominant-baseline="central">t2</text><text x="110" y="67" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">1111 1111 1111 1111</text><text x="110" y="81" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">1111 1111 1111 1110</text><text x="110" y="96" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">1111 1111 1111 1101</text><text x="110" y="110" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">1111 1111 1111 1100</text><text x="110" y="312" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">0000 0000 0000 0011</text><text x="110" y="326" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">0000 0000 0000 0010</text><text x="110" y="341" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">0000 0000 0000 0001</text><text x="110" y="355" text-anchor="middle" fill="#7F7F7F" dominant-baseline="central">0000 0000 0000 0000</text><text x="110" y="198" text-anchor="middle" fill="#FFF" font-size="125%" dominant-baseline="central">PCM</text><text x="110" y="219" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">Encoded Signal</text><path d="M27 370h167V52H27Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="110" y="39" text-anchor="middle" fill="#FFF" font-size="125%" dominant-baseline="central">ADC</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 1315.27 389.8">
+<polygon points="1248,211 1236,215 1236,207" style="fill:rgb(255,255,127)"/>
+<path d="M197,211L1242,211"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="1275" y="221" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Time</text>
+<polygon points="211,38 215,50 207,50" style="fill:rgb(255,255,127)"/>
+<path d="M211,355L211,44"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="260" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Amplitude</text>
+<path d="M211,211 L 229,193 Q 247,175 265,159 Q 283,142 301,127 Q 319,113 337,101 Q 355,90 373,82 Q 391,74 409,71 Q 427,67 445,68 Q 463,69 481,75 Q 499,80 517,90 Q 535,99 553,112 Q 571,125 589,140 Q 607,156 625,173 Q 643,191 661,209 Q 679,227 697,244 Q 715,262 733,277 Q 751,293 769,307 Q 787,320 805,330 Q 823,340 841,346 Q 859,352 877,353 Q 895,355 913,352 Q 931,349 949,342 Q 967,335 985,324 Q 1003,313 1021,298 Q 1039,284 1057,268 Q 1075,251 1093,234 Q 1111,216 1129,198 Q 1147,180 1165,163 L 1183,146"  style="fill:none;stroke-width:3.24;stroke:rgb(127,255,127);" />
+<polygon points="553,112 558,101 564,107" style="fill:rgb(127,255,127)"/>
+<path d="M557,108L610,55"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="610" y="34" text-anchor="middle" fill="rgb(127,255,127)" font-size="156.25%" dominant-baseline="central">Analog Signal</text>
+<polygon points="646,188 651,177 657,183" style="fill:rgb(255,127,127)"/>
+<path d="M650,184L703,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="703" y="110" text-anchor="middle" fill="rgb(255,127,127)" font-size="156.25%" dominant-baseline="central">Sampled</text>
+<path d="M211,211L211,211"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="211" cy="211" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M247,211L247,175"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="247" cy="175" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="247" y="160" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a1</text>
+<path d="M283,211L283,142"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="283" cy="142" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M319,211L319,113"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="319" cy="113" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M355,211L355,90"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="355" cy="90" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M391,211L391,74"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="391" cy="74" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M427,211L427,67"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="427" cy="67" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M463,211L463,69"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="463" cy="69" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M499,211L499,80"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="499" cy="80" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M535,211L535,99"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="535" cy="99" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M571,211L571,125"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="571" cy="125" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M607,211L607,156"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="607" cy="156" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M643,211L643,191"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="643" cy="191" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M679,211L679,227"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="679" cy="227" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M715,211L715,262"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="715" cy="262" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M751,211L751,293"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="751" cy="293" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M787,211L787,320"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="787" cy="320" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M823,211L823,340"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="823" cy="340" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M859,211L859,352"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="859" cy="352" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M895,211L895,355"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="895" cy="355" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M931,211L931,349"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="931" cy="349" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M967,211L967,335"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="967" cy="335" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1003,211L1003,313"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1003" cy="313" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1039,211L1039,284"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1039" cy="284" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1075,211L1075,251"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1075" cy="251" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1111,211L1111,216"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1111" cy="216" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1147,211L1147,180"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1147" cy="180" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M1183,211L1183,146"  style="fill:none;stroke-width:0.969624;stroke:rgb(127,255,255);stroke-dasharray:7.2,7.2;" />
+<circle cx="1183" cy="146" r="3.24" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M211,355L200,355"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,341L200,341"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,326L200,326"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,312L200,312"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,297L200,297"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,283L194,283"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,269L200,269"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,254L200,254"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,240L200,240"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,225L200,225"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,67L200,67"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,81L200,81"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,96L200,96"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,110L200,110"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,125L200,125"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,139L194,139"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,153L200,153"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,168L200,168"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,182L200,182"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<path d="M211,197L200,197"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<text x="247" y="221" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">t1</text>
+<text x="283" y="221" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">t2</text>
+<text x="110" y="67" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">1111 1111 1111 1111</text>
+<text x="110" y="81" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">1111 1111 1111 1110</text>
+<text x="110" y="96" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">1111 1111 1111 1101</text>
+<text x="110" y="110" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">1111 1111 1111 1100</text>
+<text x="110" y="312" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">0000 0000 0000 0011</text>
+<text x="110" y="326" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">0000 0000 0000 0010</text>
+<text x="110" y="341" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">0000 0000 0000 0001</text>
+<text x="110" y="355" text-anchor="middle" fill="rgb(127,127,127)" dominant-baseline="central">0000 0000 0000 0000</text>
+<text x="110" y="198" text-anchor="middle" fill="rgb(255,255,255)" font-size="125%" dominant-baseline="central">PCM</text>
+<text x="110" y="219" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">Encoded Signal</text>
+<path d="M27,370L194,370L194,52L27,52Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="110" y="39" text-anchor="middle" fill="rgb(255,255,255)" font-size="125%" dominant-baseline="central">ADC</text>
+</svg>
+

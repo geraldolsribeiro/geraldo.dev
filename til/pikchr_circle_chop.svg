@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 266.922 238.122"><circle cx="133" cy="75" r="17.008" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="133" y="75" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">a</text><circle cx="75" cy="162" r="17.008" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="75" y="162" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">b</text><circle cx="191" cy="162" r="17.008" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="191" y="162" text-anchor="middle" fill="#7FFFFF" dominant-baseline="central">c</text><path style="fill:#ff7fff" d="m85 148 3-12 7 4z"/><path d="m124 90-36 53" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><path style="fill:#ff7fff" d="m181 148-10-8 7-4z"/><path d="m142 90 36 53" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 266.922 238.122">
+<circle cx="133" cy="75" r="17.0079"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="133" y="75" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">a</text>
+<circle cx="75" cy="162" r="17.0079"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="75" y="162" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">b</text>
+<circle cx="191" cy="162" r="17.0079"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="191" y="162" text-anchor="middle" fill="rgb(127,255,255)" dominant-baseline="central">c</text>
+<polygon points="85,148 88,136 95,140" style="fill:rgb(255,127,255)"/>
+<path d="M124,90L88,143"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<polygon points="181,148 171,140 178,136" style="fill:rgb(255,127,255)"/>
+<path d="M142,90L178,143"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+</svg>
+

@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 344.477 551.123"><path d="M136 166h72V80l-22-22h-50Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><path d="M186 58v22h22" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="172" y="102" text-anchor="middle" fill="#FFF" dominant-baseline="central">Data</text><text x="172" y="122" text-anchor="middle" fill="#FFF" dominant-baseline="central">Sources</text><path style="fill:#fff" d="m172 202-5-11h9z"/><path d="M172 166v31M58 248h227v-46H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="172" y="225" text-anchor="middle" fill="#FFF" dominant-baseline="central">Forwarder</text><path style="fill:#fff" d="m172 284-5-12h9z"/><path d="M172 248v30M58 329h227v-45H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="172" y="306" text-anchor="middle" fill="#FFF" dominant-baseline="central">Indexer</text><path style="fill:#fff" d="m172 365-5-11h9z"/><path d="M172 329v30M58 410h227v-45H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="172" y="378" text-anchor="middle" fill="#FFF" dominant-baseline="central">Search head</text><text x="172" y="398" text-anchor="middle" fill="#FFF" dominant-baseline="central">http://host:8000</text><path style="fill:#fff" d="m172 446-5-11h9z"/><path d="M172 410v31M58 492h227v-46H58Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="172" y="469" text-anchor="middle" fill="#FFF" dominant-baseline="central">User</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 344.477 551.123">
+<path d="M136,166L208,166L208,80L186,58L136,58Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M186,58L186,80L208,80"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="172" y="102" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Data</text>
+<text x="172" y="122" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Sources</text>
+<polygon points="172,202 167,191 176,191" style="fill:rgb(255,255,255)"/>
+<path d="M172,166L172,197"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,248L285,248L285,202L58,202Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="172" y="225" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Forwarder</text>
+<polygon points="172,284 167,272 176,272" style="fill:rgb(255,255,255)"/>
+<path d="M172,248L172,278"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,329L285,329L285,284L58,284Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="172" y="306" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Indexer</text>
+<polygon points="172,365 167,354 176,354" style="fill:rgb(255,255,255)"/>
+<path d="M172,329L172,359"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,410L285,410L285,365L58,365Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="172" y="378" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Search head</text>
+<text x="172" y="398" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">http://host:8000</text>
+<polygon points="172,446 167,435 176,435" style="fill:rgb(255,255,255)"/>
+<path d="M172,410L172,441"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M58,492L285,492L285,446L58,446Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="172" y="469" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">User</text>
+</svg>
+

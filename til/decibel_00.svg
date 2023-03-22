@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 401.869 312.992"><text x="184" y="102" text-anchor="middle" fill="#FF7F7F" font-size="156.25%" dominant-baseline="central">dB</text><path style="fill:#fff" d="m265 180-8-3 4-5z"/><path d="m208 123 54 54" style="fill:none;stroke-width:1.4472;stroke:#fff"/><text x="265" y="195" text-anchor="middle" fill="#FFF" dominant-baseline="central">Alexander</text><text x="265" y="215" text-anchor="middle" fill="#FFF" dominant-baseline="central">Grahan Bell</text><path style="fill:#fff" d="m104 180 4-8 4 5z"/><path d="m161 123-54 54" style="fill:none;stroke-width:1.4472;stroke:#fff"/><text x="104" y="195" text-anchor="middle" fill="#FFF" dominant-baseline="central">deci</text><text x="104" y="215" text-anchor="middle" fill="#FFF" dominant-baseline="central">0.1</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 401.869 312.992">
+<text x="184" y="102" text-anchor="middle" fill="rgb(255,127,127)" font-size="156.25%" dominant-baseline="central">dB</text>
+<polygon points="265,180 257,177 261,172" style="fill:rgb(255,255,255)"/>
+<path d="M208,123L262,177"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<text x="265" y="195" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Alexander</text>
+<text x="265" y="215" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Grahan Bell</text>
+<polygon points="104,180 108,172 112,177" style="fill:rgb(255,255,255)"/>
+<path d="M161,123L107,177"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
+<text x="104" y="195" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">deci</text>
+<text x="104" y="215" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">0.1</text>
+</svg>
+

@@ -1,1 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 261.706 189.706"><path d="M58 58h144L58 130h144" style="fill:none;stroke-width:.969624;stroke-linejoin:round;stroke:#fff;stroke-dasharray:7.2,7.2"/><path d="M58 58h72q72 0 0 36t0 36h72" style="fill:none;stroke-width:2.16;stroke:#ffd17f"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 261.706 189.706">
+<path d="M58,58L202,58L58,130L202,130"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(255,255,255);stroke-dasharray:7.2,7.2;" />
+<path d="M58,58 L 130,58 Q 202,58 130,94 Q 58,130 130,130 L 202,130"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);" />
+</svg>
+

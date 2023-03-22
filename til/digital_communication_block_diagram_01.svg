@@ -1,1 +1,165 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 478.131 1392.13"><path d="M73 144h85V57l-22-21H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><path d="M136 36v21h22" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="115" y="80" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Information</text><text x="115" y="100" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Source</text><path style="fill:#ffff7f" d="m115 208-4-11h8z"/><path d="M115 144v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="168" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 176)" dominant-baseline="central">bitstream</text><path d="M73 254h85v-46H73Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="115" y="221" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Format</text><text x="115" y="241" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">ADC</text><path style="fill:#ffff7f" d="m115 319-4-12h8z"/><path d="M115 254v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="278" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 286)" dominant-baseline="central">bitstream</text><path d="M73 364h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="331" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Source</text><text x="115" y="351" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Encode</text><path style="fill:#ffff7f" d="m115 429-4-12h8z"/><path d="M115 364v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="388" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 396)" dominant-baseline="central">bitstream</text><path d="M73 474h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="451" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Encrypt</text><path style="fill:#ffff7f" d="m115 539-4-12h8z"/><path d="M115 474v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="498" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 507)" dominant-baseline="central">bitstream</text><path d="M73 584h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="552" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Channel</text><text x="115" y="572" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Encode</text><path style="fill:#ffff7f" d="m115 649-4-11h8z"/><path d="M115 584v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="609" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 617)" dominant-baseline="central">bitstream</text><path d="M73 694h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="672" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Multiplex</text><path style="fill:#ffff7f" d="m115 759-4-11h8z"/><path d="M115 694v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="115" y="719" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 115 727)" dominant-baseline="central">bitstream</text><path d="M73 805h85v-46H73Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="115" y="772" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Pulse</text><text x="115" y="792" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Modulate</text><path style="fill:#7fffff" d="m115 869-4-11h8z"/><path d="M115 805v59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="115" y="829" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 837)" dominant-baseline="central">baseband</text><text x="115" y="845" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 837)" dominant-baseline="central">waveform</text><path d="M73 915h85v-46H73Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="115" y="882" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Bandpass</text><text x="115" y="902" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Modulate</text><path style="fill:#7fffff" d="m115 980-4-12h8z"/><path d="M115 915v59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="115" y="939" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 947)" dominant-baseline="central">baseband</text><text x="115" y="955" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 947)" dominant-baseline="central">waveform</text><path d="M73 1025h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="992" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Frequency</text><text x="115" y="1012" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Spread</text><path style="fill:#7fffff" d="m115 1090-4-12h8z"/><path d="M115 1025v59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="115" y="1049" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 1057)" dominant-baseline="central">baseband</text><text x="115" y="1065" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(90 115 1057)" dominant-baseline="central">waveform</text><path d="M73 1135h85v-45H73Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="115" y="1102" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Multiple</text><text x="115" y="1122" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Access</text><path style="fill:#fff" d="m115 1207-4-11h8z"/><path d="M115 1135v66" style="fill:none;stroke-width:2.16;stroke:#fff"/><path d="M79 1243h72a18 18 0 0 0 18-18 18 18 0 0 0-18-18H79a18 18 0 0 0-18 18 18 18 0 0 0 18 18Z" style="fill:none;stroke-width:2.16;stroke:#7f7fff"/><text x="115" y="1225" text-anchor="middle" fill="#7F7FFF" dominant-baseline="central">XMT</text><path d="M144 1212v-28l9-17h-17l8 17M86 1212v-28l8-17H77l9 17" style="fill:none;stroke-width:.969624;stroke-linejoin:round;stroke:#7f7fff"/><path style="fill:#7f7fff" d="m339 1225-8 3v-6z"/><path d="M169 1225h166" style="fill:none;stroke-width:1.4472;stroke:#7f7fff;stroke-dasharray:7.2,7.2"/><text x="254" y="1214" text-anchor="middle" fill="#7F7FFF" dominant-baseline="central">CHANNEL</text><path d="M357 1243h72a18 18 0 0 0 18-18 18 18 0 0 0-18-18h-72a18 18 0 0 0-18 18 18 18 0 0 0 18 18Z" style="fill:none;stroke-width:2.16;stroke:#7f7fff"/><text x="393" y="1225" text-anchor="middle" fill="#7F7FFF" dominant-baseline="central">RCV</text><path d="M422 1212v-28l9-17h-17l8 17M364 1212v-28l8-17h-17l9 17" style="fill:none;stroke-width:.969624;stroke-linejoin:round;stroke:#7f7fff"/><path style="fill:#fff" d="m393 1135 4 12h-8z"/><path d="M393 1207v-66" style="fill:none;stroke-width:2.16;stroke:#fff"/><path d="M351 1135h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="1102" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Multiple</text><text x="393" y="1122" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Access</text><path style="fill:#7fffff" d="m393 1025 4 11h-8z"/><path d="M393 1090v-59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="393" y="1049" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 1057)" dominant-baseline="central">baseband</text><text x="393" y="1065" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 1057)" dominant-baseline="central">waveform</text><path d="M351 1025h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="992" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Frequency</text><text x="393" y="1012" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Despread</text><path style="fill:#7fffff" d="m393 915 4 11h-8z"/><path d="M393 980v-59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="393" y="939" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 947)" dominant-baseline="central">baseband</text><text x="393" y="955" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 947)" dominant-baseline="central">waveform</text><path d="M351 915h85v-46h-85Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="393" y="882" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Demodulate</text><text x="393" y="902" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">And Sample</text><path style="fill:#7fffff" d="m393 805 4 11h-8z"/><path d="M393 869v-59" style="fill:none;stroke-width:2.16;stroke:#7fffff"/><text x="393" y="829" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 837)" dominant-baseline="central">baseband</text><text x="393" y="845" text-anchor="middle" fill="#7FFFFF" font-size="64%" transform="rotate(-90 393 837)" dominant-baseline="central">waveform</text><path d="M351 805h85v-46h-85Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="393" y="782" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Detect</text><path style="fill:#ffff7f" d="m393 694 4 12h-8z"/><path d="M393 759v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="719" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 727)" dominant-baseline="central">bitstream</text><path d="M351 694h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="672" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Demultiplex</text><path style="fill:#ffff7f" d="m393 584 4 12h-8z"/><path d="M393 649v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="609" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 617)" dominant-baseline="central">bitstream</text><path d="M351 584h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="552" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Channel</text><text x="393" y="572" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Decode</text><path style="fill:#ffff7f" d="m393 474 4 12h-8z"/><path d="M393 539v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="498" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 507)" dominant-baseline="central">bitstream</text><path d="M351 474h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="451" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Decrypt</text><path style="fill:#ffff7f" d="m393 364 4 12h-8z"/><path d="M393 429v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="388" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 396)" dominant-baseline="central">bitstream</text><path d="M351 364h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="393" y="331" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Source</text><text x="393" y="351" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Decode</text><path style="fill:#ffff7f" d="m393 254 4 11h-8z"/><path d="M393 319v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="278" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 286)" dominant-baseline="central">bitstream</text><path d="M351 254h85v-46h-85Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="393" y="221" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Format</text><text x="393" y="241" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">DAC</text><path style="fill:#ffff7f" d="m393 144 4 11h-8z"/><path d="M393 208v-59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="393" y="168" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(-90 393 176)" dominant-baseline="central">bitstream</text><path d="M351 144h85V57l-22-21h-63Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><path d="M414 36v21h22" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="393" y="80" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Information</text><text x="393" y="100" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Sink</text><path style="fill:#fff" d="m98 286-5 2v-4z"/><path d="M30 286h65" style="fill:none;stroke-width:.969624;stroke:#fff"/><text x="64" y="279" text-anchor="middle" fill="#FFF" font-size="64%" dominant-baseline="central">Message</text><text x="64" y="293" text-anchor="middle" fill="#FFF" font-size="64%" dominant-baseline="central">Symbols</text><path style="fill:#fff" d="m98 617-5 2v-4z"/><path d="M30 617h65" style="fill:none;stroke-width:.969624;stroke:#fff"/><text x="64" y="610" text-anchor="middle" fill="#FFF" font-size="64%" dominant-baseline="central">Channel</text><text x="64" y="624" text-anchor="middle" fill="#FFF" font-size="64%" dominant-baseline="central">Symbols</text><path d="M101 1361h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="144" y="1328" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Optional</text><text x="144" y="1349" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Component</text><path d="M197 1361h85v-45h-85Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="240" y="1328" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Essential</text><text x="240" y="1349" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Component</text><path d="M312 1356h72a18 18 0 0 0 18-18 18 18 0 0 0-18-18h-72a18 18 0 0 0-18 18 18 18 0 0 0 18 18Z" style="fill:none;stroke-width:2.16;stroke:#7f7fff"/><text x="348" y="1338" text-anchor="middle" fill="#7F7FFF" dominant-baseline="central">RF Head</text><path d="M377 1326v-29l9-17h-17l8 17M319 1326v-29l8-17h-17l9 17" style="fill:none;stroke-width:.969624;stroke-linejoin:round;stroke:#7f7fff"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 478.131 1392.13">
+<path d="M73,144L158,144L158,57L136,36L73,36Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M136,36L136,57L158,57"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="115" y="80" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Information</text>
+<text x="115" y="100" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Source</text>
+<polygon points="115,208 111,197 119,197" style="fill:rgb(255,255,127)"/>
+<path d="M115,144L115,203"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="168" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,176)" dominant-baseline="central">bitstream</text>
+<text x="115" y="188" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,254L158,254L158,208L73,208Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="115" y="221" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Format</text>
+<text x="115" y="241" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">ADC</text>
+<polygon points="115,319 111,307 119,307" style="fill:rgb(255,255,127)"/>
+<path d="M115,254L115,313"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="278" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,286)" dominant-baseline="central">bitstream</text>
+<text x="115" y="298" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,364L158,364L158,319L73,319Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="331" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Source</text>
+<text x="115" y="351" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Encode</text>
+<polygon points="115,429 111,417 119,417" style="fill:rgb(255,255,127)"/>
+<path d="M115,364L115,423"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="388" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,396)" dominant-baseline="central">bitstream</text>
+<text x="115" y="408" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,474L158,474L158,429L73,429Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="451" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Encrypt</text>
+<polygon points="115,539 111,527 119,527" style="fill:rgb(255,255,127)"/>
+<path d="M115,474L115,533"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="498" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,507)" dominant-baseline="central">bitstream</text>
+<text x="115" y="518" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,584L158,584L158,539L73,539Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="552" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Channel</text>
+<text x="115" y="572" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Encode</text>
+<polygon points="115,649 111,638 119,638" style="fill:rgb(255,255,127)"/>
+<path d="M115,584L115,643"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="609" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,617)" dominant-baseline="central">bitstream</text>
+<text x="115" y="628" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,694L158,694L158,649L73,649Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="672" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Multiplex</text>
+<polygon points="115,759 111,748 119,748" style="fill:rgb(255,255,127)"/>
+<path d="M115,694L115,753"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="115" y="719" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 115,727)" dominant-baseline="central">bitstream</text>
+<text x="115" y="739" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M73,805L158,805L158,759L73,759Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="115" y="772" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Pulse</text>
+<text x="115" y="792" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Modulate</text>
+<polygon points="115,869 111,858 119,858" style="fill:rgb(127,255,255)"/>
+<path d="M115,805L115,864"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="115" y="829" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,837)" dominant-baseline="central">baseband</text>
+<text x="115" y="845" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,837)" dominant-baseline="central">waveform</text>
+<path d="M73,915L158,915L158,869L73,869Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="115" y="882" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Bandpass</text>
+<text x="115" y="902" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Modulate</text>
+<polygon points="115,980 111,968 119,968" style="fill:rgb(127,255,255)"/>
+<path d="M115,915L115,974"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="115" y="939" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,947)" dominant-baseline="central">baseband</text>
+<text x="115" y="955" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,947)" dominant-baseline="central">waveform</text>
+<path d="M73,1025L158,1025L158,980L73,980Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="992" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Frequency</text>
+<text x="115" y="1012" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Spread</text>
+<polygon points="115,1090 111,1078 119,1078" style="fill:rgb(127,255,255)"/>
+<path d="M115,1025L115,1084"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="115" y="1049" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,1057)" dominant-baseline="central">baseband</text>
+<text x="115" y="1065" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(90 115,1057)" dominant-baseline="central">waveform</text>
+<path d="M73,1135L158,1135L158,1090L73,1090Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="115" y="1102" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Multiple</text>
+<text x="115" y="1122" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Access</text>
+<polygon points="115,1207 111,1196 119,1196" style="fill:rgb(255,255,255)"/>
+<path d="M115,1135L115,1201"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M79,1243L151,1243A18 18 0 0 0 169 1225A18 18 0 0 0 151 1207L79,1207A18 18 0 0 0 61 1225A18 18 0 0 0 79 1243Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);" />
+<text x="115" y="1225" text-anchor="middle" fill="rgb(127,127,255)" dominant-baseline="central">XMT</text>
+<path d="M144,1212L144,1184L153,1167L136,1167L144,1184"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+<path d="M86,1212L86,1184L94,1167L77,1167L86,1184"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+<polygon points="339,1225 331,1228 331,1222" style="fill:rgb(127,127,255)"/>
+<path d="M169,1225L335,1225"  style="fill:none;stroke-width:1.4472;stroke:rgb(127,127,255);stroke-dasharray:7.2,7.2;" />
+<text x="254" y="1214" text-anchor="middle" fill="rgb(127,127,255)" dominant-baseline="central">CHANNEL</text>
+<path d="M357,1243L429,1243A18 18 0 0 0 447 1225A18 18 0 0 0 429 1207L357,1207A18 18 0 0 0 339 1225A18 18 0 0 0 357 1243Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);" />
+<text x="393" y="1225" text-anchor="middle" fill="rgb(127,127,255)" dominant-baseline="central">RCV</text>
+<path d="M422,1212L422,1184L431,1167L414,1167L422,1184"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+<path d="M364,1212L364,1184L372,1167L355,1167L364,1184"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+<polygon points="393,1135 397,1147 389,1147" style="fill:rgb(255,255,255)"/>
+<path d="M393,1207L393,1141"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M351,1135L436,1135L436,1090L351,1090Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="1102" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Multiple</text>
+<text x="393" y="1122" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Access</text>
+<polygon points="393,1025 397,1036 389,1036" style="fill:rgb(127,255,255)"/>
+<path d="M393,1090L393,1031"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="393" y="1049" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,1057)" dominant-baseline="central">baseband</text>
+<text x="393" y="1065" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,1057)" dominant-baseline="central">waveform</text>
+<path d="M351,1025L436,1025L436,980L351,980Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="992" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Frequency</text>
+<text x="393" y="1012" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Despread</text>
+<polygon points="393,915 397,926 389,926" style="fill:rgb(127,255,255)"/>
+<path d="M393,980L393,921"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="393" y="939" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,947)" dominant-baseline="central">baseband</text>
+<text x="393" y="955" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,947)" dominant-baseline="central">waveform</text>
+<path d="M351,915L436,915L436,869L351,869Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="393" y="882" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Demodulate</text>
+<text x="393" y="902" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">And Sample</text>
+<polygon points="393,805 397,816 389,816" style="fill:rgb(127,255,255)"/>
+<path d="M393,869L393,810"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,255);" />
+<text x="393" y="829" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,837)" dominant-baseline="central">baseband</text>
+<text x="393" y="845" text-anchor="middle" fill="rgb(127,255,255)" font-size="64%" transform="rotate(-90 393,837)" dominant-baseline="central">waveform</text>
+<path d="M351,805L436,805L436,759L351,759Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="393" y="782" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Detect</text>
+<polygon points="393,694 397,706 389,706" style="fill:rgb(255,255,127)"/>
+<path d="M393,759L393,700"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="719" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,727)" dominant-baseline="central">bitstream</text>
+<text x="393" y="739" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,694L436,694L436,649L351,649Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="672" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Demultiplex</text>
+<polygon points="393,584 397,596 389,596" style="fill:rgb(255,255,127)"/>
+<path d="M393,649L393,590"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="609" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,617)" dominant-baseline="central">bitstream</text>
+<text x="393" y="628" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,584L436,584L436,539L351,539Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="552" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Channel</text>
+<text x="393" y="572" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Decode</text>
+<polygon points="393,474 397,486 389,486" style="fill:rgb(255,255,127)"/>
+<path d="M393,539L393,480"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="498" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,507)" dominant-baseline="central">bitstream</text>
+<text x="393" y="518" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,474L436,474L436,429L351,429Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="451" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Decrypt</text>
+<polygon points="393,364 397,376 389,376" style="fill:rgb(255,255,127)"/>
+<path d="M393,429L393,370"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="388" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,396)" dominant-baseline="central">bitstream</text>
+<text x="393" y="408" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,364L436,364L436,319L351,319Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="393" y="331" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Source</text>
+<text x="393" y="351" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Decode</text>
+<polygon points="393,254 397,265 389,265" style="fill:rgb(255,255,127)"/>
+<path d="M393,319L393,260"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="278" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,286)" dominant-baseline="central">bitstream</text>
+<text x="393" y="298" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,254L436,254L436,208L351,208Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="393" y="221" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Format</text>
+<text x="393" y="241" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">DAC</text>
+<polygon points="393,144 397,155 389,155" style="fill:rgb(255,255,127)"/>
+<path d="M393,208L393,149"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="393" y="168" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(-90 393,176)" dominant-baseline="central">bitstream</text>
+<text x="393" y="188" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M351,144L436,144L436,57L414,36L351,36Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M414,36L414,57L436,57"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="393" y="80" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Information</text>
+<text x="393" y="100" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Sink</text>
+<polygon points="98,286 93,288 93,284" style="fill:rgb(255,255,255)"/>
+<path d="M30,286L95,286"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,255);" />
+<text x="64" y="279" text-anchor="middle" fill="rgb(255,255,255)" font-size="64%" dominant-baseline="central">Message</text>
+<text x="64" y="293" text-anchor="middle" fill="rgb(255,255,255)" font-size="64%" dominant-baseline="central">Symbols</text>
+<polygon points="98,617 93,619 93,615" style="fill:rgb(255,255,255)"/>
+<path d="M30,617L95,617"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,255);" />
+<text x="64" y="610" text-anchor="middle" fill="rgb(255,255,255)" font-size="64%" dominant-baseline="central">Channel</text>
+<text x="64" y="624" text-anchor="middle" fill="rgb(255,255,255)" font-size="64%" dominant-baseline="central">Symbols</text>
+<path d="M101,1361L186,1361L186,1316L101,1316Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="144" y="1328" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Optional</text>
+<text x="144" y="1349" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Component</text>
+<path d="M197,1361L282,1361L282,1316L197,1316Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="240" y="1328" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Essential</text>
+<text x="240" y="1349" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Component</text>
+<path d="M312,1356L384,1356A18 18 0 0 0 402 1338A18 18 0 0 0 384 1320L312,1320A18 18 0 0 0 294 1338A18 18 0 0 0 312 1356Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);" />
+<text x="348" y="1338" text-anchor="middle" fill="rgb(127,127,255)" dominant-baseline="central">RF Head</text>
+<path d="M377,1326L377,1297L386,1280L369,1280L377,1297"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+<path d="M319,1326L319,1297L327,1280L310,1280L319,1297"  style="fill:none;stroke-width:0.969624;stroke-linejoin:round;stroke:rgb(127,127,255);" />
+</svg>
+

@@ -1,0 +1,31 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 1002.1 148.32">
+<path d="M2,146L146,146L146,2L2,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://google.com" title="Google" target="_blank" pointer-events="visiblePainted">
+<path d="M146,122L242,122L242,26L146,26Z"  style="fill:rgb(0,127,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="194" y="54" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<text x="194" y="74" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Google</text>
+<text x="194" y="94" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+</a>
+<path d="M242,146L386,146L386,2L242,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://disney.com" title="Disney" target="_blank" pointer-events="visiblePainted">
+<path d="M386,98L434,98L434,50L386,50Z"  style="fill:rgb(0,127,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="410" y="54" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<text x="410" y="74" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Disney</text>
+<text x="410" y="94" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+</a>
+<path d="M434,146L578,146L578,2L434,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://amazon.com" title="Amazon" target="_blank" pointer-events="visiblePainted">
+<path d="M578,146L722,146L722,2L578,2Z"  style="fill:rgb(0,0,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="650" y="54" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<text x="650" y="74" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Amazon</text>
+<text x="650" y="94" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+</a>
+<path d="M722,146L866,146L866,2L722,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<a href="https://geraldo.dev" title="Geraldo" target="_blank" pointer-events="visiblePainted">
+<path d="M866,110L974,110L974,38L866,38Z"  style="fill:rgb(0,127,127);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="920" y="54" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<text x="920" y="74" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Geraldo</text>
+<text x="920" y="94" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+</a>
+</svg>
+

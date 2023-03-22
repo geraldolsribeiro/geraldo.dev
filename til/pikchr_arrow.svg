@@ -1,1 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 292.105 372.824"><circle cx="61" cy="143" r="2.16" style="fill:#7f7fff;stroke-width:2.16;stroke:#7f7fff"/><path d="M61 143h113v29l57-57-57-57v29H61Z" style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:#fff"/><text x="146" y="115" text-anchor="middle" fill="#FFF" dominant-baseline="central">with &apos;close&apos;</text><circle cx="231" cy="115" r="2.16" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/><path d="M61 285h113v28l57-56-57-57v28H61v57" style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:#fff"/><text x="146" y="257" text-anchor="middle" fill="#FFF" dominant-baseline="central">without &apos;close&apos;</text><circle cx="61" cy="285" r="2.16" style="fill:#ff7f7f;stroke-width:2.16;stroke:#ff7f7f"/></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 292.105 372.824">
+<circle cx="61" cy="143" r="2.16" style="fill:rgb(127,127,255);stroke-width:2.16;stroke:rgb(127,127,255);" />
+<path d="M61,143L174,143L174,172L231,115L174,58L174,87L61,87Z"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<text x="146" y="115" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">with 'close'</text>
+<circle cx="231" cy="115" r="2.16" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M61,285L174,285L174,313L231,257L174,200L174,228L61,228L61,285"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<text x="146" y="257" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">without 'close'</text>
+<circle cx="61" cy="285" r="2.16" style="fill:rgb(255,127,127);stroke-width:2.16;stroke:rgb(255,127,127);" />
+</svg>
+

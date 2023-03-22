@@ -1,0 +1,12 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 580.32 220.32">
+<image href="/icon/firefox.svg" x="2" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="218,74 206,78 206,69" style="fill:rgb(255,255,255)"/>
+<path d="M146,74L212,74"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<image href="/icon/chrome.svg" x="218" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="434,74 422,78 422,69" style="fill:rgb(255,255,255)"/>
+<path d="M362,74L428,74"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<image href="/icon/brave.svg" x="434" y="2" width="144" height="144"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="74,146 78,157 69,157" style="fill:rgb(255,255,255)"/>
+<path d="M506,146L506,218L74,218L74,151"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+</svg>
+

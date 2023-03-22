@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 480.514 258.202"><path style="fill:#fff" d="m174 71-12 4v-8z"/><path d="M30 71h138" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="102" y="59" text-anchor="middle" fill="#FFF" dominant-baseline="central">Markdown</text><text x="102" y="83" text-anchor="middle" fill="#FFF" dominant-baseline="central">Source</text><path d="M189 106h97a15 15 0 0 0 15-15V51a15 15 0 0 0-15-15h-97a15 15 0 0 0-15 15v40a15 15 0 0 0 15 15Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="238" y="51" text-anchor="middle" fill="#FFF" dominant-baseline="central">Markdown</text><text x="238" y="71" text-anchor="middle" fill="#FFF" dominant-baseline="central">Formatter</text><text x="238" y="91" text-anchor="middle" fill="#FFF" dominant-baseline="central">(markdown.c)</text><path style="fill:#fff" d="m445 71-11 4v-8z"/><path d="M301 71h138" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="373" y="59" text-anchor="middle" fill="#FFF" dominant-baseline="central">HTML+SVG</text><text x="373" y="83" text-anchor="middle" fill="#FFF" dominant-baseline="central">Output</text><path style="fill:#fff" d="m238 106 4 12h-9zM238 157l-5-12h9z"/><path d="M238 112v39M204 227h67a15 15 0 0 0 15-15v-40a15 15 0 0 0-15-15h-67a15 15 0 0 0-15 15v40a15 15 0 0 0 15 15Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="238" y="172" text-anchor="middle" fill="#FFF" dominant-baseline="central">Pikchr</text><text x="238" y="192" text-anchor="middle" fill="#FFF" dominant-baseline="central">Formatter</text><text x="238" y="212" text-anchor="middle" fill="#FFF" dominant-baseline="central">(pikchr.c)</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 480.514 258.202">
+<polygon points="174,71 162,75 162,67" style="fill:rgb(255,255,255)"/>
+<path d="M30,71L168,71"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="102" y="59" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Markdown</text>
+<text x="102" y="83" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Source</text>
+<path d="M189,106L286,106A15 15 0 0 0 301 91L301,51A15 15 0 0 0 286 36L189,36A15 15 0 0 0 174 51L174,91A15 15 0 0 0 189 106Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="238" y="51" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Markdown</text>
+<text x="238" y="71" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Formatter</text>
+<text x="238" y="91" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">(markdown.c)</text>
+<polygon points="445,71 434,75 434,67" style="fill:rgb(255,255,255)"/>
+<path d="M301,71L439,71"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="373" y="59" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">HTML+SVG</text>
+<text x="373" y="83" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Output</text>
+<polygon points="238,106 242,118 233,118" style="fill:rgb(255,255,255)"/>
+<polygon points="238,157 233,145 242,145" style="fill:rgb(255,255,255)"/>
+<path d="M238,112L238,151"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M204,227L271,227A15 15 0 0 0 286 212L286,172A15 15 0 0 0 271 157L204,157A15 15 0 0 0 189 172L189,212A15 15 0 0 0 204 227Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="238" y="172" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Pikchr</text>
+<text x="238" y="192" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Formatter</text>
+<text x="238" y="212" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">(pikchr.c)</text>
+</svg>
+

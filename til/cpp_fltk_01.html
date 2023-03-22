@@ -65,8 +65,34 @@
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">#include &lt;FL/Fl.H&gt;
+#include &lt;FL/Fl_Button.H&gt;
+#include &lt;FL/Fl_Window.H&gt;
+
+#include &lt;iostream&gt;
+
+// Old style C callback
+void cb(Fl_Widget *b, void *data) {
+  std::cout &lt;&lt; &quot;Callback called&quot; &lt;&lt; std::endl;
+  auto win = static_cast&lt;Fl_Window *&gt;(data);
+  win-&gt;label(&quot;After click old style&quot;);
+}
+
+int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
+  Fl::scheme(&quot;gtk+&quot;);
+  auto win = new Fl_Window(100, 100, 400, 300);
+  auto but = new Fl_Button(160, 200, 80, 40, &quot;Click me&quot;);
+  win-&gt;label(&quot;Before click&quot;);
+  win-&gt;end();
+  win-&gt;show();
+  but-&gt;callback(cb, win);
+  return Fl::run();
+}
+</code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">FLTK
+<pre><code class="language-txt">Callback called
+Callback called
+Callback called
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

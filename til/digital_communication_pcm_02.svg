@@ -1,1 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 437.799 656.073"><path d="M90 127h85V40l-22-21H90Z" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><path d="M153 19v21h22" style="fill:none;stroke-width:2.16;stroke:#ff7f7f"/><text x="132" y="53" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Analog</text><text x="132" y="73" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Message</text><text x="132" y="93" text-anchor="middle" fill="#FF7F7F" dominant-baseline="central">Signal</text><path style="fill:#ffff7f" d="m132 191-4-11h8z"/><path d="M132 127v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="132" y="151" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 132 159)" dominant-baseline="central">bitstream</text><path d="M90 237h85v-46H90Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="132" y="204" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Low Pass</text><text x="132" y="224" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Filter</text><path style="fill:#ffff7f" d="m132 302-4-12h8z"/><path d="M132 237v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="132" y="261" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 132 269)" dominant-baseline="central">bitstream</text><path d="M90 347h85v-45H90Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="132" y="324" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Sampler</text><path style="fill:#ffff7f" d="m132 412-4-12h8z"/><path d="M132 347v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="132" y="371" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 132 379)" dominant-baseline="central">bitstream</text><path d="M90 457h85v-45H90Z" style="fill:none;stroke-width:2.16;stroke:#7fff7f"/><text x="132" y="434" text-anchor="middle" fill="#7FFF7F" dominant-baseline="central">Quantizer</text><path style="fill:#ffff7f" d="m132 522-4-12h8z"/><path d="M132 457v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="132" y="481" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 132 490)" dominant-baseline="central">bitstream</text><path d="M90 567h85v-45H90Z" style="fill:none;stroke-width:2.16;stroke:#ff7fff"/><text x="132" y="545" text-anchor="middle" fill="#FF7FFF" dominant-baseline="central">Encoder</text><path style="fill:#ffff7f" d="m132 632-4-11h8z"/><path d="M132 567v59" style="fill:none;stroke-width:2.16;stroke:#ffff7f"/><text x="132" y="592" text-anchor="middle" fill="#FFFF7F" font-size="64%" transform="rotate(90 132 600)" dominant-baseline="central">bitstream</text><text x="180" y="204" fill="#FFF" dominant-baseline="central">eliminate high frequency</text><text x="180" y="224" fill="#FFF" dominant-baseline="central">present in the input signal</text><text x="180" y="314" fill="#FFF" dominant-baseline="central">collect instantaneous values</text><text x="180" y="334" fill="#FFF" dominant-baseline="central">of message signal</text><text x="180" y="424" fill="#FFF" dominant-baseline="central">reduce the excessive bits</text><text x="180" y="445" fill="#FFF" dominant-baseline="central">and confining the data</text><text x="180" y="545" fill="#FFF" dominant-baseline="central">digitization of analog signal</text><path d="M132 159H19" style="fill:none;stroke-width:.969624;stroke:#ffff7f"/><text x="75" y="146" text-anchor="middle" fill="#FFFF7F" font-size="125%" dominant-baseline="central">x(t)</text><path d="M132 269H19" style="fill:none;stroke-width:.969624;stroke:#ffff7f"/><text x="75" y="256" text-anchor="middle" fill="#FFFF7F" font-size="125%" dominant-baseline="central">x(t)</text><path d="M132 379H19" style="fill:none;stroke-width:.969624;stroke:#ffff7f"/><text x="75" y="366" text-anchor="middle" fill="#FFFF7F" font-size="125%" dominant-baseline="central">{xn}</text><text x="75" y="390" text-anchor="middle" fill="#FFFF7F" dominant-baseline="central">flat-top PAM</text><path d="M132 490H19" style="fill:none;stroke-width:.969624;stroke:#ffff7f"/><text x="75" y="476" text-anchor="middle" fill="#FFFF7F" font-size="125%" dominant-baseline="central">{x̂n}</text><path d="M132 600H19" style="fill:none;stroke-width:.969624;stroke:#ffff7f"/><text x="75" y="589" text-anchor="middle" fill="#FFFF7F" dominant-baseline="central">010101010...</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 437.799 656.073">
+<path d="M90,127L175,127L175,40L153,19L90,19Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<path d="M153,19L153,40L175,40"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="132" y="53" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Analog</text>
+<text x="132" y="73" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Message</text>
+<text x="132" y="93" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">Signal</text>
+<polygon points="132,191 128,180 136,180" style="fill:rgb(255,255,127)"/>
+<path d="M132,127L132,186"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="132" y="151" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 132,159)" dominant-baseline="central">bitstream</text>
+<text x="132" y="171" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M90,237L175,237L175,191L90,191Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="132" y="204" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Low Pass</text>
+<text x="132" y="224" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Filter</text>
+<polygon points="132,302 128,290 136,290" style="fill:rgb(255,255,127)"/>
+<path d="M132,237L132,296"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="132" y="261" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 132,269)" dominant-baseline="central">bitstream</text>
+<text x="132" y="281" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M90,347L175,347L175,302L90,302Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="132" y="324" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Sampler</text>
+<polygon points="132,412 128,400 136,400" style="fill:rgb(255,255,127)"/>
+<path d="M132,347L132,406"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="132" y="371" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 132,379)" dominant-baseline="central">bitstream</text>
+<text x="132" y="391" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M90,457L175,457L175,412L90,412Z"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="132" y="434" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">Quantizer</text>
+<polygon points="132,522 128,510 136,510" style="fill:rgb(255,255,127)"/>
+<path d="M132,457L132,516"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="132" y="481" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 132,490)" dominant-baseline="central">bitstream</text>
+<text x="132" y="501" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<path d="M90,567L175,567L175,522L90,522Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,255);" />
+<text x="132" y="545" text-anchor="middle" fill="rgb(255,127,255)" dominant-baseline="central">Encoder</text>
+<polygon points="132,632 128,621 136,621" style="fill:rgb(255,255,127)"/>
+<path d="M132,567L132,626"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="132" y="592" text-anchor="middle" fill="rgb(255,255,127)" font-size="64%" transform="rotate(90 132,600)" dominant-baseline="central">bitstream</text>
+<text x="132" y="611" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central"></text>
+<text x="180" y="204" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">eliminate high frequency</text>
+<text x="180" y="224" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">present in the input signal</text>
+<text x="180" y="314" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">collect instantaneous values</text>
+<text x="180" y="334" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">of message signal</text>
+<text x="180" y="424" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">reduce the excessive bits</text>
+<text x="180" y="445" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">and confining the data</text>
+<text x="180" y="545" text-anchor="start" fill="rgb(255,255,255)" dominant-baseline="central">digitization of analog signal</text>
+<path d="M132,159L19,159"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,127);" />
+<text x="75" y="146" text-anchor="middle" fill="rgb(255,255,127)" font-size="125%" dominant-baseline="central">x(t)</text>
+<path d="M132,269L19,269"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,127);" />
+<text x="75" y="256" text-anchor="middle" fill="rgb(255,255,127)" font-size="125%" dominant-baseline="central">x(t)</text>
+<path d="M132,379L19,379"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,127);" />
+<text x="75" y="366" text-anchor="middle" fill="rgb(255,255,127)" font-size="125%" dominant-baseline="central">{xn}</text>
+<text x="75" y="390" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central">flat-top PAM</text>
+<path d="M132,490L19,490"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,127);" />
+<text x="75" y="476" text-anchor="middle" fill="rgb(255,255,127)" font-size="125%" dominant-baseline="central">{x̂n}</text>
+<path d="M132,600L19,600"  style="fill:none;stroke-width:0.969624;stroke:rgb(255,255,127);" />
+<text x="75" y="589" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central">010101010...</text>
+</svg>
+

@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 652.32 76.32"><path d="M2 74h108V2H2Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="56" y="30" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">PCM word</text><text x="56" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">1010 1010</text><path d="M110 74h108V2H110Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="164" y="30" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">PCM word</text><text x="164" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">0010 1111</text><path d="M218 74h108V2H218Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="272" y="30" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">PCM word</text><text x="272" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">1110 0010</text><path d="M326 74h108V2H326Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="380" y="30" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">PCM word</text><text x="380" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">0110 1110</text><path d="M434 74h108V2H434Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="488" y="38" text-anchor="middle" fill="#FFF" dominant-baseline="central">...</text><path d="M542 74h108V2H542Z" style="fill:none;stroke-width:2.16;stroke:#fff"/><text x="596" y="30" text-anchor="middle" fill="#FFF" font-size="80%" dominant-baseline="central">PCM word</text><text x="596" y="48" text-anchor="middle" fill="#FFF" dominant-baseline="central">1111 1110</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 652.32 76.32">
+<path d="M2,74L110,74L110,2L2,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="56" y="30" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">PCM word</text>
+<text x="56" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">1010 1010</text>
+<path d="M110,74L218,74L218,2L110,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="164" y="30" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">PCM word</text>
+<text x="164" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">0010 1111</text>
+<path d="M218,74L326,74L326,2L218,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="272" y="30" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">PCM word</text>
+<text x="272" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">1110 0010</text>
+<path d="M326,74L434,74L434,2L326,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="380" y="30" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">PCM word</text>
+<text x="380" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">0110 1110</text>
+<path d="M434,74L542,74L542,2L434,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="488" y="38" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">...</text>
+<path d="M542,74L650,74L650,2L542,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="596" y="30" text-anchor="middle" fill="rgb(255,255,255)" font-size="80%" dominant-baseline="central">PCM word</text>
+<text x="596" y="48" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">1111 1110</text>
+</svg>
+

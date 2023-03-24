@@ -13,5 +13,9 @@
 <polygon points="390,304 387,297 393,296" style="fill:rgb(255,255,255)"/>
 <path d="M368,246 L 371,250 Q 374,253 378,259 Q 381,265 384,271 Q 386,277 388,284 Q 389,291 390,295 L 390,300"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);" />
 <path d="M412,117 L 422,123 Q 431,129 440,136 Q 449,144 457,152 Q 465,160 472,168 Q 479,177 485,187 L 491,196"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M304,23 L 347,30 Q 391,37 430,57 Q 469,77 500,108 Q 531,139 551,178 Q 571,217 578,261 L 585,304"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);stroke-dasharray:2.16,7.2;" />
+<path d="M585,304 L 578,347 Q 571,391 551,430 Q 531,469 500,500 Q 469,531 430,551 Q 391,571 347,578 L 304,585"  style="fill:none;stroke-width:2.16;stroke:rgb(127,127,255);stroke-dasharray:2.16,7.2;" />
+<path d="M304,585 L 261,578 Q 217,571 178,551 Q 139,531 108,500 Q 77,469 57,430 Q 37,391 30,347 L 23,304"  style="fill:none;stroke-width:2.16;stroke:rgb(255,209,127);stroke-dasharray:2.16,7.2;" />
+<path d="M23,304 L 30,261 Q 37,217 57,178 Q 77,139 108,108 Q 139,77 178,57 Q 217,37 261,30 L 304,23"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);stroke-dasharray:2.16,7.2;" />
 </svg>
 

@@ -13,6 +13,9 @@
     <loc>https://geraldo.dev/404.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/live-server.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/varicad-importando-do-solidworks.html</loc>
   </url>
   <url>
@@ -245,6 +248,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/ex.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/html_dashboard.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_numeric_reduce.html</loc>
@@ -527,6 +533,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_move_semantics.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_doctest_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_concepts_01.html</loc>

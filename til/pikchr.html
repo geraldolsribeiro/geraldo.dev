@@ -57,7 +57,7 @@
           </svg><span>Back to TILs</span></a>
         <h1>pikchr</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-15</b>Last modified: <b class="ml-2">2023-03-22 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven.html">text-driven</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/pikchr.html">pikchr</a><a class="tag no-underline" href="/til/tag/pic.html">pic</a><a class="tag no-underline" href="/til/tag/dpic.html">dpic</a><a class="tag no-underline" href="/til/tag/text-driven-diagram.html">text-driven-diagram</a><a class="tag no-underline" href="/til/tag/svg.html">svg</a><a class="tag no-underline" href="/til/tag/diagram.html">diagram</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#sample">Sample</a></li><li><a href="#image">Image</a></li><li><a href="#link">Link</a></li><li><a href="#link-with-image">Link with image</a></li><li><a href="#ark">Ark</a></li><li><a href="#filled-polygon">Filled Polygon</a></li><li><a href="#macro">Macro</a></li><li><a href="#utf-8-characters">UTF-8 characters</a></li><li><a href="#trigonometric-functions">Trigonometric functions</a></li><li><a href="#some-digrams-on-internet">Some digrams on internet</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
@@ -93,7 +93,7 @@ box rad 10px &quot;Markdown&quot; &quot;Formatter&quot; &quot;(markdown.c)&quot;
 arrow right 200% &quot;HTML+SVG&quot; &quot;Output&quot;
 arrow &lt;-&gt; down 70% from last box.s
 box same &quot;Pikchr&quot; &quot;Formatter&quot; &quot;(pikchr.c)&quot; fit
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="image" tabindex="-1">Image</h2>
 <figure class="bg-slate-800 text-center py-4">
@@ -115,7 +115,7 @@ arrow
 image &quot;/icon/brave.svg&quot; width 1 height 1
 down
 arrow down then right until even with FF then up
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="link" tabindex="-1">Link</h2>
 <figure class="bg-slate-800 text-center py-4">
@@ -138,7 +138,7 @@ box width 1 height 1
 link &quot;id3&quot; &quot;Amazon&quot; &quot;https://amazon.com&quot; width 1 height 1 fill blue
 box width 1 height 1
 link &quot;id4&quot; &quot;Geraldo&quot; &quot;https://geraldo.dev&quot;
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="link-with-image" tabindex="-1">Link with image</h2>
 <figure class="bg-slate-800 text-center py-4">
@@ -160,7 +160,7 @@ arrow
 image &quot;/icon/brave.svg&quot; &quot;https://brave.com/&quot; width 1 height 1
 down
 arrow down then right until even with FF then up
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="ark" tabindex="-1">Ark</h2>
 <p>This is my attempt to provide a more precise <code>arc</code> command.</p>
@@ -207,7 +207,11 @@ ark(0.8, 0, 90)
 ark(0.7, 0, 90, dashed color green -&gt;)
 ark(0.6,45,90, &lt;-&gt; thin)
 ark(1.5,30,60)
-# Extracted by md2pug
+ark(1.95, 0, 90, color red dotted)
+ark(1.95, 90, 180, color blue dotted)
+ark(1.95, 180, 270, color orange dotted)
+ark(1.95, 270, 360, color green dotted)
+# Created with md2pug
 </code></pre>
 <h2 id="filled-polygon" tabindex="-1">Filled Polygon</h2>
 <div role="alert" class="my-4">
@@ -236,7 +240,7 @@ text &quot;Start here&quot;
 dot color green width 200%
 # heading zero == north
 line thin thin go 6cm heading 60 then down 3cm close fill DarkViolet
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-7">
@@ -258,7 +262,7 @@ line from A to B then to C then to A # fill Brow # 💩 WITHOUT CLOSE IGNORED FI
 circle rad 0.1 at A fill Aqua
 circle rad 0.1 at B fill blue
 circle rad 0.1 at C fill green
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <div role="alert" class="my-4">
   <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
@@ -302,7 +306,7 @@ line right 2cm then down .5cm then up 1cm right 1cm \
    then up 1cm left 1cm then down .5cm then left 2cm \
    then down 1cm &quot;without 'close'&quot;
 dot color red at last line.end
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="macro" tabindex="-1">Macro</h2>
 <div role="alert" class="my-4">
@@ -342,7 +346,7 @@ margin = 10mm;
 $flagAngle = 00; $color=red;   flag;
 $flagAngle = 30; $color=blue;  flag;
 $flagAngle = 60; $color=green; flag;
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <div role="alert" class="my-4">
   <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
@@ -376,7 +380,7 @@ margin = 10mm
 mybox(3cm, 4cm, red, &quot;text1&quot;)
 mybox(2cm, 1cm, blue, &quot;text2&quot;)
 mybox(4cm,4cm, yellow, &quot;text3&quot;)
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="utf-8-characters" tabindex="-1">UTF-8 characters</h2>
 <figure class="bg-slate-800 text-center py-4">
@@ -405,7 +409,7 @@ dot at P3 fill green
 box with .sw at (-1cm,-1cm) width 6cm height 5cm thin color brown radius 2mm
 move to (0cm,3cm)
 Caption: text &quot;🔵🔴🟠🟡🟢🟣🟤&quot; &quot;🟦🟥🟧🟨🟩🟪🟫&quot; &quot;🛑🔶🔷🔸🔹🔺🔻&quot;
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="trigonometric-functions" tabindex="-1">Trigonometric functions</h2>
 <div role="alert" class="my-4">
@@ -472,7 +476,7 @@ angVert( 40, &quot;40⁰&quot; )
 angVert( 50, &quot;50⁰&quot; )
 
 arrow from (0,0) to (b,a) &quot;Pi&quot; above color red thick thick
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-13">
@@ -493,7 +497,7 @@ circle &quot;b&quot; at 1st circle + (-0.4, -0.6) color green
 circle &quot;c&quot; at 1st circle + (0.4, -0.6) color cyan
 arrow from 1st circle to 2nd circle chop color purple
 arrow from 1st circle to 3rd circle chop color purple
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-14">
@@ -529,7 +533,7 @@ L2: line from P3 to P4
 
 arrow from 1/3 &lt;P1, P2&gt; to 1/3 &lt;P3, P4&gt; color blue
 arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-15">
@@ -546,7 +550,7 @@ arrow from 2/3 &lt;P1, P2&gt; to 2/3 &lt;P3, P4&gt; color orange
 <pre><code class="language-shell">margin = 1cm
 line dashed right 1 then down .5 left 1 then right 1 thin thin
 spline from start of last line right 1 then down .5 left 1 then right 1 color orange
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-16">
@@ -579,7 +583,7 @@ dot at last [].se &quot;se&quot; below color red
 dot at last [].ne &quot;ne&quot; above color red
 
 box with .sw at A.sw - (5mm,5mm) width (A.width + 10mm) height (A.height + 10mm) thin thin color orange dotted
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-17">
@@ -630,7 +634,7 @@ arrow from X.Z.C.e right 5mm then down until even with X.Z.B.e then to X.Z.B.e
 
 line from X.Z.C to X.W.C thin thin dotted
 arrow &lt;-&gt; from X.Z.A to X.W.A color blue chop
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-18">
@@ -657,7 +661,7 @@ color = purple
 spline -&gt; from (0,0) then to (4,1) then to (8,0)
 spline -&gt; from (0,0) then to (4,1.5) then to (8,0)
 spline -&gt; from (0,0) then to (4,2) then to (8,0)
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="some-digrams-on-internet" tabindex="-1">Some digrams on internet</h2>
 <figure class="bg-slate-800 text-center py-4">
@@ -752,10 +756,11 @@ line up 0.15 left 0.15 down 0.15 right 0.15 down 0.15 left 0.15 up 0.15 right 0.
 
 line from WS3.w to 0.03 right of HUB.e thickness 0.04
 line up 0.15 right 0.15 down 0.15 left 0.15 down 0.15 right 0.15 up 0.15 left 0.15 thickness 0.04
-# Extracted by md2pug
+# Created with md2pug
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
+<li>🚀 <a href="https://github.com/geraldolsribeiro/pikchr">https://github.com/geraldolsribeiro/pikchr</a></li>
 <li><a href="https://pikchr.org/home/doc/trunk/doc/userman.md">Pikchr User Manual</a></li>
 <li><a href="https://janert.me/guides/praise-of-pic/">In Praise of Pic (and pikchr)</a></li>
 <li><a href="https://geraldo.dev/til/html-colors.html">HTML colors</a></li>

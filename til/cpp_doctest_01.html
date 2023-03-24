@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ coroutine — 2">
+    <meta name="description" content="C++ doctest_01">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ coroutine — 2</title>
+    <title>C++ doctest_01</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -58,146 +58,37 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ coroutine — 2</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-20</b>Last modified: <b class="ml-2">2023-03-24 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/coroutine.html">coroutine</a>
+        <h1>C++ doctest_01</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-11-18</b>Last modified: <b class="ml-2">2023-03-24 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/doctest.html">doctest</a><a class="tag no-underline" href="/til/tag/test-suite.html">test-suite</a><a class="tag no-underline" href="/til/tag/test-case.html">test-case</a><a class="tag no-underline" href="/til/tag/junit.html">junit</a><a class="tag no-underline" href="/til/tag/test.html">test</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#lazy-computation">Lazy computation</a></li><li><a href="#keywords">Keywords</a></li><li><a href="#which-function-can-be-a-coroutine">Which function can be a coroutine</a></li><li><a href="#see-also">See Also</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="introduction" tabindex="-1">Introduction</h2>
-<ul>
-<li>Coroutines are a generalization of <strong>functions</strong> in C++</li>
-<li>They are designed to make writing <strong>asynchronous</strong> code much easier</li>
-</ul>
-<h3 id="function" tabindex="-1">Function</h3>
-<ul>
-<li>Can be called</li>
-<li>Can return something</li>
-</ul>
-<h3 id="coroutines" tabindex="-1">Coroutines</h3>
-<ul>
-<li>Can be called</li>
-<li>Can return something</li>
-<li>Can be paused</li>
-<li>Can be resumed</li>
-</ul>
-<p>When paused the function state is save on heap topically.</p>
-<ul>
-<li>local variables</li>
-<li>parameters</li>
-<li>pointer to resume this function</li>
-</ul>
-<h2 id="lazy-computation" tabindex="-1">Lazy computation</h2>
-<pre><code class="language-c++">auto f = some_coroutine(); // store computation info in f
-// Use f to manipulate the computation
-</code></pre>
-<h2 id="keywords" tabindex="-1">Keywords</h2>
-<p>C++ 20 introduces three keywords that help pause and resume coroutines</p>
-<ul>
-<li><code>co_yield</code>: suspends the execution and returns a value</li>
-<li><code>co_return</code>: completes execution and optionally returns a value</li>
-<li><code>co_await</code>: suspends the execution until resumed</li>
-</ul>
-<p>If a function has one of those keywords, it becomes a
-coroutine. There is no other special syntax for coroutines.</p>
-<h2 id="which-function-can-be-a-coroutine" tabindex="-1">Which function can be a coroutine</h2>
-<p>It’s not every function in C++ that can be a coroutine. The functions
-below can’t be coroutines.</p>
-<ul>
-<li><code>constexpr</code> functions</li>
-<li>constructors</li>
-<li>destructors</li>
-<li>the main function</li>
-</ul>
-<h2 id="see-also" tabindex="-1">See Also</h2>
-<ul>
-<li><a href="/til/cpp_corotine_01.html">01</a></li>
-<li><a href="/til/cpp_corotine_02.html">02</a></li>
-<li><a href="/til/cpp_corotine_03.html">03</a></li>
-<li><a href="/til/cpp_corotine_04.html">04</a></li>
-<li><a href="/til/cpp_corotine_05.html">05</a></li>
-</ul>
-<pre><code class="language-cpp">#include &lt;coroutine&gt;
-#include &lt;iostream&gt;
-
-struct CoroType {
-  struct promise_type {
-    int m_value;
-    CoroType get_return_object() { return CoroType(this); }
-    std::suspend_always initial_suspend() { return {}; }
-    std::suspend_always final_suspend() noexcept { return {}; }
-
-    void unhandled_exception() noexcept {
-      std::rethrow_exception(std::current_exception());
-    }
-
-    std::suspend_always yield_value(int val) {
-      m_value = val;
-      return {};
-    }
-
-    void return_void() {}
-  };
-  CoroType(promise_type* p)
-      : m_handle(std::coroutine_handle&lt;promise_type&gt;::from_promise(*p)) {}
-  ~CoroType() {
-    std::cout &lt;&lt; &quot;Handle destroyed...&quot; &lt;&lt; std::endl;
-    m_handle.destroy();
-  }
-  std::coroutine_handle&lt;promise_type&gt; m_handle;
-};
-
-CoroType do_work() {
-  std::cout &lt;&lt; &quot;Starting the coroutine...&quot; &lt;&lt; std::endl;
-  co_yield 1;
-  co_yield 2;
-  co_yield 3;
-  co_return;
-}
-
-int main() {
-  auto task = do_work();
-
-  task.m_handle.resume();  // This resumes the couroutine. When next suspension
-                           // point is hit it pauses
-  std::cout &lt;&lt; &quot;value : &quot; &lt;&lt; task.m_handle.promise().m_value &lt;&lt; std::endl;
-
-  task.m_handle.resume();  // This resumes the couroutine. When next suspension
-                           // point is hit it pauses
-  std::cout &lt;&lt; &quot;value : &quot; &lt;&lt; task.m_handle.promise().m_value &lt;&lt; std::endl;
-
-  task.m_handle.resume();  // This resumes the couroutine. When next suspension
-                           // point is hit it pauses
-  std::cout &lt;&lt; std::boolalpha;
-  std::cout &lt;&lt; &quot;value : &quot; &lt;&lt; task.m_handle.promise().m_value &lt;&lt; std::endl;
-  std::cout &lt;&lt; &quot;coro done : &quot; &lt;&lt; task.m_handle.done() &lt;&lt; std::endl;
-
-  std::cout &lt;&lt; &quot;------&quot; &lt;&lt; std::endl;
-  task.m_handle.resume();
-  std::cout &lt;&lt; &quot;coro done : &quot; &lt;&lt; task.m_handle.done() &lt;&lt; std::endl;
-
-  std::cout &lt;&lt; &quot;Done!&quot; &lt;&lt; std::endl;
-
-  return 0;
-}
-</code></pre>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Starting the coroutine...
-value : 1
-value : 2
-value : 3
-coro done : false
-------
-coro done : true
-Done!
-Handle destroyed...
+<pre><code class="language-txt">Executando somente os testes
+[doctest] doctest version is &quot;2.4.5&quot;
+[doctest] run with &quot;--help&quot; for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 2 | 2 passed | 0 failed |
+[doctest] Status: SUCCESS!
+Executando somente o programa
+Main program Done!
+Executando os testes e o programa
+[doctest] doctest version is &quot;2.4.5&quot;
+[doctest] run with &quot;--help&quot; for options
+===============================================================================
+[doctest] test cases: 1 | 1 passed | 0 failed | 0 skipped
+[doctest] assertions: 2 | 2 passed | 0 failed |
+[doctest] Status: SUCCESS!
+Main program Done!
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="link">title</a></li>
-<li><a href="link">title</a></li>
+<li><a href="https://blog.jetbrains.com/rscpp/2019/07/10/better-ways-testing-with-doctest/">Better Ways to Test with doctest – the Fastest C++ Unit Testing Framework</a></li>
+<li><a href="https://www.methodsandtools.com/tools/doctest.php">doctest - the lightest C++ testing framework for unit tests</a></li>
 <li><a href="link">title</a></li>
 </ul>
 

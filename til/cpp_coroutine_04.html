@@ -59,12 +59,65 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ coroutine — 4</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-20</b>Last modified: <b class="ml-2">2023-03-22 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-20</b>Last modified: <b class="ml-2">2023-03-24 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/coroutine_04.html">coroutine_04</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#lazy-computation">Lazy computation</a></li><li><a href="#keywords">Keywords</a></li><li><a href="#which-function-can-be-a-coroutine">Which function can be a coroutine</a></li><li><a href="#see-also">See Also</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<ul>
+<li>Coroutines are a generalization of <strong>functions</strong> in C++</li>
+<li>They are designed to make writing <strong>asynchronous</strong> code much easier</li>
+</ul>
+<h3 id="function" tabindex="-1">Function</h3>
+<ul>
+<li>Can be called</li>
+<li>Can return something</li>
+</ul>
+<h3 id="coroutines" tabindex="-1">Coroutines</h3>
+<ul>
+<li>Can be called</li>
+<li>Can return something</li>
+<li>Can be paused</li>
+<li>Can be resumed</li>
+</ul>
+<p>When paused the function state is save on heap topically.</p>
+<ul>
+<li>local variables</li>
+<li>parameters</li>
+<li>pointer to resume this function</li>
+</ul>
+<h2 id="lazy-computation" tabindex="-1">Lazy computation</h2>
+<pre><code class="language-c++">auto f = some_coroutine(); // store computation info in f
+// Use f to manipulate the computation
+</code></pre>
+<h2 id="keywords" tabindex="-1">Keywords</h2>
+<p>C++ 20 introduces three keywords that help pause and resume coroutines</p>
+<ul>
+<li><code>co_yield</code>: suspends the execution and returns a value</li>
+<li><code>co_return</code>: completes execution and optionally returns a value</li>
+<li><code>co_await</code>: suspends the execution until resumed</li>
+</ul>
+<p>If a function has one of those keywords, it becomes a
+coroutine. There is no other special syntax for coroutines.</p>
+<h2 id="which-function-can-be-a-coroutine" tabindex="-1">Which function can be a coroutine</h2>
+<p>It’s not every function in C++ that can be a coroutine. The functions
+below can’t be coroutines.</p>
+<ul>
+<li><code>constexpr</code> functions</li>
+<li>constructors</li>
+<li>destructors</li>
+<li>the main function</li>
+</ul>
+<h2 id="see-also" tabindex="-1">See Also</h2>
+<ul>
+<li><a href="/til/cpp_corotine_01.html">01</a></li>
+<li><a href="/til/cpp_corotine_02.html">02</a></li>
+<li><a href="/til/cpp_corotine_03.html">03</a></li>
+<li><a href="/til/cpp_corotine_04.html">04</a></li>
+<li><a href="/til/cpp_corotine_05.html">05</a></li>
+</ul>
 <pre><code>
 
 ```cpp

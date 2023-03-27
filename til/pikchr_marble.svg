@@ -1,0 +1,37 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 241.2 148.32">
+<circle cx="4" cy="16" r="2.16" style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M4,16L33,16"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="47" cy="16" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="47" y="16" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">1</text>
+<path d="M61,16L148,16"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="162" cy="16" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="162" y="16" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">3</text>
+<path d="M177,16L205,16"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M205,9L205,23L205,16"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<polygon points="234,16 223,20 223,12" style="fill:rgb(255,255,255)"/>
+<path d="M205,16L228,16"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="4" cy="59" r="2.16" style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M4,59L90,59"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="105" cy="59" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="105" y="59" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central">2</text>
+<path d="M119,59L205,59"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M198,66L213,52"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M198,52L213,66"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="234,59 223,64 223,55" style="fill:rgb(255,255,255)"/>
+<path d="M205,59L228,59"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="4" cy="131" r="2.16" style="fill:rgb(255,255,255);stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M4,131L33,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="47" cy="131" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(255,127,127);" />
+<text x="47" y="131" text-anchor="middle" fill="rgb(255,127,127)" dominant-baseline="central">1</text>
+<path d="M61,131L90,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="105" cy="131" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,127);" />
+<text x="105" y="131" text-anchor="middle" fill="rgb(255,255,127)" dominant-baseline="central">2</text>
+<path d="M119,131L148,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="162" cy="131" r="14.4"  style="fill:none;stroke-width:2.16;stroke:rgb(127,255,127);" />
+<text x="162" y="131" text-anchor="middle" fill="rgb(127,255,127)" dominant-baseline="central">3</text>
+<path d="M177,131L205,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M205,124L205,138L205,131"  style="fill:none;stroke-width:2.16;stroke-linejoin:round;stroke:rgb(255,255,255);" />
+<polygon points="234,131 223,136 223,127" style="fill:rgb(255,255,255)"/>
+<path d="M205,131L228,131"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+</svg>
+

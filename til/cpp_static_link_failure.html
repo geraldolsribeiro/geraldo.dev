@@ -4,18 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Filtered by aliasing_01">
+    <meta name="description" content="🐛 BUG — static linking thread">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>TIL - aliasing_01</title>
+    <title>🐛 BUG — static linking thread</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
-    <meta property="og:image" content="https://geraldo.devundefined">
-    <meta property="twitter:image" content="https://geraldo.devundefined">
-    <meta property="thumbnail" content="https://geraldo.devundefined">
-    <meta property="twitter:card" content="Filtered by aliasing_01">
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:card" content="">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -53,24 +53,61 @@
         </div>
       </form>
     </div>
-    <main class="bg-black text-slate-100 min-h-screen overflow-hidden">
-      <div class="bg-slate-900 container max-w-prose mx-auto py-4">
-        <div class="px-4"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-            <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-            </svg><span>Back to TILs</span></a>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>🐛 BUG — static linking thread</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-28</b>Last modified: <b class="ml-2">2023-03-28 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/static.html">static</a><a class="tag no-underline" href="/til/tag/thread.html">thread</a>
         </div>
-        <h1 class="px-4">Today I Learned / aliasing_01</h1>
-        <div class="grid px-4 gap-4 lg:mt-12 md:gap-4 lg:gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          <!-- unless page.draft && false-->
-          <div class="grid-item-with-gradient"><a href="/til/cpp_aliasing_01.html" title="C++ aliasing_01">
-              <h3>C++ aliasing_01</h3>
-              <p class="text-slate-400">2023-03-15</p>
-              <div class="flex flex-wrap px-2"><a class="tag" href="/til/tag/C++.html">C++<span class="text-xs ml-2 text-slate-700">125</span></a><a class="tag" href="/til/tag/aliasing_01.html">aliasing_01<span class="text-xs ml-2 text-slate-700">1</span></a>
-              </div></a></div>
-        </div>
-      </div>
-    </main>
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>Program that uses thread can crashes if statically linked.</p>
+<h3 id="minimal-program-to-test-the-faillure" tabindex="-1">Minimal program to test the faillure</h3>
+<pre><code class="language-cpp">#include &lt;condition_variable&gt;
+int main() {
+  std::condition_variable a;
+  return 0;
+}
+</code></pre>
+<h3 id="makefile" tabindex="-1">Makefile</h3>
+<pre><code class="language-makefile">bin/static_link_failure: static_link_failure.cpp
+	g++ --std=c++0x -static -pthread $^ -lpthread -o $@.g++.static
+	clang++ --std=c++11 -static -pthread $^ -lpthread -o $@.clang++.static
+	g++ --std=c++0x -pthread $^ -lpthread -o $@.g++.non_static
+	clang++ --std=c++11 -pthread $^ -lpthread -o $@.clang++.non_static
+	clang++ --std=c++20 -pthread $^ -lpthread -o $@
+
+output/static_link_failure.txt: bin/static_link_failure
+	echo &quot;bin/static_link_failure.g++.static&quot; &gt; $@
+	bin/static_link_failure.g++.static         || echo &quot;FAIL&quot; &gt;&gt; $@
+	echo &quot;bin/static_link_failure.clang++.static&quot; &gt;&gt; $@
+	bin/static_link_failure.clang++.static     || echo &quot;FAIL&quot; &gt;&gt; $@
+	echo &quot;bin/static_link_failure.g++.non_static&quot; &gt;&gt; $@
+	bin/static_link_failure.g++.non_static     || echo &quot;FAIL&quot; &gt;&gt; $@
+	echo &quot;bin/static_link_failure.clang++.non_static&quot; &gt;&gt; $@
+	bin/static_link_failure.clang++.non_static || echo &quot;FAIL&quot; &gt;&gt; $@
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">bin/static_link_failure.g++.static
+FAIL
+bin/static_link_failure.clang++.static
+FAIL
+bin/static_link_failure.g++.non_static
+bin/static_link_failure.clang++.non_static
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58909">C++11’s condition variables fail with static linking</a></li>
+</ul>
+
+      </main>
+    </div>
     <footer class="bg-slate-500 text-slate-400 text-center pb-16">
       <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
       <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
@@ -91,5 +128,6 @@
       
       });
     </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

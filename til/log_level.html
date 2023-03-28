@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="log level">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>log level</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>log level</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-28</b>Last modified: <b class="ml-2">2023-03-28 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/log-level.html">log-level</a><a class="tag no-underline" href="/til/tag/trace.html">trace</a><a class="tag no-underline" href="/til/tag/debug.html">debug</a><a class="tag no-underline" href="/til/tag/info.html">info</a><a class="tag no-underline" href="/til/tag/warn.html">warn</a><a class="tag no-underline" href="/til/tag/error.html">error</a><a class="tag no-underline" href="/til/tag/fatal.html">fatal</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<figure>
+  <img class="mx-auto" src="/til/log_level_01.webp" alt="Log level">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Log level</span>
+  </figcaption>
+</figure>
+<ul>
+<li><strong>Trace</strong> — Only when I would be “tracing” the code and trying to find one
+part of a function specifically.</li>
+<li><strong>Debug</strong> — Information that is diagnostically helpful to people more than
+just developers (IT, sysadmins, etc.).</li>
+<li><strong>Info</strong> — Generally useful information to log (service start/stop,
+configuration assumptions, etc). Info I want to always have available but
+usually don’t care about under normal circumstances.
+<ul>
+<li>This is my out-of-the-box config level.</li>
+</ul>
+</li>
+<li><strong>Warn</strong> — Anything that can potentially cause application oddities, but for
+which I am automatically recovering. (Such as switching from a primary to
+backup server, retrying an operation, missing secondary data, etc.)</li>
+<li><strong>Error</strong> — Any error which is fatal to the operation, but not the service or
+application (can’t open a required file, missing data, etc.). These errors
+will force user (administrator, or direct user) intervention. These are
+usually reserved (in my apps) for incorrect connection strings, missing
+services, etc.</li>
+<li><strong>Fatal</strong> — Any error that is forcing a shutdown of the service or
+application to prevent data loss (or further data loss). I reserve these only
+for the most heinous errors and situations where there is guaranteed to have
+been data corruption or loss.</li>
+</ul>
+<p>Fatal/Critical: Overall application or system failure that should be
+investigated immediately. Yes, wake up the SysAdmin. Since we prefer our
+SysAdmins alert and well-rested, this severity should be used very
+infrequently. If it’s happening daily and that’s not a BFD, it has lost its
+meaning. Typically, a Fatal error only occurs once in the process lifetime, so
+if the log file is tied to the process, this is typically the last message in
+the log.</p>
+<p>Error: Definitely a problem that should be investigated. SysAdmin should be
+notified automatically, but doesn’t need to be dragged out of bed. By filtering
+a log to look at errors and above you get an overview of error frequency and
+can quickly identify the initiating failure that might have resulted in
+a cascade of additional errors. Tracking error rates as versus application
+usage can yield useful quality metrics such as MTBF which can be used to assess
+overall quality. For example, this metric might help inform decisions about
+whether or not another beta testing cycle is needed before a release.</p>
+<p>Warning: This MIGHT be problem, or might not. For example, expected transient
+environmental conditions such as short loss of network or database connectivity
+should be logged as Warnings, not Errors. Viewing a log filtered to show only
+warnings and errors may give quick insight into early hints at the root cause
+of a subsequent error. Warnings should be used sparingly so that they don’t
+become meaningless. For example, loss of network access should be a warning or
+even an error in a server application, but might be just an Info in a desktop
+app designed for occasionally disconnected laptop users.</p>
+<p>Info: This is important information that should be logged under normal
+conditions such as successful initialization, services starting and stopping or
+successful completion of significant transactions. Viewing a log showing Info
+and above should give a quick overview of major state changes in the process
+providing top-level context for understanding any warnings or errors that also
+occur. Don’t have too many Info messages. We typically have &lt; 5% Info messages
+relative to Trace.</p>
+<p>Trace: Trace is by far the most commonly used severity and should provide
+context to understand the steps leading up to errors and warnings. Having the
+right density of Trace messages makes software much more maintainable but
+requires some diligence because the value of individual Trace statements may
+change over time as programs evolve. The best way to achieve this is by getting
+the dev team in the habit of regularly reviewing logs as a standard part of
+troubleshooting customer reported issues. Encourage the team to prune out Trace
+messages that no longer provide useful context and to add messages where needed
+to understand the context of subsequent messages. For example, it is often
+helpful to log user input such as changing displays or tabs.</p>
+<p>Debug: We consider Debug &lt; Trace. The distinction being that Debug messages are
+compiled out of Release builds. That said, we discourage use of Debug messages.
+Allowing Debug messages tends to lead to more and more Debug messages being
+added and none ever removed. In time, this makes log files almost useless
+because it’s too hard to filter signal from noise. That causes devs to not use
+the logs which continues the death spiral. In contrast, constantly pruning
+Trace messages encourages devs to use them which results in a virtuous spiral.
+Also, this eliminates the possibility of bugs introduced because of needed
+side-effects in debug code that isn’t included in the release build. Yeah,
+I know that shouldn’t happen in good code, but better safe than sorry.</p>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels">When to use the different log levels</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2022</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

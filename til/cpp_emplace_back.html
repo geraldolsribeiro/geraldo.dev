@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ emplace_back × push_back</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-24</b>Last modified: <b class="ml-2">2023-03-30 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-24</b>Last modified: <b class="ml-2">2023-03-22 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/emplace_back.html">emplace_back</a><a class="tag no-underline" href="/til/tag/push_back.html">push_back</a><a class="tag no-underline" href="/til/tag/std::vector.html">std::vector</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/performance_blocks.webp">
@@ -123,32 +123,36 @@ within the container, eliminating the need for a <code>move/copy()</code>.</p>
 <pre><code class="language-cpp">  std::vector&lt;Test&gt; v1;
   std::vector&lt;Test&gt; v2;
   auto start = std::chrono::high_resolution_clock::now();
+  // ----------------------------------------------------------------------
   for (int i = 0; i &lt; 1000000; ++i) {
     v1.push_back(Test(i, i));
   }
+  // ----------------------------------------------------------------------
   auto end = std::chrono::high_resolution_clock::now();
-  std::cout &lt;&lt; &quot;push_back took &quot;
-            &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end -
-                                                                     start)
-                   .count()
-            &lt;&lt; &quot; microseconds\n&quot;;
+  auto duration_push_back =
+      std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end - start)
+          .count();
 
   start = std::chrono::high_resolution_clock::now();
+  // ----------------------------------------------------------------------
   for (int i = 0; i &lt; 1000000; ++i) {
     v2.emplace_back(i, i);
   }
+  // ----------------------------------------------------------------------
   end = std::chrono::high_resolution_clock::now();
-  std::cout &lt;&lt; &quot;emplace_back took &quot;
-            &lt;&lt; std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end -
-                                                                     start)
-                   .count()
-            &lt;&lt; &quot; microseconds\n&quot;;
+  auto duration_emplace_back =
+      std::chrono::duration_cast&lt;std::chrono::microseconds&gt;(end - start)
+          .count();
+
+  fmt::print(&quot;{:12} took {:5} microseconds\n&quot;, &quot;push_back&quot;, duration_push_back);
+  fmt::print(&quot;{:12} took {:5} microseconds\n&quot;, &quot;emplace_back&quot;,
+             duration_emplace_back);
 
   return 0;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">push_back took 68835 microseconds
-emplace_back took 33051 microseconds
+<pre><code class="language-txt">push_back    took 67915 microseconds
+emplace_back took 31383 microseconds
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

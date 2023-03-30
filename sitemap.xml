@@ -1438,6 +1438,9 @@
     <loc>https://geraldo.dev/til/tag/bitshift.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/trace.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/any_of.html</loc>
   </url>
   <url>
@@ -1457,6 +1460,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/diagram.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/warn.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/MIPS.html</loc>
@@ -1556,6 +1562,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/restinio.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/log-level.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/hedgedoc.html</loc>
@@ -1766,6 +1775,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/rhel.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/fatal.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/unordered_map.html</loc>
@@ -2290,6 +2302,9 @@
     <loc>https://geraldo.dev/til/tag/webserver.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/error.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/vim-plugin.html</loc>
   </url>
   <url>
@@ -2630,6 +2645,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/collectd.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/info.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/junit.html</loc>

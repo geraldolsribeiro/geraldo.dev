@@ -64,9 +64,10 @@
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#versions">Versions</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
-<p>MurmurHash3 is a <strong>non-cryptographic hash function</strong> that produces a
+<p>The name comes from two basic operations, <strong>MU</strong>ltiply and <strong>R</strong>otate.</p>
+<p><strong>MurmurHash3</strong> is a <strong>non-cryptographic hash function</strong> that produces a
 32-bit hash value for a given input data. It was designed to be
 fast and produce good quality hash values for a wide variety of
 input data.</p>
@@ -99,42 +100,120 @@ of the input data and produce the final hash value. The specific
 operations used are designed to avoid “avalanche” effects (i.e.,
 small changes in the input data should produce large changes in
 the hash value) and to be efficient on modern processors.</p>
-<p>The constants <code>c1</code>, <code>c2</code>, <code>rotate1</code>, <code>rotate2</code>, <code>m</code>, and <code>n</code> used in the
-algorithm are carefully chosen to produce good quality hash
-values. These constants are not secret, and can be freely shared.</p>
+<p>The constants <code>c1</code>, <code>c2</code>, <code>rotation_1</code>, <code>rotation_2</code>, <code>m</code>, and
+<code>n</code> used in the algorithm are carefully chosen to produce good
+quality hash values. These constants are not secret, and can be
+freely shared.</p>
 <p>Note that the MurmurHash3 algorithm is designed to be used with
 byte-oriented data, but it can be used with other data types by first
 converting them to byte arrays. Also note that while MurmurHash3 is
 a good general-purpose hash function, there are other hash functions
 that may be better suited for specific applications or data types.</p>
-<pre><code class="language-cpp">#include &lt;fmt/core.h&gt;
-
-#include &lt;cstdint&gt;
-#include &lt;cstring&gt;
-#include &lt;list&gt;
-
-// MurmurHash3 constants
+<h2 id="versions" tabindex="-1">Versions</h2>
+<h3 id="murmurhash1" tabindex="-1">MurmurHash1</h3>
+<p>The original MurmurHash was created as an attempt to make a faster
+function than Lookup3. Although successful, it hadn’t been
+tested thoroughly and wasn’t capable of providing 64-bit hashes
+as in Lookup3. It had a rather elegant design, that would be later
+built upon in MurmurHash2, combining a multiplicative hash (similar
+to Fowler–Noll–Vo hash function) with a Xorshift.</p>
+<h3 id="murmurhash2" tabindex="-1">MurmurHash2</h3>
+<p>MurmurHash2 yields a 32-bit or 64-bit value. It came in multiple
+variants, including some that allowed incremental hashing and
+aligned or neutral versions.</p>
+<ul>
+<li>MurmurHash2 (32-bit, x86)
+<ul>
+<li>The original version; contains a flaw that weakens collision in some</li>
+</ul>
+</li>
+<li>MurmurHash2A (32-bit, x86)
+<ul>
+<li>A fixed variant using Merkle–Damgård construction. Slightly slower.</li>
+</ul>
+</li>
+<li>CMurmurHash2A (32-bit, x86)
+<ul>
+<li>MurmurHash2A but works incrementally.</li>
+</ul>
+</li>
+<li>MurmurHashNeutral2 (32-bit, x86)
+<ul>
+<li>Slower, but endian and alignment neutral.</li>
+</ul>
+</li>
+<li>MurmurHashAligned2 (32-bit, x86)
+<ul>
+<li>Slower, but does aligned reads (safer on some platforms).</li>
+</ul>
+</li>
+<li>MurmurHash64A (64-bit, x64)
+<ul>
+<li>The original 64-bit version. Optimized for 64-bit arithmetic.</li>
+</ul>
+</li>
+<li>MurmurHash64B (64-bit, x86)
+<ul>
+<li>A 64-bit version optimized for 32-bit platforms. It is not a
+true 64-bit hash due to insufficient mixing of the stripes.</li>
+</ul>
+</li>
+</ul>
+<p>The person who originally found the flaw[clarification needed] in
+MurmurHash2 created an unofficial 160-bit version of MurmurHash2
+called MurmurHash2_160.</p>
+<h3 id="murmurhash3" tabindex="-1">MurmurHash3</h3>
+<p>The current version is MurmurHash3, which yields a <strong>32-bit</strong> or
+<strong>128-bit</strong> hash value.</p>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p>When using 128-bits, the x86 and x64 versions do not produce the
+same values, as the algorithms are optimized for their respective
+platforms.</p>
+  </div>
+</div>
+<p>MurmurHash3 was released alongside SMHasher—a hash function
+test suite.</p>
+<p>Use the authors version at
+<a href="https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp">https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp</a>
+for production.</p>
+<p>Below is presented a 32 bits version for explain the process.</p>
+<pre><code class="language-cpp">// MurmurHash3 constants
 constexpr uint32_t c1 = 0xcc9e2d51;
 constexpr uint32_t c2 = 0x1b873593;
-constexpr uint32_t rotate1 = 15;
-constexpr uint32_t rotate2 = 13;
+constexpr uint32_t rotation_1 = 15;
+constexpr uint32_t rotation_2 = 13;
 constexpr uint32_t m = 5;
 constexpr uint32_t n = 0xe6546b64;
-
-// This function performs the core MurmurHash3 algorithm
+</code></pre>
+<pre><code class="language-cpp">// This function performs the core MurmurHash3 algorithm
 uint32_t murmurhash3_core(const uint8_t* data, size_t len, uint32_t h) {
   const uint32_t* blocks = reinterpret_cast&lt;const uint32_t*&gt;(data);
-  const size_t n_blocks = len / sizeof(uint32_t); // four bytes block
+  const size_t n_blocks = len / sizeof(uint32_t);  // four bytes block
 
   for (size_t i = 0; i &lt; n_blocks; ++i) {
     uint32_t block = blocks[i];
 
     block *= c1;
-    block = (block &lt;&lt; rotate1) | (block &gt;&gt; (32 - rotate1));
+    // block rotation 1
+    block = (block &lt;&lt; rotation_1) | (block &gt;&gt; (32 - rotation_1));
+    // 01011001110001111000011111000000 original block
+    // --------------------------------
+    // 11000011111000000000000000000000 block &lt;&lt; 15
+    // 00000000000000001011001110001111 block &gt;&gt; (32-15)
+    // -------------------------------- or
+    // 11000011111000001011001110001111 rotated block
+
     block *= c2;
 
     h ^= block;
-    h = (h &lt;&lt; rotate2) | (h &gt;&gt; (32 - rotate2));
+
+    // block rotation 2
+    h = (h &lt;&lt; rotation_2) | (h &gt;&gt; (32 - rotation_2));
     h = h * m + n;
   }
 
@@ -151,7 +230,7 @@ uint32_t murmurhash3_core(const uint8_t* data, size_t len, uint32_t h) {
     case 1:
       block ^= tail[0];
       block *= c1;
-      block = (block &lt;&lt; rotate1) | (block &gt;&gt; (32 - rotate1));
+      block = (block &lt;&lt; rotation_1) | (block &gt;&gt; (32 - rotation_1));
       block *= c2;
       h ^= block;
   }
@@ -165,8 +244,8 @@ uint32_t murmurhash3_core(const uint8_t* data, size_t len, uint32_t h) {
 
   return h;
 }
-
-// This is the main MurmurHash3 function that clients will use
+</code></pre>
+<pre><code class="language-cpp">// This is the main MurmurHash3 function that clients will use
 uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
   const uint8_t* data = reinterpret_cast&lt;const uint8_t*&gt;(key);
   const size_t n_blocks = len / sizeof(uint32_t);
@@ -183,7 +262,7 @@ uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
     memcpy(&amp;k, data + n_blocks * sizeof(uint32_t), n_tail);
     h ^= k;
     h *= c1;
-    h = (h &lt;&lt; rotate1) | (h &gt;&gt; (32 - rotate1));
+    h = (h &lt;&lt; rotation_1) | (h &gt;&gt; (32 - rotation_1));
     h *= c2;
   }
 
@@ -197,8 +276,8 @@ uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
 
   return h;
 }
-
-int main() {
+</code></pre>
+<pre><code class="language-cpp">int main() {
   // Avalanche test on seed
   // Small change on key result on dramatically change on computed hash
   constexpr uint32_t seed1 = 1234;
@@ -248,6 +327,8 @@ hash: 3371755843   seed: 1235   text: hello
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li>▶️<a href="https://www.youtube.com/watch?v=b8HzEZt0RCQ">Murmur Hash - Explained</a></li>
+<li><a href="https://blog.teamleadnet.com/2012/08/murmurhash3-ultra-fast-hash-algorithm.html">MurMurHash3, an ultra fast hash algorithm for C# / .NET</a></li>
+<li><a href="https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp">MurmurHash3 on Github</a></li>
 </ul>
 
       </main>

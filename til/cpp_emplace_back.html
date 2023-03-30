@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ emplace_back">
+    <meta name="description" content="C++ emplace_back × push_back">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ emplace_back</title>
+    <title>C++ emplace_back × push_back</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
-    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
-    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
-    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/performance_blocks.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/performance_blocks.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/performance_blocks.webp">
     <meta property="twitter:card" content="">
     <link rel="stylesheet" href="/styles.css">
   </head>
@@ -58,29 +58,63 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ emplace_back</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-24</b>Last modified: <b class="ml-2">2023-03-22 </b></div>
+        <h1>C++ emplace_back × push_back</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-24</b>Last modified: <b class="ml-2">2023-03-30 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/emplace_back.html">emplace_back</a><a class="tag no-underline" href="/til/tag/push_back.html">push_back</a><a class="tag no-underline" href="/til/tag/std::vector.html">std::vector</a>
         </div>
-        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/performance_blocks.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<p>You should use push_back when:</p>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>You should use push_back when:</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
 <ul>
-<li>You already have a copy of the element that you want to insert into the</li>
-<li>The object you want to insert is cheap to copy.</li>
-<li>The object has a non-explicit copy constructor</li>
+<li>
+<p>You already have a copy of the element that you want to insert
+into the vector.</p>
+</li>
+<li>
+<p>The object you want to insert is cheap to copy.  * The object
+has a non-explicit copy constructor</p>
+</div>
+</li>
 </ul>
-<p>You should use emplace_back when:</p>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>You should use emplace_back when:</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
 <ul>
-<li>You have the arguments to construct the object, but not the object</li>
-<li>The object is expensive to copy.</li>
-<li>The object has a non-explicit constructor that takes the same arguments</li>
+<li>
+<p>You have the arguments to construct the object, but not the object
+itself.</p>
+</li>
+<li>
+<p>The object is expensive to copy.</p>
+</li>
+<li>
+<p>The object has a non-explicit constructor that takes the same arguments
+as you want to pass to emplace_back</p>
+</div>
+</li>
 </ul>
-<p>In general, use emplace back when building an element in place. When
-we need to build an object straight inside the container, we should
-use emplace back() since it will directly generate an object within
-the container, eliminating the need for a move/copy ().</p>
+</div>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Use emplace_back when building an element in place</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>When we need to build an object straight inside the container, we
+should use <code>emplace_back()</code> since it will directly generate an object
+within the container, eliminating the need for a <code>move/copy()</code>.</p>
+  </div>
+</div>
 <pre><code class="language-cpp">struct Test {
   int a, b;
   Test(int x, int y) : a(x), b(y) {}
@@ -113,13 +147,13 @@ the container, eliminating the need for a move/copy ().</p>
   return 0;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">push_back took 67699 microseconds
-emplace_back took 30729 microseconds
+<pre><code class="language-txt">push_back took 68835 microseconds
+emplace_back took 33051 microseconds
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li>[Modern C++ Series — vector push_back or</li>
+<li><a href="https://medium.com/@its.me.siddh/modern-c-series-vector-push-back-or-emplace-back-e3a482ab4dcd">Modern C++ Series — vector push_back or emplace_back??</a></li>
 </ul>
 
       </main>

@@ -4,15 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Abu Dhabi">
+    <meta name="description" content="C++ murmur hash">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>Abu Dhabi</title>
+    <title>C++ murmur hash</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
-    <!-- thumbnail_image not define-->
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:card" content="">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -55,27 +58,196 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Abu Dhabi</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-05</b>Last modified: <b class="ml-2">2023-03-06 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/Abu-Dhabi.html">Abu-Dhabi</a>
+        <h1>C++ murmur hash</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-30</b>Last modified: <b class="ml-2">2023-03-30 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/murmurhash.html">murmurhash</a>
+        </div>
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#geography">Geography</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
-<h2 id="geography" tabindex="-1">Geography</h2>
-<figure class="bg-slate-800 text-center py-4">
-  <a name="fig-1">
-    <object class="mx-auto my-2" data="/til/abu_dhabi_draft_00.svg" type="image/svg+xml">
-      <!-- fallback -->
-      <img class="mx-auto my-2" src="/til/abu_dhabi_draft_00.svg" alt="Abu Dhabi">
-    </object>
-  </a>
-  <figcaption class="text-center text-lg font-bold">
-     <strong>Fig. 1</strong> — <span>Abu Dhabi</span>
-  </figcaption>
-</figure>
+<p>MurmurHash3 is a <strong>non-cryptographic hash function</strong> that produces a
+32-bit hash value for a given input data. It was designed to be
+fast and produce good quality hash values for a wide variety of
+input data.</p>
+<p>The basic MurmurHash3 algorithm works as follows:</p>
+<ul>
+<li>Initialize a 32-bit hash value to a seed value (usually 0).</li>
+<li>Process the input data in 4-byte blocks.
+<ul>
+<li>For each block, perform a series of operations that mix the
+bits of the block into the hash value.</li>
+</ul>
+</li>
+<li>Process any remaining bytes (i.e., the “tail” of the input data).
+<ul>
+<li>Combine the remaining bytes with the hash value using a different
+mixing function.</li>
+</ul>
+</li>
+<li>Finalize the hash value by performing a series of operations that
+further mix the bits of the hash value.
+<ul>
+<li>This step is optional, but it can improve the quality of the
+hash value.</li>
+</ul>
+</li>
+</ul>
+<p>The MurmurHash3 algorithm uses a combination of multiplication,
+XOR, bit shifting, and other bitwise operations to mix the bits
+of the input data and produce the final hash value. The specific
+operations used are designed to avoid “avalanche” effects (i.e.,
+small changes in the input data should produce large changes in
+the hash value) and to be efficient on modern processors.</p>
+<p>The constants <code>c1</code>, <code>c2</code>, <code>rotate1</code>, <code>rotate2</code>, <code>m</code>, and <code>n</code> used in the
+algorithm are carefully chosen to produce good quality hash
+values. These constants are not secret, and can be freely shared.</p>
+<p>Note that the MurmurHash3 algorithm is designed to be used with
+byte-oriented data, but it can be used with other data types by first
+converting them to byte arrays. Also note that while MurmurHash3 is
+a good general-purpose hash function, there are other hash functions
+that may be better suited for specific applications or data types.</p>
+<pre><code class="language-cpp">#include &lt;fmt/core.h&gt;
+
+#include &lt;cstdint&gt;
+#include &lt;cstring&gt;
+#include &lt;list&gt;
+
+// MurmurHash3 constants
+constexpr uint32_t c1 = 0xcc9e2d51;
+constexpr uint32_t c2 = 0x1b873593;
+constexpr uint32_t rotate1 = 15;
+constexpr uint32_t rotate2 = 13;
+constexpr uint32_t m = 5;
+constexpr uint32_t n = 0xe6546b64;
+
+// This function performs the core MurmurHash3 algorithm
+uint32_t murmurhash3_core(const uint8_t* data, size_t len, uint32_t h) {
+  const uint32_t* blocks = reinterpret_cast&lt;const uint32_t*&gt;(data);
+  const size_t n_blocks = len / sizeof(uint32_t); // four bytes block
+
+  for (size_t i = 0; i &lt; n_blocks; ++i) {
+    uint32_t block = blocks[i];
+
+    block *= c1;
+    block = (block &lt;&lt; rotate1) | (block &gt;&gt; (32 - rotate1));
+    block *= c2;
+
+    h ^= block;
+    h = (h &lt;&lt; rotate2) | (h &gt;&gt; (32 - rotate2));
+    h = h * m + n;
+  }
+
+  const uint8_t* tail = data + n_blocks * sizeof(uint32_t);
+  uint32_t block = 0;
+
+  switch (len &amp; 3) {
+    case 3:
+      block ^= tail[2] &lt;&lt; 16;
+      [[fallthrough]];
+    case 2:
+      block ^= tail[1] &lt;&lt; 8;
+      [[fallthrough]];
+    case 1:
+      block ^= tail[0];
+      block *= c1;
+      block = (block &lt;&lt; rotate1) | (block &gt;&gt; (32 - rotate1));
+      block *= c2;
+      h ^= block;
+  }
+
+  h ^= len;
+  h ^= h &gt;&gt; 16;
+  h *= 0x85ebca6b;
+  h ^= h &gt;&gt; 13;
+  h *= 0xc2b2ae35;
+  h ^= h &gt;&gt; 16;
+
+  return h;
+}
+
+// This is the main MurmurHash3 function that clients will use
+uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
+  const uint8_t* data = reinterpret_cast&lt;const uint8_t*&gt;(key);
+  const size_t n_blocks = len / sizeof(uint32_t);
+
+  uint32_t h = seed;
+
+  // Process the data in 4-byte blocks
+  h = murmurhash3_core(data, n_blocks * sizeof(uint32_t), h);
+
+  // Process any remaining bytes
+  const size_t n_tail = len % sizeof(uint32_t);
+  if (n_tail != 0) {
+    uint32_t k = 0;
+    memcpy(&amp;k, data + n_blocks * sizeof(uint32_t), n_tail);
+    h ^= k;
+    h *= c1;
+    h = (h &lt;&lt; rotate1) | (h &gt;&gt; (32 - rotate1));
+    h *= c2;
+  }
+
+  // Finalize the hash
+  h ^= len;
+  h ^= h &gt;&gt; 16;
+  h *= 0x85ebca6b;
+  h ^= h &gt;&gt; 13;
+  h *= 0xc2b2ae35;
+  h ^= h &gt;&gt; 16;
+
+  return h;
+}
+
+int main() {
+  // Avalanche test on seed
+  // Small change on key result on dramatically change on computed hash
+  constexpr uint32_t seed1 = 1234;
+  constexpr uint32_t seed2 = 1235;
+
+  // Avalanche test on input
+  // Small change on input result on dramatically change on computed hash
+  std::list&lt;std::string&gt; texts{&quot;Hello, world!&quot;,
+                               &quot;hello, world!&quot;,
+                               &quot;Hello, World!&quot;,
+                               &quot;hello, world!&quot;,
+                               &quot;&quot;,
+                               &quot;h&quot;,
+                               &quot;he&quot;,
+                               &quot;hello&quot;};
+
+  for (const auto&amp; text : texts) {
+    uint32_t hash1 = murmurhash3(text.data(), text.size(), seed1);
+    uint32_t hash2 = murmurhash3(text.data(), text.size(), seed2);
+
+    fmt::print(&quot;hash: {:10}   seed: {}   text: {}\n&quot;, hash1, seed1, text);
+    fmt::print(&quot;hash: {:10}   seed: {}   text: {}\n&quot;, hash2, seed2, text);
+  }
+  return 0;
+}
+
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">hash: 1880165001   seed: 1234   text: Hello, world!
+hash:   37900214   seed: 1235   text: Hello, world!
+hash: 1773352101   seed: 1234   text: hello, world!
+hash: 3125240818   seed: 1235   text: hello, world!
+hash: 2650466895   seed: 1234   text: Hello, World!
+hash: 3693886096   seed: 1235   text: Hello, World!
+hash: 1773352101   seed: 1234   text: hello, world!
+hash: 3125240818   seed: 1235   text: hello, world!
+hash: 3613156711   seed: 1234   text: 
+hash: 2319787446   seed: 1235   text: 
+hash: 1968416228   seed: 1234   text: h
+hash: 3135554948   seed: 1235   text: h
+hash: 1299136751   seed: 1234   text: he
+hash: 3700568032   seed: 1235   text: he
+hash:  616337965   seed: 1234   text: hello
+hash: 3371755843   seed: 1235   text: hello
+
+</code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href=""></a></li>
+<li>▶️<a href="https://www.youtube.com/watch?v=b8HzEZt0RCQ">Murmur Hash - Explained</a></li>
 </ul>
 
       </main>

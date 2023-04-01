@@ -277,6 +277,9 @@
     <loc>https://geraldo.dev/til/normcap.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_openai_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/mapproxy.html</loc>
   </url>
   <url>
@@ -910,6 +913,9 @@
     <loc>https://geraldo.dev/til/vim-formatar-xml.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_httplib_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/grafana-reset-senha-do-admin.html</loc>
   </url>
   <url>
@@ -1121,6 +1127,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/async.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/httplib_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/cereal.html</loc>
@@ -1519,6 +1528,9 @@
     <loc>https://geraldo.dev/til/tag/mqtt.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/openai.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/move_semantics.html</loc>
   </url>
   <url>
@@ -1610,6 +1622,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/firewall.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/ChatGPT.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/virtualbox.html</loc>

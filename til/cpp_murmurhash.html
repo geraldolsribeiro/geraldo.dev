@@ -64,7 +64,7 @@
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#versions">Versions</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#versions">Versions</a></li><li><a href="#debian-package">Debian package</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>The name comes from two basic operations, <strong>MU</strong>ltiply and <strong>R</strong>otate.</p>
 <p><strong>MurmurHash3</strong> is a <strong>non-cryptographic hash function</strong> that produces a
@@ -178,7 +178,12 @@ platforms.</p>
 </div>
 <p>MurmurHash3 was released alongside SMHasher—a hash function
 test suite.</p>
-<p>Use the authors version at
+<h2 id="debian-package" tabindex="-1">Debian package</h2>
+<p>There is a package called <code>libmurmurhash-dev</code> in the standard Debian
+distro.</p>
+<pre><code class="language-shell">sudo apt install libmurmurhash-dev
+</code></pre>
+<p>Use the version at
 <a href="https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp">https://github.com/aappleby/smhasher/blob/master/src/MurmurHash3.cpp</a>
 for production.</p>
 <p>Below is presented a 32 bits version for explain the process.</p>
@@ -301,6 +306,33 @@ uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
     fmt::print(&quot;hash: {:10}   seed: {}   text: {}\n&quot;, hash1, seed1, text);
     fmt::print(&quot;hash: {:10}   seed: {}   text: {}\n&quot;, hash2, seed2, text);
   }
+
+  // Tests with the package libmurmurhash-dev
+  // clang-format off
+  // void lmmh_x86_32( const void *addr, unsigned int len, uint32_t seed, uint32_t out[1]);
+  // void lmmh_x86_128(const void *addr, unsigned int len, uint32_t seed, uint32_t out[4]);
+  // void lmmh_x64_128(const void *addr, unsigned int len, uint32_t seed, uint64_t out[2]);
+  // clang-format on
+  for (const auto&amp; text : texts) {
+    uint32_t hash32;
+    lmmh_x86_32(text.data(), text.size(), seed1, &amp;hash32);
+    fmt::print(&quot;hash: {:10}   seed: {}   text: {}\n&quot;, hash32, seed1, text);
+  }
+
+  for (const auto&amp; text : texts) {
+    uint32_t hash128A[4];
+    uint64_t hash128B[2];
+
+    lmmh_x86_128(text.data(), text.size(), seed1, hash128A);
+    lmmh_x64_128(text.data(), text.size(), seed1, hash128B);
+
+    fmt::print(&quot;hash128A: {:10} {:10} {:10} {:10}   seed: {}   text: {}\n&quot;,
+               hash128A[0], hash128A[1], hash128A[2], hash128A[3], seed1, text);
+
+    fmt::print(&quot;hash128B: {:20} {:20}   seed: {}   text: {}\n&quot;, hash128B[0],
+               hash128B[1], seed1, text);
+  }
+
   return 0;
 }
 
@@ -322,6 +354,30 @@ hash: 1299136751   seed: 1234   text: he
 hash: 3700568032   seed: 1235   text: he
 hash:  616337965   seed: 1234   text: hello
 hash: 3371755843   seed: 1235   text: hello
+hash: 4210478515   seed: 1234   text: Hello, world!
+hash: 1215213111   seed: 1234   text: hello, world!
+hash: 3644279836   seed: 1234   text: Hello, World!
+hash: 1215213111   seed: 1234   text: hello, world!
+hash:  254590987   seed: 1234   text: 
+hash: 1073392072   seed: 1234   text: h
+hash:   19595036   seed: 1234   text: he
+hash: 2251423591   seed: 1234   text: hello
+hash128A: 4192683273 3344351611  905885657  131714559   seed: 1234   text: Hello, world!
+hash128B:  6994950471748863742  5906757252613544790   seed: 1234   text: Hello, world!
+hash128A: 3379794421 1391467063  204088760 2201735466   seed: 1234   text: hello, world!
+hash128B:  3334729735983292266 15246033631058457288   seed: 1234   text: hello, world!
+hash128A: 2645690248 1320752661 2676918588 3486440893   seed: 1234   text: Hello, World!
+hash128B: 13342170012096846388 10422801084110055398   seed: 1234   text: Hello, World!
+hash128A: 3379794421 1391467063  204088760 2201735466   seed: 1234   text: hello, world!
+hash128B:  3334729735983292266 15246033631058457288   seed: 1234   text: hello, world!
+hash128A:  396337949 2466738178 2466738178 2466738178   seed: 1234   text: 
+hash128B:  5006475794136178589 13573877494810213620   seed: 1234   text: 
+hash128A: 3741828134 1966168643 1966168643 1966168643   seed: 1234   text: h
+hash128B: 11851864647889073320 18017523628106187849   seed: 1234   text: h
+hash128A:  740872880 1097768591 1097768591 1097768591   seed: 1234   text: he
+hash128B: 12027140842659985391  5619874163494401635   seed: 1234   text: he
+hash128A: 1597004003 2034712666 2930991220 2930991220   seed: 1234   text: hello
+hash128B: 10403193130508565092 11308957242644105945   seed: 1234   text: hello
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

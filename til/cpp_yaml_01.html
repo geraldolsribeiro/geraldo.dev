@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="C++ yaml_01">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>C++ yaml_01</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:card" content="">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ yaml_01</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-10-19</b>Last modified: <b class="ml-2">2023-04-03 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/yaml.html">yaml</a>
+        </div>
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">  YAML::Node config;
+
+  // Vai salvar na ordem de criação
+  config[&quot;key2&quot;] = 2;
+  config[&quot;key3&quot;] = 3.141592;
+  config[&quot;key1&quot;] = &quot;value1&quot;;
+
+  config[&quot;sequence1&quot;].push_back(30);
+  config[&quot;sequence1&quot;].push_back(20);
+  config[&quot;sequence1&quot;].push_back(10);
+  config[&quot;sequence1&quot;].push_back(&quot;string&quot;);
+  config[&quot;sequence1&quot;].push_back(50);
+
+  if (config[&quot;sequence1&quot;].IsSequence()) {
+    cout &lt;&lt; &quot;sequence1 é uma sequência&quot; &lt;&lt; endl;
+  }
+
+  if (config[&quot;key1&quot;].IsScalar()) {
+    cout &lt;&lt; &quot;key1 é um escalar&quot; &lt;&lt; endl;
+  }
+
+  if (config.IsMap()) {
+    cout &lt;&lt; &quot;config é um mapa&quot; &lt;&lt; endl;
+  }
+
+  config[&quot;aliaskey&quot;] = config[&quot;key1&quot;];
+
+  ofstream out(&quot;config.yaml&quot;);
+  out &lt;&lt; config;
+  out.close();
+
+  // ----------------------------------------------------------------------
+  //
+  // ----------------------------------------------------------------------
+
+  YAML::Node config2 = YAML::LoadFile(&quot;config.yaml&quot;);
+
+  if (config2[&quot;key1&quot;] and config2[&quot;key2&quot;] and config2[&quot;key3&quot;]) {
+    cout &lt;&lt; &quot;key1: &quot; &lt;&lt; config2[&quot;key1&quot;].as&lt;string&gt;() &lt;&lt; endl;
+    cout &lt;&lt; &quot;key2: &quot; &lt;&lt; config2[&quot;key2&quot;].as&lt;int&gt;() &lt;&lt; endl;
+    cout &lt;&lt; &quot;key3: &quot; &lt;&lt; config2[&quot;key3&quot;].as&lt;float&gt;() &lt;&lt; endl;
+  }
+
+  if (config2[&quot;sequence1&quot;] &amp;&amp; config2[&quot;sequence1&quot;].IsSequence()) {
+    // para fazer o swap não usar alias
+    auto tmp = config2[&quot;sequence1&quot;][0].as&lt;int&gt;();
+    config2[&quot;sequence1&quot;][0] = config2[&quot;sequence1&quot;][2].as&lt;int&gt;();
+    config2[&quot;sequence1&quot;][2] = tmp;
+    cout &lt;&lt; &quot;[2]: &quot; &lt;&lt; config2[&quot;sequence1&quot;][2] &lt;&lt; endl;
+
+    for (auto item : config2[&quot;sequence1&quot;]) {
+      cout &lt;&lt; &quot;Sequence1 default: &quot; &lt;&lt; item &lt;&lt; endl;
+      try {
+        cout &lt;&lt; &quot;Sequence1 string: &quot; &lt;&lt; item.as&lt;string&gt;() &lt;&lt; endl;
+        cout &lt;&lt; &quot;Sequence1 int: &quot; &lt;&lt; item.as&lt;int&gt;() &lt;&lt; endl;
+      } catch (YAML::BadConversion &amp;e) {
+        cout &lt;&lt; &quot;exceção de conversão: &quot; &lt;&lt; e.what()
+             &lt;&lt; endl;  // deve ser disparada quando tentar converter &quot;string&quot; em
+                       // int
+      } catch (YAML::Exception &amp;e) {
+        cout &lt;&lt; &quot;exceção genérica: &quot; &lt;&lt; e.what() &lt;&lt; endl;
+      } catch (...) {
+        cout &lt;&lt; &quot;N exceção: falha de conversão&quot; &lt;&lt; endl;
+      }
+    }
+  }
+
+  if (config2[&quot;not-found-key&quot;]) {
+    cout &lt;&lt; &quot;Key não encontrada foi encontrada!&quot; &lt;&lt; endl;
+  }
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">sequence1 é uma sequência
+key1 é um escalar
+config é um mapa
+key1: value1
+key2: 2
+key3: 3.14159
+[2]: 30
+Sequence1 default: 10
+Sequence1 string: 10
+Sequence1 int: 10
+Sequence1 default: 20
+Sequence1 string: 20
+Sequence1 int: 20
+Sequence1 default: 30
+Sequence1 string: 30
+Sequence1 int: 30
+Sequence1 default: string
+Sequence1 string: string
+Sequence1 int: exceção de conversão: yaml-cpp: error at line 8, column 5: bad conversion
+Sequence1 default: 50
+Sequence1 string: 50
+Sequence1 int: 50
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2023</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

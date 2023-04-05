@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="C++ heap">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>C++ heap</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:card" content="">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>C++ heap</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-04-05</b>Last modified: <b class="ml-2">2023-04-05 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/std::make_heap.html">std::make_heap</a><a class="tag no-underline" href="/til/tag/std::pop_heap.html">std::pop_heap</a><a class="tag no-underline" href="/til/tag/std::push_heap.html">std::push_heap</a>
+        </div>
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#operations">Operations</a></li><li><a href="#types">Types</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="introduction" tabindex="-1">Introduction</h2>
+<p>A Heap is a special Tree-based data structure in which the tree is a
+complete binary tree.</p>
+<h2 id="operations" tabindex="-1">Operations</h2>
+<ul>
+<li><strong>Heapify:</strong> a process of creating a heap from an array.</li>
+<li><strong>Insertion:</strong> process to insert an element in existing heap time
+complexity <strong>O(log N)</strong>.</li>
+<li><strong>Deletion:</strong> deleting the top element of the heap or the highest
+priority element, and then organizing the heap and returning the
+element with time complexity <strong>O(log N)</strong>.</li>
+<li><strong>Peek:</strong> to check or find the most prior element in the heap,
+(max or min element for max and min heap).</li>
+</ul>
+<h2 id="types" tabindex="-1">Types</h2>
+<ul>
+<li><strong>max heap</strong>
+<ul>
+<li>the key present at the root node must be <strong>greatest</strong> among the keys</li>
+<li>the same property must be recursively true for all sub-trees in that</li>
+</ul>
+</li>
+<li><strong>min heap</strong>
+<ul>
+<li>the key present at the root node must be <strong>minimum</strong> among the keys</li>
+<li>the same property must be recursively true for all sub-trees in that</li>
+</ul>
+</li>
+<li><strong>binomial heap</strong></li>
+<li><strong>fibonacci heap</strong></li>
+<li><strong>leftist heap</strong></li>
+<li><strong>k-ary heap</strong></li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/cpp_heap_01.svg" alt="Max heap in tree representation and squashed on array.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Max heap in tree representation and squashed on array.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-cpp">  auto print = [](auto label, auto numbers) {
+    fmt::print(&quot;{:20} &quot;, label);
+    for (const auto&amp; number : numbers) {
+      fmt::print(&quot;{} &quot;, number);
+    }
+    if (std::ranges::is_heap(numbers)) {
+      fmt::print(&quot; IS HEAP&quot;);
+    } else {
+      fmt::print(&quot; IS NOT HEAP&quot;);
+    }
+    fmt::print(&quot;\n&quot;);
+  };
+</code></pre>
+<pre><code class="language-cpp">  // Input
+  std::vector&lt;int&gt; numbers{1, 2, 3, 4, 5, 6, 7, 8, 9};
+  print(&quot;numbers&quot;, numbers);
+
+  // Construct max heap
+  std::make_heap(begin(numbers), end(numbers));
+  std::ranges::make_heap(numbers);
+  print(&quot;make_heap max&quot;, numbers);
+  draw_heap(numbers);
+
+  // Pop
+  std::pop_heap(begin(numbers), end(numbers));
+  print(&quot;pop_heap&quot;, numbers);
+  auto n = numbers.back();
+  numbers.pop_back();
+  draw_heap(numbers);
+
+  // Push
+  n = 42;
+  print(&quot;numbers.pop_back&quot;, numbers);
+  numbers.push_back(n);
+  print(&quot;numbers.push_back&quot;, numbers);
+  std::push_heap(begin(numbers), end(numbers));
+  print(&quot;push_heap&quot;, numbers);
+  draw_heap(numbers);
+
+  // Construct min heap
+  std::make_heap(begin(numbers), end(numbers), std::greater&lt;&gt;{});
+  print(&quot;make_heap min&quot;, numbers);
+  draw_heap(numbers);
+</code></pre>
+<p>Draw heap from
+<a href="https://en.cppreference.com/w/cpp/algorithm/ranges/make_heap">https://en.cppreference.com/w/cpp/algorithm/ranges/make_heap</a></p>
+<pre><code class="language-cpp">void draw_heap(auto const&amp; v) {
+  auto bails = [](int n, int w) {
+    auto b = [](int w) {
+      out(&quot;┌&quot;), out(&quot;─&quot;, w), out(&quot;┴&quot;), out(&quot;─&quot;, w), out(&quot;┐&quot;);
+    };
+    if (!(n /= 2)) return;
+    for (out(' ', w); n-- &gt; 0;) b(w), out(' ', w + w + 1);
+    out('\n');
+  };
+  auto data = [](int n, int w, auto&amp; first, auto last) {
+    for (out(' ', w); n-- &gt; 0 &amp;&amp; first != last; ++first)
+      out(*first), out(' ', w + w + 1);
+    out('\n');
+  };
+  auto tier = [&amp;](int t, int m, auto&amp; first, auto last) {
+    const int n{1 &lt;&lt; t};
+    const int w{(1 &lt;&lt; (m - t - 1)) - 1};
+    bails(n, w), data(n, w, first, last);
+  };
+  const int m{static_cast&lt;int&gt;(std::ceil(std::log2(1 + v.size())))};
+  auto first{v.cbegin()};
+  for (int i{}; i != m; ++i) {
+    tier(i, m, first, v.cend());
+  }
+}
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">numbers              1 2 3 4 5 6 7 8 9  IS NOT HEAP
+make_heap max        9 8 7 4 5 6 3 2 1  IS HEAP
+       9               
+   ┌───┴───┐       
+   8       7       
+ ┌─┴─┐   ┌─┴─┐   
+ 4   5   6   3   
+┌┴┐ ┌┴┐ ┌┴┐ ┌┴┐ 
+2 1 
+pop_heap             8 5 7 4 1 6 3 2 9  IS NOT HEAP
+       8               
+   ┌───┴───┐       
+   5       7       
+ ┌─┴─┐   ┌─┴─┐   
+ 4   1   6   3   
+┌┴┐ ┌┴┐ ┌┴┐ ┌┴┐ 
+2 
+numbers.pop_back     8 5 7 4 1 6 3 2  IS HEAP
+numbers.push_back    8 5 7 4 1 6 3 2 42  IS NOT HEAP
+push_heap            42 8 7 5 1 6 3 2 4  IS HEAP
+       42               
+   ┌───┴───┐       
+   8       7       
+ ┌─┴─┐   ┌─┴─┐   
+ 5   1   6   3   
+┌┴┐ ┌┴┐ ┌┴┐ ┌┴┐ 
+2 4 
+make_heap min        1 2 3 4 8 6 7 5 42  IS NOT HEAP
+       1               
+   ┌───┴───┐       
+   2       3       
+ ┌─┴─┐   ┌─┴─┐   
+ 4   8   6   7   
+┌┴┐ ┌┴┐ ┌┴┐ ┌┴┐ 
+5 42 
+
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li>▶️<a href="https://www.youtube.com/watch?v=2olsGf6JIkU">CppCon 2018: Jonathan Boccara “105 STL Algorithms in Less Than an Hour”</a></li>
+<li><a href="https://www.geeksforgeeks.org/heap-data-structure/">Heap Data Structure</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2023</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

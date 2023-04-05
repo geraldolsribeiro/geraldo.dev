@@ -64,7 +64,14 @@
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#watchpoint">Watchpoint</a></li><li><a href="#time-travel-(rr-record-and-replay)">Time travel (rr record and replay)</a></li><li><a href="#multiprocess-debugging">Multiprocess debugging</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#compilation-flags">Compilation flags</a></li><li><a href="#breakpoint">Breakpoint</a></li><li><a href="#running">Running</a></li><li><a href="#breakpoint-condition">Breakpoint condition</a></li><li><a href="#watchpoint">Watchpoint</a></li><li><a href="#time-travel-(rr-record-and-replay)">Time travel (rr record and replay)</a></li><li><a href="#multiprocess-debugging">Multiprocess debugging</a></li><li><a href="#disassembly">Disassembly</a></li><li><a href="#tui-enable">TUI enable</a></li><li><a href="#displaying-informations">Displaying informations</a></li><li><a href="#finishing">Finishing</a></li><li><a href="#example-code">Example code</a></li><li><a href="#scripting">Scripting</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="compilation-flags" tabindex="-1">Compilation flags</h2>
+<p>Use <code>-ggdb</code> or <code>-g3</code> to include <strong>all</strong> information available to <strong>gdb</strong>.</p>
+<p>By using <code>-g</code> only a limited amount of information is added to
+the executable.</p>
+<p>See the vídeo <a href="https://www.youtube.com/watch?v=dh1mil1ehvE">Debugging with Macros
+(-g3,-ggdb)</a> for good
+explanation about the debug level flags.</p>
 <h2 id="breakpoint" tabindex="-1">Breakpoint</h2>
 <ul>
 <li><code>[b]reak function_name</code></li>
@@ -182,6 +189,11 @@ i = 9
 [Thread 0x7fffd889c700 (LWP 490606) exited]
 [Inferior 1 (process 490602) exited normally]
 (gdb)
+</code></pre>
+<p>Another option to condition is ignoring an amount of hits on an
+specific breakpoint. To ignore <code>1000</code> hits on breakpont <code>#2</code> you
+can use:</p>
+<pre><code class="language-shell">ignore 2 1000
 </code></pre>
 <h2 id="watchpoint" tabindex="-1">Watchpoint</h2>
 <ul>
@@ -355,11 +367,10 @@ i = 9
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://www.maketecheasier.com/debug-program-using-gdb-linux/">How to Debug a C or C++ Program on Linux Using
-gdb</a></li>
-<li><a href="https://www.xmodulo.com/debug-program-nemiver-debugger.html">How to debug a C/C++ program with Nemiver
-debugger</a></li>
+<li><a href="https://www.maketecheasier.com/debug-program-using-gdb-linux/">How to Debug a C or C++ Program on Linux Using gdb</a></li>
+<li><a href="https://www.xmodulo.com/debug-program-nemiver-debugger.html">How to debug a C/C++ program with Nemiver debugger</a></li>
 <li><a href="https://sdimitro.github.io/post/scripting-gdb/">Scripting GDB</a></li>
+<li>▶️<a href="https://www.youtube.com/watch?v=dh1mil1ehvE">Debugging with Macros (-g3,-ggdb)</a></li>
 </ul>
 
       </main>

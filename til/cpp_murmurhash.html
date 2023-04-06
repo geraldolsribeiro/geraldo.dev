@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ murmur hash</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-30</b>Last modified: <b class="ml-2">2023-03-30 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-30</b>Last modified: <b class="ml-2">2023-04-05 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/murmurhash.html">murmurhash</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -329,7 +329,7 @@ uint32_t murmurhash3(const void* key, size_t len, uint32_t seed = 0) {
     fmt::print(&quot;hash128A: {:10} {:10} {:10} {:10}   seed: {}   text: {}\n&quot;,
                hash128A[0], hash128A[1], hash128A[2], hash128A[3], seed1, text);
 
-    fmt::print(&quot;hash128B: {:20} {:20}   seed: {}   text: {}\n&quot;, hash128B[0],
+    fmt::print(&quot;hash128B: {:21} {:21}   seed: {}   text: {}\n&quot;, hash128B[0],
                hash128B[1], seed1, text);
   }
 
@@ -363,21 +363,21 @@ hash: 1073392072   seed: 1234   text: h
 hash:   19595036   seed: 1234   text: he
 hash: 2251423591   seed: 1234   text: hello
 hash128A: 4192683273 3344351611  905885657  131714559   seed: 1234   text: Hello, world!
-hash128B:  6994950471748863742  5906757252613544790   seed: 1234   text: Hello, world!
+hash128B:   6994950471748863742   5906757252613544790   seed: 1234   text: Hello, world!
 hash128A: 3379794421 1391467063  204088760 2201735466   seed: 1234   text: hello, world!
-hash128B:  3334729735983292266 15246033631058457288   seed: 1234   text: hello, world!
+hash128B:   3334729735983292266  15246033631058457288   seed: 1234   text: hello, world!
 hash128A: 2645690248 1320752661 2676918588 3486440893   seed: 1234   text: Hello, World!
-hash128B: 13342170012096846388 10422801084110055398   seed: 1234   text: Hello, World!
+hash128B:  13342170012096846388  10422801084110055398   seed: 1234   text: Hello, World!
 hash128A: 3379794421 1391467063  204088760 2201735466   seed: 1234   text: hello, world!
-hash128B:  3334729735983292266 15246033631058457288   seed: 1234   text: hello, world!
+hash128B:   3334729735983292266  15246033631058457288   seed: 1234   text: hello, world!
 hash128A:  396337949 2466738178 2466738178 2466738178   seed: 1234   text: 
-hash128B:  5006475794136178589 13573877494810213620   seed: 1234   text: 
+hash128B:   5006475794136178589  13573877494810213620   seed: 1234   text: 
 hash128A: 3741828134 1966168643 1966168643 1966168643   seed: 1234   text: h
-hash128B: 11851864647889073320 18017523628106187849   seed: 1234   text: h
+hash128B:  11851864647889073320  18017523628106187849   seed: 1234   text: h
 hash128A:  740872880 1097768591 1097768591 1097768591   seed: 1234   text: he
-hash128B: 12027140842659985391  5619874163494401635   seed: 1234   text: he
+hash128B:  12027140842659985391   5619874163494401635   seed: 1234   text: he
 hash128A: 1597004003 2034712666 2930991220 2930991220   seed: 1234   text: hello
-hash128B: 10403193130508565092 11308957242644105945   seed: 1234   text: hello
+hash128B:  10403193130508565092  11308957242644105945   seed: 1234   text: hello
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

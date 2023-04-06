@@ -781,6 +781,9 @@
     <loc>https://geraldo.dev/til/cpp_lock_guard_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_partition_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/pagmo.html</loc>
   </url>
   <url>
@@ -860,6 +863,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/pikchr.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/compiler_explorer.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/splunk.html</loc>
@@ -1031,6 +1037,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/git-gitmoji.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_partial_sort_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_cereal_01.html</loc>
@@ -1489,6 +1498,9 @@
     <loc>https://geraldo.dev/til/tag/popen.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/partition.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/metatrader.html</loc>
   </url>
   <url>
@@ -1871,6 +1883,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/find.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/compiler-explorer.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/docker.html</loc>
@@ -2726,6 +2741,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/fluid.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::partial_sort.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/dart.html</loc>

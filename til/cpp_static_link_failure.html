@@ -12,9 +12,9 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
-    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
-    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
-    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/bug.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/bug.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/bug.webp">
     <meta property="twitter:card" content="">
     <link rel="stylesheet" href="/styles.css">
   </head>
@@ -62,7 +62,8 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-28</b>Last modified: <b class="ml-2">2023-03-30 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/static.html">static</a><a class="tag no-underline" href="/til/tag/thread.html">thread</a>
         </div>
-        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/bug.webp">
+          <div class="text-center text-sm mt-1">Photo by <a href='https://unsplash.com/@adryan_ra?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Adryan RA</a> on <a href='https://unsplash.com/photos/C5Twya_ibNU?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
@@ -76,9 +77,9 @@ int main() {
 </code></pre>
 <h3 id="makefile" tabindex="-1">Makefile</h3>
 <pre><code class="language-makefile">bin/static_link_failure: static_link_failure.cpp
-	g++ --std=c++0x -static -pthread $^ -lpthread -o $@.g++.static
+	g++ --std=c++11 -static -pthread $^ -lpthread -o $@.g++.static
 	clang++ --std=c++11 -static -pthread $^ -lpthread -o $@.clang++.static
-	g++ --std=c++0x -pthread $^ -lpthread -o $@.g++.non_static
+	g++ --std=c++11 -pthread $^ -lpthread -o $@.g++.non_static
 	clang++ --std=c++11 -pthread $^ -lpthread -o $@.clang++.non_static
 	clang++ --std=c++20 -pthread $^ -lpthread -o $@
 

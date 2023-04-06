@@ -59,13 +59,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ heap</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-04-05</b>Last modified: <b class="ml-2">2023-04-05 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-04-05</b>Last modified: <b class="ml-2">2023-04-06 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/std::make_heap.html">std::make_heap</a><a class="tag no-underline" href="/til/tag/std::pop_heap.html">std::pop_heap</a><a class="tag no-underline" href="/til/tag/std::push_heap.html">std::push_heap</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp_heap_01.webp">
-          <div class="text-center text-sm mt-1">Photo by <a href='https://unsplash.com/@markusspiske?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Markus Spiske</a> on <a href='https://unsplash.com/photos/phvqsMbxtTY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div>
+          <div class="text-center text-sm mt-1">Photo by <a </div>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#operations">Operations</a></li><li><a href="#types">Types</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#operations">Operations</a></li><li><a href="#types">Types</a></li><li><a href="#indexes">Indexes</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <p>A Heap is a special Tree-based data structure in which the tree is a
 complete binary tree.</p>
@@ -92,14 +92,22 @@ Binary Tree.</li>
 </li>
 <li><strong>min heap</strong>
 <ul>
-<li>the key present at the root node must be <strong>minimum</strong> among the keys</li>
-<li>the same property must be recursively true for all sub-trees in that</li>
+<li>the key present at the root node must be <strong>minimum</strong> among the keys
+present at all of it’s children</li>
+<li>the same property must be recursively true for all sub-trees in that
+Binary Tree.</li>
 </ul>
 </li>
 <li><strong>binomial heap</strong></li>
 <li><strong>fibonacci heap</strong></li>
 <li><strong>leftist heap</strong></li>
 <li><strong>k-ary heap</strong></li>
+</ul>
+<h2 id="indexes" tabindex="-1">Indexes</h2>
+<ul>
+<li><strong>parent of i = (i-1)/2</strong></li>
+<li><strong>i left child = (2*i)+1</strong></li>
+<li><strong>i right child = (2*i)+2</strong></li>
 </ul>
 <figure>
   <img class="mx-auto" src="/til/cpp_heap_01.svg" alt="Max heap in tree representation and squashed on array.">

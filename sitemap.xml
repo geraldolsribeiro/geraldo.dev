@@ -790,6 +790,9 @@
     <loc>https://geraldo.dev/til/tag/heap.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/beanstalk.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/google-test.html</loc>
   </url>
   <url>
@@ -869,6 +872,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/min.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/coproc.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/buffer_underflow.html</loc>
@@ -1411,6 +1417,9 @@
     <loc>https://geraldo.dev/til/tag/metaprogramming.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/beanstalk-cli.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/nemiver.html</loc>
   </url>
   <url>
@@ -1589,6 +1598,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/zip.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/queue.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/touchpad.html</loc>
@@ -1859,6 +1871,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/inter-process-communication.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/yabean.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/EMF.html</loc>

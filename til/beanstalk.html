@@ -61,10 +61,8 @@
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#overview">Overview</a></li><li><a href="#beanstalkd-advantages">beanstalkd Advantages</a></li><li><a href="#beanstalkd-insufficient">beanstalkd Insufficient</a></li><li><a href="#beanstalkd-key-concepts">beanstalkd Key Concepts</a></li><li><a href="#beanstalkd-lifecycle">beanstalkd Lifecycle</a></li><li><a href="#beanstalkd-features">beanstalkd Features</a></li><li><a href="#installation-and-configuration">Installation and Configuration</a></li><li><a href="#client">Client</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="overview" tabindex="-1">Overview</h2>
-<p>This post is strongly based on maxfang’s [Simple and easy task queue</p>
-<ul>
-<li>beanstalkd](<a href="https://www.cnblogs.com/immaxfang/p/16503956.html">https://www.cnblogs.com/immaxfang/p/16503956.html</a>).</li>
-</ul>
+<p>This post is strongly based on maxfang’s
+<a href="https://www.cnblogs.com/immaxfang/p/16503956.html">Simple and easy task queue - beanstalkd</a>.</p>
 <p><code>beanstalkd</code> is a simple and fast distributed work queue system, the protocol
 runs on TCP based on ASCII encoding. It was originally designed to reduce page
 latency in high-volume web applications by performing time-consuming tasks
@@ -126,10 +124,10 @@ state, waiting for the consumer to process.</p>
 <p>If the producer uses the put with delay method to create a job, the initial
 state of the job is <code>DELAYED</code>, and it will change to <code>READY</code> after the delay time
 has elapsed.</p>
-<p>The jobs created by the above two methods will pass a TTR (timeout mechanism).
-When the job is in the <code>RESERVED</code> state, the TTR will start counting down. put
+<p>The jobs created by the above two methods will pass a <code>TTR</code> (timeout mechanism).
+When the job is in the <code>RESERVED</code> state, the <code>TTR</code> will start counting down. put
 back in the queue.</p>
-<p>After the consumer obtains (reserves) a job in the READY state, the state of
+<p>After the consumer obtains (reserves) a job in the <code>READY</code> state, the state of
 the job will change to RESERVED. At this point, other consumers can no longer
 operate the job. After the consumer completes the job, he can choose to delete,
 release, or bury the operation.</p>
@@ -138,28 +136,28 @@ release, or bury the operation.</p>
 again in the future, and the life cycle ends.</li>
 <li><code>release</code>, you can change the job to the <code>READY</code> state again, so that other
 consumers can continue to obtain and execute the job, or you can use release
-with delay to delay the operation, so that it will enter the DELAYED state
-first, and then become READY after the delay time.</li>
+with delay to delay the operation, so that it will enter the <code>DELAYED</code> state
+first, and then become <code>READY</code> after the delay time.</li>
 <li><code>bury</code>, you can sleep the job, and when needed, change the dormant job back
-to the READY state through the kick command, or directly delete the job in
-the BURIED state through delete.</li>
+to the <code>READY</code> state through the kick command, or directly delete the job in
+the <code>BURIED</code> state through delete.</li>
 </ul>
 <p>A job in the <code>BURIED</code> state can return to the <code>READY</code> state through kick, or
 delete the job through delete.</p>
 <h3 id="why-design-this-buried-state%3F" tabindex="-1">Why design this BURIED state?</h3>
 <p>Generally, we can use this state to catch exceptions.
-For example, when executing a timeout or abnormal job, we can set it to the BURIED state.</p>
+For example, when executing a timeout or abnormal job, we can set it to the <code>BURIED</code> state.</p>
 <p>This has several advantages:</p>
 <ol>
 <li>These abnormal jobs can be directly put back into the queue and restarted.
 Try to affect normal queue consumption (these failed jobs are likely to fail
-again). If there is no such BURIED state, if we want to isolate separately,
+again). If there is no such <code>BURIED</code> state, if we want to isolate separately,
 we will generally use a new tube to store these abnormal jobs separately,
 and use a separate consumer for consumption. This will not affect normal
 news consumption. Especially when the failure rate is relatively high, it
 will take up a lot of normal resources.</li>
 <li>It is convenient for manual investigation. As mentioned above, you can set
-the abnormal job to the BURIED state, so that you can focus on this state
+the abnormal job to the <code>BURIED</code> state, so that you can focus on this state
 during manual inspection.</li>
 </ol>
 <h2 id="beanstalkd-features" tabindex="-1">beanstalkd Features</h2>
@@ -188,13 +186,13 @@ consumers.</p>
 unable to complete it, the reserve operation of beanstalkd supports setting the
 timeout time (TTR). If the consumer cannot send delete, release or bury
 commands to change the job status within TTR, then beanstalkd will consider the
-task processing failed and reset the job to READY status for consumption by
+task processing failed and reset the job to <code>READY</code> status for consumption by
 other consumers. If the consumer has predicted that the job may not be
 completed within the TTR, it can send the touch command to make beanstalkd
 recalculate the TTR.</p>
 <h3 id="task-reserve" tabindex="-1">Task Reserve</h3>
-<p>There is a BURIED state that can be used as a buffer. For specific features,
-see the introduction of the BURIED state in the life cycle above.</p>
+<p>There is a <code>BURIED</code> state that can be used as a buffer. For specific features,
+see the introduction of the <code>BURIED</code> state in the life cycle above.</p>
 <h2 id="installation-and-configuration" tabindex="-1">Installation and Configuration</h2>
 <p>Take debian as an example to install beanstalkd:</p>
 <pre><code class="language-bash">apt-get install beanstalkd

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="beanstalk">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>beanstalk</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>beanstalk</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-06-27</b>Last modified: <b class="ml-2">2023-06-27 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/beanstalk.html">beanstalk</a><a class="tag no-underline" href="/til/tag/t2.html">t2</a><a class="tag no-underline" href="/til/tag/t3.html">t3</a>
+        </div><p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#overview">Overview</a></li><li><a href="#beanstalkd-advantages">beanstalkd Advantages</a></li><li><a href="#beanstalkd-insufficient">beanstalkd Insufficient</a></li><li><a href="#beanstalkd-key-concepts">beanstalkd Key Concepts</a></li><li><a href="#beanstalkd-lifecycle">beanstalkd Lifecycle</a></li><li><a href="#beanstalkd-features">beanstalkd Features</a></li><li><a href="#installation-and-configuration">Installation and Configuration</a></li><li><a href="#client">Client</a></li><li><a href="#references">References</a></li></ul></div></p>
+<h2 id="overview" tabindex="-1">Overview</h2>
+<p>This post is strongly based on maxfang’s [Simple and easy task queue</p>
+<ul>
+<li>beanstalkd](<a href="https://www.cnblogs.com/immaxfang/p/16503956.html">https://www.cnblogs.com/immaxfang/p/16503956.html</a>).</li>
+</ul>
+<p><code>beanstalkd</code> is a simple and fast distributed work queue system, the protocol
+runs on TCP based on ASCII encoding. It was originally designed to reduce page
+latency in high-volume web applications by performing time-consuming tasks
+asynchronously in the background. It has the characteristics of simplicity,
+light weight, and ease of use. It also supports the control of task priority,
+delay/timeout resend, and client support in many language versions. These
+advantages make it an ideal choice for various queue system scenarios. A common
+choice for .</p>
+<h2 id="beanstalkd-advantages" tabindex="-1">beanstalkd Advantages</h2>
+<ul>
+<li>As introduced on his official website, simple&amp;fast is very easy to use. It is
+suitable for introducing message queues but does not want to introduce
+heavy-duty MQ such as Kafka. The maintenance cost is low; at the same time,
+its performance is very high, and it can be covered in most scenarios.</li>
+<li>Support persistence</li>
+<li>Support message priority, topic, delayed message, message retry, etc.</li>
+<li>All mainstream language clients support it, and it can also be implemented by
+itself according to the beanstalkd protocol.</li>
+</ul>
+<h2 id="beanstalkd-insufficient" tabindex="-1">beanstalkd Insufficient</h2>
+<ul>
+<li>Without maximum memory control, when there are too many business messages,
+the service may be unstable.</li>
+<li>The official does not provide a cluster failover solution (master-slave or
+sentry, etc.), you need to solve it yourself.</li>
+</ul>
+<h2 id="beanstalkd-key-concepts" tabindex="-1">beanstalkd Key Concepts</h2>
+<h3 id="job" tabindex="-1">job</h3>
+<p>Task, the basic unit in the queue, each job will have an id and priority. A bit
+similar to the concept of message in other message queues. However, the job has
+various states, which will be highlighted in the life cycle section below. Jobs
+are stored in tubes.</p>
+<h3 id="tube" tabindex="-1">tube</h3>
+<p>Pipes are used to store jobs of the same type. A bit similar to the concept of
+topic in other message queues. beanstalkd implements multi-task queues through
+tubes. There can be multiple pipelines in beanstalkd, each pipeline has its own
+producer and consumer, and the pipelines do not affect each other.</p>
+<h3 id="producers" tabindex="-1">producers</h3>
+<p>job producer. Put a job into a tube through the put command.</p>
+<h3 id="consumer" tabindex="-1">consumer</h3>
+<p>job consumer. Obtain the job through reserve, and change the status of the job
+through delete, release, and bury.</p>
+<h2 id="beanstalkd-lifecycle" tabindex="-1">beanstalkd Lifecycle</h2>
+<p>As mentioned above, the job in beanstalkd has a state distinction. In the
+entire life cycle, the job may have four states: <code>READY</code>, <code>RESERVED</code>, <code>DELAYED</code>,
+<code>BURIED</code>.</p>
+<p>Only <code>READY</code> jobs that are in state can be consumed. The figure below describes
+the flow between the states.</p>
+<figure>
+  <img class="mx-auto" src="/til/beanstalkd-status.webp" alt="States">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>States</span>
+  </figcaption>
+</figure>
+<p>The producer has two ways when creating a job, put and put with delay (delayed
+task).</p>
+<p>If the producer uses put to directly create a job, the job is in the <code>READY</code>
+state, waiting for the consumer to process.</p>
+<p>If the producer uses the put with delay method to create a job, the initial
+state of the job is <code>DELAYED</code>, and it will change to <code>READY</code> after the delay time
+has elapsed.</p>
+<p>The jobs created by the above two methods will pass a TTR (timeout mechanism).
+When the job is in the <code>RESERVED</code> state, the TTR will start counting down. put
+back in the queue.</p>
+<p>After the consumer obtains (reserves) a job in the READY state, the state of
+the job will change to RESERVED. At this point, other consumers can no longer
+operate the job. After the consumer completes the job, he can choose to delete,
+release, or bury the operation.</p>
+<ul>
+<li><code>delete</code>, the job is deleted, cleared from beanstalkd, and cannot be obtained
+again in the future, and the life cycle ends.</li>
+<li><code>release</code>, you can change the job to the <code>READY</code> state again, so that other
+consumers can continue to obtain and execute the job, or you can use release
+with delay to delay the operation, so that it will enter the DELAYED state
+first, and then become READY after the delay time.</li>
+<li><code>bury</code>, you can sleep the job, and when needed, change the dormant job back
+to the READY state through the kick command, or directly delete the job in
+the BURIED state through delete.</li>
+</ul>
+<p>A job in the <code>BURIED</code> state can return to the <code>READY</code> state through kick, or
+delete the job through delete.</p>
+<h3 id="why-design-this-buried-state%3F" tabindex="-1">Why design this BURIED state?</h3>
+<p>Generally, we can use this state to catch exceptions.
+For example, when executing a timeout or abnormal job, we can set it to the BURIED state.</p>
+<p>This has several advantages:</p>
+<ol>
+<li>These abnormal jobs can be directly put back into the queue and restarted.
+Try to affect normal queue consumption (these failed jobs are likely to fail
+again). If there is no such BURIED state, if we want to isolate separately,
+we will generally use a new tube to store these abnormal jobs separately,
+and use a separate consumer for consumption. This will not affect normal
+news consumption. Especially when the failure rate is relatively high, it
+will take up a lot of normal resources.</li>
+<li>It is convenient for manual investigation. As mentioned above, you can set
+the abnormal job to the BURIED state, so that you can focus on this state
+during manual inspection.</li>
+</ol>
+<h2 id="beanstalkd-features" tabindex="-1">beanstalkd Features</h2>
+<h3 id="persistence" tabindex="-1">Persistence</h3>
+<p>The job and its status are recorded to the local file through the binlog. When
+beanstalkd restarts, the previous job status can be restored by reading the
+binlog.</p>
+<h3 id="distributed" tabindex="-1">Distributed</h3>
+<p>In the documentation of beanstalkd, it actually supports distributed. Its
+design idea is similar to that of Memcached. Each server of beanstalkd does not
+know the existence of each other. It realizes distribution through the client
+and obtains jobs from specific servers according to the tube name. Post an
+article dedicated to beanstalkd distribution, a distributed solution of
+Beanstalkd</p>
+<h3 id="task-delay" tabindex="-1">Task Delay</h3>
+<p>Naturally supports delayed tasks, you can specify the delay time when creating
+a job, or after the job is processed, consumers can use release with delay to
+put the job into the queue again for delayed execution.</p>
+<h3 id="task-priority" tabindex="-1">Task Priority</h3>
+<p>The job generated by the producer can be assigned a priority, which supports
+priorities from 0 to 2^32. The smaller the value, the higher the priority. The
+default priority is 1024. Jobs with high priority will be executed first by
+consumers.</p>
+<h3 id="timeout-mechanism" tabindex="-1">Timeout Mechanism</h3>
+<p>In order to prevent a consumer from occupying a job for a long time but being
+unable to complete it, the reserve operation of beanstalkd supports setting the
+timeout time (TTR). If the consumer cannot send delete, release or bury
+commands to change the job status within TTR, then beanstalkd will consider the
+task processing failed and reset the job to READY status for consumption by
+other consumers. If the consumer has predicted that the job may not be
+completed within the TTR, it can send the touch command to make beanstalkd
+recalculate the TTR.</p>
+<h3 id="task-reserve" tabindex="-1">Task Reserve</h3>
+<p>There is a BURIED state that can be used as a buffer. For specific features,
+see the introduction of the BURIED state in the life cycle above.</p>
+<h2 id="installation-and-configuration" tabindex="-1">Installation and Configuration</h2>
+<p>Take debian as an example to install beanstalkd:</p>
+<pre><code class="language-bash">apt-get install beanstalkd
+</code></pre>
+<p>The default configuration is in the file <code>/etc/default/beanstalkd</code>:</p>
+<pre><code class="language-bash">## Defaults for the beanstalkd init script, /etc/init.d/beanstalkd on
+## Debian systems.
+
+BEANSTALKD_LISTEN_ADDR=127.0.0.1
+BEANSTALKD_LISTEN_PORT=11300
+
+# You can use BEANSTALKD_EXTRA to pass additional options. See beanstalkd(1)
+# for a list of the available options. Uncomment the following line for
+# persistent job storage.
+#BEANSTALKD_EXTRA=&quot;-b /var/lib/beanstalkd&quot;
+</code></pre>
+<p>Services can be run through the beanstalkd command, and various parameters can
+be added. The format of the command is as follows:</p>
+<pre><code class="language-bash"># beanstalkd -h
+Use: beanstalkd [OPTIONS]
+
+Options:
+ -b DIR   write-ahead log directory
+ -f MS    fsync at most once every MS milliseconds (default is 50ms);
+          use -f0 for &quot;always fsync&quot;
+ -F       never fsync
+ -l ADDR  listen on address (default is 0.0.0.0)
+ -p PORT  listen on port (default is 11300)
+ -u USER  become user and group
+ -z BYTES set the maximum job size in bytes (default is 65535);
+          max allowed is 1073741824 bytes
+ -s BYTES set the size of each write-ahead log file (default is 10485760);
+          will be rounded up to a multiple of 4096 bytes
+ -v       show version information
+ -V       increase verbosity
+ -h       show this help
+</code></pre>
+<h2 id="client" tabindex="-1">Client</h2>
+<p>There are several clients. I just picked two for example:</p>
+<p>Written in Rust</p>
+<pre><code class="language-bash">git clone https://github.com/schickling/beanstalkd-cli.git
+cd beanstalkd-cli
+cargo build --release
+cp target/release/beanstalkd-cli ~/bin/
+</code></pre>
+<p>Usage:</p>
+<pre><code class="language-bash">$ beanstalkd-cli 
+Beanstalkd CLI
+
+Usage:
+    beanstalkd-cli [options] put &lt;message&gt;
+    beanstalkd-cli [options] pop
+    beanstalkd-cli [options] monitor
+    beanstalkd-cli [options] stats [&lt;key&gt;]
+    beanstalkd-cli [(--help | --version)]
+
+Commands:
+    put &lt;message&gt;      Writes a message to the queue
+    pop                Removes and prints the next message in the queue
+    monitor            Live monitoring of the queue
+    stats [&lt;key&gt;]      Prints all stats or stats for a specific key
+
+Options:
+    -h, --host=&lt;host&gt;  Hostname of the beanstalkd server [default: localhost]
+    -p, --port=&lt;port&gt;  Port of the beanstalkd server [default: 11300]
+    -t, --tube=&lt;tube&gt;  Tube to put/pop from - pop can use multiple tubes comma separated
+    --help             Display this message
+    -v, --version      Print version info and exit
+</code></pre>
+<p>Written in Go</p>
+<pre><code class="language-bash">git clone https://github.com/1xyz/yabean
+cd yabean
+go build
+cp yabean ~/bin/
+</code></pre>
+<p>Usage:</p>
+<pre><code class="language-bash">$ yabean -h
+usage: yabean [--version] [--addr=&lt;addr&gt;] &lt;command&gt; [&lt;args&gt;...]
+options:
+   --addr=&lt;addr&gt;  Beanstalkd Address [default: :11300].
+   -h, --help
+The commands are:
+   del        Delete a specific job.
+   kick       Kick a buried job (Note: see reserve command to bury a job).
+   list       List tubes.
+   peek       Peek at a specific job.
+   peek-tube  Peek into a specific tube.
+   put        Put a job into a beanstalkd tube.
+   reserve    Reserve a job from one or more tubes.
+   stats      Retrieve serve statistics.	
+   stats-job  Retrieve statistics for a specific job.
+   stats-tube Retrieve statistics for a specific tube.
+</code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li>Chinese <a href="https://www.cnblogs.com/immaxfang/p/16503956.html">Simple and easy task queue - beanstalkd</a></li>
+<li><a href="https://github.com/beanstalkd/beanstalkd/wiki/Tools">Some community tools for managing beanstalkd</a></li>
+</ul>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2023</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

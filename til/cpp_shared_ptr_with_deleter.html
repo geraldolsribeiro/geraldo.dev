@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ shared_ptr with custom deleter</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-13</b>Last modified: <b class="ml-2">2023-02-28 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-13</b>Last modified: <b class="ml-2">2023-03-01 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::shared_ptr.html">std::shared_ptr</a><a class="tag no-underline" href="/til/tag/custom-deleter.html">custom-deleter</a><a class="tag no-underline" href="/til/tag/popen.html">popen</a><a class="tag no-underline" href="/til/tag/memory-safe.html">memory-safe</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -179,7 +179,7 @@ Call delete from lambda... p-&gt;id=12
 </code></pre>
 <p>Output of context block 4</p>
 <pre><code class="language-txt">4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:04 shared_ptr_with_deleter.cpp
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 fev 16 07:15 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 </code></pre>
@@ -225,7 +225,7 @@ Call delete from lambda... p-&gt;id=12
 ❌ Foo::~Foo(), id=11
 
 4) constructor with pipe object and deleter (POSIX)
-ls result: -rw-r--r-- 1 geraldo geraldo 4821 jan 13 12:04 shared_ptr_with_deleter.cpp
+ls result: -rw-r--r-- 1 geraldo geraldo 4821 fev 16 07:15 shared_ptr_with_deleter.cpp
 
 ==&gt; Context block 4 is going out of context here
 

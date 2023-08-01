@@ -169,6 +169,9 @@
     <loc>https://geraldo.dev/til/cpp_switch_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/communication-protocol-I2C.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/codigo-de-barras.html</loc>
   </url>
   <url>
@@ -176,6 +179,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/package-manager-c++.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/htmx.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/fonte-para-desenvolvimento.html</loc>
@@ -248,6 +254,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/mlpack-macos.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/communication-protocol-SIP.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/docker-exportar-imagem.html</loc>
@@ -353,6 +362,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/canary-release.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/SDR.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_complex_01.html</loc>
@@ -862,6 +874,9 @@
     <loc>https://geraldo.dev/til/tag/terminal.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/htmx.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/letsencrypt.html</loc>
   </url>
   <url>
@@ -1066,6 +1081,9 @@
     <loc>https://geraldo.dev/til/tag/quickfix.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/SIP.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/metatrader.html</loc>
   </url>
   <url>
@@ -1106,6 +1124,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/ufw.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/nodemcu.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/DNAT.html</loc>
@@ -1151,6 +1172,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/fzf.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/SDR.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/utf.html</loc>
@@ -1205,6 +1229,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/usb.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/radio.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/testlink.html</loc>
@@ -1534,6 +1561,9 @@
     <loc>https://geraldo.dev/til/tag/barcode.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/tkinter.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/splunk.html</loc>
   </url>
   <url>
@@ -1648,6 +1678,9 @@
     <loc>https://geraldo.dev/til/tag/std::make_shared.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/CAN.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/std::string_literals.html</loc>
   </url>
   <url>
@@ -1658,6 +1691,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/shared-memory.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/I2C.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/all_of.html</loc>
@@ -1712,6 +1748,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/sysadmin.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/communication-protocol.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/math.html</loc>
@@ -1993,6 +2032,9 @@
     <loc>https://geraldo.dev/til/tag/waveform.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/esp32.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/inotify-tools.html</loc>
   </url>
   <url>
@@ -2206,6 +2248,9 @@
     <loc>https://geraldo.dev/til/tag/browser.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/embedded.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/dialog.html</loc>
   </url>
   <url>
@@ -2254,6 +2299,9 @@
     <loc>https://geraldo.dev/til/tag/rhel.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/UART.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/hugo.html</loc>
   </url>
   <url>
@@ -2300,6 +2348,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_version.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tkinter.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/git-diff.html</loc>
@@ -2539,6 +2590,9 @@
     <loc>https://geraldo.dev/til/digital-communication-block-diagram.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/communication-protocol-CAN.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/lxc.html</loc>
   </url>
   <url>
@@ -2591,6 +2645,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/java-12-no-debian-buster.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/communication-protocol-UART.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/deploy-site-with-git.html</loc>

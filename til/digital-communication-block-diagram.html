@@ -56,10 +56,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Digital Communication Block Diagram</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-03-09 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-03-01</b>Last modified: <b class="ml-2">2023-09-08 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/communication.html">communication</a><a class="tag no-underline" href="/til/tag/waveform.html">waveform</a><a class="tag no-underline" href="/til/tag/channel.html">channel</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#source-encoder">Source Encoder</a></li><li><a href="#channel-encoder">Channel Encoder</a></li><li><a href="#digital-modulator">Digital Modulator</a></li><li><a href="#channel">Channel</a></li><li><a href="#digital-demodulator">Digital Demodulator</a></li><li><a href="#channel-decoder">Channel Decoder</a></li><li><a href="#source-decoder">Source Decoder</a></li><li><a href="#output-transducer">Output Transducer</a></li><li><a href="#output-signal">Output Signal</a></li><li><a href="#fm-%E2%80%94-frequency-modulation">FM — Frequency Modulation</a></li><li><a href="#pcm-%E2%80%94-pulse-code-modulation">PCM — Pulse Code Modulation</a></li><li><a href="#low-pass-filter">Low Pass Filter</a></li><li><a href="#sampler">Sampler</a></li><li><a href="#quantizer">Quantizer</a></li><li><a href="#encoder">Encoder</a></li><li><a href="#regenerative-repeater">Regenerative Repeater</a></li><li><a href="#decoder">Decoder</a></li><li><a href="#reconstruction-filter">Reconstruction Filter</a></li><li><a href="#broadband%2C-wideband-and-narrowband">Broadband, wideband and narrowband</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#source-encoder">Source Encoder</a></li><li><a href="#channel-encoder">Channel Encoder</a></li><li><a href="#digital-modulator">Digital Modulator</a></li><li><a href="#channel">Channel</a></li><li><a href="#digital-demodulator">Digital Demodulator</a></li><li><a href="#channel-decoder">Channel Decoder</a></li><li><a href="#source-decoder">Source Decoder</a></li><li><a href="#output-transducer">Output Transducer</a></li><li><a href="#output-signal">Output Signal</a></li><li><a href="#fm-%E2%80%94-frequency-modulation">FM — Frequency Modulation</a></li><li><a href="#pcm-%E2%80%94-pulse-code-modulation">PCM — Pulse Code Modulation</a></li><li><a href="#low-pass-filter">Low Pass Filter</a></li><li><a href="#sampler">Sampler</a></li><li><a href="#quantizer">Quantizer</a></li><li><a href="#encoder">Encoder</a></li><li><a href="#regenerative-repeater">Regenerative Repeater</a></li><li><a href="#decoder">Decoder</a></li><li><a href="#reconstruction-filter">Reconstruction Filter</a></li><li><a href="#broadband%2C-wideband-and-narrowband">Broadband, wideband and narrowband</a></li><li><a href="#usrp-(universal-software-radio-peripheral)">USRP (Universal Software Radio Peripheral)</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <figure class="bg-slate-800 text-center py-4">
   <a name="fig-1">
@@ -73,9 +73,9 @@
   </figcaption>
 </figure>
 <figure>
-  <img class="mx-auto" src="/til/digital_communication_block_diagram_00.webp" alt="Digital Communication Block Diagram">
+  <img class="mx-auto" src="/til/digital_communication_block_diagram_00.webp" alt="Digital Communication Block Diagram adapted from Bernard Sklar book">
   <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Digital Communication Block Diagram</span>
+     <strong>Fig. 2</strong> - <span>Digital Communication Block Diagram adapted from Bernard Sklar book</span>
   </figcaption>
 </figure>
 <h2 id="source-encoder" tabindex="-1">Source Encoder</h2>
@@ -303,6 +303,18 @@ process is repeated in a reverse pattern to obtain the original signal.</p>
 <ul>
 <li><a href="/til/broadband-wideband-narrowband.html">Broadband — Wideband — Narrowband</a></li>
 </ul>
+<h2 id="usrp-(universal-software-radio-peripheral)" tabindex="-1">USRP (Universal Software Radio Peripheral)</h2>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-13">
+    <object class="mx-auto my-2" data="/til/digital_communication_usrp_01.svg" type="image/svg+xml">
+      <!-- fallback -->
+      <img class="mx-auto my-2" src="/til/digital_communication_usrp_01.svg" alt="USRP receiver block diagram">
+    </object>
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 13</strong> — <span>USRP receiver block diagram</span>
+  </figcaption>
+</figure>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://www.tutorialspoint.com/digital_communication/digital_communication_quick_guide.htm">Digital Communication - Quick Guide</a></li>

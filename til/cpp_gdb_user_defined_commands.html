@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ gdb user defined commands</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-26</b>Last modified: <b class="ml-2">2023-02-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-26</b>Last modified: <b class="ml-2">2023-09-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/gdb.html">gdb</a><a class="tag no-underline" href="/til/tag/user-defined-command.html">user-defined-command</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -236,40 +236,7 @@ quit
 
 </code></pre>
 <h2 id="gdb-output" tabindex="-1">GDB output</h2>
-<pre><code class="language-shell">142	  print_list( list1 );
-$1 = {
-  data = 0,
-  next = 0x555555ab2540
-}
-$2 = {
-  data = 1,
-  next = 0x555555ab2560
-}
-$3 = {
-  data = 2,
-  next = 0x555555ab2580
-}
-$4 = {
-  data = 3,
-  next = 0x555555ab25a0
-}
-$5 = {
-  data = 4,
-  next = 0x555555ab25c0
-}
-$6 = {
-  data = 5,
-  next = 0x555555ab25e0
-}
-$7 = {
-  data = 6,
-  next = 0x0
-}
-        p_generic_list LIST_HEAD_POINTER
-        Print all the fields of the nodes in the linked list pointed to by LIST_HEAD_POINTER. Assumes there is a next field in the struct.
-144	  return 0;
-[Inferior 1 (process 29241) exited normally]
-
+<pre><code class="language-shell">Arquivo output/gdb_user_defined_commands.gdb nao encontrado!
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

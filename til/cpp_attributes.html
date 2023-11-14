@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ attributes</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2023-03-16 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2023-09-17 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/attributes.html">attributes</a><a class="tag no-underline" href="/til/tag/nodiscard.html">nodiscard</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -175,32 +175,32 @@ terminate called after throwing an instance of 'int'
 </code></pre>
 <h2 id="compilation-output" tabindex="-1">Compilation output</h2>
 <pre><code class="language-txt">attributes.cpp:62:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
-  get_zero();
-  ^~~~~~~~
+   62 |   get_zero();
+      |   ^~~~~~~~
 attributes.cpp:63:3: warning: ignoring return value of function declared with 'nodiscard' attribute: Some custom message [-Wunused-result]
-  get_one();
-  ^~~~~~~
+   63 |   get_one();
+      |   ^~~~~~~
 attributes.cpp:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
-  get_two();
-  ^~~~~~~
-attributes.cpp:84:16: warning: an attribute specifier sequence in this position is a C++2b extension [-Wc++2b-extensions]
-  auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
-               ^
+   75 |   get_two();
+      |   ^~~~~~~
+attributes.cpp:84:16: warning: an attribute specifier sequence in this position is a C++23 extension [-Wc++23-extensions]
+   84 |   auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
+      |                ^
 attributes.cpp:85:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
-  lm();  // would emit a warning
-  ~~^~
+   85 |   lm();  // would emit a warning
+      |   ~~^~
 attributes.cpp:93:30: warning: unused parameter 'FD' [-Wunused-parameter]
-  [[nodiscard]] FDHolder(int FD){};
-                             ^
+   93 |   [[nodiscard]] FDHolder(int FD){};
+      |                              ^
 attributes.cpp:99:3: warning: ignoring temporary created by a constructor declared with 'nodiscard' attribute [-Wunused-value]
-  FDHolder{42};    // warning
-  ^~~~~~~~~~~~
+   99 |   FDHolder{42};    // warning
+      |   ^~~~~~~~~~~~
 attributes.cpp:115:3: warning: 'testNoExcept' has a non-throwing exception specification but can still throw [-Wexceptions]
-  throw 42;
-  ^
+  115 |   throw 42;
+      |   ^
 attributes.cpp:112:6: note: function declared non-throwing here
-void testNoExcept() noexcept {
-     ^              ~~~~~~~~
+  112 | void testNoExcept() noexcept {
+      |      ^              ~~~~~~~~
 8 warnings generated.
 
 </code></pre>

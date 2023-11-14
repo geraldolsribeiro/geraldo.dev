@@ -1,1 +1,48 @@
-<svg xmlns="http://www.w3.org/2000/svg" class="pikchr" viewBox="0 0 745.648 501.868"><path style="fill:#ffff7f" d="m739.168 261.598-7.719 2.895v-5.789z"/><path d="M2.16 261.598h733.149" style="fill:none;stroke-width:1.4472;stroke:#ffff7f"/><path style="fill:#ffff7f" d="m399.01 6.48 2.895 7.718h-5.789z"/><path d="M399.01 499.708V10.339" style="fill:none;stroke-width:1.4472;stroke:#ffff7f"/><path d="M399.01 488.37H172.239M172.239 261.598V488.37" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M172.239 488.37h56.693v-56.693" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 431.677H228.932M228.932 261.598v170.079" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M228.932 431.677h56.693v-56.693" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 374.984H285.625M285.625 261.598v113.386" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M285.625 374.984h56.692v-56.693" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 318.291h-56.693M342.317 261.598v56.693" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M342.317 318.291h56.693v-56.693" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 261.598v-56.693" style="fill:none;stroke-width:3.24;stroke:#ff7f7f"/><path d="M399.01 261.598v-56.693" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M399.01 204.905h56.693v-56.693" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 148.212h56.693M455.703 261.598V148.212" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M455.703 148.212h56.693V91.519" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M399.01 91.52h113.386M512.396 261.598V91.519" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><path d="M512.396 91.52h56.693V34.826" style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:#ff7f7f"/><path d="M569.089 34.827h170.079M172.239 488.37H2.16" style="fill:none;stroke-width:3.24;stroke:#ff7f7f"/><path d="M399.01 34.827h170.079M569.089 261.598V34.826" style="fill:none;stroke-width:1.4472;stroke:#fff;stroke-dasharray:2.1,7.2"/><text x="377.583" y="34.827" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂8</text><text x="377.583" y="91.519" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂7</text><text x="377.583" y="148.212" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂6</text><text x="377.583" y="204.905" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂5</text><text x="420.438" y="318.291" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂4</text><text x="420.438" y="374.984" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂3</text><text x="420.438" y="431.677" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂2</text><text x="420.438" y="488.37" text-anchor="middle" fill="#FFF" dominant-baseline="central">x̂1</text><text x="228.932" y="246.478" text-anchor="middle" fill="#FFF" dominant-baseline="central">a1</text><text x="285.625" y="246.478" text-anchor="middle" fill="#FFF" dominant-baseline="central">a2</text><text x="342.317" y="246.478" text-anchor="middle" fill="#FFF" dominant-baseline="central">a3</text><text x="414.966" y="276.718" text-anchor="middle" fill="#FFF" dominant-baseline="central">a4</text><text x="455.703" y="276.718" text-anchor="middle" fill="#FFF" dominant-baseline="central">a5</text><text x="512.396" y="276.718" text-anchor="middle" fill="#FFF" dominant-baseline="central">a6</text><text x="569.089" y="276.718" text-anchor="middle" fill="#FFF" dominant-baseline="central">a7</text></svg>
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 745.648 501.868">
+<polygon points="739,261 731,264 731,258" style="fill:rgb(255,255,127)"/>
+<path d="M2,261L735,261"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,127);" />
+<polygon points="399,6 401,14 396,14" style="fill:rgb(255,255,127)"/>
+<path d="M399,499L399,10"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,127);" />
+<path d="M399,488L172,488"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M172,261L172,488"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M172,488L228,488L228,431"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,431L228,431"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M228,261L228,431"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M228,431L285,431L285,374"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,374L285,374"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M285,261L285,374"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M285,374L342,374L342,318"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,318L342,318"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M342,261L342,318"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M342,318L399,318L399,261"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,261L399,204"  style="fill:none;stroke-width:3.24;stroke:rgb(255,127,127);" />
+<path d="M399,204L399,204"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M399,261L399,204"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M399,204L455,204L455,148"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,148L455,148"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M455,261L455,148"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M455,148L512,148L512,91"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M399,91L512,91"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M512,261L512,91"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M512,91L569,91L569,34"  style="fill:none;stroke-width:3.24;stroke-linejoin:round;stroke:rgb(255,127,127);" />
+<path d="M569,34L739,34"  style="fill:none;stroke-width:3.24;stroke:rgb(255,127,127);" />
+<path d="M172,488L2,488"  style="fill:none;stroke-width:3.24;stroke:rgb(255,127,127);" />
+<path d="M399,34L569,34"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<path d="M569,261L569,34"  style="fill:none;stroke-width:1.4472;stroke:rgb(255,255,255);stroke-dasharray:2.1,7.2;" />
+<text x="377" y="34" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂8</text>
+<text x="377" y="91" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂7</text>
+<text x="377" y="148" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂6</text>
+<text x="377" y="204" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂5</text>
+<text x="420" y="318" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂4</text>
+<text x="420" y="374" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂3</text>
+<text x="420" y="431" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂2</text>
+<text x="420" y="488" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">x̂1</text>
+<text x="228" y="246" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a1</text>
+<text x="285" y="246" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a2</text>
+<text x="342" y="246" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a3</text>
+<text x="414" y="276" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a4</text>
+<text x="455" y="276" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a5</text>
+<text x="512" y="276" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a6</text>
+<text x="569" y="276" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">a7</text>
+</svg>
+

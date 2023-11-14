@@ -121,6 +121,9 @@
     <loc>https://geraldo.dev/til/cpp_string_literals_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/freeRTOS.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/beanstalk.html</loc>
   </url>
   <url>
@@ -173,6 +176,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/codigo-de-barras.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/c_pthread_cond_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/git-gitmoji.html</loc>
@@ -493,6 +499,9 @@
     <loc>https://geraldo.dev/til/hf-vhf-uhf.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/file-manager.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/git-manter-somente-os-n-ultimos-commit.html</loc>
   </url>
   <url>
@@ -803,6 +812,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/heap.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/freeRTOS.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/beanstalk.html</loc>
@@ -1646,6 +1658,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/network-mesh.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/embedded-systems.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/devtools.html</loc>
@@ -2821,6 +2836,9 @@
     <loc>https://geraldo.dev/til/cpp_ranges_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/modulation.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_templates_02.html</loc>
   </url>
   <url>
@@ -3103,6 +3121,9 @@
     <loc>https://geraldo.dev/certificate/2023-08-09_linkedin_C_Programming_for_Embedded_Applications.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/2023-08-11_linkedin_IoT_Foundations_Operating_Systems_Fundamentals.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2022-09-16_stefanini_Soft_Skill.html</loc>
   </url>
   <url>
@@ -3167,6 +3188,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2005-12-02_4Linux_Pen-Test_Analise_e_Testes_de_Vulnerabilidades_em_Redes_Corporativas.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2023-11-14_coursera_Linux_System_Programming_and_Introduction_to_Buildroot.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2021-10-20_stefanini_POWERPOINT_2013-CURSO_BÁSICO.html</loc>
@@ -3410,6 +3434,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/aws.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/embedded-software.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/memory-management.html</loc>
@@ -3815,6 +3842,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/ética.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/IoT.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/refactoring.html</loc>

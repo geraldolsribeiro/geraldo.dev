@@ -1,0 +1,64 @@
+<svg xmlns='http://www.w3.org/2000/svg' class="pikchr" viewBox="0 0 1624.32 302.4">
+<path d="M2,117L110,117L110,45L2,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="56" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Antenna</text>
+<polygon points="182,81 170,85 170,77" style="fill:rgb(255,255,255)"/>
+<path d="M110,81L176,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M182,117L290,117L290,45L182,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="236" y="71" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Band</text>
+<text x="236" y="91" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Filter</text>
+<polygon points="362,81 350,85 350,77" style="fill:rgb(255,255,255)"/>
+<path d="M290,81L356,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M362,117L470,117L470,45L362,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="416" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Gain</text>
+<polygon points="542,81 530,85 530,77" style="fill:rgb(255,255,255)"/>
+<path d="M470,81L536,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="563" cy="81" r="21.6"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="563" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">X</text>
+<text x="563" y="24" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Quadrature</text>
+<text x="563" y="44" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Mixer</text>
+<path d="M509,246L617,246L617,174L509,174Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="563" y="210" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">LO</text>
+<polygon points="563,102 568,114 559,114" style="fill:rgb(255,255,255)"/>
+<path d="M563,174L563,108"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="657,81 645,85 645,77" style="fill:rgb(255,255,255)"/>
+<path d="M585,81L651,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M657,117L765,117L765,45L657,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="711" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">LPF</text>
+<polygon points="837,81 825,85 825,77" style="fill:rgb(255,255,255)"/>
+<path d="M765,81L831,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M837,117L945,117L945,45L837,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="891" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">ADC</text>
+<polygon points="1017,81 1005,85 1005,77" style="fill:rgb(255,255,255)"/>
+<path d="M945,81L1011,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<circle cx="1038" cy="81" r="21.6"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1038" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">X</text>
+<text x="1038" y="24" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Complex</text>
+<text x="1038" y="44" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Mixer</text>
+<path d="M984,246L1092,246L1092,174L984,174Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1038" y="210" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">LO</text>
+<polygon points="1038,102 1043,114 1034,114" style="fill:rgb(255,255,255)"/>
+<path d="M1038,174L1038,108"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<polygon points="1132,81 1121,85 1121,77" style="fill:rgb(255,255,255)"/>
+<path d="M1060,81L1126,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M1132,117L1240,117L1240,45L1132,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1186" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">LPF</text>
+<polygon points="1312,81 1301,85 1301,77" style="fill:rgb(255,255,255)"/>
+<path d="M1240,81L1306,81"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<path d="M1312,117L1420,117L1420,45L1312,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1366" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">N down</text>
+<polygon points="1492,63 1481,67 1481,59" style="fill:rgb(255,255,255)"/>
+<path d="M1420,63L1486,63"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1456" y="51" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">I</text>
+<text x="1456" y="75" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<polygon points="1492,99 1481,103 1481,95" style="fill:rgb(255,255,255)"/>
+<path d="M1420,99L1486,99"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1456" y="87" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Q</text>
+<text x="1456" y="111" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central"></text>
+<path d="M1492,117L1600,117L1600,45L1492,45Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);" />
+<text x="1546" y="81" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">GPP</text>
+<path d="M146,275L966,275L966,2L146,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);stroke-dasharray:7.2,7.2;" />
+<path d="M974,275L1622,275L1622,2L974,2Z"  style="fill:none;stroke-width:2.16;stroke:rgb(255,255,255);stroke-dasharray:7.2,7.2;" />
+<text x="556" y="290" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">Daughterboard</text>
+<text x="1298" y="290" text-anchor="middle" fill="rgb(255,255,255)" dominant-baseline="central">FPGA</text>
+</svg>
+

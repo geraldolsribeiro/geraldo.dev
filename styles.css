@@ -887,7 +887,7 @@ video {
 
 .prose {
   --tw-prose-body: #374151;
-  --tw-prose-headings: #111827;
+  --tw-prose-headings: #3b82f6;
   --tw-prose-lead: #4b5563;
   --tw-prose-links: #111827;
   --tw-prose-bold: #111827;
@@ -2014,6 +2014,16 @@ svg {
 
 .video-wrapper-16x9 {
   padding-bottom: 56.25%;
+}
+
+.prose-h2 {
+  --tw-text-opacity: 1;
+  color: rgb(96 165 250 / var(--tw-text-opacity));
+}
+
+.prose-h3 {
+  --tw-text-opacity: 1;
+  color: rgb(74 222 128 / var(--tw-text-opacity));
 }
 
 /* Remove borda inferior quando os números da linha são exibidos */

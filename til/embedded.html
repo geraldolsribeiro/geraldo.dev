@@ -59,13 +59,13 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>Embedded Systems</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-07-29</b>Last modified: <b class="ml-2">2023-08-01 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/nodemcu.html">nodemcu</a><a class="tag no-underline" href="/til/tag/esp32.html">esp32</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/communication-protocol.html">communication-protocol</a><a class="tag no-underline" href="/til/tag/embedded.html">embedded</a>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-07-29</b>Last modified: <b class="ml-2">2023-09-09 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/embedded.html">embedded</a><a class="tag no-underline" href="/til/tag/nodemcu.html">nodemcu</a><a class="tag no-underline" href="/til/tag/esp32.html">esp32</a><a class="tag no-underline" href="/til/tag/linux.html">linux</a><a class="tag no-underline" href="/til/tag/communication-protocol.html">communication-protocol</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/linux.webp">
           <div class="text-center text-sm">Photo by <a href='https://unsplash.com/@goosegrease?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Derek Oyen</a> on <a href='https://unsplash.com/photos/8PxCm4HsPX8?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText'>Unsplash</a></div>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#communication-protocol">Communication protocol</a></li><li><a href="#embedded-linux">Embedded Linux</a></li><li><a href="#boards">Boards</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#introduction">Introduction</a></li><li><a href="#communication-protocol">Communication protocol</a></li><li><a href="#embedded-linux">Embedded Linux</a></li><li><a href="#boards">Boards</a></li><li><a href="#ide">IDE</a></li><li><a href="#references">References</a></li></ul></div></p>
 <h2 id="introduction" tabindex="-1">Introduction</h2>
 <h2 id="communication-protocol" tabindex="-1">Communication protocol</h2>
 <ul>
@@ -95,11 +95,31 @@
 </ul>
 </li>
 <li>512 kB RAM</li>
+<li>5 different power modes
+<ul>
+<li>active</li>
+<li>modem sleep</li>
+<li>ligth sleep</li>
+<li>deep sleep</li>
+<li>hibernation</li>
+</ul>
+</li>
 <li>Flash</li>
 <li>4 MB Storage</li>
 <li>34 GPIO</li>
-<li>16 channels PWM</li>
 <li>12 bits ADC</li>
+<li>18 A2D converters</li>
+<li>2 D2A converters</li>
+<li>10 touch inputs</li>
+<li>16 channels PWM for LED and IR</li>
+<li>WiFi and Antenna (802.11b/g/n HT40 Wi-Fi transceiver)</li>
+<li>Bluetooth and BLE</li>
+<li>4 SPI</li>
+<li>2 I²C</li>
+<li>2 I²S</li>
+<li>Analog preamp</li>
+<li>3 UART serial ports</li>
+<li>SD card controller</li>
 <li>CAN Bus
 <ul>
 <li>a built-in CAN bus controller that can be used to connect to a CAN bus</li>
@@ -154,6 +174,26 @@ processing them for various applications</li>
 </ul>
 </li>
 </ul>
+<h4 id="esp32-devkit-v1" tabindex="-1">ESP32 DevKit V1</h4>
+<p>Because of its immense popularity, this is the best board for beginners. It
+comes with everything you need to get started with ESP32. And this is what we
+will use for our experiments.</p>
+<figure>
+  <img class="mx-auto" src="/til/ESP32-DevKit-V1.webp" alt="ESP32 DevKit V1">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>ESP32 DevKit V1</span>
+  </figcaption>
+</figure>
+<p>Two main components or ICs are found on the board:</p>
+<ul>
+<li>ESP-WROOM-32 module – Espressif microcontroller with integrated Wi-Fi and Bluetooth.</li>
+<li>CP2102 – Silicon Labs single-chip USB-to-UART bridge.</li>
+</ul>
+<p>On-board LEDs:</p>
+<ul>
+<li>A red LED indicates that the board is powered up and has 3.3V from the regulator.</li>
+<li>The blue LED is user programmable and is connected to the GPIO2 pin of the ESP-WROOM-32 module.</li>
+</ul>
 <h3 id="esp8266" tabindex="-1">ESP8266</h3>
 <ul>
 <li>Single core - 80 MHz to 160 MHz</li>
@@ -165,7 +205,7 @@ processing them for various applications</li>
 <li>8 channels PWM</li>
 <li>10 bits ADC</li>
 <li><s>CAN Bus</s></li>
-<li><s>CAM Camara Interface</s></li>
+<li><s>CAM Camera Interface</s></li>
 <li><s>Touch sensor</s></li>
 <li><s>Ethernet MAC Interface</s></li>
 <li><s>Hall effect sensor</s></li>
@@ -184,13 +224,24 @@ processing them for various applications</li>
 <figure>
   <img class="mx-auto" src="/til/ESP8266_12E.webp" alt="ESP8266 12E">
   <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>ESP8266 12E</span>
+     <strong>Fig. 2</strong> - <span>ESP8266 12E</span>
   </figcaption>
 </figure>
+<h2 id="ide" tabindex="-1">IDE</h2>
+<ul>
+<li>Microsoft VS Code
+<ul>
+<li>PlatformIO</li>
+</ul>
+</li>
+</ul>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
 <li><a href="https://randomnerdtutorials.com/projects-esp8266/">150+ ESP8266 NodeMCU Projects, Tutorials and Guides with Arduino IDE</a></li>
 <li><a href="https://electronicshacks.com/esp32-vs-esp8266/">ESP32 vs. ESP8266: What’s the Difference?</a></li>
+<li><a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">Insight Into ESP32 Sleep Modes &amp; Their Power Consumption</a></li>
+<li>▶️ <a href="https://www.youtube.com/watch?v=XLQa1sX9KIk">YOU can Learn the ESP32 in 15 Minutes: Hello World!</a></li>
+<li><a href="https://startingelectronics.org/articles/ESP32-WROOM-testing/">ESP-WROOM-32 Testing and First Use of ESP32 Devkit Board</a></li>
 </ul>
 
       </main>

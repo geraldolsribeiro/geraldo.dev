@@ -59,7 +59,7 @@
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-11-15</b>Last modified: <b class="ml-2">2023-11-15 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C.html">C</a><a class="tag no-underline" href="/til/tag/queue.html">queue</a><a class="tag no-underline" href="/til/tag/TAILQ.html">TAILQ</a>
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <pre><code class="language-cpp">#include &lt;stdio.h&gt;
 #include &lt;stdlib.h&gt;
 #include &lt;string.h&gt;
@@ -129,6 +129,75 @@ struct node {
 
   return EXIT_SUCCESS;
 }
+</code></pre>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
+<pre><code class="language-txt">Put some nodes in the queue:
+Allocate memory for node H
+TAILQ_INSERT_TAIL H
+Allocate memory for node e
+TAILQ_INSERT_TAIL e
+Allocate memory for node l
+TAILQ_INSERT_TAIL l
+Allocate memory for node l
+TAILQ_INSERT_TAIL l
+Allocate memory for node o
+TAILQ_INSERT_TAIL o
+Allocate memory for node  
+TAILQ_INSERT_TAIL  
+Allocate memory for node W
+TAILQ_INSERT_TAIL W
+Allocate memory for node o
+TAILQ_INSERT_TAIL o
+Allocate memory for node r
+TAILQ_INSERT_TAIL r
+Allocate memory for node l
+TAILQ_INSERT_TAIL l
+Allocate memory for node d
+TAILQ_INSERT_TAIL d
+Allocate memory for node 
+
+TAILQ_INSERT_TAIL 
+
+TAILQ_FOREACH H
+TAILQ_FOREACH e
+TAILQ_FOREACH l
+TAILQ_FOREACH l
+TAILQ_FOREACH o
+TAILQ_FOREACH  
+TAILQ_FOREACH W
+TAILQ_FOREACH o
+TAILQ_FOREACH r
+TAILQ_FOREACH l
+TAILQ_FOREACH d
+TAILQ_FOREACH 
+
+TAILQ_REMOVE H
+Release memory from node H
+TAILQ_REMOVE e
+Release memory from node e
+TAILQ_REMOVE l
+Release memory from node l
+TAILQ_REMOVE l
+Release memory from node l
+TAILQ_REMOVE o
+Release memory from node o
+TAILQ_REMOVE  
+Release memory from node  
+TAILQ_REMOVE W
+Release memory from node W
+TAILQ_REMOVE o
+Release memory from node o
+TAILQ_REMOVE r
+Release memory from node r
+TAILQ_REMOVE l
+Release memory from node l
+TAILQ_REMOVE d
+Release memory from node d
+TAILQ_REMOVE 
+
+Release memory from node 
+
+
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ heap vs stack</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-09-17 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-01-03</b>Last modified: <b class="ml-2">2023-12-18 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/memory.html">memory</a><a class="tag no-underline" href="/til/tag/heap.html">heap</a><a class="tag no-underline" href="/til/tag/stack.html">stack</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -192,25 +192,25 @@ variables)</li>
 
 </code></pre>
 <h1 id="possible-output" tabindex="-1">Possible output</h1>
-<pre><code class="language-txt">0x7ffe4e61645c stack a1
-0x7ffe4e616458 stack a2: -4 bytes from a1
-0x7ffe4e616454 stack a3: -4 bytes from a2
-0x7ffe4e616450 stack a4: -4 bytes from a3
-0x555e16b46250 heap p1
-0x555e16b46250 heap p1[0]
-0x555e16b46254 heap p1[1]
-0x555e16b46258 heap p1[2]
-0x555e16b4625c heap p1[3]
-0x555e16b46260 heap p1[4]
-0x555e16b46270 heap p2: 32 bytes from p1
-0x555e16b46270 heap p2[0]
-0x555e16b46274 heap p2[1]
-0x555e16b46278 heap p2[2]
-0x555e16b4627c heap p2[3]
-0x555e16b440d0 heap p3: -8608 bytes from p2
-0x555e16b440f0 heap p4: 32 bytes from p3
-0x555e16b44110 heap p5: 32 bytes from p4
-0x555e16b32c80 heap p6: -70800 bytes from p5
+<pre><code class="language-txt">0x7ffd0b8d343c stack a1
+0x7ffd0b8d3438 stack a2: -4 bytes from a1
+0x7ffd0b8d3434 stack a3: -4 bytes from a2
+0x7ffd0b8d3430 stack a4: -4 bytes from a3
+0x5641834081c0 heap p1
+0x5641834081c0 heap p1[0]
+0x5641834081c4 heap p1[1]
+0x5641834081c8 heap p1[2]
+0x5641834081cc heap p1[3]
+0x5641834081d0 heap p1[4]
+0x5641834081e0 heap p2: 32 bytes from p1
+0x5641834081e0 heap p2[0]
+0x5641834081e4 heap p2[1]
+0x5641834081e8 heap p2[2]
+0x5641834081ec heap p2[3]
+0x564183408200 heap p3: 32 bytes from p2
+0x564183408220 heap p4: 32 bytes from p3
+0x564183408240 heap p5: 32 bytes from p4
+0x5641833feda0 heap p6: -38048 bytes from p5
 sizeof(size_t) = 8 bytes
           100001     33      4      1
           100001     33      8      2
@@ -230,7 +230,7 @@ sizeof(size_t) = 8 bytes
          1010001     81     64     16
          1010001     81     68     17
          1010001     81     72     18
-         1100001     97     76     19
+         1110001    113     76     19
          1100001     97     80     20
          1100001     97     84     21
          1100001     97     88     22

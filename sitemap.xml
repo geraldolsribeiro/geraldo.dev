@@ -403,6 +403,9 @@
     <loc>https://geraldo.dev/til/mktemp.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_zeromq_pubsub_multithread_inproc.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_aliasing_01.html</loc>
   </url>
   <url>
@@ -464,6 +467,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cvs-binary.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_zeromq_req_rep_server.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_hashids_01.html</loc>
@@ -2476,6 +2482,9 @@
     <loc>https://geraldo.dev/til/vim-terminal.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_zeromq_push.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/rust_helloworld.html</loc>
   </url>
   <url>
@@ -2507,6 +2516,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/como-trocar-hostname-sem-reiniciar.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_zeromq_push_pull_multithread_inproc.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/decibel.html</loc>
@@ -2588,6 +2600,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/xmake.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_rtaudio_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/rhel-firewall.html</loc>
@@ -2843,6 +2858,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_templates_02.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_zeromq_pull.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/dsp.html</loc>

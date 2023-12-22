@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ ANSI codes">
+    <meta name="description" content="C++ zeromq push">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ ANSI codes</title>
+    <title>C++ zeromq push</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -58,236 +58,54 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ ANSI codes</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-03-11</b>Last modified: <b class="ml-2">2023-12-18 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/ansi.html">ansi</a><a class="tag no-underline" href="/til/tag/tui.html">tui</a>
+        <h1>C++ zeromq push</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2020-11-03</b>Last modified: <b class="ml-2">2023-12-18 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/zeromq.html">zeromq</a><a class="tag no-underline" href="/til/tag/push.html">push</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<p>Some ANSI codes:</p>
-<ul>
-<li><code>&quot;\033[F&quot;</code> – move cursor to the beginning of the previous line</li>
-<li><code>&quot;\033[A&quot;</code> – move cursor up one line</li>
-<li><code>&quot;\033[2K\r&quot;</code> — clear current line</li>
-</ul>
-<pre><code class="language-cpp">  // These 5 lines will act as a background.
-  // Here the placeholder is intentionaly more long that the final string.
-  for (int i = 0; i &lt; 5; ++i) {
-    cout &lt;&lt; &quot;Line number &quot; &lt;&lt; i &lt;&lt; &quot; with long placeholder.&quot; &lt;&lt; endl;
+<pre><code class="language-cpp">#include &lt;spdlog/spdlog.h&gt;
+
+#include &lt;future&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+#include &lt;cppzmq/zmq.hpp&gt;
+#include &lt;cppzmq/zmq_addon.hpp&gt;
+
+int main()
+{
+  zmq::context_t ctx;
+  zmq::socket_t pusher( ctx, zmq::socket_type::push );
+  //pusher.connect( &quot;ipc://tmp/x&quot; );
+  pusher.connect( &quot;tcp://127.0.0.1:15555&quot; );
+
+  // Give the pullers a chance to connect, so they don't lose any messages
+  std::this_thread::sleep_for( std::chrono::milliseconds( 20 ) );
+
+  for( auto i=0; i&lt;10; ++i ) {
+    //  Write three messages, each with an envelope and content
+    pusher.send( zmq::str_buffer( &quot;A&quot; ), zmq::send_flags::sndmore );
+    pusher.send( zmq::str_buffer( &quot;Message in A envelope&quot; ) );
+
+    pusher.send( zmq::str_buffer( &quot;B&quot; ), zmq::send_flags::sndmore );
+    pusher.send( zmq::str_buffer( &quot;Message in B envelope&quot; ) );
+
+    pusher.send( zmq::str_buffer( &quot;C&quot; ), zmq::send_flags::sndmore );
+    pusher.send( zmq::str_buffer( &quot;Message in C envelope&quot; ) );
+    std::this_thread::sleep_for( std::chrono::milliseconds( 500 ) );
   }
 
-  this_thread::sleep_for(seconds(2));
-  for (int j = 0; j &lt; 10; ++j) {
-    // Move up 5 lines
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    // Write 5 lines down again
-    for (int i = 0; i &lt; 5; ++i) {
-      cout &lt;&lt; &quot;Line number &quot; &lt;&lt; i + j &lt;&lt; &quot; final.&quot;
-           &lt;&lt; &quot;\n&quot;;
-      this_thread::sleep_for(milliseconds(20));
-    }
-  }
+  return 0;
+}
 </code></pre>
-<figure>
-  <img class="mx-auto" src="/til/cpp_ansi_01.webp" alt="Output with mixed lines.">
-  <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>Output with mixed lines.</span>
-  </figcaption>
-</figure>
-<p>You noticed the line mixed content. This is because no cleaning
-of current line was done.</p>
-<pre><code class="language-cpp">  this_thread::sleep_for(seconds(2));
-  for (int j = 0; j &lt; 10; ++j) {
-    // Move up 5 lines
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    cout &lt;&lt; &quot;\033[F&quot;;
-    // Write 5 lines down again
-    for (int i = 0; i &lt; 5; ++i) {
-      // Clear current line from cursor position until the end of line
-      cout &lt;&lt; &quot;\033[2K\r&quot;;
-      cout &lt;&lt; &quot;Line number &quot; &lt;&lt; i + j &lt;&lt; &quot; final 2.&quot;
-           &lt;&lt; &quot;\n&quot;;
-      this_thread::sleep_for(milliseconds(20));
-    }
-  }
-</code></pre>
-<figure>
-  <img class="mx-auto" src="/til/cpp_ansi_02.webp" alt="Output with cleaned lines.">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Output with cleaned lines.</span>
-  </figcaption>
-</figure>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Line number 0 with long placeholder.
-Line number 1 with long placeholder.
-Line number 2 with long placeholder.
-Line number 3 with long placeholder.
-Line number 4 with long placeholder.
-[F[F[F[F[FLine number 0 final.
-Line number 1 final.
-Line number 2 final.
-Line number 3 final.
-Line number 4 final.
-[F[F[F[F[FLine number 1 final.
-Line number 2 final.
-Line number 3 final.
-Line number 4 final.
-Line number 5 final.
-[F[F[F[F[FLine number 2 final.
-Line number 3 final.
-Line number 4 final.
-Line number 5 final.
-Line number 6 final.
-[F[F[F[F[FLine number 3 final.
-Line number 4 final.
-Line number 5 final.
-Line number 6 final.
-Line number 7 final.
-[F[F[F[F[FLine number 4 final.
-Line number 5 final.
-Line number 6 final.
-Line number 7 final.
-Line number 8 final.
-[F[F[F[F[FLine number 5 final.
-Line number 6 final.
-Line number 7 final.
-Line number 8 final.
-Line number 9 final.
-[F[F[F[F[FLine number 6 final.
-Line number 7 final.
-Line number 8 final.
-Line number 9 final.
-Line number 10 final.
-[F[F[F[F[FLine number 7 final.
-Line number 8 final.
-Line number 9 final.
-Line number 10 final.
-Line number 11 final.
-[F[F[F[F[FLine number 8 final.
-Line number 9 final.
-Line number 10 final.
-Line number 11 final.
-Line number 12 final.
-[F[F[F[F[FLine number 9 final.
-Line number 10 final.
-Line number 11 final.
-Line number 12 final.
-Line number 13 final.
-[F[F[F[F[F[2K
-Line number 0 final 2.
-[2K
-Line number 1 final 2.
-[2K
-Line number 2 final 2.
-[2K
-Line number 3 final 2.
-[2K
-Line number 4 final 2.
-[F[F[F[F[F[2K
-Line number 1 final 2.
-[2K
-Line number 2 final 2.
-[2K
-Line number 3 final 2.
-[2K
-Line number 4 final 2.
-[2K
-Line number 5 final 2.
-[F[F[F[F[F[2K
-Line number 2 final 2.
-[2K
-Line number 3 final 2.
-[2K
-Line number 4 final 2.
-[2K
-Line number 5 final 2.
-[2K
-Line number 6 final 2.
-[F[F[F[F[F[2K
-Line number 3 final 2.
-[2K
-Line number 4 final 2.
-[2K
-Line number 5 final 2.
-[2K
-Line number 6 final 2.
-[2K
-Line number 7 final 2.
-[F[F[F[F[F[2K
-Line number 4 final 2.
-[2K
-Line number 5 final 2.
-[2K
-Line number 6 final 2.
-[2K
-Line number 7 final 2.
-[2K
-Line number 8 final 2.
-[F[F[F[F[F[2K
-Line number 5 final 2.
-[2K
-Line number 6 final 2.
-[2K
-Line number 7 final 2.
-[2K
-Line number 8 final 2.
-[2K
-Line number 9 final 2.
-[F[F[F[F[F[2K
-Line number 6 final 2.
-[2K
-Line number 7 final 2.
-[2K
-Line number 8 final 2.
-[2K
-Line number 9 final 2.
-[2K
-Line number 10 final 2.
-[F[F[F[F[F[2K
-Line number 7 final 2.
-[2K
-Line number 8 final 2.
-[2K
-Line number 9 final 2.
-[2K
-Line number 10 final 2.
-[2K
-Line number 11 final 2.
-[F[F[F[F[F[2K
-Line number 8 final 2.
-[2K
-Line number 9 final 2.
-[2K
-Line number 10 final 2.
-[2K
-Line number 11 final 2.
-[2K
-Line number 12 final 2.
-[F[F[F[F[F[2K
-Line number 9 final 2.
-[2K
-Line number 10 final 2.
-[2K
-Line number 11 final 2.
-[2K
-Line number 12 final 2.
-[2K
-Line number 13 final 2.
-
+<pre><code class="language-txt">
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/ANSI_escape_code">ANSI escape code</a></li>
-<li><a href="https://stackoverflow.com/questions/11474391/is-there-go-up-line-character-opposite-of-n">Is there go up line character? (Opposite of \n)</a></li>
-<li><a href="https://stackoverflow.com/questions/1508490/erase-the-current-printed-console-line">Erase the current printed console line</a></li>
+<li><a href="https://brettviren.github.io/cppzmq-tour/">Tour</a></li>
 </ul>
 
       </main>

@@ -625,6 +625,9 @@
     <loc>https://geraldo.dev/til/tag/text-editor.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/req_rep_server.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/sharepoint.html</loc>
   </url>
   <url>
@@ -640,7 +643,13 @@
     <loc>https://geraldo.dev/til/tag/npm-check-updates.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/CPFSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/data-structure.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/PSK.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/grammar.html</loc>
@@ -736,6 +745,9 @@
     <loc>https://geraldo.dev/til/tag/input.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/digital-communication.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/test.html</loc>
   </url>
   <url>
@@ -796,6 +808,9 @@
     <loc>https://geraldo.dev/til/tag/coroutine_04.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/push.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/chat-gpt.html</loc>
   </url>
   <url>
@@ -848,6 +863,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/fontconfig.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/pull.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/normcap.html</loc>
@@ -1003,6 +1021,9 @@
     <loc>https://geraldo.dev/til/tag/github.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/GMSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/imgui.html</loc>
   </url>
   <url>
@@ -1013,6 +1034,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/prefix_and_postfix.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/zeromq_push_pull_multithread_inproc.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/xargs.html</loc>
@@ -1144,6 +1168,9 @@
     <loc>https://geraldo.dev/til/tag/siem.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/PAM.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/ip.html</loc>
   </url>
   <url>
@@ -1171,6 +1198,12 @@
     <loc>https://geraldo.dev/til/tag/pic.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/gdb-scripting.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/OPSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/ranges_05.html</loc>
   </url>
   <url>
@@ -1178,6 +1211,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/std::make_heap.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/C.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/abs.html</loc>
@@ -1237,7 +1273,13 @@
     <loc>https://geraldo.dev/til/tag/ai.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/pthread_cond_signal.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/mktemp.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/TAILQ.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/locale.html</loc>
@@ -1369,6 +1411,9 @@
     <loc>https://geraldo.dev/til/tag/certbot.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/gdb-break-condition.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/iota.html</loc>
   </url>
   <url>
@@ -1471,9 +1516,6 @@
     <loc>https://geraldo.dev/til/tag/beanstalk-cli.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/nemiver.html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/debugger.html</loc>
   </url>
   <url>
@@ -1573,6 +1615,9 @@
     <loc>https://geraldo.dev/til/tag/third-person.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/MSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/crow.html</loc>
   </url>
   <url>
@@ -1594,13 +1639,13 @@
     <loc>https://geraldo.dev/til/tag/bitshift.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/pthread_cond_wait.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/sanitizers.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/site estático.html</loc>
-  </url>
-  <url>
-    <loc>https://geraldo.dev/til/tag/ddd.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/coroutine.html</loc>
@@ -1676,6 +1721,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/communication.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/gdb-time-travel.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/std::runtime_error.html</loc>
@@ -1786,10 +1834,16 @@
     <loc>https://geraldo.dev/til/tag/filter.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/gui-nemiver.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/pikchr.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/cget.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/pubsub.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/centos.html</loc>
@@ -1798,7 +1852,13 @@
     <loc>https://geraldo.dev/til/tag/thread.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/gui-ddd.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/protobuf_01.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/QAM.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/latex.html</loc>
@@ -1990,6 +2050,9 @@
     <loc>https://geraldo.dev/til/tag/svg.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/inproc.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/NfSen.html</loc>
   </url>
   <url>
@@ -2017,6 +2080,9 @@
     <loc>https://geraldo.dev/til/tag/nappy.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/POSIX.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/audio.html</loc>
   </url>
   <url>
@@ -2039,6 +2105,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/Graylog.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/thunar.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/metric.html</loc>
@@ -2092,7 +2161,16 @@
     <loc>https://geraldo.dev/til/tag/network-topology.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/rtaudio.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/container.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/pthread.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/gdb-info.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/inxi.html</loc>
@@ -2191,6 +2269,12 @@
     <loc>https://geraldo.dev/til/tag/cast.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/modulation.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/fixme.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/partition.html</loc>
   </url>
   <url>
@@ -2239,6 +2323,9 @@
     <loc>https://geraldo.dev/til/tag/hunter.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/FSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/snap.html</loc>
   </url>
   <url>
@@ -2266,10 +2353,16 @@
     <loc>https://geraldo.dev/til/tag/bash.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/DPSK.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/gnuplot.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/emoji.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/gdb-tui.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/browser.html</loc>
@@ -2318,6 +2411,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/golang.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/multithread.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/pdfjs.html</loc>
@@ -2974,6 +3070,30 @@
     <loc>https://geraldo.dev/til/nemo-como-gerenciador-de-arquivos-padrao.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/16-QAM.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/EXT_Open_Source_Soft-Decision_Decoder_for_the_JT65_63,12_Reed-Solomon_Code.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/RS-FEC_Reed_Solomon_Forward_Error_Correction.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/GFNI_Galois_Field_New_Instructions.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/CTC_Convolution_Turbo_Code.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/ECC_Error_Correcting_Code.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/EXT_Accelerate_Reed-Solomon_Codes_on_GPUs_Shuai_YUAN_LSALab.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/RS_Reed-Solomon.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2022-06-02_stefanini_Crucial_Role_of_Penetration_Testing_and_Vulnerability_Assessments_in_Cybersecurity.html</loc>
   </url>
   <url>
@@ -3481,6 +3601,9 @@
     <loc>https://geraldo.dev/certificate/tag/project-management.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/Operating-System.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/microservice.html</loc>
   </url>
   <url>
@@ -3584,6 +3707,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/smart-pointer.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/buildroot.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/git.html</loc>
@@ -3866,6 +3992,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/IoT.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/embedded.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/refactoring.html</loc>
@@ -4202,6 +4331,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/404.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronyms.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/tils.html</loc>

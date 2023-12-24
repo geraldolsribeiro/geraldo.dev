@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="RS (Reed-Solomon)">
+    <meta name="description" content="SPI (Serial Peripheral Interface)">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>RS (Reed-Solomon)</title>
+    <title>SPI (Serial Peripheral Interface)</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -55,25 +55,46 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to Acronyms</span></a>
-        <h1>RS (Reed-Solomon)</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-06-08</b>Last modified: <b class="ml-2">2023-12-24 </b></div>
+        <h1>SPI (Serial Peripheral Interface)</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-05-25</b>Last modified: <b class="ml-2">2023-12-24 </b></div>
         <div class="flex flex-wrap">
         </div><ul>
-<li><a href="RS-FEC_Reed_Solomon_Forward_Error_Correction.html">RS-FEC (Reed Solomon Forward Error Correction)</a></li>
+<li><a href="Arduino_SPI.html">Arduino SPI</a></li>
+<li>is a synchronous serial communication interface that supports full-duplex mode where data can be sent and received simultaneously</li>
+<li>It supports data transmission rates (&gt;8Mbits) that are much faster/higher than UART and I2C</li>
+<li>In SPI even if data/clock lines are shared between devices, each device will have a unique address wire.</li>
+<li>It is used in places where speed is important.</li>
+<li>For eg. SD cards, display modules or when info updates and changes quickly like thermometers).</li>
 </ul>
-<p>DATA SOURCE → [RS ENCODER] → [COMM CHANNEL] → [RS DECOCER] → DATA SINK</p>
 <figure>
-  <img class="mx-auto" src="/acronym/2736225054037581.webp" alt="Basic flow">
+  <img class="mx-auto" src="/acronym/4ECB5E36FB0F74B3.webp" alt="">
   <figcaption class="text-center">
-     <strong>Fig. 1</strong> - <span>Basic flow</span>
+     <strong>Fig. 1</strong> - <span></span>
   </figcaption>
 </figure>
-<figure>
-  <img class="mx-auto" src="/acronym/3FF8375CAD5D93D5.webp" alt="Code overview">
-  <figcaption class="text-center">
-     <strong>Fig. 2</strong> - <span>Code overview</span>
-  </figcaption>
-</figure>
+<h2 id="spi-communicates-in-2-ways%3A" tabindex="-1">SPI Communicates in 2 Ways:</h2>
+<ul>
+<li>The first is by selecting each device with a Chip Select line (CLK). A separate Chip Select line is required for each device.</li>
+<li>The second is through daisy chaining where each device is connected to the other through its data out to the data in line with the next.</li>
+</ul>
+<p>There is no limit to the number of SPI devices that can be connected. However, there are practical limits due to the number of hardware select lines available on the main device with the chip select method or the complexity of passing data through devices in the daisy-chaining method. In point-to-point communication, the SPI interface does not require addressing operations and is full-duplex communication, which is simple and efficient.</p>
+<h2 id="advantages-of-using-the-spi-interface" tabindex="-1">Advantages of using the SPI Interface</h2>
+<ul>
+<li>The protocol is simple as there is no complicated slave addressing system like I2C.</li>
+<li>It is the fastest protocol compared to [[UART (Universal Asynchronous Receiver Transmitter)]] and <a href="I2C_Inter-Integrated_Circuit.html">I2C (Inter-Integrated Circuit)</a>.</li>
+<li>No start and stop bits unlike UART which means data can be transmitted continuously without interruption</li>
+<li>Separate MISO and MOSI lines which mean data can be transmitted and received at the same time</li>
+</ul>
+<h2 id="disadvantages-of-using-the-spi-interface" tabindex="-1">Disadvantages of using the SPI Interface</h2>
+<ul>
+<li>More Pin ports are occupied, the practical limit of several devices.</li>
+<li>There is no flow control specified, and no acknowledgment mechanism confirms whether data is received unlike I2C</li>
+<li>Uses four lines – MOSI, MISO, NCLK, NSS</li>
+<li>No form of error check unlike in UART (using parity bit)</li>
+<li>Only 1 master</li>
+</ul>
+<h2 id="arduino" tabindex="-1">Arduino</h2>
+<p>{{./pasted_image001.png}}</p>
 
       </main>
     </div>

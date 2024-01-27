@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ numerical limits</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-20</b>Last modified: <b class="ml-2">2023-02-27 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-20</b>Last modified: <b class="ml-2">2024-01-22 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/min.html">min</a><a class="tag no-underline" href="/til/tag/max.html">max</a><a class="tag no-underline" href="/til/tag/lowest.html">lowest</a><a class="tag no-underline" href="/til/tag/std::numeric_limits.html">std::numeric_limits</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -88,6 +88,8 @@ operations.</p>
   short int var2{20};
   char var3{40};  // 1 byte
   char var4{50};
+  size_t size1{10};
+  ssize_t size2{-1};
 
   auto result1 = var1 + var2;  // 🔴 Implicit conversion to int
   auto result2 = var3 + var4;  // 🔴 Implicit conversion to int
@@ -105,6 +107,8 @@ operations.</p>
   printSizeOf(result2);
   printSizeOf(result3);
   printSizeOf(result4);
+  printSizeOf(size1);
+  printSizeOf(size2);
 </code></pre>
 <h2 id="type-limits" tabindex="-1">Type limits</h2>
 <pre><code class="language-cpp">  // max:    maximum positive value
@@ -132,6 +136,8 @@ operations.</p>
   print_range(float);
   print_range(double);
   print_range(long double);
+  print_range(size_t);
+  print_range(ssize_t);
 
   fmt::print(&quot;\n\n{:14}|{:^20}|{:^10}\n&quot;, &quot;TYPE&quot;, &quot;PROPERTY&quot;, &quot;VALUE&quot;);
 #define print_prop(T, P) \
@@ -158,6 +164,8 @@ sizeof( result1  ) = 4 | value = 30
 sizeof( result2  ) = 4 | value = 90
 sizeof( result3  ) = 4 | value = 5
 sizeof( result4  ) = 4 | value = 80
+sizeof(  size1   ) = 8 | value = 10
+sizeof(  size2   ) = 8 | value = -1
 
 
      TYPE     |SZ|          LOWEST           |            MIN            |                        MAX
@@ -170,6 +178,8 @@ unsigned long | 8|INT                       0|                          0|      
 float         | 4|             -3.4028235e+38|              1.1754944e-38|              3.4028235e+38
 double        | 8|   -1.7976931348623157e+308|    2.2250738585072014e-308|    1.7976931348623157e+308
 long double   |16|-1.189731495357231765e+4932|3.3621031431120935063e-4932| 1.189731495357231765e+4932
+size_t        | 8|INT                       0|                          0|       18446744073709551615
+ssize_t       | 8|INT    -9223372036854775808|       -9223372036854775808|        9223372036854775807
 
 
 TYPE          |      PROPERTY      |  VALUE   

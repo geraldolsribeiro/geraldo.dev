@@ -397,6 +397,9 @@
     <loc>https://geraldo.dev/til/git_undo_add.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_before_after_main_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/x-inverter-cores.html</loc>
   </url>
   <url>
@@ -607,6 +610,9 @@
     <loc>https://geraldo.dev/til/vim-abolish.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_aggregate_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/wsl-disable-beep.html</loc>
   </url>
   <url>
@@ -617,6 +623,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/clean_up_snap.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/bash-last-arg.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/devtools-extract-data.html</loc>
@@ -979,6 +988,9 @@
     <loc>https://geraldo.dev/til/tag/variable_lifetime.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/future.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/comments.html</loc>
   </url>
   <url>
@@ -1265,6 +1277,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/custom-deleter.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/aggregate.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/asm.html</loc>
@@ -2644,6 +2659,9 @@
     <loc>https://geraldo.dev/til/cpp_numeric_reduce.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_thread_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/online-compilers.html</loc>
   </url>
   <url>
@@ -2884,6 +2902,9 @@
     <loc>https://geraldo.dev/til/git-odt.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_pthread_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/c++_salary.html</loc>
   </url>
   <url>
@@ -3079,7 +3100,13 @@
     <loc>https://geraldo.dev/acronym/ANI_Automatic_Number_Identification.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/RTL-SDR.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/SPI_Serial_Peripheral_Interface.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/SS7_Signaling_System_7.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/16-QAM.html</loc>
@@ -3091,10 +3118,19 @@
     <loc>https://geraldo.dev/acronym/RF_System_-_Basic_Building_Blocks.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/gqrx.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/Galois_field.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/I2C_Inter-Integrated_Circuit.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/ALI_Automatic_Location_Identifier.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/QAM_Quadrature_Amplitude_Modulation.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/Go-Back_N_ARQ.html</loc>
@@ -3110,6 +3146,12 @@
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/ADSL_Asymmetric_Digital_Subscriber_Line.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/ARM_command_tools.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/dBd_Decibel_relative_to_dipole.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/SMS_Service_Management_System.html</loc>
@@ -3139,10 +3181,22 @@
     <loc>https://geraldo.dev/acronym/Soft_decision.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/dB_Decibel.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/SCL_Serial_Clock.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/SMP_Simmetric_Multi-Processing.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/SSA_Shared_Situational_Awareness.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/AIN_Advanced_Intelligent_Network.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/SDA_Serial_Data.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/4096-QAM.html</loc>
@@ -3154,10 +3208,22 @@
     <loc>https://geraldo.dev/acronym/EXT_Accelerate_Reed-Solomon_Codes_on_GPUs_Shuai_YUAN_LSALab.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/32-QAM.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/SNR_Signal-To-Noise_Ratio.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/ADPCM_Adaptive_Differential_Pulse_Code_Modulation.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/ARM_Thumb_mode.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/dBi_decibel_relative_to_isotropic_antenna.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/SSA_Special_Security_Agreement.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/256-QAM.html</loc>

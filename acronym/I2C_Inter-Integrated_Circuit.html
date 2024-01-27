@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="I2C (Inter-Integrated Circuit)">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>I2C (Inter-Integrated Circuit)</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/acronyms.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to Acronyms</span></a>
+        <h1>I2C (Inter-Integrated Circuit)</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-12-08</b>Last modified: <b class="ml-2">2024-01-27 </b></div>
+        <div class="flex flex-wrap">
+        </div><ul>
+<li>
+<p>⬜  <a href="https://www.electronicshub.org/arduino-i2c-tutorial/">https://www.electronicshub.org/arduino-i2c-tutorial/</a></p>
+</li>
+<li>
+<p>⬜  <a href="https://learn.sparkfun.com/tutorials/i2c/all">https://learn.sparkfun.com/tutorials/i2c/all</a></p>
+</li>
+<li>
+<p>⬜  <a href="https://www.electronicwings.com/arduino/arduino-i2c">https://www.electronicwings.com/arduino/arduino-i2c</a> (example code)❤️</p>
+</li>
+<li>
+<p>⬜  <a href="https://www.analog.com/en/technical-articles/i2c-primer-what-is-i2c-part-1.html">I2C Primer: What is I2C? (Part 1)</a> (Analog Devices) ❤️</p>
+</li>
+<li>
+<p>2 wires</p>
+<ul>
+<li><a href="SDA_Serial_Data.html">SDA (Serial Data)</a></li>
+<li><a href="SCL_Serial_Clock.html">SCL (Serial Clock)</a></li>
+</ul>
+</li>
+<li>
+<p>Half duplex</p>
+</li>
+<li>
+<p>Bidiretional</p>
+</li>
+<li>
+<p>Error handling by ACK/NACK</p>
+</li>
+<li>
+<p>Multimaster</p>
+</li>
+<li>
+<p>Modes</p>
+<ul>
+<li>Master mode</li>
+<li>Slave mode</li>
+</ul>
+</li>
+<li>
+<p>Synchronous</p>
+</li>
+<li>
+<p>Clock stretching</p>
+</li>
+<li>
+<p>Arbitration</p>
+</li>
+</ul>
+<p><a href="Arduino.html">Arduino</a></p>
+<p><a href="Pull_up_resistor.html">Pull up resistor</a>
+I2C bus is an open drain configuration which means they can pull the corresponding signal line low but cannot drive it high. Hence the line will go into unknown state. In order to avoid this, pull up resistors need to be connected on SCL and SDA pins.</p>
+<figure>
+  <img class="mx-auto" src="/acronym/A8EB7009A660BDE7.webp" alt="Pull up resistor.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Pull up resistor.</span>
+  </figcaption>
+</figure>
+<h2 id="start-condition-and-stop-condition-transitions" tabindex="-1">Start Condition And Stop Condition Transitions</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/B7A56D044F2DD7BB.webp" alt="Start condition.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Start condition.</span>
+  </figcaption>
+</figure>
+<h2 id="repeated-start" tabindex="-1">Repeated Start</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/2F15A3C279F99469.webp" alt="Repeated start.">
+  <figcaption class="text-center">
+     <strong>Fig. 3</strong> - <span>Repeated start.</span>
+  </figcaption>
+</figure>
+<h2 id="start-condition-followed-by-7-bit-address-of-0%C3%9764-and-a-write-command-set.-the-slave-responds-with-an-acknowledgement" tabindex="-1">Start Condition Followed By 7-Bit Address of 0×64 and a Write Command Set. The Slave Responds with an Acknowledgement</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/FB9DAA92235F8B97.webp" alt="Start condition followed by ACK/NACK.">
+  <figcaption class="text-center">
+     <strong>Fig. 4</strong> - <span>Start condition followed by ACK/NACK.</span>
+  </figcaption>
+</figure>
+<h2 id="bit-transition-of-data-bits" tabindex="-1">Bit Transition of Data Bits</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/FDFA96474F0F5E8E.webp" alt="Bit transition.">
+  <figcaption class="text-center">
+     <strong>Fig. 5</strong> - <span>Bit transition.</span>
+  </figcaption>
+</figure>
+<h2 id="writing-to-a-device" tabindex="-1">Writing to a Device</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/0B9BA283551B8C85.webp" alt="Writing to a device.">
+  <figcaption class="text-center">
+     <strong>Fig. 6</strong> - <span>Writing to a device.</span>
+  </figcaption>
+</figure>
+<h2 id="reading-from-a-device" tabindex="-1">Reading From a Device</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/CAEDF631FADDBD8A.webp" alt="Reading from a device.">
+  <figcaption class="text-center">
+     <strong>Fig. 7</strong> - <span>Reading from a device.</span>
+  </figcaption>
+</figure>
+<h2 id="combining-transmission-protocols" tabindex="-1">Combining Transmission Protocols</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/CCD5E7C92E6D7F3C.webp" alt="Combining trasmission protocol.">
+  <figcaption class="text-center">
+     <strong>Fig. 8</strong> - <span>Combining trasmission protocol.</span>
+  </figcaption>
+</figure>
+<p>LTC2946 Serial Bus SDA Read Byte Protocol</p>
+<p>Where</p>
+<p>S = Start Bit
+P = Stop Bit
+R = Read Bit
+W\ = Write Bit
+A = Acknowledge
+A\ = Not Acknowledge</p>
+<h2 id="master-writing-to-two-different-slaves-sequentially" tabindex="-1">Master Writing to Two Different Slaves Sequentially</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/3BA710CF68FD2F89.webp" alt="Master writing to two different slaves sequentially.">
+  <figcaption class="text-center">
+     <strong>Fig. 9</strong> - <span>Master writing to two different slaves sequentially.</span>
+  </figcaption>
+</figure>
+<h2 id="multimaster%2Fmulticontroller" tabindex="-1">Multimaster/Multicontroller</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/7ADE535832B5C4C3.webp" alt="Multimaster/Multicontroller.">
+  <figcaption class="text-center">
+     <strong>Fig. 10</strong> - <span>Multimaster/Multicontroller.</span>
+  </figcaption>
+</figure>
+<h2 id="arduino-pin" tabindex="-1">Arduino pin</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Board</th>
+<th style="text-align:center">SDA pin</th>
+<th style="text-align:center">SCL pin</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Arduino UNO</td>
+<td style="text-align:center">A4</td>
+<td style="text-align:center">A5</td>
+</tr>
+<tr>
+<td style="text-align:left">Arduino Nano</td>
+<td style="text-align:center">A4</td>
+<td style="text-align:center">A5</td>
+</tr>
+<tr>
+<td style="text-align:left">Arduino Mega 2560</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">21</td>
+</tr>
+<tr>
+<td style="text-align:left">Arduino Micro</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:left">Arduino Leonardo</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+</tr>
+</tbody>
+</table>
+<figure>
+  <img class="mx-auto" src="/acronym/AD777F477690AB7E.webp" alt="Arduino pin.">
+  <figcaption class="text-center">
+     <strong>Fig. 11</strong> - <span>Arduino pin.</span>
+  </figcaption>
+</figure>
+<h2 id="i2c-communication-between-two-arduino" tabindex="-1">I2C Communication between Two Arduino</h2>
+<figure>
+  <img class="mx-auto" src="/acronym/974B26DB1A2838F3.webp" alt="Communication between two arduino.">
+  <figcaption class="text-center">
+     <strong>Fig. 12</strong> - <span>Communication between two arduino.</span>
+  </figcaption>
+</figure>
+<h3 id="master" tabindex="-1">Master</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+Wire.write(7);               //send data byte
+Wire.write(“i2c”);           //send string to slave device
+Wire.write(a, 6);            //here a is an array
+}}}</p>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+#include &lt;Wire.h&gt;</p>
+<p>void setup() {
+Wire.begin(); // join i2c bus (address optional for master)
+}</p>
+<p>byte x = 0;</p>
+<p>void loop() {
+// 7-bit address of device with which we want to communicate.
+Wire.beginTransmission(8);  // transmit to device #8
+Wire.write(&quot;x is &quot;);        // sends five bytes
+Wire.write(x);              // sends one byte
+Wire.endTransmission();     // stop transmitting</p>
+<p>x++;
+delay(500);
+}
+}}}</p>
+<h3 id="slave" tabindex="-1">Slave</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+#include &lt;Wire.h&gt;</p>
+<p>void setup() {
+Wire.begin(8);                // join i2c bus with address #8
+Wire.onReceive(receiveEvent); // register event
+Serial.begin(9600);           // start serial for output
+}</p>
+<p>void loop() {
+delay(100);
+}</p>
+<p>// function that executes whenever data is received from master
+// this function is registered as an event, see setup()
+void receiveEvent(int howMany) {
+while (1 &lt; Wire.available()) { // loop through all but the last
+char c = Wire.read(); // receive byte as a character
+Serial.print©;         // print the character
+}
+int x = Wire.read();    // receive byte as an integer
+Serial.println(x);         // print the integer
+}
+}}}</p>
+<h2 id="two-way-communication-between-two-arduino-using-i2c" tabindex="-1">Two-way communication between two Arduino using I2C</h2>
+<h3 id="master-1" tabindex="-1">Master</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+#include &lt;Wire.h&gt;</p>
+<p>void setup() {
+Serial.begin(9600); /* begin serial comm. <em>/
+Wire.begin(); /</em> join i2c bus as master */
+Serial.println(“I am I2C Master”);
+}</p>
+<p>void loop() {
+Wire.beginTransmission(8); /* begin with device address 8 <em>/
+Wire.write(“Hello Slave”);  /</em> sends hello string <em>/
+Wire.endTransmission();    /</em> stop transmitting */</p>
+<p>Wire.requestFrom(8, 9); /* request &amp; read data of size 9 from slave <em>/
+while(Wire.available()){
+char c = Wire.read();/</em> read data received from slave */
+Serial.print©;
+}
+Serial.println();
+delay(1000);
+}
+}}}</p>
+<h3 id="slave-1" tabindex="-1">Slave</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+#include &lt;Wire.h&gt;</p>
+<p>void setup() {
+Wire.begin(8);                /* join i2c bus with address 8 <em>/
+Wire.onReceive(receiveEvent); /</em> register receive event <em>/
+Wire.onRequest(requestEvent); /</em> register request event <em>/
+Serial.begin(9600);           /</em> start serial comm. */
+Serial.println(“I am I2C Slave”);
+}</p>
+<p>void loop() {
+delay(100);
+}</p>
+<p>// function that executes whenever data is received from master
+void receiveEvent(int howMany) {
+while (0 &lt;Wire.available()) {
+char c = Wire.read();      /* receive byte as a character <em>/
+Serial.print©;           /</em> print the character <em>/
+}
+Serial.println();             /</em> to newline */
+}</p>
+<p>// function that executes whenever data is requested from master
+void requestEvent() {
+Wire.write(“Hi Master”);  /*send string on request */
+}
+}}}</p>
+<h2 id="functions-for-arduino-i2c-master" tabindex="-1">Functions for Arduino I2C Master</h2>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+int n = Wire.requestFrom(address, size)
+int n = Wire.requestFrom(address, size, stop)
+}}}</p>
+<p>Parameters
+Address address of device with which we want to communicate
+No. of byte no. of byte needs to request
+Stop It is a Boolean.
+true - send a stop message after the request, releasing the bus,
+false - continually send a restart after the request, keeping the connection active</p>
+<p>Returns
+No. of bytes returned from slave device.</p>
+<h2 id="function-for-arduino-i2c-slave" tabindex="-1">Function for Arduino I2C Slave</h2>
+<h3 id="when-master-send-data-to-slave" tabindex="-1">When master send data to slave</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+void setup() {
+Wire.begin(8);                // join i2c bus with address #8
+Wire.onReceive(receiveEvent); // register event
+Serial.begin(9600);           // start serial for output
+}
+void receiveEvent (int howmany){
+while (1 &lt; Wire.available()) { // loop through all but the last
+char c = Wire.read();        // receive byte as a character
+Serial.print©;             // print the character
+}
+}
+}}}</p>
+<h3 id="when-master-request-data-from-slave" tabindex="-1">When master request data from slave</h3>
+<p>{{{code: lang=“cpp” linenumbers=“True”
+void setup() {
+Wire.begin(8);                // join i2c bus with address #8
+Wire.onRequest(requestEvent); // register event
+}
+void loop() {
+delay(100);
+}</p>
+<p>// function that executes whenever data is requested by master
+// this function is registered as an event, see setup ()
+void requestEvent() {
+Wire.write(&quot;hello &quot;); // respond with message of 6 bytes
+// as expected by master
+}
+}}}</p>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2023</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

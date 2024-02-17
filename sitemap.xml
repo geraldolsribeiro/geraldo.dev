@@ -247,6 +247,9 @@
     <loc>https://geraldo.dev/til/imgui.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_thread_02.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/varicad-legenda.html</loc>
   </url>
   <url>
@@ -778,6 +781,9 @@
     <loc>https://geraldo.dev/til/tag/animation.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/RAII.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/firewall.html</loc>
   </url>
   <url>
@@ -835,9 +841,6 @@
     <loc>https://geraldo.dev/til/tag/nautilus.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/atomic.html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/fltk.html</loc>
   </url>
   <url>
@@ -857,6 +860,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/chrome.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/number-of-cores.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/max.html</loc>
@@ -1121,6 +1127,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/IPC.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/$_.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/sca.html</loc>
@@ -1432,9 +1441,6 @@
     <loc>https://geraldo.dev/til/tag/iota.html</loc>
   </url>
   <url>
-    <loc>https://geraldo.dev/til/tag/cpp.html</loc>
-  </url>
-  <url>
     <loc>https://geraldo.dev/til/tag/std::partial_sort.html</loc>
   </url>
   <url>
@@ -1454,6 +1460,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/exa.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::terminate.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/warn.html</loc>
@@ -1651,6 +1660,9 @@
     <loc>https://geraldo.dev/til/tag/splunk.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/hardware_concurrency.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/bitshift.html</loc>
   </url>
   <url>
@@ -1730,6 +1742,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/embedded-systems.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::atomic.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/devtools.html</loc>
@@ -2110,7 +2125,13 @@
     <loc>https://geraldo.dev/til/tag/ranges.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/pthread_cancel.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/onedrive.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/joinable.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/lowest.html</loc>
@@ -2420,6 +2441,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/restinio.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/std::fflush.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/Python.html</loc>
@@ -2800,6 +2824,9 @@
     <loc>https://geraldo.dev/til/communication-protocol-UART.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_thread_03.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/deploy-site-with-git.html</loc>
   </url>
   <url>
@@ -2879,6 +2906,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tmsu.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_hardware_concurrency_01.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/dma.html</loc>
@@ -3058,6 +3088,9 @@
     <loc>https://geraldo.dev/til/cpp_partition_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_pthread_02.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cqs-bertrand-meyer.html</loc>
   </url>
   <url>
@@ -3100,6 +3133,9 @@
     <loc>https://geraldo.dev/acronym/ANI_Automatic_Number_Identification.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/acronym/Thread.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/acronym/RTL-SDR.html</loc>
   </url>
   <url>
@@ -3122,6 +3158,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/Galois_field.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/Context.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/I2C_Inter-Integrated_Circuit.html</loc>
@@ -3158,6 +3197,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/G.723_Voice_Codec.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/acronym/RAII_Resource_Acquisition_Is_Initialization.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/acronym/64-QAM.html</loc>

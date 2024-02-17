@@ -12,7 +12,10 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
-    <!-- thumbnail_image not define-->
+    <meta property="og:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
+    <meta property="twitter:card" content="">
     <link rel="stylesheet" href="/styles.css">
   </head>
   <body class="bg-black">
@@ -57,7 +60,9 @@
           </svg><span>Back to TILs</span></a>
         <h1>Getting started with Armadillo</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-09-22</b>Last modified: <b class="ml-2">2023-12-22 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/cpp.html">cpp</a><a class="tag no-underline" href="/til/tag/armadillo.html">armadillo</a><a class="tag no-underline" href="/til/tag/math.html">math</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/armadillo.html">armadillo</a><a class="tag no-underline" href="/til/tag/math.html">math</a>
+        </div>
+        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p>According to the <a href="http://arma.sourceforge.net/">Armadillo site</a>
 it is a high quality linear algebra library (matrix maths) for the
 C++ language, aiming towards a good balance between speed and ease
@@ -265,67 +270,61 @@ unchanged:</p>
   // 3.1416      inf      nan
 }
 </code></pre>
-<h2 id="references" tabindex="-1">References</h2>
-<ul>
-<li><a href="http://arma.sourceforge.net/">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
-</ul>
-<h2 id="complete-source" tabindex="-1">Complete source</h2>
-<p><a href="https://gist.github.com/geraldolsribeiro/7765d983b678daf72f5dc0d2d611b4ca">https://gist.github.com/geraldolsribeiro/7765d983b678daf72f5dc0d2d611b4ca</a></p>
-<h2 id="output" tabindex="-1">Output</h2>
+<h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">Lets check the types of each variable:
 Type of R: N4arma3MatIdEE
 Type of S: N4arma3MatIdEE
 Type of T: N4arma3MatIdEE
 Type of A: N4arma3MatIdEE
 A:
-   0.0533   0.5962   0.3691
-   0.3229   0.6359   0.9419
+   0.1383   0.5448   0.4349
+   0.6912   0.6917   0.1489
 
 A:
-   0.0533   0.5962   0.3691
-   0.3229   0.6359   0.9419
+   0.1383   0.5448   0.4349
+   0.6912   0.6917   0.1489
 
 A:
-   0.0533   0.5962   0.3691
-   0.3229   0.6359   0.9419
+   0.1383   0.5448   0.4349
+   0.6912   0.6917   0.1489
 
 R:
-   0.0010   0.7038   0.1187
-   0.6401   0.5288   0.3060
+   0.9312   0.3851   0.1698
+   0.7090   0.9461   0.1287
 
 R:
-   0.0010   0.7038   0.1187
-   0.6401   0.5288   0.3060
+   0.9312   0.3851   0.1698
+   0.7090   0.9461   0.1287
 
 R:
-   0.0010   0.7038   0.1187
-   0.6401   0.5288   0.3060
+   0.9312   0.3851   0.1698
+   0.7090   0.9461   0.1287
 
 A:
-   0.0533   0.5962   0.3691
-   0.3229   0.6359   0.9419
+   0.1383   0.5448   0.4349
+   0.6912   0.6917   0.1489
 
 A.t:
-   0.0533   0.3229
-   0.5962   0.6359
-   0.3691   0.9419
+   0.1383   0.6912
+   0.5448   0.6917
+   0.4349   0.1489
 
-   0.1071   0.2371   0.3238
-   0.2371   0.7598   0.8189
-   0.3238   0.8189   1.0233
+   0.4969   0.5535   0.1631
+   0.5535   0.7752   0.3399
+   0.1631   0.3399   0.2113
 
 B:
-   0.4703   0.3423   0.3445
-   0.2763   0.5163   0.3770
-   0.3631   0.2903   0.7493
+   0.7697   0.7594   0.3825
+   0.3710   0.4128   0.8314
+   0.4641   0.5950   0.3182
 
-Det: 0.0694993
+Det: -0.0651421
 C:
-   0.2642   0.6187   0.2510
-   0.4443   0.2090   0.4035
-   0.3055   0.9472   0.8843
+   0.6455   0.9586   0.1450
+   0.1588   0.3722   0.7455
+   0.4419   0.7973   0.7656
 
-Det: -0.129355
+Det: -0.00598124
 D:
    1.0000   2.0000   3.0000
    4.0000   5.0000   6.0000
@@ -386,6 +385,12 @@ F:
 
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="http://arma.sourceforge.net/">Armadillo C++ library for linear algebra &amp; scientific computing</a></li>
+</ul>
+<h2 id="complete-source" tabindex="-1">Complete source</h2>
+<p><a href="https://gist.github.com/geraldolsribeiro/7765d983b678daf72f5dc0d2d611b4ca">https://gist.github.com/geraldolsribeiro/7765d983b678daf72f5dc0d2d611b4ca</a></p>
 
       </main>
     </div>

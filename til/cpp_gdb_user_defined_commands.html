@@ -236,7 +236,40 @@ quit
 
 </code></pre>
 <h2 id="gdb-output" tabindex="-1">GDB output</h2>
-<pre><code class="language-shell">Arquivo output/gdb_user_defined_commands.gdb nao encontrado!
+<pre><code class="language-shell">142	  print_list( list1 );
+$1 = {
+  data = 0,
+  next = 0x555555b02230
+}
+$2 = {
+  data = 1,
+  next = 0x555555b00090
+}
+$3 = {
+  data = 2,
+  next = 0x555555b000b0
+}
+$4 = {
+  data = 3,
+  next = 0x555555b000d0
+}
+$5 = {
+  data = 4,
+  next = 0x555555b000f0
+}
+$6 = {
+  data = 5,
+  next = 0x555555b00110
+}
+$7 = {
+  data = 6,
+  next = 0x0
+}
+        p_generic_list LIST_HEAD_POINTER
+        Print all the fields of the nodes in the linked list pointed to by LIST_HEAD_POINTER. Assumes there is a next field in the struct.
+144	  return 0;
+[Inferior 1 (process 330150) exited normally]
+
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>

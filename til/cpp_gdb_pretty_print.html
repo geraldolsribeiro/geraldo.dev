@@ -151,11 +151,11 @@ quit
 </code></pre>
 <h2 id="gdb-output" tabindex="-1">GDB output</h2>
 <pre><code class="language-shell">print students with pretty off
-$1 = {{first_name = 0x555555557004 &quot;Fred&quot;, last_name = 0x555555557009 &quot;Smith&quot;, dob = {day = 1, month = 1, year = 1970}, comments = 0x0}, {first_name = 0x55555555700f &quot;Sarah&quot;, last_name = 0x555555557015 &quot;G0T0&quot;, dob = {day = 1, month = 1, year = 2002}, comments = 0x55555555701a &quot;Lorem ipsum enchanta constrata&quot;}}
+$1 = {{first_name = 0x012301230123 &quot;Fred&quot;, last_name = 0x012301230123 &quot;Smith&quot;, dob = {day = 1, month = 1, year = 1970}, comments = 0x0}, {first_name = 0x012301230123 &quot;Sarah&quot;, last_name = 0x012301230123 &quot;G0T0&quot;, dob = {day = 1, month = 1, year = 2002}, comments = 0x012301230123 &quot;Lorem ipsum enchanta constrata&quot;}}
 print students with pretty on
 $2 = {{
-    first_name = 0x555555557004 &quot;Fred&quot;,
-    last_name = 0x555555557009 &quot;Smith&quot;,
+    first_name = 0x012301230123 &quot;Fred&quot;,
+    last_name = 0x012301230123 &quot;Smith&quot;,
     dob = {
       day = 1,
       month = 1,
@@ -163,24 +163,24 @@ $2 = {{
     },
     comments = 0x0
   }, {
-    first_name = 0x55555555700f &quot;Sarah&quot;,
-    last_name = 0x555555557015 &quot;G0T0&quot;,
+    first_name = 0x012301230123 &quot;Sarah&quot;,
+    last_name = 0x012301230123 &quot;G0T0&quot;,
     dob = {
       day = 1,
       month = 1,
       year = 2002
     },
-    comments = 0x55555555701a &quot;Lorem ipsum enchanta constrata&quot;
+    comments = 0x012301230123 &quot;Lorem ipsum enchanta constrata&quot;
   }}
 Printing and watching elements of arrays
-$3 = 0x55555555701a &quot;Lorem ipsu&quot;...
-$4 = 0x55555555701a &quot;Lorem ipsum enchanta constrata&quot;
+$3 = 0x012301230123 &quot;Lorem ipsu&quot;...
+$4 = 0x012301230123 &quot;Lorem ipsum enchanta constrata&quot;
 $5 = &quot; ipsum enc&quot;
 66	  students[1].comments[51] = 'X';
 $6 = &quot;\006\377\a\a&quot;
 Hardware watchpoint 2: students[1].comments[50]@4
 
-Hardware watchpoint 2: students[1].comments[50]@4
+Thread 1 &quot;gdb_pretty_prin&quot; hit Hardware watchpoint 2: students[1].comments[50]@4
 
 Old value = &quot;\006\377\a\a&quot;
 New value = &quot;\006X\a\a&quot;

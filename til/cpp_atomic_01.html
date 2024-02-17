@@ -60,35 +60,22 @@
           </svg><span>Back to TILs</span></a>
         <h1>C++ atomic 01</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-02-22</b>Last modified: <b class="ml-2">2023-12-22 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/atomic.html">atomic</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::atomic.html">std::atomic</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<pre><code class="language-cpp">#include &lt;array&gt;
-#include &lt;atomic&gt;
-#include &lt;iostream&gt;
-#include &lt;mutex&gt;
-#include &lt;numeric&gt;
-#include &lt;thread&gt;
-
-using namespace std;
-
-// std::atomic&lt;int&gt; x{0};
-// ++x;           // atomic pre-increment
-// x++;           // atomic post-incrment
-// x += 1;        // atomic increment
-// x |= 2;        // atomic bit set
-// int y = x * 2; // atomic read of x
-// x = y + 1;     // atomic write
-// x = x + 1;     // atomic read followed by atomic write
-// x = x * 2;     // atomic read followed by atomic write
-// ---- x *= 2;   // NÃO EXISTE MULTIPLICAÇÃO ATOMICA
-
-// ----------------------------------------------------------------------
-//
-// ----------------------------------------------------------------------
-// usar construtor em vez de std::atomic&lt;unsigned long&gt; sum1 = 0
+<p>std::atomic<int> x{0};
+++x;           // atomic pre-increment
+x++;           // atomic post-incrment
+x += 1;        // atomic increment
+x |= 2;        // atomic bit set
+int y = x * 2; // atomic read of x
+x = y + 1;     // atomic write
+x = x + 1;     // atomic read followed by atomic write
+x = x * 2;     // atomic read followed by atomic write
+---- x *= 2;   // NÃO EXISTE MULTIPLICAÇÃO ATOMICA</p>
+<pre><code class="language-cpp">// usar construtor em vez de std::atomic&lt;unsigned long&gt; sum1 = 0
 atomic&lt;unsigned long&gt; sum1( 0 );
 void                  doWork1( size_t N, unsigned long *a )
 {
@@ -96,13 +83,11 @@ void                  doWork1( size_t N, unsigned long *a )
     sum1 += a[i];
   }
 }
-
-// ----------------------------------------------------------------------
-//
-// ----------------------------------------------------------------------
-unsigned long sum2( 0 );
+</code></pre>
+<pre><code class="language-cpp">unsigned long sum2( 0 );
 mutex         M;
-void          doWork2( size_t N, unsigned long *a )
+</code></pre>
+<pre><code class="language-cpp">void          doWork2( size_t N, unsigned long *a )
 {
   unsigned long s = 0;
   for( size_t i = 0; i &lt; N; ++i ) {
@@ -111,11 +96,8 @@ void          doWork2( size_t N, unsigned long *a )
   lock_guard&lt;mutex&gt; L( M );
   sum2 += s;
 }
-
-// ----------------------------------------------------------------------
-//
-// ----------------------------------------------------------------------
-int main()
+</code></pre>
+<pre><code class="language-cpp">int main()
 {
   constexpr size_t        N = 10000;
   array&lt;unsigned long, N&gt; data;
@@ -132,6 +114,7 @@ int main()
 
   cout &lt;&lt; &quot;Sum1: &quot; &lt;&lt; sum1 &lt;&lt; endl;
   cout &lt;&lt; &quot;Sum2: &quot; &lt;&lt; sum2 &lt;&lt; endl;
+  return 0;
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>

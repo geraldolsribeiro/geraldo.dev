@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Shortcode">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>Shortcode</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body class="bg-black">
+    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
+      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
+        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
+          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
+          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+        </ul>
+        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
+      </div>
+    </nav>
+    <script>
+      window.addEventListener("load", () => {
+        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
+        const menuCloseBtn = document.querySelector("#menu-close-btn");
+        const menu = document.querySelector("#menu");
+        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
+      });
+    </script>
+    <div class="prose mx-auto py-4 px-4">
+      <form id="search" method="get" action="/search.html">
+        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
+        <div class="relative">
+          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
+          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-black text-slate-100 min-h-screen">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
+          </svg><span>Back to TILs</span></a>
+        <h1>Shortcode</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-02-24</b>Last modified: <b class="ml-2">2024-02-24 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/blog.html">blog</a><a class="tag no-underline" href="/til/tag/helper.html">helper</a>
+        </div><h2 id="toc" tabindex="-1">toc</h2>
+<pre><code>  ::: toc
+</code></pre>
+<p><strong>Table of contents</strong></p>
+<p><div class="table-of-contents"><ul><li><a href="#toc">toc</a></li><li><a href="#fixme">fixme</a></li><li><a href="#warning">warning</a></li><li><a href="#tip">tip</a></li><li><a href="#info">info</a></li><li><a href="#note">note</a></li><li><a href="#youtube">youtube</a></li><li><a href="#citation">citation</a></li><li><a href="#figure">figure</a></li><li><a href="#include">include</a></li></ul></div></p>
+<h2 id="fixme" tabindex="-1">fixme</h2>
+<h3 id="default-title" tabindex="-1">Default title</h3>
+<pre><code>  ::: fixme
+  text text text
+  \
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">🪲 </span>
+    <span>FIXME</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
+<p>text text text</p>
+<p>text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h3 id="alternative-title" tabindex="-1">Alternative title</h3>
+<pre><code>  ::: fixme title=&quot;Alternative title&quot;
+  text text text
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">🪲 </span>
+    <span>Alternative title</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
+<p>text text text
+text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h2 id="warning" tabindex="-1">warning</h2>
+<h3 id="default-title-1" tabindex="-1">Default title</h3>
+<pre><code>  ::: warning
+  text text text
+  \
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p>text text text</p>
+<p>text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h3 id="alternative-title-1" tabindex="-1">Alternative title</h3>
+<pre><code>  ::: warning title=&quot;Alternative title&quot;
+  text text text
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Alternative title</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p>text text text
+text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h2 id="tip" tabindex="-1">tip</h2>
+<h3 id="default-title-2" tabindex="-1">Default title</h3>
+<pre><code>  ::: tip
+  text text text
+  \
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>text text text</p>
+<p>text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h3 id="alternative-title-2" tabindex="-1">Alternative title</h3>
+<pre><code>  ::: tip title=&quot;Alternative title&quot;
+  text text text
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Alternative title</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>text text text
+text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h2 id="info" tabindex="-1">info</h2>
+<h3 id="default-title-3" tabindex="-1">Default title</h3>
+<pre><code>  ::: info
+  text text text
+  \
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☕</span>
+    <span>Information</span>
+  </div>
+  <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
+<p>text text text</p>
+<p>text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h3 id="alternative-title-3" tabindex="-1">Alternative title</h3>
+<pre><code>  ::: info title=&quot;Alternative title&quot;
+  text text text
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-blue-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☕</span>
+    <span>Alternative title</span>
+  </div>
+  <div class="border border-t-0 border-blue-400 rounded-b px-4 py-3">
+<p>text text text
+text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<h2 id="note" tabindex="-1">note</h2>
+<h3 id="default-title-4" tabindex="-1">Default title</h3>
+<pre><code>  ::: note
+  text text text
+  \
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">👇</span>
+    <span>Note</span>
+  </div>
+  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
+<p>text text text</p>
+<p>text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<!-- vim: ft=html -->
+<h3 id="alternative-title-4" tabindex="-1">Alternative title</h3>
+<pre><code>  ::: note title=&quot;Alternative title&quot;
+  text text text
+  text text text
+  text text text
+  blank line
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-purple-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">👇</span>
+    <span>Alternative title</span>
+  </div>
+  <div class="border border-t-0 border-purple-600 rounded-b px-4 py-3">
+<p>text text text
+text text text
+text text text
+blank line</p>
+  </div>
+</div>
+<!-- vim: ft=html -->
+<h2 id="youtube" tabindex="-1">youtube</h2>
+<pre><code>  ::: youtube id=&quot;EsZFgm3wGOc&quot; title=&quot;Why do we use CAN Communication? Advantages of CAN communication&quot;
+</code></pre>
+<!-- [embed youtube video] -->
+<div class="aspect-w-16 aspect-h-9 relative overflow-hidden max-w-full w-full" style="padding-bottom: 56.25%">
+  <iframe
+    class="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/EsZFgm3wGOc"
+    title="Why do we use CAN Communication? Advantages of CAN communication"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<!-- [/embed youtube video] -->
+<h2 id="citation" tabindex="-1">citation</h2>
+<pre><code>  ::: citation author=&quot;Jack Welch&quot;
+  Quando o ritmo de mudança dentro da empresa for ultrapassado pelo ritmo da
+  mudança fora dela, o fim está próximo.
+
+</code></pre>
+<figure class="flex bg-slate-800 p-4 rounded-xl border-solid border-2 border-slate-400">
+  <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
+    <g>
+      <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643
+      c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455
+      c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44
+      C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186
+      c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023
+      c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605
+      v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455
+      c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path>
+    </g>
+  </svg>
+  <blockquote class="border-0">
+    <p class="text-2xl">
+<p>Quando o ritmo de mudança dentro da empresa for ultrapassado pelo ritmo da
+mudança fora dela, o fim está próximo.</p>
+<pre><code>&lt;/p&gt;
+&lt;p class=&quot;text-right&quot;&gt;
+  &lt;strong class=&quot;text-slate-200&quot;&gt;Jack Welch&lt;/strong&gt;
+&lt;/p&gt;
+</code></pre>
+  </blockquote>
+</figure>
+<figure class="flex bg-slate-800 p-4 rounded-xl border-solid border-2 border-slate-400">
+  <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
+    <g>
+      <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643
+      c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455
+      c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44
+      C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186
+      c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023
+      c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605
+      v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455
+      c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path>
+    </g>
+  </svg>
+  <blockquote class="border-0">
+    <p class="text-2xl">
+<p>citation body</p>
+<pre><code>&lt;/p&gt;
+&lt;p class=&quot;text-right&quot;&gt;
+  &lt;strong class=&quot;text-slate-200&quot;&gt;Author&lt;/strong&gt;
+&lt;/p&gt;
+</code></pre>
+  </blockquote>
+</figure>
+<figure class="flex bg-slate-800 p-4 rounded-xl border-solid border-2 border-slate-400">
+  <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
+    <g>
+      <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643
+      c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455
+      c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44
+      C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186
+      c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023
+      c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605
+      v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455
+      c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path>
+    </g>
+  </svg>
+  <blockquote class="border-0">
+    <p class="text-2xl">
+<p>Quando o ritmo de mudança dentro da empresa for ultrapassado pelo ritmo da
+mudança fora dela, o fim está próximo.</p>
+<pre><code>&lt;/p&gt;
+&lt;p class=&quot;text-right&quot;&gt;
+  &lt;strong class=&quot;text-slate-200&quot;&gt;Jack Welch&lt;/strong&gt;
+&lt;/p&gt;
+</code></pre>
+  </blockquote>
+</figure>
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">🪲 </span>
+    <span>FIXME</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
+<p>The author is not rendered properly for Jack Welch citation</p>
+  </div>
+</div>
+<pre><code>  ::: citation author=&quot;Bjarne Stroustrup (2012)&quot;
+  The best example of why I shouldn't be in marketing...
+  I didn't have a good day when I named that
+  \
+  A better name is probably:
+  \
+  * Constructor Acquires, Destructor Releases
+  * Scope Based Resource Management
+</code></pre>
+<figure class="flex bg-slate-800 p-4 rounded-xl border-solid border-2 border-slate-400">
+  <svg class="w-24 h-24 m-2" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="349.078px" height="349.078px" viewBox="0 0 349.078 349.078" style="enable-background:new 0 0 349.078 349.078;" xml:space="preserve">
+    <g>
+      <path d="M150.299,26.634v58.25c0,7.9-6.404,14.301-14.304,14.301c-28.186,0-43.518,28.909-45.643,85.966h45.643
+      c7.9,0,14.304,6.407,14.304,14.304v122.992c0,7.896-6.404,14.298-14.304,14.298H14.301C6.398,336.745,0,330.338,0,322.447V199.455
+      c0-27.352,2.754-52.452,8.183-74.611c5.568-22.721,14.115-42.587,25.396-59.048c11.608-16.917,26.128-30.192,43.16-39.44
+      C93.886,17.052,113.826,12.333,136,12.333C143.895,12.333,150.299,18.734,150.299,26.634z M334.773,99.186
+      c7.896,0,14.305-6.407,14.305-14.301v-58.25c0-7.9-6.408-14.301-14.305-14.301c-22.165,0-42.108,4.72-59.249,14.023
+      c-17.035,9.248-31.563,22.523-43.173,39.44c-11.277,16.461-19.824,36.328-25.393,59.054c-5.426,22.166-8.18,47.266-8.18,74.605
+      v122.992c0,7.896,6.406,14.298,14.304,14.298h121.69c7.896,0,14.299-6.407,14.299-14.298V199.455
+      c0-7.896-6.402-14.304-14.299-14.304h-44.992C291.873,128.095,306.981,99.186,334.773,99.186z"></path>
+    </g>
+  </svg>
+  <blockquote class="border-0">
+    <p class="text-2xl">
+<p>The best example of why I shouldn’t be in marketing…
+I didn’t have a good day when I named that</p>
+<p>A better name is probably:</p>
+<ul>
+<li>
+<p>Constructor Acquires, Destructor Releases</p>
+</li>
+<li>
+<p>Scope Based Resource Management</p>
+  </p>
+  <p class="text-right">
+    <strong class="text-slate-200">Bjarne Stroustrup (2012)</strong>
+  </p>
+</blockquote>
+</li>
+</ul>
+</figure>
+<h2 id="figure" tabindex="-1">figure</h2>
+<pre><code>  ::: figure title=&quot;Microservice architecture vs monolithic architecture&quot; \
+    src=&quot;/til/microservice-architecture-01.webp&quot; \
+    cite=&quot;https://docs.oracle.com/en/solutions/learn-architect-microservice/&quot;
+</code></pre>
+<figure class="bg-slate-800 text-center py-4">
+  <a name="fig-1">
+    <img class="mx-auto my-2" src="/til/microservice-architecture-01.webp" alt="Microservice architecture vs monolithic architecture">
+  </a>
+  <figcaption class="text-center text-lg font-bold">
+     <strong>Fig. 1</strong> — <span>Microservice architecture vs monolithic architecture</span>
+     <br>
+    <cite class="font-normal text-sm">
+      Source: <a href="https://docs.oracle.com/en/solutions/learn-architect-microservice/">https://docs.oracle.com/en/solutions/learn-architect-microservice/</a>
+    </cite>
+  </figcaption>
+</figure>
+<h2 id="include" tabindex="-1">include</h2>
+<pre><code>  ::: include bash src/static_src/til/animate.gp
+</code></pre>
+<pre><code class="language-bash"># Arquivo animate.gnuplot
+plot sin(x+i*dt) w l lt 1 lw 1.5 title sprintf(&quot;t=%i&quot;,i)
+i=i+1
+if (i &lt; n) reread
+</code></pre>
+<pre><code>  ::: include 3 5 bash src/static_src/til/animate.gp
+</code></pre>
+<pre><code class="language-bash">i=i+1
+if (i &lt; n) reread
+</code></pre>
+<pre><code>  ::: include 3 +2 bash src/static_src/til/animate.gp
+</code></pre>
+<pre><code class="language-bash">i=i+1
+if (i &lt; n) reread
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-red-600 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">🪲 </span>
+    <span>FIXME</span>
+  </div>
+  <div class="border border-t-0 border-red-600 rounded-b px-4 py-3">
+<p>Describe:</p>
+<pre><code>  {&quot;adsense_in_article&quot;, regex{&quot;::: adsense_in_article&quot;}},
+  // ::: figure src=&quot;&quot; title=&quot;&quot; cite=&quot;&quot;
+  {&quot;figure&quot;, regex{&quot;::: figure (.*)&quot;}},
+  // ::: table title=&quot;&quot; cite=&quot;&quot;
+  {&quot;table&quot;, regex{&quot;::: table (.*)&quot;}},
+  {&quot;image&quot;, regex{&quot;!\\[(.*)\\]\\((.*)\\)&quot;}},
+  {&quot;wip&quot;, regex{&quot;::: wip ?(.*)&quot;}},
+  {&quot;description&quot;, regex{&quot;::: description ?(.*)&quot;}},
+  // ::: pikchr src=&quot;&quot; title=&quot;&quot;
+  {&quot;pikchr&quot;, regex{&quot;::: pikchr (.*)&quot;}},
+  {&quot;plantuml&quot;, regex{&quot;::: plantuml (.*)&quot;}},
+  {&quot;gnuplot&quot;, regex{&quot;::: gnuplot (.*)&quot;}},
+  // ::: mermaid src=&quot;&quot; title=&quot;&quot;
+  {&quot;mermaid&quot;, regex{&quot;::: mermaid (.*)&quot;}}};
+</code></pre>
+  </div>
+</div>
+
+      </main>
+    </div>
+    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
+      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2024</div>
+      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+      </div>
+    </footer>
+    <script>
+      //- hljs.highlightAll();
+      //- https://github.com/wcoder/highlightjs-line-numbers.js
+      //- Exemplo de numeracao em corba.md
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      
+        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+          hljs.lineNumbersBlock(el); // numbering using plugin
+        });
+      
+      });
+    </script>
+    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
+  </body>
+</html>

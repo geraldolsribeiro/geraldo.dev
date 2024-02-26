@@ -214,6 +214,9 @@
     <loc>https://geraldo.dev/til/mermaid.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_condition_variable_03.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_big-endian-vs-little-endian.html</loc>
   </url>
   <url>
@@ -463,6 +466,9 @@
     <loc>https://geraldo.dev/til/conky.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_condition_variable_01.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/bash-trap.html</loc>
   </url>
   <url>
@@ -488,6 +494,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_hashids_01.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_condition_variable_02.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/stock-image-source.html</loc>
@@ -856,6 +865,9 @@
     <loc>https://geraldo.dev/til/tag/nautilus.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/atomic.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/fltk.html</loc>
   </url>
   <url>
@@ -1040,6 +1052,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/pipe.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/condition_variable.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/any_of.html</loc>
@@ -1349,6 +1364,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/strlen.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/condition_variable_04.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/if.html</loc>
@@ -2128,6 +2146,9 @@
     <loc>https://geraldo.dev/til/tag/fuzzy.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/std::atomic_flag.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/cruft.html</loc>
   </url>
   <url>
@@ -2732,6 +2753,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/cpp_concepts_01.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/cpp_condition_variable_04.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/english-present-tense.html</loc>

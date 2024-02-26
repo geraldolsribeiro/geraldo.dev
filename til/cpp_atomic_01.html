@@ -60,12 +60,35 @@
           </svg><span>Back to TILs</span></a>
         <h1>C++ atomic 01</h1>
         <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-02-22</b>Last modified: <b class="ml-2">2023-12-22 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::atomic.html">std::atomic</a>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::atomic.html">std::atomic</a><a class="tag no-underline" href="/til/tag/std::atomic_flag.html">std::atomic_flag</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<p>std::atomic<int> x{0};
+<p><div class="table-of-contents"><ul><li><a href="#steps-required-for-i%2B%2B%3B">Steps required for  i++;</a></li><li><a href="#atomic_flag">atomic_flag</a></li><li><a href="#atomic_bool">atomic_bool</a></li><li><a href="#atomic_int">atomic_int</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p>Atomic operations is an indivisible operation.
+We cannot observe such an operation half-done from any thread in the systesm.</p>
+<div role="alert" class="my-4">
+  <div class="bg-yellow-200 text-black font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">☢</span>
+    <span>Warning</span>
+  </div>
+  <div class="border border-t-0 border-yellow-200 rounded-b px-4 py-3">
+<p>Single line statement does not means single operation</p>
+  </div>
+</div>
+<h2 id="steps-required-for-i%2B%2B%3B" tabindex="-1">Steps required for  <strong>i++;</strong></h2>
+<ul>
+<li>step 1: read the value of <code>i</code> from the memory</li>
+<li>step 2: increment that value by one</li>
+<li>step 3: store the modified value to the memory</li>
+</ul>
+<figure>
+  <img class="mx-auto" src="/til/cpp_atomic_01.svg" alt="Image caption.">
+  <figcaption class="text-center">
+     <strong>Fig. 1</strong> - <span>Image caption.</span>
+  </figcaption>
+</figure>
+<pre><code class="language-c++">std::atomic&lt;int&gt; x{0};
 ++x;           // atomic pre-increment
 x++;           // atomic post-incrment
 x += 1;        // atomic increment
@@ -74,10 +97,139 @@ int y = x * 2; // atomic read of x
 x = y + 1;     // atomic write
 x = x + 1;     // atomic read followed by atomic write
 x = x * 2;     // atomic read followed by atomic write
----- x *= 2;   // NÃO EXISTE MULTIPLICAÇÃO ATOMICA</p>
-<pre><code class="language-cpp">// usar construtor em vez de std::atomic&lt;unsigned long&gt; sum1 = 0
-atomic&lt;unsigned long&gt; sum1( 0 );
-void                  doWork1( size_t N, unsigned long *a )
+---- x *= 2;   // DOES NOT EXIST ATOMIC MULTIPLICATION
+</code></pre>
+<h2 id="atomic_flag" tabindex="-1">atomic_flag</h2>
+<p>Most basic type, it is like a bool.</p>
+<p>Operations:</p>
+<ul>
+<li><code>clear()</code></li>
+<li><code>test_and_set()</code></li>
+</ul>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p><code>atomic_flag</code> should be initialized with <code>ATOMIC_FLAG_INIT</code>
+::: warning
+The <code>atomic_flag</code> is the unique type that does not provide
+<code>is_lock_free</code> function</p>
+  </div>
+</div>
+<pre><code class="language-cpp">void demo_atomic_flag()
+{
+  fmt::print( &quot;==== {} ====\n&quot;, __FUNCTION__ );
+  std::atomic_flag flag1 = ATOMIC_FLAG_INIT;
+  fmt::print( &quot;#1 The previous value of flag1 is {}\n&quot;, flag1.test_and_set() ); // false
+  fmt::print( &quot;#2 The previous value of flag1 is {}\n&quot;, flag1.test_and_set() ); // true
+  fmt::print( &quot;#3 The previous value of flag1 is {}\n&quot;, flag1.test_and_set() ); // true
+  flag1.clear();
+  fmt::print( &quot;#4 The previous value of flag1 is {}\n&quot;, flag1.test_and_set() ); // false
+}
+</code></pre>
+<h2 id="atomic_bool" tabindex="-1">atomic_bool</h2>
+<ul>
+<li>neither <strong>copy assignable</strong> nor copy <strong>constructible</strong></li>
+<li>can assign non atomic booleans</li>
+<li>can be construct using non atomic booleans</li>
+</ul>
+<pre><code class="language-cpp">void demo_atomic_bool()
+{
+  fmt::print( &quot;==== {} ====\n&quot;, __FUNCTION__ );
+  // clang false by default
+  // msvs true by default
+  std::atomic&lt;bool&gt; flag1;
+  fmt::print( &quot;The value of atomic&lt;bool&gt; flag1 is {}\n&quot;, flag1.load() ); // false
+  fmt::print( &quot;Is lock free: {}\n&quot;, flag1.is_lock_free() );
+
+  // Compilation error std::atomic&lt;bool&gt; flag2(flag1);
+  // Compilation error std::atomic&lt;bool&gt; flag3 = flag1;
+
+  bool              non_atomic_bool{ true };
+  std::atomic&lt;bool&gt; flag4( non_atomic_bool );
+  fmt::print( &quot;The value of atomic&lt;bool&gt; flag4 is {}\n&quot;, flag4.load() ); // true
+  std::atomic&lt;bool&gt; flag5 = false;
+  fmt::print( &quot;The value of atomic&lt;bool&gt; flag5 is {}\n&quot;, flag5.load() ); // false
+
+  flag5.store( true );
+  fmt::print( &quot;The value of atomic&lt;bool&gt; flag5 is {} after store\n&quot;, flag5.load() ); // true
+
+  auto previous_value = flag5.exchange( false );
+  fmt::print( &quot;previous_value is {} and flag5 is {}\n&quot;, previous_value, flag5.load() ); // false
+}
+</code></pre>
+<h2 id="atomic_int" tabindex="-1">atomic_int</h2>
+<h3 id="compare-exchange" tabindex="-1">Compare exchange</h3>
+<pre><code class="language-c++">bool r = X.compare_exchange_weak( T&amp; expected, T desired )
+bool r = X.compare_exchange_strong( T&amp; expected, T desired )
+</code></pre>
+<ul>
+<li>Compare the value of the atomic variable <code>X</code> with <code>expected</code>
+value and stores the <code>desired</code> value if they are equal.</li>
+<li>If they are not equal the <code>expected</code> value is updated with the actual
+value of the atomic variable.</li>
+<li>Return true if <code>store</code> is performed and false otherwise.</li>
+</ul>
+<p><strong>weak:</strong> if the CPU does not have a simple compare exchange instruction
+is not possible to garantee the atomicity of the operation.
+More performant.</p>
+<p>strong: to garantee the atomicity this function may require more
+CPU instructions.</p>
+<p>See <a href="https://en.wikipedia.org/wiki/Compare-and-swap">Compare and swap</a>.</p>
+<p>This is the logic in the Intel Software Manual Vol 2A:</p>
+<pre><code class="language-cpp">bool compare_and_swap( int *accum, int *dest, int newval )
+{
+  if( *accum == *dest ) {
+    *dest = newval;
+    return true;
+  }
+  else {
+    *accum = *dest;
+    return false;
+  }
+}
+</code></pre>
+<pre><code class="language-cpp">void demo_atomic_int()
+{
+  fmt::print( &quot;==== {} ====\n&quot;, __FUNCTION__ );
+
+  std::atomic&lt;int&gt; x1( 20 );
+  int              expected_value_1 = 20;
+  int              desired_value_1  = 6;
+
+  fmt::print( &quot;#1 value of x1 is {}\n&quot;, x1.load() );
+  bool r1 = x1.compare_exchange_weak( expected_value_1, desired_value_1 );
+  fmt::print( &quot;#2 value of x1 is {}\n&quot;, x1.load() );
+  fmt::print( &quot;#3 value of desired_value_1 is {}\n&quot;, desired_value_1 );
+  fmt::print( &quot;#4 value of expected_value_1 is {}\n&quot;, expected_value_1 );
+  fmt::print( &quot;#5 is store executed? {}\n&quot;, r1 );
+
+  std::atomic&lt;int&gt; x2( 10 );
+  int              expected_value_2 = 20;
+  int              desired_value_2  = 7;
+
+  fmt::print( &quot;#6 value of x2 is {}\n&quot;, x1.load() );
+  bool r2 = x2.compare_exchange_weak( expected_value_2, desired_value_2 );
+  fmt::print( &quot;#7 value of x2 is {}\n&quot;, x2.load() );
+  fmt::print( &quot;#8 value of desired_value_2 is {}\n&quot;, desired_value_2 );
+  fmt::print( &quot;#9 value of expected_value_2 is {} (updated)\n&quot;, expected_value_2 );
+  fmt::print( &quot;#10 is store executed? {}\n&quot;, r2 );
+}
+</code></pre>
+<div role="alert" class="my-4">
+  <div class="bg-green-500 text-white font-bold rounded-t px-4 py-2">
+    <span class="text-2xl">⚡</span>
+    <span>Tip</span>
+  </div>
+  <div class="border border-t-0 border-green-400 rounded-b px-4 py-3">
+<p>Use constructor instead of <code>std::atomic&lt;unsigned long&gt; sum1 = 0</code>.</p>
+  </div>
+</div>
+<pre><code class="language-cpp">atomic&lt;unsigned long&gt; sum1( 0 );
+
+void doWork1( size_t N, unsigned long *a )
 {
   for( size_t i = 0; i &lt; N; ++i ) {
     sum1 += a[i];
@@ -87,7 +239,7 @@ void                  doWork1( size_t N, unsigned long *a )
 <pre><code class="language-cpp">unsigned long sum2( 0 );
 mutex         M;
 </code></pre>
-<pre><code class="language-cpp">void          doWork2( size_t N, unsigned long *a )
+<pre><code class="language-cpp">void doWork2( size_t N, unsigned long *a )
 {
   unsigned long s = 0;
   for( size_t i = 0; i &lt; N; ++i ) {
@@ -99,12 +251,15 @@ mutex         M;
 </code></pre>
 <pre><code class="language-cpp">int main()
 {
+  demo_atomic_flag();
+  demo_atomic_bool();
+  demo_atomic_int();
+
+  // Size of array
   constexpr size_t        N = 10000;
   array&lt;unsigned long, N&gt; data;
+  // Array initialization
   iota( data.begin(), data.end(), 1000 );
-
-  cout &lt;&lt; &quot;Sum1: &quot; &lt;&lt; sum1 &lt;&lt; endl;
-  cout &lt;&lt; &quot;Sum2: &quot; &lt;&lt; sum2 &lt;&lt; endl;
 
   thread t1( doWork1, N, data.data() );
   thread t2( doWork2, N, data.data() );
@@ -118,8 +273,29 @@ mutex         M;
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Sum1: 0
-Sum2: 0
+<pre><code class="language-txt">==== demo_atomic_flag ====
+#1 The previous value of flag1 is false
+#2 The previous value of flag1 is true
+#3 The previous value of flag1 is true
+#4 The previous value of flag1 is false
+==== demo_atomic_bool ====
+The value of atomic&lt;bool&gt; flag1 is false
+Is lock free: true
+The value of atomic&lt;bool&gt; flag4 is true
+The value of atomic&lt;bool&gt; flag5 is false
+The value of atomic&lt;bool&gt; flag5 is true after store
+previous_value is true and flag5 is false
+==== demo_atomic_int ====
+#1 value of x1 is 20
+#2 value of x1 is 6
+#3 value of desired_value_1 is 6
+#4 value of expected_value_1 is 20
+#5 is store executed? true
+#6 value of x2 is 6
+#7 value of x2 is 10
+#8 value of desired_value_2 is 7
+#9 value of expected_value_2 is 10 (updated)
+#10 is store executed? false
 Sum1: 59995000
 Sum2: 59995000
 

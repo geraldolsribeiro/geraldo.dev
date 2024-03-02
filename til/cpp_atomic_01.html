@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ atomic 01</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-02-22</b>Last modified: <b class="ml-2">2023-12-22 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-02-22</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::atomic.html">std::atomic</a><a class="tag no-underline" href="/til/tag/std::atomic_flag.html">std::atomic_flag</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -88,17 +88,6 @@ We cannot observe such an operation half-done from any thread in the systesm.</p
      <strong>Fig. 1</strong> - <span>Image caption.</span>
   </figcaption>
 </figure>
-<pre><code class="language-c++">std::atomic&lt;int&gt; x{0};
-++x;           // atomic pre-increment
-x++;           // atomic post-incrment
-x += 1;        // atomic increment
-x |= 2;        // atomic bit set
-int y = x * 2; // atomic read of x
-x = y + 1;     // atomic write
-x = x + 1;     // atomic read followed by atomic write
-x = x * 2;     // atomic read followed by atomic write
----- x *= 2;   // DOES NOT EXIST ATOMIC MULTIPLICATION
-</code></pre>
 <h2 id="atomic_flag" tabindex="-1">atomic_flag</h2>
 <p>Most basic type, it is like a bool.</p>
 <p>Operations:</p>
@@ -161,6 +150,23 @@ The <code>atomic_flag</code> is the unique type that does not provide
 }
 </code></pre>
 <h2 id="atomic_int" tabindex="-1">atomic_int</h2>
+<pre><code class="language-c++">std::atomic&lt;int&gt; x{0};
+++x;           // atomic pre-increment
+x++;           // atomic post-incrment
+x += 1;        // atomic increment
+x |= 2;        // atomic bit set
+int y = x * 2; // atomic read of x
+x = y + 1;     // atomic write
+x = x + 1;     // atomic read followed by atomic write
+x = x * 2;     // atomic read followed by atomic write
+---- x *= 2;   // DOES NOT EXIST ATOMIC MULTIPLICATION
+</code></pre>
+<figure>
+  <img class="mx-auto" src="/til/cpp_atomic_01_table.webp" alt="Operation.">
+  <figcaption class="text-center">
+     <strong>Fig. 2</strong> - <span>Operation.</span>
+  </figcaption>
+</figure>
 <h3 id="compare-exchange" tabindex="-1">Compare exchange</h3>
 <pre><code class="language-c++">bool r = X.compare_exchange_weak( T&amp; expected, T desired )
 bool r = X.compare_exchange_strong( T&amp; expected, T desired )

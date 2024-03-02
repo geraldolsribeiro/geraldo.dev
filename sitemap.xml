@@ -538,6 +538,9 @@
     <loc>https://geraldo.dev/til/cpp_fftw_01.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_lock_guard_02.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/cpp_gdb_user_defined_commands.html</loc>
   </url>
   <url>
@@ -671,6 +674,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/npm-check-updates.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_relaxed.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/std::thread.html</loc>
@@ -937,6 +943,9 @@
     <loc>https://geraldo.dev/til/tag/rr.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_consume.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/npm.html</loc>
   </url>
   <url>
@@ -1040,6 +1049,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/requires.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_release.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/salary.html</loc>
@@ -1972,6 +1984,9 @@
     <loc>https://geraldo.dev/til/tag/coliru.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_seq_cst.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/hyperloglog.html</loc>
   </url>
   <url>
@@ -2116,6 +2131,9 @@
     <loc>https://geraldo.dev/til/tag/gnome.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/tag/lock_guard.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/tag/unordered_map.html</loc>
   </url>
   <url>
@@ -2123,6 +2141,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/inproc.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_acquire.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/NfSen.html</loc>
@@ -2372,6 +2393,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/transform.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/til/tag/memory_order_rel_acq.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/til/tag/std::numeric_limits.html</loc>
@@ -3172,6 +3196,9 @@
     <loc>https://geraldo.dev/til/bookmarklet.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/til/cpp_atomic_02.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/til/vim-tidy-html.html</loc>
   </url>
   <url>
@@ -3448,6 +3475,9 @@
     <loc>https://geraldo.dev/certificate/2021-10-20_stefanini_POWERPOINT_2013-CURSO_INTERMEDIÁRIO.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/2024-01-15_udemy_Assembly_Language_Adventures_1.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2020-02-17_linkedin_Go_Essential_Training.html</loc>
   </url>
   <url>
@@ -3706,6 +3736,9 @@
     <loc>https://geraldo.dev/certificate/2021-05-13_linkedin_Como_Conciliar_o_Trabalho_Remoto_com_a_Vida_Familiar_em_Tempos_de_Crise.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/2024-03-02_coursera_Real-time_data_visualization_dashboard_using_Node-red.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2020-05-23_linkedin_Flutter_Part_03_Flutter_Widgets.html</loc>
   </url>
   <url>
@@ -3743,6 +3776,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/9001.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/C++-17.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/TDD.html</loc>
@@ -3922,6 +3958,9 @@
     <loc>https://geraldo.dev/certificate/tag/typewriting.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/iot.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/measurement.html</loc>
   </url>
   <url>
@@ -3988,6 +4027,9 @@
     <loc>https://geraldo.dev/certificate/tag/zaproxy.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/dashboard.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/junit.html</loc>
   </url>
   <url>
@@ -4051,6 +4093,9 @@
     <loc>https://geraldo.dev/certificate/tag/cobit.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/C++-20.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/system-engineering.html</loc>
   </url>
   <url>
@@ -4099,6 +4144,9 @@
     <loc>https://geraldo.dev/certificate/tag/uncertainty.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/concurrency.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/sast.html</loc>
   </url>
   <url>
@@ -4126,6 +4174,9 @@
     <loc>https://geraldo.dev/certificate/tag/gmock.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/node-red.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/lxc.html</loc>
   </url>
   <url>
@@ -4150,10 +4201,16 @@
     <loc>https://geraldo.dev/certificate/tag/python.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/tag/assembly.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/tag/artificial-intelligence.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/lgpd.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/cortex-M.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/terraform.html</loc>
@@ -4178,6 +4235,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/testing.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/tag/data-visualization.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/tag/debug.html</loc>
@@ -4282,6 +4342,9 @@
     <loc>https://geraldo.dev/certificate/2021-10-10_TryHackMe_Badge_webbed.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/2024-02-28_udemy_Modern_C++_Concurrency_in_Depth_C++17_20.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2020-09-14_nodestudio_criando_sites_profissionais.html</loc>
   </url>
   <url>
@@ -4363,6 +4426,9 @@
     <loc>https://geraldo.dev/certificate/2022-07-01_kultivi_Oratória_de_alta_performance.html</loc>
   </url>
   <url>
+    <loc>https://geraldo.dev/certificate/2024-01-10_coursera_Cortex-M_Software_Development_Fundamentals.html</loc>
+  </url>
+  <url>
     <loc>https://geraldo.dev/certificate/2022-06-23_linkedin_Advanced_SEO_Developing_an_SEO_Friendly_Website.html</loc>
   </url>
   <url>
@@ -4424,6 +4490,9 @@
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2022-08-18_stefanini_Tailwind_CSS_2.html</loc>
+  </url>
+  <url>
+    <loc>https://geraldo.dev/certificate/2024-01-07_coursera_IoT_Devices.html</loc>
   </url>
   <url>
     <loc>https://geraldo.dev/certificate/2022-07-20_linkedin_Creating_Fun_and_Engaging_Video_Training_The_Why.html</loc>

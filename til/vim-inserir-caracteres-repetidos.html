@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Como repetir texto no vim">
+    <meta name="description" content="How to repeat text in vim">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>Como repetir texto no vim</title>
+    <title>How to repeat text in vim</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -58,21 +58,27 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>Como repetir texto no vim</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2018-11-19</b>Last modified: <b class="ml-2">2022-10-07 </b></div>
+        <h1>How to repeat text in vim</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2018-11-19</b>Last modified: <b class="ml-2">2024-04-09 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/vim.html">vim</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/vim.webp">
-        </div><p>Para fazer a linha do título acima <code>&lt;esc&gt;70i=&lt;esc&gt;&lt;esc&gt;</code></p>
-<pre><code class="language-vim">    &lt;esc&gt;Nic&lt;esc&gt;&lt;esc&gt;
+        </div><p>To repeat things in vim use this basic command structure:</p>
+<pre><code class="language-vim">&lt;esc&gt;Nic&lt;esc&gt;&lt;esc&gt;
+&lt;esc&gt;Niw&lt;esc&gt;&lt;esc&gt;
 </code></pre>
-<p>N número de repetições
-c caractere ou palavra</p>
-<pre><code class="language-vim">&lt;esc&gt;5iX&lt;esc&gt;&lt;esc&gt;
-XXXXX
+<p>where:</p>
+<ul>
+<li><code>N</code>: the number of repetitions</li>
+<li><code>i</code>: the insert command</li>
+<li><code>c</code>: a character</li>
+<li><code>w</code>: a word</li>
+</ul>
+<pre><code class="language-vim">&lt;esc&gt;70i=&lt;esc&gt;&lt;esc&gt;
+======================================================================
 
-&lt;esc&gt;5iX Y &lt;esc&gt;&lt;esc&gt;
-X Y X Y X Y X Y X Y 
+&lt;esc&gt;5iabc 123&lt;esc&gt;&lt;esc&gt;
+abc 123abc 123abc 123abc 123abc 123
 </code></pre>
 
       </main>

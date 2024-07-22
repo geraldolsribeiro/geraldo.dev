@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ lock_guard</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2024-06-09 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::lock_guard.html">std::lock_guard</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -67,32 +67,37 @@
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
 <pre><code class="language-cpp">std::mutex mtx;
 
-void print_even(int x) {
-  if (x % 2 == 0)
-    std::cout &lt;&lt; x &lt;&lt; &quot; is even\n&quot;;
-  else
-    throw(std::logic_error(&quot;not even&quot;));
+void print_even_or_throw( int x )
+{
+  if( x % 2 == 0 ) {
+    fmt::print( &quot;{} is even\n&quot;, x );
+  }
+  else {
+    throw( std::logic_error( fmt::format( &quot;💥 {} is not even&quot;, x ) ) );
+  }
 }
 
-void print_thread_id(int id) {
+void print_thread_id( int id )
+{
   try {
     // using a local lock_guard to lock mtx guarantees unlocking on destruction
-    // / exception:
-    std::lock_guard&lt;std::mutex&gt; lck(mtx);
-    print_even(id);
-  } catch (std::logic_error&amp;) {
-    std::cout &lt;&lt; &quot;[exception caught]\n&quot;;
+    std::lock_guard&lt;std::mutex&gt; lck( mtx );
+    print_even_or_throw( id );
+  }
+  catch( std::logic_error &amp;e ) {
+    fmt::print( &quot;[exception caught] {} -&gt; {}\n&quot;, id, e.what() );
   }
 }
 
-int main() {
+int main()
+{
   std::thread threads[10];
   // spawn 10 threads:
-  for (int i = 0; i &lt; 10; ++i) {
-    threads[i] = std::thread(print_thread_id, i + 1);
+  for( int i = 0; i &lt; 10; ++i ) {
+    threads[i] = std::thread( print_thread_id, i + 1 );
   }
 
-  for (auto&amp; th : threads) {
+  for( auto &amp;th : threads ) {
     th.join();
   }
 
@@ -100,21 +105,21 @@ int main() {
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">[exception caught]
-6 is even
-[exception caught]
-[exception caught]
-[exception caught]
+<pre><code class="language-txt">[exception caught] 9 -&gt; 💥 9 is not even
 8 is even
-10 is even
-4 is even
+6 is even
+[exception caught] 7 -&gt; 💥 7 is not even
+[exception caught] 3 -&gt; 💥 3 is not even
 2 is even
-[exception caught]
+[exception caught] 1 -&gt; 💥 1 is not even
+4 is even
+[exception caught] 5 -&gt; 💥 5 is not even
+10 is even
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>
 <ul>
-<li>[<a href="http://cplusplus.com">cplusplus.com</a> -</li>
+<li><a href="https://cplusplus.com/reference/mutex/lock_guard/">cplusplus.com - lock_guard</a></li>
 </ul>
 
       </main>

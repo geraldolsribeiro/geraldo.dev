@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ atomic_02">
+    <meta name="description" content="C++ atomic operations">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ atomic_02</title>
+    <title>C++ atomic operations</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -58,13 +58,46 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ atomic_02</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-02-27</b>Last modified: <b class="ml-2">2024-02-27 </b></div>
+        <h1>C++ atomic operations</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-02-27</b>Last modified: <b class="ml-2">2024-06-09 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/atomic.html">atomic</a><a class="tag no-underline" href="/til/tag/memory_order_acquire.html">memory_order_acquire</a><a class="tag no-underline" href="/til/tag/memory_order_consume.html">memory_order_consume</a><a class="tag no-underline" href="/til/tag/memory_order_rel_acq.html">memory_order_rel_acq</a><a class="tag no-underline" href="/til/tag/memory_order_relaxed.html">memory_order_relaxed</a><a class="tag no-underline" href="/til/tag/memory_order_release.html">memory_order_release</a><a class="tag no-underline" href="/til/tag/memory_order_seq_cst.html">memory_order_seq_cst</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#categorization-of-atomic-operations">Categorization of atomic operations</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p><div class="table-of-contents"><ul><li><a href="#atomic-operations-use-hardware">Atomic Operations use hardware</a></li><li><a href="#lock-use-software">Lock use software</a></li><li><a href="#memory-order">Memory order</a></li><li><a href="#categorization-of-atomic-operations">Categorization of atomic operations</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<p>C++ atomic operations are essential for writing safe and efficient
+concurrent code by ensuring that operations on shared variables
+are performed atomically and with well-defined memory ordering
+semantics. They are a powerful tool for writing high-performance
+multithreaded applications while avoiding data races and
+synchronization issues.</p>
+<p>Atomic operations provide a lock-free mechanism for synchronization,
+avoiding the overhead and potential issues of locks. They are more
+lightweight and efficient when used correctly for simple operations.</p>
+<p>However, atomic operations have limitations and are suitable
+for specific scenarios. For more complex synchronization, such
+as protecting critical sections or implementing more intricate
+synchronization patterns, you may still need to use mutexes or
+other synchronization primitives.</p>
+<h2 id="atomic-operations-use-hardware" tabindex="-1">Atomic Operations use hardware</h2>
+<p>Atomic operations use <strong>hardware-supported atomic instructions</strong> (e.g.,
+compare-and-swap, load-link/store-conditional) to ensure that
+certain operations on shared variables are performed indivisibly.</p>
+<p>These operations are typically implemented using CPU instructions
+that guarantee atomicity without requiring explicit locking
+mechanisms.</p>
+<p>Atomic operations are designed to be lock-free or wait-free depending
+on the specific implementation and underlying hardware support.</p>
+<h2 id="lock-use-software" tabindex="-1">Lock use software</h2>
+<p>Locks (e.g., mutexes, spinlocks) use <strong>software-based synchronization</strong>
+techniques to control access to shared resources.</p>
+<p>Locks require acquiring and releasing a lock object explicitly using
+locking mechanisms such as mutex locks (std::mutex) or spinlocks
+(std::atomic_flag).</p>
+<p>When a thread acquires a lock, it gains exclusive access to the
+critical section of code, preventing other threads from entering
+that section until the lock is released.</p>
+<h2 id="memory-order" tabindex="-1">Memory order</h2>
 <ul>
 <li><code>memory_order_seq_cst</code> Sequencial Consistent (default if not specified), the compiler may have to:
 <ul>
@@ -125,15 +158,21 @@ syncronized with relationship with atomic <strong>read</strong> operation tagged
   </div>
 </div>
 <pre><code class="language-cpp">
-  std::atomic&lt;int&gt; x;
+  std::atomic&lt;int&gt; x{ 2 };
+  fmt::print( &quot;Initial value: {}\n&quot;, x.load() );
 
   x.store( 5 );
+  fmt::print( &quot;New value: {}\n&quot;, x.load() );
 
+  fmt::print( &quot;fetch_add: was {} now {}\n&quot;, x.fetch_add( 3 ), x.load() );
+
+  // Perform a release-store (ensures all previous writes are visible before this store)
   x.store( 10, std::memory_order_release );
 
-  x.load( std::memory_order_acquire );
+  // Perform an acquire-load (ensures this read sees the value written in the release store)
+  int value = x.load( std::memory_order_acquire );
 
-  int value = 11;
+  value = 11;
 
   bool ret_val = x.compare_exchange_weak(
       value,                       //

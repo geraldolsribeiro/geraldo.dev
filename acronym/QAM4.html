@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Rust helloworld">
+    <meta name="description" content="QAM4">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>Rust helloworld</title>
+    <title>QAM4</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -51,56 +51,15 @@
       </form>
     </div>
     <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
+      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/acronyms.html">
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-          </svg><span>Back to TILs</span></a>
-        <h1>Rust helloworld</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-02</b>Last modified: <b class="ml-2">2023-02-17 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/rust.html">rust</a><a class="tag no-underline" href="/til/tag/helloworld.html">helloworld</a>
-        </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#installation-on-debian-11">Installation on Debian 11</a></li><li><a href="#install-code-formatter">Install code formatter</a></li><li><a href="#format-code">Format code</a></li><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
-<h2 id="installation-on-debian-11" tabindex="-1">Installation on Debian 11</h2>
-<h3 id="install-dependencies" tabindex="-1">Install dependencies</h3>
-<pre><code class="language-bash">sudo apt install curl build-essential gcc make -y
-</code></pre>
-<h3 id="install-rust" tabindex="-1">Install Rust</h3>
-<pre><code class="language-bash">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-</code></pre>
-<h2 id="install-code-formatter" tabindex="-1">Install code formatter</h2>
-<pre><code class="language-bash">rustup component add rustfmt
-</code></pre>
-<h2 id="format-code" tabindex="-1">Format code</h2>
-<pre><code class="language-bash">cargo fmt
-# or
-rustfmt lib.rs main.rs
-# or
-echo &quot;fn     main() {}&quot; | rustfmt
-</code></pre>
-<pre><code class="language-rust">fn main() {
-    // Indent four space by convention
-    println!(&quot;Hello, rust!&quot;);
-    //     ^ the ! indicates you are calling a macro instead a function
-
-    let x = 10;
-    // x = 20; // compilation error because x is immutable
-
-    let mut y = 10;
-    println!(&quot;x: {} y: {}&quot;, x, y);
-
-    y = 20;
-    println!(&quot;x: {} y: {}&quot;, x, y);
-}
-</code></pre>
-<h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Hello, rust!
-x: 10 y: 10
-x: 10 y: 20
-
-</code></pre>
-<h2 id="references" tabindex="-1">References</h2>
-<ul>
-<li><a href="https://www.linuxcapable.com/how-to-install-rust-on-debian-11/">How to Install Rust on Debian 11 Bullseye</a></li>
+          </svg><span>Back to Acronyms</span></a>
+        <h1>QAM4</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-09-04</b>Last modified: <b class="ml-2">2024-07-22 </b></div>
+        <div class="flex flex-wrap">
+        </div><ul>
+<li><a href="4-QAM.html">4-QAM</a></li>
 </ul>
 
       </main>

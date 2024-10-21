@@ -56,7 +56,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>POSIX pthread conditional</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-11-01</b>Last modified: <b class="ml-2">2023-12-22 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-11-01</b>Last modified: <b class="ml-2">2024-10-20 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C.html">C</a><a class="tag no-underline" href="/til/tag/POSIX.html">POSIX</a><a class="tag no-underline" href="/til/tag/pthread.html">pthread</a><a class="tag no-underline" href="/til/tag/pthread_cond_wait.html">pthread_cond_wait</a><a class="tag no-underline" href="/til/tag/pthread_cond_signal.html">pthread_cond_signal</a>
         </div><p><strong>Table of contents</strong></p>
 <p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
@@ -128,7 +128,8 @@ int             fuel = 0;
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Filled fuel... 15
+<pre><code class="language-txt">No fuel. Waiting...
+Filled fuel... 15
 No fuel. Waiting...
 Filled fuel... 30
 No fuel. Waiting...

@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ thread_local_storage_01</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-02-17</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-02-17</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::thread.html">std::thread</a><a class="tag no-underline" href="/til/tag/thread_local.html">thread_local</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -102,8 +102,8 @@ thread_local std::atomic&lt;int&gt; atomic_integer_var_with_local_storage = 0;
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">All threads shares the same variable
 foo_1: 1
-foo_1: 2
 foo_1: 3
+foo_1: 2
 foo_2: 1
 foo_2: 1
 foo_2: 1

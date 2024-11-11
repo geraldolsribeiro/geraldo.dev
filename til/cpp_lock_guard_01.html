@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ lock_guard</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2024-06-09 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-01-09</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/std::lock_guard.html">std::lock_guard</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -105,16 +105,16 @@ int main()
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">[exception caught] 9 -&gt; 💥 9 is not even
-8 is even
-6 is even
-[exception caught] 7 -&gt; 💥 7 is not even
-[exception caught] 3 -&gt; 💥 3 is not even
+<pre><code class="language-txt">[exception caught] 1 -&gt; 💥 1 is not even
+10 is even
 2 is even
-[exception caught] 1 -&gt; 💥 1 is not even
+[exception caught] 3 -&gt; 💥 3 is not even
 4 is even
 [exception caught] 5 -&gt; 💥 5 is not even
-10 is even
+6 is even
+[exception caught] 7 -&gt; 💥 7 is not even
+8 is even
+[exception caught] 9 -&gt; 💥 9 is not even
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="C++ protobuf">
+    <meta name="description" content="C++ std::smart_ptr&lt;void&gt;">
     <meta name="author" content="Geraldo Luis da Silva Ribeiro">
-    <title>C++ protobuf</title>
+    <title>C++ std::smart_ptr&lt;void&gt;</title>
     <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
@@ -58,64 +58,82 @@
           <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
-        <h1>C++ protobuf</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2021-10-23</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/protobuf_01.html">protobuf_01</a>
+        <h1>C++ std::smart_ptr&lt;void&gt;</h1>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-11-02</b>Last modified: <b class="ml-2">2024-11-03 </b></div>
+        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/shared_ptr.html">shared_ptr</a><a class="tag no-underline" href="/til/tag/static_pointer_cast.html">static_pointer_cast</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#prototype">Prototype</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#possible-output">Possible output</a></li></ul></div></p>
-<h2 id="prototype" tabindex="-1">Prototype</h2>
-<pre><code class="language-c++">syntax = &quot;proto2&quot;;
-message Sensor {
-  required string name = 1;
-  required double temperature = 2;
-  required int32 humidity = 3;
-
-  enum SwitchLevel {
-    CLOSED = 0;
-    OPEN = 1;
+<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<pre><code class="language-cpp">class A {
+public:
+  explicit A( std::shared_ptr&lt;void&gt; ptr ) : mVoidPointer( ptr )
+  {
+    std::cout &lt;&lt; &quot;A constructor&quot; &lt;&lt; std::endl;
   }
-  required SwitchLevel door = 5;
-}
+  virtual ~A()
+  {
+    std::cout &lt;&lt; &quot;A destructor&quot; &lt;&lt; std::endl;
+  }
+  std::shared_ptr&lt;void&gt; object() const
+  {
+    return mVoidPointer;
+  }
 
-</code></pre>
-<h2 id="makefile" tabindex="-1">Makefile</h2>
-<pre><code class="language-Makefile">GRPC_CPP_PLUGIN = grpc_cpp_plugin
-GRPC_CPP_PLUGIN_PATH ?= `which $(GRPC_CPP_PLUGIN)`
-%.grpc.pb.cc: %.proto
-	protoc --grpc_out=. --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $&lt;
+private:
+  std::shared_ptr&lt;void&gt; mVoidPointer;
+};
 
-%.pb.cc: %.proto
-	protoc --cpp_out=. $&lt;
+class B {
+public:
+  B()
+  {
+    std::cout &lt;&lt; &quot;B constructor&quot; &lt;&lt; std::endl;
+  }
+  void func()
+  {
+    std::cout &lt;&lt; &quot;B func&quot; &lt;&lt; std::endl;
+  }
+  virtual ~B()
+  {
+    std::cout &lt;&lt; &quot;B destructor&quot; &lt;&lt; std::endl;
+  }
+};
 </code></pre>
-<p>Fill the object parameters.</p>
-<pre><code class="language-cpp">  Sensor sensor;
-  sensor.set_name(&quot;Laboratory&quot;);
-  sensor.set_temperature(23.4);
-  sensor.set_humidity(68);
-  sensor.set_door(Sensor_SwitchLevel_OPEN);
-</code></pre>
-<p>Serialize to a file</p>
-<pre><code class="language-cpp">  ofstream ofs(&quot;sensor.data&quot;, std::ios_base::out | std::ios_base::binary);
-  sensor.SerializeToOstream(&amp;ofs);
-  ofs.close();
-</code></pre>
-<p>Parse parameters from file</p>
-<pre><code class="language-cpp">  Sensor sensor2;
-  ifstream ifs(&quot;sensor.data&quot;, ios_base::in | ios_base::binary);
-  sensor2.ParseFromIstream(&amp;ifs);
+<pre><code class="language-cpp">  auto b1 = std::make_shared&lt;B&gt;();
+  std::cout &lt;&lt; &quot;b1.use_count = &quot; &lt;&lt; b1.use_count() &lt;&lt; std::endl;
 
-  cout &lt;&lt; &quot;Temperature: &quot; &lt;&lt; sensor2.temperature() &lt;&lt; endl;
-  cout &lt;&lt; &quot;Humidity: &quot; &lt;&lt; sensor2.humidity() &lt;&lt; endl;
-  cout &lt;&lt; &quot;Door: &quot; &lt;&lt; sensor2.door() &lt;&lt; endl;
+  auto a1 = std::make_shared&lt;A&gt;( b1 );
+  std::cout &lt;&lt; &quot;b1.use_count = &quot; &lt;&lt; b1.use_count() &lt;&lt; std::endl;
+
+  std::shared_ptr&lt;B&gt; b2 = std::static_pointer_cast&lt;B&gt;( a1-&gt;object() );
+  if( b2 ) {
+    b2-&gt;func();
+  }
+  std::cout &lt;&lt; &quot;b1.use_count = &quot; &lt;&lt; b1.use_count() &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;b2.use_count = &quot; &lt;&lt; b2.use_count() &lt;&lt; std::endl;
+
+  std::cout &lt;&lt; &quot;End of main scope&quot; &lt;&lt; std::endl;
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">Temperature: 23.4
-Humidity: 68
-Door: 1
+<pre><code class="language-txt">B constructor
+b1.use_count = 1
+A constructor
+b1.use_count = 2
+B func
+b1.use_count = 3
+b2.use_count = 3
+End of main scope
+A destructor
+B destructor
 
 </code></pre>
+<h2 id="references" tabindex="-1">References</h2>
+<ul>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+<li><a href="link">title</a></li>
+</ul>
 
       </main>
     </div>

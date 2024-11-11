@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ realloc_01</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-07</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/realloc_01.html">realloc_01</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -110,42 +110,42 @@
 <pre><code class="language-txt">
            0x0 ptr1|           0x0 ptr2|Initial null
 
-           0x0 ptr1|0x55a374da2170 ptr2|First realloc (non initilized value on memory)
-787311666,
-0x55a374da2190 ptr1|0x55a374da2190 ptr2|Realloc 4 x sizeof(int)
+           0x0 ptr1|0x55e61d0cc8c0 ptr2|First realloc (non initilized value on memory)
+0,
+0x55e61d0cc920 ptr1|0x55e61d0cc920 ptr2|Realloc 4 x sizeof(int)
 0,1,2,3,
-0x55a374d98d20 ptr1|0x55a374d98d20 ptr2|Realloc 8 x sizeof(int)
+0x55e61d0cc960 ptr1|0x55e61d0cc960 ptr2|Realloc 8 x sizeof(int)
 0,1,2,3,4,5,6,7,
-0x55a374d85710 ptr1|0x55a374d85710 ptr2|Realloc 12 x sizeof(int)
+0x55e61d0cc960 ptr1|0x55e61d0cc960 ptr2|Realloc 12 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,
-0x55a374d85710 ptr1|0x55a374d85710 ptr2|Realloc 16 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 16 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
-0x55a374da20f0 ptr1|0x55a374da20f0 ptr2|Realloc 20 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 20 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
-0x55a374da20f0 ptr1|0x55a374da20f0 ptr2|Realloc 24 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 24 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
-0x55a374da20f0 ptr1|0x55a374da20f0 ptr2|Realloc 28 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 28 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
-0x55a374d97c40 ptr1|0x55a374d97c40 ptr2|Realloc 32 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 32 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
-0x55a374d97c40 ptr1|0x55a374d97c40 ptr2|Realloc 36 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 36 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 40 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 40 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 44 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 44 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 48 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 48 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 52 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 52 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 56 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 56 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 60 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 60 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|Realloc 64 x sizeof(int)
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|Realloc 64 x sizeof(int)
 0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,
-0x55a374d91e70 ptr1|0x55a374d91e70 ptr2|After free ptr2
-787362161,21926,-1037480123,923707238,
+0x55e61d0cc9d0 ptr1|0x55e61d0cc9d0 ptr2|After free ptr2
+1583468748,5,1228791699,863312228,
            0x0 ptr1|           0x0 ptr2|After nullptr attribution
 
 </code></pre>

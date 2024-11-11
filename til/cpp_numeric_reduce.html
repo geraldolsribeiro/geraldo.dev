@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ reduce</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-08-15</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2019-08-15</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/reduce.html">reduce</a><a class="tag no-underline" href="/til/tag/accumulate.html">accumulate</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -124,25 +124,25 @@ operations.</p>
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
 <pre><code class="language-txt">Sum: 15 15 15 15
-std::accumulate result 5000003.5 took 87.1 ms
-std::reduce seq result 5000003.5 took 81.1 ms
-std::reduce par result 5000003.5 took 16.3 ms
-std::accumulate result 5000003.5 took 84.2 ms
-std::reduce seq result 5000003.5 took 78.3 ms
-std::reduce par result 5000003.5 took 16.2 ms
-std::accumulate result 5000003.5 took 90.2 ms
-std::reduce seq result 5000003.5 took 79.3 ms
-std::reduce par result 5000003.5 took 17.1 ms
-std::accumulate result 5000003.5 took 81.5 ms
-std::reduce seq result 5000003.5 took 77.7 ms
-std::reduce par result 5000003.5 took 15.1 ms
-std::accumulate result 5000003.5 took 81.7 ms
-std::reduce seq result 5000003.5 took 77.4 ms
-std::reduce par result 5000003.5 took 14.1 ms
+std::accumulate result 5000003.5 took 101.2 ms
+std::reduce seq result 5000003.5 took 94.1 ms
+std::reduce par result 5000003.5 took 18.9 ms
+std::accumulate result 5000003.5 took 100.7 ms
+std::reduce seq result 5000003.5 took 94.7 ms
+std::reduce par result 5000003.5 took 19.4 ms
+std::accumulate result 5000003.5 took 100.8 ms
+std::reduce seq result 5000003.5 took 94.4 ms
+std::reduce par result 5000003.5 took 19.0 ms
+std::accumulate result 5000003.5 took 100.8 ms
+std::reduce seq result 5000003.5 took 94.1 ms
+std::reduce par result 5000003.5 took 20.2 ms
+std::accumulate result 5000003.5 took 100.7 ms
+std::reduce seq result 5000003.5 took 94.7 ms
+std::reduce par result 5000003.5 took 19.2 ms
 Average time to operate over 10M items:
-accumulate: 84.9ms
-reduce par: 15.7ms
-reduce seq: 78.8ms
+accumulate: 100.9ms
+reduce par: 19.3ms
+reduce seq: 94.4ms
 
 </code></pre>
 

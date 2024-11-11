@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>How to detect C/C++ memory leak</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/memory-leak.html">memory-leak</a><a class="tag no-underline" href="/til/tag/AddressSanitizer.html">AddressSanitizer</a><a class="tag no-underline" href="/til/tag/ASan.html">ASan</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -128,39 +128,38 @@ void leak()
 <pre><code class="language-plaintext">Direct leak of 40 byte(s) in 10 object(s) allocated from:
 </code></pre>
 <h4 id="instrumented-possible-output" tabindex="-1">Instrumented possible output</h4>
-<pre><code class="language-txt">The value of ptr is 42 0x502000000010
-The value of ptr is 42 0x502000000030
-The value of ptr is 42 0x502000000050
-The value of ptr is 42 0x502000000070
-The value of ptr is 42 0x502000000090
-The value of ptr is 42 0x5020000000b0
-The value of ptr is 42 0x5020000000d0
-The value of ptr is 42 0x5020000000f0
-The value of ptr is 42 0x502000000110
-The value of ptr is 42 0x502000000130
+<pre><code class="language-txt">The value of ptr is 42 0x602000000010
+The value of ptr is 42 0x602000000030
+The value of ptr is 42 0x602000000050
+The value of ptr is 42 0x602000000070
+The value of ptr is 42 0x602000000090
+The value of ptr is 42 0x6020000000b0
+The value of ptr is 42 0x6020000000d0
+The value of ptr is 42 0x6020000000f0
+The value of ptr is 42 0x602000000110
+The value of ptr is 42 0x602000000130
 
 =================================================================
-==3135698==ERROR: LeakSanitizer: detected memory leaks
+==127641==ERROR: LeakSanitizer: detected memory leaks
 
 Direct leak of 40 byte(s) in 10 object(s) allocated from:
-    #0 0x55f75cae574d in operator new(unsigned long) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x10274d) (BuildId: 8a1eeb90529a513e992fd2420cd060dc6ebe82a5)
-    #1 0x55f75cae7a4d in leak() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:102:14
-    #2 0x7fc2612461c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #0 0x7fd217994498 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:95
+    #1 0x5570f76e55fc in leak() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:102
 
 SUMMARY: AddressSanitizer: 40 byte(s) leaked in 10 allocation(s).
 
 </code></pre>
 <h4 id="non-instrumented-possible-output" tabindex="-1">Non instrumented possible output</h4>
-<pre><code class="language-txt">The value of ptr is 42 0x5557c78e4eb0
-The value of ptr is 42 0x5557c78e5ee0
-The value of ptr is 42 0x5557c78e5f00
-The value of ptr is 42 0x5557c78e5f20
-The value of ptr is 42 0x5557c78e5f40
-The value of ptr is 42 0x5557c78e5f60
-The value of ptr is 42 0x5557c78e5f80
-The value of ptr is 42 0x5557c78e5fa0
-The value of ptr is 42 0x5557c78e5fc0
-The value of ptr is 42 0x5557c78e5fe0
+<pre><code class="language-txt">The value of ptr is 42 0x55c4f1431eb0
+The value of ptr is 42 0x55c4f14320e0
+The value of ptr is 42 0x55c4f1432100
+The value of ptr is 42 0x55c4f1432120
+The value of ptr is 42 0x55c4f1432140
+The value of ptr is 42 0x55c4f1432160
+The value of ptr is 42 0x55c4f1432180
+The value of ptr is 42 0x55c4f14321a0
+The value of ptr is 42 0x55c4f14321c0
+The value of ptr is 42 0x55c4f14321e0
 
 </code></pre>
 <h3 id="heap-use-after-free" tabindex="-1">Heap use after free</h3>
@@ -174,38 +173,36 @@ void heapUseAfterFree()
 </code></pre>
 <h4 id="instrumented-possible-output-1" tabindex="-1">Instrumented possible output</h4>
 <pre><code class="language-txt">=================================================================
-==3135702==ERROR: AddressSanitizer: heap-use-after-free on address 0x5140000000e8 at pc 0x5589cad83dc2 bp 0x7ffe2534d210 sp 0x7ffe2534d208
-READ of size 4 at 0x5140000000e8 thread T0
-    #0 0x5589cad83dc1 in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:204:38
-    #1 0x5589cad841e0 in main /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:233:5
-    #2 0x7fde246461c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
-    #3 0x7fde24646284 in __libc_start_main csu/../csu/libc-start.c:360:3
-    #4 0x5589cacab450 in _start (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x2c450) (BuildId: 8a1eeb90529a513e992fd2420cd060dc6ebe82a5)
+==127649==ERROR: AddressSanitizer: heap-use-after-free on address 0x6140000000e8 at pc 0x55946fbd58fe bp 0x7ffe201ca9e0 sp 0x7ffe201ca9d0
+READ of size 4 at 0x6140000000e8 thread T0
+    #0 0x55946fbd58fd in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:204
+    #1 0x55946fbd60d6 in main /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:233
+    #2 0x7fbcccc69d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x7fbcccc69e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #4 0x55946fbd5524 in _start (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x2524)
 
-0x5140000000e8 is located 168 bytes inside of 400-byte region [0x514000000040,0x5140000001d0)
+0x6140000000e8 is located 168 bytes inside of 400-byte region [0x614000000040,0x6140000001d0)
 freed by thread T0 here:
-    #0 0x5589cad820ad in operator delete[](void*) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x1030ad) (BuildId: 8a1eeb90529a513e992fd2420cd060dc6ebe82a5)
-    #1 0x5589cad83c68 in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:203:3
-    #2 0x7fde246461c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #0 0x7fbccd25d148 in operator delete[](void*) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:155
+    #1 0x55946fbd57ee in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:203
 
 previously allocated by thread T0 here:
-    #0 0x5589cad8185d in operator new[](unsigned long) (/home/geraldo/git/Intmain/language_cpp/bin/leak_01+0x10285d) (BuildId: 8a1eeb90529a513e992fd2420cd060dc6ebe82a5)
-    #1 0x5589cad83c5d in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:202:16
-    #2 0x7fde246461c9 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16
+    #0 0x7fbccd25c618 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:98
+    #1 0x55946fbd57e3 in heapUseAfterFree() /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:202
 
-SUMMARY: AddressSanitizer: heap-use-after-free /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:204:38 in heapUseAfterFree()
+SUMMARY: AddressSanitizer: heap-use-after-free /home/geraldo/git/Intmain/language_cpp/leak_01.cpp:204 in heapUseAfterFree()
 Shadow bytes around the buggy address:
-  0x513ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x513ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x513fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x513fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x514000000000: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
-=&gt;0x514000000080: fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]fd fd
-  0x514000000100: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
-  0x514000000180: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa
-  0x514000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x514000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x514000000300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c287fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c287fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c287fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c287fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c287fff8000: fa fa fa fa fa fa fa fa fd fd fd fd fd fd fd fd
+=&gt;0x0c287fff8010: fd fd fd fd fd fd fd fd fd fd fd fd fd[fd]fd fd
+  0x0c287fff8020: fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd fd
+  0x0c287fff8030: fd fd fd fd fd fd fd fd fd fd fa fa fa fa fa fa
+  0x0c287fff8040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c287fff8050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c287fff8060: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
 Shadow byte legend (one shadow byte represents 8 application bytes):
   Addressable:           00
   Partially addressable: 01 02 03 04 05 06 07 
@@ -225,7 +222,7 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
   ASan internal:           fe
   Left alloca redzone:     ca
   Right alloca redzone:    cb
-==3135702==ABORTING
+==127649==ABORTING
 
 </code></pre>
 <h4 id="non-instrumented-possible-output-1" tabindex="-1">Non instrumented possible output</h4>

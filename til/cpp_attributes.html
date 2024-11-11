@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ attributes</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-18</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/attributes.html">attributes</a><a class="tag no-underline" href="/til/tag/nodiscard.html">nodiscard</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -174,34 +174,51 @@ terminate called after throwing an instance of 'int'
 
 </code></pre>
 <h2 id="compilation-output" tabindex="-1">Compilation output</h2>
-<pre><code class="language-txt">attributes.cpp:62:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+<pre><code class="language-txt">attributes.cpp: In function ‘void testFunction()’:
+attributes.cpp:62:11: warning: ignoring return value of ‘int get_zero()’, declared with attribute ‘nodiscard’ [-Wunused-result]
    62 |   get_zero();
-      |   ^~~~~~~~
-attributes.cpp:63:3: warning: ignoring return value of function declared with 'nodiscard' attribute: Some custom message [-Wunused-result]
+      |   ~~~~~~~~^~
+attributes.cpp:52:19: note: declared here
+   52 | [[nodiscard]] int get_zero() { return 0; }
+      |                   ^~~~~~~~
+attributes.cpp:63:10: warning: ignoring return value of ‘int get_one()’, declared with attribute ‘nodiscard’: ‘Some custom message’ [-Wunused-result]
    63 |   get_one();
-      |   ^~~~~~~
-attributes.cpp:75:3: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+      |   ~~~~~~~^~
+attributes.cpp:54:42: note: declared here
+   54 | [[nodiscard(&quot;Some custom message&quot;)]] int get_one() { return 1; }
+      |                                          ^~~~~~~
+attributes.cpp: In function ‘void testType()’:
+attributes.cpp:75:10: warning: ignoring returned value of type ‘ErrorType’, declared with attribute ‘nodiscard’ [-Wunused-result]
    75 |   get_two();
-      |   ^~~~~~~
-attributes.cpp:84:16: warning: an attribute specifier sequence in this position is a C++23 extension [-Wc++23-lambda-attributes]
-   84 |   auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
-      |                ^
-attributes.cpp:85:5: warning: ignoring return value of function declared with 'nodiscard' attribute [-Wunused-result]
+      |   ~~~~~~~^~
+attributes.cpp:71:11: note: in call to ‘ErrorType get_two()’, declared here
+   71 | ErrorType get_two() { return {}; }
+      |           ^~~~~~~
+attributes.cpp:70:22: note: ‘ErrorType’ declared here
+   70 | struct [[nodiscard]] ErrorType {};
+      |                      ^~~~~~~~~
+attributes.cpp: In function ‘void testLambda()’:
+attributes.cpp:85:5: warning: ignoring return value of ‘testLambda()::&lt;lambda()&gt;’, declared with attribute ‘nodiscard’ [-Wunused-result]
    85 |   lm();  // would emit a warning
       |   ~~^~
-attributes.cpp:93:30: warning: unused parameter 'FD' [-Wunused-parameter]
+attributes.cpp:84:13: note: declared here
+   84 |   auto lm = [] [[nodiscard]] () -&gt; int { return 42; };
+      |             ^
+attributes.cpp: In constructor ‘FDHolder::FDHolder(int)’:
+attributes.cpp:93:30: warning: unused parameter ‘FD’ [-Wunused-parameter]
    93 |   [[nodiscard]] FDHolder(int FD){};
-      |                              ^
-attributes.cpp:99:3: warning: ignoring temporary created by a constructor declared with 'nodiscard' attribute [-Wunused-value]
+      |                          ~~~~^~
+attributes.cpp: In function ‘void testConstructor()’:
+attributes.cpp:99:15: warning: ignoring return value of ‘FDHolder::FDHolder(int)’, declared with attribute ‘nodiscard’ [-Wunused-result]
    99 |   FDHolder{42};    // warning
-      |   ^~~~~~~~~~~~
-attributes.cpp:115:3: warning: 'testNoExcept' has a non-throwing exception specification but can still throw [-Wexceptions]
+      |               ^
+attributes.cpp:93:17: note: declared here
+   93 |   [[nodiscard]] FDHolder(int FD){};
+      |                 ^~~~~~~~
+attributes.cpp: In function ‘void testNoExcept()’:
+attributes.cpp:115:3: warning: ‘throw’ will always call ‘terminate’ [-Wterminate]
   115 |   throw 42;
-      |   ^
-attributes.cpp:112:6: note: function declared non-throwing here
-  112 | void testNoExcept() noexcept {
-      |      ^              ~~~~~~~~
-8 warnings generated.
+      |   ^~~~~~~~
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

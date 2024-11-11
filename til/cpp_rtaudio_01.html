@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>How to use RTAudio to sound card IO</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-12-15</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-12-15</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/rtaudio.html">rtaudio</a><a class="tag no-underline" href="/til/tag/audio.html">audio</a><a class="tag no-underline" href="/til/tag/waveform.html">waveform</a><a class="tag no-underline" href="/til/tag/digital-communication.html">digital-communication</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -296,9 +296,9 @@ int main()
 }
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">device = 1  
-: maximum output channels = 0
-: maximum input channels = 0
+<pre><code class="language-txt">device = 1  Built-in Audio Analog Stereo (echo cancelled with Built-in Audio Analog Stereo)
+: maximum output channels = 1
+: maximum input channels = 1
 : maximum duplex channels = 0
 : native support for 8-bits signed integer
 : native support for 16-bits signed integer
@@ -306,7 +306,63 @@ int main()
 : native support for 32-bits signed integer
 : native support for 32-bits Normalized between plus/minus 1.0
 : native support for 64-bits Normalized between plus/minus 1.0
+: supported sample rate: 8000
+: supported sample rate: 16000
+: supported sample rate: 22050
+: supported sample rate: 32000
+: supported sample rate: 44100
+: supported sample rate: 48000
+: supported sample rate: 96000
+: supported sample rate: 192000
 
+Waiting for 1s - recording...
+
+CB: counter=0 dt=0s t=0s
+CB: counter=100 dt=0.00133333s t=0.133333s
+CB: counter=200 dt=0.00133333s t=0.266667s
+CB: counter=300 dt=0.00133333s t=0.4s
+CB: counter=400 dt=0.00133333s t=0.533333s
+CB: counter=500 dt=0.00133333s t=0.666667s
+CB: counter=600 dt=0.00133333s t=0.8s
+CB: counter=700 dt=0.00133333s t=0.933333s
+Waiting for 1s - recording...
+
+CB: counter=800 dt=0.00133333s t=1.06667s
+CB: counter=900 dt=0.00133333s t=1.2s
+CB: counter=1000 dt=0.00133333s t=1.33333s
+CB: counter=1100 dt=0.00133333s t=1.46667s
+CB: counter=1200 dt=0.00133333s t=1.6s
+CB: counter=1300 dt=0.00133333s t=1.73333s
+CB: counter=1400 dt=0.00133333s t=1.86667s
+Waiting for 1s - recording...
+
+CB: counter=1500 dt=0.00133333s t=2s
+CB: counter=1600 dt=0.00133333s t=2.13333s
+CB: counter=1700 dt=0.00133333s t=2.26667s
+CB: counter=1800 dt=0.00133333s t=2.4s
+CB: counter=1900 dt=0.00133333s t=2.53333s
+CB: counter=2000 dt=0.00133333s t=2.66667s
+CB: counter=2100 dt=0.00133333s t=2.8s
+CB: counter=2200 dt=0.00133333s t=2.93333s
+Waiting for 1s - recording...
+
+CB: counter=2300 dt=0.00133333s t=3.06667s
+CB: counter=2400 dt=0.00133333s t=3.2s
+CB: counter=2500 dt=0.00133333s t=3.33333s
+CB: counter=2600 dt=0.00133333s t=3.46667s
+CB: counter=2700 dt=0.00133333s t=3.6s
+CB: counter=2800 dt=0.00133333s t=3.73333s
+CB: counter=2900 dt=0.00133333s t=3.86667s
+Waiting for 1s - recording...
+
+CB: counter=3000 dt=0.00133333s t=4s
+CB: counter=3100 dt=0.00133333s t=4.13333s
+CB: counter=3200 dt=0.00133333s t=4.26667s
+CB: counter=3300 dt=0.00133333s t=4.4s
+CB: counter=3400 dt=0.00133333s t=4.53333s
+CB: counter=3500 dt=0.00133333s t=4.66667s
+CB: counter=3600 dt=0.00133333s t=4.8s
+CB: counter=3700 dt=0.00133333s t=4.93333s
 Waiting for 1s - playing...
 
 Waiting for 1s - playing...

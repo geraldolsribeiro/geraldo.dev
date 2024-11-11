@@ -59,7 +59,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ buffer overflow</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-16</b>Last modified: <b class="ml-2">2024-02-26 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2023-02-16</b>Last modified: <b class="ml-2">2024-11-02 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/buffer_overflow.html">buffer_overflow</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
@@ -86,14 +86,14 @@
 
 </code></pre>
 <h2 id="possible-output" tabindex="-1">Possible output</h2>
-<pre><code class="language-txt">var1 address: 0x7ffee672927c
-var2 address: 0x7ffee6729278
-var3 address: 0x7ffee6729274
-var1: ''  var2: ''  var3: ''
+<pre><code class="language-txt">var1 address: 0x7ffead273f24
+var2 address: 0x7ffead273f28
+var3 address: 0x7ffead273f2c
+var1: ''  var2: '�C'��'  var3: '�'
 Input -&gt; var2
-var1: '56789'  var2: '123456789'  var3: ''
+var1: ''  var2: '123456789'  var3: '56789'
 Input -&gt; var1
-var1: ''  var2: '1234'  var3: ''
+var1: ''  var2: '123456789'  var3: '56789'
 
 </code></pre>
 <h2 id="references" tabindex="-1">References</h2>

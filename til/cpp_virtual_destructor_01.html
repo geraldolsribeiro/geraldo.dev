@@ -59,12 +59,12 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
           </svg><span>Back to TILs</span></a>
         <h1>C++ virtual destructor</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-11-03</b>Last modified: <b class="ml-2">2024-11-03 </b></div>
+        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2024-11-03</b>Last modified: <b class="ml-2">2025-01-12 </b></div>
         <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/virtual.html">virtual</a><a class="tag no-underline" href="/til/tag/destructor.html">destructor</a>
         </div>
         <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
         </div><p><strong>Table of contents</strong></p>
-<p><div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div></p>
+<div class="table-of-contents"><ul><li><a href="#possible-output">Possible output</a></li><li><a href="#references">References</a></li></ul></div>
 <pre><code class="language-cpp">class Base1 {
 public:
   Base1()
@@ -98,7 +98,7 @@ public:
   {
     std::cout &lt;&lt; &quot;Derived1 constructor&quot; &lt;&lt; std::endl;
   }
-  ~Derived1()   // here should be virtual 
+  ~Derived1() // here should be virtual
   {
     std::cout &lt;&lt; &quot;Derived1 destructor&quot; &lt;&lt; std::endl;
   }
@@ -113,7 +113,7 @@ public:
   {
     std::cout &lt;&lt; &quot;Derived2 constructor&quot; &lt;&lt; std::endl;
   }
-  ~Derived2()  // here should be virtual 
+  ~Derived2() // here should be virtual
   {
     std::cout &lt;&lt; &quot;Derived2 destructor&quot; &lt;&lt; std::endl;
   }

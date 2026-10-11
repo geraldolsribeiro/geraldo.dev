@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Esp32 with FreeRTOS - Wifi AP">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>Esp32 with FreeRTOS - Wifi AP</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="https://unpkg.com/@digicreon/mucss/dist/mu.blue.css">
+  </head>
+  <body class="bg-black">
+    <header class="bg-primary sticky-top">
+      <nav class="container">
+        <ul>
+          <li><a href="/"><img src="/logo.svg" width="32" style="float: left"><strong>geraldo.dev</strong></a></li>
+        </ul>
+        <input class="navbar-toggle" id="my-nav" type="checkbox" hidden="">
+        <label class="navbar-burger" for="my-nav">&#x2630;</label>
+        <ul class="navbar-menu">
+          <li><a href="/tils.html">Today I Learned</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container"><a href="/tils.html"><span>Back to TILs</span></a>
+      <h1>Esp32 with FreeRTOS - Wifi AP</h1>
+      <p><span class="badge badge-outline badge-secondary badge-pill"> C</span><span class="badge badge-outline badge-secondary badge-pill"> FreeRTOS</span><span class="badge badge-outline badge-secondary badge-pill"> Arduino</span><span class="badge badge-outline badge-secondary badge-pill"> xTaskCreatePinnedToCore</span>
+      </p><p><strong>Table of contents</strong></p>
+<div class="table-of-contents"><ul><li><a href="#file-freertos_esp32_wifi_ap.ino">File FreeRTOS_Esp32_wifi_AP.ino</a></li></ul></div>
+<h1 id="file-freertos_esp32_wifi_ap.ino" tabindex="-1">File FreeRTOS_Esp32_wifi_AP.ino</h1>
+<pre><code class="language-cpp">void setup() {
+  Serial.begin(115200);
+
+  WiFi.mode(WIFI_AP);
+
+  if( WiFi.softAP(ssid, password) ) {
+    Serial.println(&quot;softAP Ready&quot;);
+  } else {
+    Serial.println(&quot;softAP Failed&quot;);
+  }
+
+  delay(1000);
+
+  if( WiFi.softAPConfig(local_IP,gateway,subnet)) {
+    Serial.println(&quot;softAPConfig Ready&quot;);
+  } else {
+    Serial.println(&quot;softAPConfig Failed&quot;);
+  }
+
+
+  IPAddress myIP = WiFi.softAPIP();
+
+  Serial.print(&quot;SSID: &quot;);
+  Serial.println(ssid);
+  Serial.print(&quot;Passworkd: &quot;);
+  Serial.println(password);
+  Serial.print(&quot;AP IP address: &quot;);
+  Serial.println(myIP);
+
+  server.begin();
+}
+</code></pre>
+<pre><code class="language-cpp">void loop() {
+   WiFiClient client = server.available();   // Listen for incoming clients
+
+  if (client) {                             // If a new client connects,
+    Serial.println(&quot;New Client.&quot;);          // print a message out in the serial port
+    String currentLine = &quot;&quot;;                // make a String to hold incoming data from the client
+    while (client.connected()) {            // loop while the client's connected
+      if (client.available()) {             // if there's bytes to read from the client,
+        char c = client.read();             // read a byte, then
+        Serial.write(c);                    // print it out the serial monitor
+        header += c;
+        if (c == '\n') {                    // if the byte is a newline character
+          // if the current line is blank, you got two newline characters in a row.
+          // that's the end of the client HTTP request, so send a response:
+          if (currentLine.length() == 0) {
+            // HTTP headers always start with a response code (e.g. HTTP/1.1 200 OK)
+            // and a content-type so the client knows what's coming, then a blank line:
+            client.println(&quot;HTTP/1.1 200 OK&quot;);
+            client.println(&quot;Content-type:text/html&quot;);
+            client.println(&quot;Connection: close&quot;);
+            client.println();
+            
+            // turns the GPIOs on and off
+            if (header.indexOf(&quot;GET /26/on&quot;) &gt;= 0) {
+              Serial.println(&quot;GPIO 26 on&quot;);
+              output26State = &quot;on&quot;;
+              digitalWrite(output26, HIGH);
+            } else if (header.indexOf(&quot;GET /26/off&quot;) &gt;= 0) {
+              Serial.println(&quot;GPIO 26 off&quot;);
+              output26State = &quot;off&quot;;
+              digitalWrite(output26, LOW);
+            } else if (header.indexOf(&quot;GET /27/on&quot;) &gt;= 0) {
+              Serial.println(&quot;GPIO 27 on&quot;);
+              output27State = &quot;on&quot;;
+              digitalWrite(output27, HIGH);
+            } else if (header.indexOf(&quot;GET /27/off&quot;) &gt;= 0) {
+              Serial.println(&quot;GPIO 27 off&quot;);
+              output27State = &quot;off&quot;;
+              digitalWrite(output27, LOW);
+            }
+            
+            // Display the HTML web page
+            client.println(&quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&quot;);
+            client.println(&quot;&lt;head&gt;&lt;meta name=\&quot;viewport\&quot; content=\&quot;width=device-width, initial-scale=1\&quot;&gt;&quot;);
+            client.println(&quot;&lt;link rel=\&quot;icon\&quot; href=\&quot;data:,\&quot;&gt;&quot;);
+            // CSS to style the on/off buttons 
+            // Feel free to change the background-color and font-size attributes to fit your preferences
+            client.println(&quot;&lt;style&gt;html { font-family: Helvetica; display: inline-block; margin: 0px auto; text-align: center;}&quot;);
+            client.println(&quot;.button { background-color: #4CAF50; border: none; color: white; padding: 16px 40px;&quot;);
+            client.println(&quot;text-decoration: none; font-size: 30px; margin: 2px; cursor: pointer;}&quot;);
+            client.println(&quot;.button2 {background-color: #555555;}&lt;/style&gt;&lt;/head&gt;&quot;);
+            
+            // Web Page Heading
+            client.println(&quot;&lt;body&gt;&lt;h1&gt;ESP32 Web Server&lt;/h1&gt;&quot;);
+            
+            // Display current state, and ON/OFF buttons for GPIO 26  
+            client.println(&quot;&lt;p&gt;GPIO 26 - State &quot; + output26State + &quot;&lt;/p&gt;&quot;);
+            // If the output26State is off, it displays the ON button       
+            if (output26State==&quot;off&quot;) {
+              client.println(&quot;&lt;p&gt;&lt;a href=\&quot;/26/on\&quot;&gt;&lt;button class=\&quot;button\&quot;&gt;ON&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;);
+            } else {
+              client.println(&quot;&lt;p&gt;&lt;a href=\&quot;/26/off\&quot;&gt;&lt;button class=\&quot;button button2\&quot;&gt;OFF&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;);
+            } 
+               
+            // Display current state, and ON/OFF buttons for GPIO 27  
+            client.println(&quot;&lt;p&gt;GPIO 27 - State &quot; + output27State + &quot;&lt;/p&gt;&quot;);
+            // If the output27State is off, it displays the ON button       
+            if (output27State==&quot;off&quot;) {
+              client.println(&quot;&lt;p&gt;&lt;a href=\&quot;/27/on\&quot;&gt;&lt;button class=\&quot;button\&quot;&gt;ON&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;);
+            } else {
+              client.println(&quot;&lt;p&gt;&lt;a href=\&quot;/27/off\&quot;&gt;&lt;button class=\&quot;button button2\&quot;&gt;OFF&lt;/button&gt;&lt;/a&gt;&lt;/p&gt;&quot;);
+            }
+            client.println(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
+            
+            // The HTTP response ends with another blank line
+            client.println();
+            // Break out of the while loop
+            break;
+          } else { // if you got a newline, then clear currentLine
+            currentLine = &quot;&quot;;
+          }
+        } else if (c != '\r') {  // if you got anything else but a carriage return character,
+          currentLine += c;      // add it to the end of the currentLine
+        }
+      }
+    }
+    // Clear the header variable
+    header = &quot;&quot;;
+    // Close the connection
+    client.stop();
+    Serial.println(&quot;Client disconnected.&quot;);
+    Serial.println(&quot;&quot;);
+  }
+}
+</code></pre>
+<p>Compiling the project</p>
+<pre><code class="language-makefile"># ESP32-WROOM-DA Module                              esp32:esp32:esp32da
+# ESP32S3 Dev Module Octal (WROOM2)                  esp32:esp32:esp32s3-octal
+# Fri3d Badge 2024 (ESP32-S3-WROOM-1)                esp32:esp32:fri3d_2024_esp32s3
+# uPesy ESP32 Wroom DevKit                           esp32:esp32:uPesy_wroom
+
+# LilyGo T-Display                                   esp32:esp32:lilygo_t_display
+# LilyGo T-Display-S3                                esp32:esp32:lilygo_t_display_s3
+# LilyGo T-ETH-Lite                                  esp32:esp32:lilygo_t_eth_lite
+# LilyGo T-Watch-S3                                  esp32:esp32:twatchs3
+# LilyGo T-Watch-Ultra                               esp32:esp32:twatch_ultra
+# LilyGo T3-S3                                       esp32:esp32:lilygo_t3s3
+# LilyGo-T-LoRa-Pager                                esp32:esp32:tlora_pager
+
+BOARD?= esp32:esp32:esp32da
+PORT?= /dev/ttyUSB0
+BAUD?= 115200
+PROJECT_NAME?= FreeRTOS_Esp32_blink
+
+all:
+	$(Q)echo &quot;Compiling $(PROJECT_NAME)...&quot;
+	$(Q)mkdir -p out
+	$(Q)arduino-cli compile \
+		--clean \
+		--fqbn $(BOARD) \
+		--output-dir out \
+		$(PROJECT_NAME).ino
+	$(MAKE) til
+	$(MAKE) til_copy
+
+clean:
+	$(RM) -r out
+	$(RM) -r til
+</code></pre>
+<p>Update config, toolchain, libraries</p>
+<pre><code class="language-makefile">.PHONY: update
+update:
+	$(Q)echo create config at /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli config init || echo Config file already exists
+	$(Q)arduino-cli config set network.connection_timeout 600s
+	$(Q)cat /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli core update-index
+	$(Q)arduino-cli core install arduino:avr
+	$(Q)arduino-cli core install esp32:esp32
+	$(Q)arduino-cli upgrade
+</code></pre>
+<p>Upload binary to the board</p>
+<pre><code class="language-makefile">.PHONY: upload
+upload:
+	$(Q)arduino-cli upload \
+		$(shell pwd) \
+		--input-dir out/ \
+		--port $(PORT) \
+		--fqbn $(BOARD) \
+		--verbose \
+		--verify
+</code></pre>
+<p>Open serial monitor in another terminal</p>
+<pre><code class="language-makefile">.PHONY: serial
+serial10:
+	$(Q)xfce4-terminal -x picocom $(PORT) \
+		--baud $(BAUD) \
+		--echo \
+		--exit-after 10000
+
+serial:
+	$(Q)xfce4-terminal -x picocom $(PORT) \
+		--baud $(BAUD) \
+		--echo \
+</code></pre>
+
+    </main>
+    <footer class="bg-primary">
+      <div class="container">
+        <div class="container">
+          <h2>Social links</h2>
+          <div class="row">
+            <div class="col-lg-2 col-sm-12"><a href="mailto:geraldolsribeiro@gmail.com" target="_blank">E-mail</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank">Linkedin</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://github.com/geraldolsribeiro" target="_blank">Github</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://codepen.io/geraldolsribeiro/" target="_blank">Codepen</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://twitter.com/geraldo_dev" target="_blank">Twitter</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://t.me/geraldolsribeiro" target="_blank">Telegram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank">Whatsapp</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.instagram.com/geraldo.dev/" target="_blank">Instagram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.facebook.com/geraldolsribeiro" target="_blank">Facebook</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank">StackOverflow</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.youtube.com/@dev.geraldo" target="_blank">Youtube</a></div>
+          </div>
+        </div>
+        <script>
+          //- hljs.highlightAll();
+          //- https://github.com/wcoder/highlightjs-line-numbers.js
+          //- Exemplo de numeracao em corba.md
+          document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+              hljs.highlightElement(el);
+            });
+          
+            document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+              hljs.lineNumbersBlock(el); // numbering using plugin
+            });
+          
+          });
+        </script>
+        <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+      </div>
+    </footer>
+  </body>
+</html>

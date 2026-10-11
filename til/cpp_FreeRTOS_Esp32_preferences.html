@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Esp32 with FreeRTOS using Arduino - Preferences">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>Esp32 with FreeRTOS using Arduino - Preferences</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="https://unpkg.com/@digicreon/mucss/dist/mu.blue.css">
+  </head>
+  <body class="bg-black">
+    <header class="bg-primary sticky-top">
+      <nav class="container">
+        <ul>
+          <li><a href="/"><img src="/logo.svg" width="32" style="float: left"><strong>geraldo.dev</strong></a></li>
+        </ul>
+        <input class="navbar-toggle" id="my-nav" type="checkbox" hidden="">
+        <label class="navbar-burger" for="my-nav">&#x2630;</label>
+        <ul class="navbar-menu">
+          <li><a href="/tils.html">Today I Learned</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container"><a href="/tils.html"><span>Back to TILs</span></a>
+      <h1>Esp32 with FreeRTOS using Arduino - Preferences</h1>
+      <p><span class="badge badge-outline badge-secondary badge-pill"> C</span><span class="badge badge-outline badge-secondary badge-pill"> FreeRTOS</span><span class="badge badge-outline badge-secondary badge-pill"> Arduino</span><span class="badge badge-outline badge-secondary badge-pill"> xTaskCreatePinnedToCore</span>
+      </p><p><strong>Table of contents</strong></p>
+<div class="table-of-contents"><ul><li><a href="#file-freertos_esp32_preferences.ino">File FreeRTOS_Esp32_preferences.ino</a></li></ul></div>
+<h1 id="file-freertos_esp32_preferences.ino" tabindex="-1">File FreeRTOS_Esp32_preferences.ino</h1>
+<pre><code class="language-cpp">
+#include &lt;Preferences.h&gt;
+
+// Define the onboard LED pin for ESP32 (typically GPIO 2)
+#define LED_PIN 2
+
+// https://randomnerdtutorials.com/esp32-save-data-permanently-preferences/
+// https://forum.arduino.cc/t/esp32-getting-to-the-core-of-the-task/1161303
+// https://docs.espressif.com/projects/esp-idf/en/v4.3/esp32/api-reference/system/freertos.html
+// freertos/include/freertos/task.h
+//
+// BaseType_t xTaskCreatePinnedToCore(
+//    TaskFunction_t   pvTaskCode,
+//    const char *     constpcName,
+//    const uint32_t   usStackDepth,
+//    void *           constpvParameters,
+//    UBaseType_t      uxPriority,
+//    TaskHandle_t *   constpvCreatedTask,
+//    const BaseType_t xCoreID
+// )
+
+// Task handle
+TaskHandle_t ledTaskHandle = NULL;
+
+struct TaskParams {
+  unsigned int led_on_time  = 50;
+  unsigned int led_off_time = 50;
+};
+
+// ----------------------------------------------------------------------
+//
+// ----------------------------------------------------------------------
+void ledTask(void *pvParameters) {
+  TaskParams *taskParams = (TaskParams *)(pvParameters);
+
+  Serial.printf(&quot;ledTask: %d - %d\n\r&quot;, taskParams-&gt;led_on_time, taskParams-&gt;led_off_time);
+
+  // Retrieve the core number the task is running on
+  int core = xPortGetCoreID();
+
+  for (;;) {
+    // Toggle the LED
+    digitalWrite(LED_PIN, HIGH);
+    Serial.printf(&quot;LED ON  - Running on core %d - %d\n\r&quot;, core, taskParams-&gt;led_on_time);
+    vTaskDelay(taskParams-&gt;led_on_time / portTICK_PERIOD_MS);
+
+    digitalWrite(LED_PIN, LOW);
+    Serial.printf(&quot;LED OFF - Running on core %d - %d\n\r&quot;, core, taskParams-&gt;led_off_time);
+    vTaskDelay(taskParams-&gt;led_off_time / portTICK_PERIOD_MS);
+  }
+}
+
+// ----------------------------------------------------------------------
+//
+// ----------------------------------------------------------------------
+void setup() {
+  // Initialize serial communication
+  Serial.begin(115200);
+
+  Preferences preferences;
+
+  // false - read and write
+  // true  - read only
+  preferences.begin(&quot;my-namespace&quot;, false);
+
+  TaskParams taskParams{0, 0};
+
+  // Get the value, if the key does not exist, return a default value of 0
+  // Note: Key name is limited to 15 chars.
+  taskParams.led_on_time = preferences.getUInt(&quot;led_on_time&quot;, 0);
+
+  if (taskParams.led_on_time &gt;= 800) {
+    taskParams.led_on_time = 0;
+  }
+
+  taskParams.led_on_time += 200;
+  taskParams.led_off_time = 1000 - taskParams.led_on_time;
+  preferences.putUInt(&quot;led_on_time&quot;, taskParams.led_on_time);
+  preferences.putUInt(&quot;led_off_time&quot;, taskParams.led_off_time);
+  preferences.end();
+
+  Serial.printf(&quot;Setup: %d - %d\n\r&quot;, taskParams.led_on_time, taskParams.led_off_time);
+
+  delay(1000);
+
+  // Initialize the onboard LED pin
+  pinMode(LED_PIN, OUTPUT);
+  digitalWrite(LED_PIN, LOW);
+
+  TaskFunction_t   pvTaskCode         = ledTask;
+  const char      *constpcName        = &quot;LED Task&quot;;
+  const uint32_t   usStackDepth       = 2048;
+  void            *constpvParameters  = &amp;taskParams;
+  UBaseType_t      uxPriority         = 1;
+  TaskHandle_t    *constpvCreatedTask = &amp;ledTaskHandle;
+  const BaseType_t xCoreID            = 1;
+
+  // Create the LED task
+  xTaskCreatePinnedToCore(pvTaskCode,         // Task function
+                          constpcName,        // Task name
+                          usStackDepth,       // Stack size
+                          constpvParameters,  // Task parameters
+                          uxPriority,         // Task priority
+                          constpvCreatedTask, // Task handle
+                          xCoreID             // Core number to run the task on (0 or 1)
+  );
+
+  // Wait 10 seconds
+  Serial.println(&quot;Restarting in 10 seconds...&quot;);
+  delay(10000);
+
+  // Restart ESP
+  ESP.restart();
+}
+
+// ----------------------------------------------------------------------
+//
+// ----------------------------------------------------------------------
+void loop() {}
+</code></pre>
+<p>Compiling the project</p>
+<pre><code class="language-makefile"># BOARD?=esp32:esp32:uPesy_wroom
+BOARD?= esp32:esp32:esp32da
+PORT?= /dev/ttyUSB0
+BAUD?= 115200
+PROJECT_NAME?=FreeRTOS_Esp32_blink
+
+all:
+	$(Q)echo &quot;Compiling $(PROJECT_NAME)...&quot;
+	$(Q)mkdir -p out
+	$(Q)arduino-cli compile \
+		--clean \
+		--fqbn $(BOARD) \
+		--output-dir out \
+		$(PROJECT_NAME).ino
+	$(MAKE) til
+	$(MAKE) til_copy
+
+clean:
+	$(RM) -r out
+	$(RM) -r til
+</code></pre>
+<p>Update config, toolchain, libraries</p>
+<pre><code class="language-makefile">.PHONY: update
+update:
+	$(Q)echo create config at /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli config init || echo Config file already exists
+	$(Q)arduino-cli config set network.connection_timeout 600s
+	$(Q)cat /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli core update-index
+	$(Q)arduino-cli core install arduino:avr
+	$(Q)arduino-cli core install esp32:esp32
+	$(Q)arduino-cli upgrade
+</code></pre>
+<p>Upload binary to the board</p>
+<pre><code class="language-makefile">.PHONY: upload
+upload:
+	$(Q)arduino-cli upload \
+		$(shell pwd) \
+		--input-dir out/ \
+		--port $(PORT) \
+		--fqbn $(BOARD) \
+		--verbose \
+		--verify
+</code></pre>
+<p>Open serial monitor in another terminal</p>
+<pre><code class="language-makefile">.PHONY: serial
+serial:
+	$(Q)xfce4-terminal -x picocom $(PORT) \
+		--baud $(BAUD) \
+		--echo \
+		--exit-after 10000
+</code></pre>
+
+    </main>
+    <footer class="bg-primary">
+      <div class="container">
+        <div class="container">
+          <h2>Social links</h2>
+          <div class="row">
+            <div class="col-lg-2 col-sm-12"><a href="mailto:geraldolsribeiro@gmail.com" target="_blank">E-mail</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank">Linkedin</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://github.com/geraldolsribeiro" target="_blank">Github</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://codepen.io/geraldolsribeiro/" target="_blank">Codepen</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://twitter.com/geraldo_dev" target="_blank">Twitter</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://t.me/geraldolsribeiro" target="_blank">Telegram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank">Whatsapp</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.instagram.com/geraldo.dev/" target="_blank">Instagram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.facebook.com/geraldolsribeiro" target="_blank">Facebook</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank">StackOverflow</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.youtube.com/@dev.geraldo" target="_blank">Youtube</a></div>
+          </div>
+        </div>
+        <script>
+          //- hljs.highlightAll();
+          //- https://github.com/wcoder/highlightjs-line-numbers.js
+          //- Exemplo de numeracao em corba.md
+          document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+              hljs.highlightElement(el);
+            });
+          
+            document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+              hljs.lineNumbersBlock(el); // numbering using plugin
+            });
+          
+          });
+        </script>
+        <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+      </div>
+    </footer>
+  </body>
+</html>

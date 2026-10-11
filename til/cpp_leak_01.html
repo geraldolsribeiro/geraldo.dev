@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,54 +16,28 @@
     <meta property="twitter:image" content="https://geraldo.dev/thumbnail/cpp.webp">
     <meta property="thumbnail" content="https://geraldo.dev/thumbnail/cpp.webp">
     <meta property="twitter:card" content="">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/@digicreon/mucss/dist/mu.blue.css">
   </head>
   <body class="bg-black">
-    <nav class="bg-slate-800 text-blue-400 border-gray-200 px-2 sm:px-4 py-2.5">
-      <div class="container flex flex-wrap justify-between items-center mx-auto"><a class="flex items-center" href="/"><img class="mr-3 h-6 sm:h-9" src="/logo.svg" alt="Geraldo Ribeiro"><span class="self-center text-xl font-semibold whitespace-nowrap underline-offset-8 hover:underline hover:text-white">Geraldo Ribeiro </span></a>
-        <ul class="hidden fixed top-0 right-0 px-10 py-16 bg-gray-800 z-30 md:relative md:flex md:p-0 md:bg-transparent md:flex-row md:space-x-6" id="menu">
-          <li class="z-40 fixed top-4 right-6 md:hidden" id="menu-close-btn"><a class="text-right text-blue-500 text-4xl font-bold" href="javascript:void(0)">&times;</a></li>
-          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/about.html" aria-current="page">About</a></li>
-          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/tils.html" aria-current="page">Today I Learned</a></li>
-          <li><a class="block py-2 pr-4 pl-3 text-blue-400 underline-offset-8 hover:text-white hover:underline md:p-0" href="/certificates.html" aria-current="page">Certificates</a></li>
+    <header class="bg-primary sticky-top">
+      <nav class="container">
+        <ul>
+          <li><a href="/"><img src="/logo.svg" width="32" style="float: left"><strong>geraldo.dev</strong></a></li>
         </ul>
-        <div class="flex mr-2 items-center md:hidden" id="menu-hamburger-btn"><a class="text-slate-500 text-2xl font-bold opacity-70 duration-300 hover:opacity-100" href="javascript:void(0)">&#x2630; </a></div>
-      </div>
-    </nav>
-    <script>
-      window.addEventListener("load", () => {
-        const menuHamburgerBtn = document.querySelector("#menu-hamburger-btn");
-        const menuCloseBtn = document.querySelector("#menu-close-btn");
-        const menu = document.querySelector("#menu");
-        menuHamburgerBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
-        menuCloseBtn.addEventListener("click", () => { menu.classList.toggle("hidden"); });
-      });
-    </script>
-    <div class="prose mx-auto py-4 px-4">
-      <form id="search" method="get" action="/search.html">
-        <label class="mb-2 text-sm font-medium text-gray-300 sr-only" for="search-input">Search</label>
-        <div class="relative">
-          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" aria-hidden="true" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-          </div>
-          <input class="block p-4 pl-10 w-full text-sm text-white bg-slate-800 border border-slate-700 placeholder-slate-400 focus:ring-blue-500" id="search-input" type="search" name="query" placeholder="Search vim, bash..." required="">
-          <button class="text-white absolute bg-slate-700 font-medium text-sm px-4 py-2 right-2.5 bottom-2.5 hover:bg-blue-800 focus:bg-blue-700 focus:outline-none focus:ring-blue-200" type="submit">Search</button>
-        </div>
-      </form>
-    </div>
-    <div class="bg-black text-slate-100 min-h-screen">
-      <main class="bg-slate-900 max-w-prose mx-auto prose prose-invert text-slate-400 p-4 overflow-hidden"><a class="mb-2 text-slate-600 block cursor-pointer hover:text-slate-200" href="/tils.html">
-          <svg class="inline h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M11 17l-5-5m0 0l5-5m-5 5h12"></path>
-          </svg><span>Back to TILs</span></a>
-        <h1>How to detect C/C++ memory leak</h1>
-        <div class="text-slate-600">Date: <b class="mr-4 ml-2">2022-12-30</b>Last modified: <b class="ml-2">2025-01-12 </b></div>
-        <div class="flex flex-wrap"><a class="tag no-underline" href="/til/tag/C++.html">C++</a><a class="tag no-underline" href="/til/tag/memory-leak.html">memory-leak</a><a class="tag no-underline" href="/til/tag/AddressSanitizer.html">AddressSanitizer</a><a class="tag no-underline" href="/til/tag/ASan.html">ASan</a>
-        </div>
-        <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
-        </div><p><strong>Table of contents</strong></p>
+        <input class="navbar-toggle" id="my-nav" type="checkbox" hidden="">
+        <label class="navbar-burger" for="my-nav">&#x2630;</label>
+        <ul class="navbar-menu">
+          <li><a href="/tils.html">Today I Learned</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container"><a href="/tils.html"><span>Back to TILs</span></a>
+      <h1>How to detect C/C++ memory leak</h1>
+      <p><span class="badge badge-outline badge-secondary badge-pill"> C++</span><span class="badge badge-outline badge-secondary badge-pill"> memory-leak</span><span class="badge badge-outline badge-secondary badge-pill"> AddressSanitizer</span><span class="badge badge-outline badge-secondary badge-pill"> ASan</span>
+      </p>
+      <div class="mt-4 mx-auto"><img class="w-full my-0" src="/thumbnail/cpp.webp">
+      </div><p><strong>Table of contents</strong></p>
 <div class="table-of-contents"><ul><li><a href="#compiler-version">Compiler version</a></li><li><a href="#instrumentation-cost">Instrumentation cost</a></li><li><a href="#limitations">Limitations</a></li><li><a href="#makefile">Makefile</a></li><li><a href="#buggy-c%2B%2B-source-code">Buggy C++ source code</a></li><li><a href="#main-function">Main function</a></li><li><a href="#references">References</a></li></ul></div>
 <p><strong>AddressSanitizer</strong> (or <strong>ASan</strong>) is a tool developed by Google
 detect memory access error such as use-after-free and memory
@@ -123,7 +97,168 @@ void leak()
 }
 </code></pre>
 <p>The <code>main</code> function will call the <code>leak</code> function 10 times leaking 40 bytes
-(10 <mjx-container class="MathJax" jax="SVG" style="direction: ltr; position: relative;"><svg style="overflow: visible; min-height: 1px; min-width: 1px; vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z" style="stroke-width: 3;"/></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline" style="top: 0px; left: 0px; clip: rect(1px, 1px, 1px, 1px); -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; position: absolute; padding: 1px 0px 0px 0px; border: 0px; display: block; width: auto; overflow: hidden;"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>×</mo></math></mjx-assistive-mml></mjx-container> <code>sizeof int</code>).</p>
+(10 
+    <span id="mjx-6e5e8fd8">
+      <style>
+      #mjx-6e5e8fd8{
+        display:contents;
+        mjx-assistive-mml {
+          user-select: text !important;
+          clip: auto !important;
+          color: rgba(0,0,0,0);
+        }
+        
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+  min-height: 1px;
+  min-width: 1px;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line], svg[data-table] > g > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame], svg[data-table] > g > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed, svg[data-table] > g > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted, svg[data-table] > g > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > g > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] path[data-c], mjx-container[jax="SVG"] use[data-c] {
+  stroke-width: 3;
+}
+
+g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+.MathJax g[data-mml-node="xypic"] path {
+  stroke-width: inherit;
+}
+
+      }
+      </style>
+      <mjx-container class="MathJax" jax="SVG" style="position: relative;"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg><mjx-assistive-mml unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mo>×</mo></math></mjx-assistive-mml></mjx-container>
+    </span>
+   <code>sizeof int</code>).</p>
 <p>The debug information printed on standard error output explain the fault.</p>
 <pre><code class="language-plaintext">Direct leak of 40 byte(s) in 10 object(s) allocated from:
 </code></pre>
@@ -255,28 +390,42 @@ Shadow byte legend (one shadow byte represents 8 application bytes):
 <li><a href="https://www.usenix.org/system/files/conference/atc12/atc12-final39.pdf">AddressSanitizer: A Fast Address Sanity Checker</a>.</li>
 </ul>
 
-      </main>
-    </div>
-    <footer class="bg-slate-500 text-slate-400 text-center pb-16">
-      <div class="py-4 bg-slate-800">&copy; Geraldo Ribeiro 2024</div>
-      <div class="max-w-prose mx-auto py-4 grid gap-y-8 grid-cols-3 justify-items-center md:grid-cols-5 lg:grid-cols-12"><a class="mx-2" href="mailto:geraldolsribeiro@gmail.com" target="_blank"><img class="h-12 w-12" title="E-mail" alt="E-mail" src="/social-email.svg"></a><a class="mx-2" href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Linkedin" alt="Linkedin" src="/social-linkedin.svg"></a><a class="mx-2" href="https://github.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Github" alt="Github" src="/social-github.svg"></a><a class="mx-2" href="https://codepen.io/geraldolsribeiro/" target="_blank"><img class="h-12 w-12" title="Codepen" alt="Codepen" src="/social-codepen.svg"></a><a class="mx-2" href="https://twitter.com/geraldo_dev" target="_blank"><img class="h-12 w-12" title="Twitter" alt="Twitter" src="/social-twitter.svg"></a><a class="mx-2" href="https://t.me/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Telegram" alt="Telegram" src="/social-telegram.svg"></a><a class="mx-2" href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank"><img class="h-12 w-12" title="Whatsapp" alt="Whatsapp" src="/social-whatsapp.svg"></a><a class="mx-2" href="https://www.instagram.com/geraldo.dev/" target="_blank"><img class="h-12 w-12" title="Instagram" alt="Instagram" src="/social-instagram.svg"></a><a class="mx-2" href="https://www.facebook.com/geraldolsribeiro" target="_blank"><img class="h-12 w-12" title="Facebook" alt="Facebook" src="/social-facebook.svg"></a><a class="mx-2" href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank"><img class="h-12 w-12" title="StackOverflow" alt="StackOverflow" src="/social-stackoverflow.svg"></a><a class="mx-2" href="https://www.youtube.com/@dev.geraldo" target="_blank"><img class="h-12 w-12" title="Youtube" alt="Youtube" src="/social-youtube.svg"></a>
+    </main>
+    <footer class="bg-primary">
+      <div class="container">
+        <div class="container">
+          <h2>Social links</h2>
+          <div class="row">
+            <div class="col-lg-2 col-sm-12"><a href="mailto:geraldolsribeiro@gmail.com" target="_blank">E-mail</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank">Linkedin</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://github.com/geraldolsribeiro" target="_blank">Github</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://codepen.io/geraldolsribeiro/" target="_blank">Codepen</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://twitter.com/geraldo_dev" target="_blank">Twitter</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://t.me/geraldolsribeiro" target="_blank">Telegram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank">Whatsapp</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.instagram.com/geraldo.dev/" target="_blank">Instagram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.facebook.com/geraldolsribeiro" target="_blank">Facebook</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank">StackOverflow</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.youtube.com/@dev.geraldo" target="_blank">Youtube</a></div>
+          </div>
+        </div>
+        <script>
+          //- hljs.highlightAll();
+          //- https://github.com/wcoder/highlightjs-line-numbers.js
+          //- Exemplo de numeracao em corba.md
+          document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+              hljs.highlightElement(el);
+            });
+          
+            document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+              hljs.lineNumbersBlock(el); // numbering using plugin
+            });
+          
+          });
+        </script>
+        <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
       </div>
     </footer>
-    <script>
-      //- hljs.highlightAll();
-      //- https://github.com/wcoder/highlightjs-line-numbers.js
-      //- Exemplo de numeracao em corba.md
-      document.addEventListener('DOMContentLoaded', (event) => {
-        document.querySelectorAll('pre code').forEach((el) => {
-          hljs.highlightElement(el);
-        });
-      
-        document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
-          hljs.lineNumbersBlock(el); // numbering using plugin
-        });
-      
-      });
-    </script>
-    <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>
   </body>
 </html>

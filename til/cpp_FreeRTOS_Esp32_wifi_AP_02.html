@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Esp32 with FreeRTOS - Wifi AP">
+    <meta name="author" content="Geraldo Luis da Silva Ribeiro">
+    <title>Esp32 with FreeRTOS - Wifi AP</title>
+    <script async src="https://ackee.intmain.io/tracker.js" data-ackee-server="https://ackee.intmain.io" data-ackee-domain-id="ae2b54a4-84be-4e13-9143-062488243a8c"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/base16/materia.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6442897272752686" crossorigin="anonymous"></script>
+    <!-- thumbnail_image not define-->
+    <link rel="stylesheet" href="https://unpkg.com/@digicreon/mucss/dist/mu.blue.css">
+  </head>
+  <body class="bg-black">
+    <header class="bg-primary sticky-top">
+      <nav class="container">
+        <ul>
+          <li><a href="/"><img src="/logo.svg" width="32" style="float: left"><strong>geraldo.dev</strong></a></li>
+        </ul>
+        <input class="navbar-toggle" id="my-nav" type="checkbox" hidden="">
+        <label class="navbar-burger" for="my-nav">&#x2630;</label>
+        <ul class="navbar-menu">
+          <li><a href="/tils.html">Today I Learned</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container"><a href="/tils.html"><span>Back to TILs</span></a>
+      <h1>Esp32 with FreeRTOS - Wifi AP</h1>
+      <p><span class="badge badge-outline badge-secondary badge-pill"> C</span><span class="badge badge-outline badge-secondary badge-pill"> FreeRTOS</span><span class="badge badge-outline badge-secondary badge-pill"> Arduino</span><span class="badge badge-outline badge-secondary badge-pill"> xTaskCreatePinnedToCore</span><span class="badge badge-outline badge-secondary badge-pill"> wifi</span><span class="badge badge-outline badge-secondary badge-pill"> SPIFFS</span>
+      </p><p><strong>Table of contents</strong></p>
+<div class="table-of-contents"><ul><li><a href="#file-freertos_esp32_wifi_ap.ino">File FreeRTOS_Esp32_wifi_AP.ino</a></li></ul></div>
+<h1 id="file-freertos_esp32_wifi_ap.ino" tabindex="-1">File FreeRTOS_Esp32_wifi_AP.ino</h1>
+<pre><code class="language-cpp">void setup() {
+  Serial.begin(115200);
+
+  delay(1000);
+
+  // Initialize SPIFFS
+  // if (!SPIFFS.begin(true)) {
+  if (!SPIFFS.begin(FORMAT_SPIFFS_IF_FAILED)) {
+    Serial.println(&quot;An Error has occurred while mounting SPIFFS&quot;);
+    return;
+  } else {
+    Serial.println(&quot;SPIFFS mounted&quot;);
+  }
+
+  Serial.println(&quot;SPIFFS listing:&quot;);
+
+  File root = SPIFFS.open(&quot;/&quot;);
+  if (!root) {
+    Serial.println(&quot;- failed to open directory&quot;);
+    return;
+  }
+  if (!root.isDirectory()) {
+    Serial.println(&quot; - not a directory&quot;);
+    return;
+  }
+
+  File file = root.openNextFile();
+  while (file) {
+    if (file.isDirectory()) {
+      Serial.print(&quot;  DIR : &quot;);
+      Serial.println(file.name());
+      // if (levels) {
+      //   listDir(fs, file.path(), levels - 1);
+      // }
+    } else {
+      Serial.print(&quot;  FILE: &quot;);
+      Serial.print(file.name());
+      Serial.print(&quot;\tSIZE: &quot;);
+      Serial.println(file.size());
+    }
+    file = root.openNextFile();
+  }
+
+  WiFi.mode(WIFI_AP);
+
+  if (WiFi.softAP(ssid, password)) {
+    Serial.println(&quot;softAP Ready&quot;);
+  } else {
+    Serial.println(&quot;softAP Failed&quot;);
+  }
+
+  delay(1000);
+
+  // while (WiFi.status() != WL_CONNECTED) {
+  //   delay(1000);
+  //   Serial.println(&quot;Connecting to WiFi..&quot;);
+  //   Serial.println(WiFi.status());
+  // }
+
+  if (WiFi.softAPConfig(local_IP, gateway, subnet)) {
+    Serial.println(&quot;softAPConfig Ready&quot;);
+  } else {
+    Serial.println(&quot;softAPConfig Failed&quot;);
+  }
+
+  IPAddress myIP = WiFi.softAPIP();
+
+  Serial.print(&quot;SSID: &quot;);
+  Serial.println(ssid);
+  Serial.print(&quot;Passworkd: &quot;);
+  Serial.println(password);
+  Serial.print(&quot;AP IP address: &quot;);
+  Serial.println(myIP);
+
+  // AsyncCallbackWebHandler&amp; on(
+  //   const char* uri,
+  //   WebRequestMethodComposite method,
+  //   ArRequestHandlerFunction onRequest,
+  //   ArUploadHandlerFunction onUpload,
+  //   ArBodyHandlerFunction onBody);
+
+  // WebRequestMethodComposite
+  //
+
+  server.on(&quot;/&quot;, HTTP_GET, [](AsyncWebServerRequest *request) {
+    // Send file
+    Serial.println(&quot;/&quot;);
+    Serial.println(request-&gt;url());
+    // request-&gt;send(SPIFFS, &quot;/index.html&quot;, String(), false, processor);
+    request-&gt;send(SPIFFS, &quot;/index.html&quot;);
+    Serial.println(&quot;/ END&quot;);
+  });
+  server.on(&quot;/style.css&quot;, HTTP_GET, [](AsyncWebServerRequest *request) {
+    // Send file
+    Serial.println(&quot;/style.css&quot;);
+    request-&gt;send(SPIFFS, &quot;/style.css&quot;, &quot;text/css&quot;);
+  });
+  server.on(&quot;/on&quot;, HTTP_GET, [](AsyncWebServerRequest *request) {
+    Serial.println(&quot;/on&quot;);
+    digitalWrite(ledPin, HIGH);
+    request-&gt;send(SPIFFS, &quot;/index.html&quot;, String(), false, processor);
+  });
+  server.on(&quot;/off&quot;, HTTP_GET, [](AsyncWebServerRequest *request) {
+    Serial.println(&quot;/off&quot;);
+    digitalWrite(ledPin, LOW);
+    request-&gt;send(SPIFFS, &quot;/index.html&quot;, String(), false, processor);
+  });
+
+  server.begin();
+}
+</code></pre>
+<pre><code class="language-cpp">void loop() {}
+</code></pre>
+<p>Compiling the project</p>
+<pre><code class="language-makefile"># ESP32-WROOM-DA Module                              esp32:esp32:esp32da
+# ESP32S3 Dev Module Octal (WROOM2)                  esp32:esp32:esp32s3-octal
+# Fri3d Badge 2024 (ESP32-S3-WROOM-1)                esp32:esp32:fri3d_2024_esp32s3
+# uPesy ESP32 Wroom DevKit                           esp32:esp32:uPesy_wroom
+
+# LilyGo T-Display                                   esp32:esp32:lilygo_t_display
+# LilyGo T-Display-S3                                esp32:esp32:lilygo_t_display_s3
+# LilyGo T-ETH-Lite                                  esp32:esp32:lilygo_t_eth_lite
+# LilyGo T-Watch-S3                                  esp32:esp32:twatchs3
+# LilyGo T-Watch-Ultra                               esp32:esp32:twatch_ultra
+# LilyGo T3-S3                                       esp32:esp32:lilygo_t3s3
+# LilyGo-T-LoRa-Pager                                esp32:esp32:tlora_pager
+
+BOARD?= esp32:esp32:esp32da
+PORT?= /dev/ttyUSB0
+BAUD?= 115200
+PROJECT_NAME?= FreeRTOS_Esp32_blink
+FILE_SYSTEM?=spiffs
+# littlefs or spiffs
+
+UPLOAD_SPEED?=921600
+FLASH_SIZE?=4M
+CPU_FREQ?=240
+#PARTITION_SCHEME?= app3M_fat9M_16MB
+PARTITION_SCHEME?= default
+# VERBOSE?= --verbose
+CLEAN?= --clean
+
+BOARD_OPTIONS=FlashMode=qio,PartitionScheme=$(PARTITION_SCHEME),FlashSize=$(FLASH_SIZE),CPUFreq=$(CPU_FREQ)
+
+# --board-options FlashMode=qio,FlashSize=16M,LoopCore=1,EventsCore=1,USBMode=hwcdc,CDCOnBoot=default,MSCOnBoot=default,DFUOnBoot=default,UploadMode=default,PartitionScheme=default_8MB,CPUFreq=240,UploadSpeed=921600,DebugLevel=none,EraseFlash=none
+
+# board            := &quot;esp32:esp32:esp32s3&quot;
+# monitor_speed    := &quot;115200&quot;
+# flash_size       := &quot;16M&quot;
+# cpu_freq         := &quot;240&quot;
+# partition_scheme := &quot;app3M_fat9M_16MB&quot;
+
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/min_spiffs.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/app3M_fat9M_16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/app3M_fat9M_fact512k_16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/app3M_spiffs9M_fact512k_16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/bare_minimum_2MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/boot_app0.bin
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default_16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default_32MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default.bin
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default_ffat_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/default_ffat.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/esp_sr_16.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/ffat.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/huge_app.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/large_fat_32MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/large_ffat_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/large_littlefs_32MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/large_spiffs_16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/large_spiffs_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/m5stack_partitions_16MB_factory_4_apps.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/m5stack_partitions_16MB_factory_6_apps.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/max_app_4MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/max_app_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/minimal.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/min_spiffs.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/no_fs.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/noota_3g.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/noota_3gffat.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/no_ota.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/noota_ffat.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/ota_nofs_4MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/rainmaker_4MB_no_ota.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/rainmaker_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/rainmaker.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-16MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-16MB-noota.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-4MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-4MB-noota.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/tinyuf2-partitions-8MB-noota.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee_2MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee_zczr_2MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee_zczr_8MB.csv
+# /home/geraldo/.arduino15/packages/esp32/hardware/esp32/3.2.0/tools/partitions/zigbee_zczr.csv
+
+#partitioncmd := --build-property build.partitions=${PARTITIONTYPE} --build-property upload.maximum_size=${PARTITIONMAX}
+
+
+all:
+	$(Q)echo &quot;Compiling $(PROJECT_NAME)...&quot;
+	$(Q)mkdir -p out
+	$(Q)arduino-cli compile \
+		$(VERBOSE) \
+		$(CLEAN) \
+		--fqbn $(BOARD) \
+		--board-options &quot;$(BOARD_OPTIONS)&quot; \
+		--output-dir out \
+		$(PROJECT_NAME).ino
+	$(MAKE) til
+	$(MAKE) til_copy
+
+
+clean:
+	$(RM) -r out
+	$(RM) -r til
+</code></pre>
+<p>Update config, toolchain, libraries</p>
+<pre><code class="language-makefile">.PHONY: update
+update:
+	$(Q)echo create config at /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli config init || echo Config file already exists
+	$(Q)arduino-cli config set network.connection_timeout 600s
+	$(Q)cat /home/geraldo/.arduino15/arduino-cli.yaml
+	$(Q)arduino-cli core update-index
+	$(Q)arduino-cli core install arduino:avr
+	$(Q)arduino-cli core install esp32:esp32
+	$(Q)arduino-cli lib uninstall AsyncTCP             # 1.1.4
+	$(Q)arduino-cli lib uninstall ESPAsyncTCP          # 
+	$(Q)arduino-cli lib uninstall ESPAsyncWebServer    # ESPAsyncWebServer@3.1.0
+	$(Q)arduino-cli lib install &quot;ESP Async TCP&quot;        # 2.0.0
+	$(Q)arduino-cli lib install &quot;Async TCP&quot;            # 3.4.4
+	$(Q)arduino-cli lib install &quot;ESP Async WebServer&quot;  # ESP Async WebServer@3.7.8
+	$(Q)arduino-cli upgrade
+</code></pre>
+<p>Upload binary to the board</p>
+<pre><code class="language-makefile">.PHONY: upload
+upload:
+	$(Q)arduino-cli upload \
+		$(VERBOSE) \
+		$(shell pwd) \
+		--input-dir out/ \
+		--port $(PORT) \
+		--fqbn $(BOARD) \
+		--board-options &quot;$(BOARD_OPTIONS)&quot; \
+		--verify
+</code></pre>
+<p>Upload binary to the board</p>
+<pre><code class="language-makefile">.PHONY: upload_with_data
+upload_with_data:
+	$(Q)arduino-cli upload \
+		$(VERBOSE) \
+		&quot;$(shell pwd)&quot;,&quot;$(FILE_SYSTEM)&quot; \
+		--input-dir out/ \
+		--port $(PORT) \
+		--fqbn $(BOARD) \
+		--board-options &quot;$(BOARD_OPTIONS)&quot; \
+		--verify
+</code></pre>
+<p>Open serial monitor in another terminal</p>
+<pre><code class="language-makefile">.PHONY: serial
+serial10:
+	$(Q)xfce4-terminal -x picocom $(PORT) \
+		--baud $(BAUD) \
+		--echo \
+		--exit-after 10000
+
+serial:
+	$(Q)xfce4-terminal -x picocom $(PORT) \
+		--baud $(BAUD) \
+		--echo \
+</code></pre>
+
+    </main>
+    <footer class="bg-primary">
+      <div class="container">
+        <div class="container">
+          <h2>Social links</h2>
+          <div class="row">
+            <div class="col-lg-2 col-sm-12"><a href="mailto:geraldolsribeiro@gmail.com" target="_blank">E-mail</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.linkedin.com/in/geraldolsribeiro/" target="_blank">Linkedin</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://github.com/geraldolsribeiro" target="_blank">Github</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://codepen.io/geraldolsribeiro/" target="_blank">Codepen</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://twitter.com/geraldo_dev" target="_blank">Twitter</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://t.me/geraldolsribeiro" target="_blank">Telegram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://api.whatsapp.com/send?phone=5512982302703&amp;text=Hi%20Geraldo!" target="_blank">Whatsapp</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.instagram.com/geraldo.dev/" target="_blank">Instagram</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.facebook.com/geraldolsribeiro" target="_blank">Facebook</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://stackoverflow.com/users/554111/geraldo-luis-da-silva-ribeiro" target="_blank">StackOverflow</a></div>
+            <div class="col-lg-2 col-sm-12"><a href="https://www.youtube.com/@dev.geraldo" target="_blank">Youtube</a></div>
+          </div>
+        </div>
+        <script>
+          //- hljs.highlightAll();
+          //- https://github.com/wcoder/highlightjs-line-numbers.js
+          //- Exemplo de numeracao em corba.md
+          document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelectorAll('pre code').forEach((el) => {
+              hljs.highlightElement(el);
+            });
+          
+            document.querySelectorAll('pre code[show-line-numbers]').forEach((el) => {
+              hljs.lineNumbersBlock(el); // numbering using plugin
+            });
+          
+          });
+        </script>
+        <script src="https://utteranc.es/client.js" repo="geraldolsribeiro/geraldo.dev" issue-term="pathname" theme="github-light" crossorigin="anonymous" async></script>
+      </div>
+    </footer>
+  </body>
+</html>
